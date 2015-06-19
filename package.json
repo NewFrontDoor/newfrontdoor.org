@@ -1,0 +1,41 @@
+{
+  "name": "gulp-tasks",
+  "version": "1.0.0",
+  "description": "A collection of gulp tasks I use on different projects",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BarryThePenguin/gulp-tasks.git"
+  },
+  "author": "Jonathan Haines",
+  "license": "MIT",
+  "devDependencies": {
+    "angular": "^1.4.1",
+    "autoprefixer-core": "^5.2.0",
+    "babel": "^5.5.8",
+    "babel-core": "^5.5.8",
+    "babel-eslint": "^3.1.17",
+    "babel-loader": "^5.1.4",
+    "babel-runtime": "^5.5.8",
+    "browser-sync": "^2.7.12",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-filter": "^2.0.2",
+    "gulp-load-plugins": "^1.0.0-rc.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-postcss": "^5.1.8",
+    "gulp-sass": "^2.0.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-util": "^3.0.5",
+    "lodash": "^3.9.3",
+    "lodash.assign": "^3.2.0",
+    "node-libs-browser": "^0.5.2",
+    "require-dir": "^0.3.0",
+    "webpack": "^1.9.11",
+    "webpack-notifier": "^1.2.1"
+  }
+}
