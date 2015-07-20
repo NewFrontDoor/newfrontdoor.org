@@ -4,6 +4,8 @@ import {
 }
 from 'browser-sync';
 import autoprefixer from 'autoprefixer-core';
+import pxtorem from 'postcss-pxtorem';
+
 import gulpLoadPlugins from 'gulp-load-plugins';
 
 import {
@@ -29,14 +31,12 @@ export default () => {
         paths.bootstrap.style
       ]
     }))
-    // .pipe($.colorguard({
-    //   threshold: 1
-    // }))
     .pipe($.postcss([
       autoprefixer({
         browsers: ['last 2 versions'],
         cascade: false
-      })
+      }),
+      pxtorem()
     ]))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest(paths.style.dest))

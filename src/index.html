@@ -1,14 +1,88 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
+
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Document</title>
   <link rel="stylesheet" href="./main.css">
 </head>
+
 <body ng-controller="appController as app">
-  <h1>{{app.hello}}</h1>
-  <h2>Wow This Really Works</h2>
+  <header class="container-fluid">
+    <div class="row">
+      <svg width="100%" viewBox="0 0 6 1">
+        <rect width="1" height="1" x="0" fill="#438376" />
+        <rect width="1" height="1" x="1" fill="#2e585a" />
+        <rect width="1" height="1" x="2" fill="#193126" />
+        <rect width="1" height="1" x="3" fill="#2e5a3b" />
+        <rect width="1" height="1" x="4" fill="#438346" />
+        <rect width="1" height="1" x="5" fill="#6aad58" />
+        <defs>
+          <path id="textpath" fill="none" d="M0,0.75 C2,0 4,1 6,0.75" />
+        </defs>
+        <use xlink:href="#textpath" />
+        <text x="6" font-family="Quicksand" font-size="0.6px" fill="white" text-anchor="end">
+          <textPath xlink:href="#textpath">
+            <tspan>I love all the books!</tspan>
+          </textPath>
+        </text>
+      </svg>
+    </div>
+  </header>
+  <div class="container">
+    <main role=”main” class="row">
+      <div class="col-lg-offset-1 col-sm-8 col-lg-7">
+        <article class="row" ng-repeat="post in app.posts">
+          <div class="col-xs-12">
+            <header class="text-lowercase">
+              <h2>{{post.title}}</h2>
+              <h3 class="text-right">
+                <small>{{post.date | date : 'EEE, MMM yyyy'}}</small>
+              </h3>
+            </header>
+
+            <section>
+              <p class="lead">{{post.lead}}</p>
+              <p>{{post.body}}</p>
+            </section>
+          </div>
+      </div>
+      <aside class="col-sm-4 col-lg-3">
+        <header class="text-lowercase">
+          <h3>Hi, I'm Gillian and I read books</h3>
+        </header>
+        <section>
+          <p>These are my opinions lol</p>
+        </section>
+        <header class="text-lowercase">
+          <h4>My Goodreads</h4>
+        </header>
+        <section class="row">
+          <div class="col-xs-12">
+            <div class="goodreads-widget">
+              <iframe src="https://www.goodreads.com/widgets/user_update_widget?height=400&num_updates=3&user=3219443"></iframe>
+              <div class="goodreads-footer">
+                <a href="https://www.goodreads.com/">
+                  <img alt="Goodreads: Book reviews, recommendations, and discussion" src="https://www.goodreads.com/images/layout/goodreads_logo_140.png" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </section>
+        <header class="text-lowercase">
+          <h4>My Instagram</h4>
+        </header>
+        <section class="row">
+          <ul class="ghost-snap"></ul>
+        </section>
+      </aside>
+    </main>
+  </div>
   <script type="text/javascript" src="./lib.js"></script>
   <script type="text/javascript" src="./app.js"></script>
 </body>
+
 </html>
