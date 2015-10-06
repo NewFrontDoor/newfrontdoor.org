@@ -1,20 +1,16 @@
 import ghost from 'ghost';
 import path from 'path';
 
-function dirPath() {
-  let params = ['./'];
-  params.push.apply(params, arguments);
-  return path.join.apply(path, params);
-}
+const dirPath = (...paths) => {
+	const params = ['./'];
+	params.push(...paths);
+	return path.join(...params);
+};
 
-function ghost() {
-  function startServer(ghostServer) {
-    ghostServer.start();
-  }
-
-  ghost({
-    config: dirPath('../config.js')
-  }).then(startServer);
-}
-
-export default ghost;
+export default () => {
+	ghost({
+		config: dirPath('../config.js')
+	}).then(ghostServer => {
+		ghostServer.start();
+	});
+};

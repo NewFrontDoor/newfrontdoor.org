@@ -7,7 +7,7 @@ import {paths} from './config';
 const $ = gulpLoadPlugins();
 
 export default () => {
-  return gulp.src(paths.templates.src)
+	return gulp.src(paths.templates.src)
     .pipe($.plumber(handleError))
     .pipe(gulp.dest(paths.templates.dest));
 };
