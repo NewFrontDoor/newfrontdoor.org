@@ -7,7 +7,7 @@ $font-family-serif: 'EB Garamond', Georgia, "Times New Roman", Times, serif !def
 $font-size-base: 22px !default;
 $line-height-base: 1.5 !default;
 
-$primary-green: #438376;
+$primary-red: #C13936;
 
 // Core variables and mixins
 @import "bootstrap/variables";
@@ -29,16 +29,13 @@ $primary-green: #438376;
 @import "bootstrap/utilities";
 @import "bootstrap/responsive-utilities";
 
-@import "ghost-snap";
-@import "goodreads";
-
 html {
   font-size: 16px;
 }
 article {
   header {
     h2 {
-      color: $primary-green;
+      color: $primary-red;
       margin-bottom: 0;
     }
     h3 {
@@ -51,7 +48,7 @@ article {
 }
 aside {
   header {
-    color: $primary-green;
+    color: $primary-red;
   }
   section {
     font-family: $font-family-serif;

@@ -1,6 +1,6 @@
 import gulp from 'gulp';
 import {reload} from 'browser-sync';
-import autoprefixer from 'autoprefixer-core';
+import autoprefixer from 'autoprefixer';
 import pxtorem from 'postcss-pxtorem';
 
 import gulpLoadPlugins from 'gulp-load-plugins';

@@ -6,25 +6,29 @@ import WebpackNotifierPlugin from 'webpack-notifier';
 import paths from './paths';
 import packageJson from '../../package.json';
 
-const configFns = {
-	development: getDevConfig,
-	production: getProdConfig,
-	test: getTestConfig
+process.env.NODE_ENV = 'development';
+
+export default () => {
+	let config = getCommonConfig();
+
+	switch (process.env.NODE_ENV) {
+    case 'development':
+      config = _.merge(config, getDevConfig());
+      break;
+    case 'production':
+      config = _.merge(config, getProdConfig());
+      break;
+    case 'test':
+      config = _.merge(config, getTestConfig());
+      break;
+    default:
+      throw new Error(`NODE_ENV not equal to development, production, or test. It is equal to ${process.env.NODE_ENV}`);
+  }
+  return config;
 };
 
-export default env => {
-	const config = configFns[env]();
-	return addCommonPlugins(config);
-};
-
-function getDevConfig() {
-	const commonPlugin = new webpack.optimize.CommonsChunkPlugin('lib.js');
-
-	const exclude = /node_modules/;
-	const devConfig = {
-		debug: true,
-		devtool: 'source-map',
-
+function getCommonConfig() {
+	return {
 		context: path.resolve(paths.scripts.bundle),
 
 		entry: {
@@ -42,96 +46,76 @@ function getDevConfig() {
 			reasons: true
 		},
 
-		plugins: [commonPlugin],
-
 		resolve: {
 			extensions: ['', '.js']
-		},
-
-		module: {
-			loaders: [{
-				test: /\.js$/,
-				loaders: getLoaders(['ng-annotate', 'babel', 'eslint']),
-				exclude
-			}]
-		},
-
-		eslint: {
-			emitError: false,
-			failOnError: false,
-			failOnWarning: false,
-			quiet: true
 		}
-	};
-
-	if (process.env.CI !== 'true') {
-		devConfig.plugins.push(new WebpackNotifierPlugin());
 	}
-
-	return devConfig;
 }
 
-function getProdConfig(noUglify) {
-	const commonPlugin = new webpack.optimize.CommonsChunkPlugin({
-		name: 'lib',
-		filename: '[name]-[hash].js'.replace(/\.js$/, '.min.js')
-	});
+function getDevConfig() {
+	return {
+		debug: true,
+		devtool: 'source-map',
+		module: {
+      loaders: [
+        getJavaScriptLoader()
+      ]
+    },
+		plugins: _.union(getCommonPlugins(), [
+			new webpack.optimize.CommonsChunkPlugin({
+				name: 'lib',
+				filename: '[name].js'.replace(/\.js$/, '.js')
+			}),
+		])
+	};
+}
 
-	const prodConfig = _.merge({}, getDevConfig(), {
+function getProdConfig() {
+	return {
 		output: {
 			path: path.resolve(paths.scripts.dest),
 			filename: '[name]-[hash].js'.replace(/\.js$/, '.min.js')
 		},
 		devtool: 'source-map',
-		eslint: {
-			emitError: true,
-			failOnError: true
-		}
-	});
-
-	prodConfig.plugins = [
-		commonPlugin,
-		new webpack.NoErrorsPlugin(),
-		new webpack.optimize.DedupePlugin(),
-		new webpack.optimize.OccurenceOrderPlugin(),
-		new webpack.optimize.AggressiveMergingPlugin()
-	];
-
-	// allow getting rid of the UglifyJsPlugin
-	// https://github.com/webpack/webpack/issues/1079
-	if (!noUglify) {
-		prodConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({
-			compress: {
-				warnings: false
-			}
-		}));
+		module: {
+      loaders: [
+        getJavaScriptLoader()
+      ]
+    },
+		plugins: _.union(getCommonPlugins(), [
+			new webpack.optimize.CommonsChunkPlugin({
+				name: 'lib',
+				filename: '[name]-[hash].js'.replace(/\.js$/, '.min.js')
+			}),
+			new webpack.optimize.DedupePlugin(),
+			new webpack.optimize.OccurenceOrderPlugin(),
+			new webpack.optimize.AggressiveMergingPlugin(),
+			new webpack.optimize.UglifyJsPlugin({
+				compress: {
+					warnings: false
+				}
+			})
+    ])
 	}
-	return prodConfig;
 }
 
 function getTestConfig() {
 	return _.merge({}, getDevConfig(), {});
 }
 
-function getLoaders(loaders) {
-	return _.filter(loaders, loader => {
-		return packageJson.devDependencies.hasOwnProperty(`${loader}-loader`);
-	});
+function getJavaScriptLoader() {
+  return {test: /\.js$/, loaders: ['babel', 'xo'], exclude: /node_modules/};
 }
 
-function addCommonPlugins(config) {
-	config.plugins = config.plugins || [];
-
-	config.plugins.unshift(new webpack.BannerPlugin(getBanner(), {
-		raw: true
-	}));
-	// put the global variables before everything else
-	config.plugins.unshift(new webpack.DefinePlugin({
-		'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-		'VERSION': JSON.stringify(packageJson.version)
-	}));
-
-	return config;
+function getCommonPlugins() {
+  return _.filter([
+    new webpack.BannerPlugin(getBanner(process.env.NODE_ENV), {raw: true}),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      'VERSION': JSON.stringify(packageJson.version)
+    }),
+    process.env.CI ? undefined : new WebpackNotifierPlugin()
+  ]);
 }
 
 function getBanner() {
