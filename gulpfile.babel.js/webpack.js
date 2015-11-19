@@ -1,21 +1,31 @@
 import webpack from 'webpack';
-import browserSync from 'browser-sync';
+import WebpackDevServer from 'webpack-dev-server';
+import gulpLoadPlugins from 'gulp-load-plugins';
 
 import config from './config/webpack';
 import {compileLogger} from './lib';
 
-const devConfig = config('development');
+const $ = gulpLoadPlugins();
+
+const result = done => (err, stats) => {
+	compileLogger(err, stats);
+	done();
+};
+
+const listen = err => {
+	if (err) {
+		throw new $.util.PluginError('webpack-dev-server', err);
+	}
+
+	$.util.log('[webpack-dev-server]', 'http://localhost:3000');
+};
 
 export default done => {
-	let built = false;
-
-	webpack(devConfig).watch(200, (err, stats) => {
-		compileLogger(err, stats);
-		browserSync.reload();
-		// On the initial compile, let gulp know the task is done
-		if (!built) {
-			built = true;
-			done();
-		}
-	});
+	if (process.env.NODE_ENV === 'production') {
+		webpack(config, result(done));
+	} else {
+		new WebpackDevServer(webpack(config), {
+			contentBase: 'dest'
+		}).listen(3100, 'localhost', listen);
+	}
 };

@@ -8,49 +8,97 @@ $font-size-base: 22px !default;
 $line-height-base: 1.5 !default;
 
 $primary-red: #C13936;
+$brand-primary: $primary-red !default;
+
+$body-bg: #fff !default;
+$link-color: $brand-primary !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+
+// Typography
+$font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base: $font-family-serif !default;
+$font-size-base: 20px !default;
+$scale-up: 1.333 !default;
+$scale-down: 0.75 !default;
+$font-size-large: ceil(($font-size-base * $scale-up)) !default;
+$font-size-small: ceil(($font-size-base * $scale-down)) !default;
+
+// Headings
+$font-size-h4: $font-size-base !default;
+$font-size-h3: $font-size-h4 * $scale-up !default;
+$font-size-h2: $font-size-h3 * $scale-up !default;
+$font-size-h1: $font-size-h2 * $scale-up !default;
+$font-size-h5: $font-size-h4 * $scale-down !default;
+$font-size-h6: $font-size-h5 * $scale-down !default;
+
+// Line Height
+$line-height-base: 1.5 !default;
+$headings-font-family: $font-family-sans-serif !default;
+$headings-font-weight: 500 !default;
+$headings-color: inherit !default;
 
 // Core variables and mixins
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 
 // Reset and dependencies
-@import "bootstrap/normalize";
+@import "~normalize.css/normalize.css";
 
 // Core CSS
-@import "bootstrap/scaffolding";
-@import "bootstrap/type";
-@import "bootstrap/grid";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/type";
 
 // Components
-@import "bootstrap/thumbnails";
-@import "bootstrap/responsive-embed";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/thumbnails";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/responsive-embed";
 
 // Utility classes
-@import "bootstrap/utilities";
-@import "bootstrap/responsive-utilities";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/utilities";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
 
-html {
-  font-size: 16px;
+@lost gutter 60px;
+
+body {
+  // lost-utility: edit;
+	// background-image: url(http://basehold.it/i/30);
+  font: #{$font-size-base}/#{$line-height-base} $font-family-base;
+}
+.site-wrapper {
+		padding: 15px;
+		lost-utility: clearfix;
+		lost-center: 980px flex;
+}
+main {
+		lost-column: 1/1;
+		@media (min-width: $screen-md-min) {
+				lost-column: 2/3;
+		}
 }
 article {
-  header {
-    h2 {
-      color: $primary-red;
-      margin-bottom: 0;
-    }
-    h3 {
-      margin-top: 0;
-    }
-  }
-  section {
-    font-family: $font-family-serif;
-  }
+		header {
+				margin-bottom: 1vr;
+		}
 }
-aside {
-  header {
-    color: $primary-red;
-  }
-  section {
-    font-family: $font-family-serif;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+		font-family: $headings-font-family;
+		font-weight: $headings-font-weight;
+		color: $headings-color;
+		small,
+		.small {
+				font-weight: normal;
+				line-height: 1;
+				color: $headings-small-color;
+		}
 }

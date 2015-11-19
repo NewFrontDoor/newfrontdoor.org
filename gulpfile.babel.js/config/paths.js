@@ -6,22 +6,17 @@ const dirPath = (...paths) => {
 	return path.join(...params);
 };
 
-const src = p => {
-	return dirPath('/src/', p || '');
-};
+const src = p => dirPath('/src/', p || '');
 
-const dest = p => {
-	return dirPath('/dest/', p || '');
-};
+const dest = p => dirPath('/dest/', p || '');
 
-const modules = p => {
-	return dirPath('/node_modules/', p || '');
-};
+const modules = p => dirPath('/node_modules/', p || '');
 
 export default {
 	dest: dest(),
-	bootstrap: {
-		style: modules('/bootstrap-sass/assets/stylesheets')
+	bundle: {
+		src: src(),
+		dest: dest()
 	},
 	style: {
 		src: src('css/main.scss'),
@@ -65,11 +60,5 @@ export default {
 	html2js: {
 		src: src('/**/*.html'),
 		dest: src('/js/')
-	},
-	mock: {
-		vf: {
-			src: ['./mock-vf/index.js', './mock-vf/mock-data/**/*.mock.js'],
-			dest: './mock-vf/mock-build'
-		}
 	}
 };

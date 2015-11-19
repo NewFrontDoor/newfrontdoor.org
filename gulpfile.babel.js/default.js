@@ -7,12 +7,10 @@ const develop = () => {
 
 gulp.task('develop', [
 	'templates',
-	'styles',
 	'webpack',
 	'html',
 	'fonts',
-	'extras',
-	'serve'
+	'extras'
 ], watch);
 
 gulp.task('default', ['clean'], develop);

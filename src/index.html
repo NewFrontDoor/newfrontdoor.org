@@ -6,28 +6,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Document</title>
-  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body ng-controller="appController as app">
-  <header class="container-fluid">
-    <div class="row">
-      <svg width="100%" viewBox="0 0 6 1">
-        <rect width="1" height="1" x="0" fill="#F0BA61" />
-        <rect width="1" height="1" x="1" fill="#F48244" />
-        <rect width="1" height="1" x="2" fill="#D55437" />
-        <rect width="1" height="1" x="3" fill="#EF4640" />
-        <rect width="1" height="1" x="4" fill="#C13936" />
-        <rect width="1" height="1" x="5" fill="#F0BA61" />
-        <text x="1" y="0.75" font-family="Quicksand" font-size="0.5" fill="black">Vision 100 IT</text>
-      </svg>
-    </div>
+  <header>
+    <svg width="100%" viewBox="0 0 6 1">
+      <rect width="1" height="1" x="0" fill="#F0BA61" />
+      <rect width="1" height="1" x="1" fill="#F48244" />
+      <rect width="1" height="1" x="2" fill="#D55437" />
+      <rect width="1" height="1" x="3" fill="#EF4640" />
+      <rect width="1" height="1" x="4" fill="#C13936" />
+      <rect width="1" height="1" x="5" fill="#F0BA61" />
+      <text x="1" y="0.75" font-family="Quicksand" font-size="0.5" fill="black">Vision 100 IT</text>
+    </svg>
   </header>
-  <div class="container">
-    <main role=”main” class="row">
-      <div class="col-lg-offset-1 col-sm-8 col-lg-7">
-        <article class="row" ng-repeat="post in app.posts">
-          <div class="col-xs-12">
+  <div class="site-wrapper">
+    <main role=”main”>
+      <div>
+        <article ng-repeat="post in app.posts">
+          <div>
             <header class="text-lowercase">
               <h2>{{post.title}}</h2>
               <h3 class="text-right">
@@ -41,7 +39,7 @@
             </section>
           </div>
       </div>
-      <aside class="col-sm-4 col-lg-3">
+      <aside>
         <header class="text-lowercase">
           <h3>This is V100IT</h3>
         </header>
@@ -51,20 +49,20 @@
         <header class="text-lowercase">
           <h4>Panel One</h4>
         </header>
-        <section class="row">
-          <div class="col-xs-12">
+        <section>
+          <div>
           </div>
         </section>
         <header class="text-lowercase">
           <h4>Panel Two</h4>
         </header>
-        <section class="row">
+        <section>
         </section>
       </aside>
     </main>
   </div>
-  <script type="text/javascript" src="./lib.js"></script>
-  <script type="text/javascript" src="./app.js"></script>
+  <script type="text/javascript" src="/lib.js"></script>
+  <script type="text/javascript" src="/app.js"></script>
 </body>
 
 </html>
