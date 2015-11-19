@@ -4,6 +4,7 @@
   "description": "A collection of gulp tasks I use on different projects",
   "main": "gulpfile.js",
   "scripts": {
+    "start": "gulp",
     "test": "xo"
   },
   "repository": {
