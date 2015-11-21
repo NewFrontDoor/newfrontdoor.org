@@ -7,10 +7,25 @@ $font-family-serif: 'EB Garamond', Georgia, "Times New Roman", Times, serif !def
 $font-size-base: 22px !default;
 $line-height-base: 1.5 !default;
 
+//Colours
+
 $primary-red: #C13936;
 $brand-primary: $primary-red !default;
 
+$primary-heading: #E63224;
+$logo-colour: $primary-heading !default;
+
+$secondary-heading: #F18032;
+
+$main-text: #040608;
+$footer-bg: $main-text !default;
+
+$primary-highlight: #B7CBE6;
+$secondary-highlight: #FCF5ED;
+
 $body-bg: #fff !default;
+$footer-text: $body-bg !default;
+
 $link-color: $brand-primary !default;
 $link-hover-color: darken($link-color, 15%) !default;
 $link-hover-decoration: underline !default;
@@ -36,7 +51,7 @@ $font-size-h6: $font-size-h5 * $scale-down !default;
 $line-height-base: 1.5 !default;
 $headings-font-family: $font-family-sans-serif !default;
 $headings-font-weight: 500 !default;
-$headings-color: inherit !default;
+$headings-color: $primary-heading !default;
 
 // Core variables and mixins
 @import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
@@ -70,8 +85,15 @@ body {
 		lost-center: 980px flex;
 }
 .footer-list {
-  lost-column: 1/5;
+  lost-column: 2/11;
 }
+
+.footer-logo {
+  lost-column: 3/11;
+  background-image: url("../elements/v100it.png");
+  background-size: contain;
+}
+
 main {
 		lost-column: 1/1;
 		@media (min-width: $screen-md-min) {
@@ -109,4 +131,9 @@ h6,
 				line-height: 1;
 				color: $headings-small-color;
 		}
+}
+
+li {
+  list-style: none;
+  margin-left: -40px;
 }
