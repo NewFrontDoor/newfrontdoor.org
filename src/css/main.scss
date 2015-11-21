@@ -69,6 +69,9 @@ body {
 		lost-utility: clearfix;
 		lost-center: 980px flex;
 }
+.footer-list {
+  lost-column: 1/5;
+}
 main {
 		lost-column: 1/1;
 		@media (min-width: $screen-md-min) {
@@ -79,6 +82,11 @@ article {
 		header {
 				margin-bottom: 1vr;
 		}
+}
+footer {
+  padding: 15px;
+  lost-utility: clearfix;
+  lost-center: 980px flex;
 }
 h1,
 h2,
