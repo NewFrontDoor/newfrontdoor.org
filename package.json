@@ -13,6 +13,11 @@
     "url": "https://github.com/BarryThePenguin/gulp-tasks.git"
   },
   "author": "Jonathan Haines",
+  "contributors": [{
+    "name": "Jonathan Haines",
+  }, {
+    "name": "Alan Reader"
+  }],
   "license": "MIT",
   "dependencies": {
     "node-sass": "^3.4.2",
