@@ -3,6 +3,7 @@ import _ from 'lodash';
 import autoprefixer from 'autoprefixer';
 import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import lost from 'lost';
 import path from 'path';
 import pxtorem from 'postcss-pxtorem';
@@ -32,7 +33,7 @@ function getCommonConfig() {
 		context: path.resolve(paths.bundle.src),
 		entry: {
 			lib: ['angular'],
-			app: ['./js/index.js'],
+			index: ['./js/index.js'],
 			styles: ['./css/main']
 		},
 		output: {
@@ -59,7 +60,9 @@ function getDevConfig() {
 		module: {
 			loaders: [
 				getJavaScriptLoader(),
-				getStyleLoader()
+				getStyleLoader(),
+				getHtmlLoader(),
+				getAssetLoader()
 			]
 		},
 		plugins: _.union(getCommonPlugins(), [
@@ -72,10 +75,6 @@ function getDevConfig() {
 			}),
 			new ExtractTextPlugin('[name].css', {
 				allChunks: true
-			}),
-			new webpack.optimize.CommonsChunkPlugin({
-				name: 'lib',
-				filename: '[name].js'.replace(/\.js$/, '.js')
 			})
 		])
 	};
@@ -91,18 +90,19 @@ function getProdConfig() {
 		module: {
 			loaders: [
 				getJavaScriptLoader(),
-				getStyleLoader()
+				getStyleLoader(),
+				getHtmlLoader(),
+				getAssetLoader()
 			]
 		},
 		plugins: _.union(getCommonPlugins(), [
-			new webpack.optimize.CommonsChunkPlugin({
-				name: 'lib',
-				filename: '[name].js'.replace(/\.js$/, '.min.js')
-			}),
 			new webpack.optimize.DedupePlugin(),
 			new webpack.optimize.UglifyJsPlugin(),
 			new webpack.optimize.OccurenceOrderPlugin(),
 			new webpack.optimize.AggressiveMergingPlugin(),
+			new HtmlWebpackPlugin({
+				inject: true
+			}),
 			new ExtractTextPlugin('[name].min.css', {
 				allChunks: true
 			})
@@ -118,10 +118,25 @@ function getJavaScriptLoader() {
 	};
 }
 
+function getHtmlLoader() {
+	return {
+		test: /\.html$/,
+		loader: 'html?attrs=link:href'
+	};
+}
+
 function getStyleLoader() {
 	return {
 		test: /\.scss$/,
 		loader: ExtractTextPlugin.extract('style', ['css', 'postcss', 'sass'].join('!'))
+	};
+}
+
+function getAssetLoader() {
+	return {
+		test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
+		exclude: /favicon\.png$/,
+		loader: 'url?limit=10000'
 	};
 }
 
@@ -139,6 +154,7 @@ function getPostCss() {
 
 function getCommonPlugins() {
 	return _.filter([
+		new webpack.optimize.CommonsChunkPlugin('commons.chunk.js'),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
 			'VERSION': JSON.stringify(packageJson.version)

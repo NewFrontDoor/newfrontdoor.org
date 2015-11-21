@@ -25,7 +25,7 @@ export default done => {
 		webpack(config, result(done));
 	} else {
 		new WebpackDevServer(webpack(config), {
-			contentBase: 'dest'
+			contentBase: 'src'
 		}).listen(3100, 'localhost', listen);
 	}
 };

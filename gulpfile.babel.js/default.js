@@ -8,7 +8,6 @@ const develop = () => {
 gulp.task('develop', [
 	'templates',
 	'webpack',
-	'html',
 	'fonts',
 	'extras'
 ], watch);
