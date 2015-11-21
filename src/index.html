@@ -11,7 +11,7 @@
 
 <body ng-controller="appController as app">
   <header>
-    <svg width="100%" viewBox="0 0 6 1">
+<!--    <svg width="100%" viewBox="0 0 6 1">
       <rect width="1" height="1" x="0" fill="#E63224" />
       <rect width="1" height="1" x="1" fill="#B7CBE6" />
       <rect width="1" height="1" x="2" fill="#040608" />
@@ -19,7 +19,27 @@
       <rect width="1" height="1" x="4" fill="#FCF5ED" />
       <rect width="1" height="1" x="5" fill="#FFFFFF" />
       <text x="1" y="0.75" font-family="Quicksand" font-size="0.5" fill="black">Vision 100 IT</text>
-    </svg>
+    </svg> -->
+    <h1 hidden>Vision 100 IT</h1>
+    <div class="main-menu">
+      <ul>
+        <li class="main-menu-item text-uppercase">
+          Who are Vision 100 IT?
+        </li>
+        <li class="main-menu-item text-uppercase">
+          How we can help you
+        </li>
+        <li class="main-menu-item text-uppercase">
+          Philosophy + Tools
+        </li>
+        <li class="main-menu-item text-uppercase">
+          Events
+        </li>
+        <li class="main-menu-item text-uppercase">
+          Pricing
+        </li>
+      </ul>
+    </div>
   </header>
   <div class="site-wrapper">
     <main role=”main”>
@@ -47,14 +67,14 @@
           <p>These are our recent projects</p>
         </section>
         <header class="text-lowercase">
-          <h4>Panel One</h4>
+          <h3>Panel One</h3>
         </header>
         <section>
           <div>
           </div>
         </section>
         <header class="text-lowercase">
-          <h4>Panel Two</h4>
+          <h3>Panel Two</h3>
         </header>
         <section>
         </section>
@@ -62,99 +82,101 @@
     </main>
   </div>
   <footer>
-    <div class="footer-list">
+    <div class="footer-wrap">
+      <div class="footer-list">
         <header class="text-lowercase">
-          <h5>V100IT</h5>
+          <h3>V100IT</h3>
         </header>
-    <ul>
-      <li>
-        Philosophy
-      </li>
-      <li>
-        Tools
-      </li>
-      <li>
-        Events
-      </li>
-      <li>
-        Pricing
-      </li>
-      <li>
-        Showcase
-      </li>
-      <li>
-        Blog
-      </li>
-    </ul>
-    </div>
-    <div class="footer-list">
-      <header class="text-lowercase">
-        <h5>About Us</h5>
-      </header>
-  <ul>
-    <li>
-      Mission + Vision
-    </li>
-    <li>
-      History
-    </li>
-    <li>
-      Team Members
-    </li>
-    <li>
-      Join Us
-    </li>
-    <li>
-      Service Levels
-    </li>
-  </ul>
-    </div>
-    <div class="footer-logo">
-      Logo
-    </div>
-    <div class="footer-list">
-      <header class="text-lowercase">
-        <h5>Support</h5>
-      </header>
-  <ul>
-    <li>
-      Support Request
-    </li>
-    <li>
-      Feature Request
-    </li>
-    <li>
-      Contact Us
-    </li>
-    <li>
-      Help + How-to
-    </li>
-    <li>
-      System Status
-    </li>
-  </ul>
-    </div>
-    <div class="footer-list">
-      <header class="text-lowercase">
-        <h5>Connect</h5>
-      </header>
-  <ul>
-    <li>
-      Podcast
-    </li>
-    <li>
-      Mailing List
-    </li>
-    <li>
-      Blog
-    </li>
-    <li>
-      Facebook
-    </li>
-    <li>
-      Twitter
-    </li>
-  </ul>
+        <ul>
+          <li>
+            Philosophy
+          </li>
+          <li>
+            Tools
+          </li>
+          <li>
+            Events
+          </li>
+          <li>
+            Pricing
+          </li>
+          <li>
+            Showcase
+          </li>
+          <li>
+            Blog
+          </li>
+        </ul>
+      </div>
+      <div class="footer-list">
+        <header class="text-lowercase">
+          <h3>About Us</h3>
+        </header>
+        <ul>
+          <li>
+            Mission + Vision
+          </li>
+          <li>
+            History
+          </li>
+          <li>
+            Team Members
+          </li>
+          <li>
+            Join Us
+          </li>
+          <li>
+            Service Levels
+          </li>
+        </ul>
+      </div>
+      <div class="footer-logo">
+        <h3 hidden>Logo</h3>
+      </div>
+      <div class="footer-list">
+        <header class="text-lowercase">
+          <h3>Support</h3>
+        </header>
+        <ul>
+          <li>
+            Support Request
+          </li>
+          <li>
+            Feature Request
+          </li>
+          <li>
+            Contact Us
+          </li>
+          <li>
+            Help + How-to
+          </li>
+          <li>
+            System Status
+          </li>
+        </ul>
+      </div>
+      <div class="footer-list">
+        <header class="text-lowercase">
+          <h3>Connect</h3>
+        </header>
+        <ul>
+          <li>
+            Podcast
+          </li>
+          <li>
+            Mailing List
+          </li>
+          <li>
+            Blog
+          </li>
+          <li>
+            Facebook
+          </li>
+          <li>
+            Twitter
+          </li>
+        </ul>
+      </div>
     </div>
   </footer>
   <script src="http://localhost:3000/webpack-dev-server.js"></script>

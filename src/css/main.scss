@@ -90,7 +90,7 @@ body {
 
 .footer-logo {
   lost-column: 3/11;
-  background-image: url("../elements/v100it.png");
+//  background-image: url("../elements/v100it.png");
   background-size: contain;
 }
 
@@ -105,11 +105,38 @@ article {
 				margin-bottom: 1vr;
 		}
 }
+
+.main-menu ul {
+  float: left;
+  width: 100%;
+  list-style-type: none;
+}
+
+.main-menu-item li {
+  lost-utility: clearfix;
+  lost-column: 1/7;
+  border: 1px solid black;
+  float: inherit;
+  list-style-type: none;
+}
+
 footer {
   padding: 15px;
   lost-utility: clearfix;
+  background-color: #040608;
+  color: #fff;
+}
+
+.footer-wrap {
+  lost-utility: clearfix;
   lost-center: 980px flex;
 }
+
+.footer-wrap li {
+  list-style: none;
+  margin-left: -40px;
+}
+
 h1,
 h2,
 h3,
@@ -131,9 +158,4 @@ h6,
 				line-height: 1;
 				color: $headings-small-color;
 		}
-}
-
-li {
-  list-style: none;
-  margin-left: -40px;
 }
