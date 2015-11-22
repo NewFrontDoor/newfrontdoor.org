@@ -186,14 +186,18 @@ padding: 0;
 //    display: inline;
 }
 
+.align-left {
+  text-align: left;
+}
 
-.footer-list-left {
-  lost-column: 2/11;
+.align-right {
   text-align: right;
 }
-.footer-list-right {
+
+.footer-list {
   lost-column: 2/11;
 }
+
 .footer-logo {
   lost-column: 3/11;
   background-image: url("../elements/v100it.png");
@@ -203,7 +207,7 @@ padding: 0;
   background-position-y: 5px;
 }
 
-.footer-wrap h3 {
+.footer-list h3 {
   padding-bottom: 3px;
   border-bottom: 1px solid $primary-heading;
 }

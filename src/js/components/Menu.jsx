@@ -6,7 +6,7 @@ export class Footer extends React.Component {
 		this.state = {
 			lists: [{
 				heading: 'V100IT',
-				className: 'footer-list align-right',
+				className: 'footer-list',
 				links: [{
 					text: 'Philosophy'
 				}, {
@@ -22,7 +22,7 @@ export class Footer extends React.Component {
 				}]
 			}, {
 				heading: 'About Us',
-				className: 'footer-list align-right',
+				className: 'footer-list',
 				links: [{
 					text: 'Mission + Vision'
 				}, {
@@ -39,7 +39,7 @@ export class Footer extends React.Component {
 				links: []
 			}, {
 				heading: 'Support',
-				className: 'footer-list align-left',
+				className: 'footer-list',
 				links: [{
 					text: 'Support Request'
 				}, {
@@ -53,7 +53,7 @@ export class Footer extends React.Component {
 				}]
 			}, {
 				heading: 'Connect',
-				className: 'footer-list align-left',
+				className: 'footer-list',
 				links: [{
 					text: 'Podcast'
 				}, {
@@ -71,17 +71,15 @@ export class Footer extends React.Component {
 	render() {
 		return (
 			<footer>
-				<div className="footer-wrap">
 				{this.state.lists.map((list, key) => <div key={key} className={list.className}>
 						<header className="text-lowercase">
-							<h3>{list.heading}</h3>
+							<h5>{list.heading}</h5>
 						</header>
 						<ul>
 							{list.links.map((link, key) => <li key={key}>{link.text}</li>)}
 						</ul>
 					</div>
 				)}
-			</div>
 			</footer>
 		);
 	}
