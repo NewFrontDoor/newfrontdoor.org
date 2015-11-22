@@ -16,22 +16,37 @@ Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
 Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.`;
 
 const posts = [{
-	title: 'This is a really long heading so I can see how it looks',
+	title: 'This is where the first big image and quote will go',
 	date: new Date(2015, 0, 1),
 	lead,
 	body
 }, {
-	title: 'Post 2',
+	title: 'Who are Vision 100 IT?',
 	date: new Date(2014, 0, 1),
 	lead,
 	body
 }, {
-	title: 'Post 3',
+	title: 'How we can help you',
 	date: new Date(2013, 0, 1),
 	lead,
 	body
 }, {
-	title: 'Post 4',
+	title: 'Philosophy + tools',
+	date: new Date(2013, 0, 1),
+	lead,
+	body
+}, {
+	title: 'Events',
+	date: new Date(2013, 0, 1),
+	lead,
+	body
+}, {
+	title: 'Pricing',
+	date: new Date(2013, 0, 1),
+	lead,
+	body
+}, {
+	title: 'Come on board',
 	date: new Date(2012, 0, 1),
 	lead,
 	body

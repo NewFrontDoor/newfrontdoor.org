@@ -84,20 +84,11 @@ body {
 		lost-utility: clearfix;
 		lost-center: 980px flex;
 }
-.footer-list {
-  lost-column: 2/11;
-}
-
-.footer-logo {
-  lost-column: 3/11;
-//  background-image: url("../elements/v100it.png");
-  background-size: contain;
-}
 
 main {
 		lost-column: 1/1;
 		@media (min-width: $screen-md-min) {
-				lost-column: 2/3;
+				lost-column: 3/3;
 		}
 }
 article {
@@ -106,18 +97,63 @@ article {
 		}
 }
 
-.main-menu ul {
-  float: left;
-  width: 100%;
-  list-style-type: none;
+.logo {
+  background-image: url("../elements/v100it.png");
+  background-repeat: no-repeat;
+  position:absolute;
+  top: 0;
+  right: 0;
+  height: 127.5px;
+  width: 180px;
+  background-size: contain;
 }
 
-.main-menu-item li {
+.main-menu {
   lost-utility: clearfix;
-  lost-column: 1/7;
-  border: 1px solid black;
-  float: inherit;
+  //lost-column:1/1;
+  lost-center: 100%;
+}
+
+.main-menu ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-menu li {
+  float: left;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.main-menu-item a {
+  display: inline-block;
+  width: 140px;
+  text-align: center;
+}
+
+.search-box a {
+  display: inline-block;
+  width: 80px;
+  height: inherit;
+  text-align: center;
+}
+
+.tagline {
+  height: 600px;
+  background-image: url("../elements/splash-image.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position-y: -200px;
+}
+
+.tagline h1 {
+  text-align: center;
+  font-family: $font-family-serif;
+  //display: inline-block;
+  position: relative;
+  top: 18%;
+  left: 0px;
 }
 
 footer {
@@ -135,6 +171,45 @@ footer {
 .footer-wrap li {
   list-style: none;
   margin-left: -40px;
+}
+
+.social {
+margin: 0;
+padding: 0;
+}
+
+.social ul {
+  list-style-type: none;
+}
+
+.social li {
+//    display: inline;
+}
+
+
+.footer-list-left {
+  lost-column: 2/11;
+  text-align: right;
+}
+.footer-list-right {
+  lost-column: 2/11;
+}
+.footer-logo {
+  lost-column: 3/11;
+  background-image: url("../elements/v100it.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.footer-wrap h3 {
+  padding-bottom: 3px;
+  border-bottom: 1px solid $primary-heading;
+}
+
+.footer-wrap ul {
+  margin-top: -5px;
 }
 
 h1,

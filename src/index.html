@@ -7,40 +7,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Document</title>
   <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 
 <body ng-controller="appController as app">
   <header>
-<!--    <svg width="100%" viewBox="0 0 6 1">
-      <rect width="1" height="1" x="0" fill="#E63224" />
-      <rect width="1" height="1" x="1" fill="#B7CBE6" />
-      <rect width="1" height="1" x="2" fill="#040608" />
-      <rect width="1" height="1" x="3" fill="#F18032" />
-      <rect width="1" height="1" x="4" fill="#FCF5ED" />
-      <rect width="1" height="1" x="5" fill="#FFFFFF" />
-      <text x="1" y="0.75" font-family="Quicksand" font-size="0.5" fill="black">Vision 100 IT</text>
-    </svg> -->
-    <h1 hidden>Vision 100 IT</h1>
+    <div class="logo"><a href="#"></a></div>
     <div class="main-menu">
       <ul>
-        <li class="main-menu-item text-uppercase">
-          Who are Vision 100 IT?
+        <li class="search-box text-uppercase">
+          <h3><a href="#"><i class="fa fa-search fa-lg"></i><div hidden>Search</div></a></h3>
         </li>
         <li class="main-menu-item text-uppercase">
-          How we can help you
+          <h3><a href="#">How we can help you</a></h3>
         </li>
         <li class="main-menu-item text-uppercase">
-          Philosophy + Tools
+          <h3><a href="#">Who are Vision 100 IT?</a></h3>
         </li>
         <li class="main-menu-item text-uppercase">
-          Events
+          <h3><a href="#">Philosophy + Tools</a></h3>
         </li>
         <li class="main-menu-item text-uppercase">
-          Pricing
+          <h3><a href="#">Events</a></h3>
+        </li>
+        <li class="main-menu-item text-uppercase">
+          <h3><a href="#">Pricing</a></h3>
+        </li>
+        <li class="main-menu-item text-uppercase">
+          <h3><a href="#">Come on board</a></h3>
         </li>
       </ul>
     </div>
   </header>
+  <div class="tagline">
+    <h1>Can you really do Church IT effectively?</h1>
+    <h1>Anything is possible.</h1>
+    <h1>Come on, we'll show you.</h1>
+  </div>
   <div class="site-wrapper">
     <main role=”main”>
       <div>
@@ -83,9 +86,9 @@
   </div>
   <footer>
     <div class="footer-wrap">
-      <div class="footer-list">
+      <div class="footer-list-left">
         <header class="text-lowercase">
-          <h3>V100IT</h3>
+          <h3>v100it</h3>
         </header>
         <ul>
           <li>
@@ -103,12 +106,9 @@
           <li>
             Showcase
           </li>
-          <li>
-            Blog
-          </li>
         </ul>
       </div>
-      <div class="footer-list">
+      <div class="footer-list-left">
         <header class="text-lowercase">
           <h3>About Us</h3>
         </header>
@@ -133,7 +133,7 @@
       <div class="footer-logo">
         <h3 hidden>Logo</h3>
       </div>
-      <div class="footer-list">
+      <div class="footer-list-right">
         <header class="text-lowercase">
           <h3>Support</h3>
         </header>
@@ -155,7 +155,7 @@
           </li>
         </ul>
       </div>
-      <div class="footer-list">
+      <div class="footer-list-right">
         <header class="text-lowercase">
           <h3>Connect</h3>
         </header>
@@ -169,12 +169,17 @@
           <li>
             Blog
           </li>
-          <li>
-            Facebook
-          </li>
-          <li>
-            Twitter
-          </li>
+          <ul class="social">
+            <li>
+              <i class="fa fa-facebook-square fa-lg"></i>
+            </li>
+            <li>
+            <i class="fa fa-twitter-square fa-lg"></i>
+            </li>
+            <li>
+            <i class="fa fa-vimeo fa-lg"></i>
+            </li>
+          </ul>
         </ul>
       </div>
     </div>
