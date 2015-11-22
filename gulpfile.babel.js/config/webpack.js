@@ -3,7 +3,7 @@ import _ from 'lodash';
 import autoprefixer from 'autoprefixer';
 import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+import {StaticSiteGeneratorPlugin} from '../lib';
 import lost from 'lost';
 import path from 'path';
 import pxtorem from 'postcss-pxtorem';
@@ -32,19 +32,19 @@ function getCommonConfig() {
 	return {
 		context: path.resolve(paths.bundle.src),
 		entry: {
-			lib: ['angular'],
-			index: ['./js/index.js'],
-			styles: ['./css/main']
+			main: ['./js/index.jsx']
 		},
 		output: {
-			path: path.resolve(paths.bundle.dest)
+			filename: 'index.js',
+			path: path.resolve(paths.bundle.dest),
+			libraryTarget: 'umd'
 		},
 		stats: {
 			colors: true,
 			reasons: true
 		},
 		resolve: {
-			extensions: ['', '.js', '.scss']
+			extensions: ['', '.js', '.jsx', '.scss']
 		},
 		postcss: getPostCss()
 	};
@@ -54,15 +54,13 @@ function getDevConfig() {
 	return {
 		debug: true,
 		devtool: 'eval',
-		output: {
-			filename: '[name].js'
-		},
 		module: {
 			loaders: [
 				getJavaScriptLoader(),
 				getStyleLoader(),
 				getHtmlLoader(),
-				getAssetLoader()
+				getAssetLoader(),
+				getJSXLoader()
 			]
 		},
 		plugins: _.union(getCommonPlugins(), [
@@ -75,7 +73,8 @@ function getDevConfig() {
 			}),
 			new ExtractTextPlugin('[name].css', {
 				allChunks: true
-			})
+			}),
+			new StaticSiteGeneratorPlugin()
 		])
 	};
 }
@@ -84,15 +83,13 @@ function getProdConfig() {
 	return {
 		debug: true,
 		devtool: 'source-map',
-		output: {
-			filename: '[name].min.js'
-		},
 		module: {
 			loaders: [
 				getJavaScriptLoader(),
 				getStyleLoader(),
 				getHtmlLoader(),
-				getAssetLoader()
+				getAssetLoader(),
+				getJSXLoader()
 			]
 		},
 		plugins: _.union(getCommonPlugins(), [
@@ -100,12 +97,10 @@ function getProdConfig() {
 			new webpack.optimize.UglifyJsPlugin(),
 			new webpack.optimize.OccurenceOrderPlugin(),
 			new webpack.optimize.AggressiveMergingPlugin(),
-			new HtmlWebpackPlugin({
-				inject: true
-			}),
 			new ExtractTextPlugin('[name].min.css', {
 				allChunks: true
-			})
+			}),
+			new StaticSiteGeneratorPlugin()
 		])
 	};
 }
@@ -118,17 +113,27 @@ function getJavaScriptLoader() {
 	};
 }
 
+function getJSXLoader() {
+	return {
+		test: /\.jsx$/,
+		loaders: ['babel'],
+		exclude: /node_modules/
+	};
+}
+
 function getHtmlLoader() {
 	return {
 		test: /\.html$/,
-		loader: 'html?attrs=link:href'
+		loader: 'html?attrs=link:href',
+		exclude: /node_modules/
 	};
 }
 
 function getStyleLoader() {
 	return {
 		test: /\.scss$/,
-		loader: ExtractTextPlugin.extract('style', ['css', 'postcss', 'sass'].join('!'))
+		loader: ExtractTextPlugin.extract('style', ['css', 'postcss', 'sass'].join('!')),
+		exclude: /node_modules/
 	};
 }
 
@@ -154,7 +159,6 @@ function getPostCss() {
 
 function getCommonPlugins() {
 	return _.filter([
-		new webpack.optimize.CommonsChunkPlugin('commons.chunk.js'),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
 			'VERSION': JSON.stringify(packageJson.version)

@@ -24,8 +24,6 @@ export default done => {
 	if (process.env.NODE_ENV === 'production') {
 		webpack(config, result(done));
 	} else {
-		new WebpackDevServer(webpack(config), {
-			contentBase: 'src'
-		}).listen(3100, 'localhost', listen);
+		new WebpackDevServer(webpack(config), {}).listen(3100, 'localhost', listen);
 	}
 };
