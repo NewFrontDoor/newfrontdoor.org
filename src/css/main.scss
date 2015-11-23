@@ -97,6 +97,13 @@ article {
 		}
 }
 
+.nav-bar {
+  background-color: $primary-highlight;
+  //height: 127.5px;
+  //margin-bottom: 100px;
+  lost-utility: clearfix;
+}
+
 .logo {
   background-image: url("../elements/v100it.png");
   background-repeat: no-repeat;
@@ -104,38 +111,37 @@ article {
   top: 0;
   right: 0;
   height: 127.5px;
-  width: 180px;
+  lost-column: 3/16;
+  //width: 180px;
   background-size: contain;
 }
 
 .main-menu {
-  lost-utility: clearfix;
-  //lost-column:1/1;
-  lost-center: 100%;
+  lost-column:13/16;
 }
 
 .main-menu ul {
   list-style-type: none;
-  margin: 0;
+  margin-left: 20px;
   padding: 0;
+  lost-utility: clearfix;
 }
 
-.main-menu li {
+.main-menu-item {
   float: left;
-  padding: 20px;
+  lost-column: 2/13;
 //  border: 1px solid black;
 }
 
 .main-menu-item a {
   display: inline-block;
-  width: 140px;
+  //width: 140px;
   text-align: center;
 }
 
-.search-box a {
+.search-box {
   display: inline-block;
-  width: 80px;
-  height: inherit;
+  lost-column: 1/13;
   text-align: center;
 }
 
@@ -151,9 +157,10 @@ article {
   text-align: center;
   font-family: $font-family-serif;
   //display: inline-block;
-  position: relative;
-  top: 18%;
-  left: 0px;
+  width: 40%;
+  height: 30%;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, .8);
 }
 
 footer {

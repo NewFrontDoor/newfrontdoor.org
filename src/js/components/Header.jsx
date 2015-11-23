@@ -4,7 +4,7 @@ import {MainMenu} from './MainMenu';
 export class Header extends React.Component {
 	render() {
 		return (
-			<header>
+			<header className="nav-bar">
 		    <div className="logo"><a href="#"></a></div>
 				<MainMenu></MainMenu>
 		  </header>

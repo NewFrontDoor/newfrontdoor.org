@@ -12,7 +12,7 @@ export class Root extends React.Component {
 								<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"></link>
 						</head>
 						<body>
-<Header></Header>
+								<Header></Header>
 								{this.props.children}
 								<Footer></Footer>
 								<script src="http://localhost:3000/webpack-dev-server.js"></script>
