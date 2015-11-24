@@ -8,7 +8,6 @@ $font-size-base: 22px !default;
 $line-height-base: 1.5 !default;
 
 //Colours
-
 $primary-red: #C13936;
 $brand-primary: $primary-red !default;
 
@@ -72,13 +71,22 @@ $headings-color: $primary-heading !default;
 @import "~bootstrap-sass/assets/stylesheets/bootstrap/utilities";
 @import "~bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
 
+// Our Stuff
+@import "./footer";
+
 @lost gutter 60px;
+
+html {
+  position: relative;
+  min-height: 100%;
+}
 
 body {
   // lost-utility: edit;
 	// background-image: url(http://basehold.it/i/30);
   font: #{$font-size-base}/#{$line-height-base} $font-family-base;
 }
+
 .site-wrapper {
 		padding: 15px;
 		lost-utility: clearfix;
@@ -164,23 +172,6 @@ article {
   background-color: rgba(255, 255, 255, .8);
 }
 
-footer {
-  padding: 15px;
-  lost-utility: clearfix;
-  background-color: #040608;
-  color: #fff;
-}
-
-.footer-wrap {
-  lost-utility: clearfix;
-  lost-center: 980px flex;
-}
-
-.footer-wrap li {
-  list-style: none;
-  margin-left: -40px;
-}
-
 .social {
 margin: 0;
 padding: 0;
@@ -200,28 +191,6 @@ padding: 0;
 
 .align-right {
   text-align: right;
-}
-
-.footer-list {
-  lost-column: 2/11;
-}
-
-.footer-logo {
-  lost-column: 3/11;
-  background-image: url("../elements/v100it.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position-x: center;
-  background-position-y: 5px;
-}
-
-.footer-list h3 {
-  padding-bottom: 3px;
-  border-bottom: 1px solid $primary-heading;
-}
-
-.footer-wrap ul {
-  margin-top: -5px;
 }
 
 h1,

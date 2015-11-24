@@ -1,0 +1,49 @@
+// Sticky footer
+$footer-height: 300px;
+
+body {
+  margin-bottom: $footer-height;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: $footer-height;
+	padding: 15px;
+	lost-utility: clearfix;
+	background-color: #040608;
+	color: #fff;
+}
+
+.footer-wrap {
+  lost-utility: clearfix;
+  lost-center: 980px flex;
+}
+
+.footer-wrap li {
+  list-style: none;
+  margin-left: -40px;
+}
+
+.footer-list {
+  lost-column: 2/11;
+}
+
+.footer-logo {
+  lost-column: 3/11;
+  background-image: url("../elements/v100it.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.footer-list h3 {
+  padding-bottom: 3px;
+  border-bottom: 1px solid $primary-heading;
+}
+
+.footer-wrap ul {
+  margin-top: -5px;
+}
