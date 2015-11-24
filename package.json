@@ -13,20 +13,22 @@
     "url": "https://github.com/BarryThePenguin/gulp-tasks.git"
   },
   "author": "Jonathan Haines",
-  "contributors": [{
-    "name": "Jonathan Haines"
-  }, {
-    "name": "Alan Reader"
-  }],
+  "contributors": [
+    {
+      "name": "Jonathan Haines"
+    },
+    {
+      "name": "Alan Reader"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
     "node-sass": "^3.4.2",
     "xo": "^0.11.2"
   },
   "devDependencies": {
-    "angular": "^1.5.0-beta.2",
-    "autoprefixer": "^6.1.0",
-    "babel-core": "^6.1.21",
+    "autoprefixer": "^6.1.1",
+    "babel-core": "^6.2.1",
     "babel-loader": "^6.2.0",
     "babel-polyfill": "^6.1.19",
     "babel-preset-es2015": "^6.1.18",
@@ -38,7 +40,7 @@
     "del": "^2.1.0",
     "eval": "^0.1.1",
     "extract-text-webpack-plugin": "^0.9.1",
-    "file-loader": "^0.8.4",
+    "file-loader": "^0.8.5",
     "gulp": "^3.9.0",
     "gulp-filter": "^3.0.1",
     "gulp-load-plugins": "^1.1.0",
@@ -46,8 +48,8 @@
     "gulp-plumber": "^1.0.1",
     "gulp-util": "^3.0.7",
     "history": "^1.13.1",
-    "html-loader": "^0.3.0",
-    "html-webpack-plugin": "^1.6.2",
+    "html-loader": "^0.4.0",
+    "html-webpack-plugin": "^1.7.0",
     "indexhtml-webpack-plugin": "^0.1.9",
     "lodash": "^3.9.3",
     "lost": "^6.6.2",
@@ -61,10 +63,10 @@
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-router": "^1.0.0",
-    "sass-loader": "^3.1.1",
+    "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
-    "url-loader": "^0.5.6",
-    "webpack": "^1.12.6",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.9",
     "webpack-dev-server": "^1.12.1",
     "webpack-notifier": "^1.2.1",
     "xo-loader": "^0.5.0"
