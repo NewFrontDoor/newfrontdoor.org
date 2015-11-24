@@ -98,7 +98,7 @@ article {
 }
 
 .nav-bar {
-  background-color: $primary-highlight;
+  //background-color: $primary-highlight;
   //height: 127.5px;
   //margin-bottom: 100px;
   lost-utility: clearfix;
@@ -107,7 +107,7 @@ article {
 .logo {
   background-image: url("../elements/v100it.png");
   background-repeat: no-repeat;
-  position:absolute;
+  position: absolute;
   top: 0;
   right: 0;
   height: 127.5px;
@@ -122,26 +122,27 @@ article {
 
 .main-menu ul {
   list-style-type: none;
-  margin-left: 20px;
+  margin-left: 5px;
   padding: 0;
   lost-utility: clearfix;
 }
 
 .main-menu-item {
   float: left;
-  lost-column: 2/13;
-//  border: 1px solid black;
+  lost-column: 2/13 0 5px;
+  //border: 1px solid black;
+  text-align: center;
 }
 
 .main-menu-item a {
   display: inline-block;
   //width: 140px;
-  text-align: center;
 }
 
 .search-box {
   display: inline-block;
-  lost-column: 1/13;
+  //border: 1px solid black;
+  lost-column: 1/13 0 5px;
   text-align: center;
 }
 
