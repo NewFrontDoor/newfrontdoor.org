@@ -10,6 +10,7 @@ import {featuredSecond} from './components/featuredSecond';
 import {featuredThird} from './components/featuredThird';
 import {featuredFourth} from './components/featuredFourth';
 import {featuredFifth} from './components/featuredFifth';
+import {featuredSixth} from './components/featuredSixth';
 import {Blog} from './components/Blog';
 import ReactDOMServer from 'react-dom/server';
 
@@ -21,6 +22,7 @@ export default locals => Promise.resolve({
 			<featuredThird></featuredThird>
 			<featuredFourth></featuredFourth>
 			<featuredFifth></featuredFifth>
+			<featuredSixth></featuredSixth>
 			<Main></Main>
 		</Root>),
 	'/blog': ReactDOMServer.renderToString(<Root locals={locals}>
