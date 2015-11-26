@@ -87,6 +87,16 @@ body {
   font: #{$font-size-base}/#{$line-height-base} $font-family-base;
 }
 
+.featured-light {
+  background-color: $primary-heading;
+  height: 400px;
+}
+
+.featured-dark {
+  background-color: $footer-bg;
+  height: 400px;
+}
+
 .site-wrapper {
 		padding: 15px;
 		lost-utility: clearfix;
