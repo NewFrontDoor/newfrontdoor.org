@@ -1,4 +1,5 @@
 import React from 'react';
+import {Support} from './Support';
 
 export class Main extends React.Component {
 
@@ -42,6 +43,7 @@ export class Main extends React.Component {
 							<h4>Panel Two</h4>
 						</header>
 						<section>
+							<Support></Support>
 						</section>
 					</aside>
 				</main>

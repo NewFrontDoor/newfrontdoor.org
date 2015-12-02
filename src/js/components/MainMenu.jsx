@@ -28,7 +28,7 @@ export class MainMenu extends React.Component {
 					</li>
 
 						{this.state.links.map((link, key) =>
-							<li className="main-menu-item text-uppercase"><h3 key={key}><a href="#">{link.text}</a></h3></li>
+							<li key={key} className="main-menu-item text-uppercase"><h3><a href="#">{link.text}</a></h3></li>
 						)}
 
 					</ul>
