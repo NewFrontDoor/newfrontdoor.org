@@ -5,13 +5,9 @@ import React from 'react';
 import {Root} from './components/Root';
 import {Main} from './components/Main';
 import {Hero} from './components/Hero';
-import {featuredFirst} from './components/featuredFirst';
-import {featuredSecond} from './components/featuredSecond';
-import {featuredThird} from './components/featuredThird';
-import {featuredFourth} from './components/featuredFourth';
-import {featuredFifth} from './components/featuredFifth';
-import {featuredSixth} from './components/featuredSixth';
 import {Blog} from './components/Blog';
+import {Support} from './components/Support';
+import {Feature} from './components/Feature';
 import ReactDOMServer from 'react-dom/server';
 
 export default locals => Promise.resolve({
@@ -21,5 +17,8 @@ export default locals => Promise.resolve({
 		</Root>),
 	'/blog': ReactDOMServer.renderToString(<Root locals={locals}>
 			<Blog></Blog>
+		</Root>),
+	'/support': ReactDOMServer.renderToString(<Root locals={locals}>
+			<Support></Support>
 		</Root>)
 });

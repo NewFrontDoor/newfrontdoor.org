@@ -87,7 +87,7 @@ body {
   // lost-utility: edit;
 	// background-image: url(http://basehold.it/i/30);
   font: #{$font-size-base}/#{$line-height-base} $font-family-base;
-  filter: grayscale(1);
+  //filter: grayscale(1);
 }
 
 em {
@@ -95,19 +95,26 @@ em {
 }
 
 .featured-light {
-  background-color: $primary-heading;
-  height: 400px;
+  background-color: #FCF5ED;
+  color: black;
+  min-height: 400px;
 }
 
 .featured-dark {
-  background-color: $footer-bg;
-  height: 400px;
+  background-color: #040608;
+  color: $primary-highlight;
+  min-height: 400px;
 }
 
 .site-wrapper {
 		padding: 15px;
-		lost-utility: clearfix;
+		//lost-utility: clearfix;
 		lost-center: 980px flex;
+}
+
+
+.text-block {
+  lost-column: 1/3;
 }
 
 main {
@@ -125,7 +132,7 @@ article {
 .nav-bar {
   //background-color: $primary-highlight;
   //height: 127.5px;
-  //margin-bottom: 100px;
+  margin-bottom: 10px;
   lost-utility: clearfix;
 }
 
@@ -171,25 +178,43 @@ article {
   text-align: center;
 }
 
-.tagline {
+.search-menu {
+  lost-utility: clearfix;
+  height: 250px;
+  width: 250px;
+  background-color: #FCF5ED;
+  position: fixed;
+  top: 150px;
+  left: 0;
+  z-index: 1;
+  text-align: left;
+}
+
+.hero-background {
   height: 600px;
   background-image: url("../elements/splash-image.jpeg");
   filter: grayscale(1);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position-y: -200px;
+  lost-utility: clearfix;
+  //lost-column: 1/1;
+  //lost-align: center;
+
+}
+
+div.tagline {
+  //background-color: rgba(255, 255, 255, .8);
+  margin-top: 100px;
+  margin-left: 30%;
+  margin-right: 30%;
+  border: 2px solid white;
 }
 
 .tagline h1 {
-  text-align: center;
   font-family: $font-family-serif;
-  //display: inline-block;
-  width: 40%;
-  height: 30%;
-  //border: 1px solid white;
-  background-color: rgba(255, 255, 255, .8);
-  position: relative;
-  margin: auto;
+  margin: 5%;
+  text-align: center;
 }
 
 .social {
