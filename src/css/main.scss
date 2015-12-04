@@ -231,11 +231,12 @@ div.tagline {
   margin-top: 100px;
   margin-left: 30%;
   margin-right: 30%;
-  border: 2px solid white;
+  border: 2px solid $primary-highlight;
 }
 
 .tagline h1 {
   font-family: $font-family-serif;
+  color: $main-text;
   margin: 5%;
   text-align: center;
 }
