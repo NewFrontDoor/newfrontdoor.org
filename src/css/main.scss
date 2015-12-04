@@ -92,6 +92,7 @@ body {
 
 em {
   style: italics;
+  color: $primary-highlight;
 }
 
 .featured-light {
@@ -176,18 +177,30 @@ article {
   //border: 1px solid black;
   lost-column: 1/13 0 5px;
   text-align: center;
+  overflow: hidden;
 }
 
-.search-menu {
+.search-field {
   lost-utility: clearfix;
-  height: 250px;
-  width: 250px;
-  background-color: #FCF5ED;
-  position: fixed;
-  top: 150px;
-  left: 0;
-  z-index: 1;
+  height: 50px;
+  width: 300px;
+  background-color: white;
+  position: relative;
   text-align: left;
+}
+
+.search-field input#search {
+  width: 300px;
+  height: 50px;
+  background: #2b303b;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #63717f;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 
 .hero-background {
@@ -197,10 +210,15 @@ article {
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: -200px;
+  //lost-column: 1/1;
+  //lost-align: center;
+}
+
+div.hero-content {
+  height: 600px;
   lost-utility: clearfix;
   //lost-column: 1/1;
   //lost-align: center;
-
 }
 
 div.tagline {
