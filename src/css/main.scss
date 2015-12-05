@@ -79,6 +79,7 @@ $headings-color: $primary-heading !default;
 @lost gutter 60px;
 
 html {
+  font-size: 16px;
   position: relative;
   min-height: 100%;
 }
@@ -111,8 +112,11 @@ em {
 		padding: 15px;
 		//lost-utility: clearfix;
 		lost-center: 980px flex;
-}
 
+    section {
+      list-column: 1/1;
+    }
+}
 
 .text-block {
   lost-column: 1/3;

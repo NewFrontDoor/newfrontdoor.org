@@ -12,8 +12,8 @@ import ReactDOMServer from 'react-dom/server';
 
 export default locals => Promise.resolve({
 	'/': ReactDOMServer.renderToString(<Root locals={locals}>
-			<Hero></Hero>
-			<Main></Main>
+			<Hero locals={locals}></Hero>
+			<Main locals={locals}></Main>
 		</Root>),
 	'/blog': ReactDOMServer.renderToString(<Root locals={locals}>
 			<Blog></Blog>

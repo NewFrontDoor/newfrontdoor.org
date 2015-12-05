@@ -13,6 +13,7 @@ import WebpackNotifierPlugin from 'webpack-notifier';
 
 import paths from './paths';
 import packageJson from '../../package.json';
+import content from '../../content';
 
 export default getConfig();
 
@@ -60,7 +61,8 @@ function getDevConfig() {
 				getStyleLoader(),
 				getHtmlLoader(),
 				getAssetLoader(),
-				getJSXLoader()
+				getJSXLoader(),
+				getMarkdownLoader()
 			]
 		},
 		plugins: _.union(getCommonPlugins(), [
@@ -74,7 +76,7 @@ function getDevConfig() {
 			new ExtractTextPlugin('[name].css', {
 				allChunks: true
 			}),
-			new StaticSiteGeneratorPlugin()
+			new StaticSiteGeneratorPlugin('main', {content})
 		])
 	};
 }
@@ -89,7 +91,8 @@ function getProdConfig() {
 				getStyleLoader(),
 				getHtmlLoader(),
 				getAssetLoader(),
-				getJSXLoader()
+				getJSXLoader(),
+				getMarkdownLoader()
 			]
 		},
 		plugins: _.union(getCommonPlugins(), [
@@ -100,7 +103,7 @@ function getProdConfig() {
 			new ExtractTextPlugin('[name].min.css', {
 				allChunks: true
 			}),
-			new StaticSiteGeneratorPlugin()
+			new StaticSiteGeneratorPlugin('main', {content})
 		])
 	};
 }
@@ -125,6 +128,14 @@ function getHtmlLoader() {
 	return {
 		test: /\.html$/,
 		loader: 'html?attrs=link:href',
+		exclude: /node_modules/
+	};
+}
+
+function getMarkdownLoader() {
+	return {
+		test: /\.md$/,
+		loaders: ['html', 'markdown'],
 		exclude: /node_modules/
 	};
 }

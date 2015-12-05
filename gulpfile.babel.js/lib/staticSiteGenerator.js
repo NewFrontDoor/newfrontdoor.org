@@ -2,8 +2,9 @@ import evaluate from 'eval';
 import path from 'path';
 
 export default class StaticSiteGeneratorWebpackPlugin {
-	constructor(renderChunkName) {
+	constructor(renderChunkName, locals) {
 		this.renderChunkName = renderChunkName || 'main';
+		this.locals = locals;
 	}
 
 	apply(compiler) {
@@ -35,10 +36,10 @@ export default class StaticSiteGeneratorWebpackPlugin {
 					render = render.default;
 				}
 
-				const locals = {
+				const locals = Object.assign({}, {
 					assets,
 					webpackStats
-				};
+				}, this.locals);
 
 				render(locals)
 					.then(pages => {
