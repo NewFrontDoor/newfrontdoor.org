@@ -8,13 +8,50 @@ export class Documentation extends React.Component {
 					<h1>Documentation</h1>
 
 					<div className="search-wrapper">
-						<p>Testing somethign here</p>
+						<p>Vision 100 IT are constantly updating and improving our documentation, and adding new documentation as new tools and procedures arise.</p>
 						<form>
 							<div className="form-group">
-								<input type="search" name="search" value="Search all documents on V100IT..." className="form-control" />
-								<button type="submit" className="btn btn-primary pull-right">Search</button>
+								<input type="search" className="form-control input-lg" placeholder="Search all documents on V100IT..." />
 							</div>
 						</form>
+					</div>
+					<div className="list-wrapper">
+						<div className="type-1">
+							<h3>Creating accounts</h3>
+							<ul>
+								<li>Item 1</li>
+								<li>Item 2</li>
+								<li>Item 3</li>
+								<li>Item 4</li>
+							</ul>
+						</div>
+						<div className="type-2">
+							<h3>Getting set up</h3>
+							<ul>
+								<li>Item 1</li>
+								<li>Item 2</li>
+								<li>Item 3</li>
+								<li>Item 4</li>
+							</ul>
+						</div>
+						<div className="type-3">
+							<h3>Task guides</h3>
+							<ul>
+								<li>Item 1</li>
+								<li>Item 2</li>
+								<li>Item 3</li>
+								<li>Item 4</li>
+							</ul>
+						</div>
+						<div className="type-4">
+							<h3>Team leading</h3>
+							<ul>
+								<li>Item 1</li>
+								<li>Item 2</li>
+								<li>Item 3</li>
+								<li>Item 4</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 		);

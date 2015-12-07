@@ -13,16 +13,18 @@
 .logo {
   background-image: url("../elements/v100it.png");
   background-repeat: no-repeat;
-  position: absolute;
-  top: -22px;
-  right: -22px;
+  //position: absolute;
+  //top: -22px;
+  //right: -22px;
   height: 175px;
   lost-column: 3/16;
-  background-size: cover;
+  lost-move: 13/16;
+  background-size: contain;
 }
 
 .main-menu {
   lost-column:13/16;
+  lost-move: -3/16;
 }
 
 .main-menu ul {
