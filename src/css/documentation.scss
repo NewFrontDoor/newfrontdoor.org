@@ -5,8 +5,5 @@
 
 .form-group {
   lost-column: 1/3;
-}
-
-.form-control:first-child{
-  lost-offset: 1/3;
+  lost-offset: -1/3;
 }
