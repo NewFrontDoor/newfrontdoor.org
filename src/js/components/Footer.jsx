@@ -17,8 +17,6 @@ export class Footer extends React.Component {
 					text: 'Pricing'
 				}, {
 					text: 'Showcase'
-				}, {
-					text: 'Blog'
 				}]
 			}, {
 				heading: 'About Us',

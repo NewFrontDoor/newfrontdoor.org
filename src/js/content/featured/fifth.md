@@ -1,13 +1,19 @@
-## Pricing
+<header hidden>
+<h2>Pricing</h2>
+</header>
 
-So this is the link that we know you clicked on first, so we'll get it out of the way so you can head back to the top and read about what we're offering before you write us off.
+<div class="text-slab"><em><q>We know the best things in life are free</q></em></div>
 
-For our core features and services, we won't invoice you at all. Not in a "free tier" and send you five emails a day about how awesome "premium" is sort of way, but in a "We're really eager for you to get the most out of your IT for the good of the Gospel" sort of way. How does that sound?
+We know you clicked 'Pricing' first, so we'll get it out of the way. We've given you a 'top' link to help you find your way back to the start.
 
-The rationale is this:
+For our core features and services, we won't invoice you at all. Not in a <q>free tier</q> and send you five emails a day about how awesome <q>premium</q> is sort of way, but in a <q>We're really eager for you to get the most out of your IT for the good of the Gospel</q> sort of way. How does that sound?
 
-> We want to focus on providing you a methodology that will keep you engaged with your IT, rather than a service that you can set and forget. If giving our services to you for free achieves that goal, we'll do it.
+This is our rationale:
 
-We do have some *services* that will carry a cost, but we think that if you've got the right people on the ground, and spend some time in our documentation, you'll be fine without it.
+> We want to focus on providing you *services and methodology* that will keep you *engaged with your IT*, rather than a product that is merely set and forget. If giving our services to you for free achieves that goal, we'll do it.
 
-One of our *products* does carry a cost as well, and that is our registration payment system. The majority of that is managing paypal's costs so we've kept it as minimal as possible
+We do have some services that will carry a cost, but we think that if you've got the right people on the ground, and spend some time in our documentation, you'll be fine without it.
+
+One of our products does carry a cost as well, and that is our registration payment system. The majority of that is managing paypal's costs so we've kept it as minimal as possible
+
+<a href="#top">Top</a>

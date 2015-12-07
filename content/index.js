@@ -22,5 +22,20 @@ export default {
 			text: 'Come on board',
 			target: '#join'
 		}]
+	},
+	clientmenu: {
+		links: [{
+			text: 'News',
+			target: '#'
+		}, {
+			text: 'Documentation',
+			target: '#'
+		}, {
+			text: 'V100IT',
+			target: '#'
+		}, {
+			text: 'Support',
+			target: '#'
+		}]
 	}
 };

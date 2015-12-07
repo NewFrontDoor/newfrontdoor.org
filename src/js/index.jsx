@@ -7,6 +7,7 @@ import {Main} from './components/Main';
 import {Hero} from './components/Hero';
 import {Blog} from './components/Blog';
 import {Support} from './components/Support';
+import {Documentation} from './components/Documentation';
 import {Feature} from './components/Feature';
 import ReactDOMServer from 'react-dom/server';
 
@@ -20,5 +21,8 @@ export default locals => Promise.resolve({
 		</Root>),
 	'/support': ReactDOMServer.renderToString(<Root locals={locals}>
 			<Support></Support>
+		</Root>),
+	'/documentation': ReactDOMServer.renderToString(<Root locals={locals}>
+			<Documentation></Documentation>
 		</Root>)
 });

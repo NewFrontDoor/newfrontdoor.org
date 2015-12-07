@@ -1,4 +1,8 @@
-## Who are Vision 100 IT?
+<header hidden>
+<h2>Who are Vision 100 IT?</h2>
+</header>
+
+<div class="text-slab"><em>The right people at the right time</em></div>
 
 Bold claims for a group that hasn’t introduced ourselves yet! Who are Vision 100 IT then?
 
