@@ -1,3 +1,4 @@
+//@import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,300italic,300);
 @import url(https://fonts.googleapis.com/css?family=Quicksand:400);
 @import url(https://fonts.googleapis.com/css?family=EB+Garamond);
 
@@ -75,6 +76,9 @@ $headings-color: $primary-heading !default;
 
 // Our Stuff
 @import "./footer";
+@import "./header";
+@import "./hero";
+@import "./documentation";
 
 @lost gutter 60px;
 
@@ -85,10 +89,7 @@ html {
 }
 
 body {
-  // lost-utility: edit;
-	// background-image: url(http://basehold.it/i/30);
   font: #{$font-size-base}/#{$line-height-base} $font-family-base;
-  //filter: grayscale(1);
 }
 
 em {
@@ -105,7 +106,6 @@ blockquote {
 
 .text-slab {
   font-size: 50px;
-  display: block;
   text-align: center;
 }
 
@@ -125,7 +125,7 @@ blockquote {
 .site-wrapper {
 		padding: 15px;
     padding-top: 107px;
-		//lost-utility: clearfix;
+		lost-utility: clearfix;
 		lost-center: 980px flex;
 
     section {
@@ -154,172 +154,22 @@ article {
 		}
 }
 
-//Navigation bar styles
-
-.nav-bar {
-  height: 92px;
-  position: fixed;
-  width: 100%;
-//  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, .6), rgba(255, 255, 255, 0));
-  z-index: 5;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-}
-
-/*.nav-bar {
-  //background-color: $primary-highlight;
-  //height: 92px;
-  //position: fixed;
-  //width: 100%;
-  margin-bottom: 10px;
-  lost-utility: clearfix;
-  //background-color: white;
-}*/
-
-.logo {
-  background-image: url("../elements/v100it.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  top: -22px;
-  right: -22px;
-  height: 127.5px;
-  lost-column: 3/16;
-  //width: 180px;
-  background-size: cover;
-}
-
-.main-menu {
-  lost-column:13/16;
-}
-
-.main-menu ul {
-  list-style-type: none;
-  margin-left: 5px;
-  padding: 0;
-  lost-utility: clearfix;
-}
-
-.main-menu-item {
-  float: left;
-  lost-column: 2/13 0 5px;
-  //border: 1px solid black;
-  text-align: center;
-}
-
-.main-menu-item a {
-  display: inline-block;
-  //width: 140px;
-}
-
-.search-box {
-  display: inline-block;
-  //border: 1px solid black;
-  lost-column: 1/13 0 5px;
-  text-align: center;
-  overflow: hidden;
-}
-
-.search-field {
-  lost-utility: clearfix;
-  height: 50px;
-  width: 300px;
-  background-color: white;
-  position: relative;
-  text-align: left;
-}
-
-.search-field input#search {
-  width: 300px;
-  height: 50px;
-  background: #2b303b;
-  border: none;
-  font-size: 10pt;
-  float: left;
-  color: #63717f;
-  padding-left: 45px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-
-//hero content styles
-
-.hero-container {
-  //padding-top: 92px;
-}
-
-.hero-background {
-  height: 692px;
-  background-image: url("../elements/splash-image.jpeg");
-  background-attachment: local;
-  filter: grayscale(1) brightness(.8);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position-y: -108px;
-  position: relative;
-  z-index: -1;
-  //lost-column: 1/1;
-  //lost-align: center;
-}
-
-.hero-content {
-  position: relative;
-  height: 600px;
-  margin-top: -600px;
-  z-index: 1;
-  lost-utility: clearfix;
-  //lost-column: 1/1;
-  //lost-align: center;
-}
-
-div.tagline {
-  //background-color: rgba(255, 255, 255, .8);
-  margin-top: 100px;
-  margin-left: 30%;
-  margin-right: 30%;
-  border-color: $primary-highlight;
-  border-image: url('../elements/outline1.png') 7% 30 15 stretch;
-//  border: 2px solid $primary-highlight;
-}
-
-.tagline h1 {
-  font-family: $font-family-serif;
-  color: $main-text;
-  margin: 5%;
-  text-align: center;
-}
-
 //featured 1 styles
 
 .church-leader, .church-volunteer, .IT-guru {
-  filter: blur(1px);
+  filter: opacity(0);
   float: left;
-  display: block;
   transition: filter .5s;
 }
 
 .church-leader:hover, .church-volunteer:hover, .IT-guru:hover {
-  filter: blur(0);
+  filter: opacity(1);
   float: left;
-  display: block;
 }
 
 .example {
   height: 485px;
   padding: 10px;
-}
-
-.social {
-margin: 0;
-padding: 0;
-}
-
-.social ul {
-  list-style-type: none;
-}
-
-.social li {
-//    display: inline;
 }
 
 .align-left {

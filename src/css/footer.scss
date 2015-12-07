@@ -1,4 +1,4 @@
-$footer-height: 300px;
+$footer-height: 210px;
 
 body {
   @media (min-width: $screen-sm-min) {
@@ -13,8 +13,8 @@ footer {
 	background-color: #040608;
 	color: #fff;
 
-  // Sticky footer
-  @media (min-width: $screen-sm-min) {
+// Sticky footer
+@media (min-width: $screen-sm-min) {
     bottom: 0;
     position: absolute;
     height: $footer-height;
@@ -58,4 +58,18 @@ footer {
 
 .footer-wrap ul {
   margin-top: -5px;
+}
+
+
+.social {
+margin: 0;
+padding: 0;
+}
+
+.social ul {
+  list-style-type: none;
+}
+
+.social li {
+//    display: inline;
 }

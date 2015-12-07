@@ -23,7 +23,8 @@
     <section>
       <ul>
         <li>Flexible mailing lists for all your church-wide and team communications</li>
-        <li></li>
+        <li>Podcasting</li>
+        <li>Newsletter distribution</li>
       </ul>
     </section>
   </div>
@@ -41,7 +42,7 @@
     </section>
   </div>
   <div class="text-block-4">
-    <header><h3>Syndication tools</h3></header>
+    <header><h3>Consulation + advice</h3></header>
     <section>
       <ul>
         <li>Podcasting</li>

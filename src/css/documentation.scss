@@ -1,0 +1,12 @@
+.search-wrapper {
+ width: 100%;
+  lost-utility: clearfix;
+}
+
+.form-group {
+  lost-column: 1/3;
+}
+
+.form-control:first-child{
+  lost-offset: 1/3;
+}

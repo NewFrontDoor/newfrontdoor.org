@@ -59,7 +59,7 @@ export class Footer extends React.Component {
 				}, {
 					text: 'Blog'
 				}, {
-					text: 'Facebook'
+					text: '<i class="fa fa-facebook-official"></i>' + 'Facebook'
 				}, {
 					text: 'Twitter'
 				}]

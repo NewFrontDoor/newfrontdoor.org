@@ -10,7 +10,7 @@ For our core features and services, we won't invoice you at all. Not in a <q>fre
 
 This is our rationale:
 
-> We want to focus on providing you *services and methodology* that will keep you *engaged with your IT*, rather than a product that is merely set and forget. If giving our services to you for free achieves that goal, we'll do it.
+<p class="lead"> We want to focus on providing you <em>services and methodology</em> that will keep you <em>engaged with your IT</em>, rather than a product that is merely set and forget. If giving our services to you for free achieves that goal, we'll do it.</p>
 
 We do have some services that will carry a cost, but we think that if you've got the right people on the ground, and spend some time in our documentation, you'll be fine without it.
 
