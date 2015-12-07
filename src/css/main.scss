@@ -2,56 +2,8 @@
 @import url(https://fonts.googleapis.com/css?family=Quicksand:400);
 @import url(https://fonts.googleapis.com/css?family=EB+Garamond);
 
-$font-family-sans-serif: "Quicksand", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif: 'EB Garamond', Georgia, "Times New Roman", Times, serif !default;
-
-$font-size-base: 14px !default;
-$line-height-base: 1.5 !default;
-
-//Colours
-$primary-red: #C13936;
-$brand-primary: $primary-red !default;
-
-$primary-heading: #E63224;
-$logo-colour: $primary-heading !default;
-
-$secondary-heading: #F18032;
-
-$main-text: #040608;
-$footer-bg: $main-text !default;
-
-$primary-highlight: #B7CBE6;
-$secondary-highlight: #FCF5ED;
-
-$body-bg: #fff !default;
-$footer-text: $body-bg !default;
-
-$link-color: $brand-primary !default;
-$link-hover-color: darken($link-color, 15%) !default;
-$link-hover-decoration: underline !default;
-
-// Typography
-$font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
-$font-family-base: $font-family-serif !default;
-$font-size-base: 20px !default;
-$scale-up: 1.333 !default;
-$scale-down: 0.75 !default;
-$font-size-large: ceil(($font-size-base * $scale-up)) !default;
-$font-size-small: ceil(($font-size-base * $scale-down)) !default;
-
-// Headings
-$font-size-h4: $font-size-base !default;
-$font-size-h3: $font-size-h4 * $scale-up !default;
-$font-size-h2: $font-size-h3 * $scale-up !default;
-$font-size-h1: $font-size-h2 * $scale-up !default;
-$font-size-h5: $font-size-h4 * $scale-down !default;
-$font-size-h6: $font-size-h5 * $scale-down !default;
-
-// Line Height
-$line-height-base: 1.5 !default;
-$headings-font-family: $font-family-sans-serif !default;
-$headings-font-weight: 500 !default;
-$headings-color: $primary-heading !default;
+// Our Variables
+@import "./variables";
 
 // Core variables and mixins
 @import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
@@ -61,18 +13,14 @@ $headings-color: $primary-heading !default;
 @import "~normalize.css/normalize.css";
 
 // Core CSS
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/type";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/forms";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/buttons";
-
-// Components
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/thumbnails";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/responsive-embed";
+@import "./scaffolding";
+@import "./type";
+@import "./forms";
+@import "./buttons";
 
 // Utility classes
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/utilities";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
+@import "./utilities";
+@import "./responsive-utilities";
 
 // Our Stuff
 @import "./footer";
@@ -81,16 +29,6 @@ $headings-color: $primary-heading !default;
 @import "./documentation";
 
 @lost gutter 60px;
-
-html {
-  font-size: 16px;
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  font: #{$font-size-base}/#{$line-height-base} $font-family-base;
-}
 
 em {
   style: italics;
@@ -117,7 +55,7 @@ blockquote {
 }
 
 .featured-dark {
-  background-color: #040608;
+  background-color: $text-color;
   color: $primary-highlight;
   min-height: 800px;
 }
@@ -178,27 +116,4 @@ article {
 
 .align-right {
   text-align: right;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-		font-family: $headings-font-family;
-		font-weight: $headings-font-weight;
-		color: $headings-color;
-		small,
-		.small {
-				font-weight: normal;
-				line-height: 1;
-				color: $headings-small-color;
-		}
 }

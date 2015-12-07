@@ -1,0 +1,11 @@
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
+
+html {
+  font-size: 16px;
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  font: #{$font-size-base}/#{$line-height-base} $font-family-base;
+}
