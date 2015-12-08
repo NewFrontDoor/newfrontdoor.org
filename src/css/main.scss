@@ -88,6 +88,9 @@ article {
   color: $primary-highlight;
   min-height: 100vh;
 }
+.featured-sixth {
+    min-height: 100vh;
+}
 
 //featured 1 styles
 .example {
@@ -112,6 +115,7 @@ article {
   }
 }
 
+//featured 6 styles
 .close-background {
   height: 100vh;
   background-image: url("../elements/close-image.jpeg");
@@ -122,6 +126,17 @@ article {
   background-position-x: center;
   position: relative;
   z-index: -1;
+  //lost-column: 1/1;
+  //lost-align: center;
+}
+.close-content {
+  position: relative;
+  //height: 600px;
+  //margin-top: -600px;
+  height: 80vh;
+  margin-top: -90vh;
+  z-index: 1;
+  lost-utility: clearfix;
   //lost-column: 1/1;
   //lost-align: center;
 }

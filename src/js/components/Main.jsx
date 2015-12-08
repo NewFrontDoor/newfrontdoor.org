@@ -58,7 +58,7 @@ export class Main extends React.Component {
 				</div>
 				<div className="featured-sixth hero-container" id="join">
 					<div className="close-background"></div>
-						<div className="site-wrapper">
+					<div className="close-content">
 							<section dangerouslySetInnerHTML={this.rawSixth()}></section>
 						</div>
 					</div>
