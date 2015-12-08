@@ -56,13 +56,12 @@ export class Main extends React.Component {
 						<section dangerouslySetInnerHTML={this.rawFifth()}></section>
 					</div>
 				</div>
-				<div className="featured-sixth featured-dark" id="join">
-					<div className="site-wrapper">
+				<div className="featured-sixth hero-container" id="join">
+					<div className="close-background"></div>
 						<div className="site-wrapper">
 							<section dangerouslySetInnerHTML={this.rawSixth()}></section>
 						</div>
 					</div>
-				</div>
 			</main>
 		);
 	}

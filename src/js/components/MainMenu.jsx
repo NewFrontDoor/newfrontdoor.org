@@ -10,20 +10,16 @@ export class MainMenu extends React.Component {
 			<div className="main-menu">
 				<ul>
 					<li className="search-box text-uppercase">
-						<h3>
 							<a href="#">
+								<h3>
 								<span className="fa fa-search fa-lg"></span>
-								<div hidden>Search</div>
+								</h3>
 							</a>
-						</h3>
 					</li>
 
 					{this.state.links.map((link, key) => <li key={key} className="main-menu-item text-uppercase">
-						<h3>
-							<a href={link.target}>{link.text}</a>
-						</h3>
+							<a href={link.target}><h3>{link.text}</h3></a>
 					</li>)}
-
 				</ul>
 			</div>
 		);

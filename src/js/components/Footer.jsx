@@ -6,7 +6,7 @@ export class Footer extends React.Component {
 		this.state = {
 			lists: [{
 				heading: 'V100IT',
-				className: 'footer-list align-right',
+				className: 'footer-list text-right',
 				links: [{
 					text: 'Philosophy'
 				}, {
@@ -20,7 +20,7 @@ export class Footer extends React.Component {
 				}]
 			}, {
 				heading: 'About Us',
-				className: 'footer-list align-right',
+				className: 'footer-list text-right',
 				links: [{
 					text: 'Mission + Vision'
 				}, {
@@ -37,7 +37,7 @@ export class Footer extends React.Component {
 				links: []
 			}, {
 				heading: 'Support',
-				className: 'footer-list align-left',
+				className: 'footer-list text-left',
 				links: [{
 					text: 'Support Request'
 				}, {
@@ -51,7 +51,7 @@ export class Footer extends React.Component {
 				}]
 			}, {
 				heading: 'Connect',
-				className: 'footer-list align-left',
+				className: 'footer-list text-left',
 				links: [{
 					text: 'Podcast'
 				}, {
@@ -59,7 +59,7 @@ export class Footer extends React.Component {
 				}, {
 					text: 'Blog'
 				}, {
-					text: '<i class="fa fa-facebook-official"></i>' + 'Facebook'
+					text: 'Facebook'
 				}, {
 					text: 'Twitter'
 				}]

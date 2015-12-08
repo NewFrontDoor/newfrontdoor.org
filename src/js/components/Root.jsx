@@ -23,9 +23,7 @@ export class Root extends React.Component {
 				</head>
 				<body>
 					<Header>
-						<div className="logo">
-							<a href="#"></a>
-						</div>
+						<div className="logo"></div>
 						<MainMenu {...this.state.mainmenu}></MainMenu>
 					</Header>
 					{this.props.children}

@@ -1,6 +1,7 @@
 <header hidden><h2>Tools + Philosophy</h2></header>
 <section>
-  <div class="text-slab"><em>The core product of Vision 100 IT isn't just a website or a CMS - it's a philosophy</em></div>
+  <div class="text-slab"><em>It's not about the destination, it's the journey</em></div>
+  <em>The core product of Vision 100 IT isn't just a website or a CMS - it's a philosophy</em>
   <p>There are plenty of products and approaches out there that you can use to get your church on the Web - our main aim is to help you to do this as best as possible.</p>
   <p>As a result we've collated a suite of supported tools that best help us to help you do IT well.</p>
   <p>We're eager to ensure that you're equipped to make the most of these tools as the web evolves over time. We won't just build you a website, but we'll coach you through keeping it up to date, provide ongoing support as your team members change, and walk you through new features and updates as they occur.</p>

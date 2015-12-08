@@ -22,6 +22,9 @@ export default locals => Promise.resolve({
 	'/support': ReactDOMServer.renderToString(<Root locals={locals}>
 			<Support></Support>
 		</Root>),
+	'/feature': ReactDOMServer.renderToString(<Root locals={locals}>
+			<Feature></Feature>
+		</Root>),
 	'/documentation': ReactDOMServer.renderToString(<Root locals={locals}>
 			<Documentation></Documentation>
 		</Root>)

@@ -5,7 +5,7 @@ export class Header extends React.Component {
 		return (
 			<header className="nav-bar">
 				{this.props.children}
-				</header>
+			</header>
 		);
 	}
 }

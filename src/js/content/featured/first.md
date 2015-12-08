@@ -3,7 +3,7 @@
 </header>
 
 <div class="text-slab">
-  <em><q>Sometimes all you need is a bit of direction. <br /> We want to meet you where you are and get you up and running as best as possible</q></em>
+  <em><q>Sometimes all you need is a bit of direction. <br /> We will meet you where you are and get you up and running with what you need.</q></em>
 </div>
 <br />
 <h4>Vision 100 IT exists to help churches - particularly church IT volunteers and ministry staff - to use IT better.</h4>
