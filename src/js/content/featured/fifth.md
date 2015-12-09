@@ -2,7 +2,7 @@
 <h2>Pricing</h2>
 </header>
 
-<div class="text-slab"><em><q>We know the best things in life are free</q></em></div>
+<div class="text-slab"><em><q>The best things in life are free</q></em></div>
 
 We know you clicked 'Pricing' first, so we'll get it out of the way. We've given you a 'top' link to help you find your way back to the start.
 

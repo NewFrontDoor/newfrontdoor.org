@@ -1,6 +1,10 @@
 //Navigation bar styles
 
 .nav-bar {
+  display: none;
+  @media (min-width: $screen-md-min) {
+    display: block;
+  }
   height: 92px;
   position: fixed;
   lost-utility: clearfix;

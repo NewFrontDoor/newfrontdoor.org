@@ -4,3 +4,6 @@ Scrolling needs:
 - as the page scrolls to the same point as the .nav-bar requirement, the value of .hero-backgound 'background-position-y' needs to change from -108 to -158
 
 Should implement a smooth-scrolling option (https://github.com/cferdinandi/smooth-scroll?) for navigation to anchors on the page due to the single-page nature of the site.
+
+
+resume - why v10it is the best. why theyre g;ad thet stynbrd on us.

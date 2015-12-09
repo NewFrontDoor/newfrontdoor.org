@@ -32,15 +32,22 @@
 }
 
 div.tagline {
+  margin: 0 5% 0 5%;
+  @media (min-width: $screen-md-min) {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
   //background-color: rgba(255, 255, 255, .8);
-  margin-left: 25%;
-  margin-right: 25%;
   border-color: $primary-highlight;
   border-image: url('../elements/outline1.png') 7% 30 15 stretch;
 //  border: 2px solid $primary-highlight;
 }
 
 .tagline h1 {
+  font-size: 100%;
+  @media (min-width: $screen-md-min) {
+    font-size: 200%;
+  }
   font-family: $font-family-serif;
   color: $text-color;
   margin: 5%;

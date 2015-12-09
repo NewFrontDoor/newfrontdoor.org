@@ -60,8 +60,8 @@ export class Main extends React.Component {
 					<div className="close-background"></div>
 					<div className="close-content">
 							<section dangerouslySetInnerHTML={this.rawSixth()}></section>
-						</div>
 					</div>
+				</div>
 			</main>
 		);
 	}

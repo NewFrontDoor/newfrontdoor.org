@@ -1,16 +1,15 @@
 <div class="text-slab"><em>Begin the journey</em></div>
-
 <form>
   <div class="form-group has-success has-feedback">
-    <label for="name">Name</label>
-    <input type="text" id="name" class="form-control" placeholder="First and last name" />
+    <label hidden for="name">Name</label>
+    <input type="text" id="name" class="form-control input-lg" placeholder="Name" />
   </div>
   <div class="form-group has-success has-feedback">
-    <label for="organisation">Organisation</label>
-    <input type="text" name="organisation" class="form-control" placeholder="Your church or ministry organisation" />
+    <label hidden for="organisation">Organisation</label>
+    <input type="text" name="organisation" class="form-control input-lg" placeholder="Organisation" />
   </div>
   <div class="form-group has-success has-feedback">
-    <label for="email">Contact email</label>
-    <input type="email" name="email" class="form-control" placeholder="Contact email" />
+    <label hidden for="email">Contact email</label>
+    <input type="email" name="email" class="form-control input-lg" placeholder="Contact email" />
   </div>
 </form>
