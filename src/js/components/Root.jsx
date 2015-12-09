@@ -24,6 +24,7 @@ export class Root extends React.Component {
 				<body>
 					<Header>
 						<div className="logo"></div>
+						<div className="mobile-menu"><h3><a href="#">Client</a><a href="#">Visitor</a></h3></div>
 						<MainMenu {...this.state.mainmenu}></MainMenu>
 					</Header>
 					{this.props.children}
