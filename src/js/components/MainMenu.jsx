@@ -10,7 +10,7 @@ export class MainMenu extends React.Component {
 			<div className="main-menu">
 				<ul>
 					<li className="search-box text-uppercase">
-							<a href="#">
+							<a href="#" onclick="toggle_visibility('search-overlay');">
 								<h3>
 								<span className="fa fa-search fa-lg"></span>
 								</h3>

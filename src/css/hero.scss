@@ -21,26 +21,27 @@
 
 .hero-content {
   position: relative;
-  //height: 600px;
-  //margin-top: -600px;
   height: 80vh;
   margin-top: -80vh;
+  lost-column: 3/4;
+  lost-move: 1/8;
   z-index: 1;
   lost-utility: clearfix;
-  //lost-column: 1/1;
-  //lost-align: center;
+  @media (min-width: $screen-md-min) {
+    lost-column: 1/2;
+    lost-move: 1/4;
+  }
 }
 
 div.tagline {
-  margin: 0 5% 0 5%;
-  @media (min-width: $screen-md-min) {
-    margin-left: 25%;
-    margin-right: 25%;
-  }
-  //background-color: rgba(255, 255, 255, .8);
   border-color: $primary-highlight;
   border-image: url('../elements/outline1.png') 7% 30 15 stretch;
-//  border: 2px solid $primary-highlight;
+  //border: 2px solid $primary-highlight;
+  @media (min-width: $screen-md-min) {
+    //margin-left: 25%;
+    //margin-right: 25%;
+  }
+  //background-color: rgba(255, 255, 255, .8);
 }
 
 .tagline h1 {

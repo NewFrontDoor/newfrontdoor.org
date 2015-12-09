@@ -62,6 +62,22 @@ export class Main extends React.Component {
 							<section dangerouslySetInnerHTML={this.rawSixth()}></section>
 					</div>
 				</div>
+				<div className="search-overlay">
+					<form>
+						<div className="form-group">
+							<input type="search" name="search" className="form-control input-lg search" placeholder="Search..." />
+							<input type="submit" name="submit" className="form-control input-lg submit" value="O" />
+						</div>
+					</form>
+					<div>
+						<ul>
+							<li><a href="/blog">News</a></li>
+							<li><a href="/support">Support</a></li>
+							<li><a href="/documentation">Documentation</a></li>
+							<li><a href="">Contact</a></li>
+						</ul>
+					</div>
+				</div>
 			</main>
 		);
 	}

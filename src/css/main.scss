@@ -139,3 +139,43 @@ article {
     lost-move: 1/4;
   }
 }
+
+.search-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($text-color, .8);
+  z-index: 6;
+  color: white;
+  ul {
+    list-style: none;
+  }
+  form {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: auto;
+    width: 100%;
+    lost-column: 1/1;
+  }
+  .form-group {
+    lost-utility: clearfix;
+  }
+  .search {
+    lost-column: 3/4 0 0;
+  }
+  .submit {
+    lost-column: 1/4 0 0;
+  }
+  @media (min-width: $screen-md-min) {
+    //display: none;
+    width: 400px;
+    height: 100vh;
+    form {
+      width: 100%;
+    }
+  }
+}
