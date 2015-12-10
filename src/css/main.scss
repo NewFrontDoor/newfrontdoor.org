@@ -141,7 +141,7 @@ article {
 }
 
 .search-overlay {
-  display: none;
+//  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -150,8 +150,20 @@ article {
   background-color: rgba($text-color, .8);
   z-index: 6;
   color: white;
-  ul {
-    list-style: none;
+  lost-column: clearfix;
+  .search-title {
+    lost-utility: clearfix;
+    h2 {
+        lost-column: 3/4 0 0px;
+        margin-left: 20px;
+    }
+    div {
+      lost-column: 1/4;
+      margin: 24px 20px 0 0;
+      i {
+        text-align: center;
+      }
+    }
   }
   form {
     padding-top: 20px;
@@ -159,16 +171,42 @@ article {
     padding-right: 10px;
     height: auto;
     width: 100%;
-    lost-column: 1/1;
-  }
-  .form-group {
-    lost-utility: clearfix;
   }
   .search {
     lost-column: 3/4 0 0;
   }
   .submit {
     lost-column: 1/4 0 0;
+    i {
+      width: 100%;
+      line-height: 1;
+      text-align: center;
+    }
+  }
+  .search-results {
+    lost-utility: clearfix;
+    margin-top: 60px;
+    height: 200px;
+    border-width: 1px 0 1px 0;
+    border-style: solid;
+    border-color: rgba(lighten($text-color, 70%), .2);
+    background-color: rgba(lighten($text-color, 70%), .1);
+    h3 {
+        lost-column: 3/4 0 0px;
+        margin-left: 20px;
+    }
+    div {
+      lost-column: 1/4;
+      margin: 24px 20px 0 0;
+      i {
+        text-align: center;
+      }
+    }
+  }
+  ul {
+    list-style: none;
+    lost-column: 1/1;
+    font-family: $font-family-sans-serif;
   }
   @media (min-width: $screen-md-min) {
     //display: none;
