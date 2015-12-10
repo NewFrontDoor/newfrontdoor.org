@@ -74,7 +74,7 @@ export class Footer extends React.Component {
 						<header className="text-lowercase">
 							<h3>{list.heading}</h3>
 						</header>
-						<ul>
+						<ul className="list-unstyled">
 							{list.links.map((link, key) => <li key={key}>{link.text}</li>)}
 						</ul>
 					</div>

@@ -59,27 +59,27 @@ export class Main extends React.Component {
 				<div className="featured-sixth hero-container" id="join">
 					<div className="close-background"></div>
 					<div className="close-content">
-							<section dangerouslySetInnerHTML={this.rawSixth()}></section>
+						<section dangerouslySetInnerHTML={this.rawSixth()}></section>
 					</div>
 				</div>
 				<div className="search-overlay text-uppercase">
 					<div className="search-title"><h2>Search menu</h2><div><i className="fa fa-times-circle fa-2x"></i></div></div>
 					<form>
 						<div className="form-group">
-							<input type="search" name="search" className="form-control input-lg search" placeholder="Search..." />
-							<span className="form-control input-lg submit"><i className="fa fa-search fa-lg"></i></span>
+							<input type="search" name="search" className="form-control search" placeholder="Search..." />
+							<span className="form-control submit"><i className="fa fa-search fa-lg"></i></span>
 						</div>
 					</form>
 					<div className="search-results">
 						<div className="results-title"><h3>Results</h3><div><i className="fa fa-times-circle fa-lg"></i></div></div>
-						<div className="results-content"><ul><li>result 1</li><li>result 2</li><li>result 3</li></ul></div>
+						<div className="results-content"><ul className="list-unstyled"><li>result 1</li><li>result 2</li><li>result 3</li></ul></div>
 						<div className="search-nav small">
-							<p className="text-left">previous</p><p className="text-right">more</p>
-							<p>all results</p>
+
+							<p>more</p>
 						</div>
-				</div>
-					<div>
-						<ul>
+					</div>
+					<div className="search-menu">
+						<ul className="list-unstyled">
 							<li><a href="/blog">News</a></li>
 							<li><a href="/support">Support</a></li>
 							<li><a href="/documentation">Documentation</a></li>

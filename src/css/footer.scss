@@ -28,11 +28,6 @@ footer {
   lost-center: 980px flex;
 }
 
-.footer-wrap li {
-  list-style: none;
-  margin-left: -40px;
-}
-
 .footer-list {
   lost-column: 1;
   @media (min-width: $screen-sm-min) {

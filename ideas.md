@@ -5,5 +5,6 @@ Scrolling needs:
 
 Should implement a smooth-scrolling option (https://github.com/cferdinandi/smooth-scroll?) for navigation to anchors on the page due to the single-page nature of the site.
 
+When :focus is lost from the search sidebar, the sidebar should close.
 
 resume - why v10it is the best. why theyre g;ad thet stynbrd on us.
