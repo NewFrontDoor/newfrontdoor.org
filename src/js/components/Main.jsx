@@ -71,8 +71,13 @@ export class Main extends React.Component {
 						</div>
 					</form>
 					<div className="search-results">
-						<h3>Results</h3><div><i className="fa fa-times-circle fa-lg"></i></div>
-					</div>
+						<div className="results-title"><h3>Results</h3><div><i className="fa fa-times-circle fa-lg"></i></div></div>
+						<div className="results-content"><ul><li>result 1</li><li>result 2</li><li>result 3</li></ul></div>
+						<div className="search-nav small">
+							<p className="text-left">previous</p><p className="text-right">more</p>
+							<p>all results</p>
+						</div>
+				</div>
 					<div>
 						<ul>
 							<li><a href="/blog">News</a></li>
