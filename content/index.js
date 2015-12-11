@@ -28,13 +28,19 @@ export default {
 			text: 'News',
 			target: '#'
 		}, {
-			text: 'Documentation',
+			text: 'Help + How-to',
 			target: '#'
 		}, {
-			text: 'V100IT',
+			text: 'Feature Request',
 			target: '#'
 		}, {
-			text: 'Support',
+			text: 'Support Request',
+			target: '#'
+		}, {
+			text: 'System Status',
+			target: '#'
+		}, {
+			text: 'About Us',
 			target: '#'
 		}]
 	}

@@ -9,6 +9,7 @@ import {Blog} from './components/Blog';
 import {Support} from './components/Support';
 import {Documentation} from './components/Documentation';
 import {Feature} from './components/Feature';
+import {Template} from './components/Template';
 import ReactDOMServer from 'react-dom/server';
 
 export default locals => Promise.resolve({
@@ -24,6 +25,9 @@ export default locals => Promise.resolve({
 		</Root>),
 	'/feature': ReactDOMServer.renderToString(<Root locals={locals}>
 			<Feature></Feature>
+		</Root>),
+	'/template': ReactDOMServer.renderToString(<Root locals={locals}>
+			<Template></Template>
 		</Root>),
 	'/documentation': ReactDOMServer.renderToString(<Root locals={locals}>
 			<Documentation></Documentation>

@@ -5,7 +5,7 @@ export class Documentation extends React.Component {
 	render() {
 		return (
 				<div className="site-wrapper">
-					<h1>Documentation</h1>
+					<h1>Help + how to</h1>
 
 					<div className="search-wrapper">
 						<p>Vision 100 IT are constantly updating and improving our documentation, and adding new documentation as new tools and procedures arise.</p>
@@ -46,7 +46,7 @@ export class Documentation extends React.Component {
 						<div className="type-4">
 							<h3>Team leading</h3>
 							<ul>
-								<li>Item 1</li>
+								<li><a href="/template">Sparkleshare</a></li>
 								<li>Item 2</li>
 								<li>Item 3</li>
 								<li>Item 4</li>

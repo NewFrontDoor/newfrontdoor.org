@@ -8,6 +8,7 @@
   @media (min-width: $screen-md-min) {
     height: 92px;
     position: fixed;
+    text-align: left;
     lost-utility: clearfix;
     //  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, .6), rgba(255, 255, 255, 0));
     z-index: 5;
@@ -26,7 +27,8 @@
   //background-size: 40%;
   @media (min-width: $screen-md-min) {
     background-size: 80%;
-    background-position: top left;
+    background-position: top;
+    padding-left: 10%;
     margin-top: 24px;
     height: 150px;
     lost-column: 3/16;
@@ -74,7 +76,7 @@
 
 .main-menu-item {
   float: left;
-  lost-column: 2/13 0 5px;
+  lost-column: 2/13;
   //text-align: center;
 }
 
@@ -85,8 +87,8 @@
 
 .search-box {
   display: inline-block;
-  lost-column: 1/13 0 5px;
-  text-align: center;
+  lost-column: 1/13;
+  text-align: left;
   position: relative;
   top: 5px;
   overflow: hidden;
