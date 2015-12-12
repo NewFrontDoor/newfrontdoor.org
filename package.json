@@ -54,6 +54,8 @@
     "indexhtml-webpack-plugin": "^0.1.9",
     "lodash": "^3.9.3",
     "lost": "^6.6.2",
+    "markdown-it-loader": "^0.2.0",
+    "markdown-it-named-headers": "0.0.4",
     "markdown-loader": "^0.1.7",
     "ngrok": "^0.2.2",
     "node-libs-browser": "^0.5.2",

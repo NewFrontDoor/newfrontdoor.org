@@ -10,6 +10,8 @@ import pxtorem from 'postcss-pxtorem';
 import vr from 'postcss-vertical-rhythm';
 import webpack from 'webpack';
 import WebpackNotifierPlugin from 'webpack-notifier';
+import toc from '../lib/markdownItTableOfContents';
+import headers from 'markdown-it-named-headers';
 
 import paths from './paths';
 import packageJson from '../../package.json';
@@ -39,23 +41,24 @@ function getConfig() {
 
 function getCommonConfig() {
 	return {
-		context: path.resolve(paths.bundle.src),
-		entry: {
+		'context': path.resolve(paths.bundle.src),
+		'entry': {
 			main: ['./js/index.jsx']
 		},
-		output: {
+		'output': {
 			filename: 'index.js',
 			path: path.resolve(paths.bundle.dest),
 			libraryTarget: 'umd'
 		},
-		stats: {
+		'stats': {
 			colors: true,
 			reasons: true
 		},
-		resolve: {
+		'resolve': {
 			extensions: ['', '.js', '.jsx', '.scss']
 		},
-		postcss: getPostCss()
+		'postcss': getPostCss(),
+		'markdown-it': getMarkDownIt()
 	};
 }
 
@@ -143,7 +146,7 @@ function getHtmlLoader() {
 function getMarkdownLoader() {
 	return {
 		test: /\.md$/,
-		loaders: ['html', 'markdown'],
+		loaders: ['html', 'markdown-it'],
 		exclude: /node_modules/
 	};
 }
@@ -174,6 +177,15 @@ function getPostCss() {
 		}),
 		pxtorem()
 	];
+}
+
+function getMarkDownIt() {
+	return {
+		preset: 'default',
+		html: true,
+		typographer: true,
+		use: [toc, headers]
+	};
 }
 
 function getCommonPlugins() {

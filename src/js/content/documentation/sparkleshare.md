@@ -1,3 +1,5 @@
+[[toc]]
+
 Guidelines for Local Church SparkleShare Admins
 =============
 
