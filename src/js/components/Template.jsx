@@ -11,7 +11,7 @@ export class Template extends React.Component {
 		return (
 			<div className="documentation-wrapper">
 				<div className="documentation-sidebar">
-					<h1>Index</h1>
+					<h2>Index</h2>
 					<ol>
 						<li>Understanding sparkleshare</li>
 						<ol>

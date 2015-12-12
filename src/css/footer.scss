@@ -8,12 +8,16 @@ body {
 }
 
 footer {
-  width: 100%;
-	padding: 15px;
-	lost-utility: clearfix;
-	background-color: $footer-bg;
-  opacity: .9;
-	color: #fff;
+  display: none;
+  @media (min-width: $screen-sm-min) {
+    display: block;
+    width: 100%;
+  	padding: 15px;
+  	lost-utility: clearfix;
+  	background-color: $footer-bg;
+    opacity: .9;
+  	color: #fff;
+  }
 
 // Sticky footer
 @media (min-width: $screen-sm-min) {
@@ -24,8 +28,8 @@ footer {
 }
 
 .footer-wrap {
-  lost-utility: clearfix;
-  lost-center: 980px;
+    lost-utility: clearfix;
+    lost-center: 980px;
 }
 
 .footer-list {
