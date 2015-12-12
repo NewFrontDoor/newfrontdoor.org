@@ -5,6 +5,8 @@
   position: fixed;
   height: 50px;
   margin-top: 10px;
+  background-color: rgba(255,255,255,0);
+  transition: background-color .5s ease-out;
   @media (min-width: $screen-md-min) {
     height: 120px;
     position: fixed;
@@ -14,6 +16,10 @@
     z-index: 5;
     //backdrop-filter: blur(4px);
     margin-top: 0;
+
+    &.small {
+      background-color: rgba(255,255,255,1);
+    }
   }
 }
 
