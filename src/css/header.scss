@@ -6,7 +6,7 @@
   height: 50px;
   margin-top: 10px;
   @media (min-width: $screen-md-min) {
-    height: 92px;
+    height: 120px;
     position: fixed;
     text-align: left;
     lost-utility: clearfix;
@@ -26,10 +26,10 @@
   background-position: center;
   //background-size: 40%;
   @media (min-width: $screen-md-min) {
-    background-size: 80%;
+    background-size: contain;
     background-position: top;
     margin-top: 12px;
-    height: 150px;
+    height: 100%;
     lost-column: 3/16;
     lost-move: 13/16;
   }
@@ -63,7 +63,7 @@
     display: block;
     lost-column:13/16;
     lost-move: -3/16;
-    height: 92px;
+    height: auto;
     ul {
       list-style-type: none;
       margin-left: 20px;
