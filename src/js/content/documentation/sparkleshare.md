@@ -1,5 +1,3 @@
-[[toc]]
-
 Guidelines for Local Church SparkleShare Admins
 =============
 
@@ -11,11 +9,12 @@ We want local church IT helpers and local church leaders to be confident to:
 - set up their own SparkleShare filing systems;
 - to help new team members get set up with SparkleShare; and
 - adjust permissions for the various SparkleShare Projects.  
-  
 
 ***
+
 Understanding SparkleShare
 ---------------
+
 ### The advantages of SparkleShare
 The great thing about SparkleShare is that it gives your church a one-stop-shop for all your documents. All the people who need access to documents can have access to up-to-date versions. And whenever the make a change, everyone else will get it straight away.
 
