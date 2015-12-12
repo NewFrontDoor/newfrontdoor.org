@@ -89,6 +89,14 @@ overflow: hidden;
   border-right: 3px solid black;
   overflow: scroll;
   height: 100%;
+  ul {
+    list-style: none;
+    text-transform: uppercase;
+    li {
+      list-style: none;
+      text-transform: lowercase;
+    }
+  }
 }
 
 .documentation-content {
