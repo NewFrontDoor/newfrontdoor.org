@@ -1,12 +1,10 @@
 import React from 'react';
 
+import content from '../content';
+
 export class Hero extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {tagline: props.locals.content.hero.tagline};
-	}
 	raw() {
-		return {__html: this.state.tagline};
+		return {__html: content.hero.tagline};
 	}
 	render() {
 		return (

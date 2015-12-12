@@ -3,7 +3,7 @@ import _ from 'lodash';
 import autoprefixer from 'autoprefixer';
 import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import {StaticSiteGeneratorPlugin} from '../lib';
+import StaticSiteGeneratorPlugin from 'static-site-generator-webpack-plugin';
 import lost from 'lost';
 import path from 'path';
 import pxtorem from 'postcss-pxtorem';
@@ -13,7 +13,15 @@ import WebpackNotifierPlugin from 'webpack-notifier';
 
 import paths from './paths';
 import packageJson from '../../package.json';
-import content from '../../content';
+
+const staticPaths = [
+	'/',
+	'/blog/',
+	'/support/',
+	'/feature/',
+	'/template',
+	'/documentation/'
+];
 
 export default getConfig();
 
@@ -76,7 +84,7 @@ function getDevConfig() {
 			new ExtractTextPlugin('[name].css', {
 				allChunks: true
 			}),
-			new StaticSiteGeneratorPlugin('main', {content})
+			new StaticSiteGeneratorPlugin('main', staticPaths, {})
 		])
 	};
 }
@@ -103,7 +111,7 @@ function getProdConfig() {
 			new ExtractTextPlugin('[name].min.css', {
 				allChunks: true
 			}),
-			new StaticSiteGeneratorPlugin('main', {content})
+			new StaticSiteGeneratorPlugin('main', staticPaths, {})
 		])
 	};
 }

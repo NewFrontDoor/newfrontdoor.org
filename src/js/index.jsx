@@ -2,34 +2,45 @@
 import 'babel-polyfill';
 
 import React from 'react';
-import {Root} from './components/Root';
-import {Main} from './components/Main';
-import {Hero} from './components/Hero';
-import {Blog} from './components/Blog';
-import {Support} from './components/Support';
-import {Documentation} from './components/Documentation';
-import {Feature} from './components/Feature';
-import {Template} from './components/Template';
+import ReactDOM from 'react-dom';
 import ReactDOMServer from 'react-dom/server';
+import {createHistory, createMemoryHistory} from 'history';
+import {Router, RoutingContext, match} from 'react-router';
+import {Root} from './components/Root';
+import Routes from './components/Routes';
 
-export default locals => Promise.resolve({
-	'/': ReactDOMServer.renderToString(<Root locals={locals}>
-			<Hero locals={locals}></Hero>
-			<Main locals={locals}></Main>
-		</Root>),
-	'/blog': ReactDOMServer.renderToString(<Root locals={locals}>
-			<Blog></Blog>
-		</Root>),
-	'/support': ReactDOMServer.renderToString(<Root locals={locals}>
-			<Support></Support>
-		</Root>),
-	'/feature': ReactDOMServer.renderToString(<Root locals={locals}>
-			<Feature></Feature>
-		</Root>),
-	'/template': ReactDOMServer.renderToString(<Root locals={locals}>
-			<Template></Template>
-		</Root>),
-	'/documentation': ReactDOMServer.renderToString(<Root locals={locals}>
-			<Documentation></Documentation>
-		</Root>)
-});
+// Client render (optional):
+if (typeof document !== 'undefined') {
+	const history = createHistory();
+	const content = document.getElementById('content');
+
+	ReactDOM.render(<Router history={history}>{Routes}</Router>, content);
+}
+
+export default (locals, callback) => {
+	const history = createMemoryHistory(locals.path);
+	const reactApp = {
+		__html: ReactDOMServer.renderToString(<Router history={history}>{Routes}</Router>)
+	};
+
+	const html = ReactDOMServer.renderToStaticMarkup(<Root reactApp={reactApp}></Root>);
+	callback(null, `<!DOCTYPE html>${html}`);
+};
+// Promise.resolve({
+// 	'/': ReactDOMServer.renderToString(<Root locals={locals}>
+// 			<Hero locals={locals}></Hero>
+// 			<Main locals={locals}></Main>
+// 		</Root>),
+// 	'/blog': ReactDOMServer.renderToString(<Root locals={locals}>
+// 			<Blog></Blog>
+// 		</Root>),
+// 	'/support': ReactDOMServer.renderToString(<Root locals={locals}>
+// 			<Support></Support>
+// 		</Root>),
+// 	'/feature': ReactDOMServer.renderToString(<Root locals={locals}>
+// 			<Feature></Feature>
+// 		</Root>),
+// 	'/documentation': ReactDOMServer.renderToString(<Root locals={locals}>
+// 			<Documentation></Documentation>
+// 		</Root>)
+// });
