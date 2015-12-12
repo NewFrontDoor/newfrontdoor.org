@@ -3,38 +3,47 @@
 .nav-bar {
   width: 100vw;
   position: fixed;
-  height: 50px;
-  margin-top: 10px;
+  height: auto;
+  z-index: 5;
   background-color: rgba(255,255,255,0);
   transition: background-color .5s ease-out;
   @media (min-width: $screen-md-min) {
-    height: 144px;
+    height: auto;
     position: fixed;
     text-align: left;
     lost-utility: clearfix;
     //  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, .6), rgba(255, 255, 255, 0));
-    z-index: 5;
     //backdrop-filter: blur(4px);
-    margin-top: 0;
+    padding-top: 0;
+  }
+}
 
-    &.small {
-      background-color: rgba(255,255,255,1);
+.nav-bar.small {
+  background-color: rgba(255,255,255,1);
+
+  @media (min-width: $screen-md-min) {
+    .logo {
+      transition: all 1s ease-out;
+      lost-column: 2/16;
+      lost-move: 14/16;
+    }
+
+    .main-menu {
+      transition: all 1s ease-out;
+      lost-column:14/16;
+      lost-move: -2/16;
     }
   }
 }
 
 .logo {
-  background-image: url("../elements/v100it2.png");
-  background-repeat: no-repeat;
   height: 11vh;
-  width: 100%;
-  background-size: contain;
-  background-position: center;
-  //background-size: 40%;
+  margin: 0 auto;
+  padding: .5vr 0;
+
   @media (min-width: $screen-md-min) {
-    background-size: contain;
-    padding: 12px 0 12px 0;
-    height: 100%;
+    padding: .5vr 0;
+    height: auto;
     lost-column: 3/16;
     lost-move: 13/16;
   }
@@ -43,19 +52,16 @@
 .mobile-menu {
   display: block;
   width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 4% 0 4%;
+
   a:first-child {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0 4% 0 4%;
-    padding-left-max: 20px;
+    float: left;
   }
   a:last-child {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0 4% 0 4%;
-    padding-right-max: 20px;
+    float: right;
   }
   @media (min-width: $screen-md-min) {
     display: none;
@@ -79,14 +85,7 @@
 }
 
 .main-menu-item {
-  float: left;
   lost-column: 2/13;
-  //text-align: center;
-}
-
-.main-menu-item a {
-  display: inline-block;
-  //width: 140px;
 }
 
 .search-box {

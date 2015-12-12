@@ -5,6 +5,7 @@ import {MainMenu} from './MainMenu';
 import {Footer} from './Footer';
 
 import content from '../content';
+import what from '../../elements/v100it2.png';
 
 export class Site extends React.Component {
 	constructor(props) {
@@ -15,7 +16,7 @@ export class Site extends React.Component {
 		return (
 				<div>
 					<Header>
-						<a href="/"><div className="logo"></div></a>
+						<a href="/"><img className="logo img-responsive" src={what}></img></a>
 						<div className="mobile-menu text-uppercase"><h3><a href="/blog">Client</a><a href="#how">Visitor</a></h3></div>
 						<MainMenu {...this.state.mainmenu}></MainMenu>
 					</Header>
