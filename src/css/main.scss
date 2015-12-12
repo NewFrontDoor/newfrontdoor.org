@@ -87,13 +87,15 @@ overflow: hidden;
   lost-column: 1/4;
   padding-right: 10px;
   border-right: 3px solid black;
-  overflow: auto;
+  overflow: scroll;
+  height: 100%;
 }
 
 .documentation-content {
   lost-column: 3/4;
   lost-utility: clearfix;
   overflow: auto;
+  height: 100%;
 }
 
 //block styles
