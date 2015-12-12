@@ -1,7 +1,7 @@
 Guidelines for Local Church SparkleShare Admins
 =============
 
-<small>Understanding sparkleshare, how to set it up, and how to manage user permissions</small>
+<small>Understanding Sparkleshare, how to set it up, and how to manage user permissions</small>
 ===================================================
 
 ### Summary

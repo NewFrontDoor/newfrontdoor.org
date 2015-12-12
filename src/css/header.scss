@@ -8,7 +8,7 @@
   background-color: rgba(255,255,255,0);
   transition: background-color .5s ease-out;
   @media (min-width: $screen-md-min) {
-    height: 120px;
+    height: 144px;
     position: fixed;
     text-align: left;
     lost-utility: clearfix;
@@ -33,8 +33,7 @@
   //background-size: 40%;
   @media (min-width: $screen-md-min) {
     background-size: contain;
-    background-position: top;
-    margin-top: 12px;
+    padding: 12px 0 12px 0;
     height: 100%;
     lost-column: 3/16;
     lost-move: 13/16;

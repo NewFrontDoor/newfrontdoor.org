@@ -73,7 +73,9 @@ overflow: hidden;
 
 .documentation-wrapper {
 		padding: 15px;
-    padding-top: 107px;
+    padding-top: 120px;
+    height: 100vh;
+    overflow: hidden;
 		lost-center: 1200px;
 		lost-utility: clearfix;
     section {
@@ -85,11 +87,13 @@ overflow: hidden;
   lost-column: 1/4;
   padding-right: 10px;
   border-right: 3px solid black;
+  overflow: auto;
 }
 
 .documentation-content {
   lost-column: 3/4;
   lost-utility: clearfix;
+  overflow: auto;
 }
 
 //block styles
