@@ -8,6 +8,7 @@ import {Support} from './Support';
 import {Feature} from './Feature';
 import {Template} from './Template';
 import {Documentation} from './Documentation';
+import {Status} from './Status';
 
 export default (
 	<Route path="/" component={Site} >
@@ -17,5 +18,6 @@ export default (
 		<Route path="feature" component={Feature} />
 		<Route path="documentation" component={Documentation} />
 		<Route path="template" component={Template} />
+		<Route path="status" component={Status} />
 	</Route>
 );
