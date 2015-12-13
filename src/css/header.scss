@@ -23,15 +23,8 @@
 
   @media (min-width: $screen-md-min) {
     .logo {
-      transition: all 1s ease-out;
-      lost-column: 2/16;
-      lost-move: 14/16;
-    }
-
-    .main-menu {
-      transition: all 1s ease-out;
-      lost-column:14/16;
-      lost-move: -2/16;
+      transition: padding .5s ease-out;
+      padding: .5vr 2vr;
     }
   }
 }
@@ -42,7 +35,7 @@
   padding: .5vr 0;
 
   @media (min-width: $screen-md-min) {
-    padding: .5vr 0;
+    padding: .5vr;
     height: auto;
     lost-column: 3/16;
     lost-move: 13/16;
