@@ -19,13 +19,13 @@ export class Header extends React.Component {
 	}
 
 	handleScroll() {
-		this.setState({pageYOffset: window.pageYOffset});
+		this.setState({pageYOffset: window.pageYOffset, innerHeight: window.innerHeight});
 	}
 
 	render() {
 		const navClass = classNames({
 			'nav-bar': true,
-			'small': this.state.pageYOffset > window.innerHeight
+			'small': this.state.pageYOffset > this.state.innerHeight
 		});
 
 		return (

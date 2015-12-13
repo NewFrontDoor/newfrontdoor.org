@@ -10,7 +10,7 @@ export class MainMenu extends React.Component {
 			<div className="main-menu">
 				<ul>
 					<li className="search-box text-uppercase">
-							<a href="#">
+							<a href="#" onClick={this.props.openSearch}>
 								<h4>
 								<span className="fa fa-search fa-lg"></span>
 								</h4>

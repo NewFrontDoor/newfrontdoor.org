@@ -188,6 +188,11 @@ article {
   z-index: 6;
   color: white;
   lost-utility: clearfix;
+
+  &.visible {
+    display: block;
+  }
+  
   .search-title {
     lost-utility: clearfix;
     h2 {
