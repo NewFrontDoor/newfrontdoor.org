@@ -34,7 +34,7 @@ export class Site extends React.Component {
 		return (
 				<div>
 					<Header>
-						<a href="/"><img className="logo img-responsive" src={logo}></img></a>
+						<a href="/"><h1 className="sr-only">Vision 100 IT</h1><img className="logo img-responsive" src={logo}></img></a>
 						<div className="mobile-menu text-uppercase"><h3><a href="/blog">Client</a><a href="#how">Visitor</a></h3></div>
 						<MainMenu openSearch={this.openSearch} {...this.state.mainmenu}></MainMenu>
 					</Header>
