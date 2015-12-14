@@ -43,5 +43,28 @@ export default {
 			text: 'About Us',
 			target: '#'
 		}]
+	},
+	mobilemenu: {
+		primary: [{
+			text: 'Client',
+			target: '/blog'
+		}, {
+			text: 'Visitor',
+			target: '#how'
+		}],
+		secondary: [{
+			text: 'Search',
+			target: '#'
+		}, {
+			text: 'News',
+			target: '/blog'
+		}],
+		teriary: [{
+			text: 'Search',
+			target: '#'
+		}, {
+			text: 'Contact',
+			target: '#'
+		}]
 	}
 };
