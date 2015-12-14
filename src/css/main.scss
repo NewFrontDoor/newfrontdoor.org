@@ -192,12 +192,12 @@ article {
   &.visible {
     display: block;
   }
-  
+
   .search-title {
     lost-utility: clearfix;
     h2 {
         lost-column: 3/4 0 0px;
-        margin-left: 20px;
+        margin-left: 10px;
     }
     div {
       lost-column: 1/4;
@@ -244,7 +244,7 @@ article {
       lost-column: 1/1;
       h3 {
         lost-column: 5/6 0 0px;
-        margin-left: 20px;
+        margin-left: 10px;
       }
       div {
         lost-column: 1/6;
@@ -266,6 +266,7 @@ article {
   }
   ul {
     margin-top: 10px;
+    margin-left: 10px;
     lost-column: 1/1;
     font-family: $font-family-sans-serif;
   }

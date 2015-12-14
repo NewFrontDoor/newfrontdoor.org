@@ -6,7 +6,8 @@
   height: auto;
   z-index: 5;
   background-color: rgba(255,255,255,0);
-  transition: background-color .5s ease-out;
+  transition: background-color 1s ease-out;
+  transition-delay: 1s;
   @media (min-width: $screen-md-min) {
     height: auto;
     position: fixed;
@@ -79,6 +80,8 @@
 
 .main-menu-item {
   lost-column: 2/13;
+  //height: 55px;
+  //border-bottom: 2px solid $main-text;
 }
 
 .search-box {

@@ -1,17 +1,23 @@
 .instruction {
+  lost-column: 3/3;
+  @media (min-width: $screen-md-min) {
   height: auto;
-  lost-column: 1/3;
-  border: 1px solid black;
+  lost-column: 1/3 0 10px;
+  lost-move: 2/3;
+  //border: 1px solid black;
   background-color: $text-color;
   opacity: .8;
   color: $footer-text;
   padding: 0 10px 0 10px;
+  }
 }
 
 .support-form {
-  lost-column: 2/3;
-  padding-right: 15px;
-  //border: 1px solid black;
+  lost-column: 3/3;
+  @media (min-width: $screen-md-min) {
+  lost-column: 2/3 0 10px;
+  lost-move: -1/3;
+  }
 }
 
 //What I want to implement but can't (requires <div className"instruction"> in Support.jsx to be moved up prior to the <form> tag)

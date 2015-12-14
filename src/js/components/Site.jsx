@@ -59,6 +59,7 @@ export class Site extends React.Component {
 							<ul className="list-unstyled">
 								<li><a href="/blog">News</a></li>
 								<li><a href="/support">Support</a></li>
+								<li><a href="/status">Status</a></li>
 								<li><a href="/documentation">Documentation</a></li>
 								<li><a href="">Contact</a></li>
 							</ul>

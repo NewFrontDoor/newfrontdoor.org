@@ -7,7 +7,21 @@ export class Support extends React.Component {
 			<div className="site-wrapper">
 				<h1>Support form</h1>
 				<div><p>Some issues may be answered by our documentation which you can find here. Please also check our outages page for any issues that may impact your work.</p></div>
-				<form className="support-form">
+				<div className="instruction">
+					<h3>Guidelines</h3>
+					<p>In order to best assist you with any trouble you might be having, please ensure you:</p>
+					<ul>
+						<li>populate this form <strong>as completely as possible.</strong></li>
+						<li>do not include multiple issues on the same submission. Complete once for each issue.</li>
+						<li>ensure answers are validated and form submits successfully with issue of ticket number</li>
+					</ul>
+					Each submission will:
+					<ul>
+						<li>generate a support ticket which you will receive by email and will be tracked by our team.</li>
+						<li>have an option to close your support request by email.</li>
+					</ul>
+				</div>
+			<form className="support-form">
 					<div className="form-group has-success has-feedback">
 						<label htmlFor="subject">How can we help?</label>
 						<input type="text" name="subject" className="form-control" placeholder="Summarise the issue like an email subject line" />
@@ -93,20 +107,6 @@ export class Support extends React.Component {
 						<button type="submit" className="btn btn-primary pull-right">Submit</button>
 					</div>
 				</form>
-				<div className="instruction">
-					<h3>Guidelines</h3>
-					<p>In order to best assist you with any trouble you might be having, please ensure you:</p>
-					<ul>
-						<li>populate this form <strong>as completely as possible.</strong></li>
-						<li>do not include multiple issues on the same submission. Complete once for each issue.</li>
-						<li>ensure answers are validated and form submits successfully with issue of ticket number</li>
-					</ul>
-					Each submission will:
-					<ul>
-						<li>generate a support ticket which you will receive by email and will be tracked by our team.</li>
-						<li>have an option to close your support request by email.</li>
-					</ul>
-				</div>
 			</div>
 		);
 	}

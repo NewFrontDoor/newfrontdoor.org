@@ -6,7 +6,7 @@ export class Feature extends React.Component {
 		return (
 			<div className="site-wrapper">
 				<h1>Feature request form</h1>
-				<div><p>Some features may be in the pipeline or already available. See our documentation page for assistance in using these features, and our client page for any announcements.</p></div>
+				<div><p>Some features may be in the pipeline or already available. See our <a href="/documentation">documentation page</a> for assistance in using these features, and our <a href="/blog">client page</a> for any announcements.</p></div>
 				<div className="instruction">In order to best understand your request, please ensure you:
 					<ul>
 						<li>populate this form <strong>as completely as possible.</strong></li>
@@ -14,12 +14,12 @@ export class Feature extends React.Component {
 						<li>ensure answers are validated and form submits successfully with issue of ticket number</li>
 					</ul>
 					Each submission will:
-<ul>
-	<li>generate a request ticket which you will receive by email and will be tracked by our team.</li>
-	<li>have an option to close your feature request by email.</li>
-</ul>
-</div>
-				<form>
+					<ul>
+						<li>generate a request ticket which you will receive by email and will be tracked by our team.</li>
+						<li>have an option to close your feature request by email.</li>
+					</ul>
+				</div>
+				<form className="support-form">
 					<div className="form-group has-success has-feedback">
 						<label htmlFor="name">Name:</label>
 						<input type="text" id="name" className="form-control" placeholder="First and last name" />
