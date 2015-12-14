@@ -51,10 +51,20 @@
   right: 0;
   padding: 0 4% 0 4%;
 
-  a:first-child {
-    float: left;
+  li {
+    margin-top: 12px;
+    font-family: $headings-font-family;
+    color: $headings-color;
+    a:visited {
+      color: $headings-color;
+    }
   }
-  a:last-child {
+
+  li:first-child {
+    float: left;
+    margin-left: -20px;
+  }
+  li:last-child {
     float: right;
   }
   @media (min-width: $screen-md-min) {
@@ -64,6 +74,14 @@
 
 .main-menu {
   display: none;
+  font-size: 1rem;
+  margin-top: 12px;
+  line-height: 1.1;
+  font-family: $headings-font-family;
+  color: $headings-color;
+  a:visited {
+    color: $headings-color;
+  }
   @media (min-width: $screen-md-min) {
     display: block;
     lost-column:13/16;
@@ -72,8 +90,6 @@
     ul {
       list-style-type: none;
       margin-left: 20px;
-    //  padding: 0;
-      lost-utility: clearfix;
     }
   }
 }
@@ -85,10 +101,13 @@
 }
 
 .search-box {
-  display: inline-block;
+  cursor: pointer;
   lost-column: 1/13;
-  text-align: left;
-  position: relative;
-  top: 5px;
-  overflow: hidden;
+  margin-top: 5px;
+    span {
+      color: $headings-color;
+      a:visited {
+        color: $headings-color;
+      }
+    }
 }

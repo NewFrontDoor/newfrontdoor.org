@@ -14,6 +14,8 @@ export class Site extends React.Component {
 		this.state = {mainmenu: content.mainmenu};
 		this.openSearch = this.openSearch.bind(this);
 		this.closeSearch = this.closeSearch.bind(this);
+		this.openResult = this.openResult.bind(this);
+		this.closeResult = this.closeResult.bind(this);
 	}
 
 	openSearch() {
@@ -24,6 +26,14 @@ export class Site extends React.Component {
 		this.setState({showSearch: false});
 	}
 
+	openResult() {
+		this.setState({showResult: true});
+	}
+
+	closeResult() {
+		this.setState({showResult: false});
+	}
+
 	render() {
 		const siteCless = classNames({
 			'visible': this.state.showSearch,
@@ -31,11 +41,16 @@ export class Site extends React.Component {
 			'text-uppercase': true
 		});
 
+		const siteYess = classNames({
+			'visible': this.state.showResult,
+			'search-results': true
+		});
+
 		return (
 				<div>
 					<Header>
 						<a href="/"><h1 className="sr-only">Vision 100 IT</h1><img className="logo img-responsive" src={logo}></img></a>
-						<div className="mobile-menu text-uppercase"><h3><a href="/blog">Client</a><a href="#how">Visitor</a></h3></div>
+						<div className="mobile-menu text-uppercase"><ul><li className="list-unstyled"><a href="/blog">Client</a></li><li className="list-unstyled"><a href="#how">Visitor</a></li></ul></div>
 						<MainMenu openSearch={this.openSearch} {...this.state.mainmenu}></MainMenu>
 					</Header>
 					{this.props.children}
@@ -44,11 +59,11 @@ export class Site extends React.Component {
 						<form>
 							<div className="form-group">
 								<input type="search" name="search" className="form-control search" placeholder="Search..." />
-								<span className="form-control submit"><i className="fa fa-search fa-lg"></i></span>
+								<span className="form-control submit"><a onClick={this.openResult}><i className="fa fa-search fa-lg"></i></a></span>
 							</div>
 						</form>
-						<div className="search-results">
-							<div className="results-title"><h3>Results</h3><div><a><i className="fa fa-times-circle fa-lg"></i></a></div></div>
+						<div className={siteYess}>
+							<div className="results-title"><h3>Results</h3><div><a onClick={this.closeResult}><i className="fa fa-times-circle fa-lg"></i></a></div></div>
 							<div className="results-content"><ul className="list-unstyled"><li>result 1</li><li>result 2</li><li>result 3</li></ul></div>
 							<div className="search-nav small">
 

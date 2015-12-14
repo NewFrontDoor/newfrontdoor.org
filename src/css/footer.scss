@@ -8,12 +8,12 @@ body {
 }
 
 footer {
-  display: none;
+  width: 100%;
+  lost-utility: clearfix;
+  display: block;
+  height: 100vh;
+  background-color: white;
   @media (min-width: $screen-sm-min) {
-    display: block;
-    width: 100%;
-  	padding: 15px;
-  	lost-utility: clearfix;
   	background-color: $footer-bg;
     opacity: .9;
   	color: #fff;
@@ -28,16 +28,31 @@ footer {
 }
 
 .footer-wrap {
+  padding: 15px;
     lost-utility: clearfix;
     lost-center: 980px;
+    @media (min-width: $screen-sm-min) {
+      padding: 0;
+      .text-left {
+        text-align: left;
+        lost-move: 3/11;
+      }
+      .text-right {
+        text-align: right;
+      }
+    }
 }
 
 .footer-list {
-  lost-column: 1;
+  lost-column: 1/2;
+  font-size: .8rem;
+  text-align: center;
   @media (min-width: $screen-sm-min) {
-      lost-column: 2/11;
+        lost-column: 2/11;
+        font-size: 1rem;
   }
 }
+
 
 .footer-logo {
   lost-column: 1;
@@ -49,12 +64,18 @@ footer {
   background-position-y: 25px;
   @media (min-width: $screen-sm-min) {
       lost-column: 3/11;
+      lost-move: -4/11;
   }
 }
 
+
 .footer-list h3 {
-  padding-bottom: 3px;
-  border-bottom: 1px solid $primary-heading;
+font-size: $font-size-h4;
+  @media (min-width: $screen-md-min) {
+    font-size: $font-size-h3;
+    padding-bottom: 3px;
+    border-bottom: 1px solid $primary-heading;
+  }
 }
 
 .footer-wrap ul {

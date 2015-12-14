@@ -33,9 +33,6 @@ export class Footer extends React.Component {
 					text: 'Service Levels'
 				}]
 			}, {
-				className: 'footer-logo',
-				links: []
-			}, {
 				heading: 'Support',
 				className: 'footer-list text-left',
 				links: [{
@@ -63,6 +60,9 @@ export class Footer extends React.Component {
 				}, {
 					text: 'Twitter'
 				}]
+			}, {
+				className: 'footer-logo',
+				links: ['/']
 			}]
 		};
 	}

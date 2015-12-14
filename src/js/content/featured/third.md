@@ -6,8 +6,11 @@
   <p>As a result we've collated a suite of supported tools that best help us to help you do IT well.</p>
   <p>We're eager to ensure that you're equipped to make the most of these tools as the web evolves over time. We won't just build you a website, but we'll coach you through keeping it up to date, provide ongoing support as your team members change, and walk you through new features and updates as they occur.</p>
 </section>
-<section>
-  <div class="text-block-4">
+<section class="features">
+  <div class="image-block-2">
+    <img src="../../../elements/placeholder.jpeg" />
+  </div>
+  <div class="text-block-2">
     <header><h3>Websites</h3></header>
     <section>
       <ul>
@@ -19,7 +22,10 @@
       </ul>
     </section>
   </div>
-  <div class="text-block-4">
+  <div class="image-block-2">
+    <img src="../../../elements/placeholder.jpeg" />
+  </div>
+  <div class="text-block-2">
     <header><h3>Administration</h3></header>
     <section>
       <ul>
@@ -29,7 +35,10 @@
       </ul>
     </section>
   </div>
-  <div class="text-block-4">
+  <div class="image-block-2">
+    <img src="../../../elements/placeholder.jpeg" />
+  </div>
+  <div class="text-block-2">
     <header><h3>Document management</h3></header>
     <section>
       <ul>
@@ -42,7 +51,10 @@
       </ul>
     </section>
   </div>
-  <div class="text-block-4">
+  <div class="image-block-2">
+    <img src="../../../elements/placeholder.jpeg" />
+  </div>
+  <div class="text-block-2">
     <header><h3>Consulation + advice</h3></header>
     <section>
       <ul>

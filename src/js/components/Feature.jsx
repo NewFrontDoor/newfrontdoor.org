@@ -7,7 +7,8 @@ export class Feature extends React.Component {
 			<div className="site-wrapper">
 				<h1>Feature request form</h1>
 				<div><p>Some features may be in the pipeline or already available. See our <a href="/documentation">documentation page</a> for assistance in using these features, and our <a href="/blog">client page</a> for any announcements.</p></div>
-				<div className="instruction">In order to best understand your request, please ensure you:
+				<hr />
+			<div className="instruction">In order to best understand your request, please ensure you:
 					<ul>
 						<li>populate this form <strong>as completely as possible.</strong></li>
 						<li>do not include multiple requests on the same submission. Complete once for each request.</li>

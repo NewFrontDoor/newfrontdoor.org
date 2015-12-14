@@ -6,7 +6,8 @@ export class Support extends React.Component {
 		return (
 			<div className="site-wrapper">
 				<h1>Support form</h1>
-				<div><p>Some issues may be answered by our documentation which you can find here. Please also check our outages page for any issues that may impact your work.</p></div>
+				<div><p>Some issues may be answered by our documentation which you can find here. Please also check our <a href="/status">system status page</a> for any issues that may impact your work.</p></div>
+				<hr />
 				<div className="instruction">
 					<h3>Guidelines</h3>
 					<p>In order to best assist you with any trouble you might be having, please ensure you:</p>
