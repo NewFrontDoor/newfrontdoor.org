@@ -13,14 +13,14 @@ export class Site extends React.Component {
 		super(props);
 		this.state = {mainmenu: content.mainmenu};
 		this.openSearch = this.openSearch.bind(this);
-		this.closeSeach = this.closeSeach.bind(this);
+		this.closeSearch = this.closeSearch.bind(this);
 	}
 
 	openSearch() {
 		this.setState({showSearch: true});
 	}
 
-	closeSeach() {
+	closeSearch() {
 		this.setState({showSearch: false});
 	}
 
@@ -40,7 +40,7 @@ export class Site extends React.Component {
 					</Header>
 					{this.props.children}
 					<div className={siteCless}>
-						<div className="search-title"><h2>Search menu</h2><div><i className="fa fa-times-circle fa-2x"></i></div></div>
+						<div className="search-title"><h2>Search menu</h2><div><a href="#" onClick={this.closeSearch}><i className="fa fa-times-circle fa-2x"></i></a></div></div>
 						<form>
 							<div className="form-group">
 								<input type="search" name="search" className="form-control search" placeholder="Search..." />
@@ -48,7 +48,7 @@ export class Site extends React.Component {
 							</div>
 						</form>
 						<div className="search-results">
-							<div className="results-title"><h3>Results</h3><div><i className="fa fa-times-circle fa-lg"></i></div></div>
+							<div className="results-title"><h3>Results</h3><div><a href="#"><i className="fa fa-times-circle fa-lg"></i></a></div></div>
 							<div className="results-content"><ul className="list-unstyled"><li>result 1</li><li>result 2</li><li>result 3</li></ul></div>
 							<div className="search-nav small">
 
