@@ -59,6 +59,7 @@
     "ngrok": "^0.2.2",
     "node-libs-browser": "^0.5.2",
     "normalize.css": "^3.0.3",
+    "postcss-colorblind": "BarryThePenguin/postcss-colorblind",
     "postcss-loader": "^0.8.0",
     "postcss-pxtorem": "^3.1.0",
     "postcss-vertical-rhythm": "^1.1.5",
