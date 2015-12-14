@@ -18,19 +18,23 @@ export class Site extends React.Component {
 		this.closeResult = this.closeResult.bind(this);
 	}
 
-	openSearch() {
+	openSearch(event) {
+		event.preventDefault();
 		this.setState({showSearch: true});
 	}
 
-	closeSearch() {
+	closeSearch(event) {
+		event.preventDefault();
 		this.setState({showSearch: false});
 	}
 
-	openResult() {
+	openResult(event) {
+		event.preventDefault();
 		this.setState({showResult: true});
 	}
 
-	closeResult() {
+	closeResult(event) {
+		event.preventDefault();
 		this.setState({showResult: false});
 	}
 
