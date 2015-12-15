@@ -43,7 +43,8 @@ export class Site extends React.Component {
 			'visible': this.state.showSearch,
 			'search-overlay': true,
 			'text-uppercase': true
-		});
+		})
+		;
 
 		const siteYess = classNames({
 			'visible': this.state.showResult,

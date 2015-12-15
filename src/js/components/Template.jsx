@@ -16,6 +16,7 @@ export class Template extends React.Component {
 		return (
 			<div className="documentation-wrapper">
 				<div className="documentation-sidebar">
+					<h3>Contents</h3>
 					<section dangerouslySetInnerHTML={this.rawToc()}></section>
 				</div>
 				<div className="documentation-content">
