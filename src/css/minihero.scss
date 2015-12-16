@@ -1,0 +1,33 @@
+//hero content styles
+
+.mini-hero-container {
+  //padding-top: 92px;
+}
+
+.mini-hero-background {
+  height: 100vh;
+  background-image: url("../elements/splash-image.jpeg");
+  background-attachment: local;
+  filter: grayscale(1) brightness(.8);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: -1;
+  //lost-column: 1/1;
+  //lost-align: center;
+}
+
+.mini-hero-content {
+  position: relative;
+  height: 80vh;
+  margin-top: -80vh;
+  lost-column: 3/4;
+  lost-move: 1/8;
+  z-index: 1;
+  lost-utility: clearfix;
+  @media (min-width: $screen-md-min) {
+    lost-column: 1/2;
+    lost-move: 1/4;
+  }
+}
