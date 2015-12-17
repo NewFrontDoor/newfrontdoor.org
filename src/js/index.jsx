@@ -31,8 +31,8 @@ export default (locals, callback) => {
 // 			<Hero locals={locals}></Hero>
 // 			<Main locals={locals}></Main>
 // 		</Root>),
-// 	'/blog': ReactDOMServer.renderToString(<Root locals={locals}>
-// 			<Blog></Blog>
+// 	'/client': ReactDOMServer.renderToString(<Root locals={locals}>
+// 			<Client></Client>
 // 		</Root>),
 // 	'/support': ReactDOMServer.renderToString(<Root locals={locals}>
 // 			<Support></Support>

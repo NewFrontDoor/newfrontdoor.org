@@ -5,17 +5,8 @@
 }
 
 .mini-hero-background {
-  height: 100vh;
-  background-image: url("../elements/splash-image.jpeg");
-  background-attachment: local;
-  filter: grayscale(1) brightness(.8);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: -1;
-  //lost-column: 1/1;
-  //lost-align: center;
+  height: 50vh;
+  background-color: grey;
 }
 
 .mini-hero-content {

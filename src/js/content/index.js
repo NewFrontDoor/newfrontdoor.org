@@ -47,7 +47,7 @@ export default {
 	mobilemenu: {
 		primary: [{
 			text: 'Client',
-			target: '/blog'
+			target: '/client'
 		}, {
 			text: 'Visitor',
 			target: '#how'
@@ -57,7 +57,7 @@ export default {
 			target: '#'
 		}, {
 			text: 'News',
-			target: '/blog'
+			target: '/client'
 		}],
 		teriary: [{
 			text: 'Search',

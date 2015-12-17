@@ -35,27 +35,27 @@ export class Main extends React.Component {
 				<Hero></Hero>
 				<main role="main">
 					<div className="featured-first featured-light" id="how">
-						<div className="site-wrapper">
+						<div className="site-wrapper site-wrapper-padding">
 							<section dangerouslySetInnerHTML={this.rawFirst()}></section>
 						</div>
 					</div>
 					<div className="featured-second featured-dark" id="who">
-						<div className="site-wrapper">
+						<div className="site-wrapper site-wrapper-padding">
 							<section dangerouslySetInnerHTML={this.rawSecond()}></section>
 						</div>
 					</div>
 					<div className="featured-third featured-light" id="tools">
-						<div className="site-wrapper">
+						<div className="site-wrapper site-wrapper-padding">
 							<section dangerouslySetInnerHTML={this.rawThird()}></section>
 						</div>
 					</div>
 					<div className="featured-fourth featured-dark" id="events">
-						<div className="site-wrapper">
+						<div className="site-wrapper site-wrapper-padding">
 							<section dangerouslySetInnerHTML={this.rawFourth()}></section>
 						</div>
 					</div>
 					<div className="featured-fifth featured-light" id="pricing">
-						<div className="site-wrapper">
+						<div className="site-wrapper site-wrapper-padding">
 							<section dangerouslySetInnerHTML={this.rawFifth()}></section>
 						</div>
 					</div>

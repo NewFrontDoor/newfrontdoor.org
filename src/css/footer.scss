@@ -3,7 +3,7 @@ $footer-bg: $text-color;
 
 body {
   @media (min-width: $screen-sm-min) {
-    margin-bottom: $footer-height;
+    margin-bottom: ($footer-height + $footer-height);
   }
 }
 

@@ -17,7 +17,7 @@ import packageJson from '../../package.json';
 
 const staticPaths = [
 	'/',
-	'/blog/',
+	'/client/',
 	'/support/',
 	'/feature/',
 	'/template',

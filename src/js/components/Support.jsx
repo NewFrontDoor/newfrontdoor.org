@@ -4,7 +4,7 @@ export class Support extends React.Component {
 
 	render() {
 		return (
-			<div className="site-wrapper">
+			<div className="site-wrapper site-wrapper-padding">
 				<h1>Support form</h1>
 				<div><p>Some issues may be answered by our documentation which you can find here. Please also check our <a href="/status">system status page</a> for any issues that may impact your work.</p></div>
 				<hr />

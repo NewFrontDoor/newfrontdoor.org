@@ -30,6 +30,7 @@
 @import "./hero";
 @import "./documentation";
 @import "./support";
+@import "./minihero";
 
 @lost gutter 15px;
 
@@ -69,11 +70,14 @@ article {
     lost-column: 1/1;
   }
   @media (min-width: $screen-md-min) {
-    padding-top: 107px;
 		lost-center: 980px;
 }
 }
-
+@media (min-width: $screen-md-min) {
+  .site-wrapper-padding {
+      padding-top: 107px;
+  }
+}
 //Documentation page styling (needs to be split out)
 
 .documentation-wrapper {
@@ -393,8 +397,8 @@ lost-column: clearfix;
       lost-utility: clearfix;
       bottom: 0;
       p {
-        lost-column: 1/6 0 0px;
-        lost-move: 5/6 0 0px;
+        float: right;
+        padding-right: 10px;
       }
     }
   }

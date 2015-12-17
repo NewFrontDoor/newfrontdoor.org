@@ -7,7 +7,7 @@ export class Main extends React.Component {
 		return (
 			<main role="main">
 				<div className="featured-first featured-light" id="how">
-					<div className="site-wrapper">
+					<div className="site-wrapper site-wrapper-padding">
 						<header hidden><h2>How we can help you</h2></header>
 						<section>
 							<div className="text-slab">
@@ -27,7 +27,7 @@ export class Main extends React.Component {
 					</div>
 				</div>
 				<div className="featured-second featured-dark" id="who">
-					<div className="site-wrapper">
+					<div className="site-wrapper site-wrapper-padding">
 						<header hidden><h2>Who are Vision 100 IT?</h2></header>
 						<section>
 <p>We’re a team of passionate IT and web development engineers, ministry leaders and management professionals who voluntarily build, maintain, train and educate our clients in IT systems on the basis of years of collective knowledge gleaned from within the IT industry.</p>
@@ -40,7 +40,7 @@ export class Main extends React.Component {
 					</div>
 				</div>
 				<div className="featured-third featured-light" id="tools">
-					<div className="site-wrapper">
+					<div className="site-wrapper site-wrapper-padding">
 						<header><h2>Tools + Philosophy</h2></header>
 						<section>
 							<div className="text-slab"><em>The core product of Vision 100 IT isn't just a website or a CMS - it's a philosophy</em></div>
@@ -99,7 +99,7 @@ export class Main extends React.Component {
 					</div>
 				</div>
 				<div className="featured-fourth featured-dark" id="events">
-					<div className="site-wrapper">
+					<div className="site-wrapper site-wrapper-padding">
 						<header><h2>Events + Training</h2></header>
 						<section>
 							<div>
@@ -109,7 +109,7 @@ export class Main extends React.Component {
 					</div>
 				</div>
 				<div className="featured-fifth featured-light" id="pricing">
-					<div className="site-wrapper">
+					<div className="site-wrapper site-wrapper-padding">
 						<header><h2>Pricing</h2></header>
 						<section>
 							<div className="text-slab"><em>We know the best things in life are free</em></div>
@@ -123,7 +123,7 @@ export class Main extends React.Component {
 					</div>
 				</div>
 				<div className="featured-sixth featured-dark" id="join">
-					<div className="site-wrapper">
+					<div className="site-wrapper site-wrapper-padding">
 						<header><h2>Come on board</h2></header>
 						<section>
 							<div className="text-slab"><em>La la la la</em></div>

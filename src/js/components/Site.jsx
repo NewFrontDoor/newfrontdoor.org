@@ -55,7 +55,7 @@ export class Site extends React.Component {
 				<div>
 					<Header>
 						<a href="/"><h1 className="sr-only">Vision 100 IT</h1><img className="logo img-responsive" src={logo}></img></a>
-						<div className="mobile-menu text-uppercase"><ul><li className="list-unstyled"><a href="/blog">Client</a></li><li className="list-unstyled"><a href="#how">Visitor</a></li></ul></div>
+						<div className="mobile-menu text-uppercase"><ul><li className="list-unstyled"><a href="/client">Client</a></li><li className="list-unstyled"><a href="#how">Visitor</a></li></ul></div>
 						<MainMenu openSearch={this.openSearch} {...this.state.mainmenu}></MainMenu>
 					</Header>
 					{this.props.children}
@@ -77,7 +77,7 @@ export class Site extends React.Component {
 						</div>
 						<div className="search-menu">
 							<ul className="list-unstyled">
-								<li><a href="/blog">News</a></li>
+								<li><a href="/client">News</a></li>
 								<li><a href="/support">Support</a></li>
 								<li><a href="/status">Status</a></li>
 								<li><a href="/documentation">Documentation</a></li>

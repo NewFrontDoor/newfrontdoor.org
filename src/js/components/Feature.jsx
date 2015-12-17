@@ -4,9 +4,9 @@ export class Feature extends React.Component {
 
 	render() {
 		return (
-			<div className="site-wrapper">
+			<div className="site-wrapper site-wrapper-padding">
 				<h1>Feature request form</h1>
-				<div><p>Some features may be in the pipeline or already available. See our <a href="/documentation">documentation page</a> for assistance in using these features, and our <a href="/blog">client page</a> for any announcements.</p></div>
+				<div><p>Some features may be in the pipeline or already available. See our <a href="/documentation">documentation page</a> for assistance in using these features, and our <a href="/client">client page</a> for any announcements.</p></div>
 				<hr />
 			<div className="instruction">In order to best understand your request, please ensure you:
 					<ul>

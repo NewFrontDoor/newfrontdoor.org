@@ -4,7 +4,7 @@ export class Documentation extends React.Component {
 
 	render() {
 		return (
-				<div className="site-wrapper">
+				<div className="site-wrapper site-wrapper-padding">
 					<h1>Help + how to</h1>
 
 					<div className="search-wrapper">
