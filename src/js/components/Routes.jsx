@@ -9,6 +9,9 @@ import {Feature} from './Feature';
 import {Template} from './Template';
 import {Documentation} from './Documentation';
 import {Status} from './Status';
+import {Control} from './Control';
+import {About} from './About';
+import {Contact} from './Contact';
 
 export default (
 	<Route path="/" component={Site} >
@@ -19,5 +22,8 @@ export default (
 		<Route path="documentation" component={Documentation} />
 		<Route path="template" component={Template} />
 		<Route path="status" component={Status} />
+		<Route path="control" component={Control} />
+		<Route path="about" component={About} />
+		<Route path="contact" component={Contact} />
 	</Route>
 );

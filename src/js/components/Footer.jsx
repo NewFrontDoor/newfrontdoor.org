@@ -8,34 +8,39 @@ export class Footer extends React.Component {
 				heading: 'V100IT',
 				className: 'footer-list text-right',
 				links: [{
-					text: 'Philosophy'
+					text: 'Philosophy',
+					target: '/#tools'
 				}, {
-					text: 'Tools'
+					text: 'Tools',
+					target: '/#tools'
 				}, {
-					text: 'Events'
+					text: 'Events',
+					target: '/#events'
 				}, {
-					text: 'Pricing'
+					text: 'Pricing',
+					target: '/#pricing'
 				}, {
-					text: 'Showcase'
+					text: 'Showcase',
+					target: '/about'
 				}]
 			}, {
 				heading: 'About Us',
 				className: 'footer-list text-right',
 				links: [{
 					text: 'Mission + Vision',
-					target: 'about'
+					target: '/about#mission'
 				}, {
 					text: 'History',
-					target: 'about'
+					target: '/about#history'
 				}, {
 					text: 'Team Members',
-					target: 'about'
+					target: '/about#team'
 				}, {
 					text: 'Join Us',
-					target: 'about'
+					target: '/about#join'
 				}, {
 					text: 'Service Levels',
-					target: 'about'
+					target: '/about#service'
 				}]
 			}, {
 				heading: 'Support',
@@ -48,7 +53,7 @@ export class Footer extends React.Component {
 					target: '/feature'
 				}, {
 					text: 'Contact Us',
-					target: '/support'
+					target: '/contact'
 				}, {
 					text: 'Help + How-to',
 					target: '/documentation'
@@ -67,7 +72,7 @@ export class Footer extends React.Component {
 					target: 'contact'
 				}, {
 					text: 'Blog',
-					target: '/news'
+					target: '/client'
 				}, {
 					text: 'Facebook',
 					target: 'http://facebook.com/vision100it'

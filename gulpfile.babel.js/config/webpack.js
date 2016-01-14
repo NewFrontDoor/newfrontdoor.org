@@ -22,7 +22,10 @@ const staticPaths = [
 	'/feature/',
 	'/template',
 	'/documentation/',
-	'/status/'
+	'/status/',
+	'/control/',
+	'/about',
+	'/contact'
 ];
 
 export default getConfig();
