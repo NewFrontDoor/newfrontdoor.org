@@ -1,14 +1,17 @@
 /* eslint-env browser */
 import React from 'react';
 import classNames from 'classnames';
-import throttle from 'lodash/function/throttle';
+import throttle from 'lodash/throttle';
 
 export class Header extends React.Component {
 	constructor() {
 		super();
 		this.state = {};
 		this.handleScroll = throttle(this.handleScroll.bind(this), 250);
-		this.length = (window.innerHeight - 150);
+	}
+
+	get length() {
+		return window.innerHeight - 150;
 	}
 
 	componentDidMount() {
