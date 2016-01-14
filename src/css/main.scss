@@ -31,6 +31,7 @@
 @import "./documentation";
 @import "./support";
 @import "./minihero";
+@import "./client";
 
 @lost gutter 15px;
 
@@ -95,7 +96,7 @@ article {
 .documentation-sidebar {
   lost-column: 1/4;
   padding-right: 10px;
-  border-right: 3px solid black;
+  border-right: 1px solid lighten($text-color, 70%);
   overflow-x: hidden;
   overflow-y: auto;
   height: 100%;
@@ -170,6 +171,7 @@ article {
   @media (min-width: $screen-md-min) {
     lost-column: 1/2;
     min-height: 250px;
+    padding-top: 60px;
   }
 }
 
@@ -238,7 +240,7 @@ lost-column: clearfix;
 //featured 6 styles
 .featured-sixth {
   @media (min-width: $screen-md-min) {
-    min-height: 100vh;
+    min-height: 90vh;
   }
 }
 .close-background {
@@ -257,14 +259,13 @@ lost-column: clearfix;
   }
 }
 .close-content {
-  z-index: 1;
   lost-utility: clearfix;
   height: 50vh;
   margin-top: -90vh;
   @media (min-width: $screen-md-min) {
     position: relative;
     height: 80vh;
-    margin-top: -90vh;
+    margin-top: -80vh;
   }
   form {
     lost-column: 4/4;

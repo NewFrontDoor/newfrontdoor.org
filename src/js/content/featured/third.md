@@ -26,9 +26,10 @@
     <img src="../../../elements/placeholder.jpeg" />
   </div>
   <div class="text-block-2">
-    <header><h3>Administration</h3></header>
+    <header><h3>Administration and relationship management</h3></header>
     <section>
       <ul>
+        <li>Implementation and consultation to get you started with Elvanto - an Australian-built Church Management platform</li>
         <li>Flexible mailing lists for all your church-wide and team communications</li>
         <li>Podcasting</li>
         <li>Newsletter distribution</li>
@@ -65,5 +66,5 @@
   </div>
 </section>
 <section>
-  <p>Although we think this ecosystem is fantastic, and we've selected our tools on the basis of our years of experience, your needs may vary. If you're already have some solutions sorted, no problem! We'll work with you as best as we can to ensure you're being as effective as possible.</p>
+  <p>Although we think this ecosystem is fantastic, and we've selected our tools on the basis of our years of experience, your needs may vary. If you already have some solutions sorted, no problem! We'll work with you as best as we can to ensure you're being as effective as possible.</p>
 </section>

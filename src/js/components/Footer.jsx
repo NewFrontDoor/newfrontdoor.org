@@ -22,43 +22,58 @@ export class Footer extends React.Component {
 				heading: 'About Us',
 				className: 'footer-list text-right',
 				links: [{
-					text: 'Mission + Vision'
+					text: 'Mission + Vision',
+					target: 'about'
 				}, {
-					text: 'History'
+					text: 'History',
+					target: 'about'
 				}, {
-					text: 'Team Members'
+					text: 'Team Members',
+					target: 'about'
 				}, {
-					text: 'Join Us'
+					text: 'Join Us',
+					target: 'about'
 				}, {
-					text: 'Service Levels'
+					text: 'Service Levels',
+					target: 'about'
 				}]
 			}, {
 				heading: 'Support',
 				className: 'footer-list text-left',
 				links: [{
-					text: 'Support Request'
+					text: 'Support Request',
+					target: '/support'
 				}, {
-					text: 'Feature Request'
+					text: 'Feature Request',
+					target: '/feature'
 				}, {
-					text: 'Contact Us'
+					text: 'Contact Us',
+					target: '/support'
 				}, {
-					text: 'Help + How-to'
+					text: 'Help + How-to',
+					target: '/documentation'
 				}, {
-					text: 'System Status'
+					text: 'System Status',
+					target: '/status'
 				}]
 			}, {
 				heading: 'Connect',
 				className: 'footer-list text-left',
 				links: [{
-					text: 'Podcast'
+					text: 'Podcast',
+					target: ''
 				}, {
-					text: 'Mailing List'
+					text: 'Mailing List',
+					target: 'contact'
 				}, {
-					text: 'Blog'
+					text: 'Blog',
+					target: '/news'
 				}, {
-					text: 'Facebook'
+					text: 'Facebook',
+					target: 'http://facebook.com/vision100it'
 				}, {
-					text: 'Twitter'
+					text: 'Twitter',
+					target: 'http://twitter.com/vision100it'
 				}]
 			}, {
 				className: 'footer-logo',
@@ -75,7 +90,9 @@ export class Footer extends React.Component {
 							<h3>{list.heading}</h3>
 						</header>
 						<ul className="list-unstyled">
-							{list.links.map((link, key) => <li key={key}>{link.text}</li>)}
+							{list.links.map((link, key) => <li key={key}>
+								<a href={link.target}>{link.text}</a>
+						</li>)}
 						</ul>
 					</div>
 				)}

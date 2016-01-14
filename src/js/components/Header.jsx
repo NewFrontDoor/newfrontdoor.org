@@ -8,6 +8,7 @@ export class Header extends React.Component {
 		super();
 		this.state = {};
 		this.handleScroll = throttle(this.handleScroll.bind(this), 250);
+		this.length = (window.innerHeight - 150);
 	}
 
 	componentDidMount() {
@@ -19,7 +20,7 @@ export class Header extends React.Component {
 	}
 
 	handleScroll() {
-		this.setState({pageYOffset: window.pageYOffset, innerHeight: window.innerHeight});
+		this.setState({pageYOffset: window.pageYOffset, innerHeight: this.length});
 	}
 
 	render() {

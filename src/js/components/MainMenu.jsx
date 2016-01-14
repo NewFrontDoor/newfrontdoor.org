@@ -11,6 +11,7 @@ export class MainMenu extends React.Component {
 				<ul>
 					<li className="search-box text-uppercase list-unstyled">
 							<a href="#" onClick={this.props.openSearch}>
+								Menu
 								<span className="fa fa-search fa-lg"></span>
 							</a>
 					</li>

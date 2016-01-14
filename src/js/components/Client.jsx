@@ -7,21 +7,24 @@ export class Client extends React.Component {
 			<div>
 				<MiniHero></MiniHero>
 				<main role="main">
-				<div className="site-wrapper">
-					<section className="announcement-banner">
+				<section className="announcement-banner">
 						<div>Testing the announcement banner</div>
-					</section>
+				</section>
+				<div className="client-wrapper">
 					<section className="pinned-post">
 						<section className="post">
 							<header className="post-header">
 								<h2 className="post-title">New Vision 100 IT website!</h2>
-								<p className="post-meta">By <a href="#" className="post-author">AR</a> on <span className="post-date">3rd March, 2015</span> under <a className="post-category">Announcements</a></p>
+								<div className="post-meta"><span className="post-author">By <a href="#">AR</a></span><span className="post-date">3rd March, 2015</span><span className="post-category">under <a href="#">Announcements</a></span></div>
 							</header>
-							<div className="post-description">
-								<p>As you can probably tell, Vision 100 IT now has it's own special home on the web. If you're not viewing this post in situ, head to <a href="#">Vision 100 IT</a> and check it out</p>
-								<p>There are ponies and ice-cream cakes, as well as lots of fairy bread and cocktail sausages there. In fact it's just like a primary school birthday party</p>
-								<p>There is also a bunch of serious stuff like documentation, feature and support request forms, a blog (which you're reading) and some product page info for you to peruse.</p>
-								<p>Check it out at <a href="#">Vision 100 IT website placeholder!</a></p>
+							<div className="post-body">
+								<div className="img-container"><img src="../src/elements/placeholder.jpeg" alt="sample image" /></div>
+								<div className="post-content">
+									<p>As you can probably tell, Vision 100 IT now has it's own special home on the web. If you're not viewing this post in situ, head to <a href="#">Vision 100 IT</a> and check it out</p>
+									<p>There are ponies and ice-cream cakes, as well as lots of fairy bread and cocktail sausages there. In fact it's just like a primary school birthday party</p>
+									<p>There is also a bunch of serious stuff like documentation, feature and support request forms, a blog (which you're reading) and some product page info for you to peruse.</p>
+									<p>Check it out at <a href="#">Vision 100 IT website placeholder!</a></p>
+								</div>
 							</div>
 						</section>
 					</section>
@@ -29,9 +32,9 @@ export class Client extends React.Component {
 						<section className="post">
 							<header className="post-header">
 								<h2 className="post-title">High Quality images to use for Sermon Series, Website Banners and other purposes</h2>
-								<p className="post-meta">By <a href="#" className="post-author">CdK</a> under <a className="post-category">Images</a></p>
+								<div className="post-meta"><span className="post-author">By <a href="#">CdK</a></span><span className="post-category">under <a className="#">Images</a></span></div>
 							</header>
-							<div className="post-description">
+							<div className="post-body">
 								<p>As a team helping small churches without the funds to do high quality photography, we're always on the lookout for high quality images that churches can use for their sermon series backgrounds or camp brochures or website backgrounds.</p>
 								<p>Sources like flickr.com often are hard to search through and just using Google Image Search can often lead to you unwittingly breaking copyright law as these are not considered fair use exemptions.</p>
 								<p>Unsplash is a great resource for visual imagery, particularly as it focuses on nature photography, and all images on the site are high resolution and able to be used for whatever you want.  We're particularly impressed by the fact that these images often leave plenty of space to put text (like Sermon Series titles), so it's well worth a look.</p>
@@ -41,9 +44,10 @@ export class Client extends React.Component {
 						<section className="post">
 							<header className="post-header">
 								<h2 className="post-title">Exporting Running Sheets from Elvanto to Excel</h2>
-								<p className="post-meta">By <a className="post-author" href="#">CdK</a> under <a className="post-category">Elvanto</a></p>
+									<div className="post-meta"><span className="post-author">By <a href="#">CdK</a></span><span className="post-category">under <a className="#">Elvanto</a></span></div>
 							</header>
-							<div className="post-description">
+							<div className="img-container"><img src="../src/elements/placeholder.jpeg" alt="sample image" /></div>
+							<div className="post-body">
 								<p>At a recent IT training night talking about Elvanto, a question arose about being able to export running sheets to Excel.</p>
 								<p>The basic problem is that Elvanto's running sheet format is quite rigid, and it's difficult to do things like put the Bible reading next to the person doing the Bible reading.</p>
 								<p>While there isn't an officially supported way to do this, there is a way to export a running sheet in Elvanto and then modify it in Excel.</p>
@@ -55,9 +59,9 @@ export class Client extends React.Component {
 						<section className="post">
 							<header className="post-header">
 								<h2 className="post-title">Event Registration now live for Challenge Conference</h2>
-								<p className="post-meta">By <a className="post-author" href="#">CdK</a> under <a className="post-category">Features</a></p>
+									<div className="post-meta"><span className="post-author">By <a href="#">CdK</a></span><span className="post-category">under <a className="#">Features</a></span></div>
 							</header>
-							<div className="post-description">
+							<div className="post-body">
 								<p>Over the last few months, we've been developing a registration process for the Challenge Conference that we're now able to roll out across all the different events that Vision 100 run.</p>
 								<p>This registration process allows people to register for events, pay through Paypal, receive confirmation emails when payment has been received, and also allows you track payments made, supplying direct deposit references for you to cross reference, and even allowing for automatic emails to registrants when their direct deposits have been paid.</p>
 								<p>This process takes a lot of hassle out of collecting money for events, and online registrations means that people who are thinking of coming require a lot less action to make it happen.  We think it'd be ideal for church camps, events and other things that churches need people to register for.</p>
@@ -67,9 +71,9 @@ export class Client extends React.Component {
 						<section className="post">
 							<header className="post-header">
 								<h2 className="post-title">New Vision 100 IT Philosophy - Update</h2>
-								<p className="post-meta">By <a className="post-author" href="#">CdK</a> under <a className="post-category">Philosophy</a></p>
+									<div className="post-meta"><span className="post-author">By <a href="#">CdK</a></span><span className="post-category">under <a className="#">Philosophy</a></span></div>
 							</header>
-							<div className="post-description">
+							<div className="post-body">
 								<p>Last November the Vision 100 IT Team 'board' (Christian de Kievit, Mikey Lynch, Jason Imms and Alan Reader) went away for a night and a day to think through what is in store for the future of Vision 100 IT.</p>
 								<p>There was lots of coffee, unhealthy snacks and we filled a whiteboard with Mikey's illegible handwriting ten times over. Out the end we figured out a way forward for the Vision 100 IT Team. We believe we are doing something unique that can serve not only The Vision 100 Network, but churches and ministries across Tasmania and Australia!</p>
 								<p>Some important objectives for the Vision 100 IT Team were discussed:</p>

@@ -6,7 +6,9 @@
 
 .mini-hero-background {
   height: 50vh;
-  background-color: grey;
+  background-size: cover;
+  background-position-y: 75%;
+  background-image: url("../elements/buildings.jpeg");
 }
 
 .mini-hero-content {

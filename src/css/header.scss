@@ -8,6 +8,7 @@
   background-color: rgba(255,255,255,0);
   transition: background-color 1s ease-out;
   transition-delay: 1s;
+  border-bottom: 1px solid rgba(255,255,255,0);
   @media (min-width: $screen-md-min) {
     height: auto;
     position: fixed;
@@ -20,7 +21,9 @@
 }
 
 .nav-bar.small {
-  background-color: rgba(255,255,255,.7);
+  background-color: rgba(255,255,255,1);
+  transition: background-color 1s, border-color 2s, linear;
+  border-color: lighten($text-color, 70%);
 
   @media (min-width: $screen-md-min) {
     .logo {
@@ -103,7 +106,8 @@
 .search-box {
   cursor: pointer;
   lost-column: 1/13;
-  margin-top: 5px;
+  text-align: left;
+  //margin-top: 5px;
     span {
       color: $headings-color;
       a:visited {
