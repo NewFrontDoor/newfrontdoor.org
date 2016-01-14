@@ -81,7 +81,10 @@ font-size: $font-size-h4;
 .footer-wrap ul {
   margin-top: -5px;
   a {
-    color: $footer-text !important;
+    color: black;
+    @media (min-width: $screen-sm-min) {
+      color: $footer-text !important;
+    }
   }
 }
 
