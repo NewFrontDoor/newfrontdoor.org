@@ -81,7 +81,7 @@ export class Site extends React.Component {
 								<li><a href="/support">Support</a></li>
 								<li><a href="/status">Status</a></li>
 								<li><a href="/documentation">Documentation</a></li>
-								<li><a href="">Contact</a></li>
+								<li><a href="/contact">Contact</a></li>
 							</ul>
 						</div>
 					</div>
