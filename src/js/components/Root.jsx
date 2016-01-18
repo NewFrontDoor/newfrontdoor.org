@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../css/main';
 
 export class Root extends React.Component {
 	render() {

@@ -51,6 +51,7 @@ function getCommonConfig() {
 		output: {
 			filename: 'index.js',
 			path: path.resolve(paths.bundle.dest),
+			publicPath: '/',
 			libraryTarget: 'umd'
 		},
 		stats: {

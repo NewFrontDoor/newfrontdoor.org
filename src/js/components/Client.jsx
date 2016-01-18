@@ -1,5 +1,6 @@
 import React from 'react';
 import {MiniHero} from './MiniHero';
+import placeholder from '../../elements/placeholder.jpeg';
 
 export class Client extends React.Component {
 	render() {
@@ -18,7 +19,7 @@ export class Client extends React.Component {
 								<div className="post-meta"><span className="post-author">By <a href="#">AR</a></span><span className="post-date">3rd March, 2015</span><span className="post-category">under <a href="#">Announcements</a></span></div>
 							</header>
 							<div className="post-body">
-								<div className="img-container"><img src="../src/elements/placeholder.jpeg" alt="sample image" /></div>
+								<div className="img-container"><img src={placeholder} alt="sample image" /></div>
 								<div className="post-content">
 									<p>As you can probably tell, Vision 100 IT now has it's own special home on the web. If you're not viewing this post in situ, head to <a href="#">Vision 100 IT</a> and check it out</p>
 									<p>There are ponies and ice-cream cakes, as well as lots of fairy bread and cocktail sausages there. In fact it's just like a primary school birthday party</p>
@@ -46,7 +47,7 @@ export class Client extends React.Component {
 								<h2 className="post-title">Exporting Running Sheets from Elvanto to Excel</h2>
 									<div className="post-meta"><span className="post-author">By <a href="#">CdK</a></span><span className="post-category">under <a className="#">Elvanto</a></span></div>
 							</header>
-							<div className="img-container"><img src="../src/elements/placeholder.jpeg" alt="sample image" /></div>
+							<div className="img-container"><img src={placeholder} alt="sample image" /></div>
 							<div className="post-body">
 								<p>At a recent IT training night talking about Elvanto, a question arose about being able to export running sheets to Excel.</p>
 								<p>The basic problem is that Elvanto's running sheet format is quite rigid, and it's difficult to do things like put the Bible reading next to the person doing the Bible reading.</p>
