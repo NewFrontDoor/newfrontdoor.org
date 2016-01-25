@@ -59,8 +59,7 @@
     <header><h3>Consulation + advice</h3></header>
     <section>
       <ul>
-        <li>Podcasting</li>
-        <li>Newsletter distribution</li>
+        <li>~crickets~</li>
       </ul>
     </section>
   </div>

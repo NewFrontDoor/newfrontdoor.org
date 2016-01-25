@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class Status extends React.Component {
+export class Training extends React.Component {
 
 	render() {
 		return (
