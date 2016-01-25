@@ -9,7 +9,6 @@ body {
 
 footer {
   width: 100%;
-  lost-utility: clearfix;
   display: block;
   height: 100vh;
   background-color: white;
@@ -29,7 +28,6 @@ footer {
 
 .footer-wrap {
   padding: 15px;
-    lost-utility: clearfix;
     lost-center: 980px;
     @media (min-width: $screen-sm-min) {
       padding: 0;

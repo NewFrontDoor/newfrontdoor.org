@@ -4,22 +4,22 @@ export default {
 	},
 	mainmenu: {
 		links: [{
-			text: 'How we can help you',
+			text: 'How we<br />can help you',
 			target: '#how'
 		}, {
-			text: 'Who are Vision 100 IT?',
+			text: 'Who are<br />Vision 100 IT?',
 			target: '#who'
 		}, {
-			text: 'Tools + Philosophy',
+			text: 'Tools +<br />Philosophy',
 			target: '#tools'
 		}, {
-			text: 'Events + Training',
+			text: 'Events +<br />Training',
 			target: '#events'
 		}, {
 			text: 'Pricing',
 			target: '#pricing'
 		}, {
-			text: 'Come on board',
+			text: 'Come<br />on board',
 			target: '#join'
 		}]
 	},

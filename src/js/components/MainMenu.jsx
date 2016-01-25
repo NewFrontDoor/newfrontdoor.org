@@ -8,16 +8,15 @@ export class MainMenu extends React.Component {
 	render() {
 		return (
 			<div className="main-menu">
-				<ul>
-					<li className="search-box text-uppercase list-unstyled">
+				<ul className="list-inline">
+					<li className="search-box text-uppercase">
 							<a href="#" onClick={this.props.openSearch}>
-								Menu
-								<span className="fa fa-search fa-lg"></span>
+								<span className="fa fa-search fa-lg"></span> Menu
 							</a>
 					</li>
 
-					{this.state.links.map((link, key) => <li key={key} className="main-menu-item text-uppercase list-unstyled">
-							<a href={link.target}>{link.text}</a>
+					{this.state.links.map((link, key) => <li key={key} className="main-menu-item text-uppercase">
+							<a href={link.target} dangerouslySetInnerHTML={{__html: link.text}}></a>
 					</li>)}
 				</ul>
 			</div>
