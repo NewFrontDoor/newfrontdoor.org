@@ -20,6 +20,9 @@
 @import "./forms";
 @import "./buttons";
 
+// Components
+@import "./input-groups";
+
 // Utility classes
 @import "./utilities";
 @import "./responsive-utilities";
@@ -291,6 +294,8 @@ article {
   }
 
   .search-title {
+    margin-bottom: 0.75vr;
+    lost-flex-container: row;
     h2 {
         lost-column: 3/4 0 0px;
         margin-left: 10px;
@@ -307,30 +312,22 @@ article {
     }
   }
   form {
-    margin-left: 20px;
-    padding: 0 10px 0 10px;
+    padding: 0 1.25vr;
     height: 60px;
     width: 100%;
     color: black;
   }
-  .search {
-    lost-column: 3/4 0 0;
+  .search, .submit {
     background: rgba(lighten($text-color, 70%), .1);
     border: none;
     color: white;
   }
-  .submit {
-    lost-column: 1/4 0 50px;
-    background: rgba(lighten($text-color, 70%), .1);
-    border: none;
-    i {
-      width: 100%;
-      line-height: .5;
-      text-align: center;
-      cursor: pointer;
-      color: white;
-    }
+  .btn-transparent {
+    width: 100%;
+    line-height: .5;
+    text-align: center;
   }
+
   .search-results {
     position: relative;
     width: 100%;
@@ -349,6 +346,7 @@ article {
     overflow: hidden;
 
     .results-content {
+      lost-flex-container: row;
       opacity: 0;
       transition: opacity .5s ease-out;
       color: white;
@@ -364,7 +362,7 @@ article {
     }
 
     .results-title {
-      lost-column: 1/1;
+      lost-flex-container: row;
       h3 {
         lost-column: 5/6 0 0px;
         margin-left: 10px;
@@ -390,6 +388,7 @@ article {
     }
   }
   .search-menu {
+    lost-flex-container: row;
     a {
         color: $search-overlay;
     }

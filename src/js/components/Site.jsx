@@ -61,10 +61,13 @@ export class Site extends React.Component {
 					{this.props.children}
 					<div className={siteCless}>
 						<div className="search-title"><h2>Search menu</h2><div><a onClick={this.closeSearch}><i className="fa fa-times-circle fa-2x"></i></a></div></div>
-						<form>
-							<div className="form-group">
+						<form onSubmit={this.openResult}>
+							<div className="input-group">
+								<label className="sr-only" htmlFor="search">Search</label>
 								<input type="search" name="search" className="form-control search" placeholder="Search..." />
-								<span className="form-control submit"><a onClick={this.openResult}><i className="fa fa-search fa-lg"></i></a></span>
+								<span className="input-group-btn submit">
+	        <button className="btn btn-transparent" type="submit"><span className="fa fa-search fa-lg"></span></button>
+	      	</span>
 							</div>
 						</form>
 						<div className={siteYess}>
