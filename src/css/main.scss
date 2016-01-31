@@ -241,7 +241,9 @@ article {
   lost-align: top-center;
   height: 100vh;
   @media (min-width: $screen-md-min) {
-    height: 62vh;
+    min-height: 400px;
+    // view height minus footer height minus nav height
+    height: calc(100vh - 210px - 75px);
   }
 }
 .close-background {
