@@ -29,7 +29,7 @@ export class Header extends React.Component {
 	render() {
 		const navClass = classNames({
 			'nav-bar': true,
-			'small': this.state.pageYOffset > this.state.innerHeight
+			'mini': this.state.pageYOffset > this.state.innerHeight
 		});
 
 		return (
