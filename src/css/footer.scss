@@ -1,4 +1,11 @@
 $footer-bg: $text-color;
+$footer-height: 210px;
+
+body {
+  @media (min-width: $screen-sm-min) {
+    margin-bottom: $footer-height;
+  }
+}
 
 footer {
   background-color: white;
@@ -6,6 +13,11 @@ footer {
   	background-color: $footer-bg;
     opacity: .9;
   	color: #fff;
+    ///sticky footer
+    bottom: 0;
+    position: absolute;
+    height: $footer-height;
+    width: 100%;
   }
 }
 

@@ -237,41 +237,32 @@ article {
 
 //featured 6 styles
 .featured-sixth {
+  lost-center: 100%;
+  lost-align: top-center;
+  height: 100vh;
   @media (min-width: $screen-md-min) {
-    min-height: 90vh;
+    height: 62vh;
   }
 }
 .close-background {
-  height: 100vh;
   background-image: url("../elements/close-image.jpeg");
   filter: grayscale(1) brightness(.8);
   background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: -50px;
-  background-size: 180%;
-  position: relative;
-  z-index: -1;
-  @media (min-width: $screen-md-min) {
-    background-position-y: -100px;
-    background-size: 130%;
-  }
+  background-position: center -80px;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
 }
 .close-content {
-  z-index: 1;
-  height: 50vh;
-  margin-top: -90vh;
+  width: 75vw;
+  padding-top: 30px;
   @media (min-width: $screen-md-min) {
-    position: relative;
-    height: 80vh;
-    margin-top: -80vh;
+    width: 50vw;
   }
   form {
-    lost-column: 4/4;
     padding: 10px;
     @media (min-width: $screen-md-min) {
       padding: 40px 0 0 0;
-      lost-column: 1/2;
-      lost-move: 1/4;
     }
   }
 }
