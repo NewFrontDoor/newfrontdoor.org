@@ -1,1 +1,5 @@
 @import "~bootstrap-sass/assets/stylesheets/bootstrap/buttons";
+
+.btn-transparent {
+	@include button-variant(white, transparent, transparent);
+}

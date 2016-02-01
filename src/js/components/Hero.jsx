@@ -10,8 +10,7 @@ export class Hero extends React.Component {
 		return (
 			<div className="hero-container">
 				<div className="hero-background"></div>
-				<div className="hero-content">
-					<div className="tagline" dangerouslySetInnerHTML={this.raw()}></div>
+				<div className="hero-content text-center" dangerouslySetInnerHTML={this.raw()}>
 				</div>
 			</div>
 		);

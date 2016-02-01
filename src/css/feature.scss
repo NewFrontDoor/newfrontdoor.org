@@ -1,14 +1,14 @@
 .instruction {
   lost-column: 3/3;
   @media (min-width: $screen-md-min) {
-  height: auto;
-  lost-column: 1/3 0 10px;
-  lost-move: 2/3;
-  //border: 1px solid black;
-  background-color: $text-color;
-  opacity: .8;
-  color: $footer-text;
-  padding: 0 10px 0 10px;
+    height: auto;
+    lost-column: 1/3 0 10px;
+    lost-move: 2/3;
+    //border: 1px solid black;
+    background-color: $text-color;
+    opacity: .8;
+    color: $footer-text;
+    padding: 0 10px 0 10px;
   }
 }
 

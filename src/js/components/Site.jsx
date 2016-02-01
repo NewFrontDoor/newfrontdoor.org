@@ -54,17 +54,20 @@ export class Site extends React.Component {
 		return (
 				<div>
 					<Header>
-						<a href="/"><h1 className="sr-only">Vision 100 IT</h1><img className="logo img-responsive" src={logo}></img></a>
+						<a className="logo" href="/"><h1 className="sr-only">Vision 100 IT</h1><img className="img-responsive" src={logo}></img></a>
 						<div className="mobile-menu text-uppercase"><ul><li className="list-unstyled"><a href="/client">Client</a></li><li className="list-unstyled"><a href="#how">Visitor</a></li></ul></div>
 						<MainMenu openSearch={this.openSearch} {...this.state.mainmenu}></MainMenu>
 					</Header>
 					{this.props.children}
 					<div className={siteCless}>
 						<div className="search-title"><h2>Search menu</h2><div><a onClick={this.closeSearch}><i className="fa fa-times-circle fa-2x"></i></a></div></div>
-						<form>
-							<div className="form-group">
+						<form onSubmit={this.openResult}>
+							<div className="input-group">
+								<label className="sr-only" htmlFor="search">Search</label>
 								<input type="search" name="search" className="form-control search" placeholder="Search..." />
-								<span className="form-control submit"><a onClick={this.openResult}><i className="fa fa-search fa-lg"></i></a></span>
+								<span className="input-group-btn submit">
+	        <button className="btn btn-transparent" type="submit"><span className="fa fa-search fa-lg"></span></button>
+	      	</span>
 							</div>
 						</form>
 						<div className={siteYess}>

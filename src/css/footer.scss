@@ -1,35 +1,28 @@
-$footer-height: 210px;
 $footer-bg: $text-color;
+$footer-height: 210px;
 
 body {
   @media (min-width: $screen-sm-min) {
-    margin-bottom: ($footer-height + $footer-height);
+    margin-bottom: $footer-height;
   }
 }
 
 footer {
-  width: 100%;
-  lost-utility: clearfix;
-  display: block;
-  height: 100vh;
   background-color: white;
   @media (min-width: $screen-sm-min) {
   	background-color: $footer-bg;
     opacity: .9;
   	color: #fff;
-  }
-
-// Sticky footer
-@media (min-width: $screen-sm-min) {
+    ///sticky footer
     bottom: 0;
     position: absolute;
     height: $footer-height;
+    width: 100%;
   }
 }
 
 .footer-wrap {
   padding: 15px;
-    lost-utility: clearfix;
     lost-center: 980px;
     @media (min-width: $screen-sm-min) {
       padding: 0;
@@ -61,10 +54,10 @@ footer {
   background-repeat: no-repeat;
   background-size: contain;
   background-position-x: center;
-  background-position-y: 25px;
   @media (min-width: $screen-sm-min) {
       lost-column: 3/11;
       lost-move: -4/11;
+      background-position-y: 25px;
   }
 }
 
@@ -82,12 +75,13 @@ font-size: $font-size-h4;
   margin-top: -5px;
   a {
     color: black;
+    margin: 0 4px;
     @media (min-width: $screen-sm-min) {
       color: $footer-text !important;
+      margin: 0;
     }
   }
 }
-
 
 .social {
 margin: 0;
