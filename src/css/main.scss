@@ -202,7 +202,7 @@ article {
   min-height: 100vh;
 }
 .featured-dark {
-  background-color: $text-color;
+  background-color: rgba($text-color, .9);
   color: $primary-highlight;
   min-height: 100vh;
 }
