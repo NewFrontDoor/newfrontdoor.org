@@ -1,7 +1,7 @@
 //Navigation bar styles
 
 .nav-bar {
-  width: 100vw;
+  width: 100%;
   position: fixed;
   height: auto;
   z-index: 5;
@@ -34,7 +34,7 @@
   padding: .5vr;
   margin: auto;
   img {
-		height: 11vh;
+		height: 3vr;
 	  @media (min-width: $screen-md-min) {
 	    height: auto;
 	  }
