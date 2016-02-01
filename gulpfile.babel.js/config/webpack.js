@@ -11,6 +11,7 @@ import vr from 'postcss-vertical-rhythm';
 import colorblind from 'postcss-colorblind';
 import webpack from 'webpack';
 import WebpackNotifierPlugin from 'webpack-notifier';
+import argvSetEnv from 'argv-set-env';
 
 import paths from './paths';
 import packageJson from '../../package.json';
@@ -28,6 +29,8 @@ const staticPaths = [
 	'/contact',
 	'/training'
 ];
+
+argvSetEnv();
 
 export default getConfig();
 
