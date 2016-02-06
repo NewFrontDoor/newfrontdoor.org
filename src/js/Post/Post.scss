@@ -1,0 +1,50 @@
+@import "../../css/variables";
+
+:local .post {
+		lost-column: 1/1;
+}
+
+:local .title {}
+
+:local .meta {
+		visibility: hidden;
+		@media (min-width: $screen-md-min) {
+				visibility: visible;
+				float: left;
+				width: 200px;
+				height: auto;
+				position: absolute;
+				margin-left: -200px;
+				padding-right: 20px;
+		}
+}
+
+:local .author {
+		display: block;
+		text-align: right;
+}
+
+:local .date {
+		display: block;
+		text-align: right;
+}
+
+:local .category {
+		display: block;
+		text-align: right;
+}
+
+:local .content {
+		clear: bottom;
+}
+
+:local .img-container {
+		float: left;
+		padding: 0 20px 20px 0;
+		//margin: 0 20px 20px 0;
+		overflow: hidden;
+		img {
+				//float: left;
+				//padding: 0 20px 20px 0;
+		}
+}

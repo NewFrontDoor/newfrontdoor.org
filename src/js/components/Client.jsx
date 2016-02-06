@@ -8,9 +8,32 @@ import {Post} from '../Post';
 
 const md = new Remarkable();
 
-const blog = require.context('!!raw!../../blogs', true, /^.*\.md$/);
+const blog = {
+	get posts() {
+		const context = require.context('!!raw!../../blogs', true, /^.*\.md$/);
+		return context.keys().map(context);
+	},
+	post(id) {
+		return this.posts.find(x => x === id);
+	},
+	page({trim = 0, page = 0, size = 0}) {
+		const begin = page * size;
+		const end = begin + size;
+		return this.posts.slice(begin, end).map(fm).map(parsePost);
 
-const posts = blog.keys().map(blog).map(fm).map((post, key) => Object.assign(post, {body: md.render(`${post.body.slice(0, 500)}... [View more](#)`), key}));
+		function parsePost(post, key) {
+			const body = trim ? `${post.body.slice(0, trim)}... [View more](#)` : post.body;
+			return Object.assign(post, {body: md.render(body), key});
+		}
+	}
+};
+
+const posts = blog.page({
+	trim: 500,
+	page: 0,
+	size: 3
+});
+
 const pinnedPost = posts.shift();
 
 export const Client = () => (

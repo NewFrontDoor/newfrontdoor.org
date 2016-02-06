@@ -1,5 +1,5 @@
 import React from 'react';
-import {Hero} from './Hero';
+import {Hero} from '../Hero';
 
 import first from '../content/featured/first.md';
 import second from '../content/featured/second.md';
