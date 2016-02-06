@@ -22,9 +22,7 @@ export default (locals, callback) => {
 	const reactApp = {
 		__html: ReactDOMServer.renderToString(<Router history={history}>{Routes}</Router>)
 	};
-	console.log('GENERATE!!!!!!');
 	const html = ReactDOMServer.renderToStaticMarkup(<Root reactApp={reactApp} />);
-	console.log('HTML', html);
 	callback(null, `<!DOCTYPE html>${html}`);
 };
 

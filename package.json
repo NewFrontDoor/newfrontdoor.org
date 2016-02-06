@@ -13,13 +13,17 @@
     "url": "https://github.com/BarryThePenguin/gulp-tasks.git"
   },
   "author": "Jonathan Haines",
-  "contributors": [{
-    "name": "Jonathan Haines"
-  }, {
-    "name": "Alan Reader"
-  }],
+  "contributors": [
+    {
+      "name": "Jonathan Haines"
+    },
+    {
+      "name": "Alan Reader"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
+    "moment": "^2.11.2",
     "node-sass": "^3.4.2"
   },
   "devDependencies": {
@@ -40,9 +44,11 @@
     "del": "^2.2.0",
     "eslint": "^1.10.3",
     "eslint-config-xo-react": "^0.3.0",
+    "eslint-plugin-react": "^3.16.1",
     "eval": "^0.1.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
+    "front-matter": "^2.0.5",
     "gulp": "^3.9.0",
     "gulp-filter": "^3.0.1",
     "gulp-load-plugins": "^1.2.0",
