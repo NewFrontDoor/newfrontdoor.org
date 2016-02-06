@@ -1,15 +1,26 @@
 import React from 'react';
 import {MiniHero} from './MiniHero';
 import placeholder from '../../elements/placeholder.jpeg';
+import content from '../content';
 
 export class Client extends React.Component {
+	raw() {
+		return {__html: content.banners.output};
+	}
 	render() {
 		return (
 			<div>
 				<MiniHero></MiniHero>
 				<main role="main">
 				<section className="announcement-banner">
-						<div>Testing the announcement banner</div>
+					<div>
+						This is where the announcement content would go
+					</div>
+				</section>
+				<section className="warning-banner">
+					<div>
+						This is where the warning content would go
+					</div>
 				</section>
 				<div className="client-wrapper">
 					<section className="pinned-post">

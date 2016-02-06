@@ -1,3 +1,15 @@
+.warning-banner {
+ color: $state-warning-text;
+ text-transform: uppercase;
+ font-family: $font-family-sans-serif;
+ background-color: $state-warning-bg;
+ border-top: 1px solid $state-warning-border;
+ padding: 15px;
+ div {
+   lost-center: 880px;
+ }
+}
+
 .announcement-banner {
  color: $state-info-text;
  text-transform: uppercase;

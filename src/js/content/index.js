@@ -2,6 +2,13 @@ export default {
 	hero: {
 		tagline: '<h1>Can a church really do IT <em>effectively?</em><br/><em>Anything</em> is possible.<br/>Come on, we’ll show you.</h1>'
 	},
+	banners: [{
+		field: 'announcement-banner',
+		output: 'Testing the announcement banner'
+	}, {
+		field: 'warning-banner',
+		outputed: 'Testing the warning banner'
+	}],
 	mainmenu: {
 		links: [{
 			text: 'How we<br />can help you',
