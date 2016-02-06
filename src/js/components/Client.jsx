@@ -10,7 +10,8 @@ const md = new Remarkable();
 
 const blog = require.context('!!raw!../../blogs', true, /^.*\.md$/);
 
-const posts = blog.keys().map(blog).map(fm).map((post, key) => Object.assign(post, {body: md.render(post.body), key}));
+const posts = blog.keys().map(blog).map(fm).map((post, key) => Object.assign(post, {body: md.render(`${post.body.slice(0, 500)}... [View more](#)`), key}));
+const pinnedPost = posts.shift();
 
 export const Client = () => (
 		<div>
@@ -28,10 +29,14 @@ export const Client = () => (
 						</section>
 						<div className="client-wrapper">
 								<section className="pinned-post">
-									<Post {...posts.shift()} />
+									<Post {...pinnedPost.attributes}>
+										<div dangerouslySetInnerHTML={{__html: pinnedPost.body}}></div>
+									</Post>
 								</section>
 								<section className="posts">
-										{posts.map(post => <Post {...post}/>)}
+										{posts.map((post, key) => <Post key={key} {...post.attributes}>
+											<div dangerouslySetInnerHTML={{__html: post.body}}></div>
+										</Post>)}
 								</section>
 								<div></div>
 						</div>

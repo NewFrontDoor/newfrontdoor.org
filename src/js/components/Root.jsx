@@ -14,7 +14,7 @@ export const Root = props => (
 		<body>
 			<div id="content" dangerouslySetInnerHTML={props.reactApp}/>
 			<script src="http://localhost:3000/webpack-dev-server.js"></script>
-			<script src="index.js"></script>
+			<script src="/index.js"></script>
 		</body>
 	</html>
 );
