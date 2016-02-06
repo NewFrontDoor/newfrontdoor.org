@@ -13,18 +13,14 @@
     "url": "https://github.com/BarryThePenguin/gulp-tasks.git"
   },
   "author": "Jonathan Haines",
-  "contributors": [
-    {
-      "name": "Jonathan Haines"
-    },
-    {
-      "name": "Alan Reader"
-    }
-  ],
+  "contributors": [{
+    "name": "Jonathan Haines"
+  }, {
+    "name": "Alan Reader"
+  }],
   "license": "MIT",
   "dependencies": {
-    "node-sass": "^3.4.2",
-    "xo": "^0.12.1"
+    "node-sass": "^3.4.2"
   },
   "devDependencies": {
     "argv-set-env": "^1.0.1",
@@ -42,6 +38,8 @@
     "classnames": "^2.2.3",
     "css-loader": "^0.23.1",
     "del": "^2.2.0",
+    "eslint": "^1.10.3",
+    "eslint-config-xo-react": "^0.3.0",
     "eval": "^0.1.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
@@ -51,7 +49,7 @@
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.1",
     "gulp-util": "^3.0.7",
-    "history": "^1.17.0",
+    "history": "^2.0.0",
     "html-loader": "^0.4.0",
     "html-webpack-plugin": "^2.7.2",
     "indexhtml-webpack-plugin": "^0.1.9",
@@ -78,10 +76,21 @@
     "webpack": "^1.12.11",
     "webpack-dev-server": "^1.14.1",
     "webpack-notifier": "^1.2.1",
+    "xo": "^0.12.1",
     "xo-loader": "^0.5.0"
   },
+  "eslintConfig": {
+    "extends": [
+      "xo/esnext",
+      "xo-react"
+    ],
+    "rules": {
+      "react/no-danger": 0
+    }
+  },
   "xo": {
-    "esnext": true
+    "esnext": true,
+    "extends": "xo-react"
   },
   "babel": {
     "presets": [

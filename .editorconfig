@@ -2,6 +2,7 @@ root = true
 
 [*]
 indent_style = tab
+indent_size = 2
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
@@ -15,4 +16,4 @@ indent_size = 2
 trim_trailing_whitespace = false
 
 [*.jsx]
-indent_size = 1
+indent_size=1

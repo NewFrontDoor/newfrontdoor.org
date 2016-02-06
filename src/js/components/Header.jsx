@@ -39,3 +39,7 @@ export class Header extends React.Component {
 		);
 	}
 }
+
+Header.propTypes = {
+	children: React.PropTypes.arrayOf(React.PropTypes.element).isRequired
+};

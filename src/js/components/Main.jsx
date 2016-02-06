@@ -1,5 +1,4 @@
 import React from 'react';
-import {MainMenu} from './MainMenu';
 import {Hero} from './Hero';
 
 import first from '../content/featured/first.md';
@@ -32,7 +31,7 @@ export class Main extends React.Component {
 	render() {
 		return (
 			<div>
-				<Hero></Hero>
+				<Hero />
 				<main role="main">
 					<div className="featured-first featured-light" id="how">
 						<div className="site-wrapper site-wrapper-padding">

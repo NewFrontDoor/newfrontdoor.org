@@ -8,7 +8,6 @@ import lost from 'lost';
 import path from 'path';
 import pxtorem from 'postcss-pxtorem';
 import vr from 'postcss-vertical-rhythm';
-import colorblind from 'postcss-colorblind';
 import webpack from 'webpack';
 import WebpackNotifierPlugin from 'webpack-notifier';
 import argvSetEnv from 'argv-set-env';
@@ -187,10 +186,7 @@ function getPostCss() {
 			browsers: ['last 2 versions'],
 			cascade: false
 		}),
-		pxtorem(),
-		// colorblind({
-		//	method: // One of the following 'protanomaly', 'protanopia', 'deuteranomaly', 'deuteranopia', 'tritanomaly', 'tritanopia', 'achromatomaly', 'achromatopsia'
-		// })
+		pxtorem()
 	];
 }
 

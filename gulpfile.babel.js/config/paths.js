@@ -10,8 +10,6 @@ const src = p => dirPath('/src/', p || '');
 
 const dest = p => dirPath('/dest/', p || '');
 
-const modules = p => dirPath('/node_modules/', p || '');
-
 export default {
 	dest: dest(),
 	bundle: {

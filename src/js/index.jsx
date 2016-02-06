@@ -5,7 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactDOMServer from 'react-dom/server';
 import {createHistory, createMemoryHistory} from 'history';
-import {Router, RoutingContext, match} from 'react-router';
+import {Router} from 'react-router';
 import {Root} from './components/Root';
 import Routes from './components/Routes';
 
@@ -22,10 +22,12 @@ export default (locals, callback) => {
 	const reactApp = {
 		__html: ReactDOMServer.renderToString(<Router history={history}>{Routes}</Router>)
 	};
-
-	const html = ReactDOMServer.renderToStaticMarkup(<Root reactApp={reactApp}></Root>);
+	console.log('GENERATE!!!!!!');
+	const html = ReactDOMServer.renderToStaticMarkup(<Root reactApp={reactApp} />);
+	console.log('HTML', html);
 	callback(null, `<!DOCTYPE html>${html}`);
 };
+
 // Promise.resolve({
 // 	'/': ReactDOMServer.renderToString(<Root locals={locals}>
 // 			<Hero locals={locals}></Hero>
