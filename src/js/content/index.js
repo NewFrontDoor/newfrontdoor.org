@@ -76,7 +76,6 @@ export default {
 	},
 	footerLinks: [{
 		heading: 'V100IT',
-		className: 'footer-list text-right',
 		links: [{
 			text: 'Philosophy',
 			target: '/#tools'
@@ -95,7 +94,6 @@ export default {
 		}]
 	}, {
 		heading: 'About Us',
-		className: 'footer-list text-right',
 		links: [{
 			text: 'Mission + Vision',
 			target: '/about#mission'
@@ -114,7 +112,6 @@ export default {
 		}]
 	}, {
 		heading: 'Support',
-		className: 'footer-list text-left',
 		links: [{
 			text: 'Support Request',
 			target: '/support'
@@ -133,7 +130,6 @@ export default {
 		}]
 	}, {
 		heading: 'Connect',
-		className: 'footer-list text-left',
 		links: [{
 			text: 'Podcast',
 			target: ''
@@ -151,7 +147,6 @@ export default {
 			target: 'http://twitter.com/vision100it'
 		}]
 	}, {
-		className: 'footer-logo',
 		links: ['/']
 	}]
 };

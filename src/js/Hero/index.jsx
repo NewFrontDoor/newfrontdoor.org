@@ -5,6 +5,6 @@ import content from '../content';
 export const Hero = () => (
 	<div className={styles.container}>
 		<div className={styles.background}></div>
-		<div className={styles.content} dangerouslySetInnerHTML={{__html: content.hero.tagline}}></div>
+		<div className={`${styles.content} text-center`} dangerouslySetInnerHTML={{__html: content.hero.tagline}}></div>
 	</div>
 );

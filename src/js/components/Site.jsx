@@ -1,12 +1,10 @@
 import React from 'react';
 import '../../css/main';
 import classNames from 'classnames';
-import {Header} from './Header';
-import {MainMenu} from './MainMenu';
-import {Footer} from './Footer';
+import {Header} from '../Header';
+import {Footer} from '../Footer';
 
 import content from '../content';
-import logo from '../../elements/v100it2.png';
 
 export class Site extends React.Component {
 	constructor(props) {
@@ -52,23 +50,7 @@ export class Site extends React.Component {
 
 		return (
 				<div>
-						<Header>
-								<a className="logo" href="/">
-										<h1 className="sr-only">Vision 100 IT</h1>
-										<img className="img-responsive" src={logo}></img>
-								</a>
-								<div className="mobile-menu text-uppercase">
-										<ul>
-												<li className="list-unstyled">
-														<a href="/client">Client</a>
-												</li>
-												<li className="list-unstyled">
-														<a href="#how">Visitor</a>
-												</li>
-										</ul>
-								</div>
-								<MainMenu openSearch={this.openSearch} {...this.state.mainmenu}/>
-						</Header>
+						<Header openSearch={this.openSearch} {...this.state.mainmenu} />
 						{this.props.children}
 						<div className={siteCless}>
 								<div className="search-title">

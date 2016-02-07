@@ -1,9 +1,10 @@
+import styles from './Footer.scss';
 import React from 'react';
 
 export const Footer = props => (
 		<footer>
-				<div className="footer-wrap">
-						{props.footerLinks.map((list, key) => <div key={key} className={list.className}>
+				<div className={styles.wrap}>
+						{props.footerLinks.map((list, key) => <div key={key} className={styles.item}>
 								<header className="text-lowercase">
 										<h3>{list.heading}</h3>
 								</header>
