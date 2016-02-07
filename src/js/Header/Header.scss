@@ -31,17 +31,19 @@
 :local .logo {
   padding: .5vr;
   margin: auto;
-  img {
-		height: 3vr;
-	  @media (min-width: $screen-md-min) {
-	    height: auto;
-	  }
-	}
+
 	@media (min-width: $screen-md-min) {
 		transition: padding .5s ease-out;
 		lost-column: 3/16;
 		lost-move: 13/16;
 	}
+}
+
+:local .logo  img {
+    height: 3vr;
+    @media (min-width: $screen-md-min) {
+      height: auto;
+    }
 }
 
 :local .mobile {
