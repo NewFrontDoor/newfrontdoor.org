@@ -3,6 +3,7 @@ import styles from './Header.scss';
 import React from 'react';
 import classNames from 'classnames';
 import throttle from 'lodash/throttle';
+import content from '../content';
 
 import logo from '../../elements/v100it2.png';
 
@@ -58,7 +59,7 @@ export class Header extends React.Component {
 								<span className="fa fa-search fa-lg"></span> Menu
 							</a>
 						</li>
-						{this.props.links.map((link, key) => <li key={key} className="main-menu-item text-uppercase">
+						{content.mainmenu.links.map((link, key) => <li key={key} className="main-menu-item text-uppercase">
 							<a href={link.target} dangerouslySetInnerHTML={{__html: link.text}}></a>
 						</li>)}
 					</ul>
@@ -69,6 +70,5 @@ export class Header extends React.Component {
 }
 
 Header.propTypes = {
-	links: React.PropTypes.array.isRequired,
 	openSearch: React.PropTypes.func.isRequired
 };

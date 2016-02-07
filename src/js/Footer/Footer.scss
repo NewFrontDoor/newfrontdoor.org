@@ -1,11 +1,5 @@
 @import "../../css/variables";
 
-body {
-  @media (min-width: $screen-sm-min) {
-    margin-bottom: $footer-height;
-  }
-}
-
 footer {
   background-color: white;
   @media (min-width: $screen-sm-min) {
@@ -24,7 +18,7 @@ footer {
 		padding: 15px;
 		lost-center: 980px;
 		@media (min-width: $screen-sm-min) {
-				padding: 0;
+				// padding: 0;
 		}
 }
 

@@ -8,7 +8,7 @@
 }
 
 :local .background {
-  height: 100vh;
+  height: 100%;
   width: 100%;
 
   background-image: url("../../elements/splash-image.jpeg");
@@ -17,6 +17,16 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+:local .mini.container {
+  height: 50vh;
+}
+
+:local .mini .background {
+  background-size: cover;
+  background-position: center 75%;
+  background-image: url("../../elements/buildings.jpeg");
 }
 
 :local .content {

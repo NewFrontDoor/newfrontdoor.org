@@ -1,6 +1,8 @@
 import React from 'react';
 import {Hero} from '../Hero';
 
+import content from '../content';
+
 import first from '../content/featured/first.md';
 import second from '../content/featured/second.md';
 import third from '../content/featured/third.md';
@@ -31,7 +33,9 @@ export class Main extends React.Component {
 	render() {
 		return (
 			<div>
-				<Hero />
+				<Hero>
+					<div dangerouslySetInnerHTML={{__html: content.hero.tagline}}></div>
+				</Hero>
 				<main role="main">
 					<div className="featured-first featured-light" id="how">
 						<div className="site-wrapper site-wrapper-padding">

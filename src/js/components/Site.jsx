@@ -1,19 +1,17 @@
 import React from 'react';
 import '../../css/main';
-import classNames from 'classnames';
 import {Header} from '../Header';
 import {Footer} from '../Footer';
-
-import content from '../content';
+import {SearchBar} from '../SearchBar';
 
 export class Site extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = content;
+		this.state = {
+			showSearch: false
+		};
 		this.openSearch = this.openSearch.bind(this);
 		this.closeSearch = this.closeSearch.bind(this);
-		this.openResult = this.openResult.bind(this);
-		this.closeResult = this.closeResult.bind(this);
 	}
 
 	openSearch(event) {
@@ -26,95 +24,14 @@ export class Site extends React.Component {
 		this.setState({showSearch: false});
 	}
 
-	openResult(event) {
-		event.preventDefault();
-		this.setState({showResult: true});
-	}
-
-	closeResult(event) {
-		event.preventDefault();
-		this.setState({showResult: false});
-	}
-
 	render() {
-		const siteCless = classNames({
-			'visible': this.state.showSearch,
-			'search-overlay': true,
-			'text-uppercase': true
-		});
-
-		const siteYess = classNames({
-			'visible': this.state.showResult,
-			'search-results': true
-		});
-
 		return (
-				<div>
-						<Header openSearch={this.openSearch} {...this.state.mainmenu} />
-						{this.props.children}
-						<div className={siteCless}>
-								<div className="search-title">
-										<h2>Search menu</h2>
-										<div>
-												<a onClick={this.closeSearch}>
-														<i className="fa fa-times-circle fa-2x"></i>
-												</a>
-										</div>
-								</div>
-								<form onSubmit={this.openResult}>
-										<div className="input-group">
-												<label className="sr-only" htmlFor="search">Search</label>
-												<input type="search" name="search" className="form-control search" placeholder="Search..."/>
-												<span className="input-group-btn submit">
-														<button className="btn btn-transparent" type="submit">
-																<span className="fa fa-search fa-lg"></span>
-														</button>
-												</span>
-										</div>
-								</form>
-								<div className={siteYess}>
-										<div className="results-title">
-												<h3>Results</h3>
-												<div>
-														<a onClick={this.closeResult}>
-																<i className="fa fa-times-circle fa-lg"></i>
-														</a>
-												</div>
-										</div>
-										<div className="results-content">
-												<ul className="list-unstyled">
-														<li>result 1</li>
-														<li>result 2</li>
-														<li>result 3</li>
-												</ul>
-										</div>
-										<div className="search-nav small">
-
-												<p>more</p>
-										</div>
-								</div>
-								<div className="search-menu">
-										<ul className="list-unstyled">
-												<li>
-														<a href="/client">News</a>
-												</li>
-												<li>
-														<a href="/support">Support</a>
-												</li>
-												<li>
-														<a href="/status">Status</a>
-												</li>
-												<li>
-														<a href="/documentation">Documentation</a>
-												</li>
-												<li>
-														<a href="/contact">Contact</a>
-												</li>
-										</ul>
-								</div>
-						</div>
-						<Footer footerLinks={this.state.footerLinks}/>
-				</div>
+			<div className="container">
+				<Header openSearch={this.openSearch}/>
+				{this.props.children}
+				<Footer/>
+				<SearchBar isOpen={this.state.showSearch} onClose={this.closeSearch}/>
+			</div>
 		);
 	}
 }

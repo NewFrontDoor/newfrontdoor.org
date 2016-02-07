@@ -1,10 +1,11 @@
 import styles from './Footer.scss';
 import React from 'react';
+import content from '../content';
 
-export const Footer = props => (
+export const Footer = () => (
 		<footer>
 				<div className={styles.wrap}>
-						{props.footerLinks.map((list, key) => <div key={key} className={styles.item}>
+						{content.footerLinks.map((list, key) => <div key={key} className={styles.item}>
 								<header className="text-lowercase">
 										<h3>{list.heading}</h3>
 								</header>
@@ -17,5 +18,3 @@ export const Footer = props => (
 				</div>
 		</footer>
 );
-
-Footer.propTypes = {footerLinks: React.PropTypes.array.isRequired};

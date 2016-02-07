@@ -3,7 +3,7 @@ import React from 'react';
 import fm from 'front-matter';
 import Remarkable from 'remarkable';
 
-import {MiniHero} from './MiniHero';
+import {Hero} from '../Hero';
 import {Post} from '../Post';
 
 const md = new Remarkable();
@@ -38,7 +38,7 @@ const pinnedPost = posts.shift();
 
 export const Client = () => (
 		<div>
-				<MiniHero/>
+				<Hero mini />
 				<main role="main">
 						<section className="announcement-banner">
 								<div>

@@ -1,10 +1,16 @@
 import styles from './Hero.scss';
 import React from 'react';
-import content from '../content';
 
-export const Hero = () => (
-	<div className={styles.container}>
+export const Hero = props => (
+	<div className={props.mini ? `${styles.mini} ${styles.container}` : styles.container}>
 		<div className={styles.background}></div>
-		<div className={`${styles.content} text-center`} dangerouslySetInnerHTML={{__html: content.hero.tagline}}></div>
+		<div className={props.children ? `${styles.content} text-center` : ''}>
+			{props.children}
+		</div>
 	</div>
 );
+
+Hero.propTypes = {
+	mini: React.PropTypes.bool,
+	children: React.PropTypes.node
+};

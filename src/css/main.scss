@@ -30,11 +30,18 @@
 // Our Stuff
 @import "./documentation";
 @import "./support";
-@import "./minihero";
 @import "./client";
 
 @lost gutter 15px;
 @lost flexbox flex;
+
+.container {
+  width: 100%;
+  display: inline-block;
+  @media (min-width: $screen-sm-min) {
+    margin-bottom: $footer-height;
+  }
+}
 
 em {
   style: italics;
@@ -243,14 +250,14 @@ article {
   @media (min-width: $screen-md-min) {
     min-height: 400px;
     // view height minus footer height minus nav height
-    height: calc(100vh - 210px - 75px);
+    height: calc(100vh - #{$footer-height} - 60px);
   }
 }
 .close-background {
   background-image: url("../elements/close-image.jpeg");
   filter: grayscale(1) brightness(.8);
   background-repeat: no-repeat;
-  background-position: center -80px;
+  background-position: center 20%;
   background-size: cover;
   height: 100%;
   width: 100%;
