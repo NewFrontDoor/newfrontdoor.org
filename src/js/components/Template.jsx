@@ -1,15 +1,17 @@
 import React from 'react';
-import marked from 'marked';
 import toc from 'markdown-toc';
+import Remarkable from 'remarkable';
 import sparkleshare from '!!raw!../content/documentation/sparkleshare.md';
+
+const md = new Remarkable();
 
 export class Template extends React.Component {
 	rawToc() {
-		return {__html: marked(toc(sparkleshare, {firsth1: false}).content)};
+		return {__html: md.render(toc(sparkleshare, {firsth1: false}).content)};
 	}
 
 	rawSparkleshare() {
-		return {__html: marked(sparkleshare)};
+		return {__html: md.render(sparkleshare)};
 	}
 
 	render() {

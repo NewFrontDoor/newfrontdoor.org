@@ -61,6 +61,9 @@ function getCommonConfig() {
 			colors: true,
 			reasons: true
 		},
+		node: {
+			fs: 'empty'
+		},
 		resolve: {
 			extensions: ['', '.js', '.jsx', '.scss']
 		},
@@ -76,7 +79,7 @@ function getCommonConfig() {
 function getDevConfig() {
 	return {
 		debug: true,
-		devtool: 'eval',
+		devtool: 'cheap-module-eval-source-map',
 		module: {
 			loaders: [
 				getJavaScriptLoader(),
@@ -84,7 +87,8 @@ function getDevConfig() {
 				getHtmlLoader(),
 				getAssetLoader(),
 				getJSXLoader(),
-				getMarkdownLoader()
+				getMarkdownLoader(),
+				getUnlazyLoader()
 			]
 		},
 		plugins: _.union(getCommonPlugins(), [
@@ -114,7 +118,8 @@ function getProdConfig() {
 				getHtmlLoader(),
 				getAssetLoader(),
 				getJSXLoader(),
-				getMarkdownLoader()
+				getMarkdownLoader(),
+				getUnlazyLoader()
 			]
 		},
 		plugins: _.union(getCommonPlugins(), [
@@ -127,6 +132,14 @@ function getProdConfig() {
 			}),
 			new StaticSiteGeneratorPlugin('main', staticPaths, {})
 		])
+	};
+}
+
+function getUnlazyLoader() {
+	return {
+		test: /\.js$/,
+		loaders: ['unlazy'],
+		include: /node_modules\/markdown-toc/
 	};
 }
 
