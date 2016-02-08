@@ -4,21 +4,14 @@ export const Support = () => (
 	<div className="site-wrapper site-wrapper-padding">
 		<h1>Support form</h1>
 		<div>
-			<p>Some issues may be answered by our
-				<a href="/documentation">documentation</a>
-				which you can find
-				<a href="/documentation">here</a>. Please also check our
-				<a href="/status">system status page</a>
-				for any issues that may impact your work.</p>
+			<p>Some issues may be answered by our <a href="/documentation">documentation</a> which you can find <a href="/documentation">here</a>. Please also check our <a href="/status">system status page</a> for any issues that may impact your work.</p>
 		</div>
 		<hr/>
 		<div className="instruction">
 			<h3>Guidelines</h3>
 			<p>In order to best assist you with any trouble you might be having, please ensure you:</p>
 			<ul>
-				<li>populate this form
-					<strong>as completely as possible.</strong>
-				</li>
+				<li>populate this form <strong>as completely as possible.</strong></li>
 				<li>do not include multiple issues on the same submission. Complete once for each issue.</li>
 				<li>ensure answers are validated and form submits successfully with issue of ticket number</li>
 			</ul>

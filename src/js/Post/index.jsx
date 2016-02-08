@@ -11,8 +11,8 @@ export const Post = props => (
 			<p className={styles.meta}>
 				<span className={styles.author}>By&nbsp;
 					<a href="#">{props.author.name}</a>
-				</span>&nbsp;
-				<span className={styles.date}>{moment(props.date).format('Do MMMM, YYYY')}</span>&nbsp;
+				</span>
+				<span className={styles.date}>{moment(props.date).format('Do MMMM, YYYY')}</span>
 				<span className={styles.category}>under&nbsp;
 					<span>{props.tags.map((tag, key) => <a key={key} href={`client/tags/${tag}`}>{tag}</a>)}</span>
 				</span>

@@ -3,9 +3,6 @@ import React from 'react';
 export const About = () => (
 		<div className="site-wrapper site-wrapper-padding">
 				<h1>About Vision 100</h1>
-				<div>
-						<p>The following is a page that should contain things about us.</p>
-				</div>
 				<div id="mission">
 						<h2>Mission + Vision</h2>
 						<p>Vision 100 IT exists to help churches - particularly church IT volunteers and ministry staff - to use IT better.</p>
@@ -39,11 +36,13 @@ export const About = () => (
 						<hr/>
 				</div>
 				<div id="join">
-						<h2>Join Us</h2>
+						<h2>Join our team</h2>
+						<p>Testing</p>
+						<p></p>
 						<hr/>
 				</div>
 				<div id="service">
-						<h2>Service Levels</h2>
+						<h2>Service Levels (Client Charter)</h2>
 						<p>Vision 100 commits to:</p>
 						<ul>
 								<li>Promise 1</li>
