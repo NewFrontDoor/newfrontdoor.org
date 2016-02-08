@@ -4,4 +4,4 @@ Vision 100 IT are a (newly!) national team of passionate IT and web development 
 
 Vision 100 IT has now existed for over a decade, and has gradually built up a knowledge base of best practices and approaches for doing church IT *sustainably*. We are all about getting *and keeping* our clients on the web, in order to more effectively reach the lost and minister to the people in their congregations.
 
-Meet the team >
+[Meet the team >](/about#team)

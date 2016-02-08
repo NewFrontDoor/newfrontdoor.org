@@ -173,6 +173,7 @@ article {
   img {
     display: block;
     margin: 0 auto;
+    max-width: 100%;
   }
   @media (min-width: $screen-md-min) {
     lost-column: 1/2;

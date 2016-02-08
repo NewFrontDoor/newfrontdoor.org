@@ -2,7 +2,7 @@
 <section>
   <div>
     <div class="text-slab"><em>Keeping you up to speed</em></div>
-    <em>The internet changes. Your church changes. Your staff capacity and even staff size changes. That's why events and training are at the heart of the Vision 100 IT philosophy</em>
+    <p class="lead">The internet changes. Your church changes. Your staff capacity and even staff size changes. That's why <em>events and training</em> are at the <em>heart of the Vision 100 IT philosophy.</em></p>
   </div>
   <div>Whether you're a client or just interested, our events are open to anyone invested in Church leadership and Church IT. Our topics range from Social Media usage to engaging a Graphic Designer and everything in between.</div>
   <div>
