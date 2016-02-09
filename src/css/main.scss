@@ -258,6 +258,11 @@ article {
   lost-center: 100%;
   lost-align: top-center;
   height: 100vh;
+  .input-lg {
+    background: rgba((black), .4);
+    border: none;
+    color: white;
+  }
   @media (min-width: $screen-md-min) {
     min-height: 400px;
     // view height minus footer height minus nav height
