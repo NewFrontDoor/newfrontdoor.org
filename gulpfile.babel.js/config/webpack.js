@@ -1,4 +1,5 @@
 /* eslint-env node */
+import 'babel-polyfill';
 import _ from 'lodash';
 import autoprefixer from 'autoprefixer';
 import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
@@ -6,6 +7,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import StaticSiteGeneratorPlugin from 'static-site-generator-webpack-plugin';
 import lost from 'lost';
 import path from 'path';
+import fs from 'fs';
 import pxtorem from 'postcss-pxtorem';
 import vr from 'postcss-vertical-rhythm';
 import webpack from 'webpack';
@@ -28,6 +30,12 @@ const staticPaths = [
 	'/contact',
 	'/training'
 ];
+
+const documentation = fs.readdirSync(paths.documentation.src).map(p => `/documentation/${p.slice(0, -3)}`);
+
+Reflect.apply(Array.prototype.push, staticPaths, documentation);
+
+console.log(staticPaths);
 
 argvSetEnv();
 

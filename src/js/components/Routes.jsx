@@ -21,7 +21,7 @@ export default (
 		<Route path="support" component={Support} />
 		<Route path="feature" component={Feature} />
 		<Route path="documentation" component={Documentation} />
-		<Route path="template" component={Template} />
+		<Route path="documentation/:documentId" component={Template}/>
 		<Route path="status" component={Status} />
 		<Route path="control" component={Control} />
 		<Route path="about" component={About} />

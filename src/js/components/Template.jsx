@@ -1,17 +1,30 @@
 import React from 'react';
 import toc from 'markdown-toc';
 import Remarkable from 'remarkable';
-import sparkleshare from '!!raw!../content/documentation/sparkleshare.md';
+
+const documentation = {
+	get context() {
+		return require.context('!!raw!../../documentation', true, /^.*\.md$/);
+	},
+	get documents() {
+		return this.context.keys();
+	},
+	document(id) {
+		return this.context(this.documents.find(x => x === `./${id}.md`));
+	}
+};
 
 const md = new Remarkable();
 
 export class Template extends React.Component {
 	rawToc() {
-		return {__html: md.render(toc(sparkleshare, {firsth1: false}).content)};
+		const doc = documentation.document(this.props.params.documentId);
+		return {__html: md.render(toc(doc, {firsth1: false}).content)};
 	}
 
 	rawSparkleshare() {
-		return {__html: md.render(sparkleshare)};
+		const doc = documentation.document(this.props.params.documentId);
+		return {__html: md.render(doc)};
 	}
 
 	render() {
@@ -28,3 +41,7 @@ export class Template extends React.Component {
 		);
 	}
 }
+
+Template.propTypes = {
+	params: React.PropTypes.shape({documentId: React.PropTypes.string}).isRequired
+};

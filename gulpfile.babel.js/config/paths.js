@@ -16,6 +16,9 @@ export default {
 		src: src(),
 		dest: dest()
 	},
+	documentation: {
+		src: src('documentation')
+	},
 	style: {
 		src: src('css/main.scss'),
 		dest: dest(),

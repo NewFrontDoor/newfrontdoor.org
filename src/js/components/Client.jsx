@@ -9,17 +9,19 @@ import {Post} from '../Post';
 const md = new Remarkable();
 
 const blog = {
+	get context() {
+		return require.context('!!raw!../../blogs', true, /^.*\.md$/);
+	},
 	get posts() {
-		const context = require.context('!!raw!../../blogs', true, /^.*\.md$/);
-		return context.keys().map(context);
+		return this.context.keys();
 	},
 	post(id) {
-		return this.posts.find(x => x === id);
+		return this.context(this.posts.find(x => x === id));
 	},
 	page({trim = 0, page = 0, size = 0}) {
 		const begin = page * size;
 		const end = begin + size;
-		return this.posts.slice(begin, end).map(fm).map(parsePost);
+		return this.posts.slice(begin, end).map(this.context).map(fm).map(parsePost);
 
 		function parsePost(post, key) {
 			const body = trim ? `${post.body.slice(0, trim)}... [View more](#)` : post.body;
