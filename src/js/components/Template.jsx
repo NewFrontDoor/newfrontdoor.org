@@ -1,6 +1,13 @@
 import React from 'react';
+import fm from 'front-matter';
 import toc from 'markdown-toc';
 import Remarkable from 'remarkable';
+
+const md = new Remarkable().use(remarkable => {
+	remarkable.renderer.rules.heading_open = (tokens, idx) => {
+		return `<h${tokens[idx].hLevel} id="${toc.slugify(tokens[idx + 1].content)}">`;
+	};
+});
 
 const documentation = {
 	get context() {
@@ -10,21 +17,15 @@ const documentation = {
 		return this.context.keys();
 	},
 	document(id) {
-		return this.context(this.documents.find(x => x === `./${id}.md`));
+		const doc = this.context(this.documents.find(x => x === `./${id}.md`));
+		const content = fm(doc);
+		return {toc: md.render(toc(doc).content), body: md.render(content.body), ...content.attributes};
 	}
 };
 
-const md = new Remarkable();
-
 export class Template extends React.Component {
-	rawToc() {
-		const doc = documentation.document(this.props.params.documentId);
-		return {__html: md.render(toc(doc, {firsth1: false}).content)};
-	}
-
-	rawSparkleshare() {
-		const doc = documentation.document(this.props.params.documentId);
-		return {__html: md.render(doc)};
+	get document() {
+		return documentation.document(this.props.params.documentId) || {};
 	}
 
 	render() {
@@ -32,10 +33,12 @@ export class Template extends React.Component {
 			<div className="documentation-wrapper">
 				<div className="documentation-sidebar">
 					<h3>Contents</h3>
-					<section dangerouslySetInnerHTML={this.rawToc()}></section>
+					<section dangerouslySetInnerHTML={{__html: this.document.toc}}></section>
 				</div>
 				<div className="documentation-content">
-					<section dangerouslySetInnerHTML={this.rawSparkleshare()}></section>
+					<h1>{this.document.heading}</h1>
+					<h1><small>{this.document.sub_heading}</small></h1>
+					<section dangerouslySetInnerHTML={{__html: this.document.body}}></section>
 				</div>
 			</div>
 		);

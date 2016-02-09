@@ -1,8 +1,7 @@
-Sample Header
-=============
-
-<small>Sample subheading - explanatory text</small>
-===================================================
+---
+heading: Sample Header
+sub_heading: Sample subheading - explanatory text
+---
 
 <div classname="Summary">
 
