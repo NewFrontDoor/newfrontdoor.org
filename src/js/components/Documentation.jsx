@@ -44,7 +44,7 @@ export const Documentation = () => (
 								<h3>Team leading</h3>
 								<ul>
 										<li>
-												<a href="/template">Sparkleshare</a>
+												<a href="/documentation/sparkleshare">Sparkleshare</a>
 										</li>
 										<li>Item 2</li>
 										<li>Item 3</li>
