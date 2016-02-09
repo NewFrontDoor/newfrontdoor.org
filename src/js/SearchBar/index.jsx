@@ -92,6 +92,12 @@ export class SearchBar extends React.Component {
 						</li>
 					</ul>
 				</div>
+				<div className="postscript">
+					© Vision 100 Resources 2016.<br />
+				Design by <a href="http://twitter.com/readeral">readeral</a> and <a href="http://twitter.com/barrythepenguin">barrythepenguin</a>.<br />
+					<a href="mailto:info@vision100.org">info@vision100.org</a>.<br />
+					ABN: 50 782 030 539.
+				</div>
 			</div>
 		);
 	}

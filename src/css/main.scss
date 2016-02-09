@@ -90,7 +90,7 @@ article {
     padding-top: 120px;
     height: 100vh;
     overflow: hidden;
-		lost-center: 1200px;
+		lost-center: 100%;
     section {
       lost-column: 1/1;
     }
@@ -102,7 +102,7 @@ article {
   border-right: 1px solid lighten($text-color, 70%);
   overflow-x: hidden;
   overflow-y: auto;
-  height: 100%;
+  height: 80%;
   list-style: none;
   padding-left: 0;
   position: relative;
@@ -292,6 +292,22 @@ article {
   }
 }
 
+//about content
+.member {
+  height: auto;
+  clear: left;
+  .profile-img {
+    max-width: 200px;
+    margin-right: 20px;
+    float: left;
+    padding-bottom: 20px;
+  }
+
+  .profile-text {
+
+  }
+}
+
 //search stuff
 .search-overlay {
   display: block;
@@ -426,5 +442,11 @@ article {
     width: 400px;
     height: 100vh;
     border-right: 3px solid rgba(darken($text-color, 80%), .4);
+  }
+  .postscript {
+    font-family: $font-family-sans-serif;
+    padding-top: 40px;
+    margin-left: 10px;
+    font-size: 65%;
   }
 }

@@ -56,7 +56,7 @@ export class Header extends React.Component {
 					<ul className="list-inline">
 						<li className={`${styles.search} text-uppercase`}>
 							<a href="#" onClick={this.props.openSearch}>
-								<span className="fa fa-search fa-lg"></span> Menu
+								Menu <span className="fa fa-search fa-lg"></span>
 							</a>
 						</li>
 						{content.mainmenu.links.map((link, key) => <li key={key} className="main-menu-item text-uppercase">
