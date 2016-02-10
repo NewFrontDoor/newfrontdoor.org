@@ -6,14 +6,14 @@
   <p>As a result we've collated a suite of supported tools that best help us to help you do IT well.</p>
   <p>We're eager to ensure that you're equipped to make the most of these tools as the web evolves over time. We won't just build you a website, but we'll coach you through <em>keeping it up to date</em> provide <em>ongoing support</em> as your team members change, and <em>walk you through new features</em> and updates as they occur.</p>
   <p>Although we think this ecosystem is fantastic, and we've selected our tools on the basis of our years of experience, your needs may vary. If you already have some solutions sorted, no problem! We'll work with you as best as we can to <em>ensure you're being as effective as possible.</em></p>
-  <div class="expand"><a href="#features">Tools<br />
+  <div class="expand"><a href="#features">Products<br />
   <i class="fa fa-angle-down"></i></a></div>
 </section>
 <section class="features" id="features">
-  <div class="image-block-2">
+  <div>
     <img src="../../../elements/soul.jpeg" />
   </div>
-  <div class="text-block-2">
+  <div>
     <header><h3>Websites</h3></header>
     <section>
       <ul>
@@ -25,10 +25,10 @@
       </ul>
     </section>
   </div>
-  <div class="image-block-2">
+  <div>
     <img src="../../../elements/placeholder.jpeg" />
   </div>
-  <div class="text-block-2">
+  <div>
     <header><h3>Administration and relationship management</h3></header>
     <section>
       <ul>
@@ -39,10 +39,10 @@
       </ul>
     </section>
   </div>
-  <div class="image-block-2">
+  <div>
     <img src="../../../elements/sparkleshare.png" />
   </div>
-  <div class="text-block-2">
+  <div>
     <header><h3>Document management</h3></header>
     <section>
       <ul>
@@ -55,10 +55,10 @@
       </ul>
     </section>
   </div>
-  <div class="image-block-2">
+  <div>
     <img src="../../../elements/placeholder.jpeg" />
   </div>
-  <div class="text-block-2">
+  <div>
     <header><h3>Consulation + advice</h3></header>
     <section>
       <ul>

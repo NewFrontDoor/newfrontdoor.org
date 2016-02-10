@@ -147,6 +147,13 @@ article {
 
 .features {
   lost-flex-container: row;
+  div {
+    lost-column: 1/2;
+    img {
+      max-width: 100%;
+      margin: auto;
+    }
+  }
 }
 
 .documentation-content {
@@ -210,13 +217,27 @@ article {
   background-color: rgba($text-color, .9);
   color: $primary-highlight;
   min-height: 100vh;
+  em {
+    color: white;
+  }
 }
 
 //featured 1 styles
-.example {
+.examples {
   lost-flex-container: row;
   .text-block-3 {
     lost-column: 1/1;
+    h3 {
+      text-align: center;
+    }
+    .fa-plus-circle {
+      text-align: center;
+      width: 100%;
+    }
+    .example {
+      max-height: 0;
+      overflow: hidden;
+    }
   }
   @media (min-width: $screen-md-min) {
     .text-block-3 {
