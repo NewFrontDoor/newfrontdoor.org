@@ -1,6 +1,6 @@
 import React from 'react';
 import {Hero} from '../Hero';
-
+import {Index} from './Index';
 import content from '../content';
 
 import first from '../content/featured/first.md';
@@ -32,7 +32,7 @@ export class Main extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<Index>
 				<Hero>
 					<div dangerouslySetInnerHTML={{__html: content.hero.tagline}}></div>
 				</Hero>
@@ -69,7 +69,7 @@ export class Main extends React.Component {
 						</div>
 					</div>
 				</main>
-			</div>
+			</Index>
 		);
 	}
 }

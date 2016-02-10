@@ -1,4 +1,5 @@
 import React from 'react';
+import {Index} from './Index';
 import {TeamMember} from '../TeamMember';
 
 const boardMembers = [{
@@ -46,42 +47,44 @@ const teamMembers = [{
 }];
 
 export const About = () => (
-		<div className="site-wrapper site-wrapper-padding">
-				<h1>About Vision 100</h1>
-				<div id="mission">
-						<h2>Mission + Vision</h2>
-						<p>Vision 100 IT exists to help churches - particularly church IT volunteers and ministry staff - to use IT better.</p>
-						<hr/>
-				</div>
-				<div id="history">
-						<h2>History</h2>
-						<p>Vision 100 IT are a (newly!) national team of passionate IT and web development engineers, ministry leaders and management professionals who voluntarily build and maintain IT systems, training and educating our clients on the foundation of years of collective knowledge gleaned from within the IT industry.</p>
-						<p>Vision 100 IT has now existed for over a decade, and has gradually built up a knowledge base of best practices and approaches for doing church IT sustainably. We are all about getting and keeping our clients on the web, in order to more effectively reach the lost and minister to the people in their congregations.</p>
-						<hr/>
-				</div>
-				<div id="team">
-						<h2>Team Members</h2>
-						{boardMembers.map(member => <TeamMember {...member} />)}
-						<hr/>
-						{teamMembers.map(member => <TeamMember {...member} />)}
-						<hr/>
-				</div>
-				<div id="join">
-						<h2>Join our team</h2>
-						<p>Testing</p>
-						<p></p>
-						<hr/>
-				</div>
-				<div id="service">
-						<h2>Service Levels (Client Charter)</h2>
-						<p>Vision 100 commits to:</p>
-						<ul>
-								<li>Promise 1</li>
-								<li>Promise 2</li>
-								<li>Promise 3</li>
-								<li>Promise 4</li>
-								<li>Promise 5</li>
-						</ul>
-				</div>
-		</div>
+		<Index>
+			<div className="site-wrapper site-wrapper-padding">
+					<h1>About Vision 100</h1>
+					<div id="mission">
+							<h2>Mission + Vision</h2>
+							<p>Vision 100 IT exists to help churches - particularly church IT volunteers and ministry staff - to use IT better.</p>
+							<hr/>
+					</div>
+					<div id="history">
+							<h2>History</h2>
+							<p>Vision 100 IT are a (newly!) national team of passionate IT and web development engineers, ministry leaders and management professionals who voluntarily build and maintain IT systems, training and educating our clients on the foundation of years of collective knowledge gleaned from within the IT industry.</p>
+							<p>Vision 100 IT has now existed for over a decade, and has gradually built up a knowledge base of best practices and approaches for doing church IT sustainably. We are all about getting and keeping our clients on the web, in order to more effectively reach the lost and minister to the people in their congregations.</p>
+							<hr/>
+					</div>
+					<div id="team">
+							<h2>Team Members</h2>
+							{boardMembers.map(member => <TeamMember {...member} />)}
+							<hr/>
+							{teamMembers.map(member => <TeamMember {...member} />)}
+							<hr/>
+					</div>
+					<div id="join">
+							<h2>Join our team</h2>
+							<p>Testing</p>
+							<p></p>
+							<hr/>
+					</div>
+					<div id="service">
+							<h2>Service Levels (Client Charter)</h2>
+							<p>Vision 100 commits to:</p>
+							<ul>
+									<li>Promise 1</li>
+									<li>Promise 2</li>
+									<li>Promise 3</li>
+									<li>Promise 4</li>
+									<li>Promise 5</li>
+							</ul>
+					</div>
+			</div>
+		</Index>
 );

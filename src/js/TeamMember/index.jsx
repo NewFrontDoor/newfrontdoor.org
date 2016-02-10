@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from './TeamMember.scss';
 
-console.log('styles', styles);
-
 export const TeamMember = props => (
 	<div className={styles.member}>
 		<h4>{props.name} - {props.position}</h4>

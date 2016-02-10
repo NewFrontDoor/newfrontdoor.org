@@ -1,6 +1,8 @@
 import React from 'react';
+import {Index} from './Index';
 
 export const Documentation = () => (
+	<Index>
 		<div className="site-wrapper site-wrapper-padding">
 				<h1>Help + how to</h1>
 
@@ -53,4 +55,5 @@ export const Documentation = () => (
 						</div>
 				</div>
 		</div>
+		</Index>
 );

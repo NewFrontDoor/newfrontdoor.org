@@ -1,6 +1,8 @@
 import React from 'react';
+import {Index} from './Index';
 
 export const Control = () => (
+	<Index>
 		<div className="site-wrapper">
 				<h1>Control page</h1>
 				<div>
@@ -42,4 +44,5 @@ export const Control = () => (
 						<li>Item 3</li>
 				</ul>
 		</div>
+		</Index>
 );

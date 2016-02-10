@@ -1,7 +1,6 @@
 /* eslint-env browser */
 import styles from './Header.scss';
 import React from 'react';
-import classNames from 'classnames';
 import throttle from 'lodash/throttle';
 import content from '../content';
 
@@ -15,7 +14,7 @@ export class Header extends React.Component {
 	}
 
 	get length() {
-		return window.innerHeight - 150;
+		return window.innerHeight - 100;
 	}
 
 	componentDidMount() {
@@ -27,18 +26,27 @@ export class Header extends React.Component {
 	}
 
 	handleScroll() {
-		this.setState({pageYOffset: window.pageYOffset, innerHeight: this.length});
+		this.setState({
+			backgroundColor: `rgba(255,255,255, ${Math.min(window.pageYOffset / 200, 1)})`,
+			boxShadow: `0 1px 3px rgba(0,0,0, ${Math.min(window.pageYOffset / 800, 0.4)})`,
+			padding: `${Math.min(window.pageYOffset, 60)}px`
+		});
 	}
 
 	render() {
-		const navClass = classNames({
-			[styles.nav]: true,
-			[styles.mini]: this.state.pageYOffset > this.state.innerHeight
-		});
+		const scrollStyle = {
+			backgroundColor: this.state.backgroundColor,
+			boxShadow: this.state.boxShadow
+		};
+
+		const logoStyle = {
+			paddingLeft: this.state.padding,
+			paddingRight: this.state.padding
+		};
 
 		return (
-			<header className={navClass}>
-				<a className={styles.logo} href="/">
+			<header className={styles.nav} style={scrollStyle}>
+				<a className={styles.logo} style={logoStyle} href="/">
 					<h1 className="sr-only">Vision 100 IT</h1>
 					<img className="img-responsive" src={logo}></img>
 				</a>

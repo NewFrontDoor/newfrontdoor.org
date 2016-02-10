@@ -3,6 +3,7 @@ import React from 'react';
 import fm from 'front-matter';
 import Remarkable from 'remarkable';
 
+import {Index} from './Index';
 import {Hero} from '../Hero';
 import {Post} from '../Post';
 
@@ -39,7 +40,7 @@ const posts = blog.page({
 const pinnedPost = posts.shift();
 
 export const Client = () => (
-		<div>
+		<Index>
 				<Hero mini />
 				<main role="main">
 						<section className="announcement-banner">
@@ -66,5 +67,5 @@ export const Client = () => (
 								<div></div>
 						</div>
 				</main>
-		</div>
+		</Index>
 );
