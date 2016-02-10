@@ -16,6 +16,5 @@ We do have some services that will carry a cost, but we think that if you've got
 
 Additionally, some of our products carry a cost as well. Our registration payment system utilises paypal, and does incur minor fees.
 
-
-
-<a href="#top">Top</a>
+<div class="expand"><a href="#">More about costs<br />
+<i class="fa fa-angle-down"></i></a></div>

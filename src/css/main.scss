@@ -242,7 +242,13 @@ article {
     background-color: rgba($text-color, .8);
   }*/
 }
-
+div.expand {
+  height: auto;
+  width: 400px;
+  margin: auto;
+  font-size: 120%;
+  text-align: center;
+}
 //featured 3 styles
 .featured-third {
   /*
@@ -251,6 +257,9 @@ article {
     background-position: center;
     background-image: url("../elements/journey3.jpeg");
     */
+    section .description {
+      height: 100vh;
+    }
 }
 
 //featured 6 styles
@@ -258,10 +267,23 @@ article {
   lost-center: 100%;
   lost-align: top-center;
   height: 100vh;
-  .input-lg {
-    background: rgba((black), .4);
+  .input-default, .btn-default {
+    background: rgba((white), .8);
     border: none;
-    color: white;
+    color: black;
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    .group-1 {
+    flex: 1 0 50%;
+    }
+    .group-1:first-child {
+      padding-right: 20px;
+    }
+    .group-2 {
+    flex: 1 0 100%;
+    }
   }
   @media (min-width: $screen-md-min) {
     min-height: 400px;
@@ -279,15 +301,19 @@ article {
   width: 100%;
 }
 .close-content {
-  width: 75vw;
   padding-top: 30px;
-  @media (min-width: $screen-md-min) {
-    width: 50vw;
-  }
+  width: 980px;
+  color: white;
+  text-align: center;
   form {
+    width: 75vw;
+    margin:auto;
+    @media (min-width: $screen-md-min) {
+      width: 50vw;
+    }
     padding: 10px;
     @media (min-width: $screen-md-min) {
-      padding: 40px 0 0 0;
+      padding: 40px;
     }
   }
 }

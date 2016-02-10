@@ -12,7 +12,6 @@
     <li></li>
   </ul>
   </div>
-  <div>
-  You can find some of our previous training audio and video content here, and peruse some of our documentation here.
-  </div>
+  <div class="expand"><a href="/documentation">Check out some of our previous training content<br />
+  <i class="fa fa-angle-down"></i></a></div>
 </section>

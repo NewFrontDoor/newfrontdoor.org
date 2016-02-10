@@ -1,15 +1,15 @@
 <header hidden><h2>Tools + Philosophy</h2></header>
-<section>
+<section class="description">
   <div class="text-slab"><em>It's not about the destination, it's the journey</em></div>
 <p class="lead">The core product of Vision 100 IT isn't <em>just a website</em> or a CMS - it's a <em>philosophy.</em></p>
   <p>There are plenty of products and approaches out there that you can use to get your church on the Web - our main aim is to help you to do this as best as possible.</p>
   <p>As a result we've collated a suite of supported tools that best help us to help you do IT well.</p>
   <p>We're eager to ensure that you're equipped to make the most of these tools as the web evolves over time. We won't just build you a website, but we'll coach you through <em>keeping it up to date</em> provide <em>ongoing support</em> as your team members change, and <em>walk you through new features</em> and updates as they occur.</p>
-</section>
-<section>
   <p>Although we think this ecosystem is fantastic, and we've selected our tools on the basis of our years of experience, your needs may vary. If you already have some solutions sorted, no problem! We'll work with you as best as we can to <em>ensure you're being as effective as possible.</em></p>
+  <div class="expand"><a href="#features">Tools<br />
+  <i class="fa fa-angle-down"></i></a></div>
 </section>
-<section class="features">
+<section class="features" id="features">
   <div class="image-block-2">
     <img src="../../../elements/soul.jpeg" />
   </div>

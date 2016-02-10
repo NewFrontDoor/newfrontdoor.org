@@ -9,16 +9,16 @@ export const Support = () => (
 		<hr/>
 		<div className="instruction">
 			<h3>Guidelines</h3>
-			<p>In order to best assist you with any trouble you might be having, please ensure you:</p>
+			<p>To best assist you with your support requests, please ensure to:</p>
 			<ul>
-				<li>populate this form <strong>as completely as possible.</strong></li>
-				<li>do not include multiple issues on the same submission. Complete once for each issue.</li>
-				<li>ensure answers are validated and form submits successfully with issue of ticket number</li>
+				<li>fill out this form <strong>as completely as you can.</strong></li>
+				<li>include only one problem per submission. You're welcome to submit multiple requests.</li>
+				<li>check you're allocated a ticket number.</li>
 			</ul>
 			Each submission will:
 			<ul>
-				<li>generate a support ticket which you will receive by email and will be tracked by our team.</li>
-				<li>have an option to close your support request by email.</li>
+				<li>Send a support ticket by email (to you & us) for tracking by our team.</li>
+				<li>Give an option to close your support request by email.</li>
 			</ul>
 		</div>
 		<form className="support-form">
@@ -27,8 +27,8 @@ export const Support = () => (
 				<input type="text" name="subject" className="form-control" placeholder="Summarise the issue like an email subject line"/>
 			</div>
 			<div className="form-group has-success has-feedback">
-				<label htmlFor="description">Further details that will help us resolve the issue</label>
-				<textarea type="field" name="description" className="form-control" rows="5" placeholder="Please provide a detailed description, including any steps taken that led to the problem and the result"/>
+				<label htmlFor="description">Further details that will help us to help you</label>
+				<textarea type="field" name="description" className="form-control" rows="5" placeholder="Please give us a detailed description, including any steps taken that led to the problem and the result"/>
 			</div>
 			<div className="form-group">
 				<label htmlFor="url-issue">URL for affected page: (if applicable)</label>

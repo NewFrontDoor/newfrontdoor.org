@@ -17,21 +17,21 @@ export const About = () => (
 				<div id="team">
 						<h2>Team Members</h2>
 						<div className="member">
-					<h4>Christian de Kievit - Team leader</h4>
-						<p>Christian is the team leader of the Vision 100 IT team, and an elder at Summerleas Christian Church. He has 13 years of development experience in the local IT industry, as well as 8 years on the Vision 100 IT team. To go with his strong technical knowledge, he has demonstrated leadership in both secular and ministry positions for the last 10 years. Also, if you’re up for a board game of any description, he’s your man.</p>
-						<p></p>
+							<h4>Christian de Kievit - Team leader</h4>
+							<img src="../src/elements/christian.jpg" className="profile-img"/><p className="profile-text">Christian is the team leader of the Vision 100 IT team, and an elder at Summerleas Christian Church. He has 13 years of development experience in the local IT industry, as well as 8 years on the Vision 100 IT team. To go with his strong technical knowledge, he has demonstrated leadership in both secular and ministry positions for the last 10 years. Also, if you’re up for a board game of any description, he’s your man.</p>
+							<p></p>
 						</div>
 						<div className="member">
-						<h4>Mikey Lynch - Board member</h4>
-						<p></p>
+							<h4>Mikey Lynch - Board member</h4>
+							<p></p>
 						</div>
 						<div className="member">
-						<h4>Jason Imms - Board member</h4>
+							<h4>Jason Imms - Board member</h4>
 						</div>
 						<hr/>
 						<div className="member">
-						<h4>Jonno Haines - Team member</h4>
-						<p>Jonathan currently works in Sydney as a web technology consultant. When he isn't building web applications for clients with JavaScript and HTML he contributes to open source projects such as SparkleShare. His interests include late breakfasts, collecting emails and subverting the patriarchy.</p>
+							<h4>Jonno Haines - Team member</h4>
+							<img src="../src/elements/jonno.jpg" className="profile-img"/><p className="profile-text">Jonathan currently works in Sydney as a web technology consultant. When he isn't building web applications for clients with JavaScript and HTML he contributes to open source projects such as SparkleShare. His interests include late breakfasts, collecting emails and subverting the patriarchy.</p>
 						</div>
 						<div className="member">
 							<h4>Emile Hofsink - Team member</h4>
