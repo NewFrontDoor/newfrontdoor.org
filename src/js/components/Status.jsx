@@ -1,6 +1,8 @@
 import React from 'react';
+import {Index} from './Index';
 
 export const Status = () => (
+	<Index>
 	<div className="site-wrapper site-wrapper-padding">
 		<h1>System Status</h1>
 		<div>
@@ -19,4 +21,5 @@ export const Status = () => (
 			<dd>Application status</dd>
 		</dl>
 	</div>
+</Index>
 );

@@ -28,7 +28,8 @@ const staticPaths = [
 	'/control/',
 	'/about',
 	'/contact',
-	'/training'
+	'/training',
+	'/consultation'
 ];
 
 const documentation = fs.readdirSync(paths.documentation.src).map(p => `/documentation/${p.slice(0, -3)}`);

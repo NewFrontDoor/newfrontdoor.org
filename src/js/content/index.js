@@ -17,7 +17,7 @@ export default {
 			text: 'Who are<br />Vision 100 IT?',
 			target: '#who'
 		}, {
-			text: 'Tools +<br />Philosophy',
+			text: 'Philosophy<br />+ Tools',
 			target: '#tools'
 		}, {
 			text: 'Events +<br />Training',
@@ -89,8 +89,8 @@ export default {
 			text: 'Pricing',
 			target: '/#pricing'
 		}, {
-			text: 'Showcase',
-			target: '/about'
+			text: 'Consultation',
+			target: '/consultation'
 		}]
 	}, {
 		heading: 'About Us',

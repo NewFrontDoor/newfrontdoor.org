@@ -13,6 +13,7 @@ import {Control} from './Control';
 import {About} from './About';
 import {Contact} from './Contact';
 import {Training} from './Training';
+import {Consultation} from './Consultation';
 
 export default (
 	<Route path="/" component={Site} >
@@ -27,5 +28,6 @@ export default (
 		<Route path="about" component={About} />
 		<Route path="contact" component={Contact} />
 		<Route path="training" component={Training} />
+		<Route path="consultation" component={Consultation} />
 	</Route>
 );

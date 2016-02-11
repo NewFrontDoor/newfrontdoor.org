@@ -71,6 +71,7 @@ export const About = () => (
 					</div>
 					<div id="join">
 							<h2>Join our team</h2>
+								<p>Vision 100 IT is made up of a team of volunteers who firmly believe in the value of IT to furthering the cause of the gospel. The team meets together regularly for 'sprints' where a lot of the heavy lifting work gets done, while we hang out, eat pizza and enjoy taking on some challenges together. In between times, we pick up support tasks as they arise from our client churches. Involvement can be as much as building a web app from scratch for interfacing our document management system, or taking on a task here and there across the year. If you're interested in being part of the team, be in touch <a href ="/contact">here.</a></p><p>Vision 100 IT does not have any employed positions at this time.</p>
 							<hr/>
 					</div>
 					<div id="service">

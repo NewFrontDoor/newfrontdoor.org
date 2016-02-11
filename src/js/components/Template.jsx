@@ -2,6 +2,7 @@ import React from 'react';
 import fm from 'front-matter';
 import toc from 'markdown-toc';
 import Remarkable from 'remarkable';
+import {Index} from './Index';
 
 const md = new Remarkable().use(remarkable => {
 	remarkable.renderer.rules.heading_open = (tokens, idx) => {
@@ -30,6 +31,7 @@ export class Template extends React.Component {
 
 	render() {
 		return (
+			<Index>
 			<div className="documentation-wrapper">
 				<div className="documentation-sidebar">
 					<h3>Contents</h3>
@@ -41,6 +43,7 @@ export class Template extends React.Component {
 					<section dangerouslySetInnerHTML={{__html: this.document.body}}></section>
 				</div>
 			</div>
+		</Index>
 		);
 	}
 }

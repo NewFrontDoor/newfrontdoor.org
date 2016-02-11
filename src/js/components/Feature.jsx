@@ -1,6 +1,8 @@
 import React from 'react';
+import {Index} from './Index';
 
 export const Feature = () => (
+	<Index>
 		<div className="site-wrapper site-wrapper-padding">
 				<h1>Feature request form</h1>
 				<div>
@@ -95,4 +97,5 @@ export const Feature = () => (
 						</div>
 				</form>
 		</div>
+	</Index>
 );
