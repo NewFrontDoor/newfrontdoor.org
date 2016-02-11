@@ -283,6 +283,14 @@ div.expand {
     }
 }
 
+.featured-fourth {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;;
+    background-image: url("../elements/speed.jpg");
+}
+
 //featured 6 styles
 .featured-sixth {
   lost-center: 100%;
@@ -317,9 +325,9 @@ div.expand {
   filter: grayscale(1) brightness(.8);
   background-repeat: no-repeat;
   background-position: center 20%;
-  background-size: cover;
   height: 100%;
   width: 100%;
+  background-size: cover;
 }
 .close-content {
   padding-top: 30px;
