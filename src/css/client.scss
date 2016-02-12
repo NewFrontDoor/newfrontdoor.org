@@ -5,6 +5,8 @@
  background-color: $state-warning-bg;
  border-top: 1px solid $state-warning-border;
  padding: 15px;
+ box-shadow: 0 2px 5px rgba($state-warning-bg, 0.25);
+
  div {
    lost-center: 880px;
  }
@@ -17,6 +19,7 @@
  background-color: $state-info-bg;
  border-top: 1px solid $state-info-border;
  padding: 15px;
+ box-shadow: 0 2px 5px rgba($state-info-bg, 0.25);
  div {
    lost-center: 880px;
  }
