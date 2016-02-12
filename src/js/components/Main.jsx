@@ -63,7 +63,9 @@ export class Main extends React.Component {
 						</div>
 					</div>
 					<div className="featured-sixth" id="join">
-						<div className="close-background"></div>
+					<video autoPlay loop id="bgvid">
+						<source src="../src/elements/clip2.mp4" type="video/mp4"></source>
+					</video>
 						<div className="close-content">
 							<section dangerouslySetInnerHTML={this.rawSixth()}></section>
 						</div>
