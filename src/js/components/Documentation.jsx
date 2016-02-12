@@ -27,7 +27,9 @@ export const Documentation = () => (
 						<div className="type-2">
 								<h3>Getting set up</h3>
 								<ul>
-										<li>Item 1</li>
+										<li>
+											<a href="/documentation/mailinglists">Mailing lists</a>
+										</li>
 										<li>Item 2</li>
 										<li>Item 3</li>
 										<li>Item 4</li>

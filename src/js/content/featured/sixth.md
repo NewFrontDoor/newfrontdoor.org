@@ -1,5 +1,5 @@
 <div class="text-slab"><em>Begin the journey</em></div>
-Interested in coming on board? Get in touch using the form below, or check us out further through our Social Media channels.
+Interested in coming on board? Get in touch below or via our Social Media channels.
 <form>
   <div class="form-group group-1">
     <label hidden for="name">Name</label>

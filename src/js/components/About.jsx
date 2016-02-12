@@ -78,8 +78,8 @@ export const About = () => (
 							<h2>Service Levels (Client Charter)</h2>
 							<p>Vision 100 commits to:</p>
 							<ul>
-									<li>Promise 1</li>
-									<li>Promise 2</li>
+									<li>Respond to all initial queries within 24 hours</li>
+									<li>Solve simple problems within 3 days</li>
 									<li>Promise 3</li>
 									<li>Promise 4</li>
 									<li>Promise 5</li>

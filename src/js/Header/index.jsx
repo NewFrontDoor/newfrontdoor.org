@@ -28,7 +28,7 @@ export class Header extends React.Component {
 	handleScroll() {
 		this.setState({
 			backgroundColor: `rgba(255,255,255, ${Math.min(window.pageYOffset / 200, 1)})`,
-			boxShadow: `0 1px 3px rgba(0,0,0, ${Math.min(window.pageYOffset / 800, 0.4)})`,
+			boxShadow: `0 2px 5px rgba(0,0,0, ${Math.min(window.pageYOffset / 800, 0.26)})`,
 			padding: `${Math.min(window.pageYOffset, 60)}px`
 		});
 	}
