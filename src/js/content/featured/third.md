@@ -5,10 +5,10 @@
   <p>There are plenty of products and approaches that will get your church on the Web - our main aim is to help you to do this as best as possible. As a result, we've collated a suite of supported tools that will best help us to help you do IT well.</p>
   <p>We're eager to ensure that you're equipped to make the most of these tools as the web evolves over time. We won't just build you a website, mailing lists and collaborative storage solutions, but we'll <ul><li>coach you through <em>keeping them up to date</em></li> <li>provide <em>ongoing support</em> as your team members change, and</li> <li><em>walk you through new features</em> and updates as they occur.</li></ul></p>
   <p>Although we think this ecosystem is fantastic, selecting our tools over years of experience, your needs may vary. If you already have some solutions sorted, no problem! We'll work with you as best as we can to <em>ensure you're being as effective as possible.</em></p>
-  <div class="expand"><a href="#features">Products<br />
+  <div class="expand"><a href="#products">Products<br />
   <i class="fa fa-angle-down"></i></a></div>
 </section>
-<section class="features" id="features">
+<section class="products" id="products">
   <div>
     <img src="../../../elements/soul.jpeg" />
   </div>

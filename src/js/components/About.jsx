@@ -11,7 +11,8 @@ const boardMembers = [{
 	name: 'Mikey Lynch',
 	position: 'Board member',
 	image: '',
-	text: ''
+	text: '',
+	title: 'Go live at piping!'
 }, {
 	name: 'Jason Imms',
 	position: 'Board member',
