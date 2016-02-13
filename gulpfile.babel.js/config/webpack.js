@@ -22,7 +22,6 @@ const staticPaths = [
 	'/client/',
 	'/support/',
 	'/feature/',
-	'/template',
 	'/documentation/',
 	'/status/',
 	'/control/',
@@ -97,6 +96,7 @@ function getDevConfig() {
 				getAssetLoader(),
 				getJSXLoader(),
 				getMarkdownLoader(),
+				getFileLodaer(),
 				getUnlazyLoader()
 			]
 		},
@@ -128,6 +128,7 @@ function getProdConfig() {
 				getAssetLoader(),
 				getJSXLoader(),
 				getMarkdownLoader(),
+				getFileLodaer(),
 				getUnlazyLoader()
 			]
 		},
@@ -197,6 +198,14 @@ function getAssetLoader() {
 		test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
 		exclude: /favicon\.png$/,
 		loader: 'url?limit=10000'
+	};
+}
+
+function getFileLodaer() {
+	return {
+		test: /\.(mpeg|mp4|webm|ogv)(\?.+)?$/,
+		exclude: /node_modules/,
+		loader: 'file'
 	};
 }
 

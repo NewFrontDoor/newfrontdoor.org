@@ -2,17 +2,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactDOMServer from 'react-dom/server';
-import {createHistory, createMemoryHistory} from 'history';
-import {Router} from 'react-router';
+import {Router, browserHistory, createMemoryHistory} from 'react-router';
 import {Root} from './components/Root';
 import Routes from './components/Routes';
 
-// Client render (optional):
 if (typeof document !== 'undefined') {
-	const history = createHistory();
 	const content = document.getElementById('content');
-
-	ReactDOM.render(<Router history={history}>{Routes}</Router>, content);
+	ReactDOM.render(<Router history={browserHistory}>{Routes}</Router>, content);
 }
 
 export default (locals, callback) => {
@@ -24,22 +20,3 @@ export default (locals, callback) => {
 	const html = ReactDOMServer.renderToStaticMarkup(<Root title={title} reactApp={reactApp} />);
 	callback(null, `<!DOCTYPE html>${html}`);
 };
-
-// Promise.resolve({
-// 	'/': ReactDOMServer.renderToString(<Root locals={locals}>
-// 			<Hero locals={locals}></Hero>
-// 			<Main locals={locals}></Main>
-// 		</Root>),
-// 	'/client': ReactDOMServer.renderToString(<Root locals={locals}>
-// 			<Client></Client>
-// 		</Root>),
-// 	'/support': ReactDOMServer.renderToString(<Root locals={locals}>
-// 			<Support></Support>
-// 		</Root>),
-// 	'/feature': ReactDOMServer.renderToString(<Root locals={locals}>
-// 			<Feature></Feature>
-// 		</Root>),
-// 	'/documentation': ReactDOMServer.renderToString(<Root locals={locals}>
-// 			<Documentation></Documentation>
-// 		</Root>)
-// });

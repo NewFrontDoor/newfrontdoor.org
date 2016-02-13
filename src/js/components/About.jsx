@@ -63,10 +63,10 @@ export const About = () => (
 					</div>
 					<div className="team-wrap" id="team">
 							<h2>Vision 100 IT Board</h2>
-							{boardMembers.map(member => <TeamMember {...member} />)}
+							{boardMembers.map((member, key) => <TeamMember key={key} {...member} />)}
 							<hr/>
 							<h2>Vision 100 IT Team Members</h2>
-							{teamMembers.map(member => <TeamMember {...member} />)}
+							{teamMembers.map((member, key) => <TeamMember key={key} {...member} />)}
 							<hr/>
 					</div>
 					<div id="join">

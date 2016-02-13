@@ -34,5 +34,5 @@ export class Index extends React.Component {
 }
 
 Index.propTypes = {
-	children: React.PropTypes.element.isRequired
+	children: React.PropTypes.node
 };
