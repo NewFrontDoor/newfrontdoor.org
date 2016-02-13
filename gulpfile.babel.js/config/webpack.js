@@ -96,7 +96,7 @@ function getDevConfig() {
 				getAssetLoader(),
 				getJSXLoader(),
 				getMarkdownLoader(),
-				getFileLodaer(),
+				getFileLoader(),
 				getUnlazyLoader()
 			]
 		},
@@ -128,7 +128,7 @@ function getProdConfig() {
 				getAssetLoader(),
 				getJSXLoader(),
 				getMarkdownLoader(),
-				getFileLodaer(),
+				getFileLoader(),
 				getUnlazyLoader()
 			]
 		},
@@ -201,7 +201,7 @@ function getAssetLoader() {
 	};
 }
 
-function getFileLodaer() {
+function getFileLoader() {
 	return {
 		test: /\.(mpeg|mp4|webm|ogv)(\?.+)?$/,
 		exclude: /node_modules/,
