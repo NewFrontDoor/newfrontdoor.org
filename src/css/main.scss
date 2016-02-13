@@ -188,11 +188,11 @@ article {
 .featured-light {
   //background-color: #FCF5ED;
   background-color: white;
-  color: black;
+  color: $text-color;
   min-height: 100vh;
 }
 .featured-dark {
-  background-color: rgba($text-color, .9);
+  background-color: $footer-bg;
   color: $primary-highlight;
   min-height: 100vh;
   em {
@@ -245,6 +245,7 @@ article {
   .site-wrapper {
     background-color: rgba($text-color, .8);
   }*/
+
 }
 div.expand {
   height: auto;
@@ -266,10 +267,11 @@ div.expand {
     }
 }
 
+//featured 4 styles
 .featured-fourth {
     overflow: hidden;
     position: relative;
-
+    background-color: rgba(black, .5);
     &::before {
       content: ' ';
       position: fixed;
@@ -277,7 +279,7 @@ div.expand {
       height: 100%;
       top: 0;
       left: 0;
-      background-color: white;
+      background-color: black;
       background: url("../elements/speed.jpg") no-repeat center center;
       background-size: cover;
       will-change: transform;
@@ -315,7 +317,9 @@ div.expand {
     height: calc(100vh - #{$footer-height} - 60px);
   }
 }
+
 video#bgvid {
+  display: none;
   position: absolute;
   top: 25%;
   left: 50%;
@@ -326,7 +330,10 @@ video#bgvid {
   z-index: -1;
   transform: translateX(-50%) translateY(-50%);
   background: url("../elements/close-image.jpeg") no-repeat;
-  background-size: cover;
+  background-size: 100%;
+  @media (min-width: $screen-md-min) {
+    display: block;
+  }
 }
 .close-background {
   background-image: url("../elements/close-image.jpeg");

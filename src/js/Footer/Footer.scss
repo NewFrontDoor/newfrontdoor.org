@@ -4,7 +4,6 @@ footer {
   background-color: white;
   @media (min-width: $screen-sm-min) {
   	background-color: $footer-bg;
-    opacity: .9;
   	color: #fff;
     // sticky footer
     bottom: 0;
