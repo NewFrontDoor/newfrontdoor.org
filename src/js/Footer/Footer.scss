@@ -73,6 +73,9 @@ footer {
 			  background-size: contain;
 			  background-position-x: center;
 
+        transform-style: preserve-3d;
+        transition: transform 0s;
+
 				h3 {
 					border-bottom: none;
 				}
@@ -83,6 +86,13 @@ footer {
 			      background-position-y: 25px;
 			  }
 		}
+}
+
+:local .spin {
+  &:nth-child(5) {
+    transform: rotateX(1440deg);
+    transition: transform 2.0s cubic-bezier(0.2, 1, 0, 1);
+  }
 }
 
 :local .social {

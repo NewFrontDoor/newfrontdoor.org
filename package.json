@@ -72,6 +72,7 @@
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "react-router": "^2.0.0",
+    "react-scroll": "^1.0.2",
     "remarkable": "^1.6.2",
     "remarkable-loader": "^0.1.0",
     "sass-loader": "^3.1.2",
