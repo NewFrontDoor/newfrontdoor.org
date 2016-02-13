@@ -1,7 +1,8 @@
 <div class="text-slab">
   <em>Sometimes all you need is a bit of direction.</em>
 </div>
-<p class="lead">We want you to put your best foot forward, so we're here to get you up and running with what you need. Vision 100 IT exists to help churches - <em>particularly church IT volunteers and ministry staff</em> - to use IT better. Oftentimes frustrations with church IT will fall into one of these 3 categories:</p>
+<p class="lead">We want you to put your best foot forward, so we're here to get you up and running with what you need. Vision 100 IT exists to help churches - <em>particularly church IT volunteers and ministry staff</em> - to use IT better.</p>
+<p>Oftentimes frustrations with church IT will fall into one of these 3 categories:</p>
 <div class="examples">
 <div class="church-leader text-block-3">
 <h3>Overwhelmed pastor.</h3>

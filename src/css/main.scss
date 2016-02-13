@@ -201,6 +201,11 @@ article {
 }
 
 //featured 1 styles
+.featured-first {
+/*  background-image: url(../elements/arrow3.png);
+  background-position: -350px -300px;
+  background-repeat: no-repeat; */
+}
 .examples {
   lost-flex-container: row;
   .text-block-3 {
@@ -305,7 +310,7 @@ div.expand {
     }
   }
   @media (min-width: $screen-md-min) {
-    min-height: 400px;
+    min-height: 520px;
     // view height minus footer height minus nav height
     height: calc(100vh - #{$footer-height} - 60px);
   }
@@ -319,9 +324,6 @@ video#bgvid {
   width: auto;
   height: auto;
   z-index: -1;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
   background: url("../elements/close-image.jpeg") no-repeat;
   background-size: cover;
@@ -416,16 +418,12 @@ video#bgvid {
     width: 100%;
     max-height: 0;
     transition: max-height .5s ease-out;
-    //opacity: 0;
     padding-top: -100%;
     border-color: rgba(lighten($text-color, 90%), .2);
-    background-color: rgba(lighten($text-color, 90%), .1);
-    border-width: 1px 0 0 0;
     border-style: solid;
     border-color: rgba(darken($text-color, 80%), .4);
     background-color: rgba(darken($text-color, 90%), .2);
     border-width: 2px 0 1px 0;
-    border-style: solid;
     overflow: hidden;
 
     .results-content {
@@ -480,7 +478,7 @@ video#bgvid {
   }
   ul {
     margin-top: 10px;
-    margin-left: 10px;
+    padding: 10px;
     lost-column: 1/1;
     font-family: $font-family-sans-serif;
   }
