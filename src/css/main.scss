@@ -204,11 +204,21 @@ div.expand {
   }
   section.products {
     lost-flex-container: row;
-    div {
-      lost-column: 1/2 flex;
-      img {
-        max-width: 100%;
-        margin: auto;
+
+    .product-pair {
+      &:nth-child(even) {
+
+          flex-direction: row-reverse;
+
+      }
+      div {
+        lost-column: 1/1 flex;
+        img {
+          margin-top: 1.333vr;
+        }
+        @media (min-width: $screen-md-min) {
+          lost-column: 1/2 flex;
+        }
       }
     }
   }
@@ -219,7 +229,7 @@ div.expand {
     overflow: hidden;
     position: relative;
     background-color: rgba(black, .5);
-    &::before {
+    &:before {
       content: ' ';
       position: fixed;
       width: 100%;

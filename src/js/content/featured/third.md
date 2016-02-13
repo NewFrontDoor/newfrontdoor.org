@@ -9,63 +9,71 @@
   <i class="fa fa-angle-down"></i></a></div>
 </section>
 <section class="products" id="products">
-  <div>
-    <img src="../../../elements/soul.jpeg" />
+  <div class="product-pair">
+    <div>
+      <img class="img-responsive center-block" src="../../../elements/soul.jpeg" />
+    </div>
+    <div>
+      <header><h3>Websites</h3></header>
+      <section>
+        <ul>
+          <li>Our websites are responsive - supporting phones and tablets</li>
+          <li>They are built on Drupal CMS - a modern, powerful and secure platform, easily updated, supports user permissions</li>
+          <li>We'll manage your domain name  - you'll never need to worry about renewing or remembering your password every 3 years</li>
+          <li>Modular features - features developed for one client become available for all clients</li>
+          <li>Running on one of the worlds largest server platforms - uptime and server stability is nothing to worry about</li>
+        </ul>
+      </section>
+    </div>
   </div>
-  <div>
-    <header><h3>Websites</h3></header>
-    <section>
-      <ul>
-        <li>Our websites are responsive - supporting phones and tablets</li>
-        <li>They are built on Drupal CMS - a modern, powerful and secure platform, easily updated, supports user permissions</li>
-        <li>We'll manage your domain name  - you'll never need to worry about renewing or remembering your password every 3 years</li>
-        <li>Modular features - features developed for one client become available for all clients</li>
-        <li>Running on one of the worlds largest server platforms - uptime and server stability is nothing to worry about</li>
-      </ul>
-    </section>
+  <div class="product-pair">
+    <div>
+      <img class="img-responsive center-block" src="../../../elements/placeholder.jpeg" />
+    </div>
+    <div>
+      <header><h3>Administration and relationship management</h3></header>
+      <section>
+        <ul>
+          <li>Implementation and consultation to get you started with Elvanto - an Australian-built Church Management platform</li>
+          <li>Flexible mailing lists for all your church-wide and team communications</li>
+          <li>Podcasting your sermons</li>
+          <li>Newsletter distribution</li>
+        </ul>
+      </section>
+    </div>
   </div>
-  <div>
-    <img src="../../../elements/placeholder.jpeg" />
+  <div class="product-pair">
+    <div>
+      <img class="img-responsive center-block" src="../../../elements/sparkleshare.png" />
+    </div>
+    <div>
+      <header><h3>Document management</h3></header>
+      <section>
+        <ul>
+          <li>Privately hosted document management platform</li>
+          <li>Securely stored, not in the control of Dropbox or Google</li>
+          <li>Conflicts easily managed so nothing gets lost</li>
+          <li>Folder and file level user permissions</li>
+          <li>Integrated into your website</li>
+        </ul>
+      </section>
+    </div>
   </div>
-  <div>
-    <header><h3>Administration and relationship management</h3></header>
-    <section>
-      <ul>
-        <li>Implementation and consultation to get you started with Elvanto - an Australian-built Church Management platform</li>
-        <li>Flexible mailing lists for all your church-wide and team communications</li>
-        <li>Podcasting your sermons</li>
-        <li>Newsletter distribution</li>
-      </ul>
-    </section>
-  </div>
-  <div>
-    <img src="../../../elements/sparkleshare.png" />
-  </div>
-  <div>
-    <header><h3>Document management</h3></header>
-    <section>
-      <ul>
-        <li>Privately hosted document management platform</li>
-        <li>Securely stored, not in the control of Dropbox or Google</li>
-        <li>Conflicts easily managed so nothing gets lost</li>
-        <li>Folder and file level user permissions</li>
-        <li>Integrated into your website</li>
-      </ul>
-    </section>
-  </div>
-  <div>
-    <img src="../../../elements/placeholder.jpeg" />
-  </div>
-  <div>
-    <header><h3>Consulation + advice</h3></header>
-    <section>
-      <ul>
-        <li>Initial consultation meetings when coming on board</li>
-        <li>Recommendations of graphic designers, photographers and video producers</li>
-        <li>Access to our documentation: user guides and best practices</li>
-        <li>Podcasts and training sessions</li>
-        <li>Optional in-depth consultation services</li>
-      </ul>
-    </section>
+  <div class="product-pair">
+    <div>
+      <img class="img-responsive center-block" src="../../../elements/placeholder.jpeg" />
+    </div>
+    <div>
+      <header><h3>Consulation + advice</h3></header>
+      <section>
+        <ul>
+          <li>Initial consultation meetings when coming on board</li>
+          <li>Recommendations of graphic designers, photographers and video producers</li>
+          <li>Access to our documentation: user guides and best practices</li>
+          <li>Podcasts and training sessions</li>
+          <li>Optional in-depth consultation services</li>
+        </ul>
+      </section>
+    </div>
   </div>
 </section>
