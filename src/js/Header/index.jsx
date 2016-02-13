@@ -13,8 +13,12 @@ export class Header extends React.Component {
 		this.handleScroll = throttle(this.handleScroll.bind(this), 250);
 	}
 
-	get length() {
-		return window.innerHeight - 100;
+	get backgroundHeight() {
+		return window.pageYOffset > window.innerHeight - 80 ? 1 : 0;
+	}
+
+	get paddingHeight() {
+		return window.pageYOffset > window.innerHeight / 2 ? 60 : 10;
 	}
 
 	componentDidMount() {
@@ -27,9 +31,9 @@ export class Header extends React.Component {
 
 	handleScroll() {
 		this.setState({
-			backgroundColor: `rgba(255,255,255, ${Math.min(window.pageYOffset / 200, 1)})`,
-			boxShadow: `0 2px 5px rgba(0,0,0, ${Math.min(window.pageYOffset / 800, 0.26)})`,
-			padding: `${Math.min(window.pageYOffset, 60)}px`
+			backgroundColor: `rgba(255,255,255, ${this.backgroundHeight})`,
+			boxShadow: `0 2px 5px rgba(0,0,0, ${this.backgroundHeight * 0.26})`,
+			padding: `${this.paddingHeight}px`
 		});
 	}
 

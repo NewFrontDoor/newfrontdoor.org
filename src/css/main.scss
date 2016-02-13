@@ -325,7 +325,7 @@ video#bgvid {
   left: 50%;
   min-width: 100%;
   min-height: 100%;
-  width: auto;
+  width: 100%;
   height: auto;
   z-index: -1;
   transform: translateX(-50%) translateY(-50%);
@@ -345,18 +345,22 @@ video#bgvid {
   background-size: cover;
 }
 .close-content {
+  lost-align: center;
+  max-width: 980px;
   padding-top: 30px;
-  width: 980px;
   color: white;
-  text-align: center;
+
+  @media (min-width: $screen-md-min) {
+    padding-top: 80px;
+  }
+
   form {
-    width: 75vw;
     margin:auto;
+    width: 75vw;
+    padding: 10px;
+
     @media (min-width: $screen-md-min) {
       width: 50vw;
-    }
-    padding: 10px;
-    @media (min-width: $screen-md-min) {
       padding: 40px;
     }
   }
