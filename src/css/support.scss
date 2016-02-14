@@ -1,17 +1,14 @@
 .instruction {
   lost-column: 3/3;
   @media (min-width: $screen-md-min) {
-  height: auto;
+  height: 100%;
   lost-column: 1/3 0 10px;
   lost-move: 2/3;
-  //border: 1px solid black;
-  background-color: $text-color;
-  opacity: .8;
-  color: $footer-text;
-  padding: 0 10px 0 10px;
+  padding: 0 10px 10px 10px;
   h3 {
     color: $search-overlay;
   }
+  box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   }
 }
 

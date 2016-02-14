@@ -204,13 +204,12 @@ div.expand {
   }
   section.products {
     lost-flex-container: row;
-
-    .product-pair {
-      &:nth-child(even) {
-
-          flex-direction: row-reverse;
-
+    &:nth-child(even) {
+      @media (min-width: $screen-md-min) {
+        flex-direction: row-reverse;
       }
+    }
+    .product-pair {
       div {
         lost-column: 1/1 flex;
         img {
@@ -269,7 +268,7 @@ div.expand {
     }
   }
   @media (min-width: $screen-md-min) {
-    min-height: 520px;
+    min-height: 518px;
     // view height minus footer height minus nav height
     height: calc(100vh - #{$footer-height} - 60px);
   }
