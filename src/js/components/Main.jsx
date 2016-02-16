@@ -3,12 +3,12 @@ import {Hero} from '../Hero';
 import {Index} from './Index';
 import content from '../content';
 
-import first from '../content/featured/first.md';
-import second from '../content/featured/second.md';
-import third from '../content/featured/third.md';
-import fourth from '../content/featured/fourth.md';
-import fifth from '../content/featured/fifth.md';
-import sixth from '../content/featured/sixth.md';
+import first from '../content/featured/first.html';
+import second from '../content/featured/second.html';
+import third from '../content/featured/third.html';
+import fourth from '../content/featured/fourth.html';
+import fifth from '../content/featured/fifth.html';
+import sixth from '../content/featured/sixth.html';
 
 export class Main extends React.Component {
 	rawFirst() {
@@ -63,9 +63,9 @@ export class Main extends React.Component {
 						</div>
 					</div>
 					<div className="featured-sixth" id="join">
-					<video autoPlay loop id="bgvid">
-						<source src="../src/elements/clip2.mp4" type="video/mp4"></source>
-					</video>
+						<video autoPlay loop id="bgvid">
+							<source src="../src/elements/clip2.mp4" type="video/mp4"></source>
+						</video>
 						<div className="close-content">
 							<section dangerouslySetInnerHTML={this.rawSixth()}></section>
 						</div>

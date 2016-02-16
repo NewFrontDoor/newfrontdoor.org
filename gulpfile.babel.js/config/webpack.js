@@ -172,7 +172,7 @@ function getJSXLoader() {
 function getHtmlLoader() {
 	return {
 		test: /\.html$/,
-		loader: 'html?attrs=link:href',
+		loaders: ['html'],
 		exclude: /node_modules/
 	};
 }

@@ -42,7 +42,7 @@
     "classnames": "^2.2.3",
     "css-loader": "^0.23.1",
     "del": "^2.2.0",
-    "eslint": "^2.0.0",
+    "eslint": "^2.1.0",
     "eslint-config-xo-react": "^0.4.0",
     "eslint-plugin-react": "^3.16.1",
     "eval": "^0.1.1",
@@ -55,10 +55,10 @@
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-util": "^3.0.7",
-    "html-loader": "^0.4.0",
-    "html-webpack-plugin": "^2.8.1",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.8.2",
     "indexhtml-webpack-plugin": "^0.1.9",
-    "lodash": "^4.3.0",
+    "lodash": "^4.4.0",
     "lost": "^6.6.3",
     "markdown-toc": "^0.12.3",
     "ngrok": "^0.2.2",
@@ -97,7 +97,10 @@
   },
   "xo": {
     "esnext": true,
-    "extends": "xo-react"
+    "extends": "xo-react",
+    "rules": {
+      "react/no-danger": 0
+    }
   },
   "babel": {
     "presets": [
