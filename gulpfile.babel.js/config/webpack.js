@@ -199,7 +199,7 @@ function getAssetLoader() {
 	return {
 		test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
 		exclude: /favicon\.png$/,
-		loader: 'url?limit=10000'
+		loaders: ['url?limit=10000', 'image-maxsize?useImageMagick=true']
 	};
 }
 

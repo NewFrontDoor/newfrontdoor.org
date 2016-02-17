@@ -1,4 +1,5 @@
 @import "../../css/variables";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins/_image";
 
 :local .container {
   height: 100vh;
@@ -11,12 +12,16 @@
   height: 100%;
   width: 100%;
 
-  background-image: url("../../elements/splash-image.jpeg");
+  @include img-retina("../../elements/splash-image.jpeg?max-width=800", "../../elements/splash-image.jpeg?max-width=1600", cover, cover);
   background-attachment: local;
   filter: grayscale(1) brightness(.8);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
+  @media (min-width: $screen-md-min) {
+    background-image: url("../../elements/splash-image.jpeg");
+  }
 }
 
 :local .mini.container {
