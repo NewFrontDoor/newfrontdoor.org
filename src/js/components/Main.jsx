@@ -2,6 +2,7 @@ import React from 'react';
 import {Hero} from '../Hero';
 import {Index} from './Index';
 import content from '../content';
+import video from '../../elements/clip2.mp4';
 
 import first from '../content/featured/first.html';
 import second from '../content/featured/second.html';
@@ -64,7 +65,7 @@ export class Main extends React.Component {
 					</div>
 					<div className="featured-sixth" id="join">
 						<video autoPlay loop id="bgvid">
-							<source src="../src/elements/clip2.mp4" type="video/mp4"></source>
+							<source src={video} type="video/mp4"></source>
 						</video>
 						<div className="close-content">
 							<section dangerouslySetInnerHTML={this.rawSixth()}></section>
