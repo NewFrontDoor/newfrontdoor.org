@@ -2,7 +2,6 @@ import React from 'react';
 import {Hero} from '../Hero';
 import {Index} from './Index';
 import content from '../content';
-import video from '../../elements/clip2.mp4';
 
 import first from '../content/featured/first.html';
 import second from '../content/featured/second.html';
@@ -10,6 +9,7 @@ import third from '../content/featured/third.html';
 import fourth from '../content/featured/fourth.html';
 import fifth from '../content/featured/fifth.html';
 import sixth from '../content/featured/sixth.html';
+import video from '../../elements/clip2.mp4';
 
 export class Main extends React.Component {
 	rawFirst() {
