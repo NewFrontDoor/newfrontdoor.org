@@ -22,7 +22,7 @@ export const Documentation = () => (
 						<li>Item 1</li>
 						<li>Item 2</li>
 						<li>Item 3</li>
-						<li>Item 4</li>
+						<li>Item 4 is a really really long item and will hopefully wrap properly</li>
 					</ul>
 				</div>
 				<div className="type-2">

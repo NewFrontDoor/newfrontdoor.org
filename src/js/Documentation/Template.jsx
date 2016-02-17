@@ -41,8 +41,8 @@ export class Template extends React.Component {
 					</div>
 					<div className="feedback-sidebar">
 						<h3>Give feedback</h3>
-						<section>Suggest a revision to this document.</section>
-						<i class="fa fa-angle-down"></i>
+						<a href=""><section>Suggest a revision to this document.</section>
+						<i className="fa fa-angle-down fa-3x"></i></a>
 					</div>
 				</div>
 				<div className="documentation-content">
