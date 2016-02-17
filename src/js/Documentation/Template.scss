@@ -12,17 +12,24 @@
 }
 
 .documentation-sidebar {
-  lost-column: 1/4;
+	lost-column: 1/4;
+	height: 100%;
+}
+
+.TOC-sidebar {
   padding: 10px;
   box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   //border-right: 1px solid lighten($text-color, 70%);
   overflow-x: hidden;
   overflow-y: auto;
-  height: 80%;
+  height: 70%;
   list-style: none;
   position: relative;
   margin-left: 20px;
   margin-top: 20px;
+	h3 {
+		margin-top: 5px;
+	}
   ul li {
     text-transform: inherit;
     list-style: none;
@@ -36,6 +43,22 @@
       width: auto;
     }
   }
+}
+
+.feedback-sidebar {
+  padding: 10px;
+  box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  //border-right: 1px solid lighten($text-color, 70%);
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 20%;
+  list-style: none;
+  position: relative;
+  margin-left: 20px;
+  margin-top: 20px;
+	h3 {
+		margin-top: 5px;
+	}
 }
 
 .documentation-content {

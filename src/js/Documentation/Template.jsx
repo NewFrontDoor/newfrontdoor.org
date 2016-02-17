@@ -33,18 +33,25 @@ export class Template extends React.Component {
 	render() {
 		return (
 			<Index>
-				<div className="documentation-wrapper">
-					<div className="documentation-sidebar">
+			<div className="documentation-wrapper">
+				<div className="documentation-sidebar">
+					<div className="TOC-sidebar">
 						<h3>Contents</h3>
 						<section dangerouslySetInnerHTML={{__html: this.document.toc}}></section>
 					</div>
-					<div className="documentation-content">
-						<h1>{this.document.heading}</h1>
-						<h1><small>{this.document.sub_heading}</small></h1>
-						<section dangerouslySetInnerHTML={{__html: this.document.body}}></section>
+					<div className="feedback-sidebar">
+						<h3>Give feedback</h3>
+						<section>Suggest a revision to this document.</section>
+						<i class="fa fa-angle-down"></i>
 					</div>
 				</div>
-			</Index>
+				<div className="documentation-content">
+					<h1>{this.document.heading}</h1>
+					<h1><small>{this.document.sub_heading}</small></h1>
+					<section dangerouslySetInnerHTML={{__html: this.document.body}}></section>
+				</div>
+			</div>
+		</Index>
 		);
 	}
 }

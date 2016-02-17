@@ -15,9 +15,13 @@
   display: flex;
   flex-wrap: wrap;
   div {
-    flex: 1 0 25%;
+    flex: 1 0 33%;
     h1,h2,h3 {
-      text-align: center;
     }
   }
+}
+
+i {
+  color: rgba(black, .2);
+  margin-left: -7px;
 }
