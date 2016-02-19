@@ -7,7 +7,7 @@ export class Hero extends React.Component {
 	constructor() {
 		super();
 		this.state = {};
-		this.handleScroll = throttle(this.handleScroll.bind(this), 250);
+		this.handleScroll = throttle(this.handleScroll.bind(this), 50);
 	}
 
 	get length() {
@@ -24,7 +24,7 @@ export class Hero extends React.Component {
 
 	handleScroll() {
 		this.setState({
-			opacity: `${1 - (window.pageYOffset - 10) / 100}`
+			opacity: `${1 - (window.pageYOffset - 10) / 250}`
 		});
 	}
 

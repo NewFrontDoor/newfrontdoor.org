@@ -14,16 +14,13 @@
 */
 .list-wrapper {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
+  lost-flex-container: row;
   div {
     box-shadow: 0 10px 16px 0 rgba($primary-highlight,0.8),0 6px 20px 0 rgba(0,0,0,0.19);
-    margin-left: 40px;
-    margin-bottom: 20px;
-    padding-left: 10px;
-    flex: 1 1 auto;
+    background-color: white;
+    margin-bottom: 40px; //transform to -120px; to stack
+    padding: 0 10px 10px 10px;
+    lost-column: 1/2 2 40px;
     a {
       color: $text-color;
     }

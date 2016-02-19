@@ -15,6 +15,7 @@ export const Documentation = () => (
 					</div>
 				</form>
 			</div>
+			<h2>Vision 100 IT documentation</h2>
 			<div className="list-wrapper">
 				<div className="type-1">
 					<h3><i className="fa fa-lock fa-fw"></i>Creating accounts</h3>
@@ -56,17 +57,20 @@ export const Documentation = () => (
 						<li>Item 4</li>
 					</ul>
 				</div>
+			</div>
+			<h2>Additional resources</h2>
+			<div className="list-wrapper">
 				<div className="type-5">
-					<h3><i className="fa fa-dot-circle-o fa-fw"></i>Blank</h3>
+					<h3><i className="fa fa-link fa-fw"></i>Recommended links</h3>
 					<ul>
-						<li>Item 1</li>
-						<li>Item 2</li>
-						<li>Item 3</li>
-						<li>Item 4</li>
+						<li><a href="https://www.elvanto.com/">Elvanto</a></li>
+						<li><a href="http://sparkleshare.org/">Sparkleshare</a></li>
+						<li><a href="https://www.drupal.org/">Drupal</a></li>
+						<li><a href="http://www.virtualchurchassist.com/">Virtual Church Assist</a></li>
 					</ul>
 				</div>
 				<div className="type-6">
-					<h3><i className="fa fa-dot-circle-o fa-fw"></i>Blank</h3>
+					<h3><i className="fa fa-video-camera fa-fw"></i>Recommended Videos</h3>
 					<ul>
 						<li>Item 1</li>
 						<li>Item 2</li>
