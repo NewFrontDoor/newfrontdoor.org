@@ -4,6 +4,7 @@ import {Route, IndexRoute} from 'react-router';
 import {Site} from './Site';
 import {Main} from './Main';
 import {Client} from './Client';
+import {Blog} from '../Blog';
 import {Support} from './Support';
 import {Feature} from './Feature';
 import {Template} from '../Documentation/Template';
@@ -19,6 +20,7 @@ export default (
 	<Route path="/" component={Site} >
 		<IndexRoute component={Main} />
 		<Route path="client" component={Client} />
+		<Route path="blog/:blogId" component={Blog} />
 		<Route path="support" component={Support} />
 		<Route path="feature" component={Feature} />
 		<Route path="documentation" component={Documentation} />

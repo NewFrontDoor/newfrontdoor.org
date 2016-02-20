@@ -1,5 +1,4 @@
 import gulp from 'gulp';
-import path from 'path';
 import through from 'through';
 import {File} from 'gulp-util';
 import lunr from 'lunr';
@@ -7,6 +6,7 @@ import removeMarkdown from 'remove-markdown';
 import gulpLoadPlugins from 'gulp-load-plugins';
 
 import {paths} from './config';
+import {trimExtension} from './lib';
 
 const $ = gulpLoadPlugins();
 
@@ -38,7 +38,7 @@ function lunrGulp(config) {
 
 	function add(file) {
 		const frontMatter = file.frontMatter;
-		const id = file.relative.replace(path.extname(file.relative), '');
+		const id = trimExtension(file.relative);
 		const title = frontMatter.title;
 		const body = removeMarkdown(file.contents.toString());
 		const author = frontMatter.author || {};

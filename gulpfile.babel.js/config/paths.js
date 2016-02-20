@@ -22,6 +22,7 @@ export default {
 		src: src('documentation/**/*')
 	},
 	blog: {
+		dir: src('blog'),
 		src: src('blog/**/*')
 	},
 	style: {

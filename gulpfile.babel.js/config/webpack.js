@@ -15,6 +15,7 @@ import WebpackNotifierPlugin from 'webpack-notifier';
 import argvSetEnv from 'argv-set-env';
 
 import paths from './paths';
+import {trimExtension} from '../lib';
 import packageJson from '../../package.json';
 
 const staticPaths = [
@@ -31,9 +32,10 @@ const staticPaths = [
 	'/consultation'
 ];
 
-const documentation = fs.readdirSync(paths.documentation.dir).map(p => `/documentation/${p.slice(0, -3)}`);
+const documentation = fs.readdirSync(paths.documentation.dir).map(p => `/documentation/${trimExtension(p)}`);
+const blog = fs.readdirSync(paths.blog.dir).map(p => `/blog/${trimExtension(p)}`);
 
-Reflect.apply(Array.prototype.push, staticPaths, documentation);
+Reflect.apply(Array.prototype.push, staticPaths, [...blog, ...documentation]);
 
 console.log(staticPaths);
 
