@@ -2,3 +2,5 @@ dest
 node_modules
 
 npm-debug.log
+src/search/search-data.json
+src/search/search-index.json

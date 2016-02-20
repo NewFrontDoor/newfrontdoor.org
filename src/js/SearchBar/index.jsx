@@ -1,51 +1,93 @@
+/* eslint-env browser */
 import React from 'react';
+import lunr from 'lunr';
 import classNames from 'classnames';
-import styles from './SearchBar.scss'; 
+import styles from './SearchBar.scss';
 
 export class SearchBar extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
-		this.openResult = this.openResult.bind(this);
-		this.closeResult = this.closeResult.bind(this);
+		this.state = {
+			searchResults: [],
+			searchTerm: ''
+		};
+		this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
+		this.handleSearchTerm = this.handleSearchTerm.bind(this);
+		this.handleCloseResult = this.handleCloseResult.bind(this);
 	}
 
-	openResult(event) {
-		event.preventDefault();
-		this.setState({showResult: true});
+	get searchIndex() {
+		const self = this;
+		return new Promise(resolve => {
+			if (self.__searchIndex) {
+				resolve({index: self.__searchIndex, data: self.__searchData});
+			} else {
+				require.ensure([], () => {
+					self.__searchIndex = lunr.Index.load(JSON.parse(require('raw!../../Search/search-index.json')));
+					self.__searchData = JSON.parse(require('raw!../../Search/search-data.json'));
+					resolve({index: self.__searchIndex, data: self.__searchData});
+				});
+			}
+		});
 	}
 
-	closeResult(event) {
+	handleSearchSubmit(event) {
 		event.preventDefault();
-		this.setState({showResult: false});
+
+		const self = this;
+
+		this.searchIndex.then(({index, data}) => {
+			const res = index.search(self.state.searchTerm);
+
+			const searchResults = res.map(result => data.items.find(item => item.id === result.ref));
+			console.log(searchResults);
+			self.setState({searchResults});
+		});
+	}
+
+	handleSearchTerm(event) {
+		event.preventDefault();
+		this.setState({searchTerm: event.target.value});
+	}
+
+	handleCloseResult(event) {
+		event.preventDefault();
+		this.setState({searchResults: []});
 	}
 
 	render() {
-		const siteCless = classNames({
+		const siteClass = classNames({
 			'visible': this.props.isOpen,
 			'search-overlay': true,
 			'text-uppercase': true
 		});
 
-		const siteYess = classNames({
-			'visible': this.state.showResult,
+		const resultsClass = classNames({
+			'visible': this.state.searchResults.length > 0,
 			'search-results': true
 		});
 
 		return (
-			<div className={siteCless}>
+			<div className={siteClass}>
 				<div className="search-title">
 					<h2>Search menu</h2>
 					<div>
 						<a onClick={this.props.onClose}>
-							<i className="fa fa-times-circle fa-2x"></i>
+							<span className="fa fa-times-circle fa-2x"></span>
 						</a>
 					</div>
 				</div>
-				<form onSubmit={this.openResult}>
+				<form onSubmit={this.handleSearchSubmit}>
 					<div className="input-group">
 						<label className="sr-only" htmlFor="search">Search</label>
-						<input type="search" name="search" className="form-control search" placeholder="Search..."/>
+						<input
+							type="search"
+							name="search"
+							className="form-control search"
+							value={this.state.searchTerm}
+							onChange={this.handleSearchTerm}
+							placeholder="Search..."
+							/>
 						<span className="input-group-btn submit">
 							<button className="btn btn-transparent" type="submit">
 								<span className="fa fa-search fa-lg"></span>
@@ -53,24 +95,26 @@ export class SearchBar extends React.Component {
 						</span>
 					</div>
 				</form>
-				<div className={siteYess}>
+				<div className={resultsClass}>
 					<div className="results-title">
 						<h3>Results</h3>
 						<div>
-							<a onClick={this.closeResult}>
-								<i className="fa fa-times-circle fa-lg"></i>
+							<a onClick={this.handleCloseResult}>
+								<span className="fa fa-times-circle fa-lg"></span>
 							</a>
 						</div>
 					</div>
 					<div className="results-content">
 						<ul className="list-unstyled">
-							<li>result 1</li>
-							<li>result 2</li>
-							<li>result 3</li>
+							{this.state.searchResults.map((res, key) => (
+								<li key={key}>
+									<a href={res.id}>{res.title}</a>
+									<p>{res.short}</p>
+								</li>
+							))}
 						</ul>
 					</div>
 					<div className="search-nav small">
-
 						<p>more</p>
 					</div>
 				</div>
@@ -95,7 +139,7 @@ export class SearchBar extends React.Component {
 				</div>
 				<div className="postscript">
 					© Vision 100 Resources 2016.<br />
-				Design by <a href="http://twitter.com/readeral">readeral</a> and <a href="http://twitter.com/barrythepenguin">barrythepenguin</a>.<br />
+					Design by <a href="http://twitter.com/readeral">readeral</a> and <a href="http://twitter.com/barrythepenguin">barrythepenguin</a>.<br />
 					<a href="mailto:info@vision100.org">info@vision100.org</a>.<br />
 					ABN: 50 782 030 539.
 				</div>

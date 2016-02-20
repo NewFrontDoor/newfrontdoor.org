@@ -9,7 +9,8 @@ gulp.task('develop', [
 	'templates',
 	'webpack',
 	'fonts',
-	'extras'
+	'extras',
+	'lunr'
 ], watch);
 
 gulp.task('default', ['clean'], develop);

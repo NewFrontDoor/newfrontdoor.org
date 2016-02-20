@@ -17,7 +17,11 @@ export default {
 		dest: dest()
 	},
 	documentation: {
-		src: src('documentation')
+		dir: src('documentation'),
+		src: src('documentation/**/*')
+	},
+	blog: {
+		src: src('blogs/**/*')
 	},
 	style: {
 		src: src('css/main.scss'),
@@ -61,5 +65,8 @@ export default {
 	html2js: {
 		src: src('/**/*.html'),
 		dest: src('/js/')
+	},
+	lunr: {
+		dest: src('/search/')
 	}
 };

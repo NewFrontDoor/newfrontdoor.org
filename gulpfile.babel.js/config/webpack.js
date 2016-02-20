@@ -31,7 +31,7 @@ const staticPaths = [
 	'/consultation'
 ];
 
-const documentation = fs.readdirSync(paths.documentation.src).map(p => `/documentation/${p.slice(0, -3)}`);
+const documentation = fs.readdirSync(paths.documentation.dir).map(p => `/documentation/${p.slice(0, -3)}`);
 
 Reflect.apply(Array.prototype.push, staticPaths, documentation);
 
@@ -227,6 +227,11 @@ function getCommonPlugins() {
 			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
 			'VERSION': JSON.stringify(packageJson.version)
 		}),
-		new WebpackNotifierPlugin()
+		new WebpackNotifierPlugin(),
+		new webpack.optimize.CommonsChunkPlugin({
+			// names: ["app", "subPageA"]
+			children: true,
+			async: true
+		})
 	]);
 }
