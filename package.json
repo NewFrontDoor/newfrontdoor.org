@@ -78,6 +78,7 @@
     "react-scroll": "^1.0.2",
     "remarkable": "^1.6.2",
     "remarkable-loader": "^0.1.0",
+    "remove-markdown": "^0.1.0",
     "sass-loader": "^3.1.2",
     "static-site-generator-webpack-plugin": "BarryThePenguin/static-site-generator-webpack-plugin#patch-1",
     "style-loader": "^0.13.0",

@@ -11,6 +11,7 @@ const src = p => dirPath('/src/', p || '');
 const dest = p => dirPath('/dest/', p || '');
 
 export default {
+	src: src(),
 	dest: dest(),
 	bundle: {
 		src: src(),
@@ -21,7 +22,7 @@ export default {
 		src: src('documentation/**/*')
 	},
 	blog: {
-		src: src('blogs/**/*')
+		src: src('blog/**/*')
 	},
 	style: {
 		src: src('css/main.scss'),

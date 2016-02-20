@@ -11,7 +11,7 @@ const md = new Remarkable();
 
 const blog = {
 	get context() {
-		return require.context('!!raw!../../blogs', true, /^.*\.md$/);
+		return require.context('!!raw!../../blog', true, /^.*\.md$/);
 	},
 	get posts() {
 		return this.context.keys();
@@ -40,32 +40,32 @@ const posts = blog.page({
 const pinnedPost = posts.shift();
 
 export const Client = () => (
-		<Index>
-				<Hero mini />
-				<main role="main">
-						<section className="announcement-banner">
-								<div>
-										This is where the announcement content would go
-								</div>
-						</section>
-						<section className="warning-banner">
-								<div>
-										This is where the warning content would go
-								</div>
-						</section>
-						<div className="client-wrapper">
-								<section className="pinned-post">
-									<Post {...pinnedPost.attributes}>
-										<div dangerouslySetInnerHTML={{__html: pinnedPost.body}}></div>
-									</Post>
-								</section>
-								<section className="posts">
-										{posts.map((post, key) => <Post key={key} {...post.attributes}>
-											<div dangerouslySetInnerHTML={{__html: post.body}}></div>
-										</Post>)}
-								</section>
-								<div></div>
-						</div>
-				</main>
-		</Index>
+	<Index>
+		<Hero mini/>
+		<main role="main">
+			<section className="announcement-banner">
+				<div>
+					This is where the announcement content would go
+				</div>
+			</section>
+			<section className="warning-banner">
+				<div>
+					This is where the warning content would go
+				</div>
+			</section>
+			<div className="client-wrapper">
+				<section className="pinned-post">
+					<Post {...pinnedPost.attributes}>
+						<div dangerouslySetInnerHTML={{__html: pinnedPost.body}}></div>
+					</Post>
+				</section>
+				<section className="posts">
+					{posts.map((post, key) => <Post key={key} {...post.attributes}>
+						<div dangerouslySetInnerHTML={{__html: post.body}}></div>
+					</Post>)}
+				</section>
+				<div></div>
+			</div>
+		</main>
+	</Index>
 );

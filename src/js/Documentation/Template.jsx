@@ -48,8 +48,8 @@ export class Template extends React.Component {
 						</div>
 					</div>
 					<div className="documentation-content">
-						<h1>{this.document.heading}</h1>
-						<h1><small>{this.document.sub_heading}</small></h1>
+						<h1>{this.document.title}</h1>
+						<h1><small>{this.document.sub_title}</small></h1>
 						<section dangerouslySetInnerHTML={{__html: this.document.body}}></section>
 					</div>
 				</div>

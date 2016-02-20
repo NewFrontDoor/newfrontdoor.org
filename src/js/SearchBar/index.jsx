@@ -40,7 +40,14 @@ export class SearchBar extends React.Component {
 			const res = index.search(self.state.searchTerm);
 
 			const searchResults = res.map(result => data.items.find(item => item.id === result.ref));
-			console.log(searchResults);
+
+			if (searchResults.length === 0) {
+				searchResults.push({
+					id: '#',
+					title: 'No results found'
+				});
+			}
+
 			self.setState({searchResults});
 		});
 	}
@@ -109,7 +116,6 @@ export class SearchBar extends React.Component {
 							{this.state.searchResults.map((res, key) => (
 								<li key={key}>
 									<a href={res.id}>{res.title}</a>
-									<p>{res.short}</p>
 								</li>
 							))}
 						</ul>

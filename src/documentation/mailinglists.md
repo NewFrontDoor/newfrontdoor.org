@@ -1,6 +1,6 @@
 ---
-heading: Guidelines for Local Church Mailing List Management
-sub_heading: Understanding Mailing Lists, how to set them up, and how to manage members and moderators
+title: Guidelines for Local Church Mailing List Management
+sub_title: Understanding Mailing Lists, how to set them up, and how to manage members and moderators
 ---
 
 ### Summary

@@ -1,8 +1,9 @@
 import gulp from 'gulp';
 import path from 'path';
 import through from 'through';
-import {File, PluginError} from 'gulp-util';
+import {File} from 'gulp-util';
 import lunr from 'lunr';
+import removeMarkdown from 'remove-markdown';
 import gulpLoadPlugins from 'gulp-load-plugins';
 
 import {paths} from './config';
@@ -22,12 +23,13 @@ function lunrConfig() {
 }
 
 export default () => {
-	return gulp.src(paths.blog.src)
-		.pipe($.frontMatter({
-			remove: true
-		}))
-		.pipe(lunrGulp(lunrConfig))
-		.pipe(gulp.dest(paths.lunr.dest));
+	return gulp.src([paths.blog.src, paths.documentation.src], {
+		base: paths.src
+	}).pipe($.frontMatter({
+		remove: true
+	}))
+	.pipe(lunrGulp(lunrConfig))
+	.pipe(gulp.dest(paths.lunr.dest));
 };
 
 function lunrGulp(config) {
@@ -36,18 +38,19 @@ function lunrGulp(config) {
 
 	function add(file) {
 		const frontMatter = file.frontMatter;
-		const id = file.relative;
+		const id = file.relative.replace(path.extname(file.relative), '');
 		const title = frontMatter.title;
-		const body = file.contents.toString();
-		const short = body.slice(0, 100).concat('...');
+		const body = removeMarkdown(file.contents.toString());
+		const author = frontMatter.author || {};
+		// const short = body.slice(0, 100).concat('...');
 
 		index.add({
 			id, title, body,
-			author: frontMatter.author.name,
-			tags: frontMatter.tags.join(' ')
+			author: author.name,
+			tags: (frontMatter.tags || []).join(' ')
 		});
 
-		data.push({id, title, short});
+		data.push({id, title});
 
 		return;
 	}
