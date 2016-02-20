@@ -27,6 +27,9 @@
   position: relative;
   margin-left: 20px;
   margin-top: 20px;
+	&.visible {
+		height: 20%
+	}
 	a {
 	color: $text-color;
 	}
@@ -62,7 +65,13 @@
   margin-top: 20px;
 
 	&.visible {
-		height: 80%
+		height: 70%;
+		span {
+			display: none;
+		}
+		.feedback-form {
+			display: block;
+		}
 	}
 
 	a {

@@ -42,11 +42,13 @@ export class Template extends React.Component {
 	handleOpenFeedback(event) {
 		event.preventDefault();
 		this.setState({openFeedback: true});
+		this.setState({closeTOC: true});
 	}
 
 	handleCloseFeedback(event) {
 		event.preventDefault();
 		this.setState({openFeedback: false});
+		this.setState({closeTOC: false});
 	}
 
 	render() {
@@ -55,20 +57,28 @@ export class Template extends React.Component {
 			'feedback-sidebar': true
 		});
 
+		const docTOC = classNames({
+			'visible': this.state.closeTOC,
+			'TOC-sidebar': true
+		});
+
 		return (
 			<Index>
 				<div className="documentation-wrapper">
 					<div className="documentation-sidebar">
-						<div className="TOC-sidebar">
+						<div className={docTOC}>
 							<h3>Contents</h3>
 							<section dangerouslySetInnerHTML={{__html: this.document.toc}}></section>
 						</div>
 						<div className={docFeedback}>
 							<h3>Give feedback</h3>
 							<a onClick={this.handleOpenFeedback}>
-								<section>Suggest a revision to this document.</section>
+								<span>Suggest a revision to this document.</span>
 								<span className="fa fa-angle-down fa-3x"></span>
 							</a>
+							<div className="feedback-form">
+								Testing the feedback form function.
+							</div>
 						</div>
 					</div>
 					<div className="documentation-content">
