@@ -60,6 +60,11 @@
   position: relative;
   margin-left: 20px;
   margin-top: 20px;
+
+	&.visible {
+		height: 80%
+	}
+
 	a {
 	color: $text-color;
 	}
@@ -67,7 +72,7 @@
 		margin-top: 5px;
 		color: $search-overlay;
 	}
-	i {
+	span {
 		text-align: center;
 		width: 100%;
 		color: inherit;

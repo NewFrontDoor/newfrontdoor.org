@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import fm from 'front-matter';
 import toc from 'markdown-toc';
 import Remarkable from 'remarkable';
@@ -29,8 +30,31 @@ export class Template extends React.Component {
 	get document() {
 		return documentation.document(this.props.params.documentId) || {};
 	}
+	constructor(props) {
+		super(props);
+		this.state = {
+			searchResults: []
+		};
+		this.handleOpenFeedback = this.handleOpenFeedback.bind(this);
+		this.handleCloseFeedback = this.handleCloseFeedback.bind(this);
+	}
+
+	handleOpenFeedback(event) {
+		event.preventDefault();
+		this.setState({openFeedback: true});
+	}
+
+	handleCloseFeedback(event) {
+		event.preventDefault();
+		this.setState({openFeedback: false});
+	}
 
 	render() {
+		const docFeedback = classNames({
+			'visible': this.state.openFeedback,
+			'feedback-sidebar': true
+		});
+
 		return (
 			<Index>
 				<div className="documentation-wrapper">
@@ -39,9 +63,9 @@ export class Template extends React.Component {
 							<h3>Contents</h3>
 							<section dangerouslySetInnerHTML={{__html: this.document.toc}}></section>
 						</div>
-						<div className="feedback-sidebar">
+						<div className={docFeedback}>
 							<h3>Give feedback</h3>
-							<a href="">
+							<a onClick={this.handleOpenFeedback}>
 								<section>Suggest a revision to this document.</section>
 								<span className="fa fa-angle-down fa-3x"></span>
 							</a>
