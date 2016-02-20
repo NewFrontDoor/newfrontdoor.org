@@ -290,6 +290,7 @@ div.expand {
   lost-align: top-center;
   height: 100vh;
   color: $footer-text;
+  text-shadow: 1px 1px 2px black;
   .input-default, .btn-default {
     background: rgba((white), .8);
     border: none;
@@ -315,6 +316,7 @@ div.expand {
   }
   .social {
     lost-center: 980px;
+    text-shadow: none;
     div {
       flex: 1 0 25%;
       text-align: center;

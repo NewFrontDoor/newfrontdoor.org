@@ -34,7 +34,7 @@
     div {
       lost-column: 1/4;
       margin: 24px 20px 0 0;
-      i {
+      span {
         text-align: center;
         cursor: pointer;
         color: $search-overlay;
@@ -97,7 +97,7 @@
       div {
         lost-column: 1/6;
         margin: 24px 20px 0 0;
-        i {
+        span {
           text-align: center;
           cursor: pointer;
           color: $search-overlay;
