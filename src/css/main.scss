@@ -145,7 +145,7 @@ blockquote {
 
 //featured 1 styles
 .featured-first {
-/*  background-image: url(../elements/arrow3.png);
+/*  background-image: url(../elements/arrows.jpg);
   background-position: -350px -300px;
   background-repeat: no-repeat; */
 }
@@ -192,6 +192,7 @@ blockquote {
   .snapshots {
     lost-center: 980px;
     font-family: $font-family-sans-serif;
+    flex-wrap: wrap;
     div {
       flex: 1 0 25%;
       text-align: center;
@@ -318,10 +319,6 @@ div.expand {
       flex: 1 0 25%;
       text-align: center;
       height: auto;
-      margin-bottom: 40px;
-      p {
-        text-transform: uppercase;
-      }
     }
   }
 }
@@ -329,7 +326,7 @@ div.expand {
 video#bgvid {
   display: none;
   position: absolute;
-  top: 25%;
+  top: 35%;
   left: 50%;
   min-width: 100%;
   min-height: 100%;
@@ -337,8 +334,6 @@ video#bgvid {
   height: auto;
   z-index: -1;
   transform: translateX(-50%) translateY(-50%);
-  background: url("../elements/close-image.jpeg") no-repeat;
-  background-size: 100%;
   @media (min-width: $screen-md-min) {
     display: block;
   }
@@ -351,13 +346,14 @@ video#bgvid {
   height: 100%;
   width: 100%;
   background-size: cover;
+  @media (min-width: $screen-md-min) {
+    display: none;
+  }
 }
 .close-content {
   lost-align: center;
   max-width: 980px;
   padding-top: 30px;
-  color: white;
-
   @media (min-width: $screen-md-min) {
     padding-top: 80px;
   }
@@ -369,7 +365,7 @@ video#bgvid {
 
     @media (min-width: $screen-md-min) {
       width: 50vw;
-      padding: 40px;
+      padding-bottom: 20px;
     }
   }
 }

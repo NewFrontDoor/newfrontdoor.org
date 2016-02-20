@@ -16,11 +16,11 @@
 }
 
 :local .mini.logo {
-  padding: .5vr 2.5vr;
+  padding: 8px 40px;
 }
 
 :local .logo {
-  padding: .5vr;
+  padding: 8px;
   margin: auto;
 
 	@media (min-width: $screen-md-min) {
@@ -31,7 +31,7 @@
 }
 
 :local .logo img {
-    height: 3vr;
+    height: 48px;
     @media (min-width: $screen-md-min) {
       height: auto;
       max-height: 150px;
