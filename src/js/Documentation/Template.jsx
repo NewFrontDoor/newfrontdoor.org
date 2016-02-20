@@ -77,7 +77,9 @@ export class Template extends React.Component {
 								<span className="fa fa-angle-down fa-3x"></span>
 							</a>
 							<div className="feedback-form">
-								Testing the feedback form function.
+								<textarea type="text" name="message" class="form-control input-default" placeholder="What could make this documentation clearer?"></textarea>
+								<input type="email" name="email" class="form-control input-default" placeholder="Contact email"/>
+								<button type="submit" className="btn btn-default">Submit</button><button type="cancel" className="btn btn-default" onClick={this.handleCloseFeedback}>Cancel</button>
 							</div>
 						</div>
 					</div>

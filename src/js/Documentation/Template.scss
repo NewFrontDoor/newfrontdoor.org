@@ -27,6 +27,7 @@
   position: relative;
   margin-left: 20px;
   margin-top: 20px;
+	transition: height 1s;
 	&.visible {
 		height: 20%
 	}
@@ -57,13 +58,13 @@
   box-shadow: 0 10px 16px 0 rgba($primary-highlight,0.8),0 6px 20px 0 rgba(0,0,0,0.19);
   //border-right: 1px solid lighten($text-color, 70%);
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
   height: 20%;
   list-style: none;
   position: relative;
   margin-left: 20px;
   margin-top: 20px;
-
+	transition: height 1s;
 	&.visible {
 		height: 70%;
 		span {
@@ -71,6 +72,27 @@
 		}
 		.feedback-form {
 			display: block;
+		}
+	}
+
+	.feedback-form {
+		lost-center: 100%;
+		height: auto;
+		.input-default, .btn-default {
+	    border-radius: 0;
+	    color: black;
+	  }
+		textarea {
+			lost-column: 1/1;
+			height: 200px;
+			margin-bottom: 10px;
+		}
+		input {
+			lost-column: 1/1;
+			margin-bottom: 10px;
+		}
+		button {
+			lost-column: 1/2;
 		}
 	}
 
