@@ -6,6 +6,7 @@ import Remarkable from 'remarkable';
 import {Index} from './Index';
 import {Hero} from '../Hero';
 import {Post} from '../Post';
+import {Alert} from './Alert';
 
 const md = new Remarkable();
 
@@ -43,16 +44,7 @@ export const Client = () => (
 	<Index>
 		<Hero mini/>
 		<main role="main">
-			<section className="announcement-banner">
-				<div>
-					This is where the announcement content would go
-				</div>
-			</section>
-			<section className="warning-banner">
-				<div>
-					This is where the warning content would go
-				</div>
-			</section>
+			<Alert></Alert>
 			<div className="product-cards">
 				<div id="one">
 					<h3>Elvanto</h3>

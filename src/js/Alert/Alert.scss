@@ -1,0 +1,28 @@
+@import "../../css/variables";
+
+.warning-banner {
+ color: $state-warning-text;
+ text-transform: uppercase;
+ font-family: $font-family-sans-serif;
+ background-color: $state-warning-bg;
+ border-top: 1px solid $state-warning-border;
+ padding: 15px;
+ box-shadow: 0 2px 5px rgba($state-warning-bg, 0.25);
+
+ div {
+   lost-center: 880px;
+ }
+}
+
+.announcement-banner {
+ color: $state-info-text;
+ text-transform: uppercase;
+ font-family: $font-family-sans-serif;
+ background-color: $state-info-bg;
+ border-top: 1px solid $state-info-border;
+ padding: 15px;
+ box-shadow: 0 2px 5px rgba($state-info-bg, 0.25);
+ div {
+   lost-center: 880px;
+ }
+}

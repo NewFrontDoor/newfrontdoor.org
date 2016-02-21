@@ -3,11 +3,13 @@ export default {
 		tagline: '<h1>Can a church really do IT <em>effectively?</em><br/><em>Anything</em> is possible.<br/>Come on, we’ll show you.</h1>'
 	},
 	banners: [{
-		field: 'announcement-banner',
-		output: 'Testing the announcement banner'
+		display: 'visible',
+		type: 'announcement-banner',
+		text: 'Testing the announcement banner'
 	}, {
-		field: 'warning-banner',
-		outputed: 'Testing the warning banner'
+		display: 'visible',
+		type: 'warning-banner',
+		text: 'Testing the warning banner'
 	}],
 	mainmenu: {
 		links: [{

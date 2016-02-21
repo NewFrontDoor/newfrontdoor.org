@@ -15,6 +15,7 @@ import {About} from './About';
 import {Contact} from './Contact';
 import {Training} from './Training';
 import {Consultation} from './Consultation';
+import {Alert} from '../Alert';
 
 export default (
 	<Route path="/" component={Site} >
@@ -31,5 +32,6 @@ export default (
 		<Route path="contact" component={Contact} />
 		<Route path="training" component={Training} />
 		<Route path="consultation" component={Consultation} />
+		<Route path="alert" component={Alert} />
 	</Route>
 );
