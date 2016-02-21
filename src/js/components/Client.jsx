@@ -53,6 +53,28 @@ export const Client = () => (
 					This is where the warning content would go
 				</div>
 			</section>
+			<div className="product-cards">
+				<div id="one">
+					<h3>Elvanto</h3>
+					<img src="../../../src/elements/elvanto.png" />
+					<p>Have you got started with Elvanto yet?</p>
+				</div>
+				<div id="two">
+					<h3>Website</h3>
+					<img src="../../../src/elements/soul.jpeg" />
+					<p>Let us help you get the most out of your website</p>
+				</div>
+				<div id="three">
+					<h3>Sparkleshare</h3>
+					<img src="../../../src/elements/Sparkleshare.png" />
+					<p>Dropbox, google drive & usb sticks making you nuts?</p>
+				</div>
+				<div id="four">
+					<h3>Designers</h3>
+					<img src="../../../src/elements/close-image.jpeg" />
+					<p>Thinking of a refresh? Read our recommendations</p>
+				</div>
+			</div>
 			<div className="client-wrapper">
 				<section className="pinned-post">
 					<Post {...pinnedPost.attributes}>
