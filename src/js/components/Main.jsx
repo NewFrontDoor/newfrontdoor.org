@@ -33,7 +33,7 @@ export class Main extends React.Component {
 
 	render() {
 		return (
-			<Index>
+			<Index headerSize="full">
 				<Hero>
 					<div dangerouslySetInnerHTML={{__html: content.hero.tagline}}></div>
 				</Hero>

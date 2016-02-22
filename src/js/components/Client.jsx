@@ -49,7 +49,7 @@ const posts = blog.page({
 const pinnedPost = posts.shift();
 
 export const Client = () => (
-	<Index>
+	<Index headerSize="mini">
 		<Hero mini/>
 		<main role="main">
 			<div className="alerts">

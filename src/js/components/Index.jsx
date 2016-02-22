@@ -8,16 +8,16 @@ export class Index extends React.Component {
 		this.state = {
 			showSearch: false
 		};
-		this.openSearch = this.openSearch.bind(this);
-		this.closeSearch = this.closeSearch.bind(this);
+		this.handleOpenSearch = this.handleOpenSearch.bind(this);
+		this.handleCloseSearch = this.handleCloseSearch.bind(this);
 	}
 
-	openSearch(event) {
+	handleOpenSearch(event) {
 		event.preventDefault();
 		this.setState({showSearch: true});
 	}
 
-	closeSearch(event) {
+	handleCloseSearch(event) {
 		event.preventDefault();
 		this.setState({showSearch: false});
 	}
@@ -25,14 +25,15 @@ export class Index extends React.Component {
 	render() {
 		return (
 			<div>
-				<Header openSearch={this.openSearch}/>
+				<Header size={this.props.headerSize} onOpenSearch={this.handleOpenSearch}/>
 				{this.props.children}
-				<SearchBar isOpen={this.state.showSearch} onClose={this.closeSearch}/>
+				<SearchBar isOpen={this.state.showSearch} onClose={this.handleCloseSearch}/>
 			</div>
 		);
 	}
 }
 
 Index.propTypes = {
+	headerSize: Header.propTypes.size,
 	children: React.PropTypes.node
 };

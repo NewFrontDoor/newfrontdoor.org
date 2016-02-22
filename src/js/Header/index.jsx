@@ -7,18 +7,32 @@ import content from '../content';
 import logo from '../../elements/v100it2.png';
 
 export class Header extends React.Component {
-	constructor() {
-		super();
-		this.state = {};
+	constructor(props) {
+		super(props);
 		this.handleScroll = throttle(this.handleScroll.bind(this), 250);
+		this.backgroundHeight = this.backgroundHeight.bind(this);
+		this.paddingHeight = this.paddingHeight.bind(this);
+		this.state = this.nextState();
 	}
 
-	get backgroundHeight() {
-		return window.pageYOffset > window.innerHeight - 80 ? 1 : 0;
+	backgroundHeight() {
+		if (this.props.size === 'full') {
+			return window.pageYOffset > window.innerHeight - 80 ? 1 : 0;
+		}
+		if (this.props.size === 'mini') {
+			return window.pageYOffset > (window.innerHeight / 2) - 80 ? 1 : 0;
+		}
+		return 1;
 	}
 
-	get paddingHeight() {
-		return window.pageYOffset > window.innerHeight / 2 ? 60 : 10;
+	paddingHeight() {
+		if (this.props.size === 'full') {
+			return window.pageYOffset > window.innerHeight / 2 ? 60 : 10;
+		}
+		if (this.props.size === 'mini') {
+			return window.pageYOffset > window.innerHeight / 4 ? 60 : 10;
+		}
+		return 60;
 	}
 
 	componentDidMount() {
@@ -29,12 +43,16 @@ export class Header extends React.Component {
 		window.removeEventListener('scroll', this.handleScroll);
 	}
 
+	nextState() {
+		return {
+			backgroundColor: `rgba(255,255,255, ${this.backgroundHeight()})`,
+			boxShadow: `0 2px 5px rgba(0,0,0, ${this.backgroundHeight() * 0.26})`,
+			padding: `${this.paddingHeight()}px`
+		};
+	}
+
 	handleScroll() {
-		this.setState({
-			backgroundColor: `rgba(255,255,255, ${this.backgroundHeight})`,
-			boxShadow: `0 2px 5px rgba(0,0,0, ${this.backgroundHeight * 0.26})`,
-			padding: `${this.paddingHeight}px`
-		});
+		this.setState(this.nextState());
 	}
 
 	render() {
@@ -67,7 +85,7 @@ export class Header extends React.Component {
 				<div className={styles.main}>
 					<ul className="list-inline">
 						<li className={`${styles.search} text-uppercase`}>
-							<a href="#" onClick={this.props.openSearch}>
+							<a href="#" onClick={this.props.onOpenSearch}>
 								Menu <span className="fa fa-search fa-lg"></span>
 							</a>
 						</li>
@@ -82,5 +100,6 @@ export class Header extends React.Component {
 }
 
 Header.propTypes = {
-	openSearch: React.PropTypes.func.isRequired
+	size: React.PropTypes.oneOf(['mini', 'full']),
+	onOpenSearch: React.PropTypes.func.isRequired
 };
