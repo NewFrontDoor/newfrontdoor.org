@@ -14,7 +14,7 @@ export const Post = props => (
 				</span>
 				<span className={styles.date}>{moment(props.date).format('Do MMMM, YYYY')}</span>
 				<span className={styles.category}>under&nbsp;
-					<span>{props.tags.map((tag, key) => <a key={key} href={`client/tags/${tag}`}>{tag}</a>)}</span>
+					<span>{props.tags.map((tag, key) => <a key={key} href={`blog/tags/${tag}`}>{tag}</a>)}</span>
 				</span>
 			</p>
 		</header>

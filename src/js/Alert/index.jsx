@@ -1,21 +1,13 @@
 import styles from './Alert.scss';
 import React from 'react';
-import content from '../content';
 
-export class Alert extends React.Component {
-  constructor() {
-    super();
-  }
+export const Alert = props => (
+	<div className={props.type}>
+		{props.children}
+	</div>
+);
 
-  render() {
-    return (
-      <div className="alerts">
-        {content.banners.map(link =>
-          <div className={link.type}>
-            <p dangerouslySetInnerHTML={{__html: link.text}}></p>
-          </div>
-        )}
-      </div>
-    );
-  }
-}
+Alert.propTypes = {
+	type: React.PropTypes.string,
+	children: React.PropTypes.node
+};
