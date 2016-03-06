@@ -20,11 +20,11 @@ export const Contact = () => (
 						<div>
 								Vision 100 sends out a bunch of stuff via email regularly including:
 								<ul>
-										<li>Interesting item 1</li>
-										<li>Interesting item 2</li>
-										<li>Interesting item 4</li>
-										<li>Interesting item 3</li>
-										<li>Gotcha didn't I?</li>
+										<li>New features,</li>
+										<li>Hot tips on best practices,</li>
+										<li>Other helpful content around the web,</li>
+										<li>Official updates,</li>
+										<li>Upcoming events</li>
 								</ul>
 								These emails are sent on a regular predictable timeline entirely reliable and also dependent on how much spare time we have...
 						</div>
@@ -32,9 +32,9 @@ export const Contact = () => (
 								<h3>Email contact</h3>
 								<a href="it@vision100.org">it@vision100.org</a>
 								<h3>Mailing address</h3>
-								<p>123 Big Walk way</p>
-								<p>Kingston TAS</p>
-								<p>7050</p>
+								<p>PO Box 5006</p>
+								<p>UTAS LPO</p>
+								<p>SANDY BAY TAS 7005</p>
 						</div>
 				</div>
 		</div>

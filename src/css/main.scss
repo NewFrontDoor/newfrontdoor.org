@@ -78,7 +78,7 @@ article {
 }
 
 em {
-  style: italics;
+  font-style: italic;
   color: $primary-highlight;
   font-family: $font-family-serif;
   font-size: 110%;
@@ -125,6 +125,9 @@ blockquote {
   font-size: $font-size-h3;
   text-align: center;
   padding-bottom: 15px;
+  font-style: normal;
+  color: $primary-highlight;
+  font-family: $font-family-serif;
   @media (min-width: $screen-md-min) {
     font-size: $font-size-h1;
     padding-bottom: 50px;
@@ -320,8 +323,11 @@ div.expand {
     height: calc(100vh - #{$footer-height} - 60px);
   }
   .social {
-    lost-center: 980px;
+    lost-center: 300px;
     text-shadow: none;
+    a {
+      color: white;
+    }
     div {
       flex: 1 0 25%;
       text-align: center;

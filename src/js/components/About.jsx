@@ -24,27 +24,27 @@ const teamMembers = [{
 	name: 'Jonno Haines',
 	position: 'Team member (Sydney)',
 	image: '../src/elements/jonno.jpg',
-	text: 'Jonathan currently works in Sydney as a web technology consultant. When he isn\'t building web applications for clients with JavaScript and HTML he contributes to open source projects such as SparkleShare. His interests include late breakfasts, collecting emails and subverting the patriarchy.'
+	text: 'Jonathan currently works in Sydney as a web technology consultant, and attends Summer Hill Church. When he isn\'t building web applications for clients with JavaScript and HTML he contributes to open source projects such as SparkleShare. His interests include late breakfasts, collecting emails and subverting the patriarchy.'
 }, {
 	name: 'Emile Hofsink',
 	position: 'Team member (Hobart)',
 	image: '../src/elements/emile.jpg',
-	text: 'Emile has over 5 years of experience in the Information Technology Field. His skills include Computer Systems Installation Management and Configuration across Software, Hardware, Networking and Cloud/Datacentre based systems. Emile is always seeking opportunities to empower people through the use of Technology, V Energy Drinks and Pizza.'
+	text: 'Emile has over 5 years of experience in IT field. His skills include computer systems installation management and configuration across software, hardware, networking and cloud/datacentre based systems. Emile is always seeking opportunities to empower people through the use of technology, V energy drinks and pizza. Emile is a member at X church.'
 }, {
 	name: 'Andrew Gibb',
 	position: 'Team member (Hobart)',
 	image: '../src/elements/gibbo.jpg',
-	text: 'Andrew has worked as a software developer at Pearson for the last 6+ years doing a little bit of everything. Andrew has 12 years of experience in the IT industry and over that time he has developed skills ranging from software development to server administration. Andrew is currently a member of Vine Christian Church and he has been a member of the Vision100 IT team since 2013. Andrew is a keen cyclist and can often be found riding a bike whether road or mountain around the roads and trails of Hobart.'
+	text: 'Andrew has worked as a software developer at Pearson for the last 6+ years doing a little bit of everything. Andrew has 12 years of experience in the IT industry and over that time he has developed skills ranging from software development to server administration. Andrew is currently a member of Vine Christian Church and he has been a member of the Vision 100 IT team since 2013. Andrew is a keen cyclist and can often be found riding a bike, whether road or mountain, on the roads and trails of Hobart.'
 }, {
 	name: 'Alan Reader',
 	position: 'Team member (Sydney)',
 	image: '../src/elements/alan.jpg',
-	text: 'Alan is a theological student at Moore Theological College, Sydney. He has worked in ministry for 3 years with AFES and currently serves on the AFES board of management. Alan’s experience ranges from hobby HTML and PHP sites through to a broad understanding of various CMS systems, and the design of the Vision 100 IT website. Alan’s strengths are in areas of analysis, project development and consultation, and is passionate about UX-driven design.'
+	text: 'Alan is a theological student at Moore Theological College, Sydney, and attends St Alban\'s Anglican Church in Five Dock. He has worked in ministry for 3 years with AFES and currently serves on the AFES Board of Management. Alan joined the Vision 100 IT team in 2010, and his experience ranges from hobby HTML and PHP sites through to a broad understanding of various CMS systems, and the design of the Vision 100 IT website. Alan’s strengths are in areas of analysis, project development and consultation, and is passionate about UX-driven design.'
 }, {
 	name: 'Chris Haines',
 	position: 'Team member (Hobart)',
 	image: '../src/elements/chris.jpg',
-	text: 'Christopher attends Crossroads Presbyterian, and works as the Office Manager for the Network of Christian Reformed Churches of Southern Tasmania, developing policies and procedures for the network of six reformed churches in Kingborough. While he lacks official IT qualifications (he has a Bachelor of Business, majoring in HR), he is passionate about assisting churches practically, and enjoys thinking through the best practices of how churches operate behind the scenes. If you can\'t get a hold of him on a Monday night, he will most likely be playing Ultimate Frisbee, or cooking up a Gordon Ramsay inspired storm.'
+	text: 'Chris attends Crossroads Presbyterian church, and works as the Office Manager for the Network of Christian Reformed Churches of Southern Tasmania, developing policies and procedures for the network of six Reformed Churches in Kingborough. While he lacks official IT qualifications (he has a Bachelor of Business, majoring in HR), he is passionate about assisting churches practically, and enjoys thinking through the best practices of how churches operate behind the scenes. If you can\'t get a hold of him on a Monday night, he will most likely be playing Ultimate Frisbee, or cooking up a Gordon Ramsay inspired storm.'
 }];
 
 export const About = () => (

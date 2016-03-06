@@ -1,6 +1,6 @@
 export default {
 	hero: {
-		tagline: '<h1>Can a church really do IT <em>effectively?</em><br/><em>Anything</em> is possible.<br/>Come on, we’ll show you.</h1>'
+		tagline: '<h1>Can a church really do IT <em>effectively?</em><br/>Come on, we’ll show you.</h1>'
 	},
 	banners: [{
 		display: 'visible',
@@ -133,11 +133,11 @@ export default {
 	}, {
 		heading: 'Connect',
 		links: [{
-			text: 'Podcast',
+			text: 'Podcast - coming!',
 			target: ''
 		}, {
 			text: 'Mailing List',
-			target: 'contact'
+			target: '/contact'
 		}, {
 			text: 'Blog',
 			target: '/client'
