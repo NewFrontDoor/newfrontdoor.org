@@ -1,4 +1,6 @@
 import React from 'react';
+import {Element} from 'react-scroll';
+
 import {Hero} from '../Hero';
 import {Index} from './Index';
 import content from '../content';
@@ -38,39 +40,39 @@ export class Main extends React.Component {
 					<div dangerouslySetInnerHTML={{__html: content.hero.tagline}}></div>
 				</Hero>
 				<main role="main">
-					<div className="featured-first featured-light" id="how">
+					<Element name="how" className="featured-first featured-light" >
 						<div className="site-wrapper site-wrapper-padding">
 							<section dangerouslySetInnerHTML={this.rawFirst()}></section>
 						</div>
-					</div>
-					<div className="featured-second featured-dark" id="who">
+					</Element>
+					<Element name="who" className="featured-second featured-dark">
 						<div className="site-wrapper site-wrapper-padding">
 							<section dangerouslySetInnerHTML={this.rawSecond()}></section>
 						</div>
-					</div>
-					<div className="featured-third featured-light" id="tools">
+					</Element>
+					<Element name="tools" className="featured-third featured-light">
 						<div className="site-wrapper site-wrapper-padding">
 							<section dangerouslySetInnerHTML={this.rawThird()}></section>
 						</div>
-					</div>
-					<div className="featured-fourth featured-dark" id="events">
+					</Element>
+					<Element name="events" className="featured-fourth featured-dark">
 						<div className="site-wrapper site-wrapper-padding">
 							<section dangerouslySetInnerHTML={this.rawFourth()}></section>
 						</div>
-					</div>
-					<div className="featured-fifth featured-light" id="pricing">
+					</Element>
+					<Element name="pricing" className="featured-fifth featured-light">
 						<div className="site-wrapper site-wrapper-padding">
 							<section dangerouslySetInnerHTML={this.rawFifth()}></section>
 						</div>
-					</div>
-					<div className="featured-sixth" id="join">
+					</Element>
+					<Element name="join" className="featured-sixth">
 						<video autoPlay loop id="bgvid">
 							<source src={video} type="video/mp4"></source>
 						</video>
 						<div className="close-content">
 							<section dangerouslySetInnerHTML={this.rawSixth()}></section>
 						</div>
-					</div>
+					</Element>
 				</main>
 			</Index>
 		);

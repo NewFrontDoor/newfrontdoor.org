@@ -2,6 +2,8 @@
 import styles from './Header.scss';
 import React from 'react';
 import throttle from 'lodash/throttle';
+import {Link} from 'react-scroll';
+
 import content from '../content';
 
 import logo from '../../elements/v100it2.png';
@@ -78,7 +80,7 @@ export class Header extends React.Component {
 							<a href="/client">Client</a>
 						</li>
 						<li className="list-unstyled">
-							<a href="#how">Visitor</a>
+							<Link activeClass="active" to="how" spy={true} smooth={true} offset={-64} duration={500} >Visitor</Link>
 						</li>
 					</ul>
 				</div>
