@@ -1,12 +1,11 @@
 /* eslint-env browser */
-import styles from './Header.scss';
 import React from 'react';
 import throttle from 'lodash/throttle';
 import {Link} from 'react-scroll';
 
 import content from '../content';
-
 import logo from '../../elements/v100it2.png';
+import styles from './Header.scss';
 
 export class Header extends React.Component {
 	constructor(props) {
@@ -75,23 +74,25 @@ export class Header extends React.Component {
 					<img className="img-responsive" src={logo}></img>
 				</a>
 				<div className={`${styles.mobile} text-uppercase`}>
-					<ul>
-						<li className="list-unstyled">
-							<a href="/client">Client</a>
-						</li>
-						<li className="list-unstyled">
-							<Link activeClass="active" to="how" spy={true} smooth={true} offset={-64} duration={500} >Visitor</Link>
-						</li>
-					</ul>
+					<a href="/client">Client</a>
+					<Link activeClass={styles.active} to="how" spy smooth offset={-64} duration={500}>
+						Visitor
+					</Link>
+					<a href="#" onClick={this.props.onOpenSearch}>
+						Search <span className="fa fa-search fa-lg"></span>
+					</a>
+					<Link activeClass={styles.active} to="how" spy smooth offset={-64} duration={500}>
+						Visitor
+					</Link>
 				</div>
-				<div className={styles.main}>
+				<div className={`${styles.main} text-uppercase`}>
 					<ul className="list-inline">
-						<li className={`${styles.search} text-uppercase`}>
+						<li className={`${styles.search}`}>
 							<a href="#" onClick={this.props.onOpenSearch}>
 								Menu <span className="fa fa-search fa-lg"></span>
 							</a>
 						</li>
-						{content.mainmenu.links.map((link, key) => <li key={key} className="main-menu-item text-uppercase">
+						{content.mainmenu.links.map((link, key) => <li key={key} className="main-menu-item">
 							<a href={link.target} dangerouslySetInnerHTML={{__html: link.text}}></a>
 						</li>)}
 					</ul>

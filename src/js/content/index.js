@@ -73,7 +73,7 @@ export default {
 			target: '#'
 		}, {
 			text: 'Contact',
-			target: '#'
+			target: '/contact'
 		}]
 	},
 	footerLinks: [{

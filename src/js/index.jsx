@@ -17,6 +17,6 @@ export default (locals, callback) => {
 		__html: ReactDOMServer.renderToString(<Router history={history}>{Routes}</Router>)
 	};
 	const title = 'Vision 100 IT';
-	const html = ReactDOMServer.renderToStaticMarkup(<Root title={title} reactApp={reactApp} />);
+	const html = ReactDOMServer.renderToStaticMarkup(<Root title={title} reactApp={reactApp}/>);
 	callback(null, `<!DOCTYPE html>${html}`);
 };

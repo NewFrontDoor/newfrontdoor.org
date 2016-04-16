@@ -38,35 +38,6 @@
     }
 }
 
-:local .mobile {
-  display: block;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0 4% 0 4%;
-
-  li {
-    margin-top: 12px;
-    font-family: $headings-font-family;
-    color: $headings-color;
-    a:visited {
-      color: $headings-color;
-    }
-  }
-
-  li:first-child {
-    float: left;
-    margin-left: -20px;
-  }
-  li:last-child {
-    float: right;
-  }
-  @media (min-width: $screen-md-min) {
-    display: none;
-  }
-}
-
 :local .main {
   display: none;
   font-size: 1rem;
@@ -107,5 +78,49 @@
     a:visited {
       color: $headings-color;
     }
+  }
+}
+
+:local .mobile {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 4% 0 4%;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  align-content: stretch;
+  
+  a {
+    flex: 1;
+    width: 50%;
+    margin-top: 12px;
+    color: $headings-color;
+    font-family: $headings-font-family;
+    // justify-content: space-between;
+    &:visited {
+      color: $headings-color;
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    display: none;
+  }
+}
+
+:local .active {
+  a:nth-child(odd) {
+    align-self: flex-start;
+    text-align: left;
+  }
+  a:nth-child(even) {
+    align-self: flex-end;
+    text-align: right;
   }
 }
