@@ -1,0 +1,13 @@
+:local .visible {
+  height: auto;
+  transition: height .5s;
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+:local .toggle {
+  height: 0;
+  transition: height .5s;
+  opacity: 0;
+  transition: opacity .5s ease-out;
+}

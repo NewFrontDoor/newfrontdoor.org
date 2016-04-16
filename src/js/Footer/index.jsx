@@ -48,7 +48,7 @@ export class Footer extends React.Component {
 										</header>
 										<ul className="list-unstyled">
 												{list.links.map((link, key) => <li key={key}>
-														<a href={link.target}>{link.text}</a>
+														<a href={link.target}>{link.text}<span className={link.className}></span></a>
 												</li>)}
 										</ul>
 								</div>)}

@@ -142,10 +142,10 @@ export default {
 			text: 'Blog',
 			target: '/client'
 		}, {
-			text: 'Facebook',
+			className: 'fa fa-facebook-square',
 			target: 'http://facebook.com/vision100it'
 		}, {
-			text: 'Twitter',
+			className: 'fa fa-twitter-square',
 			target: 'http://twitter.com/vision100it'
 		}]
 	}, {
