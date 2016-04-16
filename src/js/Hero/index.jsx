@@ -1,7 +1,7 @@
 /* eslint-env browser */
 import React from 'react';
-import styles from './Hero.scss';
 import throttle from 'lodash/throttle';
+import styles from './Hero.scss';
 
 export class Hero extends React.Component {
 	constructor() {

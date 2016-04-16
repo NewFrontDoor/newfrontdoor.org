@@ -93,7 +93,7 @@ export const Support = () => (
 				<label htmlFor="additional">Any other additional information</label>
 				<textarea type="field" name="additional" className="form-control" rows="3" placeholder="Not required. You may choose to enter any other relevant information or special requests here."/>
 			</div>
-			<hr />
+			<hr/>
 			<h4>Contact Details</h4>
 			<div className="form-group has-success has-feedback">
 				<label htmlFor="name">Name:</label>

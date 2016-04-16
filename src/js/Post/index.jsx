@@ -1,6 +1,6 @@
-import styles from './Post.scss';
 import React from 'react';
 import moment from 'moment';
+import styles from './Post.scss';
 
 const imageContext = require.context('../../elements');
 

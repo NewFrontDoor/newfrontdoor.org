@@ -2,7 +2,7 @@
 import React from 'react';
 import lunr from 'lunr';
 import classNames from 'classnames';
-import styles from './SearchBar.scss';
+// import styles from './SearchBar.scss';
 
 export class SearchBar extends React.Component {
 	constructor(props) {
@@ -144,9 +144,9 @@ export class SearchBar extends React.Component {
 					</ul>
 				</div>
 				<div className="postscript">
-					© Vision 100 Resources 2016.<br />
-					Design by <a href="http://twitter.com/readeral">readeral</a> and <a href="http://twitter.com/barrythepenguin">barrythepenguin</a>.<br />
-					<a href="mailto:info@vision100.org">info@vision100.org</a>.<br />
+					© Vision 100 Resources 2016.<br/>
+					Design by <a href="http://twitter.com/readeral">readeral</a> and <a href="http://twitter.com/barrythepenguin">barrythepenguin</a>.<br/>
+					<a href="mailto:info@vision100.org">info@vision100.org</a>.<br/>
 					ABN: 50 782 030 539.
 				</div>
 			</div>

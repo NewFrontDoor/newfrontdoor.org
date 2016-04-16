@@ -1,22 +1,22 @@
 /* eslint-env node */
 import 'babel-polyfill';
+import fs from 'fs';
+import path from 'path';
 import _ from 'lodash';
 import autoprefixer from 'autoprefixer';
 import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import StaticSiteGeneratorPlugin from 'static-site-generator-webpack-plugin';
 import lost from 'lost';
-import path from 'path';
-import fs from 'fs';
 import pxtorem from 'postcss-pxtorem';
 import vr from 'postcss-vertical-rhythm';
 import webpack from 'webpack';
 import WebpackNotifierPlugin from 'webpack-notifier';
 import argvSetEnv from 'argv-set-env';
 
-import paths from './paths';
 import {trimExtension} from '../lib';
 import packageJson from '../../package.json';
+import paths from './paths';
 
 const staticPaths = [
 	'/',

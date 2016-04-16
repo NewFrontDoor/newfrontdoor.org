@@ -1,10 +1,9 @@
 /* eslint-env browser */
-import styles from './Footer.scss';
 import React from 'react';
 import throttle from 'lodash/throttle';
 import classNames from 'classnames';
-
 import content from '../content';
+import styles from './Footer.scss';
 
 export class Footer extends React.Component {
 	constructor() {
@@ -40,20 +39,22 @@ export class Footer extends React.Component {
 		});
 
 		return (
-				<footer>
-						<div className={styles.wrap}>
-								{content.footerLinks.map((list, key) => <div key={key} className={itemClass}>
-										<header className="text-lowercase">
-												<h3>{list.heading}</h3>
-										</header>
-										<ul className="list-unstyled">
-												{list.links.map((link, key) => <li key={key}>
-														<a href={link.target}>{link.text}<span className={link.className}></span></a>
-												</li>)}
-										</ul>
-								</div>)}
-						</div>
-				</footer>
+			<footer>
+				<div className={styles.wrap}>
+					{content.footerLinks.map((list, key) => <div key={key} className={itemClass}>
+						<header className="text-lowercase">
+							<h3>{list.heading}</h3>
+						</header>
+						<ul className="list-unstyled">
+							{list.links.map((link, key) => <li key={key}>
+								<a href={link.target}>{link.text}
+									<span className={link.className}></span>
+								</a>
+							</li>)}
+						</ul>
+					</div>)}
+				</div>
+			</footer>
 		);
 	}
 }
