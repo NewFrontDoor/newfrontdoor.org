@@ -1,5 +1,5 @@
 import React from 'react';
-// import styles from './Documentation.scss';
+import './Documentation.scss';
 import {Index} from '../components/Index';
 
 export const Documentation = () => (

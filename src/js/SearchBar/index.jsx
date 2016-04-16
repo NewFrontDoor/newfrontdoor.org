@@ -2,7 +2,7 @@
 import React from 'react';
 import lunr from 'lunr';
 import classNames from 'classnames';
-// import styles from './SearchBar.scss';
+import './SearchBar.scss';
 
 export class SearchBar extends React.Component {
 	constructor(props) {
