@@ -21,12 +21,12 @@ export class Contact extends React.Component {
 							Join our mailing list
 						</h3>
 						<div className="form-group has-success has-feedback">
-							<label htmlFor="subject">Name</label>
-							<input type="text" name="subject" className="form-control" placeholder="Insert your full name"/>
-							<label htmlFor="subject">
+							<label htmlFor="name">Name</label>
+							<input type="text" name="name" className="form-control" placeholder="Insert your full name"/>
+							<label htmlFor="email">
 								Email address
 							</label>
-							<input type="text" name="subject" className="form-control" placeholder="Insert a valid email address"/>
+							<input type="text" name="email" className="form-control" placeholder="Insert a valid email address"/>
 						</div>
 						<ContentToggle toggleText="About our mailing lists">
 							Vision 100 sends out a bunch of stuff via email regularly including:
