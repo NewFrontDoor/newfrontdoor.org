@@ -1,10 +1,9 @@
-/* eslint-env browser */
 import React from 'react';
 import throttle from 'lodash/throttle';
-import {Link} from 'react-scroll';
 
 import content from '../content';
 import logo from '../../elements/v100it2.png';
+import {MenuLink} from './MenuLink';
 import styles from './Header.scss';
 
 export class Header extends React.Component {
@@ -75,15 +74,9 @@ export class Header extends React.Component {
 				</a>
 				<div className={`${styles.mobile} text-uppercase`}>
 					<a href="/client">Client</a>
-					<Link activeClass={styles.active} to="how" spy smooth offset={-64} duration={500}>
-						Visitor
-					</Link>
-					<a href="#" onClick={this.props.onOpenSearch}>
-						Search <span className="fa fa-search fa-lg"></span>
-					</a>
-					<Link activeClass={styles.active} to="how" spy smooth offset={-64} duration={500}>
-						Visitor
-					</Link>
+					<MenuLink activeClass={styles.active} to="how" linkText="Visitor"/>
+					<MenuLink activeClass={styles.active} to="who" linkText="Who"/>
+					<MenuLink activeClass={styles.active} to="tools" linkText="Tools"/>
 				</div>
 				<div className={`${styles.main} text-uppercase`}>
 					<ul className="list-inline">

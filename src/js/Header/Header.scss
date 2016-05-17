@@ -83,6 +83,8 @@
 
 :local .mobile {
   width: 100%;
+  height: 40px;
+  overflow: hidden;
   position: absolute;
   top: 0;
   right: 0;
@@ -92,13 +94,12 @@
   flex-wrap: wrap;
   flex-direction: row;
 
-  align-items: center;
-  justify-content: center;
-  flex-flow: column wrap;
+  justify-content: space-between;
   align-content: stretch;
-  
+  align-items: flex-start;
+
   a {
-    flex: 1;
+    order: 0;
     width: 50%;
     margin-top: 12px;
     color: $headings-color;
@@ -107,6 +108,10 @@
     &:visited {
       color: $headings-color;
     }
+    &:nth-child(n+2) {
+      order: 2;
+      text-align: right;
+    }
   }
 
   @media (min-width: $screen-md-min) {
@@ -114,13 +119,6 @@
   }
 }
 
-:local .active {
-  a:nth-child(odd) {
-    align-self: flex-start;
-    text-align: left;
-  }
-  a:nth-child(even) {
-    align-self: flex-end;
-    text-align: right;
-  }
+:local .mobile a.active {
+  order: 1;
 }
