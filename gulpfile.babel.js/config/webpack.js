@@ -77,12 +77,7 @@ function getCommonConfig() {
 		resolve: {
 			extensions: ['', '.js', '.jsx', '.scss']
 		},
-		postcss: getPostCss(),
-		remarkable: {
-			html: true,
-			linkify: true,
-			typographer: true
-		}
+		postcss: getPostCss()
 	};
 }
 
@@ -99,7 +94,7 @@ function getDevConfig() {
 				getJSXLoader(),
 				getMarkdownLoader(),
 				getFileLoader(),
-				getUnlazyLoader()
+				getJsonLoader()
 			]
 		},
 		plugins: _.union(getCommonPlugins(), [
@@ -131,7 +126,7 @@ function getProdConfig() {
 				getJSXLoader(),
 				getMarkdownLoader(),
 				getFileLoader(),
-				getUnlazyLoader()
+				getJsonLoader()
 			]
 		},
 		plugins: _.union(getCommonPlugins(), [
@@ -147,19 +142,18 @@ function getProdConfig() {
 	};
 }
 
-function getUnlazyLoader() {
-	return {
-		test: /\.js$/,
-		loaders: ['unlazy'],
-		include: /node_modules\/markdown-toc/
-	};
-}
-
 function getJavaScriptLoader() {
 	return {
 		test: /\.js$/,
 		loaders: ['babel', 'xo'],
 		exclude: /node_modules/
+	};
+}
+
+function getJsonLoader() {
+	return {
+		test: /\.json$/,
+		loaders: ['json']
 	};
 }
 
@@ -182,7 +176,7 @@ function getHtmlLoader() {
 function getMarkdownLoader() {
 	return {
 		test: /\.md$/,
-		loaders: ['html', 'remarkable'],
+		loaders: ['raw'],
 		exclude: /node_modules/
 	};
 }

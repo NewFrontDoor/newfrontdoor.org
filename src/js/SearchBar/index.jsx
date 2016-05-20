@@ -23,8 +23,8 @@ export class SearchBar extends React.Component {
 				resolve({index: self.__searchIndex, data: self.__searchData});
 			} else {
 				require.ensure([], () => {
-					self.__searchIndex = lunr.Index.load(JSON.parse(require('raw!../../Search/search-index.json')));
-					self.__searchData = JSON.parse(require('raw!../../Search/search-data.json'));
+					self.__searchIndex = lunr.Index.load(require('../../Search/search-index.json'));
+					self.__searchData = require('../../Search/search-data.json');
 					resolve({index: self.__searchIndex, data: self.__searchData});
 				});
 			}

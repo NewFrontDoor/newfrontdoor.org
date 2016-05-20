@@ -1,7 +1,7 @@
 import React from 'react';
 
 import fm from 'front-matter';
-import Remarkable from 'remarkable';
+import {Markdown} from '../Markdown';
 
 import {Index} from '../Index/index.jsx';
 import {Hero} from '../Hero';
@@ -10,11 +10,9 @@ import {Alert} from '../Alert';
 
 import content from '../content';
 
-const md = new Remarkable();
-
 const blog = {
 	get context() {
-		return require.context('!!raw!../../blog', true, /^.*\.md$/);
+		return require.context('../../blog', true, /^.*\.md$/);
 	},
 	get posts() {
 		return this.context.keys();
@@ -35,7 +33,7 @@ const blog = {
 		return this.posts.slice(begin, end).map(this.context).map(fm).map((post, key) => {
 			const postId = this.postId([key + begin]);
 			const body = trim ? `${post.body.slice(0, trim)}... [View more](blog${postId})` : post.body;
-			return Object.assign(post, {body: md.render(body), key});
+			return Object.assign(post, {body, key});
 		});
 	}
 };
@@ -84,12 +82,16 @@ export const Client = () => (
 			<div className="client-wrapper">
 				<section className="pinned-post">
 					<Post {...pinnedPost.attributes}>
-						<div dangerouslySetInnerHTML={{__html: pinnedPost.body}}></div>
+						<Markdown>
+							{pinnedPost.body}
+						</Markdown>
 					</Post>
 				</section>
 				<section className="posts">
 					{posts.map((post, key) => <Post key={key} {...post.attributes}>
-						<div dangerouslySetInnerHTML={{__html: post.body}}></div>
+						<Markdown>
+							{post.body}
+						</Markdown>
 					</Post>)}
 				</section>
 				<div></div>

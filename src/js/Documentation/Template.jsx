@@ -1,20 +1,13 @@
 import React from 'react';
 import classNames from 'classnames';
 import fm from 'front-matter';
-import toc from 'markdown-toc';
-import Remarkable from 'remarkable';
 import {Index} from '../Index/index.jsx';
+import {Markdown, Toc} from '../Markdown';
 import styles from './Template.scss';
-
-const md = new Remarkable().use(remarkable => {
-	remarkable.renderer.rules.heading_open = (tokens, idx) => {
-		return `<h${tokens[idx].hLevel} id="${toc.slugify(tokens[idx + 1].content)}">`;
-	};
-});
 
 const documentation = {
 	get context() {
-		return require.context('!!raw!../../documentation', true, /^.*\.md$/);
+		return require.context('../../documentation', true, /^.*\.md$/);
 	},
 	get documents() {
 		return this.context.keys();
@@ -22,7 +15,7 @@ const documentation = {
 	document(id) {
 		const doc = this.context(this.documents.find(x => x === `./${id}.md`));
 		const content = fm(doc);
-		return {toc: md.render(toc(doc).content), body: md.render(content.body), ...content.attributes};
+		return {body: content.body, ...content.attributes};
 	}
 };
 
@@ -68,7 +61,9 @@ export class Template extends React.Component {
 					<div className="documentation-sidebar">
 						<div className={docTOC}>
 							<h3>Contents</h3>
-							<section dangerouslySetInnerHTML={{__html: this.document.toc}}></section>
+							<Toc>
+								{this.document.body}
+							</Toc>
 						</div>
 						<div className={docFeedback}>
 							<h3>Give feedback</h3>
@@ -86,7 +81,9 @@ export class Template extends React.Component {
 					<div className="documentation-content">
 						<h1>{this.document.title}</h1>
 						<h1><small>{this.document.sub_title}</small></h1>
-						<section dangerouslySetInnerHTML={{__html: this.document.body}}></section>
+						<Markdown>
+							{this.document.body}
+						</Markdown>
 					</div>
 				</div>
 			</Index>
