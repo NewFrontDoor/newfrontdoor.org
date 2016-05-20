@@ -195,7 +195,22 @@ blockquote {
   .site-wrapper {
     background-color: rgba($text-color, .8);
   }*/
-
+  .team-collection {
+    display: none;
+  }
+  .team-tiled {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    .tile {
+      img {
+        width: auto;
+      }
+      flex: 0 0 30%;
+      margin: 0;
+      padding: 0;
+    }
+  }
   .snapshots {
     lost-center: 980px;
     font-family: $font-family-sans-serif;
@@ -210,31 +225,49 @@ blockquote {
         text-transform: uppercase;
       }
     }
-  }
-
-  .team-collection {
-    lost-center: 980px;
-    div {
-      lost-column: 1/6 0 40px;
-      margin-bottom: 40px;
-      height: 150px;
-      img {
-        width: 100px;
-        box-shadow: 0 10px 16px 0 rgba($primary-highlight,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-        &:hover {
-          opacity: .2;
-          box-shadow: 0 20px 32px 0 rgba($primary-highlight,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-          background-color: red;
+    @media (max-width: $screen-md-min) {
+      div {
+        flex: 1 0 25%;
+        text-align: center;
+        height: auto;
+        margin: 10px 0 40px 0;
+        font-size: 50%;
+        p {
+          padding-top: 10px;
+          text-transform: uppercase;
+          font-size: 150%;
         }
       }
+    }
+  }
+  @media (min-width: $screen-md-min) {
+    .team-tiled {
+      display: none;
+    }
+    .team-collection {
+      lost-center: 980px;
+      div {
+        lost-column: 1/6 0 40px;
+        margin-bottom: 40px;
+        height: 150px;
+        img {
+          width: 100px;
+          box-shadow: 0 10px 16px 0 rgba($primary-highlight,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+          &:hover {
+            opacity: .2;
+            box-shadow: 0 20px 32px 0 rgba($primary-highlight,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            background-color: red;
+          }
+        }
 
+      }
     }
   }
 }
 
 div.expand {
   height: auto;
-  width: 400px;
+  width: 100vw;
   margin: auto;
   font-size: 120%;
   text-align: center;
@@ -242,7 +275,10 @@ div.expand {
 //featured 3 styles
 .featured-third {
   section.description {
-    height: calc(100vh - 3vr);
+    height: auto;
+    @media (min-width: $screen-md-min) {
+      height: calc(100vh - 3vr);
+    }
   }
   section.products {
     lost-flex-container: row;
@@ -269,7 +305,9 @@ div.expand {
 .featured-fourth {
     overflow: hidden;
     position: relative;
+    @media (min-width: $screen-md-min) {
     background-color: rgba(black, .5);
+    }
     &:before {
       content: ' ';
       position: fixed;
@@ -285,7 +323,7 @@ div.expand {
     }
   .training-session {
     width: 100%;
-    height: 200px;
+    height: auto;
     margin: 40px 0 40px 0;
     padding: 0 10px 10px 10px;
   }
@@ -297,7 +335,6 @@ div.expand {
   lost-align: top-center;
   height: 100vh;
   color: $footer-text;
-  text-shadow: 1px 1px 2px black;
   .input-default, .btn-default {
     background: rgba((white), .8);
     border: none;
@@ -308,30 +345,48 @@ div.expand {
     display: flex;
     flex-wrap: wrap;
     .group-1 {
-    flex: 1 0 50%;
+      border: 1px solid grey;
+    flex: 1 0 100%;
     }
     .group-1:first-child {
       padding-right: 20px;
     }
     .group-2 {
     flex: 1 0 100%;
+    border: 1px solid grey;
     }
   }
-  @media (min-width: $screen-md-min) {
-    min-height: 518px;
-    // view height minus footer height minus nav height
-    height: calc(100vh - #{$footer-height} - 60px);
-  }
   .social {
+    padding-top: 20px;
     lost-center: 300px;
     text-shadow: none;
     a {
-      color: white;
+      color: black;
     }
     div {
       flex: 1 0 25%;
       text-align: center;
       height: auto;
+    }
+  }
+  @media (min-width: $screen-md-min) {
+    form {
+      .group-1 {
+      flex: 1 0 50%;
+      border: none;
+      }
+      .group-2 {
+        border: none;
+      }
+    }
+    text-shadow: 1px 1px 2px black;
+    min-height: 518px;
+    // view height minus footer height minus nav height
+    height: calc(100vh - #{$footer-height} - 60px);
+    .social {
+      a {
+        color: white;
+      }
     }
   }
 }
