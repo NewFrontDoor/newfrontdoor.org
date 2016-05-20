@@ -3,7 +3,7 @@ import {Link} from 'react-scroll';
 
 export const MenuLink = props => (
 	<Link {...props}>
-		{props.linkText}
+		{props.children}
 	</Link>
 );
 

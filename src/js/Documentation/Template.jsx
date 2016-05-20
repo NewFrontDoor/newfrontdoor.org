@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import fm from 'front-matter';
 import toc from 'markdown-toc';
 import Remarkable from 'remarkable';
-import {Index} from '../components/Index';
+import {Index} from '../Index/index.jsx';
 import styles from './Template.scss';
 
 const md = new Remarkable().use(remarkable => {

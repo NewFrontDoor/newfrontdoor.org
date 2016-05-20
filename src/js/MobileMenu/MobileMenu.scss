@@ -1,0 +1,43 @@
+@import "../../css/variables";
+
+:local .mobile {
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 4% 0 4%;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: flex-start;
+
+  a {
+    order: 0;
+    width: 50%;
+    margin-top: 12px;
+    color: $headings-color;
+    font-family: $headings-font-family;
+    // justify-content: space-between;
+    &:visited {
+      color: $headings-color;
+    }
+    &:nth-child(n+2) {
+      order: 2;
+      text-align: right;
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    display: none;
+  }
+}
+
+:local .mobile a.active {
+  order: 1;
+}

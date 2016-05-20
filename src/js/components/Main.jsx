@@ -1,8 +1,9 @@
 import React from 'react';
 import {Element} from 'react-scroll';
+import Waypoint from 'react-waypoint';
 
 import {Hero} from '../Hero';
-import {Index} from './Index';
+import {Index} from '../Index/index.jsx';
 import content from '../content';
 
 import first from '../content/featured/first.html';
@@ -14,6 +15,7 @@ import sixth from '../content/featured/sixth.html';
 import video from '../../elements/clip2.mp4';
 
 export class Main extends React.Component {
+
 	rawFirst() {
 		return {__html: first};
 	}
@@ -32,7 +34,15 @@ export class Main extends React.Component {
 	rawSixth() {
 		return {__html: sixth};
 	}
-
+	get news() {
+		return [{
+			text: 'Search',
+			target: '#'
+		}, {
+			text: 'News',
+			target: '/client'
+		}];
+	}
 	render() {
 		return (
 			<Index headerSize="full">

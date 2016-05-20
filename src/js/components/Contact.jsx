@@ -1,6 +1,6 @@
 import React from 'react';
 import {ContentToggle} from '../ContentToggle';
-import {Index} from './Index';
+import {Index} from '../Index/index.jsx';
 
 export class Contact extends React.Component {
 	render() {

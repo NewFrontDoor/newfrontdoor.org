@@ -1,5 +1,5 @@
 import React from 'react';
-import {Index} from './Index';
+import {Index} from '../Index/index.jsx';
 
 export const Feature = () => (
 	<Index>

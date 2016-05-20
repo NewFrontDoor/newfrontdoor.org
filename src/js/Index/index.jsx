@@ -1,6 +1,12 @@
 import React from 'react';
 import {Header} from '../Header';
 import {SearchBar} from '../SearchBar';
+import {MainMenu} from '../MainMenu';
+import {MobileMenu} from '../MobileMenu';
+
+import logo from '../../elements/v100it2.png';
+
+import styles from './Index.scss';
 
 export class Index extends React.Component {
 	constructor(props) {
@@ -23,9 +29,21 @@ export class Index extends React.Component {
 	}
 
 	render() {
+		const logoStyle = {
+			paddingLeft: this.state.padding,
+			paddingRight: this.state.padding
+		};
+
 		return (
 			<div>
-				<Header size={this.props.headerSize} onOpenSearch={this.handleOpenSearch}/>
+				<Header size={this.props.headerSize}>
+					<a className={styles.logo} style={logoStyle} href="/">
+						<h1 className="sr-only">Vision 100 IT</h1>
+						<img className="img-responsive" src={logo}></img>
+					</a>
+					<MobileMenu onOpenSearch={this.handleOpenSearch}/>
+					<MainMenu onOpenSearch={this.handleOpenSearch}/>
+				</Header>
 				{this.props.children}
 				<SearchBar isOpen={this.state.showSearch} onClose={this.handleCloseSearch}/>
 			</div>

@@ -3,7 +3,7 @@ import React from 'react';
 import fm from 'front-matter';
 import Remarkable from 'remarkable';
 
-import {Index} from './Index';
+import {Index} from '../Index/index.jsx';
 import {Hero} from '../Hero';
 import {Post} from '../Post';
 import {Alert} from '../Alert';

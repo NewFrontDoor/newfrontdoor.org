@@ -1,7 +1,7 @@
 import React from 'react';
 import fm from 'front-matter';
 import Remarkable from 'remarkable';
-import {Index} from '../components/Index';
+import {Index} from '../Index/index.jsx';
 import styles from './Blog.scss';
 
 const md = new Remarkable();

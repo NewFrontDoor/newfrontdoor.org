@@ -1,9 +1,5 @@
 import React from 'react';
 import throttle from 'lodash/throttle';
-
-import content from '../content';
-import logo from '../../elements/v100it2.png';
-import {MenuLink} from './MenuLink';
 import styles from './Header.scss';
 
 export class Header extends React.Component {
@@ -61,35 +57,9 @@ export class Header extends React.Component {
 			boxShadow: this.state.boxShadow
 		};
 
-		const logoStyle = {
-			paddingLeft: this.state.padding,
-			paddingRight: this.state.padding
-		};
-
 		return (
 			<header className={styles.nav} style={scrollStyle}>
-				<a className={styles.logo} style={logoStyle} href="/">
-					<h1 className="sr-only">Vision 100 IT</h1>
-					<img className="img-responsive" src={logo}></img>
-				</a>
-				<div className={`${styles.mobile} text-uppercase`}>
-					<a href="/client">Client</a>
-					<MenuLink activeClass={styles.active} to="how" linkText="Visitor"/>
-					<MenuLink activeClass={styles.active} to="who" linkText="Who"/>
-					<MenuLink activeClass={styles.active} to="tools" linkText="Tools"/>
-				</div>
-				<div className={`${styles.main} text-uppercase`}>
-					<ul className="list-inline">
-						<li className={`${styles.search}`}>
-							<a href="#" onClick={this.props.onOpenSearch}>
-								Menu <span className="fa fa-search fa-lg"></span>
-							</a>
-						</li>
-						{content.mainmenu.links.map((link, key) => <li key={key} className="main-menu-item">
-							<a href={link.target} dangerouslySetInnerHTML={{__html: link.text}}></a>
-						</li>)}
-					</ul>
-				</div>
+				{this.props.children}
 			</header>
 		);
 	}
@@ -97,5 +67,5 @@ export class Header extends React.Component {
 
 Header.propTypes = {
 	size: React.PropTypes.oneOf(['mini', 'full']),
-	onOpenSearch: React.PropTypes.func.isRequired
+	children: React.PropTypes.node
 };

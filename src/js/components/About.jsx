@@ -1,6 +1,6 @@
 import React from 'react';
 import {TeamMember} from '../TeamMember';
-import {Index} from './Index';
+import {Index} from '../Index/index.jsx';
 
 const boardMembers = [
 	{

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Documentation.scss';
-import {Index} from '../components/Index';
+import {Index} from '../Index/index.jsx';
 
 export const Documentation = () => (
 	<Index>

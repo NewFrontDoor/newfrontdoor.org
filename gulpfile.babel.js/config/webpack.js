@@ -89,7 +89,7 @@ function getCommonConfig() {
 function getDevConfig() {
 	return {
 		debug: true,
-		devtool: '#cheap-module-eval-source-map',
+		devtool: 'source-map',
 		module: {
 			loaders: [
 				getJavaScriptLoader(),
