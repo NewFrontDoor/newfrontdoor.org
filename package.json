@@ -95,7 +95,7 @@
     "esnext": true,
     "extends": "xo-react",
     "rules": {
-      "react/no-danger": 0,
+      "react/no-danger": 1,
       "xo/filename-case": 0
     },
     "envs": [
