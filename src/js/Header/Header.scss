@@ -1,8 +1,9 @@
 @import "../../css/variables";
 
 :local .nav {
-  width: 100%;
   position: fixed;
+	top: 0;
+	width: 100%;
   height: auto;
   z-index: 5;
   transition: background-color 0.5s, box-shadow 0.5s, linear;
@@ -13,4 +14,27 @@
     //backdrop-filter: blur(4px);
     padding-top: 0;
   }
+}
+
+:local .mini.logo {
+  padding: 8px 40px;
+}
+
+:local .logo {
+  padding: 8px;
+  margin: auto;
+
+	@media (min-width: $screen-md-min) {
+		transition: padding .5s ease-out;
+		lost-column: 3/16;
+		lost-move: 13/16;
+	}
+}
+
+:local .logo img {
+    height: 48px;
+    @media (min-width: $screen-md-min) {
+      height: auto;
+      max-height: 150px;
+    }
 }

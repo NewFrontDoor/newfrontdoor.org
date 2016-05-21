@@ -1,5 +1,6 @@
 import React from 'react';
 import throttle from 'lodash/throttle';
+import logo from '../../elements/v100it2.png';
 import styles from './Header.scss';
 
 export class Header extends React.Component {
@@ -7,7 +8,6 @@ export class Header extends React.Component {
 		super(props);
 		this.handleScroll = throttle(this.handleScroll.bind(this), 250);
 		this.backgroundHeight = this.backgroundHeight.bind(this);
-		this.paddingHeight = this.paddingHeight.bind(this);
 		this.state = this.nextState();
 	}
 
@@ -21,14 +21,14 @@ export class Header extends React.Component {
 		return 1;
 	}
 
-	paddingHeight() {
+	get paddingHeight() {
 		if (this.props.size === 'full') {
-			return window.pageYOffset > window.innerHeight / 2 ? 60 : 10;
+			return window.pageYOffset > window.innerHeight / 2 ? '5%' : '10px';
 		}
 		if (this.props.size === 'mini') {
-			return window.pageYOffset > window.innerHeight / 4 ? 60 : 10;
+			return window.pageYOffset > window.innerHeight / 4 ? '5%' : '10px';
 		}
-		return 60;
+		return '5%';
 	}
 
 	componentDidMount() {
@@ -43,7 +43,7 @@ export class Header extends React.Component {
 		return {
 			backgroundColor: `rgba(255,255,255, ${this.backgroundHeight()})`,
 			boxShadow: `0 2px 5px rgba(0,0,0, ${this.backgroundHeight() * 0.26})`,
-			padding: `${this.paddingHeight()}px`
+			padding: `${this.paddingHeight}`
 		};
 	}
 
@@ -57,8 +57,17 @@ export class Header extends React.Component {
 			boxShadow: this.state.boxShadow
 		};
 
+		const logoStyle = {
+			paddingLeft: this.state.padding,
+			paddingRight: this.state.padding
+		};
+
 		return (
 			<header className={styles.nav} style={scrollStyle}>
+				<a className={styles.logo} style={logoStyle} href="/">
+					<h1 className="sr-only">Vision 100 IT</h1>
+					<img className="img-responsive" src={logo}></img>
+				</a>
 				{this.props.children}
 			</header>
 		);

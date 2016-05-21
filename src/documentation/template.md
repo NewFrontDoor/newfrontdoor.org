@@ -3,13 +3,13 @@ title: Sample Header
 sub_title: Sample subheading - explanatory text
 ---
 
-<div classname="Summary">
-
+Summary
+-------
 This is a brief summary to outline the goals and purpose of this
 document, so that a user can determine quickly if this is really the
 document that they’re looking for. Because of the spacing it is wrapped by paragraph tags.
 
-</div>
+***
 
 Chapter heading
 ---------------

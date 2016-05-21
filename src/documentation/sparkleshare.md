@@ -3,7 +3,8 @@ title: Guidelines for Local Church SparkleShare Admins
 sub_title: Understanding Sparkleshare, how to set it up, and how to manage user permissions
 ---
 
-### Summary
+Summary
+------
 We want local church IT helpers and local church leaders to be confident to:
 - set up their own SparkleShare filing systems;
 - to help new team members get set up with SparkleShare; and
@@ -90,7 +91,7 @@ But for the administrator, there's a problem: you can't have two [FirstnameSurna
 * As above, get them to email their link code file to you.
 * Rename it, as above.
 * Move this second file into ~/keydir/second
-    * This means there will be two identically named files. One in /keydir/, and one in /keydir/second/.
+ * This means there will be two identically named files. One in /keydir/, and one in /keydir/second/.
 *Note: so long as the filenames are indeed identical, there is no need to adjust gitolite.conf.*
 
 Giving Permissions
@@ -123,19 +124,19 @@ Permissions can only be added to a whole Project, not to sub-folders. If you nee
 *	RW+,  for read, write and deletion
 
 ### Example of a gitolite.conf
-    #User definition
-    @staff = Marilyn Kathryn Billy Henry
-    @teams = @staff Lois Carl
-    #Staff workspace reposity
-    repo StaffWorkspace
-    	RW+	= @staff
-    #Team workspace reposity
-    repo TeamWorkspace
-    	RW+	= @teams
-    #Henry's personal repository
-    repo Henry
-    	RW+	= @Henry
-    #All other repositories everyone has read access
-    repo Procedure Ministries
-    	RW+	= @staff
-    	R	= @all
+	#User definition
+	@staff = Marilyn Kathryn Billy Henry
+	@teams = @staff Lois Carl
+	#Staff workspace reposity
+	repo StaffWorkspace
+		RW+	= @staff
+	#Team workspace reposity
+	repo TeamWorkspace
+		RW+	= @teams
+	#Henry's personal repository
+	repo Henry
+		RW+	= @Henry
+	#All other repositories everyone has read access
+	repo Procedure Ministries
+		RW+	= @staff
+		R	= @all

@@ -1,6 +1,7 @@
 import React from 'react';
-import classNames from 'classnames';
 import fm from 'front-matter';
+import classNames from 'classnames';
+import {StickyContainer, Sticky} from 'react-sticky';
 import {Index} from '../Index/index.jsx';
 import {Markdown, Toc} from '../Markdown';
 import styles from './Template.scss';
@@ -14,8 +15,8 @@ const documentation = {
 	},
 	document(id) {
 		const doc = this.context(this.documents.find(x => x === `./${id}.md`));
-		const content = fm(doc);
-		return {body: content.body, ...content.attributes};
+		const {body, attributes} = fm(doc);
+		return {body, ...attributes};
 	}
 };
 
@@ -26,66 +27,61 @@ export class Template extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			searchResults: []
+			openFeedback: false
 		};
-		this.handleOpenFeedback = this.handleOpenFeedback.bind(this);
-		this.handleCloseFeedback = this.handleCloseFeedback.bind(this);
+		this.handleToggleFeedback = this.handleToggleFeedback.bind(this);
 	}
 
-	handleOpenFeedback(event) {
+	handleToggleFeedback(event) {
 		event.preventDefault();
-		this.setState({openFeedback: true});
-		this.setState({closeTOC: true});
-	}
-
-	handleCloseFeedback(event) {
-		event.preventDefault();
-		this.setState({openFeedback: false});
-		this.setState({closeTOC: false});
+		this.setState({
+			openFeedback: !this.state.openFeedback
+		});
 	}
 
 	render() {
-		const docFeedback = classNames({
-			'visible': this.state.openFeedback,
-			'feedback-sidebar': true
+		const docTOC = classNames('TOC-sidebar', {
+			visible: !this.state.openFeedback
 		});
 
-		const docTOC = classNames({
-			'visible': this.state.closeTOC,
-			'TOC-sidebar': true
-		});
+		const docFeedback = classNames('feedback-sidebar', {visible: this.state.openFeedback});
 
 		return (
 			<Index>
-				<div className="documentation-wrapper">
+				<StickyContainer className="documentation-wrapper">
 					<div className="documentation-sidebar">
-						<div className={docTOC}>
-							<h3>Contents</h3>
-							<Toc>
-								{this.document.body}
-							</Toc>
-						</div>
-						<div className={docFeedback}>
-							<h3>Give feedback</h3>
-							<a onClick={this.handleOpenFeedback}>
-								<span>Suggest a revision to this document.</span>
-								<span className="fa fa-angle-down fa-3x"></span>
-							</a>
-							<div className="feedback-form">
-								<textarea type="text" name="message" className="form-control input-default" placeholder="What could make this documentation clearer?"></textarea>
-								<input type="email" name="email" className="form-control input-default" placeholder="Contact email"/>
-								<button type="submit" className="btn btn-default">Submit</button><button type="cancel" className="btn btn-default" onClick={this.handleCloseFeedback}>Cancel</button>
+						<Sticky stickyStyle={{top: 150}} topOffset={-150}>
+							<div className={docTOC}>
+								<h3>Contents</h3>
+								<Toc>
+									{this.document.body}
+								</Toc>
 							</div>
-						</div>
+							<div className={docFeedback}>
+								<h3>Give feedback</h3>
+								<a href="#" onClick={this.handleToggleFeedback}>
+									<span>Suggest a revision to this document.</span>
+									<span className="fa fa-angle-down fa-3x"></span>
+								</a>
+								<div className="feedback-form">
+									<textarea type="text" name="message" className="form-control input-default" placeholder="What could make this documentation clearer?"></textarea>
+									<input type="email" name="email" className="form-control input-default" placeholder="Contact email"/>
+									<button type="submit" className="btn btn-default">Submit</button>
+									<button type="cancel" className="btn btn-default" onClick={this.handleToggleFeedback}>Cancel</button>
+								</div>
+							</div>
+						</Sticky>
 					</div>
 					<div className="documentation-content">
 						<h1>{this.document.title}</h1>
-						<h1><small>{this.document.sub_title}</small></h1>
+						<h1>
+							<small>{this.document.sub_title}</small>
+						</h1>
 						<Markdown>
 							{this.document.body}
 						</Markdown>
 					</div>
-				</div>
+				</StickyContainer>
 			</Index>
 		);
 	}

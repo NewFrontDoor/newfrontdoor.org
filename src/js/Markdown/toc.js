@@ -1,54 +1,32 @@
-/* eslint-disable */
+/**
+ * @author Titus Wormer
+ * @copyright 2015 Titus Wormer
+ * @license MIT
+ * @module remark:toc
+ * @fileoverview Generate a Table of Contents (TOC) for Markdown files.
+ */
+
 'use strict';
 
-var slug = require('remark-slug');
-var toString = require('mdast-util-to-string');
+/* eslint-env commonjs */
+
+/*
+ * Dependencies.
+ */
+
+import slug from 'remark-slug';
+import toString from 'mdast-util-to-string';
 
 /*
  * Constants.
  */
 
-var HEADING = 'heading';
-var LIST = 'list';
-var LIST_ITEM = 'listItem';
-var PARAGRAPH = 'paragraph';
-var LINK = 'link';
-var TEXT = 'text';
-var DEFAULT_HEADING = 'toc|table[ -]of[ -]contents?';
-
-/**
- * Transform a string into an applicable expression.
- *
- * @param {string} value - Content to expressionise.
- * @return {RegExp} - Expression from `value`.
- */
-function toExpression(value) {
-    return new RegExp('^(' + value + ')$', 'i');
-}
-
-/**
- * Check if `node` is the main heading.
- *
- * @param {Node} node - Node to check.
- * @param {number} depth - Depth to check.
- * @param {RegExp} expression - Expression to check.
- * @return {boolean} - Whether `node` is a main heading.
- */
-function isOpeningHeading(node, depth, expression) {
-    return depth === null && node && node.type === HEADING &&
-        expression.test(toString(node));
-}
-
-/**
- * Check if `node` is the next heading.
- *
- * @param {Node} node - Node to check.
- * @param {number} depth - Depth of opening heading.
- * @return {boolean} - Whether znode is a closing heading.
- */
-function isClosingHeading(node, depth) {
-    return depth && node && node.type === HEADING && node.depth <= depth;
-}
+const HEADING = 'heading';
+const LIST = 'list';
+const LIST_ITEM = 'listItem';
+const PARAGRAPH = 'paragraph';
+const LINK = 'link';
+const TEXT = 'text';
 
 /**
  * Search a node for a location.
@@ -59,34 +37,32 @@ function isClosingHeading(node, depth) {
  * @param {number} maxDepth - Maximum-depth to include.
  * @return {Object} - Results.
  */
-function search(root, expression, maxDepth) {
-    var index = -1;
-    var length = root.children.length;
-    var map = [];
-    var child;
-    var headingIndex;
-    var closingIndex;
-    var value;
+function search(root, maxDepth) {
+	let index = -1;
+	const length = root.children.length;
+	const map = [];
+	let child;
+	let value;
 
-    while (++index < length) {
-        child = root.children[index];
+	while (++index < length) {
+		child = root.children[index];
 
-        if (child.type !== HEADING) {
-            continue;
-        }
+		if (child.type !== HEADING) {
+			continue;
+		}
 
-        value = toString(child);
+		value = toString(child);
 
-        if (value && child.depth <= maxDepth) {
-            map.push({
-                'depth': child.depth,
-                'value': value,
-                'id': child.data.htmlAttributes.id
-            });
-        }
-    }
+		if (value && child.depth <= maxDepth) {
+			map.push({
+				depth: child.depth,
+				value,
+				id: child.data.htmlAttributes.id
+			});
+		}
+	}
 
-    return map;
+	return map;
 }
 
 /**
@@ -95,11 +71,11 @@ function search(root, expression, maxDepth) {
  * @return {Object} - List node.
  */
 function list() {
-    return {
-        'type': LIST,
-        'ordered': false,
-        'children': []
-    };
+	return {
+		type: LIST,
+		ordered: false,
+		children: []
+	};
 }
 
 /**
@@ -108,11 +84,11 @@ function list() {
  * @return {Object} - List-item node.
  */
 function listItem() {
-    return {
-        'type': LIST_ITEM,
-        'loose': false,
-        'children': []
-    };
+	return {
+		type: LIST_ITEM,
+		loose: false,
+		children: []
+	};
 }
 
 /**
@@ -123,82 +99,78 @@ function listItem() {
  * @param {boolean?} [tight] - Prefer tight list-items.
  */
 function insert(node, parent, tight) {
-    var children = parent.children;
-    var length = children.length;
-    var last = children[length - 1];
-    var isLoose = false;
-    var index;
-    var item;
+	const children = parent.children;
+	const length = children.length;
+	const last = children[length - 1];
+	let isLoose = false;
+	let index;
+	let item;
 
-    if (node.depth === 1) {
-        item = listItem();
+	if (node.depth === 1) {
+		item = listItem();
 
-        item.children.push({
-            'type': PARAGRAPH,
-            'children': [
-                {
-                    'type': LINK,
-                    'title': null,
-                    'url': '#' + node.id,
-                    'children': [
-                        {
-                            'type': TEXT,
-                            'value': node.value
-                        }
-                    ]
-                }
-            ]
-        });
+		item.children.push({
+			type: PARAGRAPH,
+			children: [{
+				type: LINK,
+				title: null,
+				url: `#${node.id}`,
+				children: [{
+					type: TEXT,
+					value: node.value
+				}]
+			}]
+		});
 
-        children.push(item);
-    } else if (last && last.type === LIST_ITEM) {
-        insert(node, last, tight);
-    } else if (last && last.type === LIST) {
-        node.depth--;
+		children.push(item);
+	} else if (last && last.type === LIST_ITEM) {
+		insert(node, last, tight);
+	} else if (last && last.type === LIST) {
+		node.depth--;
 
-        insert(node, last);
-    } else if (parent.type === LIST) {
-        item = listItem();
+		insert(node, last);
+	} else if (parent.type === LIST) {
+		item = listItem();
 
-        insert(node, item);
+		insert(node, item);
 
-        children.push(item);
-    } else {
-        item = list();
-        node.depth--;
+		children.push(item);
+	} else {
+		item = list();
+		node.depth--;
 
-        insert(node, item);
+		insert(node, item);
 
-        children.push(item);
-    }
+		children.push(item);
+	}
 
-    /*
-     * Properly style list-items with new lines.
-     */
+	/*
+	 * Properly style list-items with new lines.
+	 */
 
-    if (parent.type === LIST_ITEM) {
-        parent.loose = tight ? false : children.length > 1;
-    } else {
-        if (tight) {
-            isLoose = false;
-        } else {
-            index = -1;
+	if (parent.type === LIST_ITEM) {
+		parent.loose = tight ? false : children.length > 1;
+	} else {
+		if (tight) {
+			isLoose = false;
+		} else {
+			index = -1;
 
-            while (++index < length) {
-                if (children[index].loose) {
-                    isLoose = true;
+			while (++index < length) {
+				if (children[index].loose) {
+					isLoose = true;
 
-                    break;
-                }
-            }
-        }
+					break;
+				}
+			}
+		}
 
-        index = -1;
+		index = -1;
 
-        while (++index < length) {
-            children[index].loose = isLoose;
-        }
-    }
+		while (++index < length) {
+			children[index].loose = isLoose;
+		}
+	}
 }
 
 /**
@@ -209,48 +181,47 @@ function insert(node, parent, tight) {
  * @return {Object} - List node.
  */
 function contents(map, tight) {
-    var minDepth = Infinity;
-    var index = -1;
-    var length = map.length;
-    var table;
+	let minDepth = Infinity;
+	let index = -1;
+	const length = map.length;
 
-    /*
-     * Find minimum depth.
-     */
+	/*
+	 * Find minimum depth.
+	 */
 
-    while (++index < length) {
-        if (map[index].depth < minDepth) {
-            minDepth = map[index].depth;
-        }
-    }
+	while (++index < length) {
+		if (map[index].depth < minDepth) {
+			minDepth = map[index].depth;
+		}
+	}
 
-    /*
-     * Normalize depth.
-     */
+	/*
+	 * Normalize depth.
+	 */
 
-    index = -1;
+	index = -1;
 
-    while (++index < length) {
-        map[index].depth -= minDepth - 1;
-    }
+	while (++index < length) {
+		map[index].depth -= minDepth - 1;
+	}
 
-    /*
-     * Construct the main list.
-     */
+	/*
+	 * Construct the main list.
+	 */
 
-    table = list();
+	const table = list();
 
-    /*
-     * Add TOC to list.
-     */
+	/*
+	 * Add TOC to list.
+	 */
 
-    index = -1;
+	index = -1;
 
-    while (++index < length) {
-        insert(map[index], table, tight);
-    }
+	while (++index < length) {
+		insert(map[index], table, tight);
+	}
 
-    return table;
+	return table;
 }
 
 /**
@@ -260,37 +231,30 @@ function contents(map, tight) {
  * @param {Object} options - Configuration.
  * @return {function(node)} - Transformmer.
  */
-function attacher(remark, options) {
-    var settings = options || {};
-    var heading = toExpression(settings.heading || DEFAULT_HEADING);
-    var depth = settings.maxDepth || 6;
-    var tight = settings.tight;
+function attacher(remark, {maxDepth = 6, tight, slugOptions} = {}) {
+	remark.use(slug, slugOptions);
 
-    remark.use(slug, settings.slug);
+	/**
+	 * Adds an example section based on a valid example
+	 * JavaScript document to a `Usage` section.
+	 *
+	 * @param {Node} node - Root to search in.
+	 */
+	function transformer(node) {
+		const result = search(node, maxDepth);
 
-    /**
-     * Adds an example section based on a valid example
-     * JavaScript document to a `Usage` section.
-     *
-     * @param {Node} node - Root to search in.
-     */
-    function transformer(node) {
-        var result = search(node, heading, depth);
+		if (!result.length) {
+			return;
+		}
 
-        if (!result.length) {
-            return;
-        }
+		/*
+		 * Add markdown.
+		 */
 
-        const a = contents(result, tight);
-        console.log(a);
-        node.children = [a];
-    }
+		node.children = [contents(result, tight)];
+	}
 
-    return transformer;
+	return transformer;
 }
 
-/*
- * Expose.
- */
-
-module.exports = attacher;
+export default attacher;
