@@ -1,5 +1,6 @@
 @import "../../css/variables";
 
+
 .documentation-wrapper {
 		padding: 1vr;
     margin-top: 120px;
@@ -23,7 +24,7 @@
 
 .documentation-sidebar {
 	height: calc(100vh - 150px);
-	margin: 1vr;
+	//margin: 1vr;
 	@media (min-width: $screen-md-min) {
 		lost-column: 1/3;
 	}

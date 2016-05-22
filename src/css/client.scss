@@ -7,11 +7,16 @@
     position: relative;
     height: 200px;
     overflow: hidden;
+		background-color: black;
     img {
       background-color: black;
-      width: 100%;
-      //top: 30%;
-      position: relative;
+      max-width: 100%;
+      position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
       z-index: 0;
     }
     h3 {
@@ -22,8 +27,7 @@
     }
     p {
       font-family: $font-family-sans-serif;
-      padding: 0px;
-      padding: 10px;
+      padding: 5px;
       background-color: rgba(white, .9);
       height: 30%;
       width: 100%;

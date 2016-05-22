@@ -50,7 +50,7 @@ export const Client = () => (
 	<Index headerSize="mini">
 		<Hero mini/>
 		<main role="main">
-			<div className="alerts">
+			<div className="alerts" hidden>
 					{content.banners.map((link, key) => (
 						<Alert key={key} type={link.type}>
 							<p dangerouslySetInnerHTML={{__html: link.text}}></p>
@@ -59,22 +59,22 @@ export const Client = () => (
 			</div>
 			<div className="product-cards">
 				<div id="one">
-					<h3>Elvanto</h3>
+					<h3 hidden>Elvanto</h3>
 					<img src="../../../src/elements/elvanto.png"/>
 					<p>Have you got started with Elvanto yet?</p>
 				</div>
 				<div id="two">
-					<h3>Website</h3>
+					<h3 hidden>Website</h3>
 					<img src="../../../src/elements/soul.jpeg"/>
 					<p>Let us help you get the most out of your website</p>
 				</div>
 				<div id="three">
-					<h3>Sparkleshare</h3>
+					<h3 hidden>Sparkleshare</h3>
 					<img src="../../../src/elements/Sparkleshare.png"/>
 					<p>Dropbox, google drive & usb sticks making you nuts?</p>
 				</div>
 				<div id="four">
-					<h3>Designers</h3>
+					<h3 hidden>Designers</h3>
 					<img src="../../../src/elements/close-image.jpeg"/>
 					<p>Thinking of a refresh? Read our recommendations</p>
 				</div>
