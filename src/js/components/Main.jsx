@@ -45,7 +45,7 @@ export class Main extends React.Component {
 	}
 	render() {
 		return (
-			<Index headerSize="full">
+			<Index headerSize="full" menuItems={content.mainmenu.links}>
 				<Hero>
 					<div dangerouslySetInnerHTML={{__html: content.hero.tagline}}></div>
 				</Hero>

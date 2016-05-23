@@ -52,22 +52,22 @@ export default {
 	clientmenu: {
 		links: [{
 			text: 'News',
-			target: '/client'
+			link: '/client'
 		}, {
 			text: 'Help + How-to',
-			target: '/documentation'
+			link: '/documentation'
 		}, {
 			text: 'Feature Request',
-			target: '/feature'
+			link: '/feature'
 		}, {
 			text: 'Support Request',
-			target: '/support'
+			link: '/support'
 		}, {
 			text: 'System Status',
-			target: '/status'
+			link: '/status'
 		}, {
 			text: 'About Us',
-			target: '/about'
+			link: '/about'
 		}]
 	},
 	mobilemenu: {

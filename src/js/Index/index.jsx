@@ -31,7 +31,7 @@ export class Index extends React.Component {
 			<div>
 				<Header size={this.props.headerSize}>
 					<MobileMenu onOpenSearch={this.handleOpenSearch}/>
-					<MainMenu onOpenSearch={this.handleOpenSearch}/>
+					<MainMenu menuItems={this.props.menuItems} onOpenSearch={this.handleOpenSearch}/>
 				</Header>
 				{this.props.children}
 				<SearchBar isOpen={this.state.showSearch} onClose={this.handleCloseSearch}/>
@@ -42,5 +42,6 @@ export class Index extends React.Component {
 
 Index.propTypes = {
 	headerSize: Header.propTypes.size,
-	children: React.PropTypes.node
+	children: React.PropTypes.node,
+	menuItems: MainMenu.propTypes.menuItems
 };
