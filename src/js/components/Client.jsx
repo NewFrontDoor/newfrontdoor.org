@@ -6,7 +6,7 @@ import {Markdown} from '../Markdown';
 import {Index} from '../Index/index.jsx';
 import {Hero} from '../Hero';
 import {Post} from '../Post';
-import {Cards} from '../Cards';
+import {Card} from '../Card';
 import {Alert} from '../Alert';
 
 import content from '../content';
@@ -59,26 +59,18 @@ export const Client = () => (
 					))}
 			</div>
 			<div className="product-cards">
-				<div id="one">
-					<h3 hidden>Elvanto</h3>
-					<img src="../../../src/elements/elvanto.png"/>
-					<p>Have you got started with Elvanto yet?</p>
-				</div>
-				<div id="two">
-					<h3 hidden>Website</h3>
-					<img src="../../../src/elements/soul.jpeg"/>
-					<p>Let us help you get the most out of your website</p>
-				</div>
-				<div id="three">
-					<h3 hidden>Sparkleshare</h3>
-					<img src="../../../src/elements/Sparkleshare.png"/>
-					<p>Dropbox, google drive & usb sticks making you nuts?</p>
-				</div>
-				<div id="four">
-					<h3 hidden>Designers</h3>
-					<img src="../../../src/elements/close-image.jpeg"/>
-					<p>Thinking of a refresh? Read our recommendations</p>
-				</div>
+				<Card name="Elvanto" background="black" image="../src/elements/elvanto.png" imagePadding="10px">
+					Have you got started with Elvanto yet?
+				</Card>
+				<Card name="Website" background="white" image="../src/elements/soul.jpeg" imagePadding="10px">
+					Let us help you get the most out of your website
+				</Card>
+				<Card name="Sparkleshare" background="black" image="../src/elements/Sparkleshare.png" imagePadding="10px">
+					Dropbox, google drive & usb sticks making you nuts?
+				</Card>
+				<Card name="Designers" background="white" image="../src/elements/close-image.jpeg">
+					Thinking of a refresh? Read our recommendations
+				</Card>
 			</div>
 			<div className="client-wrapper">
 				<section className="pinned-post">
