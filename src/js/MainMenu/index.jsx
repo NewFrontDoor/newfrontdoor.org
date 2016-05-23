@@ -1,6 +1,7 @@
 import React from 'react';
 
 import content from '../content';
+import {MenuLink} from '../MenuLink';
 import styles from './MainMenu.scss';
 
 export const MainMenu = props => (
@@ -12,7 +13,7 @@ export const MainMenu = props => (
 				</a>
 			</li>
 			{content.mainmenu.links.map((link, key) => <li key={key} className="main-menu-item">
-				<a href={link.target} dangerouslySetInnerHTML={{__html: link.text}}></a>
+				<MenuLink href="#" to={link.target} dangerouslySetInnerHTML={{__html: link.text}}/>
 			</li>)}
 		</ul>
 	</div>

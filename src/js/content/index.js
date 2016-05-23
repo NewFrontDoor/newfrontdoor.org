@@ -14,22 +14,22 @@ export default {
 	mainmenu: {
 		links: [{
 			text: 'How we<br />can help you',
-			target: '#how'
+			target: 'how'
 		}, {
 			text: 'Who are<br />Vision 100 IT?',
-			target: '#who'
+			target: 'who'
 		}, {
 			text: 'Philosophy<br />+ Tools',
-			target: '#tools'
+			target: 'tools'
 		}, {
 			text: 'Events +<br />Training',
-			target: '#events'
+			target: 'events'
 		}, {
 			text: 'Pricing',
-			target: '#pricing'
+			target: 'pricing'
 		}, {
 			text: 'Come<br />on board',
-			target: '#join'
+			target: 'join'
 		}]
 	},
 	clientmenu: {
