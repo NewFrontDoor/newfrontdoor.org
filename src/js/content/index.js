@@ -11,6 +11,23 @@ export default {
 		type: 'warning-banner',
 		text: 'Testing the warning banner'
 	}],
+	productcards: [{
+		background: 'black',
+		image: 'elvanto.png',
+		text: 'Have you got started with Elvanto yet?'
+	}, {
+		background: 'white',
+		image: 'soul.jpeg',
+		text: 'Let us help you get the most out of your website'
+	}, {
+		background: 'black',
+		image: 'sparkleshare.png',
+		text: 'Dropbox, google drive & USB sticks making you nuts?'
+	}, {
+		background: 'white',
+		image: 'close-image.jpeg',
+		text: 'Thinking of a refresh? Read our recommendations'
+	}],
 	mainmenu: {
 		links: [{
 			text: 'How we<br />can help you',
@@ -35,22 +52,22 @@ export default {
 	clientmenu: {
 		links: [{
 			text: 'News',
-			target: '#'
+			target: '/client'
 		}, {
 			text: 'Help + How-to',
-			target: '#'
+			target: '/documentation'
 		}, {
 			text: 'Feature Request',
-			target: '#'
+			target: '/feature'
 		}, {
 			text: 'Support Request',
-			target: '#'
+			target: '/support'
 		}, {
 			text: 'System Status',
-			target: '#'
+			target: '/status'
 		}, {
 			text: 'About Us',
-			target: '#'
+			target: '/about'
 		}]
 	},
 	mobilemenu: {
