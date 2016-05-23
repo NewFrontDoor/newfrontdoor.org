@@ -35,17 +35,8 @@
 }
 
 :local .content {
-		clear: bottom;
-}
-
-:local .img-container {
-		float: left;
-		padding: 0 20px 20px 0;
-		//margin: 0 20px 20px 0;
-		overflow: hidden;
 		img {
-				//float: left;
-				//padding: 0 20px 20px 0;
-				width: 100%;
+			float: left;
+			margin: 0 15px 0 0;
 		}
 }
