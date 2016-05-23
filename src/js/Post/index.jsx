@@ -7,7 +7,7 @@ const imageContext = require.context('../../elements');
 export const Post = props => (
 	<section className={styles.post}>
 		<header className={styles.header}>
-			<h2 className={styles.title}>{props.title}</h2>
+			<h2 className={styles.title}><a href={props.url}>{props.title}</a></h2>
 			<p className={styles.meta}>
 				<span className={styles.author}>By&nbsp;
 					<a href="#">{props.author.name}</a>
@@ -28,6 +28,7 @@ export const Post = props => (
 );
 
 Post.propTypes = {
+	url: React.PropTypes.string,
 	children: React.PropTypes.node.isRequired,
 	title: React.PropTypes.string.isRequired,
 	author: React.PropTypes.shape({name: React.PropTypes.string.isRequired}),

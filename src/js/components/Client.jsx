@@ -33,7 +33,7 @@ const blog = {
 		return this.posts.slice(begin, end).map(this.context).map(fm).map((post, key) => {
 			const postId = this.postId([key + begin]);
 			const body = trim ? `${post.body.slice(0, trim)}... [View more](blog${postId})` : post.body;
-			return Object.assign(post, {body, key});
+			return Object.assign(post, {url: `/blog${postId}`, body, key});
 		});
 	}
 };
@@ -81,14 +81,14 @@ export const Client = () => (
 			</div>
 			<div className="client-wrapper">
 				<section className="pinned-post">
-					<Post {...pinnedPost.attributes}>
+					<Post url={pinnedPost.url} {...pinnedPost.attributes}>
 						<Markdown>
 							{pinnedPost.body}
 						</Markdown>
 					</Post>
 				</section>
 				<section className="posts">
-					{posts.map((post, key) => <Post key={key} {...post.attributes}>
+					{posts.map((post, key) => <Post key={key} url={post.url} {...post.attributes}>
 						<Markdown>
 							{post.body}
 						</Markdown>
