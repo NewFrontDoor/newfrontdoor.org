@@ -51,10 +51,16 @@ export const Documentation = () => (
 						<li>
 							<a href="/documentation/elvanto">Elvanto - <i>coming soon</i></a>
 						</li>
+						<li>
+							<a href="/documentation/podcast">Podcasting</a>
+						</li>
+						<li>
+							<a href="/documentation/events">Event Registration tool</a>
+						</li>
 					</ul>
 				</div>
 			</div>
-			<h2>IT maintenance</h2>
+			<h2 id="maintenance">IT maintenance</h2>
 			<div className="list-wrapper">
 				<div className="type-3">
 					<h3>

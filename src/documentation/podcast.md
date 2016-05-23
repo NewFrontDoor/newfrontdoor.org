@@ -1,9 +1,12 @@
 Podcasting
 ===========
 
+Summary
+------
+
 Podcasting is an excellent way to distribute your church audio, from your weekly sermons, to your once off evangelistic events and community seminars. Podcasting allows your church members and others to *automatically* download your audio to their devices.
 
-#Why podcasting is great
+## Why podcasting is great
 The main issue churches have with podcasting is the significant effort it takes to set it up. Often it's enough trouble to post the file on the website. Unfortunately, this then requires church members to regularly return to the website to download the individual files, and if they then want to listen on a digital device like a phone or tablet, it needs to be added to their library, and synced before it can be listened to!
 
 Needless to say - the effort of uploading sermons has a limited impact when church members find it difficult to listen to them.
