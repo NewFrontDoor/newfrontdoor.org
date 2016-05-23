@@ -4,8 +4,8 @@ import {isUndefined} from 'lodash';
 import slug from 'remark-slug';
 import ghSlugs from 'github-slugger';
 import remarkReact from 'remark-react';
-import {Link, Element} from 'react-scroll';
-import toString from 'mdast-util-to-string';
+import {Element} from 'react-scroll';
+import {MenuLink} from '../MenuLink';
 import toc from './toc';
 
 const remarkHeading = (component, boundProps = {}) => {
@@ -26,22 +26,14 @@ const remarkHeading = (component, boundProps = {}) => {
 	});
 };
 
-const RemakLink = props => {
-	return (
-		<Link to={props.href} {...props}>
-			{props.children}
-		</Link>
-	);
+const RemarkLink = props => {
+	if (props.href && props.href.length > 1 && props.href.startsWith('#')) {
+		return (<MenuLink to={props.href} {...props}>{props.children}</MenuLink>);
+	}
+	return (<MenuLink {...props}>{props.children}</MenuLink>);
 };
 
-RemakLink.defaultProps = {
-	spy: true,
-	smooth: true,
-	offset: -64,
-	duration: 500
-};
-
-RemakLink.propTypes = {
+RemarkLink.propTypes = {
 	href: React.PropTypes.string,
 	children: React.PropTypes.node
 };
@@ -50,7 +42,7 @@ export const remarkConfigDefault = {
 	commonmark: true,
 	paragraphBlockquotes: false,
 	remarkReactComponents: {
-		a: RemakLink,
+		a: RemarkLink,
 		// blockquote: CombinedBlockQuote,
 		// code: CodePane,
 		// del: spectacleComponent(S, {type: 'strikethrough'}),
