@@ -6,6 +6,7 @@ import {Markdown} from '../Markdown';
 import {Index} from '../Index/index.jsx';
 import {Hero} from '../Hero';
 import {Post} from '../Post';
+import {Cards} from '../Cards';
 import {Alert} from '../Alert';
 
 import content from '../content';

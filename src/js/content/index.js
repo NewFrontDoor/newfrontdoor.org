@@ -12,20 +12,28 @@ export default {
 		text: 'Testing the warning banner'
 	}],
 	productcards: [{
+		number: 'one',
 		background: 'black',
 		image: 'elvanto.png',
+		imagepadding: '10',
 		text: 'Have you got started with Elvanto yet?'
 	}, {
+		number: 'two',
 		background: 'white',
 		image: 'soul.jpeg',
+		imagepadding: '10',
 		text: 'Let us help you get the most out of your website'
 	}, {
+		number: 'three',
 		background: 'black',
 		image: 'sparkleshare.png',
+		imagepadding: '10',
 		text: 'Dropbox, google drive & USB sticks making you nuts?'
 	}, {
+		number: 'four',
 		background: 'white',
 		image: 'close-image.jpeg',
+		imagepadding: '0',
 		text: 'Thinking of a refresh? Read our recommendations'
 	}],
 	mainmenu: {
