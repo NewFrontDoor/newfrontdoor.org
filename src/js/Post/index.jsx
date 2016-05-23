@@ -19,8 +19,8 @@ export const Post = props => (
 			</p>
 		</header>
 		<div className={styles.body}>
-			<div className={styles.imgContainer}><img src={imageContext(props.image.href)} alt={props.image.alt}/></div>
 			<div className={styles.content}>
+				<img src={imageContext(props.image.href)} alt={props.image.alt}/>
 				{props.children}
 			</div>
 		</div>
