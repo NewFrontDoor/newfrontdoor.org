@@ -1,5 +1,6 @@
 import React from 'react';
 import fm from 'front-matter';
+import moment from 'moment';
 import {Index} from '../Index/index.jsx';
 import {Markdown} from '../Markdown';
 import styles from './Blog.scss';
@@ -13,9 +14,12 @@ const blogs = {
 	},
 	document(id) {
 		const blog = this.context(this.blogs.find(x => x === `./${id}.md`));
-		return fm(blog);
+		const {body, attributes} = fm(blog);
+		return {body, ...attributes};
 	}
 };
+
+const imageContext = require.context('../../elements');
 
 export class Blog extends React.Component {
 	get blog() {
@@ -29,6 +33,9 @@ export class Blog extends React.Component {
 					<div className="blog-content">
 						<h1>{this.blog.title}</h1>
 						<h1><small>{this.blog.sub_title}</small></h1>
+						<h3>{this.blog.author.name} - <span className={styles.date}>{moment(this.blog.date).format('Do MMMM, YYYY')}</span></h3>
+						<h4>Tags: {this.blog.tags}</h4>
+						<div className={styles.imgContainer}><img src={imageContext(this.blog.image.href)} alt={this.blog.image.alt}/></div>
 						<Markdown>
 							{this.blog.body}
 						</Markdown>

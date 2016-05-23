@@ -1,0 +1,17 @@
+@import "../../css/variables";
+
+.blog-wrapper {
+  overflow: hidden;
+	margin-top: 107px;
+  padding: 15px;
+  lost-center: 500px;
+  @media (min-width: $screen-md-min) {
+		lost-center: 980px;
+  }
+}
+
+.blog-content {
+	img {
+		max-width: 100%;
+	}
+}
