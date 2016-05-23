@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 import moment from 'moment';
 import styles from './Post.scss';
 
@@ -14,7 +15,7 @@ export const Post = props => (
 				</span>
 				<span className={styles.date}>{moment(props.date).format('Do MMMM, YYYY')}</span>
 				<span className={styles.category}>under&nbsp;
-					<span>{props.tags.map((tag, key) => <a key={key} href={`blog/tags/${tag}`}>{tag}</a>)}</span>
+					<span>{props.tags.map((tag, key) => <Link key={key} to={`blog/tags/${tag}`}>{tag}</Link>)}</span>
 				</span>
 			</p>
 		</header>

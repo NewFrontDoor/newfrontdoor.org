@@ -1,5 +1,5 @@
-/* eslint-env browser */
 import React from 'react';
+import {Link} from 'react-router';
 import lunr from 'lunr';
 import classNames from 'classnames';
 import './SearchBar.scss';
@@ -115,7 +115,7 @@ export class SearchBar extends React.Component {
 						<ul className="list-unstyled">
 							{this.state.searchResults.map((res, key) => (
 								<li key={key}>
-									<a href={res.id}>{res.title}</a>
+									<Link to={res.id}>{res.title}</Link>
 								</li>
 							))}
 						</ul>
@@ -127,19 +127,19 @@ export class SearchBar extends React.Component {
 				<div className="search-menu">
 					<ul className="list-unstyled">
 						<li>
-							<a href="/client">News</a>
+							<Link to="client">News</Link>
 						</li>
 						<li>
-							<a href="/support">Support</a>
+							<Link to="support">Support</Link>
 						</li>
 						<li>
-							<a href="/status">Status</a>
+							<Link to="status">Status</Link>
 						</li>
 						<li>
-							<a href="/documentation">Documentation</a>
+							<Link to="documentation">Documentation</Link>
 						</li>
 						<li>
-							<a href="/contact">Contact</a>
+							<Link to="contact">Contact</Link>
 						</li>
 					</ul>
 				</div>

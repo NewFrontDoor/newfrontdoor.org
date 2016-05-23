@@ -15,7 +15,7 @@ export class Contact extends React.Component {
 							<h3>
 								Email contact
 							</h3>
-							<a href="it@vision100.org">it@vision100.org</a>
+							<a href="mailto:it@vision100.org">it@vision100.org</a>
 						</div>
 						<h3>
 							Join our mailing list

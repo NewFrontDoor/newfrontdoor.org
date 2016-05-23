@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 import './Documentation.scss';
 import {Index} from '../Index/index.jsx';
 
@@ -8,8 +9,8 @@ export const Documentation = () => (
 			<h1>Help + how to</h1>
 
 			<div className="search-wrapper">
-				<p>Vision 100 IT are constantly updating and improving our documentation, and adding new documentation as new tools and procedures arise. If you notice anything is incomplete, or would like documentation on a particular topic,
-					<a href="/feature">let us know!</a>
+				<p>
+					Vision 100 IT are constantly updating and improving our documentation, and adding new documentation as new tools and procedures arise. If you notice anything is incomplete, or would like documentation on a particular topic, <Link to="/feature">let us know!</Link>
 				</p>
 				<form>
 					<div className="form-group">

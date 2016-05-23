@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 import {Index} from '../Index/index.jsx';
 
 export const Support = () => (
@@ -6,7 +7,7 @@ export const Support = () => (
 		<div className="site-wrapper site-wrapper-padding">
 			<h1>Support form</h1>
 			<div>
-				<p>Some issues may be answered by our <a href="/documentation">documentation</a> which you can find <a href="/documentation">here</a>. Please also check our <a href="/status">system status page</a> for any issues that may impact your work.</p>
+				<p>Some issues may be answered by our <Link to="documentation">documentation</Link> which you can find <Link to="documentation">here</Link>. Please also check our <Link to="status">system status page</Link> for any issues that may impact your work.</p>
 			</div>
 			<hr/>
 			<div className="instruction">

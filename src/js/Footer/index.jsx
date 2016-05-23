@@ -1,7 +1,7 @@
-/* eslint-env browser */
 import React from 'react';
 import throttle from 'lodash/throttle';
 import classNames from 'classnames';
+import {Link} from 'react-router';
 import content from '../content';
 import styles from './Footer.scss';
 
@@ -46,10 +46,10 @@ export class Footer extends React.Component {
 							<h3>{list.heading}</h3>
 						</header>
 						<ul className="list-unstyled">
-							{list.links.map((link, key) => <li key={key}>
-								<a href={link.target}>{link.text}
-									<span className={link.className}></span>
-								</a>
+							{list.links.map((item, key) => <li key={key}>
+								<Link to={item.to}>{item.text}
+									<span className={item.className}></span>
+								</Link>
 							</li>)}
 						</ul>
 					</div>)}

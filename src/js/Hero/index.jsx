@@ -1,4 +1,3 @@
-/* eslint-env browser */
 import React from 'react';
 import throttle from 'lodash/throttle';
 import styles from './Hero.scss';

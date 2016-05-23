@@ -4,8 +4,8 @@ import {isUndefined} from 'lodash';
 import slug from 'remark-slug';
 import ghSlugs from 'github-slugger';
 import remarkReact from 'remark-react';
-import {Element} from 'react-scroll';
-import {MenuLink} from '../MenuLink';
+import {scroller, Element} from 'react-scroll';
+import {Link} from 'react-router';
 import toc from './toc';
 
 const remarkHeading = (component, boundProps = {}) => {
@@ -19,18 +19,28 @@ const remarkHeading = (component, boundProps = {}) => {
 		render() {
 			const slugs = ghSlugs();
 			const props = {...this.props, ...boundProps};
-			return (<Element name={`#${slugs.slug(this.props.children.props.children)}`}>
+			return (<Element name={`${slugs.slug(this.props.children.props.children)}`}>
 				{React.createElement(component, {...props}, this.props.children)}
 			</Element>);
 		}
 	});
 };
 
+function handleOnClick(event) {
+	event.preventDefault();
+	scroller.scrollTo(this.href.replace('#', ''), {
+		spy: true,
+		smooth: true,
+		offset: -64,
+		duration: 500
+	});
+}
+
 const RemarkLink = props => {
-	if (props.href && props.href.length > 1 && props.href.startsWith('#')) {
-		return (<MenuLink to={props.href} {...props}>{props.children}</MenuLink>);
+	if (props.href) {
+		return (<Link to="" onClick={handleOnClick} {...props}>{props.children}</Link>);
 	}
-	return (<MenuLink {...props}>{props.children}</MenuLink>);
+	return (<Link {...props}>{props.children}</Link>);
 };
 
 RemarkLink.propTypes = {

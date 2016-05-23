@@ -39,141 +39,141 @@ export default {
 	mainmenu: {
 		links: [{
 			text: 'How we<br />can help you',
-			target: 'how'
+			to: '#how'
 		}, {
 			text: 'Who are<br />Vision 100 IT?',
-			target: 'who'
+			to: '#who'
 		}, {
 			text: 'Philosophy<br />+ Tools',
-			target: 'tools'
+			to: '#tools'
 		}, {
 			text: 'Events +<br />Training',
-			target: 'events'
+			to: '#events'
 		}, {
 			text: 'Pricing',
-			target: 'pricing'
+			to: '#pricing'
 		}, {
 			text: 'Come<br />on board',
-			target: 'join'
+			to: '#join'
 		}]
 	},
 	clientmenu: {
 		links: [{
 			text: 'News',
-			link: '/client'
+			to: '/client'
 		}, {
 			text: 'Help + How-to',
-			link: '/documentation'
+			to: '/documentation'
 		}, {
 			text: 'Feature Request',
-			link: '/feature'
+			to: '/feature'
 		}, {
 			text: 'Support Request',
-			link: '/support'
+			to: '/support'
 		}, {
 			text: 'System Status',
-			link: '/status'
+			to: '/status'
 		}, {
 			text: 'About Us',
-			link: '/about'
+			to: '/about'
 		}]
 	},
 	mobilemenu: {
 		primary: [{
 			text: 'Client',
-			target: '/client'
+			to: '/client'
 		}, {
 			text: 'Visitor',
-			target: '#how'
+			to: '#how'
 		}],
 		secondary: [{
 			text: 'Search',
-			target: '#'
+			to: '#'
 		}, {
 			text: 'News',
-			target: '/client'
+			to: '/client'
 		}],
 		teriary: [{
 			text: 'Search',
-			target: '#'
+			to: '#'
 		}, {
 			text: 'Contact',
-			target: '/contact'
+			to: '/contact'
 		}]
 	},
 	footerLinks: [{
 		heading: 'V100IT',
 		links: [{
 			text: 'Philosophy',
-			target: '/#tools'
+			to: '/#tools'
 		}, {
 			text: 'Tools',
-			target: '/#tools'
+			to: '/#tools'
 		}, {
 			text: 'Events',
-			target: '/#events'
+			to: '/#events'
 		}, {
 			text: 'Pricing',
-			target: '/#pricing'
+			to: '/#pricing'
 		}, {
 			text: 'Consultation',
-			target: '/consultation'
+			to: '/consultation'
 		}]
 	}, {
 		heading: 'About Us',
 		links: [{
 			text: 'Mission + Vision',
-			target: '/about#mission'
+			to: '/about#mission'
 		}, {
 			text: 'History',
-			target: '/about#history'
+			to: '/about#history'
 		}, {
 			text: 'Team Members',
-			target: '/about#team'
+			to: '/about#team'
 		}, {
 			text: 'Privacy Policy',
-			target: '/documentation/privacy'
+			to: '/documentation/privacy'
 		}, {
 			text: 'Service Levels',
-			target: '/about#service'
+			to: '/about#service'
 		}]
 	}, {
 		heading: 'Support',
 		links: [{
 			text: 'Support Request',
-			target: '/support'
+			to: '/support'
 		}, {
 			text: 'Feature Request',
-			target: '/feature'
+			to: '/feature'
 		}, {
 			text: 'Contact Us',
-			target: '/contact'
+			to: '/contact'
 		}, {
 			text: 'Help + How-to',
-			target: '/documentation'
+			to: '/documentation'
 		}, {
 			text: 'System Status',
-			target: '/status'
+			to: '/status'
 		}]
 	}, {
 		heading: 'Connect',
 		links: [{
 			text: 'Podcast - coming!',
-			target: ''
+			to: ''
 		}, {
 			text: 'Mailing List',
-			target: '/contact'
+			to: '/contact'
 		}, {
 			text: 'Blog',
-			target: '/client'
+			to: '/client'
 		}, {
 			className: 'fa fa-facebook-square',
-			target: 'http://facebook.com/vision100it'
+			to: 'http://facebook.com/vision100it'
 		}, {
 			className: 'fa fa-twitter-square',
-			target: 'http://twitter.com/vision100it'
+			to: 'http://twitter.com/vision100it'
 		}]
 	}, {
-		links: ['/']
+		links: []
 	}]
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import content from '../content';
-import {MenuLink} from '../MenuLink';
+import {Link} from 'react-router';
 import styles from './MainMenu.scss';
 
 export const MainMenu = props => (
@@ -13,7 +13,7 @@ export const MainMenu = props => (
 				</a>
 			</li>
 			{props.menuItems.map((item, key) => <li key={key} className="main-menu-item">
-				<MenuLink href={item.link} to={item.target} dangerouslySetInnerHTML={{__html: item.text}}/>
+				<Link to={item.to} dangerouslySetInnerHTML={{__html: item.text}}/>
 			</li>)}
 		</ul>
 	</div>
