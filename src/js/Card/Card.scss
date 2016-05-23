@@ -5,7 +5,12 @@
   lost-center: 95%;
   div {
     box-shadow: 0 10px 16px 0 rgba($primary-highlight,0.8),0 6px 20px 0 rgba(0,0,0,0.19);
-    lost-column: 1/4;
+		@media (min-width: $screen-sm-min) {
+			lost-column: 1/2;
+		}
+		@media (min-width: $screen-md-min) {
+    	lost-column: 1/4;
+		}
     position: relative;
     height: 200px;
     overflow: hidden;
