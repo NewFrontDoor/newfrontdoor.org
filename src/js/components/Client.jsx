@@ -51,7 +51,7 @@ export const Client = () => (
 	<Index headerSize="mini">
 		<Hero mini/>
 		<main role="main">
-			<div className="alerts" hidden>
+			<div className="alerts" className="hidden">
 					{content.banners.map((link, key) => (
 						<Alert key={key} type={link.type}>
 							<p dangerouslySetInnerHTML={{__html: link.text}}></p>

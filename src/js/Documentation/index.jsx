@@ -23,9 +23,16 @@ export const Documentation = () => (
 					<h3>
 						<i className="fa fa-book fa-fw"></i>Getting started with Vision 100 IT</h3>
 					<ul>
-						<li>Suite of Tools</li>
-						<li>Client Charter Agreement</li>
-						<li>Privacy Policy</li>
+						<li>
+							<a href="documentation/suite">Suite of Tools</a>
+						</li>
+						<li>Client Charter Agreement - <i>coming soon</i></li>
+						<li>
+							<a href="documentation/privacy">Privacy Policy</a>
+						</li>
+						<li>
+							<a href="/documentation/development">Website Development project outline</a>
+						</li>
 					</ul>
 				</div>
 				<div className="type-2">
@@ -35,10 +42,34 @@ export const Documentation = () => (
 						<li>
 							<a href="/documentation/mailinglists">Mailing lists</a>
 						</li>
-						<li>Website development project outline</li>
+						<li>
+							Making the most of your new website - <i>coming soon</i>
+						</li>
 						<li>
 							<a href="/documentation/sparkleshare">Sparkleshare</a>
 						</li>
+						<li>
+							<a href="/documentation/elvanto">Elvanto - <i>coming soon</i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<h2>IT maintenance</h2>
+			<div className="list-wrapper">
+				<div className="type-3">
+					<h3>
+						<i className="fa fa-lock fa-fw"></i>Keeping your systems up to date</h3>
+					<ul>
+						<li>Website refresh recommendations - <i>coming soon</i></li>
+						<li>
+							<a href="/documentation/checklist">Checklist for on-boarding and finishing with staff members</a>
+						</li>
+					</ul>
+				</div>
+				<div className="type-4">
+					<h3>
+						<i className="fa fa-lightbulb-o fa-fw"></i>Articles + training night materials</h3>
+					<ul>
 					</ul>
 				</div>
 			</div>
@@ -46,7 +77,7 @@ export const Documentation = () => (
 			<div className="list-wrapper">
 				<div className="type-5">
 					<h3>
-						<i className="fa fa-link fa-fw"></i>Recommended links</h3>
+						<i className="fa fa-link fa-fw"></i>Recommended external links</h3>
 					<ul>
 						<li>
 							<a href="https://www.elvanto.com/">Elvanto</a>

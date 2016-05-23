@@ -131,8 +131,8 @@ export default {
 			text: 'Team Members',
 			target: '/about#team'
 		}, {
-			text: 'Join Us',
-			target: '/about#join'
+			text: 'Privacy Policy',
+			target: '/documentation/privacy'
 		}, {
 			text: 'Service Levels',
 			target: '/about#service'

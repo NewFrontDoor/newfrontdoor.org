@@ -77,6 +77,10 @@ article {
   }
 }
 
+.hidden {
+  display: none;
+}
+
 em {
   font-style: italic;
   color: $primary-highlight;
