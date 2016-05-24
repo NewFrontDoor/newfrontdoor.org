@@ -21,7 +21,7 @@ export const Post = props => (
 		</header>
 		<div className={styles.body}>
 			<div className={styles.content}>
-				<img src={imageContext(props.image.href)} alt={props.image.alt}/>
+				<img src={imageContext(props.image.href)} className={props.image.size} alt={props.image.alt}/>
 				{props.children}
 			</div>
 		</div>
@@ -35,5 +35,5 @@ Post.propTypes = {
 	author: React.PropTypes.shape({name: React.PropTypes.string.isRequired}),
 	date: React.PropTypes.object.isRequired,
 	tags: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
-	image: React.PropTypes.shape({href: React.PropTypes.string.isRequired, alt: React.PropTypes.string.isRequired})
+	image: React.PropTypes.shape({href: React.PropTypes.string.isRequired, size: React.PropTypes.string.isRequired, alt: React.PropTypes.string.isRequired})
 };

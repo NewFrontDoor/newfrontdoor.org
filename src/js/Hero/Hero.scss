@@ -20,7 +20,10 @@
 }
 
 :local .mini.container {
-  height: 50vh;
+	height: 25vh;
+	@media (min-width: $screen-md-min) {
+  	height: 50vh;
+	}
 }
 
 :local .mini .background {

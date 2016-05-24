@@ -8,39 +8,58 @@
 
 :local .meta {
 		display: none;
-		@media (min-width: $screen-md-min) {
+		@media (min-width: $screen-sm-min) {
 				display: block;
-				float: left;
-				width: 200px;
-				height: auto;
-				position: absolute;
-				margin-left: -200px;
-				padding-right: 20px;
+				@media (min-width: $screen-lg-min) {
+					width: 200px;
+					margin-left: -200px;
+					float: left;
+					height: auto;
+					position: absolute;
+				}
 		}
 }
 
 :local .author {
+display: inline;
+padding-right: 20px;
+	@media (min-width: $screen-lg-min) {
 		display: block;
 		text-align: right;
+	}
 }
 
 :local .date {
+display: inline;
+padding-right: 20px;
+	@media (min-width: $screen-lg-min) {
 		display: block;
 		text-align: right;
+	}
 }
 
 :local .category {
+display: inline;
+padding-right: 20px;
+	@media (min-width: $screen-lg-min) {
 		display: block;
 		text-align: right;
+	}
 }
 
 :local .content {
-		img {
-			float: left;
-			margin: 0 15px 0 0;
-			max-height: 50px;
-			@media (min-width: $screen-md-min) {
-				max-height: none;
-			}
+	img {
+		float: left;
+		margin: 0 15px 0 0;
+		max-height: 100px;
+		.wide {
+			max-width: 100%;
 		}
+		.regular {
+			max-height: 50px;
+		}
+		@media (min-width: $screen-md-min) {
+			max-height: 200px;
+		}
+	}
 }

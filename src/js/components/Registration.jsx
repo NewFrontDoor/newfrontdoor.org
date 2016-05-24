@@ -22,7 +22,7 @@ export const Registration = () => (
 							</ul>
 						</p>
 						<p>Vision 100 IT has developed an event registration system that can be rolled out to your website that addresses these concerns, allowing you to get as many of your ministry members registered through the online system as quickly as possible. Your greatest concern will just be how best to advertise!</p>
-						<p>You can see an example of this registration form here.</p>
+						<p>You can see an example of this registration form <a href="www.crckingston.org.au/camprego">here.</a></p>
 						<p>If you're interested in having an Events registration module added to your website, let us know through the feature request form. If you currently don't have a V100IT hosted website, but are interested in implementing a similar system on your own page, we'd be happy to let you know what you need to consider to set it up for yourself.</p>
 					</section>
 				</div>
