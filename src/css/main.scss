@@ -457,3 +457,28 @@ video#bgvid {
 .consultation-overlay {
   background-image: linear-gradient(rgba(256, 256, 256, .6), white);
 }
+
+.about-wrapper {
+  background-image: linear-gradient(white, white 60%, rgba(256, 256, 256, 0)), url("../elements/desk.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 0 -200px;
+}
+.about-overlay {
+  background-image: linear-gradient(rgba(256, 256, 256, .3), white);
+}
+
+.status-overlay {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-image: linear-gradient(rgba(256, 256, 256, .6), white 50%, white), url("../elements/matrix.jpg");
+}
+
+.contact-overlay {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-image: linear-gradient(rgba(256, 256, 256, .3), white), url("../elements/pen.jpg");
+}

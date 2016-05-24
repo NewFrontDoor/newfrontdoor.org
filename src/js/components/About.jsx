@@ -55,6 +55,8 @@ const teamMembers = [
 
 export const About = () => (
 	<Index>
+		<div className="about-wrapper">
+		<div className="about-overlay">
 		<div className="site-wrapper site-wrapper-padding">
 			<h1>About Vision 100</h1>
 			<Element name="mission">
@@ -100,5 +102,7 @@ export const About = () => (
 				</div>
 			</Element>
 		</div>
+	</div>
+</div>
 	</Index>
 );
