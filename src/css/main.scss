@@ -285,12 +285,6 @@ div.expand {
     }
   }
   section.products {
-/*    lost-flex-container: row;
-    &:nth-child(even) {
-      @media (min-width: $screen-md-min) {
-        flex-direction: row-reverse;
-      }
-    }*/
     .product-pair {
       lost-flex-container: row;
       &:nth-child(even) {
@@ -482,6 +476,27 @@ video#bgvid {
 }
 .about-overlay {
   background-image: linear-gradient(rgba(256, 256, 256, .3), white);
+}
+
+.registration-wrapper {
+  background-image: linear-gradient(white, white 70%, rgba(256, 256, 256, 0)), url("../elements/queue.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 0 -200px;
+}
+.registration-overlay {
+  background-image: linear-gradient(rgba(256, 256, 256, .3), white);
+}
+
+.podcasting-wrapper {
+  background-image: linear-gradient(white, white 20%, rgba(256, 256, 256, 0)), url("../elements/podcast.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.podcasting-overlay {
+  background-image: linear-gradient(rgba(256, 256, 256, .1), white);
 }
 
 .status-overlay {

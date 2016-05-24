@@ -20,7 +20,10 @@
     background-color: white;
     margin-bottom: 40px; //transform to -120px; to stack
     padding: 0 10px 10px 10px;
-    lost-column: 1/2 2 40px;
+		lost-column: 1/1;
+		@media (min-width: $screen-md-min) {
+			lost-column: 1/2 2 40px;
+		}
     a {
       color: $text-color;
     }

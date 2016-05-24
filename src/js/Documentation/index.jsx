@@ -54,10 +54,10 @@ export const Documentation = () => (
 								<a href="/documentation/elvanto">Elvanto - <i>coming soon</i></a>
 							</li>
 							<li>
-								<a href="/documentation/podcast">Podcasting</a>
+								<a href="/podcasting">Podcasting</a>
 							</li>
 							<li>
-								<a href="/documentation/events">Event Registration tool</a>
+								<a href="/registration">Event Registration tool</a>
 							</li>
 						</ul>
 					</div>

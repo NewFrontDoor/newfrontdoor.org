@@ -16,6 +16,8 @@ import {Site} from './Site';
 import {Status} from './Status';
 import {Support} from './Support';
 import {Training} from './Training';
+import {Registration} from './Registration';
+import {Podcasting} from './Podcasting';
 
 export default(
 	<Route path="/" component={Site}>
@@ -32,6 +34,8 @@ export default(
 		<Route path="/contact" component={Contact}/>
 		<Route path="/training" component={Training}/>
 		<Route path="/consultation" component={Consultation}/>
+		<Route path="/registration" component={Registration}/>
+		<Route path="/podcasting" component={Podcasting}/>
 		<Route path="/alert" component={Alert}/>
 	</Route>
 );

@@ -7,9 +7,9 @@
 :local .title {}
 
 :local .meta {
-		visibility: hidden;
+		display: none;
 		@media (min-width: $screen-md-min) {
-				visibility: visible;
+				display: block;
 				float: left;
 				width: 200px;
 				height: auto;
@@ -38,5 +38,9 @@
 		img {
 			float: left;
 			margin: 0 15px 0 0;
+			max-height: 50px;
+			@media (min-width: $screen-md-min) {
+				max-height: auto;
+			}
 		}
 }

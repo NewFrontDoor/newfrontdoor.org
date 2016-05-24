@@ -30,7 +30,9 @@ const staticPaths = [
 	'/about',
 	'/contact',
 	'/training',
-	'/consultation'
+	'/consultation',
+	'/registration',
+	'/podcasting'
 ];
 
 const documentation = fs.readdirSync(paths.documentation.dir).map(p => `/documentation/${trimExtension(p)}`);

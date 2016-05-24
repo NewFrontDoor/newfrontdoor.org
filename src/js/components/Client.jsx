@@ -59,16 +59,16 @@ export const Client = () => (
 					))}
 			</div>
 			<div className="product-cards">
-				<Card name="Elvanto" background="black" image="../src/elements/elvanto.png" imagePadding="10px">
+				<Card className="mob-hidden" name="Elvanto" background="black" image="../src/elements/elvanto.png" imagePadding="10px">
 					Have you got started with Elvanto yet?
 				</Card>
-				<Card name="Website" background="white" image="../src/elements/soul.jpeg" imagePadding="10px">
+				<Card className="mob-hidden" name="Website" background="white" image="../src/elements/soul.jpeg" imagePadding="10px">
 					Let us help you get the most out of your website
 				</Card>
-				<Card name="Sparkleshare" background="black" image="../src/elements/Sparkleshare.png" imagePadding="10px">
+				<Card className="mob-hidden" name="Sparkleshare" background="black" image="../src/elements/Sparkleshare.png" imagePadding="10px">
 					Dropbox, google drive & usb sticks making you nuts?
 				</Card>
-				<Card name="Designers" background="white" image="../src/elements/close-image.jpeg">
+				<Card className="mob-hidden" name="Designers" background="white" image="../src/elements/close-image.jpeg">
 					Thinking of a refresh? Read our recommendations
 				</Card>
 			</div>

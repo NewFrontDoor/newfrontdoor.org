@@ -49,7 +49,7 @@ export class Template extends React.Component {
 		return (
 			<Index>
 				<StickyContainer className="documentation-wrapper">
-					<div className="documentation-sidebar">
+					<div className="documentation-sidebar mob-hidden">
 						<Sticky stickyStyle={{top: 150}} topOffset={-150}>
 							<div className={docTOC}>
 								<h3>Contents</h3>
