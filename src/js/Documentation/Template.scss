@@ -33,7 +33,7 @@
 }
 
 .TOC-sidebar {
-  padding: 1vr;
+  padding: 24px;
   box-shadow: 0 10px 16px 0 rgba($primary-highlight,0.8),0 6px 20px 0 rgba(0,0,0,0.19);
   //border-right: 1px solid lighten($text-color, 70%);
   overflow-x: hidden;
@@ -41,7 +41,7 @@
   height: calc(100vh - 610px);
   position: relative;
 	transition: height 1s;
-	margin-bottom: 1vr;
+	margin-bottom: 24px;
 	&.visible {
 		height: calc(100vh - 350px);
 	}
@@ -68,7 +68,7 @@
 }
 
 .feedback-sidebar {
-  padding: 1vr;
+  padding: 24px;
   box-shadow: 0 10px 16px 0 rgba($primary-highlight,0.8),0 6px 20px 0 rgba(0,0,0,0.19);
   //border-right: 1px solid lighten($text-color, 70%);
   overflow-x: hidden;

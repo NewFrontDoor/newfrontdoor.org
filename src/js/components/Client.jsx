@@ -59,16 +59,16 @@ export const Client = () => (
 					))}
 			</div>
 			<div className="product-cards">
-				<Card className="mob-hidden" name="Elvanto" background="black" image="../src/elements/elvanto.png" imagePadding="10px">
+				<Card className="mob-hidden" name="Elvanto" background="#323232" image="../src/elements/elvanto.png" imagePadding="10px" link="/elvanto">
 					Have you got started with Elvanto yet?
 				</Card>
-				<Card className="mob-hidden" name="Website" background="white" image="../src/elements/soul.jpeg" imagePadding="10px">
-					Let us help you get the most out of your website
+				<Card className="mob-hidden" name="Registration" background="white" image="../src/elements/soul.jpeg" imagePadding="10px" link="/registration">
+					Have a church event soon? Check out the V100IT registration module
 				</Card>
-				<Card className="mob-hidden" name="Sparkleshare" background="black" image="../src/elements/Sparkleshare.png" imagePadding="10px">
-					Dropbox, google drive & usb sticks making you nuts?
+				<Card className="mob-hidden" name="Podcasting" background="#171717" image="../src/elements/podcasting.png" imagePadding="75px" link="/podcasting">
+					Get on board with podcasting your sermons
 				</Card>
-				<Card className="mob-hidden" name="Designers" background="white" image="../src/elements/close-image.jpeg">
+				<Card className="mob-hidden" name="Designers" background="white" image="../src/elements/close-image.jpeg" link="">
 					Thinking of a refresh? Read our recommendations
 				</Card>
 			</div>

@@ -10,9 +10,11 @@ export const Card = props => {
 	};
 	return (
 		<div className={props.className} style={style}>
+			<a href={props.link}>
 			<img src={props.image} style={imageStyle}></img>
 			<h3 hidden>{props.name}</h3>
 			<p>{props.children}</p>
+			</a>
 		</div>
 	);
 };
@@ -23,5 +25,6 @@ Card.propTypes = {
 	image: React.PropTypes.string,
 	imagePadding: React.PropTypes.string,
 	name: React.PropTypes.string,
+	link: React.PropTypes.string,
 	children: React.PropTypes.node
 };

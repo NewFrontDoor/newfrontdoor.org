@@ -51,7 +51,7 @@ export const Documentation = () => (
 								<a href="/documentation/sparkleshare">Sparkleshare</a>
 							</li>
 							<li>
-								<a href="/documentation/elvanto">Elvanto - <i>coming soon</i></a>
+								<a href="/elvanto">Elvanto</a>
 							</li>
 							<li>
 								<a href="/podcasting">Podcasting</a>

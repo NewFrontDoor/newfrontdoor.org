@@ -320,9 +320,10 @@ div.expand {
     overflow: hidden;
     position: relative;
     @media (min-width: $screen-md-min) {
-    background-color: rgba(black, .5);
+      background-color: rgba(black, .5);
     }
     &:before {
+      @media (min-width: $screen-md-min) {
       content: ' ';
       position: fixed;
       width: 100%;
@@ -334,6 +335,7 @@ div.expand {
       background-size: cover;
       will-change: transform;
       z-index: -2;
+      }
     }
   .training-session {
     width: 100%;
@@ -421,6 +423,7 @@ video#bgvid {
   }
 }
 .close-background {
+  display: block;
   background-image: url("../elements/close-image.jpeg");
   filter: grayscale(1) brightness(.8);
   background-repeat: no-repeat;
@@ -428,7 +431,7 @@ video#bgvid {
   height: 100%;
   width: 100%;
   background-size: cover;
-  @media (min-width: $screen-md-min) {
+  @media (min-width: $screen-sm-min) {
     display: none;
   }
 }
@@ -453,7 +456,7 @@ video#bgvid {
 }
 
 .dl-horizontal {
-  filter: blur(1.5px);
+  filter: blur(1px);
 }
 
 .consultation-wrapper {
@@ -497,6 +500,24 @@ video#bgvid {
 }
 .podcasting-overlay {
   background-image: linear-gradient(rgba(256, 256, 256, .1), white);
+}
+
+.elvanto-wrapper {
+  background-image: url("../elements/elvanto-icon.png");
+  background-color: #323232;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 100% 20%;
+}
+.elvanto-overlay {
+  background-image: linear-gradient(rgba(white,0) 15%, rgba(white,1));
+  h1,h2,h3 {
+    color: white !important;
+  }
+  a {
+    color: $primary-highlight !important;
+  }
 }
 
 .status-overlay {

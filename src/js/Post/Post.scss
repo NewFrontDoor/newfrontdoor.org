@@ -40,7 +40,7 @@
 			margin: 0 15px 0 0;
 			max-height: 50px;
 			@media (min-width: $screen-md-min) {
-				max-height: auto;
+				max-height: none;
 			}
 		}
 }
