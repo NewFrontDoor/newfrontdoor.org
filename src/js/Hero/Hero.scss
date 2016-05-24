@@ -27,6 +27,15 @@
   background-size: cover;
   background-position: center 75%;
   background-image: url("../../elements/buildings.jpeg");
+	&:before {
+    content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-image: linear-gradient(to top left,rgba(256,256,256,0),rgba(256,256,256,0) 60%,rgba(0,0,0,.4));
+  }
 }
 
 :local .content {

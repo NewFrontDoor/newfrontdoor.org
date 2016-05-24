@@ -34,3 +34,17 @@ i {
   color: $primary-highlight;
   padding-right: 10px;
 }
+
+.documentation-overlay {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-image: linear-gradient(rgba(256, 256, 256, .6), white 50%, white), url("../../elements/books.jpg");
+}
+
+.status-overlay {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-image: linear-gradient(rgba(256, 256, 256, .6), white 50%, white), url("../../elements/matrix.jpg");
+}

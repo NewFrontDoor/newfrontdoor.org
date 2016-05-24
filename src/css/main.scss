@@ -442,3 +442,18 @@ video#bgvid {
     }
   }
 }
+
+.dl-horizontal {
+  filter: blur(1.5px);
+}
+
+.consultation-wrapper {
+  background-image: url("../elements/skilift.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 0 -200px;
+}
+.consultation-overlay {
+  background-image: linear-gradient(rgba(256, 256, 256, .6), white);
+}

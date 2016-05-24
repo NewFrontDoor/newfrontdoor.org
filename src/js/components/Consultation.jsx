@@ -3,6 +3,8 @@ import {Index} from '../Index/index.jsx';
 
 export const Consultation = () => (
 	<Index>
+	<div className="consultation-wrapper">
+	<div className="consultation-overlay">
 		<div className="site-wrapper site-wrapper-padding">
 			<h1>Consultation</h1>
 			<section>
@@ -58,5 +60,7 @@ export const Consultation = () => (
 				<p>For smaller churches, smaller parachurch ministries (under 50 adults average attendance) and for church plants we can negotiate a lower consultancy fee.</p>
 			</section>
 		</div>
+	</div>
+	</div>
 	</Index>
 );
