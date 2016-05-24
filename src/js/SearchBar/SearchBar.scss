@@ -7,44 +7,54 @@
   position: fixed;
   top: 0;
   left: 0;
-  margin-left: -100%;
   width: 100%;
   height: 100vh;
   background-color: rgba($text-color, .8);
   z-index: 6;
   color: $search-overlay;
   backdrop-filter:blur(none);
+	transform: scaleX(0);
+	transition-property: opacity, transform;
+	transition-duration: .3s, 0s;
+	transition-timing-function: linear, linear;
+	transition-delay: 0s, .3s;
+
+	@media (min-width: $screen-md-min) {
+		width: 400px;
+		height: 100vh;
+		border-right: 3px solid rgba(darken($text-color, 80%), .4);
+	}
+
+	&.visible {
+		opacity: 1;
+		transform: scaleX(1);
+		transition-delay: 0s, 0s;
+		backdrop-filter: blur(5px);
+	}
+
   a {
     color: white;
   }
-  &.visible {
-    display: block;
-    margin-left: 0px;
-    opacity: 1;
-    transition: opacity .3s linear;
-    backdrop-filter:blur(5px);
-  }
 
-  .search-title {
-    margin-bottom: 0.75vr;
+  .search-title, .results-title {
     lost-flex-container: row;
-    h2 {
-        lost-column: 3/4 0 0px;
+    h2, h3 {
+				width: 100%;
         margin-left: 10px;
         color: $search-overlay;
     }
-    div {
-      lost-column: 1/4;
-      margin: 24px 20px 0 0;
+    a {
+			float: right;
+      margin-right: 60px;
       span {
-        text-align: center;
         cursor: pointer;
         color: $search-overlay;
       }
     }
   }
+
   form {
-    padding: 0 1.25vr;
+    padding: 0 10px;
     height: 60px;
     width: 100%;
     color: black;
@@ -88,23 +98,6 @@
       transition: opacity .5s ease-in;
     }
 
-    .results-title {
-      lost-flex-container: row;
-      h3 {
-        lost-column: 5/6 0 0px;
-        margin-left: 10px;
-        color: $search-overlay;
-      }
-      div {
-        lost-column: 1/6;
-        margin: 24px 20px 0 0;
-        span {
-          text-align: center;
-          cursor: pointer;
-          color: $search-overlay;
-          }
-      }
-    }
     .search-nav {
       margin-top: 10px;
       bottom: 0;
@@ -127,12 +120,6 @@
     padding: 10px;
     lost-column: 1/1;
     font-family: $font-family-sans-serif;
-  }
-  @media (min-width: $screen-md-min) {
-    //display: none;
-    width: 400px;
-    height: 100vh;
-    border-right: 3px solid rgba(darken($text-color, 80%), .4);
   }
   .postscript {
     font-family: $font-family-sans-serif;

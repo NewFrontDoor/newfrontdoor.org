@@ -77,12 +77,12 @@ export class SearchBar extends React.Component {
 		return (
 			<div className={siteClass}>
 				<div className="search-title">
-					<h2>Search menu</h2>
-					<div>
+					<h2>
+						Search menu
 						<a onClick={this.props.onClose}>
-							<span className="fa fa-times-circle fa-2x"></span>
+							<span className="fa fa-times-circle"></span>
 						</a>
-					</div>
+					</h2>
 				</div>
 				<form onSubmit={this.handleSearchSubmit}>
 					<div className="input-group">
@@ -104,12 +104,12 @@ export class SearchBar extends React.Component {
 				</form>
 				<div className={resultsClass}>
 					<div className="results-title">
-						<h3>Results</h3>
-						<div>
+						<h3>
+							Results
 							<a onClick={this.handleCloseResult}>
-								<span className="fa fa-times-circle fa-lg"></span>
+								<span className="fa fa-times-circle"></span>
 							</a>
-						</div>
+						</h3>
 					</div>
 					<div className="results-content">
 						<ul className="list-unstyled">
