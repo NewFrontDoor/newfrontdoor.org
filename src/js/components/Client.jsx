@@ -33,7 +33,7 @@ const blog = {
 
 		return this.posts.slice(begin, end).map(this.context).map(fm).map((post, key) => {
 			const postId = this.postId([key + begin]);
-			const body = trim ? `${post.body.slice(0, trim)}... [View more](blog${postId})` : post.body;
+			const body = trim ? `${post.body.slice(0, trim)}... [View more](/blog${postId})` : post.body;
 			return Object.assign(post, {url: `/blog${postId}`, body, key});
 		});
 	}
@@ -51,7 +51,7 @@ export const Client = () => (
 	<Index headerSize="mini">
 		<Hero mini/>
 		<main role="main">
-			<div className="alerts" className="hidden">
+			<div className="alerts hidden">
 					{content.banners.map((link, key) => (
 						<Alert key={key} type={link.type}>
 							<p dangerouslySetInnerHTML={{__html: link.text}}></p>

@@ -20,18 +20,18 @@ import {Training} from './Training';
 export default(
 	<Route path="/" component={Site}>
 		<IndexRoute component={Main}/>
-		<Route path="client" component={Client}/>
-		<Route path="blog/:blogId" component={Blog}/>
-		<Route path="support" component={Support}/>
-		<Route path="feature" component={Feature}/>
-		<Route path="documentation" component={Documentation}/>
-		<Route path="documentation/:documentId" component={Template}/>
-		<Route path="status" component={Status}/>
-		<Route path="control" component={Control}/>
-		<Route path="about" component={About}/>
-		<Route path="contact" component={Contact}/>
-		<Route path="training" component={Training}/>
-		<Route path="consultation" component={Consultation}/>
-		<Route path="alert" component={Alert}/>
+		<Route path="/client" component={Client}/>
+		<Route path="/blog/:blogId" component={Blog}/>
+		<Route path="/support" component={Support}/>
+		<Route path="/feature" component={Feature}/>
+		<Route path="/documentation" component={Documentation}/>
+		<Route path="/documentation/:documentId" component={Template}/>
+		<Route path="/status" component={Status}/>
+		<Route path="/control" component={Control}/>
+		<Route path="/about" component={About}/>
+		<Route path="/contact" component={Contact}/>
+		<Route path="/training" component={Training}/>
+		<Route path="/consultation" component={Consultation}/>
+		<Route path="/alert" component={Alert}/>
 	</Route>
 );

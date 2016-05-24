@@ -168,10 +168,10 @@ export default {
 			to: '/client'
 		}, {
 			className: 'fa fa-facebook-square',
-			to: 'http://facebook.com/vision100it'
+			target: 'http://facebook.com/vision100it'
 		}, {
 			className: 'fa fa-twitter-square',
-			to: 'http://twitter.com/vision100it'
+			target: 'http://twitter.com/vision100it'
 		}]
 	}, {
 		links: []

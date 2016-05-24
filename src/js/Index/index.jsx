@@ -21,8 +21,7 @@ export class Index extends React.Component {
 		this.setState({showSearch: true});
 	}
 
-	handleCloseSearch(event) {
-		event.preventDefault();
+	handleCloseSearch() {
 		this.setState({showSearch: false});
 	}
 

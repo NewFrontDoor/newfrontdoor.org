@@ -113,9 +113,9 @@ export class SearchBar extends React.Component {
 					</div>
 					<div className="results-content">
 						<ul className="list-unstyled">
-							{this.state.searchResults.map((res, key) => (
+							{this.state.searchResults.map((item, key) => (
 								<li key={key}>
-									<Link to={res.id}>{res.title}</Link>
+									<Link to={`/${item.id}`} onClick={this.props.onClose}>{item.title}</Link>
 								</li>
 							))}
 						</ul>

@@ -8,7 +8,7 @@ const imageContext = require.context('../../elements');
 export const Post = props => (
 	<section className={styles.post}>
 		<header className={styles.header}>
-			<h2 className={styles.title}><a href={props.url}>{props.title}</a></h2>
+			<h2 className={styles.title}><Link to={props.url}>{props.title}</Link></h2>
 			<p className={styles.meta}>
 				<span className={styles.author}>By&nbsp;
 					<a href="#">{props.author.name}</a>

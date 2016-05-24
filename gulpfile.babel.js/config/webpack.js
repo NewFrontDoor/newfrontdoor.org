@@ -13,6 +13,7 @@ import vr from 'postcss-vertical-rhythm';
 import webpack from 'webpack';
 import WebpackNotifierPlugin from 'webpack-notifier';
 import argvSetEnv from 'argv-set-env';
+import LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
 
 import {trimExtension} from '../lib';
 import packageJson from '../../package.json';
@@ -134,6 +135,7 @@ function getProdConfig() {
 			new webpack.optimize.UglifyJsPlugin(),
 			new webpack.optimize.OccurenceOrderPlugin(),
 			new webpack.optimize.AggressiveMergingPlugin(),
+			new LodashModuleReplacementPlugin(),
 			new ExtractTextPlugin('[name].min.css', {
 				allChunks: true
 			}),

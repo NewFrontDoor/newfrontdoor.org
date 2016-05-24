@@ -38,7 +38,7 @@ function handleOnClick(event) {
 
 const RemarkLink = props => {
 	if (props.href) {
-		return (<Link to="" onClick={handleOnClick} {...props}>{props.children}</Link>);
+		return (<Link to={props.href} {...props}>{props.children}</Link>);
 	}
 	return (<Link {...props}>{props.children}</Link>);
 };

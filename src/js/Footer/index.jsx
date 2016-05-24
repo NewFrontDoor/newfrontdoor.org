@@ -5,6 +5,24 @@ import {Link} from 'react-router';
 import content from '../content';
 import styles from './Footer.scss';
 
+const FooterItem = props => {
+	if (props.target) {
+		return (<a href={props.target}>{props.text}
+			<span className={props.className}></span>
+		</a>);
+	}
+	return (<Link to={props.to}>{props.text}
+		<span className={props.className}></span>
+	</Link>);
+};
+
+FooterItem.propTypes = {
+	className: React.PropTypes.string,
+	target: React.PropTypes.string,
+	text: React.PropTypes.string,
+	to: React.PropTypes.string
+};
+
 export class Footer extends React.Component {
 	constructor() {
 		super();
@@ -47,9 +65,7 @@ export class Footer extends React.Component {
 						</header>
 						<ul className="list-unstyled">
 							{list.links.map((item, key) => <li key={key}>
-								<Link to={item.to}>{item.text}
-									<span className={item.className}></span>
-								</Link>
+								<FooterItem {...item}/>
 							</li>)}
 						</ul>
 					</div>)}
