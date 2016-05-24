@@ -2,7 +2,7 @@
 
 footer {
   background-color: white;
-  @media (min-width: $screen-sm-min) {
+  @media (min-width: $screen-md-min) {
   	background-color: $footer-bg;
   	color: #fff;
     // sticky footer
@@ -16,7 +16,7 @@ footer {
 :local .wrap {
 		padding: 15px;
 		lost-center: 980px;
-		@media (min-width: $screen-sm-min) {
+		@media (min-width: $screen-md-min) {
 				// padding: 0;
 		}
 }
@@ -40,26 +40,26 @@ footer {
 			  a {
 				    color: black;
 				    margin: 0 4px;
-				    @media (min-width: $screen-sm-min) {
+				    @media (min-width: $screen-md-min) {
 				      color: $footer-text;
 				      margin: 0;
 				    }
 			  }
 		}
 
-		@media (min-width: $screen-sm-min) {
+		@media (min-width: $screen-md-min) {
 				lost-column: 2/11;
 				font-size: 1rem;
 		}
 
 		&:nth-child(-n+2) {
-				@media (min-width: $screen-sm-min) {
+				@media (min-width: $screen-md-min) {
 						text-align: right;
 				}
 		}
 
 		&:nth-child(n+3) {
-				@media (min-width: $screen-sm-min) {
+				@media (min-width: $screen-md-min) {
 						text-align: left;
 						lost-move: 3/11;
 				}
@@ -80,7 +80,7 @@ footer {
 					border-bottom: none;
 				}
 
-			  @media (min-width: $screen-sm-min) {
+			  @media (min-width: $screen-md-min) {
 			      lost-column: 3/11;
 						lost-move: -4/11;
 			      background-position-y: 25px;

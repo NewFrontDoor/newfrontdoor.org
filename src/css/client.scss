@@ -1,9 +1,9 @@
 .client-wrapper {
   overflow: hidden;
   padding: 15px;
-  padding-top: 50px;
+  //padding-top: 50px;
   lost-utility: clearfix;
-  lost-center: 500px;
+  lost-center: 800px;
   section {
     lost-column: 1/1;
   }
@@ -14,6 +14,6 @@
 }
 @media (min-width: $screen-md-min) {
   .site-wrapper-padding {
-      padding-top: 107px;
+      //padding-top: 107px;
   }
 }
