@@ -292,13 +292,28 @@ div.expand {
       }
     }*/
     .product-pair {
-      div {
+      lost-flex-container: row;
+      &:nth-child(even) {
+        @media (min-width: $screen-md-min) {
+          flex-direction: row-reverse;
+        }
+      }
+      .detail {
         lost-column: 1/1 flex;
-        img {
+        @media (min-width: $screen-md-min) {
           lost-column: 1/2 flex;
-          margin-top: 1.333vr;
+        }
+      }
+      .image {
+        lost-column: 1/1 flex;
+        margin-top: 1.333vr;
+        img {
+          width: 40%;
         }
         @media (min-width: $screen-md-min) {
+          img {
+            width: auto;
+          }
           lost-column: 1/2 flex;
         }
       }
