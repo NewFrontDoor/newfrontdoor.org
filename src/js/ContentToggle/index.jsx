@@ -21,7 +21,7 @@ export class ContentToggle extends React.Component {
 
 		return (
 			<div>
-				<a href="#" onClick={this.handleToggle}>
+				<a Link="#" onClick={this.handleToggle}>
 					{this.props.toggleText}
 				</a>
 				<div className={classes}>

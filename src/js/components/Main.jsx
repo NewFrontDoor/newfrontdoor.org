@@ -1,6 +1,7 @@
 import React from 'react';
 import {Element} from 'react-scroll';
 import Waypoint from 'react-waypoint';
+import {ContentToggle} from '../ContentToggle';
 
 import {Hero} from '../Hero';
 import {Index} from '../Index/index.jsx';
@@ -9,6 +10,7 @@ import content from '../content';
 import first from '../content/featured/first.html';
 import second from '../content/featured/second.html';
 import third from '../content/featured/third.html';
+import thirdTwo from '../content/featured/third-two.html';
 import fourth from '../content/featured/fourth.html';
 import fifth from '../content/featured/fifth.html';
 import sixth from '../content/featured/sixth.html';
@@ -24,6 +26,9 @@ export class Main extends React.Component {
 	}
 	rawThird() {
 		return {__html: third};
+	}
+	rawThirdTwo() {
+		return {__html: thirdTwo};
 	}
 	rawFourth() {
 		return {__html: fourth};
@@ -63,6 +68,9 @@ export class Main extends React.Component {
 					<Element name="tools" className="featured-third featured-light">
 						<div className="site-wrapper site-wrapper-padding">
 							<section dangerouslySetInnerHTML={this.rawThird()}></section>
+							<ContentToggle toggleText="Supported tools and products">
+								<section dangerouslySetInnerHTML={this.rawThirdTwo()}></section>
+							</ContentToggle>
 						</div>
 					</Element>
 					<Element name="events" className="featured-fourth featured-dark">
