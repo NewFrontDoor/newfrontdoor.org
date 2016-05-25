@@ -349,7 +349,10 @@ div.expand {
 .featured-sixth {
   lost-center: 100%;
   lost-align: top-center;
-  height: 100vh;
+  height: 500px;
+  @media (min-width: $screen-md-min) {
+    height: 100vh;
+  }
   color: $footer-text;
   .input-default, .btn-default {
     background: rgba((white), .8);
@@ -423,6 +426,7 @@ video#bgvid {
   }
 }
 .close-background {
+  @media (min-width: $screen-sm-min) {
   display: block;
   background-image: url("../elements/close-image.jpeg");
   filter: grayscale(1) brightness(.8);
@@ -431,8 +435,6 @@ video#bgvid {
   height: 100%;
   width: 100%;
   background-size: cover;
-  @media (min-width: $screen-sm-min) {
-    display: none;
   }
 }
 .close-content {
