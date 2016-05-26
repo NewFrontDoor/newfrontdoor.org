@@ -352,6 +352,8 @@ div.expand {
   height: 500px;
   @media (min-width: $screen-md-min) {
     height: 100vh;
+    /*background-color: $text-color;
+    z-index: -1;*/
   }
   color: $footer-text;
   .input-default, .btn-default {
@@ -401,12 +403,16 @@ div.expand {
     text-shadow: 1px 1px 2px black;
     min-height: 518px;
     // view height minus footer height minus nav height
-    height: calc(100vh - #{$footer-height} - 60px);
+    //height: calc(100vh - #{$footer-height} - 60px);
+    height: 518px;
     .social {
       a {
         color: white;
       }
     }
+  }
+  @media (min-width: $screen-xl-min) {
+    height: calc(100vh - #{$footer-height} - 120px);
   }
 }
 
@@ -423,9 +429,14 @@ video#bgvid {
   transform: translateX(-50%) translateY(-50%);
   @media (min-width: $screen-md-min) {
     display: block;
+    top: 45%;
+  }
+  @media (min-width: $screen-lg-min) {
+    display: block;
+    top: 35%;
   }
 }
-.close-background {
+/*.close-background {
   @media (min-width: $screen-sm-min) {
   display: block;
   background-image: url("../elements/close-image.jpeg");
@@ -436,7 +447,7 @@ video#bgvid {
   width: 100%;
   background-size: cover;
   }
-}
+}*/
 .close-content {
   lost-align: center;
   max-width: 980px;

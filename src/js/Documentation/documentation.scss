@@ -44,3 +44,51 @@ i {
 	background-attachment: fixed;
 	background-image: linear-gradient(rgba(256, 256, 256, .6), white 50%, white), url("../../elements/books.jpg");
 }
+
+//search stuff
+.search-title, .results-title {
+	lost-flex-container: row;
+	h2, h3 {
+			width: 100%;
+	}
+	a {
+		float: right;
+		//margin-right: 60px;
+		span {
+			cursor: pointer;
+			//color: $search-overlay;
+		}
+	}
+}
+.search {
+}
+
+.search-results {
+	position: relative;
+	width: 100%;
+	max-height: 0;
+	transition: max-height .5s ease-out;
+	padding-top: -100%;
+	//border-color: rgba(lighten($text-color, 90%), .2);
+	//border-style: solid;
+	//border-color: rgba(darken($text-color, 80%), .4);
+	//background-color: rgba(darken($text-color, 90%), .2);
+	//border-width: 2px 0 1px 0;
+	overflow: hidden;
+
+	.results-content {
+		lost-flex-container: row;
+		opacity: 0;
+		transition: opacity .5s ease-out;
+		text-transform: none;
+	}
+
+	&.visible {
+		max-height: 100%;
+		transition: max-height .5s;
+	}
+	&.visible .results-content {
+		opacity: 1;
+		transition: opacity .5s ease-in;
+	}
+}

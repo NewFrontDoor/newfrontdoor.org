@@ -66,6 +66,7 @@ $border-radius-small: 3px !default;
 $screen-sm-min: 768px !default;
 $screen-md-min: 992px !default;
 $screen-lg-min: 1200px !default;
+$screen-xl-min: 2000px !default;
 
 // So media queries don't overlap when required, provide a maximum
 $screen-xs-max: ($screen-sm-min - 1) !default;

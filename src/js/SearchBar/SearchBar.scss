@@ -87,6 +87,7 @@
       lost-flex-container: row;
       opacity: 0;
       transition: opacity .5s ease-out;
+      text-transform: none;
     }
 
     &.visible {
