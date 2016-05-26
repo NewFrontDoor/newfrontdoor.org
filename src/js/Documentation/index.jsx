@@ -8,7 +8,6 @@ export const Documentation = () => (
 		<div className="documentation-overlay">
 			<div className="site-wrapper site-wrapper-padding">
 				<h1>Help + how to</h1>
-
 				<div className="search-wrapper">
 					<p>
 						Vision 100 IT are constantly updating and improving our documentation, and adding new documentation as new tools and procedures arise. If you notice anything is incomplete, or would like documentation on a particular topic, <Link to="/feature">let us know!</Link>
@@ -18,6 +17,29 @@ export const Documentation = () => (
 							<input type="search" className="form-control input-lg" placeholder="Search all documents on V100IT..."/>
 						</div>
 					</form>
+					<div className="results">
+						<h3>Search Results</h3>
+						<dl className="">
+							<dt>
+								List item one
+							</dt>
+							<dd>
+								First few lines of list item one...
+							</dd>
+							<dt>
+								List item two
+							</dt>
+							<dd>
+								First few lines of list item two...
+							</dd>
+							<dt>
+								List item three
+							</dt>
+							<dd>
+								First few lines of list item three...
+							</dd>
+						</dl>
+					</div>
 				</div>
 				<h2>Vision 100 IT documentation</h2>
 				<div className="list-wrapper">

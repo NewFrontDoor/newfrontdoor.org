@@ -62,16 +62,16 @@ export default {
 			text: 'News',
 			to: '/client'
 		}, {
-			text: 'Help + How-to',
+			text: 'Help +<br />How-to',
 			to: '/documentation'
 		}, {
-			text: 'Feature Request',
+			text: 'Feature<br />Request',
 			to: '/feature'
 		}, {
-			text: 'Support Request',
+			text: 'Support<br />Request',
 			to: '/support'
 		}, {
-			text: 'System Status',
+			text: 'System<br />Status',
 			to: '/status'
 		}, {
 			text: 'About Us',
