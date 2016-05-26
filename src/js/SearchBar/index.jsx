@@ -120,7 +120,7 @@ export class SearchBar extends React.Component {
 							))}
 						</ul>
 					</div>
-					<div className="search-nav small">
+					<div className="search-nav small hidden">
 						<p><Link to="/documentation?search=poop">more</Link></p>
 					</div>
 				</div>
