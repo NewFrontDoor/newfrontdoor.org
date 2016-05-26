@@ -278,11 +278,12 @@ div.expand {
 }
 //featured 3 styles
 .featured-third {
+  height: auto;
+  @media (min-width: $screen-md-min) {
+    height: calc(100vh - 3vr);
+  }
   section.description {
-    height: auto;
-    @media (min-width: $screen-md-min) {
-      height: calc(100vh - 3vr);
-    }
+
   }
   section.products {
     .product-pair {
