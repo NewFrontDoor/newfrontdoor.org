@@ -139,10 +139,10 @@ export class Documentation extends React.Component {
 										Making the most of your new website - <i>coming soon</i>
 									</li>
 									<li>
-										<a href="/documentation/sparkleshare">Sparkleshare</a>
+										<a href="/elvanto">Elvanto</a>
 									</li>
 									<li>
-										<a href="/elvanto">Elvanto</a>
+										<a href="/sparkleshare">Sparkleshare</a>
 									</li>
 									<li>
 										<a href="/podcasting">Podcasting</a>
@@ -159,7 +159,12 @@ export class Documentation extends React.Component {
 								<h3>
 									<i className="fa fa-lock fa-fw"></i>Keeping your systems up to date</h3>
 								<ul>
-									<li>Website refresh recommendations - <i>coming soon</i></li>
+									<li>
+										Website refresh recommendations - <i>coming soon</i>
+									</li>
+									<li>
+										<a href="/documentation/sparkleshare">Administrating Sparkleshare</a>
+									</li>
 									<li>
 										<a href="/documentation/checklist">Checklist for on-boarding and finishing with staff members</a>
 									</li>
