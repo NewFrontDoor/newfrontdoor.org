@@ -36,7 +36,7 @@ export default {
 		]
 	},
 	scripts: {
-		src: src('js/**/*.js'),
+		src: src('**/*.js'),
 		dest: dest(),
 		bundle: src('js')
 	},

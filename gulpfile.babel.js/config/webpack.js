@@ -63,7 +63,7 @@ function getCommonConfig() {
 	return {
 		context: path.resolve(paths.bundle.src),
 		entry: {
-			main: ['./js/index.jsx']
+			main: ['./index.jsx']
 		},
 		output: {
 			filename: 'index.js',
