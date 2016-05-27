@@ -1,19 +1,21 @@
 import React from 'react';
 import styles from './Card.scss';
 
-export const Card = props => {
+const imageContext = require.context('../../elements');
+
+export const Card = ({className, background, imagePadding, link, image, name, children}) => {
 	const style = {
-		backgroundColor: props.background
+		backgroundColor: background
 	};
 	const imageStyle = {
-		padding: props.imagePadding
+		padding: imagePadding
 	};
 	return (
-		<div className={props.className} style={style}>
-			<a href={props.link}>
-			<img src={props.image} style={imageStyle}></img>
-			<h3 hidden>{props.name}</h3>
-			<p>{props.children}</p>
+		<div className={className} style={style}>
+			<a href={link}>
+				<img src={imageContext(image)} style={imageStyle}></img>
+				<h3 hidden>{name}</h3>
+				<p>{children}</p>
 			</a>
 		</div>
 	);
