@@ -10,7 +10,8 @@ export class ContentToggle extends React.Component {
 		this.handleToggle = this.handleToggle.bind(this);
 	}
 
-	handleToggle() {
+	handleToggle(event) {
+		event.preventDefault();
 		this.setState({
 			isVisible: !this.state.isVisible
 		});

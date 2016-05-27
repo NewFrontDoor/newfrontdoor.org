@@ -1,10 +1,10 @@
 :local .toggle {
-  max-height: 0;
-  transition: max-height .5s, opacity .5s ease-out;
+  height: 0;
+  transition: height .5s, opacity .5s ease-out;
   opacity: 0;
 
   &.visible {
-    max-height: 100vh;
+    height: auto;
     opacity: 1;
   }
 }

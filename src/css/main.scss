@@ -138,53 +138,12 @@ blockquote {
   }
 }
 
-
-
 .expand {
   height: auto;
   max-width: 400px;
   margin: auto;
   font-size: 120%;
   text-align: center;
-}
-//featured 3 styles
-.featured-third {
-  height: auto;
-  @media (min-width: $screen-md-min) {
-    height: calc(100vh - 3vr);
-  }
-  section.description {
-
-  }
-  section.products {
-    .product-pair {
-      lost-flex-container: row;
-      &:nth-child(even) {
-        @media (min-width: $screen-md-min) {
-          flex-direction: row-reverse;
-        }
-      }
-      .detail {
-        lost-column: 1/1 flex;
-        @media (min-width: $screen-md-min) {
-          lost-column: 1/2 flex;
-        }
-      }
-      .image {
-        lost-column: 1/1 flex;
-        margin-top: 1.333vr;
-        img {
-          width: 40%;
-        }
-        @media (min-width: $screen-md-min) {
-          img {
-            width: auto;
-          }
-          lost-column: 1/2 flex;
-        }
-      }
-    }
-  }
 }
 
 //featured 4 styles
