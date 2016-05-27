@@ -1,0 +1,25 @@
+@import "../../css/variables";
+
+:local .examples {
+	lost-flex-container: row;
+}
+:local .example {
+	lost-column: 1/1;
+	text-align: center;
+
+	p {
+		max-height: 0;
+		overflow: hidden;
+	}
+
+	@media (min-width: $screen-md-min) {
+		lost-column: 1/3;
+		.collapse {
+			filter: opacity(0);
+			transition: filter 0.5s;
+		}
+		.collapse:hover {
+			filter: opacity(1);
+		}
+	}
+}

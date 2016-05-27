@@ -1,0 +1,58 @@
+@import "../../css/variables";
+:local .team-collection {
+	display: none;
+	@media (min-width: $screen-md-min) {
+		lost-center: 980px;
+		div {
+			lost-column: 1/6 0 40px;
+			margin-bottom: 40px;
+			height: 150px;
+			img {
+				width: 100px;
+				box-shadow: 0 10px 16px 0 rgba($primary-highlight,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+				&:hover {
+					opacity: 0.2;
+					box-shadow: 0 20px 32px 0 rgba($primary-highlight,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+					background-color: red;
+				}
+			}
+		}
+	}
+}
+:local .team-tiled {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	.tile {
+		img {
+			width: auto;
+		}
+		flex: 0 0 30%;
+		margin: 0;
+		padding: 0;
+	}
+	@media (min-width: $screen-md-min) {
+		display: none;
+	}
+}
+:local .snapshots {
+	lost-center: 980px;
+	flex-wrap: wrap;
+	font-family: $font-family-sans-serif;
+	margin-bottom: 40px;
+
+	div {
+		lost-column: 1/2;
+		text-align: center;
+	}
+
+	span {
+		margin-bottom: 10px;
+	}
+
+	@media (min-width: $screen-md-min) {
+		div {
+			lost-column: 1/4;
+		}
+	}
+}
