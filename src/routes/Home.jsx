@@ -16,7 +16,7 @@ import fifth from '../content/featured/fifth.html';
 import sixth from '../content/featured/sixth.html';
 import video from '../elements/clip2.mp4';
 
-export class Main extends React.Component {
+export class Home extends React.Component {
 
 	rawFirst() {
 		return {__html: first};

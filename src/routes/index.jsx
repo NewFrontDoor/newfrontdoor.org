@@ -11,7 +11,7 @@ import {Consultation} from './Consultation';
 import {Contact} from './Contact';
 import {Control} from './Control';
 import {Feature} from './Feature';
-import {Main} from './Main';
+import {Home} from './Home';
 import {Site} from './Site';
 import {Status} from './Status';
 import {Support} from './Support';
@@ -21,8 +21,8 @@ import {Podcasting} from './Podcasting';
 import {Elvanto} from './Elvanto';
 
 export default(
-	<Route path="/" component={Site}>
-		<IndexRoute component={Main}/>
+	<Route component={Site}>
+		<Route path="/" component={Home}/>
 		<Route path="/client" component={Client}/>
 		<Route path="/blog/:blogId" component={Blog}/>
 		<Route path="/support" component={Support}/>

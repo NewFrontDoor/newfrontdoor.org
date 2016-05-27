@@ -112,7 +112,7 @@ function getDevConfig() {
 			new ExtractTextPlugin('[name].css', {
 				allChunks: true
 			}),
-			new StaticSiteGeneratorPlugin('main', staticPaths, {})
+			new StaticSiteGeneratorPlugin('main', staticPaths, {}, {window: {}})
 		])
 	};
 }
@@ -142,7 +142,7 @@ function getProdConfig() {
 			new ExtractTextPlugin('[name].min.css', {
 				allChunks: true
 			}),
-			new StaticSiteGeneratorPlugin('main', staticPaths, {})
+			new StaticSiteGeneratorPlugin('main', staticPaths, {}, {window: {}})
 		])
 	};
 }

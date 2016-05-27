@@ -85,7 +85,7 @@
     "remove-markdown": "0.1.0",
     "sass-loader": "3.2.0",
     "slash": "1.0.0",
-    "static-site-generator-webpack-plugin": "BarryThePenguin/static-site-generator-webpack-plugin#patch-1",
+    "static-site-generator-webpack-plugin": "2.1.0",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "1.13.1",

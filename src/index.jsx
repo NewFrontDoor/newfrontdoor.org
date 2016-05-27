@@ -1,26 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactDOMServer from 'react-dom/server';
-import {Router, browserHistory, createMemoryHistory} from 'react-router';
+import {Router, RouterContext, match, browserHistory, createMemoryHistory} from 'react-router';
 import {scroller, animateScroll} from 'react-scroll';
-import {Head} from './components/Head';
+import {Root} from './routes/Root';
 import Routes from './routes/index.jsx';
-
-const Root = ({title, reactApp}) => (
-	<html>
-		<Head title={title}/>
-		<body>
-			<div id="content" dangerouslySetInnerHTML={reactApp}/>
-			<script src="http://localhost:3000/webpack-dev-server.js"></script>
-			<script src="/index.js"></script>
-		</body>
-	</html>
-);
-
-Root.propTypes = {
-	title: React.PropTypes.string.isRequired,
-	reactApp: React.PropTypes.shape({__html: React.PropTypes.string}).isRequired
-};
 
 function hashLinkScroll() {
 	const {hash} = window.location;
@@ -48,11 +32,18 @@ if (typeof document !== 'undefined') {
 }
 
 export default (locals, callback) => {
-	const history = createMemoryHistory(locals.path);
-	const reactApp = {
-		__html: ReactDOMServer.renderToString(<Router history={history}>{Routes}</Router>)
-	};
-	const title = 'Vision 100 IT';
-	const html = ReactDOMServer.renderToStaticMarkup(<Root title={title} reactApp={reactApp}/>);
-	callback(null, `<!DOCTYPE html>${html}`);
+	const history = createMemoryHistory();
+	const location = history.createLocation(locals.path);
+
+	return match({
+		location,
+		routes: Routes
+	}, (error, redirectLocation, renderProps) => {
+		const html = ReactDOMServer.renderToStaticMarkup(
+			<Root location={location}>
+				<RouterContext {...renderProps}/>
+			</Root>
+		);
+		return callback(null, html);
+	});
 };
