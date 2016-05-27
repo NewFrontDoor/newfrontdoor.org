@@ -29,6 +29,7 @@ export const FeaturedWho = props => (
 				<p>20+ webpages served</p>
 			</div>
 		</div>
+
 		<p>
 			Vision 100 IT are a national team of passionate IT and web development engineers, ministry leaders and management professionals who voluntarily build and maintain IT systems, training and educating our clients on the foundation of years of collective knowledge gleaned from within the IT industry.
 		</p>
@@ -46,45 +47,21 @@ export const FeaturedWho = props => (
 				<span className="fa fa-angle-down fa-3x"></span>
 			</Link>
 		</div>
-		<div className="team-collection">
-			<div className="team-member-1">
-				<img src={imageContext("./christian.jpg")}/>
-			</div>
-			<div className="team-member-2">
-				<img src={imageContext("./jonno.jpg")}/>
-			</div>
-			<div className="team-member-3">
-				<img src={imageContext("./emile.jpg")}/>
-			</div>
-			<div className="team-member-4">
-				<img src={imageContext("./gibbo.jpg")}/>
-			</div>
-			<div className="team-member-5">
-				<img src={imageContext("./alan.jpg")}/>
-			</div>
-			<div className="team-member-6">
-				<img src={imageContext("./chris.jpg")}/>
-			</div>
+		<div className={styles.collection}>
+			<div><img src={imageContext("./christian.jpg")}/></div>
+			<div><img src={imageContext("./jonno.jpg")}/></div>
+			<div><img src={imageContext("./emile.jpg")}/></div>
+			<div><img src={imageContext("./gibbo.jpg")}/></div>
+			<div><img src={imageContext("./alan.jpg")}/></div>
+			<div><img src={imageContext("./chris.jpg")}/></div>
 		</div>
-		<div className="team-tiled">
-			<div className="tile">
-				<img src={imageContext("./christian-tile.jpg")}/>
-			</div>
-			<div className="tile">
-				<img src={imageContext("./jonno-tile.jpg")}/>
-			</div>
-			<div className="tile">
-				<img src={imageContext("./emile-tile.jpg")}/>
-			</div>
-			<div className="tile">
-				<img src={imageContext("./gibbo-tile.jpg")}/>
-			</div>
-			<div className="tile">
-				<img src={imageContext("./alan-tile.jpg")}/>
-			</div>
-			<div className="tile">
-				<img src={imageContext("./chris-tile.jpg")}/>
-			</div>
+		<div className={styles.tiled}>
+			<div><img src={imageContext("./christian-tile.jpg")}/></div>
+			<div><img src={imageContext("./jonno-tile.jpg")}/></div>
+			<div><img src={imageContext("./emile-tile.jpg")}/></div>
+			<div><img src={imageContext("./gibbo-tile.jpg")}/></div>
+			<div><img src={imageContext("./alan-tile.jpg")}/></div>
+			<div><img src={imageContext("./chris-tile.jpg")}/></div>
 		</div>
 	</Featured>
 );
