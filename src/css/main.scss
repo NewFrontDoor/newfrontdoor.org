@@ -200,15 +200,21 @@ blockquote {
   background-size: auto;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: 100% 20%;
+  background-position: -25% 20%;
 }
 .elvanto-overlay {
-  background-image: linear-gradient(rgba(white,0) 15%, rgba(white,1));
+  //background-image: linear-gradient(rgba(white,0) 15%, rgba(white,1));
   h1,h2,h3 {
-    color: white !important;
+    color: white;
+  }
+  p {
+    color: $primary-highlight;
+  }
+  blockquote {
+    color: $primary-highlight;
   }
   a {
-    color: $primary-highlight !important;
+    color: $footer-text;
   }
 }
 
