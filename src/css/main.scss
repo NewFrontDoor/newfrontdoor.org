@@ -35,11 +35,8 @@
 @lost flexbox flex;
 
 .container {
-  width: 100%;
-  display: inline-block;
-  @media (min-width: $screen-sm-min) {
-    margin-bottom: $footer-height;
-  }
+  lost-flex-container: column;
+  min-height: 100vh;
 }
 
 .site-wrapper {
@@ -55,13 +52,6 @@
   .site-wrapper-padding {
       padding-top: 107px;
   }
-}
-
-main {
-		lost-column: 1/1;
-		@media (min-width: $screen-md-min) {
-				lost-column: 3/3;
-		}
 }
 
 article {
@@ -146,156 +136,14 @@ blockquote {
   text-align: center;
 }
 
-//featured 4 styles
-.featured-fourth {
-    overflow: hidden;
-    position: relative;
-    @media (min-width: $screen-md-min) {
-      background-color: rgba(black, .5);
-    }
-    &:before {
-      @media (min-width: $screen-md-min) {
-      content: ' ';
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background-color: black;
-      background: url("../elements/speed.jpg") no-repeat center center;
-      background-size: cover;
-      will-change: transform;
-      z-index: -2;
-      }
-    }
-  .training-session {
-    width: 100%;
-    height: auto;
-    margin: 40px 0 40px 0;
-    padding: 0 10px 10px 10px;
-  }
-}
+.input-default, .btn-default {
+	background: rgba((white), .8);
+	border: 1px solid grey;
+	border-radius: 0;
+	color: black;
 
-//featured 6 styles
-.featured-sixth {
-  lost-center: 100%;
-  lost-align: top-center;
-  height: 500px;
   @media (min-width: $screen-md-min) {
-    height: 100vh;
-    /*background-color: $text-color;
-    z-index: -1;*/
-  }
-  color: $footer-text;
-  .input-default, .btn-default {
-    background: rgba((white), .8);
     border: none;
-    border-radius: 0;
-    color: black;
-  }
-  form {
-    display: flex;
-    flex-wrap: wrap;
-    .group-1 {
-      border: 1px solid grey;
-    flex: 1 0 100%;
-    }
-    .group-1:first-child {
-      padding-right: 20px;
-    }
-    .group-2 {
-    flex: 1 0 100%;
-    border: 1px solid grey;
-    }
-  }
-  .social {
-    padding-top: 20px;
-    lost-center: 300px;
-    text-shadow: none;
-    a {
-      color: black;
-    }
-    div {
-      flex: 1 0 25%;
-      text-align: center;
-      height: auto;
-    }
-  }
-  @media (min-width: $screen-md-min) {
-    form {
-      .group-1 {
-      flex: 1 0 50%;
-      border: none;
-      }
-      .group-2 {
-        border: none;
-      }
-    }
-    text-shadow: 1px 1px 2px black;
-    min-height: 518px;
-    // view height minus footer height minus nav height
-    //height: calc(100vh - #{$footer-height} - 60px);
-    height: 518px;
-    .social {
-      a {
-        color: white;
-      }
-    }
-  }
-  @media (min-width: $screen-xl-min) {
-    height: calc(100vh - #{$footer-height} - 120px);
-  }
-}
-
-video#bgvid {
-  display: none;
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: 100%;
-  height: auto;
-  z-index: -1;
-  transform: translateX(-50%) translateY(-50%);
-  @media (min-width: $screen-md-min) {
-    display: block;
-    top: 45%;
-  }
-  @media (min-width: $screen-lg-min) {
-    display: block;
-    top: 35%;
-  }
-}
-/*.close-background {
-  @media (min-width: $screen-sm-min) {
-  display: block;
-  background-image: url("../elements/close-image.jpeg");
-  filter: grayscale(1) brightness(.8);
-  background-repeat: no-repeat;
-  background-position: center 20%;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  }
-}*/
-.close-content {
-  lost-align: center;
-  max-width: 980px;
-  padding-top: 30px;
-  @media (min-width: $screen-md-min) {
-    padding-top: 80px;
-  }
-
-  form {
-    margin:auto;
-    width: 75vw;
-    padding: 10px;
-
-    @media (min-width: $screen-md-min) {
-      width: 50vw;
-      padding-bottom: 20px;
-    }
   }
 }
 

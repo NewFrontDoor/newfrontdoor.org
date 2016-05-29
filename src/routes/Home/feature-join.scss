@@ -1,0 +1,96 @@
+@import "../../css/variables";
+
+:local .feature {
+  lost-center: 100%;
+	position: relative;
+	color: $footer-text;
+
+	@media (min-width: $screen-md-min) {
+		text-shadow: 1px 1px 2px black;
+	}
+}
+
+:local .video {
+	display: none;
+	position: absolute;
+  overflow: hidden;
+  min-width: 100%;
+  min-height: 100%;
+
+	@media (min-width: $screen-md-min) {
+		display: block;
+	}
+
+  video {
+		position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+:local .social {
+  text-shadow: none;
+	margin-bottom: 15px;
+	lost-flex-container: row;
+
+  div {
+    lost-column: 1/2;
+    text-align: center;
+  }
+  a {
+    color: black;
+		@media (min-width: $screen-md-min) {
+			color: white;
+		}
+  }
+}
+
+:local .content {
+  lost-center: 75vw;
+	lost-flex-container: column;
+	position: relative;
+  padding-top: 30px;
+
+  @media (min-width: $screen-md-min) {
+		lost-center: 50vw;
+    padding-top: 80px;
+  }
+
+	form {
+		lost-center: 100%;
+		padding: 10px;
+	}
+}
+
+:local .group1 {
+	lost-column: 1/1;
+
+	@media (min-width: $screen-md-min) {
+		lost-column: 1/2;
+		border: none;
+	}
+}
+
+:local .group2 {
+	lost-column: 1/1;
+
+	@media (min-width: $screen-md-min) {
+		border: none;
+	}
+}
+
+// :local .background {
+//   @media (min-width: $screen-sm-min) {
+// 	  display: block;
+// 	  background-image: url("../../elements/close-image.jpeg");
+// 	  filter: grayscale(1) brightness(.8);
+// 	  background-repeat: no-repeat;
+// 	  background-position: center 20%;
+// 	  height: 100%;
+// 	  width: 100%;
+// 	  background-size: cover;
+//   }
+// }

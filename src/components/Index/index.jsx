@@ -27,7 +27,7 @@ export class Index extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className={styles.content}>
 				<Header size={this.props.headerSize}>
 					<MobileMenu onOpenSearch={this.handleOpenSearch}/>
 					<MainMenu menuItems={this.props.menuItems} onOpenSearch={this.handleOpenSearch}/>

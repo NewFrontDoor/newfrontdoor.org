@@ -3,7 +3,7 @@ import {Element} from 'react-scroll';
 import styles from './Featured.scss';
 
 export const Featured = ({name, className = '', children}) => (
-	<Element className={`${styles.featured} ${className}`} name={name}>
+	<Element className={`${className} ${styles.featured}`} name={name}>
 		<div className={styles.wrapper}>
 			<section>
 				{children}
@@ -13,6 +13,7 @@ export const Featured = ({name, className = '', children}) => (
 );
 
 Featured.propTypes = {
+	styles: React.PropTypes.object,
 	className: React.PropTypes.string,
 	name: Element.propTypes.name,
 	children: React.PropTypes.node

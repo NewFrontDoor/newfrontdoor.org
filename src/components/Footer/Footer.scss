@@ -5,11 +5,6 @@ footer {
   @media (min-width: $screen-md-min) {
   	background-color: $footer-bg;
   	color: #fff;
-    // sticky footer
-    bottom: 0;
-    position: absolute;
-    height: $footer-height;
-    width: 100%;
   }
 }
 
