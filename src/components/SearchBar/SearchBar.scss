@@ -12,8 +12,9 @@
   z-index: 6;
   color: $search-overlay;
   backdrop-filter:blur(none);
+	opacity: 0;
 	transform: translateX(-100%);
-	transition: transform .3s ease-in-out;
+	transition: opacity .3s ease-in-out;
 
 	@media (min-width: $screen-md-min) {
 		width: 400px;
@@ -22,6 +23,7 @@
 	}
 
 	&.visible {
+		opacity: 1;
 		transform: translateX(0);
 		backdrop-filter: blur(5px);
 	}
