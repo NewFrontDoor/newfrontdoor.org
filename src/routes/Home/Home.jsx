@@ -1,7 +1,6 @@
 import React from 'react';
 import Waypoint from 'react-waypoint';
 import styles from './Home.scss';
-import {ContentToggle} from '../../components/ContentToggle';
 
 import {Hero} from '../../components/Hero';
 import {Index} from '../../components/Index/index.jsx';

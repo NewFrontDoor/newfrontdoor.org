@@ -1,8 +1,19 @@
 import React from 'react';
-import {ContentToggle} from '../components/ContentToggle';
+import {Collapse} from '../components/Collapse';
 import {Index} from '../components/Index/index.jsx';
 
 export class Contact extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			isOpen: false
+		};
+		this.handleCollapse = this.handleCollapse.bind(this);
+	}
+	handleCollapse(event) {
+		event.preventDefault();
+		this.setState({isOpen: !this.state.isOpen});
+	}
 	render() {
 		return (
 			<Index>
@@ -29,8 +40,9 @@ export class Contact extends React.Component {
 								</label>
 								<input type="text" name="email" className="form-control" placeholder="Insert a valid email address"/>
 							</div>
-							<ContentToggle toggleText="About our mailing lists">
-								Vision 100 sends out a bunch of stuff via email regularly including:
+							<p><a href="#" onClick={this.handleCollapse}>About our mailing lists</a></p>
+							<Collapse isOpened={this.state.isOpen}>
+								<p>Vision 100 sends out a bunch of stuff via email regularly including:</p>
 								<ul>
 									<li>
 										New features,
@@ -48,8 +60,8 @@ export class Contact extends React.Component {
 										Upcoming events
 									</li>
 								</ul>
-								These emails are sent on a regular predictable timeline entirely reliable and also dependent on how much spare time we have...
-							</ContentToggle>
+								<p>These emails are sent on a regular predictable timeline entirely reliable and also dependent on how much spare time we have...</p>
+							</Collapse>
 							<div>
 								<h3>
 									Mailing address
