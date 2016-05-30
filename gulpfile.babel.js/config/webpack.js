@@ -140,7 +140,7 @@ function getProdConfig() {
 			new webpack.optimize.OccurenceOrderPlugin(),
 			new webpack.optimize.AggressiveMergingPlugin(),
 			new LodashModuleReplacementPlugin(),
-			new ExtractTextPlugin('[name].min.css', {
+			new ExtractTextPlugin('[name].css', {
 				allChunks: true
 			}),
 			new StaticSiteGeneratorPlugin('main', staticPaths, {}, {window: {}})
