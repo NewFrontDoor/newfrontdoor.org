@@ -2,7 +2,7 @@ import React from 'react';
 import fm from 'front-matter';
 import classNames from 'classnames';
 import {StickyContainer, Sticky} from 'react-sticky';
-import {Index} from '../Index/index.jsx'
+import {Index} from '../Index/index.jsx';
 import {Markdown, Toc} from '../Markdown';
 import styles from './Template.scss';
 
@@ -50,7 +50,7 @@ export class Template extends React.Component {
 			<Index>
 				<StickyContainer className="documentation-wrapper">
 					<div className="documentation-sidebar mob-hidden">
-						<Sticky stickyStyle={{top: 150}} topOffset={-150}>
+						<Sticky stickyStyle={{marginTop: 150}} topOffset={-150} bottomOffset={174}>
 							<div className={docTOC}>
 								<h3>Contents</h3>
 								<Toc>
