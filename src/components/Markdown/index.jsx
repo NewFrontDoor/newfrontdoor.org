@@ -26,18 +26,10 @@ const remarkHeading = (component, boundProps = {}) => {
 	});
 };
 
-function handleOnClick(event) {
-	event.preventDefault();
-	scroller.scrollTo(this.href.replace('#', ''), {
-		spy: true,
-		smooth: true,
-		offset: -64,
-		duration: 500
-	});
-}
-
 const RemarkLink = props => {
-	if (props.href) {
+	if (props.href && props.href.startsWith('#') && typeof window.location !== 'undefined') {
+		return (<Link to={{pathname: window.location.pathname, hash: props.href}} {...props}>{props.children}</Link>);
+	} else if (props.href) {
 		return (<Link to={props.href} {...props}>{props.children}</Link>);
 	}
 	return (<Link {...props}>{props.children}</Link>);
