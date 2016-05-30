@@ -200,7 +200,9 @@ export class Documentation extends React.Component {
 							<div className="type-6">
 								<h3>
 									<i className="fa fa-video-camera fa-fw"></i>Recommended Videos</h3>
-								Coming Soon
+								<li>
+									<a href="https://www.youtube.com/watch?v=5FVw2A0TylA">Elvanto overview</a>
+								</li>
 							</div>
 						</div>
 					</div>
