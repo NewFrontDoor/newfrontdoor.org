@@ -24,7 +24,7 @@ function lunrConfig() {
 
 export default () => {
 	return gulp.src([paths.blog.src, paths.documentation.src], {
-		base: paths.src
+		base: paths.src()
 	}).pipe($.frontMatter({
 		remove: true
 	}))

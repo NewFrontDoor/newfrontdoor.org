@@ -11,8 +11,8 @@ const src = p => dirPath('/src/', p || '');
 const dest = p => dirPath('/dest/', p || '');
 
 export default {
-	src: src(),
-	dest: dest(),
+	src,
+	dest,
 	bundle: {
 		src: src(),
 		dest: dest()

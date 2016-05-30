@@ -3,6 +3,7 @@ import del from 'del';
 import {paths} from './config';
 
 export default () => {
-	util.log(`Cleaning ${paths.dest}`);
-	return del(paths.dest);
+	const dest = paths.dest();
+	util.log(`Cleaning ${dest}`);
+	return del(dest);
 };
