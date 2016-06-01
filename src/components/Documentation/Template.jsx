@@ -50,7 +50,7 @@ export class Template extends React.Component {
 			<Index>
 				<StickyContainer className="documentation-wrapper">
 					<div className="documentation-sidebar mob-hidden">
-						<Sticky stickyStyle={{marginTop: 150}} topOffset={-150} bottomOffset={174}>
+						<Sticky stickyStyle={{marginTop: 144}} topOffset={-144} bottomOffset={168}>
 							<div className={docTOC}>
 								<h3>Contents</h3>
 								<Toc>
