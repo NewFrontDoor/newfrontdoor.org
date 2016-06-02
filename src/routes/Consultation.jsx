@@ -8,7 +8,7 @@ export const Consultation = () => (
 		<div className="site-wrapper site-wrapper-padding">
 			<h1>Consultation</h1>
 			<section>
-				<p>The purpose of Vision 100 IT Training and Consultancy is to provide tailored help to ministry leaders and/or ministry admins use IT in the service of the mission of their ministry. We long to help ministries become efficient and effective by doing things in the clearest, easiest and fastest way possible.</p>
+				<p>The purpose of Vision 100 IT Training and Consultancy is to provide tailored help to ministry leaders and/or ministry admins using IT in the service of the mission of their ministry. We long to help ministries become efficient and effective by doing things in the clearest, easiest and fastest way possible.</p>
 				<h3>Who is Vision 100 IT for?</h3>
 				<ul>
 					<li>Vision 100 IT is part of The Vision 100 Network, a Reformed evangelical church planting network in Tasmania.</li>
@@ -18,7 +18,7 @@ export const Consultation = () => (
 				</ul>
 
 				<h2>Consultation and training framework</h2>
-				<p>For some churches, it can simply be more efficient and effective to have someone on the ground with you as you transition through IT changes. Meeting with your key staff stakeholders and your local IT overseer (from within your church) can make sure that you hit the ground running.</p>
+				<p>For some churches, it can simply be more efficient and effective to have someone on the ground with you as you transition through IT changes. Meeting with your key staff, stakeholders and your local IT overseer (from within your church) can make sure that you hit the ground running.</p>
 
 				<p>Vision 100 IT offers on-site consultancy anywhere in the country, with the following time commitments:</p>
 				<ul>
@@ -27,7 +27,7 @@ export const Consultation = () => (
 					<li>Post-visit report</li>
 					<li>3 post-visit coaching meetings (1 hour each)</li>
 				</ul>
-				<p>For some churches, onsite is not possible, or is cost prohibitive - but you'd still like your staff to meet virtually with Vision 100 IT to ensure that the new tools and expecations are clearly understood.</p>
+				<p>For some churches, onsite is not possible, or is cost prohibitive - but you'd still like your staff to meet virtually with Vision 100 IT to ensure that the new tools and expectations are clearly understood.</p>
 				<p>Vision 100 IT can offer virtual consultancy anywhere in the country, with the following time commitments:</p>
 				<ul>
 					<li>Initial meeting to clarify needs and expectations (1 hour)</li>
@@ -39,13 +39,13 @@ export const Consultation = () => (
 				<p>In our initial conversation, we seek to discover the context, history, felt needs and existing strategies of the ministry.</p>
 				<p>After this initial conversation we cover the following areas, with a focus on those which are most significant:</p>
 				<ul>
-					<li>Information flow: the way that information is gathered, updated, shared and erased within the ministry. This also includes attention to conformity with the Australian Privacy Principles and any denominational privacy policies.</li>
-					<li>Alignment: the way IT is being used works with rather than against your philosophy of ministry, strategy and ministry structures</li>
-					<li>Integration: all your IT and other tools working together in the most efficient and effective way. Removing any unnecessary steps, improving automation.</li>
-					<li>Training and management processes: how volunteers and staff are equipped to use IT tools and helped over time to continue to use them well.</li>
-					<li>Feature maximisation: using IT solutions to get the best possible advantages from them. Discovering features that are not yet being used to their full capacity, using features correctly, avoiding unnecessary features.</li>
-					<li>Communications plan: how is vision and practical information communicated clearly and consistently to staff, leaders, volunteers, members and outsiders?</li>
-					<li>Updating and assessing: setting to keep new patterns working well, and planning to regularly assess and improve.</li>
+					<li><strong>Information flow:</strong> the way that information is gathered, updated, shared and erased within the ministry. This also includes attention to conformity with the Australian Privacy Principles and any denominational privacy policies.</li>
+					<li><strong>Alignment:</strong> the way IT is being used works with rather than against your philosophy of ministry, strategy and ministry structures.</li>
+					<li><strong>Integration:</strong> all your IT and other tools working together in the most efficient and effective way. Removing any unnecessary steps, improving automation.</li>
+					<li><strong>Training and management processes:</strong> how volunteers and staff are equipped to use IT tools and helped over time to continue to use them well.</li>
+					<li><strong>Feature maximisation:</strong> using IT solutions to get the best possible advantages from them. Discovering features that are not yet being used to their full capacity, using features correctly, avoiding unnecessary features.</li>
+					<li><strong>Communications plan:</strong> how is vision and practical information communicated clearly and consistently to staff, leaders, volunteers, members and outsiders?</li>
+					<li><strong>Updating and assessing:</strong> setting to keep new patterns working well, and planning to regularly assess and improve.</li>
 				</ul>
 				<h3>Community tools and events</h3>
 				<p>A vital supplement to tailored consultancy is the broader collection of tools and events that support ministries in their efforts to use IT for the cause of the gospel.</p>

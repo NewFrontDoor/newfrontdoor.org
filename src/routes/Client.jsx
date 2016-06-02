@@ -42,7 +42,7 @@ const blog = {
 const posts = blog.page({
 	trim: 500,
 	page: 0,
-	size: 3
+	size: 5
 });
 
 const pinnedPost = posts.shift();

@@ -16,10 +16,7 @@ export const FeaturedEvents = props => (
 					Keeping you up to speed
 				</div>
 				<p className="lead">
-					The internet changes. Your church changes. Your staff capacity and even staff size changes. That's why
-					<em>events and training</em>
-					are at the
-					<em>heart of the Vision 100 IT philosophy.</em>
+					The internet changes. Your church changes. Your staff capacity and even staff size changes. That's why <em>events and training</em> are at the <em>heart of the Vision 100 IT philosophy.</em>
 				</p>
 			</div>
 			<div>
