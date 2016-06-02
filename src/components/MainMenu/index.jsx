@@ -9,7 +9,7 @@ export const MainMenu = props => (
 		<ul className="list-inline">
 			<li className={`${styles.search}`}>
 				<a href="#" onClick={props.onOpenSearch}>
-					Menu <span className="fa fa-search fa-lg"></span>
+					Search <span className="fa fa-search fa-lg"></span>
 				</a>
 			</li>
 			{props.menuItems.map((item, key) => <li key={key} className="main-menu-item">
