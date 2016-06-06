@@ -59,83 +59,81 @@ export class FeaturedTools extends React.Component {
 					</div>
 				</section>
 				<Collapse isOpened={this.state.isOpen}>
-					<section className={styles.products}>
-						<div className="product-pair">
-							<div className="image">
-								<img className="img-responsive center-block" src={imageContext("./soul.jpeg")}/>
-							</div>
-							<div className="detail">
-								<header>
-									<h3>Websites</h3>
-								</header>
-								<section>
-									<ul>
-										<li>Our websites are responsive - supporting phones and tablets</li>
-										<li>They are built on Drupal CMS - a modern, powerful and secure platform, easily updated, supports user permissions</li>
-										<li>We'll manage your domain name - you'll never need to worry about renewing or remembering your password every 3 years</li>
-										<li>Modular features - features developed for one client become available for all clients</li>
-										<li>Running on one of the world's largest server platforms - uptime and server stability is nothing to worry about</li>
-									</ul>
-								</section>
-							</div>
+					<div className={styles.product}>
+						<div className={styles.image}>
+							<img className="img-responsive center-block" src={imageContext("./soul.jpeg")}/>
 						</div>
-						<div className="product-pair">
-							<div className="image">
-								<img className="img-responsive center-block" src={imageContext("./elvanto-i.png")}/>
-							</div>
-							<div className="detail">
-								<header>
-									<h3>Administration and relationship management</h3>
-								</header>
-								<section>
-									<ul>
-										<li>Implementation and consultation to get you started with Elvanto - an Australian-built Church Management platform</li>
-										<li>Flexible mailing lists - so those outside your Church Management software can email you</li>
-										<li>Podcasting your sermons</li>
-										<li>Newsletter distribution</li>
-									</ul>
-								</section>
-							</div>
+						<div className={styles.detail}>
+							<header>
+								<h3>Websites</h3>
+							</header>
+							<section>
+								<ul>
+									<li>Our websites are responsive - supporting phones and tablets</li>
+									<li>They are built on Drupal CMS - a modern, powerful and secure platform, easily updated, supports user permissions</li>
+									<li>We'll manage your domain name - you'll never need to worry about renewing or remembering your password every 3 years</li>
+									<li>Modular features - features developed for one client become available for all clients</li>
+									<li>Running on one of the world's largest server platforms - uptime and server stability is nothing to worry about</li>
+								</ul>
+							</section>
 						</div>
-						<div className="product-pair">
-							<div className="image">
-								<img className="img-responsive center-block" src={imageContext("./sparkleshare.png")}/>
-							</div>
-							<div className="detail">
-								<header>
-									<h3>Document management</h3>
-								</header>
-								<section>
-									<ul>
-										<li>Privately hosted document management platform</li>
-										<li>Securely stored, not in the control of Dropbox or Google</li>
-										<li>Conflicts easily managed so nothing gets lost</li>
-										<li>Folder and file level user permissions</li>
-										<li>Integrated into your website</li>
-									</ul>
-								</section>
-							</div>
+					</div>
+					<div className={styles.product}>
+						<div className={styles.image}>
+							<img className="img-responsive center-block" src={imageContext("./elvanto-i.png")}/>
 						</div>
-						<div className="product-pair">
-							<div className="image">
-								<img className="img-responsive center-block" src={imageContext("./consultation.jpg")}/>
-							</div>
-							<div className="detail">
-								<header>
-									<h3>Consulation + advice</h3>
-								</header>
-								<section>
-									<ul>
-										<li>Initial consultation meetings when coming on board</li>
-										<li>Recommendations of graphic designers, photographers and video producers</li>
-										<li>Access to our documentation: user guides and best practices</li>
-										<li>Podcasts and training sessions</li>
-										<li>Optional in-depth consultation services</li>
-									</ul>
-								</section>
-							</div>
+						<div className={styles.detail}>
+							<header>
+								<h3>Administration and relationship management</h3>
+							</header>
+							<section>
+								<ul>
+									<li>Implementation and consultation to get you started with Elvanto - an Australian-built Church Management platform</li>
+									<li>Flexible mailing lists - so those outside your Church Management software can email you</li>
+									<li>Podcasting your sermons</li>
+									<li>Newsletter distribution</li>
+								</ul>
+							</section>
 						</div>
-					</section>
+					</div>
+					<div className={styles.product}>
+						<div className={styles.image}>
+							<img className="img-responsive center-block" src={imageContext("./sparkleshare.png")}/>
+						</div>
+						<div className={styles.detail}>
+							<header>
+								<h3>Document management</h3>
+							</header>
+							<section>
+								<ul>
+									<li>Privately hosted document management platform</li>
+									<li>Securely stored, not in the control of Dropbox or Google</li>
+									<li>Conflicts easily managed so nothing gets lost</li>
+									<li>Folder and file level user permissions</li>
+									<li>Integrated into your website</li>
+								</ul>
+							</section>
+						</div>
+					</div>
+					<div className={styles.product}>
+						<div className={styles.image}>
+							<img className="img-responsive center-block" src={imageContext("./consultation.jpg")}/>
+						</div>
+						<div className={styles.detail}>
+							<header>
+								<h3>Consulation + advice</h3>
+							</header>
+							<section>
+								<ul>
+									<li>Initial consultation meetings when coming on board</li>
+									<li>Recommendations of graphic designers, photographers and video producers</li>
+									<li>Access to our documentation: user guides and best practices</li>
+									<li>Podcasts and training sessions</li>
+									<li>Optional in-depth consultation services</li>
+								</ul>
+							</section>
+						</div>
+					</div>
 				</Collapse>
 			</Featured>
 		);

@@ -1,36 +1,36 @@
 @import "../../css/variables";
 
-  // height: auto;
-  // @media (min-width: $screen-md-min) {
-  //   height: calc(100vh - 3vr);
-  // }
+:local .product {
+  lost-flex-container: row;
+	margin-bottom: 20px;
 
-:local .products {
-  .product-pair {
-    lost-flex-container: row;
-    &:nth-child(even) {
-      @media (min-width: $screen-md-min) {
-        flex-direction: row-reverse;
-      }
-    }
-    .detail {
-      lost-column: 1/1 flex;
-      @media (min-width: $screen-md-min) {
-        lost-column: 1/2 flex;
-      }
-    }
-    .image {
-      lost-column: 1/1 flex;
-      margin-top: 1.333vr;
-      img {
-        width: 40%;
-      }
-      @media (min-width: $screen-md-min) {
-        img {
-          width: auto;
-        }
-        lost-column: 1/2 flex;
-      }
+  &:nth-child(even) {
+    @media (min-width: $screen-md-min) {
+      flex-direction: row-reverse;
     }
   }
+}
+
+:local .detail {
+	lost-column: 1/1;
+	@media (min-width: $screen-md-min) {
+		lost-column: 1/2;
+	}
+}
+
+:local .image {
+	lost-column: 1/1;
+
+	img {
+		width: 40%;
+	}
+
+	@media (min-width: $screen-md-min) {
+		lost-align: center;
+		lost-column: 1/2;
+
+		img {
+			width: auto;
+		}
+	}
 }
