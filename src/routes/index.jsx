@@ -20,6 +20,7 @@ import {Registration} from './Registration';
 import {Podcasting} from './Podcasting';
 import {Elvanto} from './Elvanto';
 import {Sparkleshare} from './Sparkleshare';
+import {Error} from './Error';
 
 export default(
 	<Route component={Site}>
@@ -41,5 +42,6 @@ export default(
 		<Route path="/alert" component={Alert}/>
 		<Route path="/elvanto" component={Elvanto}/>
 		<Route path="/sparkleshare" component={Sparkleshare}/>
+		<Route path="/error" component={Error}/>
 	</Route>
 );

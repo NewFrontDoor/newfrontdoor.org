@@ -68,8 +68,8 @@ export const Client = () => (
 				<Card className="mob-hidden" name="Podcasting" background="#171717" image="./podcasting.png" imagePadding="75px" link="/podcasting">
 					Get on board with podcasting your sermons
 				</Card>
-				<Card className="mob-hidden" name="Designers" background="white" image="./close-image.jpeg" link="">
-					Thinking of a refresh? Read our recommendations
+				<Card className="mob-hidden" name="Designers" background="white" image="./close-image.jpeg">
+					Thinking of a refresh? Read our recommendations - <em>coming soon...</em>
 				</Card>
 			</div>
 			<div className="client-wrapper">
