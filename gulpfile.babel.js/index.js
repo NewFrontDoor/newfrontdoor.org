@@ -20,4 +20,4 @@ gulp.task('watch', watch);
 gulp.task('webpack', ['lunr'], webpack);
 
 gulp.task('build', ['clean', 'webpack']);
-gulp.task('publish', ['build'], publish)
+gulp.task('publish', ['build'], publish);

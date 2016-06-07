@@ -5,3 +5,4 @@ node_modules
 npm-debug.log
 src/search/search-data.json
 src/search/search-index.json
+.awspublish-v100-it-web
