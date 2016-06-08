@@ -4,7 +4,7 @@ import styles from './feature-join.scss';
 
 const imageContext = require.context('../../elements');
 
-export const FeaturedJoin = props => (
+export const FeaturedJoin = () => (
 	<div className={styles.feature}>
 		<section className={styles.video}>
 			<video autoPlay loop>

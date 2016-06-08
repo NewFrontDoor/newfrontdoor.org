@@ -1,10 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {Featured} from '../../components/Featured';
-
 import styles from './feature-events.scss';
+import {Featured} from './index';
 
-export const FeaturedEvents = props => (
+export const FeaturedEvents = () => (
 	<Featured name="events" className={`${styles.feature} ${styles.background}`}>
 		<header className="hidden">
 			<h2>Keeping you up to speed</h2>

@@ -4,7 +4,7 @@ import {isUndefined} from 'lodash';
 import slug from 'remark-slug';
 import ghSlugs from 'github-slugger';
 import remarkReact from 'remark-react';
-import {scroller, Element} from 'react-scroll';
+import {Element} from 'react-scroll';
 import {Link} from 'react-router';
 import toc from './toc';
 

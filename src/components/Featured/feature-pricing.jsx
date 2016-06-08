@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {Featured} from '../../components/Featured';
+import {Featured} from './index';
 
-export const FeaturedPricing = props => (
+export const FeaturedPricing = () => (
 	<Featured name="pricing" className="featured-fifth featured-light">
 		<header className="hidden">
 			<h2>Pricing</h2>

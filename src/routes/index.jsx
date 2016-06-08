@@ -23,8 +23,8 @@ import {Sparkleshare} from './Sparkleshare';
 import {Error} from './Error';
 
 export default(
-	<Route component={Site}>
-		<Route path="/" component={Home}/>
+	<Route path="/" component={Site}>
+		<IndexRoute component={Home}/>
 		<Route path="/client" component={Client}/>
 		<Route path="/blog/:blogId" component={Blog}/>
 		<Route path="/support" component={Support}/>

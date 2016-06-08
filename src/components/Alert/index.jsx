@@ -1,5 +1,5 @@
-import styles from './Alert.scss';
 import React from 'react';
+import './Alert.scss';
 
 export const Alert = props => (
 	<div className={props.type}>

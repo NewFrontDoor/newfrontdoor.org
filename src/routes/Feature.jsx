@@ -13,20 +13,20 @@ export const Feature = () => (
 					</p>
 				</div>
 				<hr/>
-					<div className="instruction">
-						<h3>Guidelines</h3>
-						<p>To best assist you with your feature requests, please ensure to:</p>
-						<ul>
-							<li>fill out this form <strong>as completely as you can.</strong></li>
-							<li>include only one request per submission. You're welcome to submit multiple requests.</li>
-							<li>check you're allocated a ticket number.</li>
-						</ul>
-						Each submission will:
-						<ul>
-							<li>Send a request ticket by email (to you & us) for tracking by our team.</li>
-							<li>Give an option to close your feature request by email.</li>
-						</ul>
-					</div>
+				<div className="instruction">
+					<h3>Guidelines</h3>
+					<p>To best assist you with your feature requests, please ensure to:</p>
+					<ul>
+						<li>fill out this form <strong>as completely as you can.</strong></li>
+						<li>include only one request per submission. You're welcome to submit multiple requests.</li>
+						<li>check you're allocated a ticket number.</li>
+					</ul>
+					Each submission will:
+					<ul>
+						<li>Send a request ticket by email (to you & us) for tracking by our team.</li>
+						<li>Give an option to close your feature request by email.</li>
+					</ul>
+				</div>
 				<form className="support-form">
 					<div className="form-group has-success has-feedback">
 						<label htmlFor="name">Name:</label>

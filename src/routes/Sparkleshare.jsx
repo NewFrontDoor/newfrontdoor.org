@@ -20,7 +20,7 @@ export const Sparkleshare = () => (
 						<p>Sparkleshare comes with a small application that will keep the files up to date on your personal computer. This is the primary way that users will interact with files. When a change is made on one computer, the other members who have access to that project will automatically receive the changes.</p>
 						<h3>4. Security</h3>
 						<p>Sparkleshare is not account based, but instead is set up with a key that is unique to your computer. This is an added level of security for a church that often will be required to store sensitive information about church members.</p>
-						<br />
+						<br/>
 						<p>If you're interested in having Sparkleshare set up for your ministry, please contact us though the Feature request form.</p>
 					</section>
 				</div>

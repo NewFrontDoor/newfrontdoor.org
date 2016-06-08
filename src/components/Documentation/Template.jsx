@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import {StickyContainer, Sticky} from 'react-sticky';
 import {Index} from '../Index/index.jsx';
 import {Markdown, Toc} from '../Markdown';
-import styles from './Template.scss';
+import './Template.scss';
 
 const documentation = {
 	get context() {

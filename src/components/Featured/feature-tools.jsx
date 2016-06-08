@@ -1,9 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router';
-import {Featured} from '../../components/Featured';
-import {Collapse} from '../../components/Collapse';
-
+import {Collapse} from '../Collapse';
 import styles from './feature-tools.scss';
+import {Featured} from './index';
 
 const imageContext = require.context('../../elements');
 
@@ -17,10 +15,12 @@ export class FeaturedTools extends React.Component {
 	}
 	handleCollapse(event) {
 		event.preventDefault();
-		this.setState({isOpen: !this.state.isOpen});
+		this.setState({
+			isOpen: !this.state.isOpen
+		});
 	}
 	render() {
-		return(
+		return (
 			<Featured name="tools">
 				<header className="hidden">
 					<h2>Tools + Philosophy</h2>
@@ -55,7 +55,7 @@ export class FeaturedTools extends React.Component {
 				<Collapse isOpened={this.state.isOpen}>
 					<div className={styles.product}>
 						<div className={styles.image}>
-							<img className="img-responsive center-block" src={imageContext("./soul.jpeg")}/>
+							<img className="img-responsive center-block" src={imageContext('./soul.jpeg')}/>
 						</div>
 						<div className={styles.detail}>
 							<header>
@@ -74,7 +74,7 @@ export class FeaturedTools extends React.Component {
 					</div>
 					<div className={styles.product}>
 						<div className={styles.image}>
-							<img className="img-responsive center-block" src={imageContext("./elvanto-i.png")}/>
+							<img className="img-responsive center-block" src={imageContext('./elvanto-i.png')}/>
 						</div>
 						<div className={styles.detail}>
 							<header>
@@ -92,7 +92,7 @@ export class FeaturedTools extends React.Component {
 					</div>
 					<div className={styles.product}>
 						<div className={styles.image}>
-							<img className="img-responsive center-block" src={imageContext("./sparkleshare.png")}/>
+							<img className="img-responsive center-block" src={imageContext('./sparkleshare.png')}/>
 						</div>
 						<div className={styles.detail}>
 							<header>
@@ -111,7 +111,7 @@ export class FeaturedTools extends React.Component {
 					</div>
 					<div className={styles.product}>
 						<div className={styles.image}>
-							<img className="img-responsive center-block" src={imageContext("./consultation.jpg")}/>
+							<img className="img-responsive center-block" src={imageContext('./consultation.jpg')}/>
 						</div>
 						<div className={styles.detail}>
 							<header>
@@ -132,4 +132,4 @@ export class FeaturedTools extends React.Component {
 			</Featured>
 		);
 	}
-};
+}

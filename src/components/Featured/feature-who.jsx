@@ -1,12 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {Featured} from '../../components/Featured';
-
 import styles from './feature-who.scss';
+import {Featured} from './index';
 
 const imageContext = require.context('../../elements');
 
-export const FeaturedWho = props => (
+export const FeaturedWho = () => (
 	<Featured name="who">
 		<div className="text-slab">
 			The right people at the right time
@@ -48,20 +47,20 @@ export const FeaturedWho = props => (
 			</Link>
 		</div>
 		<div className={styles.collection}>
-			<div><img src={imageContext("./christian.jpg")}/></div>
-			<div><img src={imageContext("./jonno.jpg")}/></div>
-			<div><img src={imageContext("./emile.jpg")}/></div>
-			<div><img src={imageContext("./gibbo.jpg")}/></div>
-			<div><img src={imageContext("./alan.jpg")}/></div>
-			<div><img src={imageContext("./chris.jpg")}/></div>
+			<div><img src={imageContext('./christian.jpg')}/></div>
+			<div><img src={imageContext('./jonno.jpg')}/></div>
+			<div><img src={imageContext('./emile.jpg')}/></div>
+			<div><img src={imageContext('./gibbo.jpg')}/></div>
+			<div><img src={imageContext('./alan.jpg')}/></div>
+			<div><img src={imageContext('./chris.jpg')}/></div>
 		</div>
 		<div className={styles.tiled}>
-			<div><img src={imageContext("./christian-tile.jpg")}/></div>
-			<div><img src={imageContext("./jonno-tile.jpg")}/></div>
-			<div><img src={imageContext("./emile-tile.jpg")}/></div>
-			<div><img src={imageContext("./gibbo-tile.jpg")}/></div>
-			<div><img src={imageContext("./alan-tile.jpg")}/></div>
-			<div><img src={imageContext("./chris-tile.jpg")}/></div>
+			<div><img src={imageContext('./christian-tile.jpg')}/></div>
+			<div><img src={imageContext('./jonno-tile.jpg')}/></div>
+			<div><img src={imageContext('./emile-tile.jpg')}/></div>
+			<div><img src={imageContext('./gibbo-tile.jpg')}/></div>
+			<div><img src={imageContext('./alan-tile.jpg')}/></div>
+			<div><img src={imageContext('./chris-tile.jpg')}/></div>
 		</div>
 	</Featured>
 );

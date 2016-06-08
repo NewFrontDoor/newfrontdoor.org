@@ -1,7 +1,7 @@
 import React from 'react';
-import {Featured} from '../../components/Featured';
-import {Collapse} from '../../components/Collapse';
+import {Collapse} from '../Collapse';
 import styles from './feature-how.scss';
+import {Featured} from './index';
 
 export class FeaturedHow extends React.Component {
 	constructor() {
@@ -14,8 +14,10 @@ export class FeaturedHow extends React.Component {
 	handleCollapse(prop) {
 		return event => {
 			event.preventDefault();
-			this.setState({isOpen: this.state.isOpen === prop ? '' : prop});
-		}
+			this.setState({
+				isOpen: this.state.isOpen === prop ? '' : prop
+			});
+		};
 	}
 	render() {
 		return (
@@ -68,4 +70,4 @@ export class FeaturedHow extends React.Component {
 			</Featured>
 		);
 	}
-};
+}

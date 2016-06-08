@@ -1,7 +1,7 @@
 import React from 'react';
 import fm from 'front-matter';
 import moment from 'moment';
-import {Index} from '../Index/index.jsx'
+import {Index} from '../Index/index.jsx';
 import {Markdown} from '../Markdown';
 import styles from './Blog.scss';
 
