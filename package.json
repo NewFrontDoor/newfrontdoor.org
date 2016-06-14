@@ -128,10 +128,10 @@
     "rules": {
       "indentation": "tab",
       "selector-pseudo-class-no-unknown": [true, {
-        "ignoreUnits": ["vh"]
+        "ignorePseudoClasses": ["local"]
       }],
       "unit-no-unknown": [true, {
-        "ignorePseudoClasses": ["local"]
+        "ignoreUnits": ["vr"]
       }]
     }
   },

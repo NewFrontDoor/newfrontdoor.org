@@ -1,21 +1,20 @@
 @import "../../css/variables";
+
 :local .collection {
 	display: none;
-
 	div {
 		lost-column: 1/6 0 40px;
 		margin-bottom: 40px;
 		height: 150px;
 	}
-
 	img {
 		max-width: 100%;
 		height: auto;
 		display: block;
-		box-shadow: 0 10px 16px 0 rgba($primary-highlight,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+		box-shadow: 0 10px 16px 0 rgba($primary-highlight, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 		&:hover {
 			opacity: 0.2;
-			box-shadow: 0 20px 32px 0 rgba($primary-highlight,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+			box-shadow: 0 20px 32px 0 rgba($primary-highlight, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 			background-color: red;
 		}
 	}
@@ -24,37 +23,35 @@
 		lost-center: 980px;
 	}
 }
+
 :local .tiled {
 	lost-center: 980px;
-
 	div {
 		lost-column: 1/3 0 0;
 	}
-
 	img {
 		max-width: 100%;
 		height: auto;
 		display: block;
 	}
+
 	@media (min-width: $screen-md-min) {
 		display: none;
 	}
 }
+
 :local .snapshots {
 	lost-center: 980px;
 	flex-wrap: wrap;
 	font-family: $font-family-sans-serif;
 	margin-bottom: 40px;
-
 	div {
 		lost-column: 1/2;
 		text-align: center;
 	}
-
 	span {
 		margin-bottom: 10px;
 	}
-
 	p {
 		font-size: 75%;
 	}
@@ -63,7 +60,6 @@
 		div {
 			lost-column: 1/4;
 		}
-
 		p {
 			font-size: inherit;
 		}

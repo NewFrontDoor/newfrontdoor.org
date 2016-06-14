@@ -1,28 +1,28 @@
 @import "../../css/variables";
 
 :local .post {
-		lost-column: 1/1;
+	lost-column: 1/1;
 }
 
-:local .title {}
-
 :local .meta {
-		display: none;
-		@media (min-width: $screen-sm-min) {
-				display: block;
-				@media (min-width: $screen-lg-min) {
-					width: 200px;
-					margin-left: -200px;
-					float: left;
-					height: auto;
-					position: absolute;
-				}
-		}
+	display: none;
+
+	@media (min-width: $screen-sm-min) {
+		display: block;
+	}
+
+	@media (min-width: $screen-lg-min) {
+		width: 200px;
+		margin-left: -200px;
+		height: auto;
+		position: absolute;
+	}
 }
 
 :local .author {
-display: inline;
-padding-right: 20px;
+	display: inline;
+	padding-right: 20px;
+
 	@media (min-width: $screen-lg-min) {
 		display: block;
 		text-align: right;
@@ -30,8 +30,9 @@ padding-right: 20px;
 }
 
 :local .date {
-display: inline;
-padding-right: 20px;
+	display: inline;
+	padding-right: 20px;
+
 	@media (min-width: $screen-lg-min) {
 		display: block;
 		text-align: right;
@@ -39,8 +40,9 @@ padding-right: 20px;
 }
 
 :local .category {
-display: inline;
-padding-right: 20px;
+	display: inline;
+	padding-right: 20px;
+
 	@media (min-width: $screen-lg-min) {
 		display: block;
 		text-align: right;
@@ -58,6 +60,7 @@ padding-right: 20px;
 		.regular {
 			max-height: 50px;
 		}
+
 		@media (min-width: $screen-md-min) {
 			max-height: 200px;
 		}

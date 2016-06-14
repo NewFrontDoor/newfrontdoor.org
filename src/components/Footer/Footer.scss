@@ -1,93 +1,93 @@
 @import "../../css/variables";
 
 footer {
-  background-color: white;
-  @media (min-width: $screen-md-min) {
-  	background-color: $footer-bg;
-  	color: #fff;
-  }
+	background-color: white;
+
+	@media (min-width: $screen-md-min) {
+		background-color: $footer-bg;
+		color: #fff;
+	}
 }
 
 :local .wrap {
-		padding: 15px;
-		lost-center: 980px;
-		@media (min-width: $screen-md-min) {
-				// padding: 0;
-		}
+	padding: 15px;
+	lost-center: 980px;
+
+	@media (min-width: $screen-md-min) {
+		// padding: 0;
+	}
 }
 
 :local .item {
-		lost-column: 1/2;
-		font-size: .8rem;
-		text-align: center;
+	lost-column: 1/2;
+	font-size: 0.8rem;
+	text-align: center;
+	h3 {
+		font-size: $font-size-h4;
 
-		h3 {
-				font-size: $font-size-h4;
-			  @media (min-width: $screen-md-min) {
-				    font-size: $font-size-h3;
-				    padding-bottom: 3px;
-				    border-bottom: 1px solid $primary-heading;
-			  }
+		@media (min-width: $screen-md-min) {
+			font-size: $font-size-h3;
+			padding-bottom: 3px;
+			border-bottom: 1px solid $primary-heading;
 		}
+	}
+	ul {
+		margin-top: -5px;
+		a {
+			color: black;
+			margin: 0 4px;
 
-		ul {
-			  margin-top: -5px;
-			  a {
-				    color: black;
-				    margin: 0 4px;
-				    @media (min-width: $screen-md-min) {
-				      color: $footer-text;
-				      margin: 0;
-				    }
-			  }
+			@media (min-width: $screen-md-min) {
+				color: $footer-text;
+				margin: 0;
+			}
+		}
+	}
+
+	@media (min-width: $screen-md-min) {
+		lost-column: 2/11;
+		font-size: 1rem;
+	}
+
+	&:nth-child(-n+2) {
+		@media (min-width: $screen-md-min) {
+			text-align: right;
+		}
+	}
+
+	&:nth-child(n+3) {
+		@media (min-width: $screen-md-min) {
+			text-align: left;
+			lost-move: 3/11;
+		}
+	}
+
+	&:nth-child(5) {
+		lost-column: 1;
+		height: 190px;
+		background-image: url("../../elements/v100it.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position-x: center;
+		transform-style: preserve-3d;
+		transition: transform 0s;
+		h3 {
+			border-bottom: none;
 		}
 
 		@media (min-width: $screen-md-min) {
-				lost-column: 2/11;
-				font-size: 1rem;
+			lost-column: 3/11;
+			lost-move: -4/11;
+			background-position-y: 25px;
 		}
-
-		&:nth-child(-n+2) {
-				@media (min-width: $screen-md-min) {
-						text-align: right;
-				}
-		}
-
-		&:nth-child(n+3) {
-				@media (min-width: $screen-md-min) {
-						text-align: left;
-						lost-move: 3/11;
-				}
-		}
-
-		&:nth-child(5) {
-				lost-column: 1;
-			  height: 190px;
-			  background-image: url("../../elements/v100it.png");
-			  background-repeat: no-repeat;
-			  background-size: contain;
-			  background-position-x: center;
-
-        transform-style: preserve-3d;
-        transition: transform 0s;
-
-				h3 {
-					border-bottom: none;
-				}
-
-			  @media (min-width: $screen-md-min) {
-			      lost-column: 3/11;
-						lost-move: -4/11;
-			      background-position-y: 25px;
-			  }
-		}
+	}
 }
 
 :local .spin {
-  &:nth-child(5) {
-    transform: rotateX(1440deg);
-    transition: transform 2.0s cubic-bezier(0.2, 1, 0, 1);
-  }
+	&:nth-child(5) {
+		transform: rotateX(1440deg);
+		transition: transform 2s cubic-bezier(0.2, 1, 0, 1);
+	}
 }
 
 :local .social {
@@ -96,9 +96,9 @@ footer {
 }
 
 :local .social ul {
-  list-style-type: none;
+	list-style-type: none;
 }
 
 :local .social li {
-//    display: inline;
+	//    display: inline;
 }

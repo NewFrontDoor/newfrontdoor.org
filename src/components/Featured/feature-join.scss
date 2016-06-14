@@ -1,7 +1,7 @@
 @import "../../css/variables";
 
 :local .feature {
-  lost-center: 100%;
+	lost-center: 100%;
 	position: relative;
 	color: $footer-text;
 
@@ -13,52 +13,50 @@
 :local .video {
 	display: none;
 	position: absolute;
-  overflow: hidden;
-  min-width: 100%;
-  min-height: 100%;
+	overflow: hidden;
+	min-width: 100%;
+	min-height: 100%;
 
 	@media (min-width: $screen-md-min) {
 		display: block;
 	}
-
-  video {
+	video {
 		position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    transform: translateX(-50%) translateY(-50%);
-  }
+		top: 50%;
+		left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		transform: translateX(-50%) translateY(-50%);
+	}
 }
 
 :local .social {
-  text-shadow: none;
+	text-shadow: none;
 	margin-bottom: 15px;
 	lost-flex-container: row;
+	div {
+		lost-column: 1/2;
+		text-align: center;
+	}
+	a {
+		color: black;
 
-  div {
-    lost-column: 1/2;
-    text-align: center;
-  }
-  a {
-    color: black;
 		@media (min-width: $screen-md-min) {
 			color: white;
 		}
-  }
+	}
 }
 
 :local .content {
-  lost-center: 75vw;
+	lost-center: 75vw;
 	lost-flex-container: column;
 	position: relative;
-  padding-top: 30px;
+	padding-top: 30px;
 
-  @media (min-width: $screen-md-min) {
+	@media (min-width: $screen-md-min) {
 		lost-center: 50vw;
-    padding-top: 80px;
-  }
-
+		padding-top: 80px;
+	}
 	form {
 		lost-center: 100%;
 		padding: 10px;
@@ -81,7 +79,6 @@
 		border: none;
 	}
 }
-
 // :local .background {
 //   @media (min-width: $screen-sm-min) {
 // 	  display: block;

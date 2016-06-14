@@ -1,18 +1,19 @@
 @import "../../css/variables";
 
 :local .product {
-  lost-flex-container: row;
+	lost-flex-container: row;
 	margin-bottom: 20px;
 
-  &:nth-child(even) {
-    @media (min-width: $screen-md-min) {
-      flex-direction: row-reverse;
-    }
-  }
+	&:nth-child(even) {
+		@media (min-width: $screen-md-min) {
+			flex-direction: row-reverse;
+		}
+	}
 }
 
 :local .detail {
 	lost-column: 1/1;
+
 	@media (min-width: $screen-md-min) {
 		lost-column: 1/2;
 	}
@@ -20,7 +21,6 @@
 
 :local .image {
 	lost-column: 1/1;
-
 	img {
 		width: 40%;
 	}
@@ -28,7 +28,6 @@
 	@media (min-width: $screen-md-min) {
 		lost-align: center;
 		lost-column: 1/2;
-
 		img {
 			width: auto;
 		}

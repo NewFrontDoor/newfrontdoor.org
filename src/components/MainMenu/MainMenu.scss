@@ -1,44 +1,44 @@
 @import "../../css/variables";
 
 :local .main {
-  display: none;
-  font-size: 1rem;
-  margin-top: 12px;
-  line-height: 1.1;
-  font-family: $headings-font-family;
-  color: $headings-color;
-  @media (min-width: $screen-md-min) {
-    display: block;
-    lost-column:13/16;
-    lost-move: -3/16;
-  }
+	display: none;
+	font-size: 1rem;
+	margin-top: 12px;
+	line-height: 1.1;
+	font-family: $headings-font-family;
+	color: $headings-color;
+
+	@media (min-width: $screen-md-min) {
+		display: block;
+		lost-column: 13/16;
+		lost-move: -3/16;
+	}
 }
 
 :local .main a:visited {
-  color: $headings-color;
+	color: $headings-color;
 }
 
 :local .main ul {
-  display: flex;
-  justify-content: space-around;
-
-  li {
-    display: flex;
-    align-items: center;
-  }
+	display: flex;
+	justify-content: space-around;
+	li {
+		display: flex;
+		align-items: center;
+	}
 }
 
 .main-menu-item {
-  // lost-column: 2/13;
-  // height: 55px;
-  // border-bottom: 2px solid $main-text;
+	// lost-column: 2/13;
+	// height: 55px;
+	// border-bottom: 2px solid $main-text;
 }
 
 :local .search {
-  span {
-    color: $headings-color;
-    a:visited {
-      color: $headings-color;
-    }
-  }
+	span {
+		color: $headings-color;
+		a:visited {
+			color: $headings-color;
+		}
+	}
 }
