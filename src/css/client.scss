@@ -1,19 +1,21 @@
 .client-wrapper {
-  overflow: hidden;
-  padding: 15px;
-  //padding-top: 50px;
-  lost-utility: clearfix;
-  lost-center: 800px;
-  section {
-    lost-column: 1/1;
-  }
-  @media (min-width: $screen-md-min) {
+	overflow: hidden;
+	padding: 15px;
+	//padding-top: 50px;
+	lost-utility: clearfix;
+	lost-center: 800px;
+	section {
+		lost-column: 1/1;
+	}
+
+	@media (min-width: $screen-md-min) {
 		lost-center: 880px;
-    //margin-right: 200px;
+		//margin-right: 200px;
 	}
 }
+
 @media (min-width: $screen-md-min) {
-  .site-wrapper-padding {
-      //padding-top: 107px;
-  }
+	.site-wrapper-padding {
+		//padding-top: 107px;
+	}
 }

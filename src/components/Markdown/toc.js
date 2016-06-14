@@ -231,8 +231,8 @@ function contents(map, tight) {
  * @param {Object} options - Configuration.
  * @return {function(node)} - Transformmer.
  */
-function attacher(remark, {maxDepth = 6, tight, slugOptions} = {}) {
-	remark.use(slug, slugOptions);
+function attacher(remark, {maxDepth = 6, tight} = {}) {
+	remark.use(slug);
 
 	/**
 	 * Adds an example section based on a valid example

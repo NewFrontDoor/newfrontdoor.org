@@ -1,29 +1,34 @@
+@import "./variables";
+
 .instruction {
-  lost-column: 3/3;
-  @media (min-width: $screen-md-min) {
-  height: 100%;
-  lost-column: 1/3 0 10px;
-  lost-move: 2/3;
-  padding: 0 10px 10px 10px;
-  h3 {
-    color: $search-overlay;
-  }
-  box-shadow: 0 10px 16px 0 rgba($primary-highlight,0.8),0 6px 20px 0 rgba(0,0,0,0.19)
-  }
+	lost-column: 3/3;
+
+	@media (min-width: $screen-md-min) {
+		height: 100%;
+		lost-column: 1/3 0 10px;
+		lost-move: 2/3;
+		padding: 0 10px 10px;
+		h3 {
+			color: $search-overlay;
+		}
+		box-shadow: 0 10px 16px 0 rgba($primary-highlight, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
 	background-color: white;
 }
 
 .support-form {
-  lost-column: 3/3;
-  @media (min-width: $screen-md-min) {
-  lost-column: 2/3 0 10px;
-  lost-move: -1/3;
-  }
+	lost-column: 3/3;
+
+	@media (min-width: $screen-md-min) {
+		lost-column: 2/3 0 10px;
+		lost-move: -1/3;
+	}
 }
 
-//What I want to implement but can't (requires <div className"instruction"> in Support.jsx to be moved up prior to the <form> tag)
-//With this styling and element order, it will make it possible to place .instruction vertically above .support-form in a 'collapsed' div to preserve space and preserve the instructions
 /*
+// What I want to implement but can't (requires <div className"instruction"> in Support.jsx to be moved up prior to the <form> tag)
+// With this styling and element order, it will make it possible to place .instruction vertically above .support-form in a 'collapsed' div to preserve space and preserve the instructions
+
 .instruction {
   height: auto;
   lost-column: 1/3;

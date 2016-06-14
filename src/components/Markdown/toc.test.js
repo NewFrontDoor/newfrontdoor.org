@@ -11,7 +11,7 @@ test('', t => {
 ### Charlie
 
 ## Delta
-`);
+`).toString();
 
 	t.is(content, `-   [Alpha](#alpha)\n    -   [Bravo](#bravo)\n\n        -   [Charlie](#charlie)\n\n    -   [Delta](#delta)\n`);
 });

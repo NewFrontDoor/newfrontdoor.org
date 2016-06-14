@@ -1,83 +1,79 @@
 $fa-font-path: "~font-awesome/fonts" !default;
 
 @import "~font-awesome/scss/variables";
-
 @import "~font-awesome/scss/path";
-
 @import "~font-awesome/scss/core";
-
 @import "~font-awesome/scss/larger";
-
 @import "~font-awesome/scss/fixed-width";
 
-.fa-times-circle:before {
+.fa-times-circle::before {
 	content: $fa-var-times-circle;
 }
 
-.fa-book:before {
+.fa-book::before {
 	content: $fa-var-book;
 }
 
-.fa-cogs:before {
+.fa-cogs::before {
 	content: $fa-var-cogs;
 }
 
-.fa-lock:before {
+.fa-lock::before {
 	content: $fa-var-lock;
 }
 
-.fa-lightbulb-o:before {
+.fa-lightbulb-o::before {
 	content: $fa-var-lightbulb-o;
 }
 
-.fa-link:before {
+.fa-link::before {
 	content: $fa-var-link;
 }
 
-.fa-video-camera:before {
+.fa-video-camera::before {
 	content: $fa-var-video-camera;
 }
 
-.fa-angle-down:before {
+.fa-angle-down::before {
 	content: $fa-var-angle-down;
 }
 
-.fa-search:before {
+.fa-search::before {
 	content: $fa-var-search;
 }
 
-.fa-facebook-square:before {
+.fa-facebook-square::before {
 	content: $fa-var-facebook-square;
 }
 
-.fa-twitter-square:before {
+.fa-twitter-square::before {
 	content: $fa-var-twitter-square;
 }
 
-.fa-plus-circle:before {
+.fa-plus-circle::before {
 	content: $fa-var-plus-circle;
 }
 
-.fa-facebook:before {
+.fa-facebook::before {
 	content: $fa-var-facebook;
 }
 
-.fa-twitter:before {
+.fa-twitter::before {
 	content: $fa-var-twitter;
 }
 
-.fa-university:before {
+.fa-university::before {
 	content: $fa-var-university;
 }
 
-.fa-graduation-cap:before {
+.fa-graduation-cap::before {
 	content: $fa-var-graduation-cap;
 }
 
-.fa-users:before {
+.fa-users::before {
 	content: $fa-var-users;
 }
 
-.fa-server:before {
+.fa-server::before {
 	content: $fa-var-server;
 }

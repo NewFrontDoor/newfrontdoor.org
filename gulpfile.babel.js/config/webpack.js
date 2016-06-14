@@ -14,6 +14,7 @@ import webpack from 'webpack';
 import WebpackNotifierPlugin from 'webpack-notifier';
 import argvSetEnv from 'argv-set-env';
 import LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
+import StyleLintPlugin from 'stylelint-webpack-plugin';
 
 import {trimExtension} from '../lib';
 import packageJson from '../../package.json';
@@ -229,6 +230,9 @@ function getCommonPlugins() {
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
 			'VERSION': JSON.stringify(packageJson.version)
+		}),
+		new StyleLintPlugin({
+			configFile: 'package.json'
 		}),
 		new WebpackNotifierPlugin(),
 		new webpack.optimize.CommonsChunkPlugin({

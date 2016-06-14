@@ -10,7 +10,7 @@ export default () => {
 		const publisher = $.awspublish.create({
 			region: 'ap-southeast-2',
 			params: {
-				Bucket: 'v100-it-web'
+				Bucket: 'vision100it.org'
 			}
 		});
 

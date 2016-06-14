@@ -32,203 +32,217 @@
 @import "./support";
 @import "./client";
 
+// Lost defaults
 @lost gutter 15px;
 @lost flexbox flex;
 
 .container {
-  lost-flex-container: column;
-  min-height: 100vh;
+	lost-flex-container: column;
+	min-height: 100vh;
 }
 
 .site-wrapper {
-  overflow: hidden;
-  padding: 15px;
-  padding-top: 50px;
-  lost-center: 500px;
-  @media (min-width: $screen-md-min) {
+	overflow: hidden;
+	padding: 50px 15px 15px;
+	lost-center: 500px;
+
+	@media (min-width: $screen-md-min) {
 		lost-center: 980px;
-  }
+	}
 }
-@media (min-width: $screen-md-min) {
-  .site-wrapper-padding {
-      padding-top: 107px;
-  }
+
+.site-wrapper-padding {
+	@media (min-width: $screen-md-min) {
+		padding-top: 107px;
+	}
 }
 
 article {
-		header {
-				margin-bottom: 1vr;
-		}
+	header {
+		margin-bottom: 1vr;
+	}
 }
 
 .mob-hidden {
-  display: none;
-  @media (min-width: $screen-md-min) {
-    display: block;
-  }
+	display: none;
+
+	@media (min-width: $screen-md-min) {
+		display: block;
+	}
 }
 
 .hidden {
-  display: none;
+	display: none;
 }
 
 em {
-  font-style: italic;
-  color: $primary-highlight;
-  font-family: $font-family-serif;
-  font-size: 110%;
-  padding-right: 5px;
+	font-style: italic;
+	color: $primary-highlight;
+	font-family: $font-family-serif;
+	font-size: 110%;
+	padding-right: 5px;
 }
 
 q,
 blockquote {
-    quotes: "\201C" "\201D" "\2018" "\2019";
+	quotes: "\201C" "\201D" "\2018" "\2019";
 }
 
 .fa-angle-down {
-  line-height: 30px !important;
+	line-height: 30px !important;
 }
 
 //block styles
 .text-block-4 {
-  lost-column: 1/4;
+	lost-column: 1/4;
 }
 
 .text-block-2 {
-  lost-column: 1/1;
-  @media (min-width: $screen-md-min) {
-    lost-column: 1/2;
-    min-height: 250px;
-  }
+	lost-column: 1/1;
+
+	@media (min-width: $screen-md-min) {
+		lost-column: 1/2;
+		min-height: 250px;
+	}
 }
 
 .image-block-2 {
-  lost-column: 1/1;
-  img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-  }
-  @media (min-width: $screen-md-min) {
-    lost-column: 1/2;
-    min-height: 250px;
-    padding-top: 60px;
-  }
+	lost-column: 1/1;
+	img {
+		display: block;
+		margin: 0 auto;
+		max-width: 100%;
+	}
+
+	@media (min-width: $screen-md-min) {
+		lost-column: 1/2;
+		min-height: 250px;
+		padding-top: 60px;
+	}
 }
 
 .text-slab {
-  font-size: $font-size-h3;
-  text-align: center;
-  padding-bottom: 15px;
-  font-style: normal;
-  color: $primary-highlight;
-  font-family: $font-family-serif;
-  @media (min-width: $screen-md-min) {
-    font-size: $font-size-h1;
-    padding-bottom: 50px;
-  }
+	font-size: $font-size-h3;
+	text-align: center;
+	padding-bottom: 15px;
+	font-style: normal;
+	color: $primary-highlight;
+	font-family: $font-family-serif;
+
+	@media (min-width: $screen-md-min) {
+		font-size: $font-size-h1;
+		padding-bottom: 50px;
+	}
 }
 
 .expand {
-  height: auto;
-  max-width: 400px;
-  margin: auto;
-  font-size: 120%;
-  text-align: center;
+	height: auto;
+	max-width: 400px;
+	margin: auto;
+	font-size: 120%;
+	text-align: center;
 }
 
-.input-default, .btn-default {
-	background: rgba((white), .8);
+.input-default,
+.btn-default {
+	background: rgba((white), 0.8);
 	border: 1px solid grey;
 	border-radius: 0;
 	color: black;
 
-  @media (min-width: $screen-md-min) {
-    border: none;
-  }
+	@media (min-width: $screen-md-min) {
+		border: none;
+	}
 }
 
 .dl-horizontal {
-  filter: blur(1px);
+	filter: blur(1px);
 }
 
 .consultation-wrapper {
-  background-image: url("../elements/skilift.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 0 -200px;
+	background-image: url("../elements/skilift.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: 0 -200px;
 }
+
 .consultation-overlay {
-  background-image: linear-gradient(rgba(256, 256, 256, .6), white);
+	background-image: linear-gradient(rgba(256, 256, 256, 0.6), white);
 }
 
 .about-wrapper {
-  background-image: linear-gradient(white, white 60%, rgba(256, 256, 256, 0)), url("../elements/desk.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 0 -200px;
+	background-image: linear-gradient(white, white 60%, rgba(256, 256, 256, 0)), url("../elements/desk.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: 0 -200px;
 }
+
 .about-overlay {
-  background-image: linear-gradient(rgba(256, 256, 256, .3), white);
+	background-image: linear-gradient(rgba(256, 256, 256, 0.3), white);
 }
 
 .registration-wrapper {
-  background-image: linear-gradient(white, white 70%, rgba(256, 256, 256, 0)), url("../elements/queue.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 0 -200px;
+	background-image: linear-gradient(white, white 70%, rgba(256, 256, 256, 0)), url("../elements/queue.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: 0 -200px;
 }
+
 .registration-overlay {
-  background-image: linear-gradient(rgba(256, 256, 256, .3), white);
+	background-image: linear-gradient(rgba(256, 256, 256, 0.3), white);
 }
 
 .podcasting-wrapper {
-  background-image: linear-gradient(white, white 20%, rgba(256, 256, 256, 0)), url("../elements/podcast.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+	background-image: linear-gradient(white, white 20%, rgba(256, 256, 256, 0)), url("../elements/podcast.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
+
 .podcasting-overlay {
-  background-image: linear-gradient(rgba(256, 256, 256, .1), white);
+	background-image: linear-gradient(rgba(256, 256, 256, 0.1), white);
 }
 
 .elvanto-wrapper {
-  background-image: url("../elements/elvanto-icon.png");
-  background-color: #323232;
-  background-size: auto;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: -25% 20%;
+	background-image: url("../elements/elvanto-icon.png");
+	background-color: #323232;
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: -25% 20%;
 }
+
 .elvanto-overlay {
-  //background-image: linear-gradient(rgba(white,0) 15%, rgba(white,1));
-  h1,h2,h3 {
-    color: white;
-  }
-  p {
-    color: $primary-highlight;
-  }
-  blockquote {
-    color: $primary-highlight;
-  }
-  a {
-    color: $footer-text;
-  }
+	// background-image: linear-gradient(rgba(white,0) 15%, rgba(white,1));
+	h1,
+	h2,
+	h3 {
+		color: white;
+	}
+	p {
+		color: $primary-highlight;
+	}
+	blockquote {
+		color: $primary-highlight;
+	}
+	a {
+		color: $footer-text;
+	}
 }
 
 .status-overlay {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-image: linear-gradient(rgba(256, 256, 256, .6), white 50%, white), url("../elements/matrix.jpg");
+	background-image: linear-gradient(rgba(256, 256, 256, 0.6), white 50%, white), url("../elements/matrix.jpg");
 }
 
 .contact-overlay {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-image: linear-gradient(rgba(256, 256, 256, .3), white), url("../elements/pen.jpg");
+	background-image: linear-gradient(rgba(256, 256, 256, 0.3), white), url("../elements/pen.jpg");
 }
