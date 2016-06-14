@@ -42,6 +42,6 @@ export default(
 		<Route path="/alert" component={Alert}/>
 		<Route path="/elvanto" component={Elvanto}/>
 		<Route path="/sparkleshare" component={Sparkleshare}/>
-		<Route path="/error" component={Error}/>
+		<Route path="/*" component={Error}/>
 	</Route>
 );
