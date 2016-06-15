@@ -232,6 +232,7 @@ function getCommonPlugins() {
 			'VERSION': JSON.stringify(packageJson.version)
 		}),
 		new StyleLintPlugin({
+			syntax: 'scss',
 			configFile: 'package.json'
 		}),
 		new WebpackNotifierPlugin(),
