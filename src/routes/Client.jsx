@@ -1,6 +1,7 @@
 import React from 'react';
 
 import fm from 'front-matter';
+import moment from 'moment';
 
 import {Alert} from '../components/Alert';
 import {Card} from '../components/Card';
@@ -16,7 +17,8 @@ const blog = {
 		return require.context('../blog', true, /^.*\.md$/);
 	},
 	get posts() {
-		return this.context.keys();
+		const fmt = '[./]YYYY-MM-DD[.md]';
+		return this.context.keys().sort((a, b) => moment(a, fmt).isBefore(moment(b, fmt)));
 	},
 	post(id) {
 		return this.context(this.posts.find(x => x === id));
