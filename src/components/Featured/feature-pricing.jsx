@@ -17,7 +17,7 @@ export const FeaturedPricing = () => (
 		</p>
 
 		<p>
-			For our core features and services, we won't invoice you at all. Not in a <q>free tier</q> business model where we send you five emails a day about how awesome <q>premium</q> is sort of way, but in a <q>We're really eager for you to get the most out of your IT for the good of the Gospel</q> sort of way. How does that sound? This is our rationale:
+			For our core features and services, we won't invoice you at all. Not in a <q>free tier</q> business model where we send you five emails a day about how awesome <q>premium</q> is sort of way, but in a <q>We’re really eager for you to get the most out of your IT for the good of the Gospel</q> sort of way. How does that sound? This is our rationale:
 		</p>
 
 		<blockquote className="lead">

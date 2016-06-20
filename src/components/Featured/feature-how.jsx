@@ -27,7 +27,7 @@ export class FeaturedHow extends React.Component {
 				</h2>
 
 				<p className="lead">
-					We want you to put your best foot forward, so we're here to give you the tools, techniques and direction you need. Vision 100 IT exists to help churches - <em>particularly church IT volunteers and ministry staff</em> - to use IT better. Maybe you can relate to one of these people:
+					We want you to put your best foot forward, so we’re here to give you the tools, techniques and direction you need. Vision 100 IT exists to help churches - <em>particularly church IT volunteers and ministry staff</em> - to use IT better. Maybe you can relate to one of these people:
 				</p>
 
 				<div className={styles.examples}>
@@ -51,12 +51,12 @@ export class FeaturedHow extends React.Component {
 					</div>
 					<Collapse isOpened={this.state.isOpen === 'overwhelmed'}>
 						<p className="explanation">
-							You're a church leader in the 21st Century, and you've put together a fancy_church.blogspot.com page, but now you're wondering if no website is better than what you've got. The effort to get something professional up and running just seems too much amidst the weekly sermons and pastoral care. Who actually has time to sort through these IT things?
+							You’re a church leader in the 21st Century, and you’ve put together a fancy_church.blogspot.com page, but now you’re wondering if no website is better than what you’ve got. The effort to get something professional up and running just seems too much amidst the weekly sermons and pastoral care. Who actually has time to sort through these IT things?
 						</p>
 					</Collapse>
 					<Collapse isOpened={this.state.isOpen === 'voluntold'}>
 						<p className="explanation">
-							Being "asked" to put together a webpage for church because you're the youngest and most "savvy" member can be frustrating, and now you've landed the job of dragging your church into the brave new world of Facebook, Instagram, Content Management and Responsive Design. Your pastor sent you a link to awesome~church.com and wants a site just like it. Just wish you had a bit of support and some better tools?
+							Being "asked" to put together a webpage for church because you’re the youngest and most "savvy" member can be frustrating, and now you've landed the job of dragging your church into the brave new world of Facebook, Instagram, Content Management and Responsive Design. Your pastor sent you a link to awesome~church.com and wants a site just like it. Just wish you had a bit of support and some better tools?
 						</p>
 					</Collapse>
 					<Collapse isOpened={this.state.isOpen === 'capable'}>

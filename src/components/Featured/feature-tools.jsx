@@ -1,4 +1,5 @@
 import React from 'react';
+import {Element, scroller} from 'react-scroll';
 import {Collapse} from '../Collapse';
 import styles from './feature-tools.scss';
 import {Featured} from './index';
@@ -15,6 +16,16 @@ export class FeaturedTools extends React.Component {
 	}
 	handleCollapse(event) {
 		event.preventDefault();
+
+		if (!this.state.isOpen) {
+			scroller.scrollTo('tools-expand', {
+				spy: true,
+				smooth: true,
+				offset: -164,
+				duration: 500
+			});
+		}
+
 		this.setState({
 			isOpen: !this.state.isOpen
 		});
@@ -46,11 +57,11 @@ export class FeaturedTools extends React.Component {
 					<p>
 						Although we think this ecosystem is fantastic, selecting our tools over years of experience, your needs may vary. If you already have some solutions sorted, no problem! We'll work with you as best as we can to <em>ensure you're being as effective as possible.</em>
 					</p>
-					<div className="expand">
+					<Element name="tools-expand" className="expand">
 						<a href="#" onClick={this.handleCollapse}>Supported tools and products<br/>
 							<span className="fa fa-angle-down fa-3x"></span>
 						</a>
-					</div>
+					</Element>
 				</section>
 				<Collapse isOpened={this.state.isOpen}>
 					<div className={styles.product}>
