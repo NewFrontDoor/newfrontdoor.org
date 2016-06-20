@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import ReactDOMServer from 'react-dom/server';
 import {Router, RouterContext, match, browserHistory, createMemoryHistory} from 'react-router';
 import {scroller, animateScroll} from 'react-scroll';
-import webfontloader from 'webfontloader';
 import {Root} from './routes/Root';
 import Routes from './routes/index.jsx';
 
@@ -28,12 +27,6 @@ function hashLinkScroll() {
 }
 
 if (typeof document !== 'undefined') {
-	webfontloader.load({
-		google: {
-			families: ['Quicksand::latin', 'EB+Garamond::latin']
-		}
-	});
-
 	const content = document.getElementById('content');
 	ReactDOM.render(<Router history={browserHistory} onUpdate={hashLinkScroll}>{Routes}</Router>, content);
 }

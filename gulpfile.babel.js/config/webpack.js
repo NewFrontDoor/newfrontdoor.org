@@ -66,10 +66,11 @@ function getCommonConfig() {
 	return {
 		context: path.resolve(paths.bundle.src),
 		entry: {
-			main: ['./index.jsx']
+			main: './index.jsx',
+			critical: './critical.jsx'
 		},
 		output: {
-			filename: 'index.js',
+			filename: '[name].js',
 			path: path.resolve(paths.bundle.dest),
 			publicPath: '/',
 			libraryTarget: 'umd'
