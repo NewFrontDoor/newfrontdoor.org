@@ -74,6 +74,7 @@
     "ngrok": "2.2.0",
     "node-libs-browser": "1.0.0",
     "normalize.css": "4.1.1",
+    "offline-plugin": "3.4.0",
     "postcss-colorblind": "BarryThePenguin/postcss-colorblind#patch-1",
     "postcss-loader": "0.9.1",
     "postcss-pxtorem": "3.3.1",
@@ -127,12 +128,22 @@
     "extends": "stylelint-config-standard",
     "rules": {
       "indentation": "tab",
-      "selector-pseudo-class-no-unknown": [true, {
-        "ignorePseudoClasses": ["local"]
-      }],
-      "unit-no-unknown": [true, {
-        "ignoreUnits": ["vr"]
-      }]
+      "selector-pseudo-class-no-unknown": [
+        true,
+        {
+          "ignorePseudoClasses": [
+            "local"
+          ]
+        }
+      ],
+      "unit-no-unknown": [
+        true,
+        {
+          "ignoreUnits": [
+            "vr"
+          ]
+        }
+      ]
     }
   },
   "babel": {

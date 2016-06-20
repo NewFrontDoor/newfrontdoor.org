@@ -15,6 +15,7 @@ import WebpackNotifierPlugin from 'webpack-notifier';
 import argvSetEnv from 'argv-set-env';
 import LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
+import OfflinePlugin from 'offline-plugin';
 
 import {trimExtension} from '../lib';
 import packageJson from '../../package.json';
@@ -241,6 +242,7 @@ function getCommonPlugins() {
 			// names: ["app", "subPageA"]
 			children: true,
 			async: true
-		})
+		}),
+		new OfflinePlugin()
 	]);
 }

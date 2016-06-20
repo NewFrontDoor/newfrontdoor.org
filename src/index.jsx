@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import ReactDOMServer from 'react-dom/server';
 import {Router, RouterContext, match, browserHistory, createMemoryHistory} from 'react-router';
 import {scroller, animateScroll} from 'react-scroll';
+import {install} from 'offline-plugin/runtime';
 import {Root} from './routes/Root';
 import Routes from './routes/index.jsx';
 
@@ -27,6 +28,7 @@ function hashLinkScroll() {
 }
 
 if (typeof document !== 'undefined') {
+	install();
 	const content = document.getElementById('content');
 	ReactDOM.render(<Router history={browserHistory} onUpdate={hashLinkScroll}>{Routes}</Router>, content);
 }

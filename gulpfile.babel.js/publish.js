@@ -5,27 +5,35 @@ import {paths} from './config';
 
 const $ = gulpLoadPlugins();
 
+function awsPublish(src) {
+	const publisher = $.awspublish.create({
+		region: 'ap-southeast-2',
+		params: {
+			Bucket: 'vision100it.org'
+		}
+	});
+
+	const headers = {
+		'Cache-Control': 'max-age=315360000, no-transform, public'
+	};
+
+	return src
+		.pipe(publisher.publish(headers))
+		.pipe(publisher.sync())
+		.pipe(publisher.cache())
+		.pipe($.awspublish.reporter());
+}
+
+export const critical = () => {
+	return awsPublish(gulp.src(paths.dest('critical.css')));
+};
+
 export default () => {
 	if ($.util.env.aws) {
-		const publisher = $.awspublish.create({
-			region: 'ap-southeast-2',
-			params: {
-				Bucket: 'vision100it.org'
-			}
-		});
+		const gzip = gulp.src(paths.dest('**/*(*.js|*.css)')).pipe($.awspublish.gzip());
+		const plain = gulp.src(paths.dest('**/!(*.js|*.css)'));
 
-		const headers = {
-			'Cache-Control': 'max-age=315360000, no-transform, public'
-		};
-
-		const gzip = gulp.src([paths.dest('**/*.js'), paths.dest('**/*.css')]).pipe($.awspublish.gzip());
-		const plain = gulp.src([paths.dest('**/*'), paths.dest('!**/*.js'), paths.dest('!**/*.css')]);
-
-		return merge(gzip, plain)
-			.pipe(publisher.publish(headers))
-			.pipe(publisher.sync())
-			.pipe(publisher.cache())
-			.pipe($.awspublish.reporter());
+		return awsPublish(merge(gzip, plain));
 	}
 
 	return gulp.src(paths.dest('**/*'))
