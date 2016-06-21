@@ -4,6 +4,8 @@ import lunr from 'lunr';
 import classNames from 'classnames';
 import './SearchBar.scss';
 
+const ESCAPE = 27;
+
 export class SearchBar extends React.Component {
 	constructor(props) {
 		super(props);
@@ -14,18 +16,46 @@ export class SearchBar extends React.Component {
 		this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
 		this.handleSearchTerm = this.handleSearchTerm.bind(this);
 		this.handleCloseResult = this.handleCloseResult.bind(this);
+		this.handleCloseModal = this.handleCloseModal.bind(this);
+		this.mountSearchInput = this.mountSearchInput.bind(this);
+		this.handleEscKey = this.handleEscKey.bind(this);
+	}
+
+	mountSearchInput(c) {
+		this.searchInput = c;
+	}
+
+	componentDidUpdate() {
+		if (this.props.isOpen) {
+			this.searchInput.focus();
+		}
+	}
+
+	componentDidMount() {
+		window.addEventListener('keydown', this.handleEscKey, false);
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener('keydown', this.handleEscKey, false);
 	}
 
 	get searchIndex() {
 		const self = this;
 		return new Promise(resolve => {
 			if (self.__searchIndex) {
-				resolve({index: self.__searchIndex, data: self.__searchData});
+				resolve({
+					index: self.__searchIndex,
+					data: self.__searchData
+				});
 			} else {
 				require.ensure([], () => {
 					self.__searchIndex = lunr.Index.load(require('../../Search/search-index.json'));
 					self.__searchData = require('../../Search/search-data.json');
-					resolve({index: self.__searchIndex, data: self.__searchData});
+
+					resolve({
+						index: self.__searchIndex,
+						data: self.__searchData
+					});
 				});
 			}
 		});
@@ -62,6 +92,20 @@ export class SearchBar extends React.Component {
 		this.setState({searchResults: []});
 	}
 
+	handleCloseModal(event) {
+		this.setState({
+			searchResults: [],
+			searchTerm: ''
+		});
+		this.props.onClose(event);
+	}
+
+	handleEscKey(event) {
+		if (event.keyCode === ESCAPE) {
+			this.handleCloseModal(event);
+		}
+	}
+
 	render() {
 		const siteClass = classNames({
 			'visible': this.props.isOpen,
@@ -79,7 +123,7 @@ export class SearchBar extends React.Component {
 				<div className="search-title">
 					<h2>
 						Search menu
-						<a onClick={this.props.onClose}>
+						<a onClick={this.handleCloseModal}>
 							<span className="fa fa-times-circle"></span>
 						</a>
 					</h2>
@@ -90,6 +134,7 @@ export class SearchBar extends React.Component {
 						<input
 							type="search"
 							name="search"
+							ref={this.mountSearchInput}
 							className="form-control search"
 							value={this.state.searchTerm}
 							onChange={this.handleSearchTerm}
@@ -115,7 +160,7 @@ export class SearchBar extends React.Component {
 						<ul className="list-unstyled">
 							{this.state.searchResults.map((item, key) => (
 								<li key={key}>
-									<Link to={`/${item.id}`} onClick={this.props.onClose}>{item.title}</Link>
+									<Link to={`/${item.id}`} onClick={this.handleCloseModal}>{item.title}</Link>
 								</li>
 							))}
 						</ul>
