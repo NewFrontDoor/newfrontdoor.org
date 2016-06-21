@@ -25,7 +25,7 @@ export const FeaturedWho = () => (
 			</div>
 			<div>
 				<span className="fa fa-server fa-5x"></span>
-				<p>20+ webpages served</p>
+				<p>20+ websites served</p>
 			</div>
 		</div>
 
