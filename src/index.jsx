@@ -46,6 +46,6 @@ export default (locals, callback) => {
 				<RouterContext {...renderProps}/>
 			</Root>
 		);
-		return callback(null, html);
+		return callback(null, `<!doctype html>${html}`);
 	});
 };

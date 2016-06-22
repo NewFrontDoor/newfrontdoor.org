@@ -8,7 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 export const Root = ({children}) => (
-	<html>
+	<html lang="en">
 		<Head title="Vision 100 IT"/>
 		<body>
 			<div id="content">

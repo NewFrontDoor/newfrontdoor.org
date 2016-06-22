@@ -26,7 +26,7 @@ export class SearchBar extends React.Component {
 	}
 
 	componentDidUpdate() {
-		if (this.props.isOpen) {
+		if (this.props.isOpen && window.matchMedia('(min-width: 992px)').matches) {
 			this.searchInput.focus();
 		}
 	}
