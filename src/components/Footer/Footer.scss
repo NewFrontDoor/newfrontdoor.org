@@ -1,6 +1,7 @@
 @import "../../css/variables";
 
 footer {
+	flex-shrink: 0;
 	background-color: white;
 
 	@media (min-width: $screen-md-min) {
