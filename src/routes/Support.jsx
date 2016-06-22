@@ -8,7 +8,7 @@ export const Support = () => (
 			<div className="site-wrapper site-wrapper-padding">
 				<h1>Support form</h1>
 				<div>
-					<p>Some issues may be answered by our <Link to="documentation">documentation</Link> which you can find <Link to="documentation">here</Link>. Please also check our <Link to="status">system status page</Link> for any issues that may impact your work.</p>
+					<p>Some issues may be answered by our <Link to="/documentation">documentation</Link> which you can find <Link to="/documentation">here</Link>. Please also check our <Link to="/status">system status page</Link> for any issues that may impact your work.</p>
 				</div>
 				<hr/>
 				<div className="instruction">

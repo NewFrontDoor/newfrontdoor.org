@@ -9,7 +9,7 @@ export const Feature = () => (
 				<h1>Feature request form</h1>
 				<div>
 					<p>
-						Some features may be in the pipeline or already available. See our <Link to="documentation">documentation page</Link> for assistance in using these features, and our <Link to="client">client page</Link> for any announcements.
+						Some features may be in the pipeline or already available. See our <Link to="/documentation">documentation page</Link> for assistance in using these features, and our <Link to="/client">client page</Link> for any announcements.
 					</p>
 				</div>
 				<hr/>

@@ -172,19 +172,19 @@ export class SearchBar extends React.Component {
 				<div className="search-menu">
 					<ul className="list-unstyled">
 						<li>
-							<Link to="client">News</Link>
+							<Link to="/client">News</Link>
 						</li>
 						<li>
-							<Link to="support">Support</Link>
+							<Link to="/support">Support</Link>
 						</li>
 						<li>
-							<Link to="status">Status</Link>
+							<Link to="/status">Status</Link>
 						</li>
 						<li>
-							<Link to="documentation">Documentation</Link>
+							<Link to="/documentation">Documentation</Link>
 						</li>
 						<li>
-							<Link to="contact">Contact</Link>
+							<Link to="/contact">Contact</Link>
 						</li>
 					</ul>
 				</div>
