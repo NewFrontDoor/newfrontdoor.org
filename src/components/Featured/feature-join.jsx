@@ -8,12 +8,25 @@ export class FeaturedJoin extends React.Component {
 	constructor() {
 		super();
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleChange = this.handleChange.bind(this);
+	}
+	handleChange(field) {
+		return event => {
+			this.setState({
+				[field]: event.target.value
+			});
+		};
 	}
 	handleSubmit(event) {
 		event.preventDefault();
 		fetch('/submit', {
 			method: 'post',
-			body: new FormData(event.target)
+			body: JSON.stringify({
+				name: this.state.name,
+				email: this.state.email,
+				organisation: this.state.organisation,
+				message: this.state.message
+			})
 		});
 	}
 	render() {
@@ -41,19 +54,19 @@ export class FeaturedJoin extends React.Component {
 						<form onSubmit={this.handleSubmit}>
 							<div className={`form-group ${styles.group1}`}>
 								<label hidden htmlFor="name">Name</label>
-								<input type="text" name="name" className="form-control input-default" placeholder="Name"/>
+								<input type="text" name="name" className="form-control input-default" placeholder="Name" onChange={this.handleChange('name')}/>
 							</div>
 							<div className={`form-group ${styles.group1}`}>
 								<label hidden htmlFor="email">Contact email</label>
-								<input type="email" name="email" className="form-control input-default" placeholder="Contact email"/>
+								<input type="email" name="email" className="form-control input-default" placeholder="Contact email" onChange={this.handleChange('email')}/>
 							</div>
 							<div className={`form-group ${styles.group2}`}>
 								<label hidden htmlFor="organisation">Organisation</label>
-								<input type="text" name="organisation" className="form-control input-default" placeholder="Organisation"/>
+								<input type="text" name="organisation" className="form-control input-default" placeholder="Organisation" onChange={this.handleChange('organisation')}/>
 							</div>
 							<div className={`form-group ${styles.group2}`}>
 								<label hidden htmlFor="message">Message</label>
-								<textarea type="text" name="message" className="form-control input-default" placeholder="Message"></textarea>
+								<textarea type="text" name="message" className="form-control input-default" placeholder="Message" onChange={this.handleChange('message')}></textarea>
 							</div>
 							<input type="submit" className={`btn btn-default ${styles.group2}`} value="Submit"/>
 						</form>
