@@ -243,6 +243,10 @@ function getCommonPlugins() {
 			children: true,
 			async: true
 		}),
-		new OfflinePlugin()
+		new OfflinePlugin({
+			ServiceWorker: {
+				output: '/sw.js'
+			}
+		})
 	]);
 }
