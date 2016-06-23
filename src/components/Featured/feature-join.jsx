@@ -20,7 +20,7 @@ export class FeaturedJoin extends React.Component {
 		return (
 			<div className={styles.feature}>
 				<section className={styles.video}>
-					<video autoPlay loop>
+					<video autoPlay loop mute>
 						<source src={imageContext('./clip2.mp4')} type="video/mp4"></source>
 					</video>
 				</section>

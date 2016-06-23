@@ -11,12 +11,9 @@ export const Post = props => (
 			<h2 className={styles.title}><Link to={props.url}>{props.title}</Link></h2>
 			<p className={styles.meta}>
 				<span className={styles.author}>By&nbsp;
-					<a href="#">{props.author.name}</a>
+					{props.author.name}
 				</span>
 				<span className={styles.date}>{moment(props.date).format('Do MMMM, YYYY')}</span>
-				<span className={styles.category}>under&nbsp;
-					<span>{props.tags.map((tag, key) => <Link key={key} to={`blog/tags/${tag}`}>{tag}</Link>)}</span>
-				</span>
 			</p>
 		</header>
 		<div className={styles.body}>

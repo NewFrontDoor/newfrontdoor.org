@@ -238,6 +238,7 @@ blockquote {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-image: linear-gradient(rgba(256, 256, 256, 0.6), white 50%, white), url("../elements/matrix.jpg");
+	min-height: 500px;
 }
 
 .contact-overlay {

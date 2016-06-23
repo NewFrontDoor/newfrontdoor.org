@@ -34,11 +34,11 @@ export class Blog extends React.Component {
 						<h1>{this.blog.title}</h1>
 						<h1><small>{this.blog.sub_title}</small></h1>
 						<h3>{this.blog.author.name} - <span className={styles.date}>{moment(this.blog.date).format('Do MMMM, YYYY')}</span></h3>
-						<h4>Tags: {this.blog.tags}</h4>
 						<div className={styles.imgContainer}><img src={imageContext(this.blog.image.href)} alt={this.blog.image.alt}/></div>
 						<Markdown>
 							{this.blog.body}
 						</Markdown>
+						<a href="/client"> &#060; Back</a>
 					</div>
 				</div>
 			</Index>

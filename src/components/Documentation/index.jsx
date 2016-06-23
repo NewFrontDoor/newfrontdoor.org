@@ -117,11 +117,11 @@ export class Documentation extends React.Component {
 									<i className="fa fa-book fa-fw"></i>Getting started with Vision 100 IT</h3>
 								<ul>
 									<li>
-										<a href="documentation/suite">Suite of Tools</a>
+										<a href="/documentation/suite">Suite of Tools</a>
 									</li>
 									<li>Client Charter Agreement - <i>coming soon</i></li>
 									<li>
-										<a href="documentation/privacy">Privacy Policy</a>
+										<a href="/documentation/privacy">Privacy Policy</a>
 									</li>
 									<li>
 										<a href="/documentation/development">Website Development project outline</a>
@@ -174,6 +174,7 @@ export class Documentation extends React.Component {
 								<h3>
 									<i className="fa fa-lightbulb-o fa-fw"></i>Articles + training night materials</h3>
 								<ul>
+									- <i>coming soon</i>
 								</ul>
 							</div>
 						</div>

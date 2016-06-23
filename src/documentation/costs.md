@@ -7,19 +7,6 @@ Summary
 ------
 This documents all the standard fees and charges applicable for Vision 100 IT services. Services that carry no charge are not listed here.
 ***
-### Church Annual Contributions
-*as of March 2016*
-1. Small Church - $300
-2. Medium Church - $600
-3. Large Church - $1,200
-
-### Parachurch Ministry Annual Contributions
-*as of March 2016*
-1. Small Ministry - $150
-2. Medium Ministry - $300
-3. Large Ministry - $600
-
-
 ### Event Registration module
 *as of March 2016*
 1. Up to 4 events (Excludes paypal fees) - $50 per event
@@ -41,3 +28,21 @@ This documents all the standard fees and charges applicable for Vision 100 IT se
 
 ### Consultation charges
 Fees on request
+
+### Contributing to the ongoing work of Vision 100 IT
+
+Vision 100 IT wants to be able to extend its services to more churches, and so we recommend churches contribute an annual amount to keep us running. This isn't a fee, but an opportunity to invest in the common platform of Vision 100 IT.
+
+These are our recommendations, but this is something that we'd discuss with you as you come on board with us, so don't panic!
+
+### Church Annual Contributions
+*as of March 2016*
+1. Small Church - $300
+2. Medium Church - $600
+3. Large Church - $1,200
+
+### Parachurch Ministry Annual Contributions
+*as of March 2016*
+1. Small Ministry - $150
+2. Medium Ministry - $300
+3. Large Ministry - $600
