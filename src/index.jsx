@@ -28,7 +28,9 @@ function hashLinkScroll() {
 }
 
 if (typeof document !== 'undefined') {
-	install();
+	if (process.env.NODE_ENV === 'production') {
+		install();
+	}
 	const content = document.getElementById('content');
 	ReactDOM.render(<Router history={browserHistory} onUpdate={hashLinkScroll}>{Routes}</Router>, content);
 }
