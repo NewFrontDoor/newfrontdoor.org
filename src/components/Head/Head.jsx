@@ -7,6 +7,7 @@ export const Head = ({title}) => (
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 		<title>{title}</title>
 		<link rel="stylesheet" type="text/css" href="/main.css"></link>
+		<link rel="shortcut icon" href="http://vision100.org/sites/vision100.org/files/v100it-logo-favicon.png" />
 	</head>
 );
 
