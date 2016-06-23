@@ -1,6 +1,6 @@
 import React from 'react';
 import throttle from 'lodash/throttle';
-import logo from '../../elements/v100it2.png';
+import logo from '../../elements/vision100-it-logo.svg';
 import styles from './Header.scss';
 
 export class Header extends React.Component {
