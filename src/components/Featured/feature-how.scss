@@ -4,6 +4,13 @@
 	lost-flex-container: row;
 }
 
+:local .explanation {
+	margin-top: 20px;
+	padding: 10px;
+	box-shadow: 0 10px 16px 0 rgba($primary-highlight, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
 :local .example {
 	lost-column: 1/1;
 	text-align: center;
@@ -11,6 +18,7 @@
 	p {
 		max-height: 0;
 		overflow: hidden;
+		padding-top: 20px;
 	}
 
 	@media (min-width: $screen-md-min) {
