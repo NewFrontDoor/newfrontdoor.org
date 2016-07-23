@@ -6,7 +6,7 @@ import ghSlugs from 'github-slugger';
 import remarkReact from 'remark-react';
 import {Element} from 'react-scroll';
 import {Link} from 'react-router';
-import toc from './toc';
+import toc from 'mdast-util-toc';
 
 const remarkHeading = (component, boundProps = {}) => {
 	return React.createClass({
@@ -19,7 +19,8 @@ const remarkHeading = (component, boundProps = {}) => {
 		render() {
 			const slugs = ghSlugs();
 			const props = {...this.props, ...boundProps};
-			return (<Element name={`${slugs.slug(this.props.children.props.children)}`}>
+			const [slug] = props.children;
+			return (<Element name={`${slugs.slug(slug)}`}>
 				{React.createElement(component, {...props}, this.props.children)}
 			</Element>);
 		}
@@ -41,8 +42,6 @@ RemarkLink.propTypes = {
 };
 
 export const remarkConfigDefault = {
-	commonmark: true,
-	paragraphBlockquotes: false,
 	remarkReactComponents: {
 		a: RemarkLink,
 		// blockquote: CombinedBlockQuote,
@@ -89,7 +88,9 @@ Markdown.defaultProps = {
 
 export const Toc = ({style, source, children, remarkConfig}) => {
 	const content = (isUndefined(source) || source === '') ? children : source;
-	const tocOut = remark().use(toc, {tight: true}).process(content).toString();
+	const tocOut = remark().use(() => node => {
+		node.children = toc(node, {tight: true}).map;
+	}).process(content).toString();
 
 	return (
 		<Markdown style={style} remarkConfig={remarkConfig}>

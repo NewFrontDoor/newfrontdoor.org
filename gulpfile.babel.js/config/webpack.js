@@ -8,8 +8,9 @@ import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import StaticSiteGeneratorPlugin from 'static-site-generator-webpack-plugin';
 import lost from 'lost';
+import calc from 'postcss-calc';
 import pxtorem from 'postcss-pxtorem';
-import vr from 'postcss-vertical-rhythm';
+import lh from 'postcss-lh';
 import webpack from 'webpack';
 import WebpackNotifierPlugin from 'webpack-notifier';
 import argvSetEnv from 'argv-set-env';
@@ -217,8 +218,9 @@ function getFileLoader() {
 
 function getPostCss() {
 	return [
-		vr(),
+		lh(),
 		lost(),
+		calc(),
 		autoprefixer({
 			browsers: ['last 2 versions'],
 			cascade: false

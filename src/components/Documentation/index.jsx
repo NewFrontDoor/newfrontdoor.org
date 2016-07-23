@@ -24,8 +24,9 @@ export class Documentation extends React.Component {
 				resolve({index: self.__searchIndex, data: self.__searchData});
 			} else {
 				require.ensure([], () => {
-					self.__searchIndex = lunr.Index.load(require('../../Search/search-index.json'));
 					self.__searchData = require('../../Search/search-data.json');
+					self.__searchIndex = lunr.Index.load(require('../../Search/search-index.json'));
+
 					resolve({index: self.__searchIndex, data: self.__searchData});
 				});
 			}
@@ -103,7 +104,7 @@ export class Documentation extends React.Component {
 									<ul className="list-unstyled">
 										{this.state.searchResults.map((item, key) => (
 											<li key={key}>
-												<h4><Link to={`/${item.id}`} onClick={this.props.onClose}>{item.title}</Link></h4>
+												<h4><Link to={`/${item.id}`}>{item.title}</Link></h4>
 											</li>
 										))}
 									</ul>
@@ -117,14 +118,14 @@ export class Documentation extends React.Component {
 									<i className="fa fa-book fa-fw"></i>Getting started with Vision 100 IT</h3>
 								<ul>
 									<li>
-										<a href="/documentation/suite">Suite of Tools</a>
+										<Link to="/documentation/suite">Suite of Tools</Link>
 									</li>
 									<li>Client Charter Agreement - <i>coming soon</i></li>
 									<li>
-										<a href="/documentation/privacy">Privacy Policy</a>
+										<Link to="/documentation/privacy">Privacy Policy</Link>
 									</li>
 									<li>
-										<a href="/documentation/development">Website Development project outline</a>
+										<Link to="/documentation/development">Website Development project outline</Link>
 									</li>
 								</ul>
 							</div>
@@ -133,22 +134,22 @@ export class Documentation extends React.Component {
 									<i className="fa fa-cogs fa-fw"></i>Our Tools</h3>
 								<ul>
 									<li>
-										<a href="/documentation/mailinglists">Mailing lists</a>
+										<Link to="/documentation/mailinglists">Mailing lists</Link>
 									</li>
 									<li>
 										Making the most of your new website - <i>coming soon</i>
 									</li>
 									<li>
-										<a href="/elvanto">Elvanto</a>
+										<Link to="/elvanto">Elvanto</Link>
 									</li>
 									<li>
-										<a href="/sparkleshare">Sparkleshare</a>
+										<Link to="/sparkleshare">Sparkleshare</Link>
 									</li>
 									<li>
-										<a href="/podcasting">Podcasting</a>
+										<Link to="/podcasting">Podcasting</Link>
 									</li>
 									<li>
-										<a href="/registration">Event Registration tool</a>
+										<Link to="/registration">Event Registration tool</Link>
 									</li>
 								</ul>
 							</div>
@@ -163,10 +164,10 @@ export class Documentation extends React.Component {
 										Website refresh recommendations - <i>coming soon</i>
 									</li>
 									<li>
-										<a href="/documentation/sparkleshare">Administrating Sparkleshare</a>
+										<Link to="/documentation/sparkleshare">Administrating Sparkleshare</Link>
 									</li>
 									<li>
-										<a href="/documentation/checklist">Checklist for on-boarding and finishing with staff members</a>
+										<Link to="/documentation/checklist">Checklist for on-boarding and finishing with staff members</Link>
 									</li>
 								</ul>
 							</div>
@@ -212,8 +213,3 @@ export class Documentation extends React.Component {
 		);
 	}
 }
-
-Documentation.propTypes = {
-	isOpen: React.PropTypes.bool.isRequired,
-	onClose: React.PropTypes.func.isRequired
-};

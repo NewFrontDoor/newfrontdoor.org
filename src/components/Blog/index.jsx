@@ -1,6 +1,7 @@
 import React from 'react';
 import fm from 'front-matter';
 import moment from 'moment';
+import {Link} from 'react-router';
 import {Index} from '../Index/index.jsx';
 import {Markdown} from '../Markdown';
 import styles from './Blog.scss';
@@ -38,7 +39,7 @@ export class Blog extends React.Component {
 						<Markdown>
 							{this.blog.body}
 						</Markdown>
-						<a href="/client"> &#060; Back</a>
+						<Link to="/client"> &#060; Back</Link>
 					</div>
 				</div>
 			</Index>

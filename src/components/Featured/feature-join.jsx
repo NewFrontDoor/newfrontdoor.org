@@ -19,13 +19,17 @@ export class FeaturedJoin extends React.Component {
 	}
 	handleSubmit(event) {
 		event.preventDefault();
-		fetch('/submit', {
+		fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/contact-us', {
 			method: 'post',
+			mode: 'cors',
 			body: JSON.stringify({
 				name: this.state.name,
 				email: this.state.email,
 				organisation: this.state.organisation,
 				message: this.state.message
+			}),
+			headers: new Headers({
+				'Content-Type': 'application/json'
 			})
 		});
 	}
@@ -33,7 +37,7 @@ export class FeaturedJoin extends React.Component {
 		return (
 			<div className={styles.feature}>
 				<section className={styles.video}>
-					<video autoPlay loop mute>
+					<video autoPlay loop muted>
 						<source src={imageContext('./clip2.mp4')} type="video/mp4"></source>
 					</video>
 				</section>

@@ -23,8 +23,9 @@ export class Error extends React.Component {
 				resolve({index: self.__searchIndex, data: self.__searchData});
 			} else {
 				require.ensure([], () => {
-					self.__searchIndex = lunr.Index.load(require('../Search/search-index.json'));
 					self.__searchData = require('../Search/search-data.json');
+					self.__searchIndex = lunr.Index.load(require('../Search/search-index.json'));
+
 					resolve({index: self.__searchIndex, data: self.__searchData});
 				});
 			}
@@ -103,7 +104,7 @@ export class Error extends React.Component {
 										<ul className="list-unstyled">
 											{this.state.searchResults.map((item, key) => (
 												<li key={key}>
-													<h4><Link to={`/${item.id}`} onClick={this.props.onClose}>{item.title}</Link></h4>
+													<h4><Link to={`/${item.id}`}>{item.title}</Link></h4>
 												</li>
 											))}
 										</ul>
@@ -117,8 +118,3 @@ export class Error extends React.Component {
 		);
 	}
 }
-
-Error.propTypes = {
-	isOpen: React.PropTypes.bool.isRequired,
-	onClose: React.PropTypes.func.isRequired
-};
