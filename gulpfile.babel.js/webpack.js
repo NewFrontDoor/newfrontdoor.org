@@ -2,8 +2,8 @@ import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import gulpLoadPlugins from 'gulp-load-plugins';
 
-import config from './config/webpack';
-import {compileLogger} from './lib';
+import config from '../webpack.config.babel';
+import {compileLogger} from '../lib';
 
 const $ = gulpLoadPlugins();
 

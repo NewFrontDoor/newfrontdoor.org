@@ -13,42 +13,37 @@ import pxtorem from 'postcss-pxtorem';
 import lh from 'postcss-lh';
 import webpack from 'webpack';
 import WebpackNotifierPlugin from 'webpack-notifier';
-import argvSetEnv from 'argv-set-env';
 import LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 import OfflinePlugin from 'offline-plugin';
 
-import {trimExtension} from '../lib';
-import packageJson from '../../package.json';
-import paths from './paths';
+import {trimExtension} from './lib';
+import packageJson from './package.json';
+import {paths} from './config';
 
 const staticPaths = [
 	'/',
-	'/client/',
-	'/support/',
-	'/feature/',
-	'/documentation/',
-	'/status/',
-	'/control/',
 	'/about',
-	'/contact',
-	'/training',
+	'/client/',
 	'/consultation',
-	'/registration',
-	'/podcasting',
+	'/contact',
+	'/control/',
+	'/documentation/',
 	'/elvanto',
+	'/error',
+	'/feature/',
+	'/podcasting',
+	'/registration',
 	'/sparkleshare',
-	'/error'
+	'/status/',
+	'/support/',
+	'/training'
 ];
 
 const documentation = fs.readdirSync(paths.documentation.dir).map(p => `/documentation/${trimExtension(p)}`);
 const blog = fs.readdirSync(paths.blog.dir).map(p => `/blog/${trimExtension(p)}`);
 
 Reflect.apply(Array.prototype.push, staticPaths, [...blog, ...documentation]);
-
-console.log(staticPaths);
-
-argvSetEnv();
 
 export default getConfig();
 
@@ -237,7 +232,10 @@ function getCommonPlugins() {
 		}),
 		new StyleLintPlugin({
 			syntax: 'scss',
-			configFile: 'package.json'
+			configFile: 'package.json',
+			configOverrides: {
+				rules: packageJson.stylelint.rules
+			}
 		}),
 		new WebpackNotifierPlugin(),
 		new webpack.optimize.CommonsChunkPlugin({

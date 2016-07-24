@@ -89,7 +89,7 @@ Markdown.defaultProps = {
 export const Toc = ({style, source, children, remarkConfig}) => {
 	const content = (isUndefined(source) || source === '') ? children : source;
 	const tocOut = remark().use(() => node => {
-		node.children = toc(node, {tight: true}).map;
+		node.children = [toc(node, {tight: true}).map];
 	}).process(content).toString();
 
 	return (

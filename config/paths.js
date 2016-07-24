@@ -40,16 +40,6 @@ export default {
 		dest: dest(),
 		bundle: src('js')
 	},
-	templates: {
-		src: [
-			src('/templates/**/*.hbs')
-		],
-		dest: dest()
-	},
-	extras: {
-		src: src('/stuff/*'),
-		dest: dest()
-	},
 	fonts: {
 		src: [
 			src('/fonts/*.{eot,svg,ttf,woff,otf}')

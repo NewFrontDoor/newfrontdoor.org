@@ -1,6 +1,6 @@
 import util from 'gulp-util';
 import del from 'del';
-import {paths} from './config';
+import {paths} from '../config';
 
 export default () => {
 	const dest = paths.dest();

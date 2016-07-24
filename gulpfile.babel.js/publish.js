@@ -1,6 +1,6 @@
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
-import {paths} from './config';
+import {paths} from '../config';
 
 const $ = gulpLoadPlugins();
 
