@@ -2,6 +2,54 @@ import React from 'react';
 import {Collapse} from '../components/Collapse';
 import {Index} from '../components/Index/index.jsx';
 
+class ContactForm extends React.Component {
+	constructor() {
+		super();
+		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleChange = this.handleChange.bind(this);
+	}
+	handleChange(field) {
+		return event => {
+			this.setState({
+				[field]: event.target.value
+			});
+		};
+	}
+	handleSubmit(event) {
+		event.preventDefault();
+		fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/contact-us', {
+			method: 'post',
+			mode: 'cors',
+			body: JSON.stringify({
+				name: this.state.name,
+				email: this.state.email
+			}),
+			headers: new Headers({
+				'Content-Type': 'application/json'
+			})
+		});
+	}
+	render() {
+		return (
+			<form className="form-group has-success has-feedback" onSubmit={this.handleSubmit}>
+				<div className="form-group">
+					<label htmlFor="name">Name</label>
+					<input type="text" name="name" className="form-control" placeholder="Insert your full name" onChange={this.handleChange('name')}/>
+				</div>
+				<div className="form-group">
+					<label htmlFor="email">
+						Email address
+					</label>
+					<input type="text" name="email" className="form-control" placeholder="Insert a valid email address" onChange={this.handleChange('email')}/>
+				</div>
+				<div className="form-group">
+					<button type="submit" className="btn btn-primary">Submit</button>
+				</div>
+			</form>
+		);
+	}
+}
+
 export class Contact extends React.Component {
 	constructor() {
 		super();
@@ -32,14 +80,7 @@ export class Contact extends React.Component {
 							<h3>
 								Join our mailing list
 							</h3>
-							<div className="form-group has-success has-feedback">
-								<label htmlFor="name">Name</label>
-								<input type="text" name="name" className="form-control" placeholder="Insert your full name"/>
-								<label htmlFor="email">
-									Email address
-								</label>
-								<input type="text" name="email" className="form-control" placeholder="Insert a valid email address"/>
-							</div>
+							<ContactForm/>
 							<p><a href="#" onClick={this.handleCollapse}>About our mailing lists</a></p>
 							<Collapse isOpened={this.state.isOpen}>
 								<p>Vision 100 sends out a bunch of stuff via email regularly including:</p>

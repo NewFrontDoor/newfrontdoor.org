@@ -33,7 +33,7 @@ class FeatureForm extends React.Component {
 	}
 	render() {
 		return (
-			<form className="support-form">
+			<form className="support-form" onSubmit={this.handleSubmit}>
 				<div className="form-group has-success has-feedback">
 					<label htmlFor="name">Name:</label>
 					<input type="text" name="name" className="form-control" placeholder="First and last name" onChange={this.handleChange('name')}/>

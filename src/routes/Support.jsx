@@ -36,8 +36,6 @@ class SupportForm extends React.Component {
 		});
 	}
 	render() {
-		console.log('RENDER', this.state);
-
 		return (
 			<form className="support-form" onSubmit={this.handleSubmit}>
 				<div className="form-group has-success has-feedback">
