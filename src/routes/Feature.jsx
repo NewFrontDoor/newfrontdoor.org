@@ -21,10 +21,13 @@ class FeatureForm extends React.Component {
 			method: 'post',
 			mode: 'cors',
 			body: JSON.stringify({
-				subject: this.state.subject,
-				description: this.state.description,
+				name: this.state.name,
 				organisation: this.state.organisation,
-				message: this.state.message
+				email: this.state.email,
+				urlIssue: this.state.urlIssue,
+				optionsRadios: this.state.optionsRadios,
+				description: this.state.description,
+				additional: this.state.additional
 			}),
 			headers: new Headers({
 				'Content-Type': 'application/json'
