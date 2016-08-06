@@ -38,7 +38,6 @@ function lunrGulp(config) {
 	const items = [];
 
 	function transform(file, enc, cb) {
-		console.log(file);
 		const frontMatter = file.frontMatter;
 		const id = trimExtension(file.relative);
 		const title = frontMatter.title;
