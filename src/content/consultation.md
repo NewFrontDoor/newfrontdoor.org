@@ -1,5 +1,6 @@
-Consultation
-============
+---
+title: Consultation
+---
 
 The purpose of Vision 100 IT Training and Consultancy is to provide
 tailored help to ministry leaders and/or ministry admins using IT in the

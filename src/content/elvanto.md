@@ -1,5 +1,6 @@
-Elvanto Church Management System
-================================
+---
+title: Elvanto Church Management System
+---
 
 ### What is Elvanto?
 

@@ -1,5 +1,6 @@
-Podcasting Module
-=================
+---
+title: Podcasting Module
+---
 
 Podcasting is an excellent way to distribute your church audio, from
 your weekly sermons, to your once off evangelistic events and community

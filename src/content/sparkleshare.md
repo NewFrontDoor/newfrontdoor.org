@@ -1,5 +1,6 @@
-Sparkleshare document management
-================================
+---
+title: Sparkleshare Document Management
+---
 
 Sparkleshare is a document management system, similar to other cloud
 based storage solutions like Dropbox and Google drive. There are a

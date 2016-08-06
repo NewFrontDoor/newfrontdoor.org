@@ -1,5 +1,6 @@
-Events Registration Module
-==========================
+---
+title: Events Registration Module
+---
 
 Wouldn’t it be great if the administration for your church event wasn’t
 such heavy lifting?
