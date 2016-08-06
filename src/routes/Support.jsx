@@ -26,6 +26,7 @@ class SupportForm extends React.Component {
 				urlIssue: this.state.urlIssue,
 				optionsRadios: this.state.optionsRadios,
 				severity: this.state.severity,
+				additional: this.state.additional,
 				name: this.state.name,
 				organisation: this.state.organisation,
 				email: this.state.email
