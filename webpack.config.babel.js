@@ -80,7 +80,7 @@ function getCommonConfig() {
 			fs: 'empty'
 		},
 		resolve: {
-			extensions: ['', '.js', '.jsx', '.scss']
+			extensions: ['', '.js', '.json', '.jsx', '.scss']
 		},
 		postcss: getPostCss()
 	};
