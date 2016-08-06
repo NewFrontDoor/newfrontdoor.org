@@ -18,7 +18,7 @@ export const Feature = () => (
 					<p>To best assist you with your feature requests, please ensure to:</p>
 					<ul>
 						<li>fill out this form <strong>as completely as you can.</strong></li>
-						<li>include only one request per submission. You're welcome to submit multiple requests.</li>
+						<li>include only one request per submission. You’re welcome to submit multiple requests.</li>
 						<li>check you're allocated a ticket number.</li>
 					</ul>
 					Each submission will:
@@ -78,12 +78,12 @@ export const Feature = () => (
 							</label>
 						</div>
 					</div>
-					<div className="form-group">
+					<div className="form-group hide">
 						<label htmlFor="file">File upload:</label>
 						<input type="file" name="file" className="form-control"/>
 						<p className="help-block">Only txt, doc, docx or pdf and under 2mb are accepted.</p>
 					</div>
-					<div className="form-group">
+					<div className="form-group hide">
 						<label htmlFor="screenshot">Screenshot:</label>
 						<input type="file" name="image" className="form-control"/>
 						<p className="help-block">Only jpg, jpeg or png and under 2mb are accepted.</p>
