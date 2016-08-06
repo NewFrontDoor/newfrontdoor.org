@@ -58,7 +58,7 @@ class SupportForm extends React.Component {
 							<input type="radio" name="type" id="error" value="error" onChange={this.handleChange('type')}/>
 							Username/password authentication issues
 						</label>
-						<p className="help-block">May be for Website, Sparkleshare, Sympa</p>
+						<p className="help-block"><small>May be for Website, Sparkleshare, Sympa</small></p>
 					</div>
 					<div className="radio">
 						<label>
