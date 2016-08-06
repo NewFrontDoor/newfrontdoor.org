@@ -21,10 +21,10 @@ class SupportForm extends React.Component {
 			method: 'post',
 			mode: 'cors',
 			body: JSON.stringify({
-				subject: this.state.subject,
-				description: this.state.description,
-				urlIssue: this.state.urlIssue,
-				optionsRadios: this.state.optionsRadios,
+				summary: this.state.summary,
+				details: this.state.details,
+				url: this.state.url,
+				type: this.state.type,
 				severity: this.state.severity,
 				additional: this.state.additional,
 				name: this.state.name,
@@ -40,47 +40,47 @@ class SupportForm extends React.Component {
 		return (
 			<form className="support-form" onSubmit={this.handleSubmit}>
 				<div className="form-group has-success has-feedback">
-					<label htmlFor="subject">How can we help?</label>
-					<input type="text" name="subject" className="form-control" placeholder="Summarise the issue like an email subject line" onChange={this.handleChange('subject')}/>
+					<label htmlFor="summary">How can we help?</label>
+					<input type="text" name="summary" className="form-control" placeholder="Summarise the issue like an email subject line" onChange={this.handleChange('summary')}/>
 				</div>
 				<div className="form-group has-success has-feedback">
-					<label htmlFor="description">Further details that will help us to help you</label>
-					<textarea type="field" name="description" className="form-control" rows="5" placeholder="Please give us a detailed description, including any steps taken that led to the problem and the result" onChange={this.handleChange('description')}/>
+					<label htmlFor="details">Further details that will help us to help you</label>
+					<textarea type="field" name="details" className="form-control" rows="5" placeholder="Please give us a detailed description, including any steps taken that led to the problem and the result" onChange={this.handleChange('details')}/>
 				</div>
 				<div className="form-group">
-					<label htmlFor="urlIssue">URL for affected page: (if applicable)</label>
-					<input type="text" name="urlIssue" className="form-control" placeholder="Please copy paste the url from your web browser" onChange={this.handleChange('urlIssue')}/>
+					<label htmlFor="url">URL for affected page: (if applicable)</label>
+					<input type="text" name="url" className="form-control" placeholder="Please copy paste the url from your web browser" onChange={this.handleChange('url')}/>
 				</div>
 				<div className="form-group">
 					<label htmlFor="radio">Issue type (This helps us quickly allocate to the product expert)</label>
 					<div className="radio">
 						<label>
-							<input type="radio" name="optionsRadios" id="error" value="error" onChange={this.handleChange('optionsRadios')}/>
+							<input type="radio" name="type" id="error" value="error" onChange={this.handleChange('type')}/>
 							Username/password authentication issues
 						</label>
 						<p className="help-block">May be for Website, Sparkleshare, Sympa</p>
 					</div>
 					<div className="radio">
 						<label>
-							<input type="radio" name="optionsRadios" id="error2" value="error2" onChange={this.handleChange('optionsRadios')}/>
+							<input type="radio" name="type" id="error2" value="error2" onChange={this.handleChange('type')}/>
 							Page not loading correctly/at all
 						</label>
 					</div>
 					<div className="radio">
 						<label>
-							<input type="radio" name="optionsRadios" id="error3" value="error3" onChange={this.handleChange('optionsRadios')}/>
+							<input type="radio" name="type" id="error3" value="error3" onChange={this.handleChange('type')}/>
 							Sparkleshare conflict/error
 						</label>
 					</div>
 					<div className="radio">
 						<label>
-							<input type="radio" name="optionsRadios" id="error4" value="error4" onChange={this.handleChange('optionsRadios')}/>
+							<input type="radio" name="type" id="error4" value="error4" onChange={this.handleChange('type')}/>
 							Mailing list issue/request
 						</label>
 					</div>
 					<div className="radio">
 						<label>
-							<input type="radio" name="optionsRadios" id="error5" value="error5" onChange={this.handleChange('optionsRadios')}/>
+							<input type="radio" name="type" id="error5" value="error5" onChange={this.handleChange('type')}/>
 							Other
 						</label>
 					</div>

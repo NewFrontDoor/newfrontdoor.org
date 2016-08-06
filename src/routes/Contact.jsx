@@ -17,7 +17,7 @@ class ContactForm extends React.Component {
 	}
 	handleSubmit(event) {
 		event.preventDefault();
-		fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/contact-us', {
+		fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/mailing-list', {
 			method: 'post',
 			mode: 'cors',
 			body: JSON.stringify({
