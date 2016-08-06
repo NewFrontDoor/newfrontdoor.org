@@ -17,6 +17,10 @@ export default {
 		src: src(),
 		dest: dest()
 	},
+	content: {
+		dir: src('content'),
+		src: src('content/**/*.md')
+	},
 	documentation: {
 		dir: src('documentation'),
 		src: src('documentation/**/*')

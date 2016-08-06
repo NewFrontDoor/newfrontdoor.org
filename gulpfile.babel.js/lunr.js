@@ -22,7 +22,7 @@ function lunrConfig() {
 }
 
 export default () => {
-	return gulp.src([paths.blog.src, paths.documentation.src], {
+	return gulp.src([paths.blog.src, paths.documentation.src, paths.content.src], {
 		base: paths.src()
 	})
 	.pipe($.plumber(handleError))
@@ -38,6 +38,7 @@ function lunrGulp(config) {
 	const items = [];
 
 	function transform(file, enc, cb) {
+		console.log(file);
 		const frontMatter = file.frontMatter;
 		const id = trimExtension(file.relative);
 		const title = frontMatter.title;
