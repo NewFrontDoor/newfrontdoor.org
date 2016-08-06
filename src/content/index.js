@@ -71,9 +71,6 @@ export default {
 			text: 'Support<br />Request',
 			to: '/support'
 		}, {
-			text: 'System<br />Status',
-			to: '/status'
-		}, {
 			text: 'About Us',
 			to: '/about'
 		}]
