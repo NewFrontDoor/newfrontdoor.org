@@ -23,8 +23,12 @@ class SupportForm extends React.Component {
 			body: JSON.stringify({
 				subject: this.state.subject,
 				description: this.state.description,
+				urlIssue: this.state.urlIssue,
+				optionsRadios: this.state.optionsRadios,
+				severity: this.state.severity,
+				name: this.state.name,
 				organisation: this.state.organisation,
-				message: this.state.message
+				email: this.state.email
 			}),
 			headers: new Headers({
 				'Content-Type': 'application/json'
@@ -45,8 +49,8 @@ class SupportForm extends React.Component {
 					<textarea type="field" name="description" className="form-control" rows="5" placeholder="Please give us a detailed description, including any steps taken that led to the problem and the result" onChange={this.handleChange('description')}/>
 				</div>
 				<div className="form-group">
-					<label htmlFor="url-issue">URL for affected page: (if applicable)</label>
-					<input type="text" name="url-issue" className="form-control" placeholder="Please copy paste the url from your web browser" onChange={this.handleChange('url-issue')}/>
+					<label htmlFor="urlIssue">URL for affected page: (if applicable)</label>
+					<input type="text" name="urlIssue" className="form-control" placeholder="Please copy paste the url from your web browser" onChange={this.handleChange('urlIssue')}/>
 				</div>
 				<div className="form-group">
 					<label htmlFor="radio">Issue type (This helps us quickly allocate to the product expert)</label>
@@ -84,11 +88,11 @@ class SupportForm extends React.Component {
 				</div>
 				<div className="form-group">
 					<label htmlFor="radio">Severity:</label>
-					<select className="form-control" onChange={this.handleChange('severity')}>
-						<option>4 - minimal impact, tolerable for a period</option>
-						<option>3 - affects one user, moderate impact on workflow</option>
-						<option>2 - affects multiple users, serious impact on workflow</option>
-						<option>1 - affects multiple users and clients, system offline</option>
+					<select className="form-control" name="severity" onChange={this.handleChange('severity')}>
+						<option name="4">4 - minimal impact, tolerable for a period</option>
+						<option name="3">3 - affects one user, moderate impact on workflow</option>
+						<option name="2">2 - affects multiple users, serious impact on workflow</option>
+						<option name="1">1 - affects multiple users and clients, system offline</option>
 					</select>
 				</div>
 				<div className="form-group hide">
@@ -109,7 +113,7 @@ class SupportForm extends React.Component {
 				<h4>Contact Details</h4>
 				<div className="form-group has-success has-feedback">
 					<label htmlFor="name">Name:</label>
-					<input type="text" id="name" className="form-control" placeholder="First and last name" onChange={this.handleChange('name')}/>
+					<input type="text" name="name" className="form-control" placeholder="First and last name" onChange={this.handleChange('name')}/>
 				</div>
 				<div className="form-group has-success has-feedback">
 					<label htmlFor="organisation">Organisation:</label>
