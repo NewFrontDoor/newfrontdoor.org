@@ -245,6 +245,7 @@ function getCommonPlugins() {
 		}),
 		new OfflinePlugin({
 			ServiceWorker: {
+				events: true,
 				output: '/sw.js'
 			}
 		})
