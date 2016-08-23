@@ -1,4 +1,9 @@
+import boardMembers from './board-members.json';
+import teamMembers from './team-members.json';
+
 export default {
+	boardMembers,
+	teamMembers,
 	hero: {
 		tagline: '<h1>Can a church really do IT <em>effectively?</em><br/>Come on, we’ll show you.</h1>'
 	},
