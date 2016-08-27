@@ -1,4 +1,5 @@
 import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {Collapse} from '../components/Collapse';
 import {Index} from '../components/Index/index.jsx';
 
@@ -57,7 +58,9 @@ export class Contact extends React.Component {
 			isOpen: false
 		};
 		this.handleCollapse = this.handleCollapse.bind(this);
+		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
+	shouldComponentUpdate() {}
 	handleCollapse(event) {
 		event.preventDefault();
 		this.setState({isOpen: !this.state.isOpen});

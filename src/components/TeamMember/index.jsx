@@ -6,7 +6,8 @@ const imageContext = require.context('../../elements');
 export const TeamMember = props => (
 	<div className={styles.member}>
 		<h4 title={props.title}>{props.name} - {props.position}</h4>
-		<img src={props.image ? imageContext(props.image) : ''} className={styles.img}/><p className={styles.text}>{props.text}</p>
+		<img src={props.image ? imageContext(props.image) : ''} className={styles.img}/>
+		<p className={styles.text}>{props.text}</p>
 	</div>
 );
 

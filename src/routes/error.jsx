@@ -96,7 +96,7 @@ export class Error extends React.Component {
 										<h3>
 											Results
 											<a onClick={this.handleCloseResult}>
-												<span className="fa fa-times-circle"></span>
+												<span className="fa fa-times-circle"/>
 											</a>
 										</h3>
 									</div>

@@ -14,7 +14,6 @@ import lh from 'postcss-lh';
 import webpack from 'webpack';
 import WebpackNotifierPlugin from 'webpack-notifier';
 import LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
-import StyleLintPlugin from 'stylelint-webpack-plugin';
 import OfflinePlugin from 'offline-plugin';
 
 import {trimExtension} from './lib';
@@ -229,13 +228,6 @@ function getCommonPlugins() {
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
 			'VERSION': JSON.stringify(packageJson.version)
-		}),
-		new StyleLintPlugin({
-			syntax: 'scss',
-			configFile: 'package.json',
-			configOverrides: {
-				rules: packageJson.stylelint.rules
-			}
 		}),
 		new WebpackNotifierPlugin(),
 		new webpack.optimize.CommonsChunkPlugin({

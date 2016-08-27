@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 import {Element} from 'react-scroll';
 import {TeamMember} from '../components/TeamMember';
 import {Index} from '../components/Index/index.jsx';
-import {boardMembers, teamMembers} from '../content';
+import content from '../content';
 
 export const About = () => (
 	<Index>
@@ -24,10 +24,10 @@ export const About = () => (
 					</Element>
 					<Element className="team-wrap" name="team">
 						<h2>Vision 100 IT Board</h2>
-						{boardMembers.map((member, key) => <TeamMember key={key} {...member}/>)}
+						{content.boardMembers.map((member, key) => <TeamMember key={key} {...member}/>)}
 						<hr/>
 						<h2>Vision 100 IT Team Members</h2>
-						{teamMembers.map((member, key) => <TeamMember key={key} {...member}/>)}
+						{content.teamMembers.map((member, key) => <TeamMember key={key} {...member}/>)}
 						<hr/>
 					</Element>
 					<Element name="join">

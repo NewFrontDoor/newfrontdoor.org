@@ -13,7 +13,7 @@ export const Card = ({className, background, imagePadding, link, image, name, ch
 	return (
 		<div className={className} style={style}>
 			<a href={link}>
-				<img src={imageContext(image)} style={imageStyle}></img>
+				<img src={imageContext(image)} style={imageStyle}/>
 				<h3 hidden>{name}</h3>
 				<p>{children}</p>
 			</a>

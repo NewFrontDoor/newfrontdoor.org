@@ -54,9 +54,9 @@ export const Client = () => (
 		<Hero mini/>
 		<main role="main">
 			<div className="alerts hidden">
-					{content.banners.map((link, key) => (
-						<Alert key={key} type={link.type}>
-							<p dangerouslySetInnerHTML={{__html: link.text}}></p>
+					{content.banners.map((banner, key) => (
+						<Alert key={key} type={banner.type}>
+							<p>{banner.text}</p>
 						</Alert>
 					))}
 			</div>
@@ -89,7 +89,6 @@ export const Client = () => (
 						</Markdown>
 					</Post>)}
 				</section>
-				<div></div>
 			</div>
 		</main>
 	</Index>

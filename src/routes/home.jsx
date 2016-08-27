@@ -14,7 +14,7 @@ import {FeaturedJoin} from '../components/Featured/feature-join';
 export const Home = () => (
 	<Index headerSize="full" menuItems={content.mainmenu.links}>
 		<Hero>
-			<div dangerouslySetInnerHTML={{__html: content.hero.tagline}}></div>
+			<div dangerouslySetInnerHTML={{__html: content.hero.tagline}}/>
 		</Hero>
 		<main role="main">
 			<FeaturedHow/>

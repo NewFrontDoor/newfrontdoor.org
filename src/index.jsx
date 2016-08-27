@@ -4,7 +4,7 @@ import ReactDOMServer from 'react-dom/server';
 import {Router, RouterContext, match, browserHistory, createMemoryHistory} from 'react-router';
 import {scroller, animateScroll} from 'react-scroll';
 import {applyUpdate, install} from 'offline-plugin/runtime';
-import {Root} from './routes/Root';
+import {Root} from './routes/root';
 import Routes from './routes/index.jsx';
 
 function hashLinkScroll() {
