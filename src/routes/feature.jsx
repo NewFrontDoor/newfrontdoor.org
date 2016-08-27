@@ -6,52 +6,32 @@ import validateSchema from 'react-reformed/lib/validateSchema';
 import {Index} from '../components/index/index.jsx';
 import {Form, InputEmail, InputRadio, InputTextArea, InputText} from '../components/form/index.jsx';
 
-// handleSubmit(event) {
-// 	event.preventDefault();
-// 	fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/feature-request', {
-// 		method: 'post',
-// 		mode: 'cors',
-// 		body: JSON.stringify({
-// 			name: this.state.name,
-// 			organisation: this.state.organisation,
-// 			email: this.state.email,
-// 			urlIssue: this.state.urlIssue,
-// 			optionsRadios: this.state.optionsRadios,
-// 			description: this.state.description,
-// 			additional: this.state.additional
-// 		}),
-// 		headers: new Headers({
-// 			'Content-Type': 'application/json'
-// 		})
-// 	});
-// }
-
 const fields = {
 	name: {
-		type: InputText,
+		component: InputText,
 		label: 'Name:',
 		placeholder: 'First and last name',
 		required: true
 	},
 	organisation: {
-		type: InputText,
+		component: InputText,
 		label: 'Organisation:',
 		placeholder: 'Your church or parachurch organisation',
 		required: true
 	},
 	email: {
-		type: InputEmail,
+		component: InputEmail,
 		label: 'Contact email:',
 		placeholder: 'Contact email',
 		required: true
 	},
 	urlIssue: {
-		type: InputText,
+		component: InputText,
 		label: 'Example URL (if applicable)',
 		placeholder: 'Please copy paste the url from your web browser'
 	},
-	optionsRadios: {
-		type: InputRadio,
+	requestType: {
+		component: InputRadio,
 		label: 'Request type:',
 		placeholder: 'Please copy paste the url from your web browser',
 		options: [{
@@ -74,14 +54,14 @@ const fields = {
 		required: true
 	},
 	description: {
-		type: InputTextArea,
+		component: InputTextArea,
 		label: 'Description',
 		placeholder: 'Required. Please provide a brief description',
 		required: true,
 		rows: '3'
 	},
 	additional: {
-		type: InputTextArea,
+		component: InputTextArea,
 		label: 'Any other additional information',
 		placeholder: 'Not required. You may choose to enter any other relevant information or special requests here.',
 		rows: '5'

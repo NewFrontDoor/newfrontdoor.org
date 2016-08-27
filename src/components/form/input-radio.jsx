@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-export const InputRadio = ({hasError, label, name, onChange, options, placeholder, value}) => {
+export const InputRadio = ({hasError, label, name, onChange, options, placeholder, required, value}) => {
 	return (
 		<fieldset className={classnames('form-group', {'has-error': hasError})}>
 			<label htmlFor={name}>{label}</label>
@@ -9,7 +9,7 @@ export const InputRadio = ({hasError, label, name, onChange, options, placeholde
 				return (
 					<div className="radio" key={key}>
 						<label>
-							<input id={name} type="radio" name={name} placeholder={placeholder} onChange={onChange} value={value}/>
+							<input type="radio" name={name} placeholder={placeholder} onChange={onChange} value={key} required={required}/>
 							{label}
 						</label>
 						{help && <p className="help-block">{help}</p>}
@@ -28,5 +28,6 @@ InputRadio.propTypes = {
 	onChange: React.PropTypes.func,
 	options: React.PropTypes.array,
 	placeholder: React.PropTypes.string,
+	required: React.PropTypes.bool,
 	value: React.PropTypes.string
 };

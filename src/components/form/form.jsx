@@ -16,9 +16,9 @@ export const Form = ({bindInput, children, className, fields, schema, onSubmit})
 	return (
 		<form className={className} onSubmit={onSubmit}>
 			{fieldArray.map(({
-				type,
+				component,
 				...props
-			}, key) => React.createElement(type, {
+			}, key) => React.createElement(component, {
 				key,
 				...props
 			}))}
