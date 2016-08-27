@@ -75,11 +75,20 @@ function getCommonConfig() {
 			colors: true,
 			reasons: true
 		},
-		node: {
-			fs: 'empty'
-		},
 		resolve: {
 			extensions: ['', '.js', '.json', '.jsx', '.scss']
+		},
+		module: {
+			loaders: [
+				getJavaScriptLoader(),
+				getStyleLoader(),
+				getHtmlLoader(),
+				getAssetLoader(),
+				getJSXLoader(),
+				getMarkdownLoader(),
+				getFileLoader(),
+				getJsonLoader()
+			]
 		},
 		postcss: getPostCss()
 	};
@@ -89,18 +98,6 @@ function getDevConfig() {
 	return {
 		debug: true,
 		devtool: 'source-map',
-		module: {
-			loaders: [
-				getJavaScriptLoader(),
-				getStyleLoader(),
-				getHtmlLoader(),
-				getAssetLoader(),
-				getJSXLoader(),
-				getMarkdownLoader(),
-				getFileLoader(),
-				getJsonLoader()
-			]
-		},
 		plugins: _.union(getCommonPlugins(), [
 			new BrowserSyncPlugin({
 				host: 'localhost',
@@ -109,40 +106,19 @@ function getDevConfig() {
 			}, {
 				reload: false
 			}),
-			new ExtractTextPlugin('[name].css', {
-				allChunks: true
-			}),
-			new StaticSiteGeneratorPlugin('main', staticPaths, {}, {window: {}})
+			new WebpackNotifierPlugin()
 		])
 	};
 }
 
 function getProdConfig() {
 	return {
-		debug: true,
-		devtool: 'source-map',
-		module: {
-			loaders: [
-				getJavaScriptLoader(),
-				getStyleLoader(),
-				getHtmlLoader(),
-				getAssetLoader(),
-				getJSXLoader(),
-				getMarkdownLoader(),
-				getFileLoader(),
-				getJsonLoader()
-			]
-		},
 		plugins: _.union(getCommonPlugins(), [
 			new webpack.optimize.DedupePlugin(),
 			new webpack.optimize.UglifyJsPlugin(),
 			new webpack.optimize.OccurenceOrderPlugin(),
 			new webpack.optimize.AggressiveMergingPlugin(),
-			new LodashModuleReplacementPlugin(),
-			new ExtractTextPlugin('[name].css', {
-				allChunks: true
-			}),
-			new StaticSiteGeneratorPlugin('main', staticPaths, {}, {window: {}})
+			new LodashModuleReplacementPlugin()
 		])
 	};
 }
@@ -229,7 +205,6 @@ function getCommonPlugins() {
 			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
 			'VERSION': JSON.stringify(packageJson.version)
 		}),
-		new WebpackNotifierPlugin(),
 		new webpack.optimize.CommonsChunkPlugin({
 			// names: ["app", "subPageA"]
 			children: true,
@@ -240,6 +215,10 @@ function getCommonPlugins() {
 				events: true,
 				output: '/sw.js'
 			}
-		})
+		}),
+		new ExtractTextPlugin('[name].css', {
+			allChunks: true
+		}),
+		new StaticSiteGeneratorPlugin('main', staticPaths, {}, {window: {}})
 	]);
 }
