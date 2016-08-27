@@ -4,7 +4,7 @@ import reformed from 'react-reformed';
 import compose from 'react-reformed/lib/compose';
 import validateSchema from 'react-reformed/lib/validateSchema';
 import {Index} from '../components/index/index.jsx';
-import {Form, InputEmail, InputRadio, InputTextArea, InputText} from '../components/form/index.jsx';
+import {Form, util, InputEmail, InputRadio, InputTextArea, InputText} from '../components/form/index.jsx';
 
 const fields = {
 	name: {
@@ -33,7 +33,6 @@ const fields = {
 	requestType: {
 		component: InputRadio,
 		label: 'Request type:',
-		placeholder: 'Please copy paste the url from your web browser',
 		options: [{
 			key: 'error',
 			label: 'New website feature',
@@ -106,42 +105,7 @@ FeatureForm.propTypes = {
 	schema: React.PropTypes.object
 };
 
-const submitted = WrappedComponent => {
-	class Submitted extends React.Component {
-		constructor(props, ctx) {
-			super(props, ctx);
-			this.state = {
-				submitted: false
-			};
-		}
-		render() {
-			const {onSubmit, ...props} = this.props;
-
-			if (props.schema) {
-				props.schema.isSubmitted = this.state.submitted;
-			}
-
-			const handleSubmit = model => {
-				this.setState({submitted: true});
-				if (props.schema.isValid) {
-					return onSubmit(model);
-				}
-			};
-
-			return React.createElement(WrappedComponent, {onSubmit: handleSubmit, ...props});
-		}
-	}
-
-	Submitted.propTypes = {
-		model: React.PropTypes.object,
-		onSubmit: React.PropTypes.func,
-		schema: React.PropTypes.object
-	};
-
-	return Submitted;
-};
-
-const FeatureFromContainer = compose(reformed(), validateSchema(fields), submitted)(FeatureForm);
+const FeatureFromContainer = compose(reformed(), validateSchema(fields), util.submitted)(FeatureForm);
 
 const handleSubmit = model => {
 	fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/feature-request', {

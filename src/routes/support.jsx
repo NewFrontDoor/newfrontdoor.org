@@ -1,134 +1,151 @@
 import React from 'react';
 import {Link} from 'react-router';
+import reformed from 'react-reformed';
+import compose from 'react-reformed/lib/compose';
+import validateSchema from 'react-reformed/lib/validateSchema';
 import {Index} from '../components/index/index.jsx';
+import {Form, util, InputEmail, InputRadio, InputSelect, InputTextArea, InputText} from '../components/form/index.jsx';
 
-class SupportForm extends React.Component {
-	constructor() {
-		super();
-		this.handleSubmit = this.handleSubmit.bind(this);
-		this.handleChange = this.handleChange.bind(this);
+const fields = {
+	summary: {
+		component: InputText,
+		label: 'How can we help?',
+		placeholder: 'Summarise the issue like an email subject line',
+		required: true
+	},
+	details: {
+		component: InputTextArea,
+		label: 'Further details that will help us to help you',
+		placeholder: 'Please give us a detailed description, including any steps taken that led to the problem and the result',
+		required: true,
+		rows: '4'
+	},
+	url: {
+		component: InputText,
+		label: 'URL for affected page: (if applicable)',
+		placeholder: 'Please copy paste the url from your web browser'
+	},
+	requestType: {
+		component: InputRadio,
+		label: 'Issue type (This helps us quickly allocate to the product expert)',
+		options: [{
+			key: 'error',
+			label: 'Username/password authentication issues',
+			help: 'May be for Website, Sparkleshare, Sympa'
+		}, {
+			key: 'error2',
+			label: 'Page not loading correctly/at all'
+		}, {
+			key: 'error3',
+			label: 'Sparkleshare conflict/error'
+		}, {
+			key: 'error4',
+			label: 'Mailing list issue/request'
+		}, {
+			key: 'error5',
+			label: 'Other'
+		}],
+		required: true
+	},
+	severity: {
+		component: InputSelect,
+		label: 'Severity:',
+		options: [{
+			key: '4',
+			label: '4 - minimal impact, tolerable for a period'
+		}, {
+			key: '3',
+			label: '3 - affects one user, moderate impact on workflow'
+		}, {
+			key: '2',
+			label: '2 - affects multiple users, serious impact on workflow'
+		}, {
+			key: '1',
+			label: '1 - affects multiple users and clients, system offline'
+		}]
+	},
+	additional: {
+		component: InputTextArea,
+		label: 'Any other additional information',
+		placeholder: 'Not required. You may choose to enter any other relevant information or special requests here.',
+		rows: '3'
+	},
+	hr: {
+		component: 'hr'
+	},
+	h4: {
+		component: 'h4',
+		children: 'Contact Details'
+	},
+	name: {
+		component: InputText,
+		label: 'Name:',
+		placeholder: 'First and last name',
+		required: true
+	},
+	organisation: {
+		component: InputText,
+		label: 'Organisation:',
+		placeholder: 'Your church or parachurch organisation',
+		required: true
+	},
+	email: {
+		component: InputEmail,
+		label: 'Contact email:',
+		placeholder: 'Contact email',
+		required: true
 	}
-	handleChange(field) {
-		return event => {
-			this.setState({
-				[field]: event.target.value
-			});
-		};
-	}
-	handleSubmit(event) {
+};
+
+// <div className="form-group hide">
+// 	<label htmlFor="file">File upload:</label>
+// 	<input type="file" name="file" className="form-control"/>
+// 	<p className="help-block">Only txt, doc, docx or pdf and under 2mb are accepted.</p>
+// </div>
+// <div className="form-group hide">
+// 	<label htmlFor="screenshot">Screenshot:</label>
+// 	<input type="file" name="image" className="form-control"/>
+// 	<p className="help-block">Only jpg, jpeg or png and under 2mb are accepted.</p>
+// </div>
+
+const SupportForm = ({
+	bindInput,
+	model,
+	onSubmit,
+	schema
+}) => {
+	const handleSubmit = event => {
 		event.preventDefault();
-		fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/support-request', {
-			method: 'post',
-			mode: 'cors',
-			body: JSON.stringify({
-				summary: this.state.summary,
-				details: this.state.details,
-				url: this.state.url,
-				type: this.state.type,
-				severity: this.state.severity,
-				additional: this.state.additional,
-				name: this.state.name,
-				organisation: this.state.organisation,
-				email: this.state.email
-			}),
-			headers: new Headers({
-				'Content-Type': 'application/json'
-			})
-		});
-	}
-	render() {
-		return (
-			<form className="support-form" onSubmit={this.handleSubmit}>
-				<div className="form-group has-success has-feedback">
-					<label htmlFor="summary">How can we help?</label>
-					<input type="text" name="summary" className="form-control" placeholder="Summarise the issue like an email subject line" onChange={this.handleChange('summary')}/>
-				</div>
-				<div className="form-group has-success has-feedback">
-					<label htmlFor="details">Further details that will help us to help you</label>
-					<textarea type="field" name="details" className="form-control" rows="5" placeholder="Please give us a detailed description, including any steps taken that led to the problem and the result" onChange={this.handleChange('details')}/>
-				</div>
-				<div className="form-group">
-					<label htmlFor="url">URL for affected page: (if applicable)</label>
-					<input type="text" name="url" className="form-control" placeholder="Please copy paste the url from your web browser" onChange={this.handleChange('url')}/>
-				</div>
-				<div className="form-group">
-					<label htmlFor="radio">Issue type (This helps us quickly allocate to the product expert)</label>
-					<div className="radio">
-						<label>
-							<input type="radio" name="type" id="error" value="error" onChange={this.handleChange('type')}/>
-							Username/password authentication issues
-						</label>
-						<p className="help-block"><small>May be for Website, Sparkleshare, Sympa</small></p>
-					</div>
-					<div className="radio">
-						<label>
-							<input type="radio" name="type" id="error2" value="error2" onChange={this.handleChange('type')}/>
-							Page not loading correctly/at all
-						</label>
-					</div>
-					<div className="radio">
-						<label>
-							<input type="radio" name="type" id="error3" value="error3" onChange={this.handleChange('type')}/>
-							Sparkleshare conflict/error
-						</label>
-					</div>
-					<div className="radio">
-						<label>
-							<input type="radio" name="type" id="error4" value="error4" onChange={this.handleChange('type')}/>
-							Mailing list issue/request
-						</label>
-					</div>
-					<div className="radio">
-						<label>
-							<input type="radio" name="type" id="error5" value="error5" onChange={this.handleChange('type')}/>
-							Other
-						</label>
-					</div>
-				</div>
-				<div className="form-group">
-					<label htmlFor="radio">Severity:</label>
-					<select className="form-control" name="severity" onChange={this.handleChange('severity')}>
-						<option name="4">4 - minimal impact, tolerable for a period</option>
-						<option name="3">3 - affects one user, moderate impact on workflow</option>
-						<option name="2">2 - affects multiple users, serious impact on workflow</option>
-						<option name="1">1 - affects multiple users and clients, system offline</option>
-					</select>
-				</div>
-				<div className="form-group hide">
-					<label htmlFor="file">File upload:</label>
-					<input type="file" name="file" className="form-control"/>
-					<p className="help-block">Only txt, doc, docx or pdf and under 2mb are accepted.</p>
-				</div>
-				<div className="form-group hide">
-					<label htmlFor="screenshot">Screenshot:</label>
-					<input type="file" name="image" className="form-control"/>
-					<p className="help-block">Only jpg, jpeg or png and under 2mb are accepted.</p>
-				</div>
-				<div className="form-group">
-					<label htmlFor="additional">Any other additional information</label>
-					<textarea type="field" name="additional" className="form-control" rows="3" placeholder="Not required. You may choose to enter any other relevant information or special requests here." onChange={this.handleChange('additional')}/>
-				</div>
-				<hr/>
-				<h4>Contact Details</h4>
-				<div className="form-group has-success has-feedback">
-					<label htmlFor="name">Name:</label>
-					<input type="text" name="name" className="form-control" placeholder="First and last name" onChange={this.handleChange('name')}/>
-				</div>
-				<div className="form-group has-success has-feedback">
-					<label htmlFor="organisation">Organisation:</label>
-					<input type="text" name="organisation" className="form-control" placeholder="Your church or parachurch organisation" onChange={this.handleChange('organisation')}/>
-				</div>
-				<div className="form-group has-success has-feedback">
-					<label htmlFor="email">Contact email:</label>
-					<input type="email" name="email" className="form-control" placeholder="Contact email" onChange={this.handleChange('email')}/>
-				</div>
-				<div className="form-group">
-					<button type="submit" className="btn btn-primary pull-right">Submit</button>
-				</div>
-			</form>
-		);
-	}
-}
+		onSubmit(model);
+	};
+
+	return (
+		<Form className="support-form" onSubmit={handleSubmit} schema={schema} fields={fields} bindInput={bindInput}>
+			<div className="form-group">
+				<button type="submit" className="btn btn-primary pull-right">Submit</button>
+			</div>
+		</Form>
+	);
+};
+
+SupportForm.propTypes = {
+	bindInput: React.PropTypes.func,
+	model: React.PropTypes.object,
+	onSubmit: React.PropTypes.func,
+	schema: React.PropTypes.object
+};
+
+const SupportFormContainer = compose(reformed(), validateSchema(fields), util.submitted)(SupportForm);
+
+const handleSubmit = model => {
+	console.log(model);
+	fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/support-request', {
+		method: 'post',
+		mode: 'cors',
+		body: JSON.stringify(model),
+		headers: new Headers({'Content-Type': 'application/json'})
+	});
+};
 
 export const Support = () => (
 	<Index>
@@ -153,7 +170,7 @@ export const Support = () => (
 						<li>Give an option to close your support request by email.</li>
 					</ul>
 				</div>
-				<SupportForm/>
+				<SupportFormContainer onSubmit={handleSubmit} initialModel={{severity: '4'}}/>
 			</div>
 		</div>
 	</Index>
