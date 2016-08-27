@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/main';
-import {Footer} from '../components/Footer';
+import {Footer} from '../components/footer';
 
 export const Site = props => (
 	<div className="container">

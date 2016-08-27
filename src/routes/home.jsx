@@ -1,15 +1,15 @@
 import React from 'react';
 
-import {Hero} from '../components/Hero';
-import {Index} from '../components/Index/index.jsx';
+import {Hero} from '../components/hero';
+import {Index} from '../components/index/index.jsx';
 import content from '../content';
 
-import {FeaturedHow} from '../components/Featured/feature-how';
-import {FeaturedWho} from '../components/Featured/feature-who';
-import {FeaturedTools} from '../components/Featured/feature-tools';
-import {FeaturedEvents} from '../components/Featured/feature-events';
-import {FeaturedPricing} from '../components/Featured/feature-pricing';
-import {FeaturedJoin} from '../components/Featured/feature-join';
+import {FeaturedHow} from '../components/featured/feature-how';
+import {FeaturedWho} from '../components/featured/feature-who';
+import {FeaturedTools} from '../components/featured/feature-tools';
+import {FeaturedEvents} from '../components/featured/feature-events';
+import {FeaturedPricing} from '../components/featured/feature-pricing';
+import {FeaturedJoin} from '../components/featured/feature-join';
 
 export const Home = () => (
 	<Index headerSize="full" menuItems={content.mainmenu.links}>

@@ -34,19 +34,19 @@ export class FeaturedHow extends React.Component {
 					<div className={styles.example}>
 						<a href="#" onClick={this.handleCollapse('overwhelmed')}>
 							<h3>Overwhelmed pastor.</h3>
-							<span className="fa fa-plus-circle fa-2x"></span>
+							<span className="fa fa-plus-circle fa-2x"/>
 						</a>
 					</div>
 					<div className={styles.example}>
 						<a href="#" onClick={this.handleCollapse('voluntold')}>
 							<h3>"Voluntold" victim.</h3>
-							<span className="fa fa-plus-circle fa-2x"></span>
+							<span className="fa fa-plus-circle fa-2x"/>
 						</a>
 					</div>
 					<div className={styles.example}>
 						<a href="#" onClick={this.handleCollapse('capable')}>
 							<h3>Capable. Over it.</h3>
-							<span className="fa fa-plus-circle fa-2x"></span>
+							<span className="fa fa-plus-circle fa-2x"/>
 						</a>
 					</div>
 					<Collapse isOpened={this.state.isOpen === 'overwhelmed'}>

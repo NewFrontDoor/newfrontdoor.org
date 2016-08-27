@@ -1,4 +1,5 @@
 import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 import throttle from 'lodash/throttle';
 import styles from './Hero.scss';
 
@@ -7,7 +8,10 @@ export class Hero extends React.Component {
 		super();
 		this.state = {};
 		this.handleScroll = throttle(this.handleScroll.bind(this), 50);
+		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
+
+	shouldComponentUpdate() {}
 
 	get length() {
 		return window.innerHeight - 100;
@@ -23,7 +27,7 @@ export class Hero extends React.Component {
 
 	handleScroll() {
 		this.setState({
-			opacity: `${1 - (window.pageYOffset - 10) / 250}`
+			opacity: `${1 - ((window.pageYOffset - 10) / 250)}`
 		});
 	}
 
@@ -34,7 +38,7 @@ export class Hero extends React.Component {
 
 		return (
 			<div className={this.props.mini ? `${styles.mini} ${styles.container}` : styles.container}>
-				<div className={styles.background}></div>
+				<div className={styles.background}/>
 				<div className={this.props.children ? `${styles.content} text-center` : ''} style={contentStyle}>
 					{this.props.children}
 				</div>

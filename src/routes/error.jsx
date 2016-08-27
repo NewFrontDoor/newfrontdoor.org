@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import lunr from 'lunr';
 import classNames from 'classnames';
-import {Index} from '../components/Index/index.jsx';
+import {Index} from '../components/index/index.jsx';
 
 export class Error extends React.Component {
 	constructor(props) {

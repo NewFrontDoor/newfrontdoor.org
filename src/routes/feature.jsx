@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 import reformed from 'react-reformed';
 import compose from 'react-reformed/lib/compose';
 import validateSchema from 'react-reformed/lib/validateSchema';
-import {Index} from '../components/Index/index.jsx';
+import {Index} from '../components/index/index.jsx';
 import {Form, InputEmail, InputRadio, InputTextArea, InputText} from '../components/form/index.jsx';
 
 // handleSubmit(event) {

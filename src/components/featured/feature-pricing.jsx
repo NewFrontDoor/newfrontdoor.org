@@ -41,7 +41,7 @@ export const FeaturedPricing = () => (
 
 		<div className="expand">
 			<a href="/documentation/costs">More about costs<br/>
-				<span className="fa fa-angle-down fa-3x"></span>
+				<span className="fa fa-angle-down fa-3x"/>
 			</a>
 		</div>
 	</Featured>

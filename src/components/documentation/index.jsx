@@ -1,9 +1,10 @@
 import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {Link} from 'react-router';
 import lunr from 'lunr';
 import classNames from 'classnames';
 import './Documentation.scss';
-import {Index} from '../Index/index.jsx';
+import {Index} from '../index/index.jsx';
 
 export class Documentation extends React.Component {
 	constructor(props) {
@@ -15,7 +16,10 @@ export class Documentation extends React.Component {
 		this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
 		this.handleSearchTerm = this.handleSearchTerm.bind(this);
 		this.handleCloseResult = this.handleCloseResult.bind(this);
+		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
+
+	shouldComponentUpdate() {}
 
 	get searchIndex() {
 		const self = this;
@@ -96,7 +100,7 @@ export class Documentation extends React.Component {
 									<h3>
 										Results
 										<a onClick={this.handleCloseResult}>
-											<span className="fa fa-times-circle"></span>
+											<span className="fa fa-times-circle"/>
 										</a>
 									</h3>
 								</div>
@@ -115,7 +119,7 @@ export class Documentation extends React.Component {
 						<div className="list-wrapper">
 							<div className="type-1">
 								<h3>
-									<i className="fa fa-book fa-fw"></i>Getting started with Vision 100 IT</h3>
+									<i className="fa fa-book fa-fw"/> Getting started with Vision 100 IT</h3>
 								<ul>
 									<li>
 										<Link to="/documentation/suite">Suite of Tools</Link>
@@ -131,7 +135,7 @@ export class Documentation extends React.Component {
 							</div>
 							<div className="type-2">
 								<h3>
-									<i className="fa fa-cogs fa-fw"></i>Our Tools</h3>
+									<i className="fa fa-cogs fa-fw"/> Our Tools</h3>
 								<ul>
 									<li>
 										<Link to="/documentation/mailinglists">Mailing lists</Link>
@@ -158,7 +162,7 @@ export class Documentation extends React.Component {
 						<div className="list-wrapper">
 							<div className="type-3">
 								<h3>
-									<i className="fa fa-lock fa-fw"></i>Keeping your systems up to date</h3>
+									<i className="fa fa-lock fa-fw"/> Keeping your systems up to date</h3>
 								<ul>
 									<li>
 										Website refresh recommendations - <i>coming soon</i>
@@ -173,7 +177,7 @@ export class Documentation extends React.Component {
 							</div>
 							<div className="type-4">
 								<h3>
-									<i className="fa fa-lightbulb-o fa-fw"></i>Articles + training night materials</h3>
+									<i className="fa fa-lightbulb-o fa-fw"/> Articles + training night materials</h3>
 								<ul>
 									- <i>coming soon</i>
 								</ul>
@@ -183,7 +187,7 @@ export class Documentation extends React.Component {
 						<div className="list-wrapper">
 							<div className="type-5">
 								<h3>
-									<i className="fa fa-link fa-fw"></i>Recommended external links</h3>
+									<i className="fa fa-link fa-fw"/> Recommended external links</h3>
 								<ul>
 									<li>
 										<a href="https://www.elvanto.com/">Elvanto</a>
@@ -201,7 +205,7 @@ export class Documentation extends React.Component {
 							</div>
 							<div className="type-6">
 								<h3>
-									<i className="fa fa-video-camera fa-fw"></i>Recommended Videos</h3>
+									<i className="fa fa-video-camera fa-fw"/> Recommended Videos</h3>
 								<li>
 									<a href="https://www.youtube.com/watch?v=5FVw2A0TylA">Elvanto overview</a>
 								</li>

@@ -38,7 +38,7 @@ export const FeaturedEvents = () => (
 			</div>
 			<div className="expand">
 				<Link to="/documentation#maintenance">Check out some of our previous training content<br/>
-					<span className="fa fa-angle-down fa-3x"></span>
+					<span className="fa fa-angle-down fa-3x"/>
 				</Link>
 			</div>
 		</section>

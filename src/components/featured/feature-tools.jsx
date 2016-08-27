@@ -1,4 +1,5 @@
 import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {Element, scroller} from 'react-scroll';
 import {Collapse} from '../Collapse';
 import styles from './feature-tools.scss';
@@ -13,7 +14,11 @@ export class FeaturedTools extends React.Component {
 			isOpen: false
 		};
 		this.handleCollapse = this.handleCollapse.bind(this);
+		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
+
+	shouldComponentUpdate() {}
+
 	handleCollapse(event) {
 		event.preventDefault();
 
@@ -59,7 +64,7 @@ export class FeaturedTools extends React.Component {
 					</p>
 					<Element name="tools-expand" className="expand">
 						<a href="#" onClick={this.handleCollapse}>Supported tools and products<br/>
-							<span className="fa fa-angle-down fa-3x"></span>
+							<span className="fa fa-angle-down fa-3x"/>
 						</a>
 					</Element>
 				</section>

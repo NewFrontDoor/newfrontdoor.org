@@ -1,26 +1,26 @@
 import React from 'react';
 import {Route, IndexRoute} from 'react-router';
 
-import {Alert} from '../components/Alert';
-import {Blog} from '../components/Blog';
-import {Documentation} from '../components/Documentation';
-import {Template} from '../components/Documentation/Template';
-import {About} from './About';
-import {Client} from './Client';
-import {Consultation} from './Consultation';
-import {Contact} from './Contact';
-import {Control} from './Control';
-import {Feature} from './Feature';
-import {Home} from './Home';
-import {Site} from './Site';
-import {Status} from './Status';
-import {Support} from './Support';
-import {Training} from './Training';
-import {Registration} from './Registration';
-import {Podcasting} from './Podcasting';
-import {Elvanto} from './Elvanto';
-import {Sparkleshare} from './Sparkleshare';
-import {Error} from './Error';
+import {Alert} from '../components/alert';
+import {Blog} from '../components/blog';
+import {Documentation} from '../components/documentation';
+import {Template} from '../components/documentation/template';
+import {About} from './about';
+import {Client} from './client';
+import {Consultation} from './consultation';
+import {Contact} from './contact';
+import {Control} from './control';
+import {Feature} from './feature';
+import {Home} from './home';
+import {Site} from './site';
+import {Status} from './status';
+import {Support} from './support';
+import {Training} from './training';
+import {Registration} from './registration';
+import {Podcasting} from './podcasting';
+import {Elvanto} from './elvanto';
+import {Sparkleshare} from './sparkleshare';
+import {Error} from './error';
 
 export default(
 	<Route path="/" component={Site}>

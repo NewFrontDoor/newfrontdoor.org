@@ -1,5 +1,5 @@
 import React from 'react';
-import {Index} from '../components/Index/index.jsx';
+import {Index} from '../components/index/index.jsx';
 
 export const Training = () => (
 	<Index>

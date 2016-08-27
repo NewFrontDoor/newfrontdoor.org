@@ -1,4 +1,5 @@
 import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 import throttle from 'lodash/throttle';
 import logo from '../../elements/vision100-it-logo.svg';
 import styles from './Header.scss';
@@ -9,7 +10,10 @@ export class Header extends React.Component {
 		this.handleScroll = throttle(this.handleScroll.bind(this), 250);
 		this.backgroundHeight = this.backgroundHeight.bind(this);
 		this.state = this.nextState();
+		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
+
+	shouldComponentUpdate() {}
 
 	backgroundHeight() {
 		if (this.props.size === 'full') {
@@ -66,7 +70,7 @@ export class Header extends React.Component {
 			<header className={styles.nav} style={scrollStyle}>
 				<a className={styles.logo} style={logoStyle} href="/">
 					<h1 className="sr-only">Vision 100 IT</h1>
-					<img className="img-responsive" src={logo}></img>
+					<img className="img-responsive" src={logo}/>
 				</a>
 				{this.props.children}
 			</header>

@@ -8,11 +8,11 @@ import styles from './Footer.scss';
 const FooterItem = props => {
 	if (props.target) {
 		return (<a href={props.target}>{props.text}
-			<span className={props.className}></span>
+			<span className={props.className}/>
 		</a>);
 	}
 	return (<Link to={props.to}>{props.text}
-		<span className={props.className}></span>
+		<span className={props.className}/>
 	</Link>);
 };
 

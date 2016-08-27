@@ -1,7 +1,7 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {Collapse} from '../components/Collapse';
-import {Index} from '../components/Index/index.jsx';
+import {Index} from '../components/index/index.jsx';
 
 class ContactForm extends React.Component {
 	constructor() {

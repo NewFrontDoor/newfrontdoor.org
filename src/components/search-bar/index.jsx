@@ -128,7 +128,7 @@ export class SearchBar extends React.Component {
 					<h2>
 						Search menu
 						<a onClick={this.handleCloseModal}>
-							<span className="fa fa-times-circle"></span>
+							<span className="fa fa-times-circle"/>
 						</a>
 					</h2>
 				</div>
@@ -146,7 +146,7 @@ export class SearchBar extends React.Component {
 							/>
 						<span className="input-group-btn submit">
 							<button className="btn btn-transparent" type="submit">
-								<span className="fa fa-search fa-lg"></span>
+								<span className="fa fa-search fa-lg"/>
 							</button>
 						</span>
 					</div>
@@ -156,7 +156,7 @@ export class SearchBar extends React.Component {
 						<h3>
 							Results
 							<a onClick={this.handleCloseResult}>
-								<span className="fa fa-times-circle"></span>
+								<span className="fa fa-times-circle"/>
 							</a>
 						</h3>
 					</div>

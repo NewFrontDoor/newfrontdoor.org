@@ -12,19 +12,19 @@ export const FeaturedWho = () => (
 		</div>
 		<div className={`${styles.snapshots} text-uppercase`}>
 			<div>
-				<span className="fa fa-university fa-5x"></span>
+				<span className="fa fa-university fa-5x"/>
 				<p>14+ years of V100IT history</p>
 			</div>
 			<div>
-				<span className="fa fa-graduation-cap fa-5x"></span>
+				<span className="fa fa-graduation-cap fa-5x"/>
 				<p>30+ years of collective experience</p>
 			</div>
 			<div>
-				<span className="fa fa-users fa-5x"></span>
+				<span className="fa fa-users fa-5x"/>
 				<p>10+ clients on board</p>
 			</div>
 			<div>
-				<span className="fa fa-server fa-5x"></span>
+				<span className="fa fa-server fa-5x"/>
 				<p>20+ websites served</p>
 			</div>
 		</div>
@@ -43,7 +43,7 @@ export const FeaturedWho = () => (
 		<div className="expand">
 			<Link to="/about#team">
 				<p>Meet the team</p>
-				<span className="fa fa-angle-down fa-3x"></span>
+				<span className="fa fa-angle-down fa-3x"/>
 			</Link>
 		</div>
 		<div className={styles.collection}>

@@ -3,12 +3,12 @@ import React from 'react';
 import fm from 'front-matter';
 import moment from 'moment';
 
-import {Alert} from '../components/Alert';
-import {Card} from '../components/Card';
-import {Hero} from '../components/Hero';
-import {Index} from '../components/Index/index.jsx';
-import {Markdown} from '../components/Markdown';
-import {Post} from '../components/Post';
+import {Alert} from '../components/alert';
+import {Card} from '../components/card';
+import {Hero} from '../components/hero';
+import {Index} from '../components/index/index.jsx';
+import {Markdown} from '../components/markdown';
+import {Post} from '../components/post';
 
 import content from '../content';
 

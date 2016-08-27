@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {Index} from '../components/Index/index.jsx';
+import {Index} from '../components/index/index.jsx';
 
 class SupportForm extends React.Component {
 	constructor() {

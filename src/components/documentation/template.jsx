@@ -1,9 +1,10 @@
 import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 import fm from 'front-matter';
 import classNames from 'classnames';
 import {StickyContainer, Sticky} from 'react-sticky';
-import {Index} from '../Index/index.jsx';
-import {Markdown, Toc} from '../Markdown';
+import {Index} from '../index/index.jsx';
+import {Markdown, Toc} from '../markdown';
 import './Template.scss';
 
 const documentation = {
@@ -21,15 +22,19 @@ const documentation = {
 };
 
 export class Template extends React.Component {
-	get document() {
-		return documentation.document(this.props.params.documentId) || {};
-	}
 	constructor(props) {
 		super(props);
 		this.state = {
 			openFeedback: false
 		};
 		this.handleToggleFeedback = this.handleToggleFeedback.bind(this);
+		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+	}
+
+	shouldComponentUpdate() {}
+
+	get document() {
+		return documentation.document(this.props.params.documentId) || {};
 	}
 
 	handleToggleFeedback(event) {
@@ -61,10 +66,10 @@ export class Template extends React.Component {
 								<h3>Give feedback</h3>
 								<a href="#" onClick={this.handleToggleFeedback}>
 									<span>Suggest a revision to this document.</span>
-									<span className="fa fa-angle-down fa-3x"></span>
+									<span className="fa fa-angle-down fa-3x"/>
 								</a>
 								<div className="feedback-form">
-									<textarea type="text" name="message" className="form-control input-default" placeholder="What could make this documentation clearer?"></textarea>
+									<textarea type="text" name="message" className="form-control input-default" placeholder="What could make this documentation clearer?"/>
 									<input type="email" name="email" className="form-control input-default" placeholder="Contact email"/>
 									<button type="submit" className="btn btn-default">Submit</button>
 									<button type="cancel" className="btn btn-default" onClick={this.handleToggleFeedback}>Cancel</button>

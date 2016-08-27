@@ -1,8 +1,9 @@
 import React from 'react';
-import {Header} from '../Header';
-import {SearchBar} from '../SearchBar';
-import {MainMenu} from '../MainMenu';
-import {MobileMenu} from '../MobileMenu';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
+import {Header} from '../header';
+import {SearchBar} from '../search-bar';
+import {MainMenu} from '../main-menu';
+import {MobileMenu} from '../mobile-menu';
 
 import styles from './Index.scss';
 
@@ -14,7 +15,10 @@ export class Index extends React.Component {
 		};
 		this.handleOpenSearch = this.handleOpenSearch.bind(this);
 		this.handleCloseSearch = this.handleCloseSearch.bind(this);
+		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
+
+	shouldComponentUpdate() {}
 
 	handleOpenSearch(event) {
 		event.preventDefault();

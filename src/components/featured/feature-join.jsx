@@ -38,12 +38,12 @@ export class FeaturedJoin extends React.Component {
 			<div className={styles.feature}>
 				<section className={styles.video}>
 					<video autoPlay loop muted>
-						<source src={imageContext('./clip2.mp4')} type="video/mp4"></source>
+						<source src={imageContext('./clip2.mp4')} type="video/mp4"/>
 					</video>
 				</section>
 				<Element name="join" className={styles.content}>
 					<section>
-						<div className={styles.background}></div>
+						<div className={styles.background}/>
 						<header className="hidden">
 							<h2>Sign up</h2>
 						</header>
@@ -70,19 +70,19 @@ export class FeaturedJoin extends React.Component {
 							</div>
 							<div className={`form-group ${styles.group2}`}>
 								<label hidden htmlFor="message">Message</label>
-								<textarea type="text" name="message" className="form-control input-default" placeholder="Message" onChange={this.handleChange('message')}></textarea>
+								<textarea type="text" name="message" className="form-control input-default" placeholder="Message" onChange={this.handleChange('message')}/>
 							</div>
 							<input type="submit" className={`btn btn-default ${styles.group2}`} value="Submit"/>
 						</form>
 						<div className={styles.social}>
 							<div>
 								<a href="http://facebook.com/vision100it">
-									<span className="fa fa-facebook fa-3x"></span>
+									<span className="fa fa-facebook fa-3x"/>
 								</a>
 							</div>
 							<div>
 								<a href="http://twitter.com/vision100it">
-									<span className="fa fa-twitter fa-3x"></span>
+									<span className="fa fa-twitter fa-3x"/>
 								</a>
 							</div>
 						</div>

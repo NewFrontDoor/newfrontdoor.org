@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router';
 import {Element} from 'react-scroll';
-import {TeamMember} from '../components/TeamMember';
-import {Index} from '../components/Index/index.jsx';
+import {TeamMember} from '../components/team-member';
+import {Index} from '../components/index/index.jsx';
 import content from '../content';
 
 export const About = () => (
