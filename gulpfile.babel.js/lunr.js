@@ -41,7 +41,7 @@ function lunrGulp(config) {
 		const frontMatter = file.frontMatter;
 		const id = trimExtension(file.relative);
 		const title = frontMatter.title;
-		const body = removeMarkdown(file.contents.toString());
+		const body = removeMarkdown(file.contents.toString('utf8'));
 		const author = frontMatter.author || {};
 
 		index.add({
@@ -63,13 +63,13 @@ function lunrGulp(config) {
 	function flush(cb) {
 		this.push(new $.util.File({
 			path: 'search-index.json',
-			contents: new Buffer(JSON.stringify(index.toJSON()))
+			contents: Buffer.from(JSON.stringify(index.toJSON()), 'utf8')
 		}));
 		this.push(new $.util.File({
 			path: 'search-data.json',
-			contents: new Buffer(JSON.stringify({
+			contents: Buffer.from(JSON.stringify({
 				items
-			}))
+			}), 'utf8')
 		}));
 		cb();
 	}
