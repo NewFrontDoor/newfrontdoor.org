@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './TeamMember.scss';
 
-const imageContext = require.context('../../elements');
+const imageContext = require.context('../../images');
 
 export const TeamMember = props => (
 	<div className={styles.member}>

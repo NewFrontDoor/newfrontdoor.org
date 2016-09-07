@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 import styles from './feature-who.scss';
 import {Featured} from './index';
 
-const imageContext = require.context('../../elements');
+const imageContext = require.context('../../images');
 
 export const FeaturedWho = () => (
 	<Featured name="who">

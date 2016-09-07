@@ -160,7 +160,7 @@ blockquote {
 }
 
 .consultation-wrapper {
-	background-image: url("../elements/skilift.jpg");
+	background-image: url("../images/skilift.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -172,7 +172,7 @@ blockquote {
 }
 
 .about-wrapper {
-	background-image: linear-gradient(white, white 60%, rgba(256, 256, 256, 0)), url("../elements/desk.jpg");
+	background-image: linear-gradient(white, white 60%, rgba(256, 256, 256, 0)), url("../images/desk.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -184,7 +184,7 @@ blockquote {
 }
 
 .registration-wrapper {
-	background-image: linear-gradient(white, white 70%, rgba(256, 256, 256, 0)), url("../elements/queue.jpg");
+	background-image: linear-gradient(white, white 70%, rgba(256, 256, 256, 0)), url("../images/queue.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -196,7 +196,7 @@ blockquote {
 }
 
 .podcasting-wrapper {
-	background-image: linear-gradient(white, white 20%, rgba(256, 256, 256, 0)), url("../elements/podcast.jpg");
+	background-image: linear-gradient(white, white 20%, rgba(256, 256, 256, 0)), url("../images/podcast.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -207,7 +207,7 @@ blockquote {
 }
 
 .elvanto-wrapper {
-	background-image: url("../elements/elvanto-icon.png");
+	background-image: url("../images/elvanto-icon.png");
 	background-color: #323232;
 	background-size: auto;
 	background-repeat: no-repeat;
@@ -237,7 +237,7 @@ blockquote {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-image: linear-gradient(rgba(256, 256, 256, 0.6), white 50%, white), url("../elements/matrix.jpg");
+	background-image: linear-gradient(rgba(256, 256, 256, 0.6), white 50%, white), url("../images/matrix.jpg");
 	min-height: 500px;
 }
 
@@ -245,5 +245,5 @@ blockquote {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-image: linear-gradient(rgba(256, 256, 256, 0.3), white), url("../elements/pen.jpg");
+	background-image: linear-gradient(rgba(256, 256, 256, 0.3), white), url("../images/pen.jpg");
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Card.scss';
 
-const imageContext = require.context('../../elements');
+const imageContext = require.context('../../images');
 
 export const Card = ({className, background, imagePadding, link, image, name, children}) => {
 	const style = {

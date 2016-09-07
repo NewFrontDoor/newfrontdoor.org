@@ -2,7 +2,7 @@ import React from 'react';
 import {Element} from 'react-scroll';
 import styles from './feature-join.scss';
 
-const imageContext = require.context('../../elements');
+const imageContext = require.context('../../images');
 
 export class FeaturedJoin extends React.Component {
 	constructor() {

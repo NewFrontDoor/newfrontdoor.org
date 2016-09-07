@@ -10,7 +10,7 @@
 :local .background {
 	height: 100%;
 	width: 100%;
-	background-image: url("../../elements/splash-image.jpeg");
+	background-image: url("../../images/splash-image.jpeg");
 	background-attachment: local;
 	filter: grayscale(1) brightness(0.8);
 	background-repeat: no-repeat;
@@ -29,7 +29,7 @@
 :local .mini .background {
 	background-size: cover;
 	background-position: center 75%;
-	background-image: url("../../elements/buildings.jpeg");
+	background-image: url("../../images/buildings.jpeg");
 
 	&::before {
 		content: '';
@@ -47,7 +47,7 @@
 	margin-top: 20vh;
 	border-color: $primary-highlight;
 	border-style: solid;
-	border-image: url('../../elements/outline1.png') 7% 30 15 stretch;
+	border-image: url('../../images/outline1.png') 7% 30 15 stretch;
 	//box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 	transition: opacity 0.5 linear;
 	h1 {

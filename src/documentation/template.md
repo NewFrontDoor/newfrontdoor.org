@@ -28,7 +28,7 @@ amongst her flowers and bushes.
 
 1.  This is the first step
 2.  This is the second step
-3.  This is the third step with an image ![alt text goes here](../elements/placeholder.jpeg)
+3.  This is the third step with an image ![alt text goes here](../images/placeholder.jpeg)
 4.  This is the fourth step with sub-steps
     1.  Nested step a
     2.  Nested step b

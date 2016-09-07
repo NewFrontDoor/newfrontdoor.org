@@ -21,7 +21,7 @@ const blogs = {
 	}
 };
 
-const imageContext = require.context('../../elements');
+const imageContext = require.context('../../images');
 
 export class Blog extends React.Component {
 	constructor() {

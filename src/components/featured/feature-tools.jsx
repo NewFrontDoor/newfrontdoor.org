@@ -5,7 +5,7 @@ import {Collapse} from '../Collapse';
 import styles from './feature-tools.scss';
 import {Featured} from './index';
 
-const imageContext = require.context('../../elements');
+const imageContext = require.context('../../images');
 
 export class FeaturedTools extends React.Component {
 	constructor() {

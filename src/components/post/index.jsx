@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 import moment from 'moment';
 import styles from './Post.scss';
 
-const imageContext = require.context('../../elements');
+const imageContext = require.context('../../images');
 
 export const Post = props => (
 	<section className={styles.post}>
