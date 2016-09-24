@@ -1,9 +1,10 @@
 import React from 'react';
 import classnames from 'classnames';
+import styles from './input.scss';
 
-export const InputRadio = ({hasError, label, name, onChange, options, placeholder, required, value}) => {
+export const InputRadio = ({hasError, label, name, onChange, options, placeholder, required, value, width}) => {
 	return (
-		<fieldset className={classnames('form-group', {'has-error': hasError})}>
+		<fieldset className={classnames('form-group', {'has-error': hasError}, styles[width || 'full'])}>
 			<label htmlFor={name}>{label}</label>
 			{options.map(({key, label, help}) => {
 				return (
@@ -29,5 +30,6 @@ InputRadio.propTypes = {
 	options: React.PropTypes.array,
 	placeholder: React.PropTypes.string,
 	required: React.PropTypes.bool,
-	value: React.PropTypes.string
+	value: React.PropTypes.string,
+	width: React.PropTypes.oneOf(['full', 'half'])
 };

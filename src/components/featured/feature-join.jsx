@@ -13,13 +13,15 @@ const fields = {
 		component: InputText,
 		label: 'Name:',
 		placeholder: 'First and last name',
-		required: true
+		required: true,
+		width: 'half'
 	},
 	email: {
 		component: InputEmail,
 		label: 'Email:',
 		placeholder: 'Your church or parachurch organisation',
-		required: true
+		required: true,
+		width: 'half'
 	},
 	organisation: {
 		component: InputText,
@@ -46,23 +48,14 @@ const JoinForm = ({
 		onSubmit(model);
 	};
 
-	// <div className="form-group hide">
-	// 	<label htmlFor="file">File upload:</label>
-	// 	<input type="file" name="file" className="form-control"/>
-	// 	<p className="help-block">Only txt, doc, docx or pdf and under 2mb are accepted.</p>
-	// </div>
-	// <div className="form-group hide">
-	// 	<label htmlFor="screenshot">Screenshot:</label>
-	// 	<input type="file" name="image" className="form-control"/>
-	// 	<p className="help-block">Only jpg, jpeg or png and under 2mb are accepted.</p>
-	// </div>
-
 	return (
-		<Form onSubmit={handleSubmit} schema={schema} fields={fields} bindInput={bindInput}>
-			<div className="form-group">
-				<button type="submit" className="btn btn-primary pull-right">Submit</button>
-			</div>
-		</Form>
+		<div className={styles.form}>
+			<Form onSubmit={handleSubmit} schema={schema} fields={fields} bindInput={bindInput}>
+				<div className={`form-group ${styles.submit}`}>
+					<button type="submit" className="btn btn-default form-control">Submit</button>
+				</div>
+			</Form>
+		</div>
 	);
 };
 
@@ -72,26 +65,6 @@ JoinForm.propTypes = {
 	onSubmit: React.PropTypes.func,
 	schema: React.PropTypes.object
 };
-
-// <form onSubmit={this.handleSubmit}>
-// 	<div className={`form-group ${styles.group1}`}>
-// 		<label hidden htmlFor="name">Name</label>
-// 		<input type="text" name="name" className="form-control input-default" placeholder="Name" onChange={this.handleChange('name')}/>
-// 	</div>
-// 	<div className={`form-group ${styles.group1}`}>
-// 		<label hidden htmlFor="email">Contact email</label>
-// 		<input type="email" name="email" className="form-control input-default" placeholder="Contact email" onChange={this.handleChange('email')}/>
-// 	</div>
-// 	<div className={`form-group ${styles.group2}`}>
-// 		<label hidden htmlFor="organisation">Organisation</label>
-// 		<input type="text" name="organisation" className="form-control input-default" placeholder="Organisation" onChange={this.handleChange('organisation')}/>
-// 	</div>
-// 	<div className={`form-group ${styles.group2}`}>
-// 		<label hidden htmlFor="message">Message</label>
-// 		<textarea type="text" name="message" className="form-control input-default" placeholder="Message" onChange={this.handleChange('message')}/>
-// 	</div>
-// 	<input type="submit" className={`btn btn-default ${styles.group2}`} value="Submit"/>
-// </form>
 
 const JoinFormContainer = compose(reformed(), validateSchema(fields), util.submitted)(JoinForm);
 
@@ -118,36 +91,34 @@ export const FeaturedJoin = () => (
 				<source src={imageContext('./clip2.mp4')} type="video/mp4"/>
 			</video>
 		</section>
-		<Element name="join">
-			<div className={styles.content}>
-				<section>
-					<div className={styles.background}/>
-					<header className="hidden">
-						<h2>Sign up</h2>
-					</header>
+		<section className={styles.content}>
+			<Element name="join">
+				<div className={styles.background}/>
+				<header className="hidden">
+					<h2>Sign up</h2>
+				</header>
 
-					<div className="text-slab">
-						Begin the journey
-					</div>
+				<div className="text-slab">
+					Begin the journey
+				</div>
 
-					<p className="text-center">
-						Interested in coming on board? Get in touch below or via our Social Media channels.
-					</p>
-					<JoinFormContainer onSubmit={handleSubmit}/>
-					<div className={styles.social}>
-						<div>
-							<a href="http://facebook.com/vision100it">
-								<span className="fa fa-facebook fa-3x"/>
-							</a>
-						</div>
-						<div>
-							<a href="http://twitter.com/vision100it">
-								<span className="fa fa-twitter fa-3x"/>
-							</a>
-						</div>
+				<p className="text-center">
+					Interested in coming on board? Get in touch below or via our Social Media channels.
+				</p>
+				<JoinFormContainer onSubmit={handleSubmit}/>
+				<div className={styles.social}>
+					<div>
+						<a href="http://facebook.com/vision100it">
+							<span className="fa fa-facebook fa-3x"/>
+						</a>
 					</div>
-				</section>
-			</div>
-		</Element>
+					<div>
+						<a href="http://twitter.com/vision100it">
+							<span className="fa fa-twitter fa-3x"/>
+						</a>
+					</div>
+				</div>
+			</Element>
+		</section>
 	</div>
 );
