@@ -61,7 +61,7 @@ export class Footer extends React.Component {
 				<div className={styles.wrap}>
 					{content.footerLinks.map((list, key) => <div key={key} className={itemClass}>
 						<header className="text-lowercase">
-							<h3>{list.heading}</h3>
+							{list.heading && <h3>{list.heading}</h3>}
 						</header>
 						<ul className="list-unstyled">
 							{list.links.map((item, key) => <li key={key}>

@@ -1,9 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router';
 import './Card.scss';
 
 const imageContext = require.context('../../images');
 
-export const Card = ({className, background, imagePadding, link, image, name, children}) => {
+export const Card = ({background, imagePadding, link, image, name, children}) => {
 	const style = {
 		backgroundColor: background
 	};
@@ -11,18 +12,17 @@ export const Card = ({className, background, imagePadding, link, image, name, ch
 		padding: imagePadding
 	};
 	return (
-		<div className={className} style={style}>
-			<a href={link}>
+		<div style={style}>
+			<Link to={link}>
 				<img src={imageContext(image)} style={imageStyle}/>
-				<h3 hidden>{name}</h3>
+				<h2 hidden>{name}</h2>
 				<p>{children}</p>
-			</a>
+			</Link>
 		</div>
 	);
 };
 
 Card.propTypes = {
-	className: React.PropTypes.string,
 	background: React.PropTypes.string,
 	image: React.PropTypes.string,
 	imagePadding: React.PropTypes.string,

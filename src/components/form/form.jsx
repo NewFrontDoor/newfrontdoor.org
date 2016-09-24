@@ -15,21 +15,12 @@ export const Form = ({bindInput, children, className, fields, schema, onSubmit})
 
 	return (
 		<form className={className} onSubmit={onSubmit}>
-			{fieldArray.map(({
-				component,
-				...props
-			}, key) => {
+			{fieldArray.map(({component, children, ...props}, key) => {
 				if (typeof component === 'string') {
-					return React.createElement(component, {
-						key,
-						children: props.children
-					});
+					return React.createElement(component, {key}, children);
 				}
 
-				return React.createElement(component, {
-					key,
-					...props
-				});
+				return React.createElement(component, {key, ...props}, children);
 			})}
 			{children}
 		</form>

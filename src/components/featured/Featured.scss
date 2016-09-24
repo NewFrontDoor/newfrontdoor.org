@@ -12,16 +12,27 @@
 	}
 }
 
-:local .featured:nth-child(odd) {
+:local .white {
 	background-color: white;
 	color: $text-color;
 	min-height: 100vh;
 }
 
-:local .featured:nth-child(even) {
+:local .black {
 	background-color: $footer-bg;
 	color: $primary-highlight;
 	min-height: 100vh;
+
+	em {
+		color: white;
+	}
+}
+
+:local .transparent {
+	background-color: rgba(0, 0, 0, 0.5);
+	color: $primary-highlight;
+	min-height: 100vh;
+
 	em {
 		color: white;
 	}

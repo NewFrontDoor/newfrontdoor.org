@@ -90,11 +90,13 @@ const FeatureForm = ({
 	// </div>
 
 	return (
-		<Form className="support-form" onSubmit={handleSubmit} schema={schema} fields={fields} bindInput={bindInput}>
-			<div className="form-group">
-				<button type="submit" className="btn btn-primary pull-right">Submit</button>
-			</div>
-		</Form>
+		<div className="support-form">
+			<Form onSubmit={handleSubmit} schema={schema} fields={fields} bindInput={bindInput}>
+				<div className="form-group">
+					<button type="submit" className="btn btn-primary pull-right">Submit</button>
+				</div>
+			</Form>
+		</div>
 	);
 };
 
@@ -133,7 +135,7 @@ export const Feature = () => (
 					<ul>
 						<li>fill out this form <strong>as completely as you can.</strong></li>
 						<li>include only one request per submission. You’re welcome to submit multiple requests.</li>
-						<li>check you're allocated a ticket number.</li>
+						<li>check you’re allocated a ticket number.</li>
 					</ul>
 					<p>Each submission will:</p>
 					<ul>

@@ -21,7 +21,7 @@ export class FeaturedHow extends React.Component {
 	}
 	render() {
 		return (
-			<Featured name="how">
+			<Featured name="how" background="white">
 				<h2 className="text-slab">
 					Sometimes all you need is a bit of direction.
 				</h2>
@@ -39,7 +39,7 @@ export class FeaturedHow extends React.Component {
 					</div>
 					<div className={styles.example}>
 						<a href="#" onClick={this.handleCollapse('voluntold')}>
-							<h3>"Voluntold" victim.</h3>
+							<h3>“Voluntold” victim.</h3>
 							<span className="fa fa-plus-circle fa-2x"/>
 						</a>
 					</div>
@@ -56,12 +56,12 @@ export class FeaturedHow extends React.Component {
 					</Collapse>
 					<Collapse isOpened={this.state.isOpen === 'voluntold'}>
 						<p className={styles.explanation}>
-							Being "asked" to put together a webpage for church because you’re the youngest and most "savvy" member can be frustrating, and now you've landed the job of dragging your church into the brave new world of Facebook, Instagram, Content Management and Responsive Design. Your pastor sent you a link to awesome~church.com and wants a site just like it. Just wish you had a bit of support and some better tools?
+							Being “asked” to put together a webpage for church because you’re the youngest and most “savvy” member can be frustrating, and now you’ve landed the job of dragging your church into the brave new world of Facebook, Instagram, Content Management and Responsive Design. Your pastor sent you a link to awesome~church.com and wants a site just like it. Just wish you had a bit of support and some better tools?
 						</p>
 					</Collapse>
 					<Collapse isOpened={this.state.isOpen === 'capable'}>
 						<p className={styles.explanation}>
-							You understand websites and servers and have managed to get something off the ground for church, but it's starting to cost you a bit too much and you're struggling to persuade the eldership that it's worth investing in a more rigorous approach to church IT. Wouldn’t it be great if all you had to worry about was keeping things up to date, rather than keeping it online as well?
+							You understand websites and servers and have managed to get something off the ground for church, but it’s starting to cost you a bit too much and you’re struggling to persuade the eldership that it’s worth investing in a more rigorous approach to church IT. Wouldn’t it be great if all you had to worry about was keeping things up to date, rather than keeping it online as well?
 						</p>
 					</Collapse>
 				</div>

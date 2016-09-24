@@ -31,6 +31,6 @@ Post.propTypes = {
 	title: React.PropTypes.string.isRequired,
 	author: React.PropTypes.shape({name: React.PropTypes.string.isRequired}),
 	date: React.PropTypes.object.isRequired,
-	tags: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
+	// tags: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
 	image: React.PropTypes.shape({href: React.PropTypes.string.isRequired, size: React.PropTypes.string.isRequired, alt: React.PropTypes.string.isRequired})
 };

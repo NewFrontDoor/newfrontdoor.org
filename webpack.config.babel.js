@@ -165,7 +165,7 @@ function getMarkdownLoader() {
 function getStyleLoader() {
 	return {
 		test: /\.scss$/,
-		loader: ExtractTextPlugin.extract('style', ['css', 'postcss', 'sass'].join('!')),
+		loader: ExtractTextPlugin.extract('style', ['css?localIdentName=[name]__[local]___[hash:base64:5]', 'postcss', 'sass'].join('!')),
 		exclude: /node_modules/
 	};
 }

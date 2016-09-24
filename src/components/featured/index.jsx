@@ -1,20 +1,21 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {Element} from 'react-scroll';
 import styles from './Featured.scss';
 
-export const Featured = ({name, className = '', children}) => (
-	<Element className={`${className} ${styles.featured}`} name={name}>
-		<div className={styles.wrapper}>
-			<section>
-				{children}
-			</section>
-		</div>
-	</Element>
+export const Featured = ({children, name, background}) => (
+	<div className={styles[background]}>
+		<Element name={name}>
+			<div className={styles.wrapper}>
+				<section>
+					{children}
+				</section>
+			</div>
+		</Element>
+	</div>
 );
 
 Featured.propTypes = {
-	styles: React.PropTypes.object,
-	className: React.PropTypes.string,
-	name: Element.propTypes.name,
-	children: React.PropTypes.node
+	children: PropTypes.node,
+	background: PropTypes.string,
+	name: Element.propTypes.name
 };

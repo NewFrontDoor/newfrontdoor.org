@@ -86,21 +86,20 @@ Markdown.defaultProps = {
 	remarkConfig: remarkConfigDefault
 };
 
-export const Toc = ({style, source, children, remarkConfig}) => {
+export const Toc = ({source, children, remarkConfig}) => {
 	const content = (isUndefined(source) || source === '') ? children : source;
 	const tocOut = remark().use(() => node => {
 		node.children = [toc(node, {tight: true}).map];
 	}).process(content).contents;
 
 	return (
-		<Markdown style={style} remarkConfig={remarkConfig}>
+		<Markdown remarkConfig={remarkConfig}>
 			{tocOut}
 		</Markdown>
 	);
 };
 
 Toc.propTypes = {
-	style: React.PropTypes.object,
 	children: React.PropTypes.node,
 	source: React.PropTypes.string,
 	remarkConfig: React.PropTypes.object

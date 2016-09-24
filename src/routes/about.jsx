@@ -22,18 +22,20 @@ export const About = () => (
 						<p>Vision 100 IT has now existed for over a decade, and has gradually built up a knowledge base of best practices and approaches for doing church IT sustainably. We are all about getting and keeping our clients on the web, in order to more effectively reach the lost and minister to the people in their congregations.</p>
 						<hr/>
 					</Element>
-					<Element className="team-wrap" name="team">
-						<h2>Vision 100 IT Board</h2>
-						{content.boardMembers.map((member, key) => <TeamMember key={key} {...member}/>)}
-						<hr/>
-						<h2>Vision 100 IT Team Members</h2>
-						{content.teamMembers.map((member, key) => <TeamMember key={key} {...member}/>)}
-						<hr/>
+					<Element name="team">
+						<div className="team-wrap">
+							<h2>Vision 100 IT Board</h2>
+							{content.boardMembers.map((member, key) => <TeamMember key={key} {...member}/>)}
+							<hr/>
+							<h2>Vision 100 IT Team Members</h2>
+							{content.teamMembers.map((member, key) => <TeamMember key={key} {...member}/>)}
+							<hr/>
+						</div>
 					</Element>
 					<Element name="join">
 						<h2>Join our team</h2>
 						<p>
-							Vision 100 IT is made up of a team of volunteers who firmly believe in the value of IT to furthering the cause of the gospel. The team meets together regularly for 'sprints' where a lot of the heavy lifting work gets done, while we hang out, eat pizza and enjoy taking on some challenges together. In between times, we pick up support tasks as they arise from our client churches. Involvement can be as much as building a web app from scratch for interfacing our document management system, or taking on a task here and there across the year. If you're interested in being part of the team, be in touch <Link to="/contact">here.</Link>
+							Vision 100 IT is made up of a team of volunteers who firmly believe in the value of IT to furthering the cause of the gospel. The team meets together regularly for ‘sprints’ where a lot of the heavy lifting work gets done, while we hang out, eat pizza and enjoy taking on some challenges together. In between times, we pick up support tasks as they arise from our client churches. Involvement can be as much as building a web app from scratch for interfacing our document management system, or taking on a task here and there across the year. If you’re interested in being part of the team, be in touch <Link to="/contact">here.</Link>
 						</p>
 						<p>Vision 100 IT does not have any employed positions at this time.</p>
 						<hr/>

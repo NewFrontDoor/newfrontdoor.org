@@ -6,7 +6,7 @@ import {Featured} from './index';
 const imageContext = require.context('../../images');
 
 export const FeaturedWho = () => (
-	<Featured name="who">
+	<Featured name="who" background="black">
 		<div className="text-slab">
 			The right people at the right time
 		</div>

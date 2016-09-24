@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 
 import content from '../../content';
@@ -23,11 +23,13 @@ MainMenu.defaultProps = {
 	menuItems: content.clientmenu.links
 };
 
+const menuItemShape = PropTypes.shape({
+	text: PropTypes.string.isRequired,
+	target: PropTypes.string,
+	link: PropTypes.string
+});
+
 MainMenu.propTypes = {
-	onOpenSearch: React.PropTypes.func.isRequired,
-	menuItems: React.PropTypes.arrayOf(React.PropTypes.shape({
-		text: React.PropTypes.string.isRequired,
-		target: React.PropTypes.string,
-		link: React.PropTypes.string
-	}))
+	onOpenSearch: PropTypes.func.isRequired,
+	menuItems: PropTypes.arrayOf(menuItemShape)
 };

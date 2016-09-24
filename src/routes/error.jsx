@@ -76,7 +76,7 @@ export class Error extends React.Component {
 						<div className="site-wrapper site-wrapper-padding">
 							<h1>404 page not found</h1>
 							<section>
-								<p>You've managed to find yourself on a page that doesn't exist! Feel free to use the search box below, or hit the back button.</p>
+								<p>You’ve managed to find yourself on a page that doesn’t exist! Feel free to use the search box below, or hit the back button.</p>
 							</section>
 							<div className="search-wrapper">
 								<form onSubmit={this.handleSearchSubmit}>

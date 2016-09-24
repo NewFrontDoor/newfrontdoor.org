@@ -14,7 +14,7 @@ export const Control = () => (
 				<div className="checkbox">
 					<label>
 						<input type="checkbox" name="announcementCheck" id="error2" value="error2"/>
-						Display announcement bar on 'client' page
+						Display announcement bar on ‘client’ page
 					</label>
 				</div>
 				<div className="checkbox">

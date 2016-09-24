@@ -17,9 +17,9 @@ export const InputSelect = ({hasError, label, name, onChange, options, required,
 };
 
 InputSelect.propTypes = {
-	errors: React.PropTypes.array,
+	// errors: React.PropTypes.array,
 	hasError: React.PropTypes.bool,
-	id: React.PropTypes.string,
+	// id: React.PropTypes.string,
 	label: React.PropTypes.string,
 	name: React.PropTypes.string,
 	onChange: React.PropTypes.func,

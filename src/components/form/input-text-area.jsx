@@ -16,7 +16,7 @@ InputTextArea.defaultProps = {
 
 InputTextArea.propTypes = {
 	hasError: React.PropTypes.bool,
-	id: React.PropTypes.string,
+	// id: React.PropTypes.string,
 	label: React.PropTypes.string,
 	name: React.PropTypes.string,
 	onChange: React.PropTypes.func,

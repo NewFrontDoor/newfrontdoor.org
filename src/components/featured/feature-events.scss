@@ -1,12 +1,10 @@
 @import "../../css/variables";
 
-:local .feature.background {
+:local .background {
 	overflow: hidden;
 	position: relative;
 
 	@media (min-width: $screen-md-min) {
-		background-color: rgba(0, 0, 0, 0.5);
-
 		&::before {
 			content: ' ';
 			position: fixed;

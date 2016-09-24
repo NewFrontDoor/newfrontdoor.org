@@ -53,38 +53,40 @@ export class Template extends React.Component {
 
 		return (
 			<Index>
-				<StickyContainer className="documentation-wrapper">
-					<div className="documentation-sidebar mob-hidden">
-						<Sticky stickyStyle={{marginTop: 144}} topOffset={-144} bottomOffset={168}>
-							<div className={docTOC}>
-								<h3>Contents</h3>
-								<Toc>
-									{this.document.body}
-								</Toc>
-							</div>
-							<div className={docFeedback}>
-								<h3>Give feedback</h3>
-								<a href="#" onClick={this.handleToggleFeedback}>
-									<span>Suggest a revision to this document.</span>
-									<span className="fa fa-angle-down fa-3x"/>
-								</a>
-								<div className="feedback-form">
-									<textarea type="text" name="message" className="form-control input-default" placeholder="What could make this documentation clearer?"/>
-									<input type="email" name="email" className="form-control input-default" placeholder="Contact email"/>
-									<button type="submit" className="btn btn-default">Submit</button>
-									<button type="cancel" className="btn btn-default" onClick={this.handleToggleFeedback}>Cancel</button>
+				<StickyContainer>
+					<div className="documentation-wrapper">
+						<div className="documentation-content">
+							<h1>{this.document.title}</h1>
+							<h1>
+								<small>{this.document.sub_title}</small>
+							</h1>
+							<Markdown>
+								{this.document.body}
+							</Markdown>
+						</div>
+						<div className="documentation-sidebar mob-hidden">
+							<Sticky stickyStyle={{marginTop: 144}} topOffset={-144} bottomOffset={168}>
+								<div className={docTOC}>
+									<h3>Contents</h3>
+									<Toc>
+										{this.document.body}
+									</Toc>
 								</div>
-							</div>
-						</Sticky>
-					</div>
-					<div className="documentation-content">
-						<h1>{this.document.title}</h1>
-						<h1>
-							<small>{this.document.sub_title}</small>
-						</h1>
-						<Markdown>
-							{this.document.body}
-						</Markdown>
+								<div className={docFeedback}>
+									<h3>Give feedback</h3>
+									<a href="#" onClick={this.handleToggleFeedback}>
+										<span>Suggest a revision to this document.</span>
+										<span className="fa fa-angle-down fa-3x"/>
+									</a>
+									<div className="feedback-form">
+										<textarea type="text" name="message" className="form-control input-default" placeholder="What could make this documentation clearer?"/>
+										<input type="email" name="email" className="form-control input-default" placeholder="Contact email"/>
+										<button type="submit" className="btn btn-default">Submit</button>
+										<button type="cancel" className="btn btn-default" onClick={this.handleToggleFeedback}>Cancel</button>
+									</div>
+								</div>
+							</Sticky>
+						</div>
 					</div>
 				</StickyContainer>
 			</Index>

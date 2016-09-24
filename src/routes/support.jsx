@@ -120,11 +120,13 @@ const SupportForm = ({
 	};
 
 	return (
-		<Form className="support-form" onSubmit={handleSubmit} schema={schema} fields={fields} bindInput={bindInput}>
-			<div className="form-group">
-				<button type="submit" className="btn btn-primary pull-right">Submit</button>
-			</div>
-		</Form>
+		<div className="support-form">
+			<Form onSubmit={handleSubmit} schema={schema} fields={fields} bindInput={bindInput}>
+				<div className="form-group">
+					<button type="submit" className="btn btn-primary pull-right">Submit</button>
+				</div>
+			</Form>
+		</div>
 	);
 };
 
@@ -138,7 +140,6 @@ SupportForm.propTypes = {
 const SupportFormContainer = compose(reformed(), validateSchema(fields), util.submitted)(SupportForm);
 
 const handleSubmit = model => {
-	console.log(model);
 	fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/support-request', {
 		method: 'post',
 		mode: 'cors',
@@ -161,8 +162,8 @@ export const Support = () => (
 					<p>To best assist you with your support requests, please ensure to:</p>
 					<ul>
 						<li>fill out this form <strong>as completely as you can.</strong></li>
-						<li>include only one problem per submission. You're welcome to submit multiple requests.</li>
-						<li>check you're allocated a ticket number.</li>
+						<li>include only one problem per submission. You’re welcome to submit multiple requests.</li>
+						<li>check you’re allocated a ticket number.</li>
 					</ul>
 					Each submission will:
 					<ul>

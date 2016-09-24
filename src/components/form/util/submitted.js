@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
 export const submitted = WrappedComponent => {
 	class Submitted extends React.Component {
@@ -10,27 +10,28 @@ export const submitted = WrappedComponent => {
 		}
 
 		render() {
-			const {onSubmit, ...props} = this.props;
+			const {onSubmit, model, schema, bindInput} = this.props;
 
-			if (props.schema) {
-				props.schema.isSubmitted = this.state.submitted;
+			if (schema) {
+				schema.isSubmitted = this.state.submitted;
 			}
 
 			const handleSubmit = model => {
 				this.setState({submitted: true});
-				if (props.schema.isValid) {
+				if (schema.isValid) {
 					return onSubmit(model);
 				}
 			};
 
-			return React.createElement(WrappedComponent, {onSubmit: handleSubmit, ...props});
+			return React.createElement(WrappedComponent, {onSubmit: handleSubmit, model, schema, bindInput});
 		}
 	}
 
 	Submitted.propTypes = {
-		model: React.PropTypes.object,
-		onSubmit: React.PropTypes.func,
-		schema: React.PropTypes.object
+		bindInput: PropTypes.func,
+		model: PropTypes.object,
+		onSubmit: PropTypes.func,
+		schema: PropTypes.object
 	};
 
 	return Submitted;

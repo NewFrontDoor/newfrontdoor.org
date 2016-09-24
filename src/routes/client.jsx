@@ -54,23 +54,23 @@ export const Client = () => (
 		<Hero mini/>
 		<main role="main">
 			<div className="alerts hidden">
-					{content.banners.map((banner, key) => (
-						<Alert key={key} type={banner.type}>
-							<p>{banner.text}</p>
-						</Alert>
-					))}
+				{content.banners.map((banner, key) => (
+					<Alert key={key} type={banner.type}>
+						<p>{banner.text}</p>
+					</Alert>
+				))}
 			</div>
-			<div className="product-cards">
-				<Card className="mob-hidden" name="Elvanto" background="#323232" image="./elvanto.png" imagePadding="10px" link="/elvanto">
+			<div className="product-cards mob-hidden">
+				<Card name="Elvanto" background="#323232" image="./elvanto.png" imagePadding="10px" link="/elvanto">
 					Have you got started with Elvanto yet?
 				</Card>
-				<Card className="mob-hidden" name="Registration" background="white" image="./soul.jpeg" imagePadding="10px" link="/registration">
+				<Card name="Registration" background="white" image="./soul.jpeg" imagePadding="10px" link="/registration">
 					Have a church event soon? Check out the V100IT registration module
 				</Card>
-				<Card className="mob-hidden" name="Podcasting" background="#171717" image="./podcasting.png" imagePadding="75px" link="/podcasting">
+				<Card name="Podcasting" background="#171717" image="./podcasting.png" imagePadding="75px" link="/podcasting">
 					Get on board with podcasting your sermons
 				</Card>
-				<Card className="mob-hidden" name="Designers" background="white" image="./close-image.jpeg">
+				<Card name="Designers" background="white" image="./close-image.jpeg">
 					Thinking of a refresh? Read our recommendations - <em>coming soon...</em>
 				</Card>
 			</div>
