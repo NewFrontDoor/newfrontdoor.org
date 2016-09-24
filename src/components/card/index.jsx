@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
-import './Card.scss';
+import styles from './Card.scss';
 
 const imageContext = require.context('../../images');
 
@@ -12,10 +12,10 @@ export const Card = ({background, imagePadding, link, image, name, children}) =>
 		padding: imagePadding
 	};
 	return (
-		<div style={style}>
+		<div className={styles.card} style={style}>
 			<Link to={link}>
-				<img src={imageContext(image)} style={imageStyle}/>
 				<h2 hidden>{name}</h2>
+				<img src={imageContext(image)} style={imageStyle}/>
 				<p>{children}</p>
 			</Link>
 		</div>

@@ -13,7 +13,7 @@ const remarkHeading = (component, boundProps = {}) => {
 		propTypes() {
 			return {
 				id: React.PropTypes.string,
-				children: React.PropTypes.children
+				children: React.PropTypes.element
 			};
 		},
 		render() {

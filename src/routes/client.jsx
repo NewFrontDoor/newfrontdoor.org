@@ -60,7 +60,7 @@ export const Client = () => (
 					</Alert>
 				))}
 			</div>
-			<div className="product-cards mob-hidden">
+			<div className="product-cards">
 				<Card name="Elvanto" background="#323232" image="./elvanto.png" imagePadding="10px" link="/elvanto">
 					Have you got started with Elvanto yet?
 				</Card>

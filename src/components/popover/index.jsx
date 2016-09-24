@@ -1,20 +1,29 @@
 import React from 'react';
+import {Gateway} from 'react-gateway';
+import Modal from 'react-modal2';
 import styles from './popover.scss';
 
 export class Popover extends React.Component {
-	shouldComponentUpdate() {}
 	render() {
+		const {onClose, closeOnEsc, closeOnBackdropClick, children} = this.props;
 		return (
-			<div className={styles.body}>
-				<p>Pop Over!!!</p>
-			</div>
+			<Gateway into="modal">
+				<Modal onClose={onClose} closeOnEsc={closeOnEsc} closeOnBackdropClick={closeOnBackdropClick} backdropClassName={styles.backdrop} modalClassName={styles.modal}>
+					{children}
+				</Modal>
+			</Gateway>
 		);
 	}
 }
 
-console.log('WHAT WHAT WHAT', Popover);
+Popover.propTypes = {
+	onClose: React.PropTypes.func.isRequired,
+	closeOnEsc: React.PropTypes.bool,
+	closeOnBackdropClick: React.PropTypes.bool,
+	children: React.PropTypes.element
+};
 
-// Popover.propTypes = {
-// 	isOpen: React.PropTypes.bool.isRequired,
-// 	onClose: React.PropTypes.func.isRequired
-// };
+Popover.defaultProps = {
+	closeOnEsc: true,
+	closeOnBackdropClick: true
+};
