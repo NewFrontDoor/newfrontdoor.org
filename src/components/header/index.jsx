@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import throttle from 'lodash/throttle';
 import logo from '../../images/vision100-it-logo.svg';
@@ -68,10 +69,12 @@ export class Header extends React.Component {
 
 		return (
 			<header className={styles.nav} style={scrollStyle}>
-				<a className={styles.logo} style={logoStyle} href="/">
-					<h1 className="sr-only">Vision 100 IT</h1>
-					<img className="img-responsive" src={logo}/>
-				</a>
+				<div className={styles.logo} style={logoStyle}>
+					<Link to="/">
+						<h1 className="sr-only">Vision 100 IT</h1>
+						<img className="img-responsive" src={logo}/>
+					</Link>
+				</div>
 				{this.props.children}
 			</header>
 		);
