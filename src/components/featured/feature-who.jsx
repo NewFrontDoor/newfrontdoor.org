@@ -10,7 +10,7 @@ const FeaturedWho = () => (
 		<div className="text-slab">
 			The right people at the right time
 		</div>
-		<div className={`${styles.snapshots} text-uppercase`}>
+		<div className={`${styles.snapshots}`}>
 			<div>
 				<span className="fa fa-university fa-5x"/>
 				<p>14+ years of V100IT history</p>

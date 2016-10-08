@@ -39,7 +39,7 @@ class Hero extends React.Component {
 		return (
 			<div className={this.props.mini ? `${styles.mini} ${styles.container}` : styles.container}>
 				<div className={styles.background}/>
-				<div className={this.props.children ? `${styles.content} text-center` : ''} style={contentStyle}>
+				<div className={this.props.children ? `${styles.content}` : ''} style={contentStyle}>
 					{this.props.children}
 				</div>
 			</div>);

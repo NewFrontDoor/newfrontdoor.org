@@ -3,3 +3,21 @@
 :local .content {
 	flex: 1 0 auto;
 }
+
+:local .enter {
+	opacity: 0.01;
+	transition: opacity 300ms ease-in-out;
+}
+
+:local .enterActive {
+	opacity: 1;
+}
+
+:local .leave {
+	opacity: 1;
+}
+
+:local .leaveActive {
+	opacity: 0.01;
+	transition: opacity 300ms ease-in-out;
+}

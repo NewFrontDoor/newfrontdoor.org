@@ -2,14 +2,9 @@
 import fs from 'fs';
 import path from 'path';
 import _ from 'lodash';
-import autoprefixer from 'autoprefixer';
 import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import StaticSiteGeneratorPlugin from 'static-site-generator-webpack-plugin';
-import lost from 'lost';
-import calc from 'postcss-calc';
-import pxtorem from 'postcss-pxtorem';
-import lh from 'postcss-lh';
 import webpack from 'webpack';
 import WebpackNotifierPlugin from 'webpack-notifier';
 import LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
@@ -88,8 +83,7 @@ function getCommonConfig() {
 				getFileLoader(),
 				getJsonLoader()
 			]
-		},
-		postcss: getPostCss()
+		}
 	};
 }
 
@@ -175,19 +169,6 @@ function getFileLoader() {
 		exclude: /node_modules/,
 		loader: 'file'
 	};
-}
-
-function getPostCss() {
-	return [
-		lh(),
-		lost(),
-		calc(),
-		autoprefixer({
-			browsers: ['last 2 versions'],
-			cascade: false
-		}),
-		pxtorem()
-	];
 }
 
 function getCommonPlugins() {

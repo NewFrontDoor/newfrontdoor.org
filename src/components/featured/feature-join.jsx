@@ -138,7 +138,7 @@ class FeaturedJoin extends React.Component {
 							Begin the journey
 						</div>
 
-						<p className="text-center">
+						<p className={styles.message}>
 							Interested in coming on board? Get in touch below or via our Social Media channels.
 						</p>
 						<JoinFormContainer onSubmit={this.handleSubmit} getFormRef={this.setFormRef}/>

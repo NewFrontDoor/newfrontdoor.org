@@ -1,0 +1,51 @@
+@import "../../css/variables";
+
+:local .results {
+	position: relative;
+	width: 100%;
+	// border-color: rgba(lighten($text-color, 90%), 0.2);
+	border-style: solid;
+	border-color: rgba(darken($text-color, 80%), 0.4);
+	background-color: rgba(darken($text-color, 90%), 0.2);
+	border-width: 2px 0 1px;
+	overflow-y: scroll;
+	max-height: 250px;
+	padding: 0.5lh;
+}
+
+:local .content {
+	lost-flex-container: row;
+	text-transform: none;
+
+	ul {
+		list-style: none;
+	}
+}
+
+:local .nav {
+	margin-top: 10px;
+	bottom: 0;
+
+	p {
+		float: right;
+		padding-right: 10px;
+	}
+}
+
+:local .enter {
+	opacity: 0.01;
+}
+
+:local .enterActive {
+	opacity: 1;
+	transition: opacity 0.3s ease-out;
+}
+
+:local .leave {
+	opacity: 1;
+}
+
+:local .leaveActive {
+	opacity: 0.01;
+	transition: opacity 0.3s ease-in;
+}

@@ -46,6 +46,7 @@
 :local .snapshots {
 	lost-center: 980px;
 	flex-wrap: wrap;
+	text-transform: uppercase;
 	font-family: $font-family-sans-serif;
 	margin-bottom: 40px;
 	div {

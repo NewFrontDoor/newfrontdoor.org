@@ -1,4 +1,4 @@
-@import "../../css/variables";
+@import '../../css/variables';
 
 footer {
 	flex-shrink: 0;
@@ -11,8 +11,21 @@ footer {
 }
 
 :local .wrap {
-	padding: 15px;
+	padding: 1.5lh 1lh 0.5lh;
 	lost-center: 980px;
+
+	h3 {
+		margin-bottom: 0.5lh;
+	}
+
+	ul,
+	li {
+		margin: 0;
+	}
+
+	header {
+		text-transform: lowercase;
+	}
 
 	@media (min-width: $screen-md-min) {
 		// padding: 0;
@@ -23,17 +36,20 @@ footer {
 	lost-column: 1/2;
 	font-size: 0.8rem;
 	text-align: center;
+
 	h3 {
 		font-size: $font-size-h4;
 
 		@media (min-width: $screen-md-min) {
 			font-size: $font-size-h3;
 			padding-bottom: 3px;
-			border-bottom: 1px solid $primary-heading;
+			border-bottom: 1px solid $brand-primary;
 		}
 	}
+
 	ul {
 		margin-top: -5px;
+
 		a {
 			color: black;
 			margin: 0 4px;
@@ -66,12 +82,11 @@ footer {
 	&:nth-child(5) {
 		lost-column: 1;
 		height: 190px;
-		background-image: url("../../images/vision100-it-logo.svg");
+		background-image: url('../../images/vision100-it-logo.svg');
 		background-repeat: no-repeat;
-		background-size: 200px 200px;
-		background-position-x: center;
-		transform-style: preserve-3d;
-		transition: transform 0s;
+		background-size: 190px 123px;
+		background-position: center;
+
 		h3 {
 			border-bottom: none;
 		}
@@ -79,15 +94,7 @@ footer {
 		@media (min-width: $screen-md-min) {
 			lost-column: 3/11;
 			lost-move: -4/11;
-			background-position-y: 25px;
 		}
-	}
-}
-
-:local .spin {
-	&:nth-child(5) {
-		transform: rotateX(1440deg);
-		transition: transform 2s cubic-bezier(0.2, 1, 0, 1);
 	}
 }
 

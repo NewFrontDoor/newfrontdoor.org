@@ -1,6 +1,7 @@
 @import "../../css/variables";
 
 :local .main {
+	text-transform: uppercase;
 	display: none;
 	font-size: 1rem;
 	margin-top: 12px;
@@ -22,6 +23,7 @@
 :local .main ul {
 	display: flex;
 	justify-content: space-around;
+	margin: 0;
 	li {
 		display: flex;
 		align-items: center;

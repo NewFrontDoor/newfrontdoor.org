@@ -43,6 +43,7 @@
 }
 
 :local .content {
+	text-align: center;
 	width: 75vw;
 	margin-top: 20vh;
 	border-color: $primary-highlight;
@@ -50,14 +51,17 @@
 	border-image: url('../../images/outline1.png') 7% 30 15 stretch;
 	//box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 	transition: opacity 0.5 linear;
+
 	h1 {
 		font-size: 100%;
+		line-height: 1lh;
 		font-family: $font-family-serif;
 		color: $text-color;
 		margin: 5%;
 
 		@media (min-width: $screen-md-min) {
 			font-size: 200%;
+			line-height: 1.5lh;
 		}
 	}
 
