@@ -60,7 +60,7 @@
 	}
 
 	h3 {
-		margin-top: 5px;
+		margin: 0;
 		color: $search-overlay;
 	}
 
@@ -104,7 +104,7 @@
 	}
 
 	h3 {
-		margin-top: 5px;
+		margin: 0;
 		color: $search-overlay;
 	}
 
@@ -115,7 +115,7 @@
 	}
 }
 
-:local .feedback-form {
+:local .form {
 	lost-center: 100%;
 	height: auto;
 

@@ -55,7 +55,7 @@ const DocumentationFeedbackFrom = ({
 	};
 
 	return (
-		<div className={styles['feedback-form']}>
+		<div className={styles.form}>
 			<Form onSubmit={handleSubmit} schema={schema} fields={fields} bindInput={bindInput}>
 				<div className="form-group">
 					<button type="submit" className="btn btn-default">Submit</button>

@@ -5,7 +5,7 @@ import content from '../../content';
 import styles from './MainMenu.scss';
 
 const MainMenu = props => (
-	<div className={`${styles.main} text-uppercase`}>
+	<div className={`${styles.main}`}>
 		<ul className="list-inline">
 			<li className={`${styles.search}`}>
 				<a href="#" onClick={props.onOpenSearch}>

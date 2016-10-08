@@ -5,7 +5,7 @@ $gray-dark: lighten($gray-base, 20%) !default; // #333
 $gray: lighten($gray-base, 33.5%) !default; // #555
 $gray-light: lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter: lighten($gray-base, 93.5%) !default; // #eee
-$primary-red: #c13936 !default;
+$primary-red: #e63224 !default;
 $brand-primary: $primary-red !default;
 $brand-success: #5cb85c !default;
 $brand-info: #5bc0de !default;
@@ -20,8 +20,6 @@ $link-hover-color: darken($link-color, 15%) !default;
 $link-hover-decoration: underline !default;
 
 // Other?
-$primary-heading: #e63224;
-$logo-colour: $primary-heading !default;
 $secondary-heading: #f18032;
 $primary-highlight: #b7cbe6;
 $secondary-highlight: #fcf5ed;
@@ -55,7 +53,7 @@ $font-size-h6: $font-size-h5 * $scale-down !default;
 $line-height-base: 1.5 !default;
 $headings-font-family: $font-family-sans-serif !default;
 $headings-font-weight: 500 !default;
-$headings-color: $primary-heading !default;
+$headings-color: $brand-primary !default;
 
 // Components
 $border-radius-base: 4px !default;

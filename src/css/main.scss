@@ -3,38 +3,92 @@
 //@import url(https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic);
 
 // Our Variables
-@import "./variables";
+@import './variables';
 
 // font-awesome
-@import "./font-awesome";
+@import './font-awesome';
 
 // Core variables and mixins
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins";
-
-// Reset and dependencies
-@import "~normalize.css/normalize.css";
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/variables';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/mixins';
 
 // Core CSS
-@import "./scaffolding";
-@import "./type";
-@import "./forms";
-@import "./buttons";
+@import './scaffolding';
+
+@typography {
+	.h1,
+	.h2,
+	.h3,
+	.h4,
+	.h5,
+	.h6,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: $headings-color;
+
+		.small,
+		small {
+			color: $headings-small-color;
+		}
+	}
+
+	ul {
+		margin-left: 1.5lh;
+	}
+
+	li {
+		margin: 0;
+	}
+
+	blockquote {
+		padding: 0.5lh 1lh;
+		margin: 0 0 1lh;
+		border-left: 5px solid $blockquote-border-color;
+	}
+}
+
+@import './forms';
+@import './buttons';
 
 // Components
-@import "./input-groups";
+@import './input-groups';
 
 // Utility classes
-@import "./utilities";
-@import "./responsive-utilities";
+@import './utilities';
+@import './responsive-utilities';
 
 // Our Stuff
-@import "./support";
-@import "./client";
+@import './support';
+@import './client';
 
 // Lost defaults
-@lost gutter 15px;
+@lost gutter 30px;
 @lost flexbox flex;
+
+html {
+	min-height: 100%;
+	position: relative;
+	// lost-utility: edit;
+}
+
+.lead {
+	margin-bottom: 1.15lh;
+	font-size: floor(($font-size-base * 1.15));
+	line-height: 1.4;
+
+	@media (min-width: $screen-sm-min) {
+		font-size: ($font-size-base * 1.5);
+	}
+}
+
+.list-unstyled {
+	margin-left: 0;
+	list-style: none;
+}
 
 .container {
 	lost-flex-container: column;
@@ -43,7 +97,7 @@
 
 .site-wrapper {
 	overflow: hidden;
-	padding: 50px 15px 15px;
+	padding: 3lh 1lh 1lh;
 	lost-center: 500px;
 
 	@media (min-width: $screen-md-min) {
@@ -108,6 +162,7 @@ blockquote {
 
 .image-block-2 {
 	lost-column: 1/1;
+
 	img {
 		display: block;
 		margin: 0 auto;
@@ -222,12 +277,15 @@ blockquote {
 	h3 {
 		color: white;
 	}
+
 	p {
 		color: $primary-highlight;
 	}
+
 	blockquote {
 		color: $primary-highlight;
 	}
+
 	a {
 		color: $footer-text;
 	}

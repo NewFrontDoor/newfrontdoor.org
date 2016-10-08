@@ -4,6 +4,7 @@
 	lost-center: 100%;
 	position: relative;
 	color: $footer-text;
+	background-color: $text-color;
 
 	@media (min-width: $screen-md-min) {
 		text-shadow: 1px 1px 2px black;
@@ -45,11 +46,7 @@
 	}
 
 	a {
-		color: black;
-
-		@media (min-width: $screen-md-min) {
-			color: white;
-		}
+		color: white;
 	}
 }
 
@@ -65,12 +62,22 @@
 	}
 }
 
+:local .message {
+	text-align: center;
+}
+
 :local .form {
 	lost-center: 100%;
 	padding: 10px;
 
 	form {
 		lost-flex-container: row;
+
+		input,
+		button,
+		textarea {
+			background: rgba(255, 255, 255, 0.8);
+		}
 	}
 
 	label {

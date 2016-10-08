@@ -4,19 +4,17 @@
 	overflow: hidden;
 	position: relative;
 
-	@media (min-width: $screen-md-min) {
-		&::before {
-			content: ' ';
-			position: fixed;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			left: 0;
-			background: url("../../images/speed.jpg") no-repeat center center;
-			background-size: cover;
-			will-change: transform;
-			z-index: -2;
-		}
+	&::before {
+		content: ' ';
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: url("../../images/speed.jpg") no-repeat center center;
+		background-size: cover;
+		will-change: transform;
+		z-index: -2;
 	}
 }
 

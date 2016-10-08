@@ -1,9 +1,11 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
+import CSSTransitionGroup from 'react-addons-css-transition-group';
 import Header from '../header/index.jsx';
 import SearchBar from '../search-bar/index.jsx';
 import MainMenu from '../main-menu/index.jsx';
 import MobileMenu from '../mobile-menu/index.jsx';
+import FirstChild from '../../lib/first-child';
 
 import styles from './Index.scss';
 
@@ -37,7 +39,14 @@ class Index extends React.Component {
 					<MainMenu menuItems={this.props.menuItems} onOpenSearch={this.handleOpenSearch}/>
 				</Header>
 				{this.props.children}
-				<SearchBar isOpen={this.state.showSearch} onClose={this.handleCloseSearch}/>
+				<CSSTransitionGroup
+					component={FirstChild}
+					transitionName={styles}
+					transitionEnterTimeout={300}
+					transitionLeaveTimeout={300}
+					>
+					{this.state.showSearch && <SearchBar onClose={this.handleCloseSearch}/>}
+				</CSSTransitionGroup>
 			</div>
 		);
 	}

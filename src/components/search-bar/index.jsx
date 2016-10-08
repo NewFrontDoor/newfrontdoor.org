@@ -1,8 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router';
 import lunr from 'lunr';
-import classNames from 'classnames';
-import './SearchBar.scss';
+import CSSTransitionGroup from 'react-addons-css-transition-group';
+import FirstChild from '../../lib/first-child';
+import SearchResults from '../search-results/index.jsx';
+import styles from './SearchBar.scss';
 
 const ESCAPE = 27;
 
@@ -25,14 +27,15 @@ class SearchBar extends React.Component {
 		this.searchInput = c;
 	}
 
-	componentDidUpdate(prevProps) {
-		if (this.props.isOpen && !prevProps.isOpen && window.matchMedia('(min-width: 992px)').matches) {
-			this.searchInput.focus();
-		}
+	componentDidUpdate() {
+
 	}
 
 	componentDidMount() {
 		window.addEventListener('keydown', this.handleEscKey, false);
+		if (window.matchMedia('(min-width: 992px)').matches) {
+			this.searchInput.focus();
+		}
 	}
 
 	componentWillUnmount() {
@@ -64,10 +67,9 @@ class SearchBar extends React.Component {
 	handleSearchSubmit(event) {
 		event.preventDefault();
 		this.searchInput.blur();
-		const self = this;
 
 		this.searchIndex.then(({index, data}) => {
-			const res = index.search(self.state.searchTerm);
+			const res = index.search(this.state.searchTerm);
 
 			const searchResults = res.map(result => data.items.find(item => item.id === result.ref)).map(result => {
 				// HACK HACK HACK
@@ -82,7 +84,7 @@ class SearchBar extends React.Component {
 				});
 			}
 
-			self.setState({searchResults});
+			this.setState({searchResults});
 		});
 	}
 
@@ -111,92 +113,80 @@ class SearchBar extends React.Component {
 	}
 
 	render() {
-		const siteClass = classNames({
-			visible: this.props.isOpen,
-			'search-overlay': true,
-			'text-uppercase': true
-		});
-
-		const resultsClass = classNames({
-			visible: this.state.searchResults.length > 0,
-			'search-results': true
-		});
+		const {searchResults} = this.state;
 
 		return (
-			<div className={siteClass}>
-				<div className="search-title">
-					<h2>
-						Search menu
-						<a onClick={this.handleCloseModal}>
-							<span className="fa fa-times-circle"/>
-						</a>
-					</h2>
-				</div>
-				<form onSubmit={this.handleSearchSubmit}>
-					<div className="input-group">
-						<label className="sr-only" htmlFor="search">Search</label>
-						<input
-							type="search"
-							name="search"
-							ref={this.mountSearchInput}
-							className="form-control search"
-							value={this.state.searchTerm}
-							onChange={this.handleSearchTerm}
-							placeholder="Search..."
-							/>
-						<span className="input-group-btn submit">
-							<button className="btn btn-transparent" type="submit">
-								<span className="fa fa-search fa-lg"/>
-							</button>
-						</span>
-					</div>
-				</form>
-				<div className={resultsClass}>
-					<div className="results-title">
-						<h3>
-							Results
-							<a onClick={this.handleCloseResult}>
+			<div className={styles.overlay}>
+				<div className={styles.container}>
+					<div className={styles.title}>
+						<h2>
+							Search menu
+							<a onClick={this.handleCloseModal}>
 								<span className="fa fa-times-circle"/>
 							</a>
-						</h3>
+						</h2>
 					</div>
-					<div className="results-content">
+					<form onSubmit={this.handleSearchSubmit}>
+						<div className="input-group">
+							<label className="sr-only" htmlFor="search">Search</label>
+							<input
+								type="search"
+								name="search"
+								ref={this.mountSearchInput}
+								className={`form-control ${styles.search}`}
+								value={this.state.searchTerm}
+								onChange={this.handleSearchTerm}
+								placeholder="Search..."
+								/>
+							<span className={`input-group-btn ${styles.search}`}>
+								<button className={`btn ${styles.transparent}`} type="submit">
+									<span className="fa fa-search fa-lg"/>
+								</button>
+							</span>
+						</div>
+					</form>
+				</div>
+				<CSSTransitionGroup
+					component={FirstChild}
+					transitionName={styles}
+					transitionEnterTimeout={500}
+					transitionLeaveTimeout={500}
+					>
+					{searchResults.length &&
+						<SearchResults
+							titleClassName={styles.title}
+							onCloseResult={this.handleCloseResult}
+							onCloseModal={this.handleCloseModal}
+							searchResults={this.state.searchResults}
+							/>
+					}
+				</CSSTransitionGroup>
+				<div className={styles.container}>
+					<div className={styles.menu}>
 						<ul className="list-unstyled">
-							{this.state.searchResults.map((item, key) => (
-								<li key={key}>
-									<Link to={`/${item.id}`} onClick={this.handleCloseModal}>{item.title}</Link>
-								</li>
-							))}
+							<li>
+								<Link to="/client">News</Link>
+							</li>
+							<li>
+								<Link to="/support">Support</Link>
+							</li>
+							<li>
+								<Link to="/status">Status</Link>
+							</li>
+							<li>
+								<Link to="/documentation">Documentation</Link>
+							</li>
+							<li>
+								<Link to="/contact">Contact</Link>
+							</li>
 						</ul>
 					</div>
-					<div className="search-nav small hidden">
-						<p><Link to="/documentation?search=poop">more</Link></p>
+					<div className={styles.postscript}>
+						© Vision 100 Resources 2016.<br/>
+						Design by <a href="http://twitter.com/readeral">readeral</a> and <a href="http://twitter.com/barrythepenguin">barrythepenguin</a>.<br/>
+						<a href="mailto:info@vision100.org">info@vision100.org</a>.<br/>
+						ABN: 50 782 030 539.
 					</div>
-				</div>
-				<div className="search-menu">
-					<ul className="list-unstyled">
-						<li>
-							<Link to="/client">News</Link>
-						</li>
-						<li>
-							<Link to="/support">Support</Link>
-						</li>
-						<li>
-							<Link to="/status">Status</Link>
-						</li>
-						<li>
-							<Link to="/documentation">Documentation</Link>
-						</li>
-						<li>
-							<Link to="/contact">Contact</Link>
-						</li>
-					</ul>
-				</div>
-				<div className="postscript">
-					© Vision 100 Resources 2016.<br/>
-					Design by <a href="http://twitter.com/readeral">readeral</a> and <a href="http://twitter.com/barrythepenguin">barrythepenguin</a>.<br/>
-					<a href="mailto:info@vision100.org">info@vision100.org</a>.<br/>
-					ABN: 50 782 030 539.
 				</div>
 			</div>
 		);
@@ -204,7 +194,6 @@ class SearchBar extends React.Component {
 }
 
 SearchBar.propTypes = {
-	isOpen: React.PropTypes.bool.isRequired,
 	onClose: React.PropTypes.func.isRequired
 };
 
