@@ -72,7 +72,7 @@ const JoinFormContainer = compose(reformed(), validateSchema(fields), util.submi
 export class FeaturedJoin extends React.Component {
 	constructor() {
 		super();
-		this.state = {isModalOpen: false};
+		this.state = {isModalOpen: true};
 		this.handleOpen = this.handleOpen.bind(this);
 		this.handleClose = this.handleClose.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -138,7 +138,11 @@ export class FeaturedJoin extends React.Component {
 					</Element>
 				</section>
 				{isModalOpen && <Popover onClose={this.handleClose}>
-					<h2>Hello There Children!</h2>
+					<div className={styles.modal}>
+						<h2>Thanks for contacting us!</h2>
+						<p>We’ll be in touch soon to let you know the next steps.</p>
+						<p><button className={styles.button} onClick={this.handleClose}>Awesome</button></p>
+					</div>
 				</Popover>}
 			</div>
 		);

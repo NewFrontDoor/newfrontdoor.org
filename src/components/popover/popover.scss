@@ -5,7 +5,7 @@
 	top: 20%;
 	left: 30px;
 	right: 30px;
-	bottom: 20%;
+	bottom: auto;
 	border: 1px solid #ccc;
 	background: #fff;
 	overflow: auto;
@@ -17,6 +17,21 @@
 	@media (min-width: $screen-md-min) {
 		left: 25%;
 		right: 25%;
+	}
+}
+
+:local .close {
+	position: fixed;
+	top: calc(20% - 18px);
+	right: 16px;
+	z-index: 17;
+
+	.white {
+		color: #fff;
+	}
+
+	@media (min-width: $screen-md-min) {
+		right: calc(25% - 14px);
 	}
 }
 

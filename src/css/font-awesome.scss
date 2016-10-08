@@ -5,6 +5,11 @@ $fa-font-path: "~font-awesome/fonts" !default;
 @import "~font-awesome/scss/core";
 @import "~font-awesome/scss/larger";
 @import "~font-awesome/scss/fixed-width";
+@import "~font-awesome/scss/stacked";
+
+.fa-circle::before {
+	content: $fa-var-circle;
+}
 
 .fa-times-circle::before {
 	content: $fa-var-times-circle;
