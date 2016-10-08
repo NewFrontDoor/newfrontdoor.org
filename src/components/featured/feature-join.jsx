@@ -72,7 +72,7 @@ const JoinFormContainer = compose(reformed(), validateSchema(fields), util.submi
 export class FeaturedJoin extends React.Component {
 	constructor() {
 		super();
-		this.state = {isModalOpen: true};
+		this.state = {isModalOpen: false};
 		this.handleOpen = this.handleOpen.bind(this);
 		this.handleClose = this.handleClose.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);

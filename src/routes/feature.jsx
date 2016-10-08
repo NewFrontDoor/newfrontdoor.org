@@ -1,10 +1,13 @@
 import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {Link} from 'react-router';
 import reformed from 'react-reformed';
 import compose from 'react-reformed/lib/compose';
 import validateSchema from 'react-reformed/lib/validateSchema';
+import {Popover} from '../components/popover/index.jsx';
 import {Index} from '../components/index/index.jsx';
 import {Form, util, InputEmail, InputRadio, InputTextArea, InputText} from '../components/form/index.jsx';
+import styles from '../css/feature.scss';
 
 const fields = {
 	name: {
@@ -109,42 +112,72 @@ FeatureForm.propTypes = {
 
 const FeatureFromContainer = compose(reformed(), validateSchema(fields), util.submitted)(FeatureForm);
 
-const handleSubmit = model => {
-	fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/feature-request', {
-		method: 'post',
-		mode: 'cors',
-		body: JSON.stringify(model),
-		headers: new Headers({'Content-Type': 'application/json'})
-	});
-};
+export class Feature extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			isModalOpen: true
+		};
+		this.handleOpen = this.handleOpen.bind(this);
+		this.handleClose = this.handleClose.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+	}
+	handleOpen() {
+		this.setState({isModalOpen: true});
+	}
+	handleClose() {
+		this.setState({isModalOpen: false});
+	}
+	handleSubmit(model) {
+		return fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/feature-request', {
+			method: 'post',
+			mode: 'cors',
+			body: JSON.stringify(model),
+			headers: new Headers({'Content-Type': 'application/json'})
+		}).catch(this.handleOpen).then(this.handleOpen);
+	}
+	shouldComponentUpdate() {}
 
-export const Feature = () => (
-	<Index>
-		<div className="status-overlay">
-			<div className="site-wrapper site-wrapper-padding">
-				<h1>Feature request form</h1>
-				<div>
-					<p>
-						Some features may be in the pipeline or already available. See our <Link to="/documentation">documentation page</Link> for assistance in using these features, and our <Link to="/client">client page</Link> for any announcements.
-					</p>
+	render() {
+		const {isModalOpen} = this.state;
+
+		return (
+			<Index>
+				<div className="status-overlay">
+					<div className="site-wrapper site-wrapper-padding">
+						<h1>Feature request form</h1>
+						<div>
+							<p>
+								Some features may be in the pipeline or already available. See our <Link to="/documentation">documentation page</Link> for assistance in using these features, and our <Link to="/client">client page</Link> for any announcements.
+							</p>
+						</div>
+						<hr/>
+						<div className="instruction">
+							<h3>Guidelines</h3>
+							<p>To best assist you with your feature requests, please ensure to:</p>
+							<ul>
+								<li>fill out this form <strong>as completely as you can.</strong></li>
+								<li>include only one request per submission. You’re welcome to submit multiple requests.</li>
+								<li>check you’re allocated a ticket number.</li>
+							</ul>
+							<p>Each submission will:</p>
+							<ul>
+								<li>Send a request ticket by email (to you & us) for tracking by our team.</li>
+								<li>Give an option to close your feature request by email.</li>
+							</ul>
+						</div>
+						<FeatureFromContainer onSubmit={this.handleSubmit}/>
+					</div>
 				</div>
-				<hr/>
-				<div className="instruction">
-					<h3>Guidelines</h3>
-					<p>To best assist you with your feature requests, please ensure to:</p>
-					<ul>
-						<li>fill out this form <strong>as completely as you can.</strong></li>
-						<li>include only one request per submission. You’re welcome to submit multiple requests.</li>
-						<li>check you’re allocated a ticket number.</li>
-					</ul>
-					<p>Each submission will:</p>
-					<ul>
-						<li>Send a request ticket by email (to you & us) for tracking by our team.</li>
-						<li>Give an option to close your feature request by email.</li>
-					</ul>
-				</div>
-				<FeatureFromContainer onSubmit={handleSubmit}/>
-			</div>
-		</div>
-	</Index>
-);
+				{isModalOpen && <Popover onClose={this.handleClose}>
+					<div className={styles.modal}>
+						<h2>New features! Always exciting..</h2>
+						<p>We’ll review your submission and get back to you about your request as soon as possible.</p>
+						<p><button className={styles.button} onClick={this.handleClose}>Woo Hoo!</button></p>
+					</div>
+				</Popover>}
+			</Index>
+		);
+	}
+}

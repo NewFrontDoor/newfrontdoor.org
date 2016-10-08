@@ -39,7 +39,10 @@
 		}
 		a {
 			float: right;
-			margin-right: 60px;
+			margin-right: 20px;
+			@media (min-width: $screen-lg-min) {
+				margin-right: 60px;
+			}
 			span {
 				cursor: pointer;
 				color: $search-overlay;

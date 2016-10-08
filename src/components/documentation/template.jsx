@@ -3,9 +3,10 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import fm from 'front-matter';
 import classNames from 'classnames';
 import {StickyContainer, Sticky} from 'react-sticky';
+import {Popover} from '../popover/index.jsx';
 import {Index} from '../index/index.jsx';
 import {Markdown, Toc} from '../markdown';
-import './Template.scss';
+import styles from './Template.scss';
 
 const documentation = {
 	get context() {
@@ -25,12 +26,34 @@ export class Template extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			openFeedback: false
+			openFeedback: false,
+			isModalOpen: true
 		};
+		this.handleOpen = this.handleOpen.bind(this);
+		this.handleClose = this.handleClose.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleToggleFeedback = this.handleToggleFeedback.bind(this);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
-
+	handleOpen() {
+		this.setState({isModalOpen: true});
+	}
+	handleClose() {
+		this.setState({isModalOpen: false});
+	}
+	handleSubmit(model) {
+		return fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/give-feedback', {
+			method: 'post',
+			mode: 'cors',
+			body: JSON.stringify({
+				email: model.email,
+				message: model.message
+			}),
+			headers: new Headers({
+				'Content-Type': 'application/json'
+			})
+		}).catch(this.handleOpen).then(this.handleOpen);
+	}
 	shouldComponentUpdate() {}
 
 	get document() {
@@ -45,6 +68,7 @@ export class Template extends React.Component {
 	}
 
 	render() {
+		const {isModalOpen} = this.state;
 		const docTOC = classNames('TOC-sidebar', {
 			visible: !this.state.openFeedback
 		});
@@ -89,6 +113,13 @@ export class Template extends React.Component {
 						</div>
 					</div>
 				</StickyContainer>
+				{isModalOpen && <Popover onClose={this.handleClose}>
+					<div className={styles.modal}>
+						<h2>Thanks for your feedback.</h2>
+						<p>We’ll review what you’ve submitted and make edits as required. We’ll let you know via email when we’ve processed the revision of this document.</p>
+						<p><button className={styles.button} onClick={this.handleClose}>Great</button></p>
+					</div>
+				</Popover>}
 			</Index>
 		);
 	}

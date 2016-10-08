@@ -1,10 +1,13 @@
 import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {Link} from 'react-router';
 import reformed from 'react-reformed';
 import compose from 'react-reformed/lib/compose';
 import validateSchema from 'react-reformed/lib/validateSchema';
+import {Popover} from '../components/popover/index.jsx';
 import {Index} from '../components/index/index.jsx';
 import {Form, util, InputEmail, InputRadio, InputSelect, InputTextArea, InputText} from '../components/form/index.jsx';
+import styles from '../css/support.scss';
 
 const fields = {
 	summary: {
@@ -139,40 +142,74 @@ SupportForm.propTypes = {
 
 const SupportFormContainer = compose(reformed(), validateSchema(fields), util.submitted)(SupportForm);
 
-const handleSubmit = model => {
-	fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/support-request', {
-		method: 'post',
-		mode: 'cors',
-		body: JSON.stringify(model),
-		headers: new Headers({'Content-Type': 'application/json'})
-	});
-};
+export class Support extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			isModalOpen: true
+		};
+		this.handleOpen = this.handleOpen.bind(this);
+		this.handleClose = this.handleClose.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+	}
+	handleOpen() {
+		this.setState({isModalOpen: true});
+	}
+	handleClose() {
+		this.setState({isModalOpen: false});
+	}
+	handleSubmit(model) {
+		return fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/support-request', {
+			method: 'post',
+			mode: 'cors',
+			body: JSON.stringify(model),
+			headers: new Headers({'Content-Type': 'application/json'
+			}),
+			headers: new Headers({
+				'Content-Type': 'application/json'
+			})
+		}).catch(this.handleOpen).then(this.handleOpen);
+	}
+	shouldComponentUpdate() {}
 
-export const Support = () => (
-	<Index>
-		<div className="status-overlay">
-			<div className="site-wrapper site-wrapper-padding">
-				<h1>Support form</h1>
-				<div>
-					<p>Some issues may be answered by our <Link to="/documentation">documentation</Link> which you can find <Link to="/documentation">here</Link>. Please also check our <Link to="/status">system status page</Link> for any issues that may impact your work.</p>
+	render() {
+		const {isModalOpen} = this.state;
+
+		return (
+			<Index>
+				<div className="status-overlay">
+					<div className="site-wrapper site-wrapper-padding">
+						<h1>Support form</h1>
+						<div>
+							<p>Some issues may be answered by our <Link to="/documentation">documentation</Link> which you can find <Link to="/documentation">here</Link>. Please also check our <Link to="/status">system status page</Link> for any issues that may impact your work.</p>
+						</div>
+						<hr/>
+						<div className="instruction">
+							<h3>Guidelines</h3>
+							<p>To best assist you with your support requests, please ensure to:</p>
+							<ul>
+								<li>fill out this form <strong>as completely as you can.</strong></li>
+								<li>include only one problem per submission. You’re welcome to submit multiple requests.</li>
+								<li>check you’re allocated a ticket number.</li>
+							</ul>
+							Each submission will:
+							<ul>
+								<li>Send a support ticket by email (to you & us) for tracking by our team.</li>
+								<li>Give an option to close your support request by email.</li>
+							</ul>
+						</div>
+						<SupportFormContainer onSubmit={this.handleSubmit} initialModel={{severity: '4'}}/>
+					</div>
 				</div>
-				<hr/>
-				<div className="instruction">
-					<h3>Guidelines</h3>
-					<p>To best assist you with your support requests, please ensure to:</p>
-					<ul>
-						<li>fill out this form <strong>as completely as you can.</strong></li>
-						<li>include only one problem per submission. You’re welcome to submit multiple requests.</li>
-						<li>check you’re allocated a ticket number.</li>
-					</ul>
-					Each submission will:
-					<ul>
-						<li>Send a support ticket by email (to you & us) for tracking by our team.</li>
-						<li>Give an option to close your support request by email.</li>
-					</ul>
-				</div>
-				<SupportFormContainer onSubmit={handleSubmit} initialModel={{severity: '4'}}/>
-			</div>
-		</div>
-	</Index>
-);
+				{isModalOpen && <Popover onClose={this.handleClose}>
+					<div className={styles.modal}>
+						<h2>Hearing you loud and clear!</h2>
+						<p>We’ve received your submission and will get back to you about your issue as soon as possible. If you have other things to report, please feel free to complete the form a second time.</p>
+						<p><button className={styles.button} onClick={this.handleClose}>No worries</button></p>
+					</div>
+				</Popover>}
+			</Index>
+		);
+	}
+}

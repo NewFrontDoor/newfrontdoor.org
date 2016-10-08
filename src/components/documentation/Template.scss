@@ -127,3 +127,16 @@
 		color: inherit;
 	}
 }
+
+:local .modal {
+	text-align: center;
+}
+
+:local .button {
+	margin-top: 20px;
+	padding: 5px 15px;
+	border-radius: 0;
+	border-style: none;
+	color: white;
+	background-color: black;
+}
