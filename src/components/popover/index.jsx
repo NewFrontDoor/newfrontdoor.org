@@ -3,7 +3,7 @@ import {Gateway} from 'react-gateway';
 import Modal from 'react-modal2';
 import styles from './popover.scss';
 
-export class Popover extends React.Component {
+class Popover extends React.Component {
 	render() {
 		const {onClose, closeOnEsc, closeOnBackdropClick, children} = this.props;
 		return (
@@ -35,3 +35,5 @@ Popover.defaultProps = {
 	closeOnEsc: true,
 	closeOnBackdropClick: true
 };
+
+export default Popover;

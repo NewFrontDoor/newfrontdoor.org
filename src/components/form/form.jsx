@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Form = ({bindInput, children, className, fields, schema, onSubmit}) => {
+const Form = ({bindInput, children, className, fields, schema, onSubmit}) => {
 	const fieldArray = Object.keys(fields).map(key => {
 		const field = fields[key];
 		const {isValid, errors} = schema.fields[key];
@@ -35,3 +35,5 @@ Form.propTypes = {
 	onSubmit: React.PropTypes.func,
 	schema: React.PropTypes.object
 };
+
+export default Form;

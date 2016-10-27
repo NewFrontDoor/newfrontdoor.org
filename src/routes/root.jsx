@@ -1,5 +1,5 @@
 import React from 'react';
-import {Head} from '../components/Head';
+import Head from '../components/head/index.jsx';
 
 let devServer = '';
 
@@ -7,7 +7,7 @@ if (process.env.NODE_ENV !== 'production') {
 	devServer = <script src="http://localhost:3000/webpack-dev-server.js"/>;
 }
 
-export const Root = ({children}) => (
+const Root = ({children}) => (
 	<html lang="en">
 		<Head title="Vision 100 IT"/>
 		<body>
@@ -24,3 +24,5 @@ export const Root = ({children}) => (
 Root.propTypes = {
 	children: React.PropTypes.node.isRequired
 };
+
+export default Root;

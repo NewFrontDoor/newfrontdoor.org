@@ -1,12 +1,12 @@
 import React from 'react';
 import fm from 'front-matter';
-import {Index} from '../components/index/index.jsx';
-import {Markdown} from '../components/markdown';
+import Index from '../components/index/index.jsx';
+import {Markdown} from '../components/markdown/index.jsx';
 import content from '../content/elvanto.md';
 
 const {body, attributes} = fm(content);
 
-export const Elvanto = () => (
+const Elvanto = () => (
 	<Index>
 		<div className="elvanto-wrapper">
 			<div className="elvanto-overlay">
@@ -20,3 +20,5 @@ export const Elvanto = () => (
 		</div>
 	</Index>
 );
+
+export default Elvanto;

@@ -4,7 +4,7 @@ import {Link} from 'react-router';
 import content from '../../content';
 import styles from './MainMenu.scss';
 
-export const MainMenu = props => (
+const MainMenu = props => (
 	<div className={`${styles.main} text-uppercase`}>
 		<ul className="list-inline">
 			<li className={`${styles.search}`}>
@@ -33,3 +33,5 @@ MainMenu.propTypes = {
 	onOpenSearch: PropTypes.func.isRequired,
 	menuItems: PropTypes.arrayOf(menuItemShape)
 };
+
+export default MainMenu;

@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router';
 import styles from './feature-events.scss';
-import {Featured} from './index';
+import Featured from './index.jsx';
 
-export const FeaturedEvents = () => (
+const FeaturedEvents = () => (
 	<div className={styles.background}>
 		<Featured name="events" background="transparent">
 			<header className="hidden">
@@ -46,3 +46,5 @@ export const FeaturedEvents = () => (
 		</Featured>
 	</div>
 );
+
+export default FeaturedEvents;

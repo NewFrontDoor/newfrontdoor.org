@@ -1,5 +1,4 @@
 /* eslint-env node */
-import 'babel-polyfill';
 import fs from 'fs';
 import path from 'path';
 import _ from 'lodash';
@@ -18,7 +17,7 @@ import OfflinePlugin from 'offline-plugin';
 
 import {trimExtension} from './lib';
 import packageJson from './package.json';
-import {paths} from './config';
+import paths from './config/paths';
 
 const staticPaths = [
 	'/',
@@ -84,7 +83,6 @@ function getCommonConfig() {
 				getStyleLoader(),
 				getHtmlLoader(),
 				getAssetLoader(),
-				getJSXLoader(),
 				getMarkdownLoader(),
 				getFileLoader(),
 				getJsonLoader()
@@ -125,8 +123,8 @@ function getProdConfig() {
 
 function getJavaScriptLoader() {
 	return {
-		test: /\.js$/,
-		loaders: ['babel', 'xo'],
+		test: /\.jsx?$/,
+		loaders: ['babel'], // , 'xo'],
 		exclude: /node_modules/
 	};
 }
@@ -135,14 +133,6 @@ function getJsonLoader() {
 	return {
 		test: /\.json$/,
 		loaders: ['json']
-	};
-}
-
-function getJSXLoader() {
-	return {
-		test: /\.jsx$/,
-		loaders: ['babel'],
-		exclude: /node_modules/
 	};
 }
 
@@ -203,7 +193,7 @@ function getCommonPlugins() {
 	return _.filter([
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-			'VERSION': JSON.stringify(packageJson.version)
+			VERSION: JSON.stringify(packageJson.version)
 		}),
 		new webpack.optimize.CommonsChunkPlugin({
 			// names: ["app", "subPageA"]

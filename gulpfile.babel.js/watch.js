@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import {reload} from 'browser-sync';
 
-import {paths} from '../config';
+import paths from '../config/paths';
 
 export default () => {
 	gulp.watch(paths.style.watch, ['styles']);

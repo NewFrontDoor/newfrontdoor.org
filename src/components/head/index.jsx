@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Head = ({title}) => (
+const Head = ({title}) => (
 	<head>
 		<meta charSet="utf-8"/>
 		<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
@@ -14,3 +14,5 @@ export const Head = ({title}) => (
 Head.propTypes = {
 	title: React.PropTypes.string.isRequired
 };
+
+export default Head;

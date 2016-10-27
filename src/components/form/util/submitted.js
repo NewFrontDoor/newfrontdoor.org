@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 
-export const submitted = WrappedComponent => {
+const submitted = WrappedComponent => {
 	class Submitted extends React.Component {
 		constructor(props, ctx) {
 			super(props, ctx);
@@ -36,3 +36,5 @@ export const submitted = WrappedComponent => {
 
 	return Submitted;
 };
+
+export default submitted;

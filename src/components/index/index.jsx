@@ -1,13 +1,13 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import {Header} from '../header';
-import {SearchBar} from '../search-bar';
-import {MainMenu} from '../main-menu';
-import {MobileMenu} from '../mobile-menu';
+import Header from '../header/index.jsx';
+import SearchBar from '../search-bar/index.jsx';
+import MainMenu from '../main-menu/index.jsx';
+import MobileMenu from '../mobile-menu/index.jsx';
 
 import styles from './Index.scss';
 
-export class Index extends React.Component {
+class Index extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -48,3 +48,5 @@ Index.propTypes = {
 	children: React.PropTypes.node,
 	menuItems: MainMenu.propTypes.menuItems
 };
+
+export default Index;

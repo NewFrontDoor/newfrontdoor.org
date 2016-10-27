@@ -1,7 +1,7 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import {Collapse} from '../components/Collapse';
-import {Index} from '../components/index/index.jsx';
+import Collapse from '../components/collapse/index.jsx';
+import Index from '../components/index/index.jsx';
 
 class ContactForm extends React.Component {
 	constructor() {
@@ -51,7 +51,7 @@ class ContactForm extends React.Component {
 	}
 }
 
-export class Contact extends React.Component {
+class Contact extends React.Component {
 	constructor() {
 		super();
 		this.state = {
@@ -127,3 +127,5 @@ export class Contact extends React.Component {
 		);
 	}
 }
+
+export default Contact;

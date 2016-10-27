@@ -1,7 +1,7 @@
 import React from 'react';
-import {Index} from '../components/index/index.jsx';
+import Index from '../components/index/index.jsx';
 
-export const Control = () => (
+const Control = () => (
 	<Index>
 		<div className="site-wrapper">
 			<h1>Control page</h1>
@@ -46,3 +46,5 @@ export const Control = () => (
 		</div>
 	</Index>
 );
+
+export default Control;

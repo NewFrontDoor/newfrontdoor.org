@@ -6,7 +6,7 @@ import './SearchBar.scss';
 
 const ESCAPE = 27;
 
-export class SearchBar extends React.Component {
+class SearchBar extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -49,8 +49,8 @@ export class SearchBar extends React.Component {
 				});
 			} else {
 				require.ensure([], () => {
-					self.__searchIndex = lunr.Index.load(require('../../Search/search-index.json'));
-					self.__searchData = require('../../Search/search-data.json');
+					self.__searchIndex = lunr.Index.load(require('../../search/search-index.json'));
+					self.__searchData = require('../../search/search-data.json');
 
 					resolve({
 						index: self.__searchIndex,
@@ -112,13 +112,13 @@ export class SearchBar extends React.Component {
 
 	render() {
 		const siteClass = classNames({
-			'visible': this.props.isOpen,
+			visible: this.props.isOpen,
 			'search-overlay': true,
 			'text-uppercase': true
 		});
 
 		const resultsClass = classNames({
-			'visible': this.state.searchResults.length > 0,
+			visible: this.state.searchResults.length > 0,
 			'search-results': true
 		});
 
@@ -207,3 +207,5 @@ SearchBar.propTypes = {
 	isOpen: React.PropTypes.bool.isRequired,
 	onClose: React.PropTypes.func.isRequired
 };
+
+export default SearchBar;

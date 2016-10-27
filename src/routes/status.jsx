@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {Index} from '../components/index/index.jsx';
+import Index from '../components/index/index.jsx';
 
-export const Status = () => (
+const Status = () => (
 	<Index>
 		<div className="status-overlay">
 			<div className="site-wrapper site-wrapper-padding">
@@ -24,3 +24,5 @@ export const Status = () => (
 		</div>
 	</Index>
 );
+
+export default Status;

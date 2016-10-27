@@ -4,8 +4,8 @@ import {Link} from 'react-router';
 import reformed from 'react-reformed';
 import compose from 'react-reformed/lib/compose';
 import validateSchema from 'react-reformed/lib/validateSchema';
-import {Popover} from '../components/popover/index.jsx';
-import {Index} from '../components/index/index.jsx';
+import Popover from '../components/popover/index.jsx';
+import Index from '../components/index/index.jsx';
 import {Form, util, InputEmail, InputRadio, InputTextArea, InputText} from '../components/form/index.jsx';
 import styles from '../css/feature.scss';
 
@@ -112,7 +112,7 @@ FeatureForm.propTypes = {
 
 const FeatureFromContainer = compose(reformed(), validateSchema(fields), util.submitted)(FeatureForm);
 
-export class Feature extends React.Component {
+class Feature extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -181,3 +181,5 @@ export class Feature extends React.Component {
 		);
 	}
 }
+
+export default Feature;

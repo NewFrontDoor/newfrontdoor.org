@@ -3,12 +3,12 @@ import React from 'react';
 import fm from 'front-matter';
 import moment from 'moment';
 
-import {Alert} from '../components/alert';
-import {Card} from '../components/card';
-import {Hero} from '../components/hero';
-import {Index} from '../components/index/index.jsx';
-import {Markdown} from '../components/markdown';
-import {Post} from '../components/post';
+import Alert from '../components/alert/index.jsx';
+import Card from '../components/card/index.jsx';
+import Hero from '../components/hero/index.jsx';
+import Index from '../components/index/index.jsx';
+import {Markdown} from '../components/markdown/index.jsx';
+import Post from '../components/post/index.jsx';
 
 import content from '../content';
 
@@ -49,7 +49,7 @@ const posts = blog.page({
 
 const pinnedPost = posts.shift();
 
-export const Client = () => (
+const Client = () => (
 	<Index headerSize="mini">
 		<Hero mini/>
 		<main role="main">
@@ -93,3 +93,5 @@ export const Client = () => (
 		</main>
 	</Index>
 );
+
+export default Client;

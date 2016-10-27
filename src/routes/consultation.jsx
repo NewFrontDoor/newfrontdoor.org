@@ -1,12 +1,12 @@
 import React from 'react';
 import fm from 'front-matter';
-import {Index} from '../components/index/index.jsx';
-import {Markdown} from '../components/markdown';
+import Index from '../components/index/index.jsx';
+import {Markdown} from '../components/markdown/index.jsx';
 import content from '../content/consultation.md';
 
 const {body, attributes} = fm(content);
 
-export const Consultation = () => (
+const Consultation = () => (
 	<Index>
 		<div className="consultation-wrapper">
 			<div className="consultation-overlay">
@@ -20,3 +20,5 @@ export const Consultation = () => (
 		</div>
 	</Index>
 );
+
+export default Consultation;

@@ -1,26 +1,26 @@
 import React from 'react';
 import {Route, IndexRoute} from 'react-router';
 
-import {Alert} from '../components/alert';
-import {Blog} from '../components/blog';
-import {Documentation} from '../components/documentation';
-import {Template} from '../components/documentation/template';
-import {About} from './about';
-import {Client} from './client';
-import {Consultation} from './consultation';
-import {Contact} from './contact';
-import {Control} from './control';
-import {Feature} from './feature';
-import {Home} from './home';
-import {Site} from './site';
-import {Status} from './status';
-import {Support} from './support';
-import {Training} from './training';
-import {Registration} from './registration';
-import {Podcasting} from './podcasting';
-import {Elvanto} from './elvanto';
-import {Sparkleshare} from './sparkleshare';
-import {Error} from './error';
+import Alert from '../components/alert/index.jsx';
+import Blog from '../components/blog/index.jsx';
+import Documentation from '../components/documentation/index.jsx';
+import Template from '../components/documentation/template.jsx';
+import About from './about.jsx';
+import Client from './client.jsx';
+import Consultation from './consultation.jsx';
+import Contact from './contact.jsx';
+import Control from './control.jsx';
+import Feature from './feature.jsx';
+import Home from './home.jsx';
+import Site from './site.jsx';
+import Status from './status.jsx';
+import Support from './support.jsx';
+import Training from './training.jsx';
+import Registration from './registration.jsx';
+import Podcasting from './podcasting.jsx';
+import Elvanto from './elvanto.jsx';
+import Sparkleshare from './sparkleshare.jsx';
+import Error from './error.jsx';
 
 export default(
 	<Route path="/" component={Site}>

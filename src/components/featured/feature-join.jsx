@@ -3,7 +3,7 @@ import {Element} from 'react-scroll';
 import reformed from 'react-reformed';
 import compose from 'react-reformed/lib/compose';
 import validateSchema from 'react-reformed/lib/validateSchema';
-import {Popover} from '../popover/index.jsx';
+import Popover from '../popover/index.jsx';
 import {Form, util, InputEmail, InputTextArea, InputText} from '../form/index.jsx';
 import styles from './feature-join.scss';
 
@@ -69,7 +69,7 @@ JoinForm.propTypes = {
 
 const JoinFormContainer = compose(reformed(), validateSchema(fields), util.submitted)(JoinForm);
 
-export class FeaturedJoin extends React.Component {
+class FeaturedJoin extends React.Component {
 	constructor() {
 		super();
 		this.state = {isModalOpen: false};
@@ -148,3 +148,5 @@ export class FeaturedJoin extends React.Component {
 		);
 	}
 }
+
+export default FeaturedJoin;

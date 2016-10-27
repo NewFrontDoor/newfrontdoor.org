@@ -4,8 +4,8 @@ import {Link} from 'react-router';
 import reformed from 'react-reformed';
 import compose from 'react-reformed/lib/compose';
 import validateSchema from 'react-reformed/lib/validateSchema';
-import {Popover} from '../components/popover/index.jsx';
-import {Index} from '../components/index/index.jsx';
+import Popover from '../components/popover/index.jsx';
+import Index from '../components/index/index.jsx';
 import {Form, util, InputEmail, InputRadio, InputSelect, InputTextArea, InputText} from '../components/form/index.jsx';
 import styles from '../css/support.scss';
 
@@ -142,7 +142,7 @@ SupportForm.propTypes = {
 
 const SupportFormContainer = compose(reformed(), validateSchema(fields), util.submitted)(SupportForm);
 
-export class Support extends React.Component {
+class Support extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -164,8 +164,6 @@ export class Support extends React.Component {
 			method: 'post',
 			mode: 'cors',
 			body: JSON.stringify(model),
-			headers: new Headers({'Content-Type': 'application/json'
-			}),
 			headers: new Headers({
 				'Content-Type': 'application/json'
 			})
@@ -213,3 +211,5 @@ export class Support extends React.Component {
 		);
 	}
 }
+
+export default Support;

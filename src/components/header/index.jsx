@@ -5,7 +5,7 @@ import throttle from 'lodash/throttle';
 import logo from '../../images/vision100-it-logo.svg';
 import styles from './Header.scss';
 
-export class Header extends React.Component {
+class Header extends React.Component {
 	constructor(props) {
 		super(props);
 		this.handleScroll = throttle(this.handleScroll.bind(this), 250);
@@ -85,3 +85,5 @@ Header.propTypes = {
 	size: React.PropTypes.oneOf(['mini', 'full']),
 	children: React.PropTypes.node
 };
+
+export default Header;

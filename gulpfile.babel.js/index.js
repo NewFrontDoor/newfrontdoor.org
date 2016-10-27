@@ -1,7 +1,5 @@
 import gulp from 'gulp';
 
-import './default';
-
 import clean from './clean';
 import fonts from './fonts';
 import lunr from './lunr';
@@ -17,3 +15,17 @@ gulp.task('webpack', ['lunr'], webpack);
 
 gulp.task('build', ['clean', 'webpack']);
 gulp.task('publish', ['build'], publish);
+
+// default task
+
+const develop = () => {
+	gulp.start('develop');
+};
+
+gulp.task('develop', [
+	'webpack',
+	'fonts',
+	'lunr'
+], watch);
+
+gulp.task('default', ['clean'], develop);

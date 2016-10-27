@@ -23,7 +23,7 @@ FooterItem.propTypes = {
 	to: React.PropTypes.string
 };
 
-export class Footer extends React.Component {
+class Footer extends React.Component {
 	constructor() {
 		super();
 		this.state = {
@@ -74,3 +74,5 @@ export class Footer extends React.Component {
 		);
 	}
 }
+
+export default Footer;

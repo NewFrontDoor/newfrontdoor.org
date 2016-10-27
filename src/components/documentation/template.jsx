@@ -3,9 +3,9 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import fm from 'front-matter';
 import classNames from 'classnames';
 import {StickyContainer, Sticky} from 'react-sticky';
-import {Popover} from '../popover/index.jsx';
-import {Index} from '../index/index.jsx';
-import {Markdown, Toc} from '../markdown';
+import Popover from '../popover/index.jsx';
+import Index from '../index/index.jsx';
+import {Markdown, Toc} from '../markdown/index.jsx';
 import styles from './Template.scss';
 
 const documentation = {
@@ -22,7 +22,7 @@ const documentation = {
 	}
 };
 
-export class Template extends React.Component {
+class Template extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -128,3 +128,5 @@ export class Template extends React.Component {
 Template.propTypes = {
 	params: React.PropTypes.shape({documentId: React.PropTypes.string}).isRequired
 };
+
+export default Template;

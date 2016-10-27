@@ -1,13 +1,13 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {Element, scroller} from 'react-scroll';
-import {Collapse} from '../Collapse';
+import Collapse from '../collapse/index.jsx';
 import styles from './feature-tools.scss';
-import {Featured} from './index';
+import Featured from './index.jsx';
 
 const imageContext = require.context('../../images');
 
-export class FeaturedTools extends React.Component {
+class FeaturedTools extends React.Component {
 	constructor() {
 		super();
 		this.state = {
@@ -151,3 +151,5 @@ export class FeaturedTools extends React.Component {
 		);
 	}
 }
+
+export default FeaturedTools;

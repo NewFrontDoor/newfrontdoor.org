@@ -4,7 +4,7 @@ import lunr from 'lunr';
 import removeMarkdown from 'remove-markdown';
 import gulpLoadPlugins from 'gulp-load-plugins';
 
-import {paths} from '../config';
+import paths from '../config/paths';
 import {trimExtension, handleError} from '../lib';
 
 const $ = gulpLoadPlugins();

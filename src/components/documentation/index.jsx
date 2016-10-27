@@ -3,10 +3,10 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {Link} from 'react-router';
 import lunr from 'lunr';
 import classNames from 'classnames';
-import './Documentation.scss';
-import {Index} from '../index/index.jsx';
+import './documentation.scss';
+import Index from '../index/index.jsx';
 
-export class Documentation extends React.Component {
+class Documentation extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -28,8 +28,8 @@ export class Documentation extends React.Component {
 				resolve({index: self.__searchIndex, data: self.__searchData});
 			} else {
 				require.ensure([], () => {
-					self.__searchData = require('../../Search/search-data.json');
-					self.__searchIndex = lunr.Index.load(require('../../Search/search-index.json'));
+					self.__searchData = require('../../search/search-data.json');
+					self.__searchIndex = lunr.Index.load(require('../../search/search-index.json'));
 
 					resolve({index: self.__searchIndex, data: self.__searchData});
 				});
@@ -70,7 +70,7 @@ export class Documentation extends React.Component {
 
 	render() {
 		const resultsClass = classNames({
-			'visible': this.state.searchResults.length > 0,
+			visible: this.state.searchResults.length > 0,
 			'search-results': true
 		});
 
@@ -217,3 +217,5 @@ export class Documentation extends React.Component {
 		);
 	}
 }
+
+export default Documentation;

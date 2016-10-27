@@ -1,9 +1,9 @@
 import React from 'react';
 import {GatewayDest, GatewayProvider} from 'react-gateway';
-import '../css/main';
-import {Footer} from '../components/footer';
+import '../css/main.scss';
+import Footer from '../components/footer/index.jsx';
 
-export const Site = props => (
+const Site = props => (
 	<GatewayProvider>
 		<div id="application" className="container">
 			{props.children}
@@ -16,3 +16,5 @@ export const Site = props => (
 Site.propTypes = {
 	children: React.PropTypes.element.isRequired
 };
+
+export default Site;

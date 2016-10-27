@@ -3,8 +3,8 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import fm from 'front-matter';
 import moment from 'moment';
 import {Link} from 'react-router';
-import {Index} from '../index/index.jsx';
-import {Markdown} from '../markdown';
+import Index from '../index/index.jsx';
+import {Markdown} from '../markdown/index.jsx';
 import styles from './Blog.scss';
 
 const blogs = {
@@ -23,7 +23,7 @@ const blogs = {
 
 const imageContext = require.context('../../images');
 
-export class Blog extends React.Component {
+class Blog extends React.Component {
 	constructor() {
 		super();
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
@@ -58,3 +58,5 @@ export class Blog extends React.Component {
 Blog.propTypes = {
 	params: React.PropTypes.shape({blogId: React.PropTypes.string}).isRequired
 };
+
+export default Blog;

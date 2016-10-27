@@ -1,7 +1,7 @@
 import React from 'react';
-import {Index} from '../components/index/index.jsx';
+import Index from '../components/index/index.jsx';
 
-export const Training = () => (
+const Training = () => (
 	<Index>
 		<div className="site-wrapper site-wrapper-padding">
 			<h1>Events and training</h1>
@@ -11,3 +11,5 @@ export const Training = () => (
 		</div>
 	</Index>
 );
+
+export default Training;

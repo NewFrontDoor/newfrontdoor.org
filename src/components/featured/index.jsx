@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import {Element} from 'react-scroll';
 import styles from './Featured.scss';
 
-export const Featured = ({children, name, background}) => (
+const Featured = ({children, name, background}) => (
 	<div className={styles[background]}>
 		<Element name={name}>
 			<div className={styles.wrapper}>
@@ -19,3 +19,5 @@ Featured.propTypes = {
 	background: PropTypes.string,
 	name: Element.propTypes.name
 };
+
+export default Featured;

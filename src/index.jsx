@@ -5,7 +5,7 @@ import {Router, RouterContext, match, browserHistory, createMemoryHistory} from 
 import {scroller, animateScroll} from 'react-scroll';
 import Modal from 'react-modal2';
 import {applyUpdate, install} from 'offline-plugin/runtime';
-import {Root} from './routes/root';
+import Root from './routes/root.jsx';
 import Routes from './routes/index.jsx';
 
 function hashLinkScroll() {

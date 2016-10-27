@@ -1,12 +1,12 @@
 import React from 'react';
 import fm from 'front-matter';
-import {Index} from '../components/index/index.jsx';
-import {Markdown} from '../components/markdown';
+import Index from '../components/index/index.jsx';
+import {Markdown} from '../components/markdown/index.jsx';
 import content from '../content/registration.md';
 
 const {body, attributes} = fm(content);
 
-export const Registration = () => (
+const Registration = () => (
 	<Index>
 		<div className="registration-wrapper">
 			<div className="registration-overlay">
@@ -20,3 +20,5 @@ export const Registration = () => (
 		</div>
 	</Index>
 );
+
+export default Registration;

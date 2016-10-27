@@ -1,11 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router';
 import styles from './feature-who.scss';
-import {Featured} from './index';
+import Featured from './index.jsx';
 
 const imageContext = require.context('../../images');
 
-export const FeaturedWho = () => (
+const FeaturedWho = () => (
 	<Featured name="who" background="black">
 		<div className="text-slab">
 			The right people at the right time
@@ -64,3 +64,5 @@ export const FeaturedWho = () => (
 		</div>
 	</Featured>
 );
+
+export default FeaturedWho;

@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import styles from './input.scss';
 
-export const InputEmail = ({hasError, label, name, onChange, placeholder, required, value, width}) => {
+const InputEmail = ({hasError, label, name, onChange, placeholder, required, value, width}) => {
 	return (
 		<fieldset className={classnames('form-group', {'has-error': hasError}, styles[width || 'full'])}>
 			<label htmlFor={name}>{label}</label>
@@ -27,3 +27,5 @@ InputEmail.propTypes = {
 	value: React.PropTypes.string,
 	width: React.PropTypes.oneOf(['full', 'half'])
 };
+
+export default InputEmail;

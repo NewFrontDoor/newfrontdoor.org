@@ -5,7 +5,7 @@ import styles from './Post.scss';
 
 const imageContext = require.context('../../images');
 
-export const Post = props => (
+const Post = props => (
 	<section className={styles.post}>
 		<header className={styles.header}>
 			<h2 className={styles.title}><Link to={props.url}>{props.title}</Link></h2>
@@ -34,3 +34,5 @@ Post.propTypes = {
 	// tags: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
 	image: React.PropTypes.shape({href: React.PropTypes.string.isRequired, size: React.PropTypes.string.isRequired, alt: React.PropTypes.string.isRequired})
 };
+
+export default Post;

@@ -1,11 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router';
 import {Element} from 'react-scroll';
-import {TeamMember} from '../components/team-member';
-import {Index} from '../components/index/index.jsx';
+import TeamMember from '../components/team-member/index.jsx';
+import Index from '../components/index/index.jsx';
 import content from '../content';
 
-export const About = () => (
+const About = () => (
 	<Index>
 		<div className="about-wrapper">
 			<div className="about-overlay">
@@ -60,3 +60,5 @@ export const About = () => (
 		</div>
 	</Index>
 );
+
+export default About;

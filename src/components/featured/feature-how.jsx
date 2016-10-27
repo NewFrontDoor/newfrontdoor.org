@@ -1,9 +1,9 @@
 import React from 'react';
-import {Collapse} from '../Collapse';
+import Collapse from '../collapse/index.jsx';
 import styles from './feature-how.scss';
-import {Featured} from './index';
+import Featured from './index.jsx';
 
-export class FeaturedHow extends React.Component {
+class FeaturedHow extends React.Component {
 	constructor() {
 		super();
 		this.state = {
@@ -71,3 +71,5 @@ export class FeaturedHow extends React.Component {
 		);
 	}
 }
+
+export default FeaturedHow;

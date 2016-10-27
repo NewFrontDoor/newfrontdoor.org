@@ -3,7 +3,7 @@ import styles from './TeamMember.scss';
 
 const imageContext = require.context('../../images');
 
-export const TeamMember = props => (
+const TeamMember = props => (
 	<div className={styles.member}>
 		<h4 title={props.title}>{props.name} - {props.position}</h4>
 		<img src={props.image ? imageContext(props.image) : ''} className={styles.img}/>
@@ -18,3 +18,5 @@ TeamMember.propTypes = {
 	text: React.PropTypes.string.isRequired,
 	title: React.PropTypes.string
 };
+
+export default TeamMember;

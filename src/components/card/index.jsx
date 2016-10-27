@@ -4,7 +4,7 @@ import styles from './Card.scss';
 
 const imageContext = require.context('../../images');
 
-export const Card = ({background, imagePadding, link, image, name, children}) => {
+const Card = ({background, imagePadding, link, image, name, children}) => {
 	const style = {
 		backgroundColor: background
 	};
@@ -30,3 +30,5 @@ Card.propTypes = {
 	link: React.PropTypes.string,
 	children: React.PropTypes.node
 };
+
+export default Card;

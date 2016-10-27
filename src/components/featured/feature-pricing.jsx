@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {Featured} from './index';
+import Featured from './index.jsx';
 
-export const FeaturedPricing = () => (
+const FeaturedPricing = () => (
 	<Featured name="pricing" background="white">
 		<div className="featured-fifth featured-light">
 			<header className="hidden">
@@ -48,3 +48,5 @@ export const FeaturedPricing = () => (
 		</div>
 	</Featured>
 );
+
+export default FeaturedPricing;
