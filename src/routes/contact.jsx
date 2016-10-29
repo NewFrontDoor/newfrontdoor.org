@@ -1,71 +1,118 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
+import reformed from 'react-reformed';
+import compose from 'react-reformed/lib/compose';
+import validateSchema from 'react-reformed/lib/validateSchema';
+import Popover from '../components/popover/index.jsx';
 import Collapse from '../components/collapse/index.jsx';
 import Index from '../components/index/index.jsx';
+import {Form, util, InputText, InputEmail} from '../components/form/index.jsx';
+import styles from './contact.scss';
 
-class ContactForm extends React.Component {
-	constructor() {
-		super();
-		this.handleSubmit = this.handleSubmit.bind(this);
-		this.handleChange = this.handleChange.bind(this);
+const fields = {
+	name: {
+		component: InputText,
+		label: 'Name',
+		placeholder: 'Insert your full name',
+		required: true
+	},
+	email: {
+		component: InputEmail,
+		label: 'Email address',
+		placeholder: 'Insert a valid email address',
+		required: true
 	}
-	handleChange(field) {
-		return event => {
-			this.setState({
-				[field]: event.target.value
-			});
-		};
-	}
-	handleSubmit(event) {
+};
+
+const ContactForm = ({
+	bindInput,
+	model,
+	onSubmit,
+	schema
+}) => {
+	const handleSubmit = event => {
 		event.preventDefault();
-		fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/mailing-list', {
-			method: 'post',
-			mode: 'cors',
-			body: JSON.stringify({
-				name: this.state.name,
-				email: this.state.email
-			}),
-			headers: new Headers({
-				'Content-Type': 'application/json'
-			})
-		});
-	}
-	render() {
-		return (
-			<form className="form-group has-success has-feedback" onSubmit={this.handleSubmit}>
-				<div className="form-group">
-					<label htmlFor="name">Name</label>
-					<input type="text" name="name" className="form-control" placeholder="Insert your full name" onChange={this.handleChange('name')}/>
-				</div>
-				<div className="form-group">
-					<label htmlFor="email">
-						Email address
-					</label>
-					<input type="text" name="email" className="form-control" placeholder="Insert a valid email address" onChange={this.handleChange('email')}/>
-				</div>
-				<div className="form-group">
-					<button type="submit" className="btn btn-primary">Submit</button>
-				</div>
-			</form>
-		);
-	}
-}
+		onSubmit(model);
+	};
+
+	return (
+		<Form onSubmit={handleSubmit} schema={schema} fields={fields} bindInput={bindInput}>
+			<div className="form-group">
+				<button type="submit" className="btn btn-primary">Submit</button>
+			</div>
+		</Form>
+	);
+};
+
+ContactForm.propTypes = {
+	bindInput: React.PropTypes.func,
+	model: React.PropTypes.object,
+	onSubmit: React.PropTypes.func,
+	schema: React.PropTypes.object
+};
+
+const ContactFormContainer = compose(reformed(), validateSchema(fields), util.submitted)(ContactForm);
 
 class Contact extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			isOpen: false
+			isOpen: false,
+			isModalOpen: false
 		};
+		this.setFormRef = this.setFormRef.bind(this);
+		this.handleOpen = this.handleOpen.bind(this);
+		this.handleClose = this.handleClose.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleCollapse = this.handleCollapse.bind(this);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
+
+	set formRef(ref) {
+		this._formRef = ref;
+	}
+
+	get formRef() {
+		return this._formRef;
+	}
+
+	setFormRef(ref) {
+		this.formRef = ref;
+	}
+
+	handleOpen() {
+		this.setState({isModalOpen: true});
+	}
+
+	handleClose() {
+		this.setState({isModalOpen: false});
+		this.formRef.resetModel();
+	}
+
+	handleSubmit(model) {
+		fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/mailing-list', {
+			method: 'post',
+			mode: 'cors',
+			body: JSON.stringify({
+				name: model.name,
+				email: model.email
+			}),
+			headers: new Headers({
+				'Content-Type': 'application/json'
+			})
+		}).catch(this.handleOpen).then(this.handleOpen);
+	}
+
 	shouldComponentUpdate() {}
+
 	handleCollapse(event) {
 		event.preventDefault();
 		this.setState({isOpen: !this.state.isOpen});
 	}
+
 	render() {
+		const {isModalOpen} = this.state;
+
 		return (
 			<Index>
 				<div className="contact-overlay">
@@ -83,7 +130,13 @@ class Contact extends React.Component {
 							<h3>
 								Join our mailing list
 							</h3>
-							<ContactForm/>
+							<ContactFormContainer onSubmit={this.handleSubmit} getFormRef={this.setFormRef}/>
+							{isModalOpen && <Popover onClose={this.handleClose}>
+								<div className={styles.modal}>
+									<h2>Thanks for joining the mailing list.</h2>
+									<p><button className={styles.button} onClick={this.handleClose}>Great</button></p>
+								</div>
+							</Popover>}
 							<p><a href="#" onClick={this.handleCollapse}>About our mailing lists</a></p>
 							<Collapse isOpened={this.state.isOpen}>
 								<p>Vision 100 sends out a bunch of stuff via email regularly including:</p>
