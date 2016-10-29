@@ -40,7 +40,11 @@ class Error extends React.Component {
 		this.searchIndex.then(({index, data}) => {
 			const res = index.search(self.state.searchTerm);
 
-			const searchResults = res.map(result => data.items.find(item => item.id === result.ref));
+			const searchResults = res.map(result => data.items.find(item => item.id === result.ref)).map(result => {
+				// HACK HACK HACK
+				const {id, ...all} = result;
+				return {id: id.replace('content/', ''), ...all};
+			});
 
 			if (searchResults.length === 0) {
 				searchResults.push({

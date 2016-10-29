@@ -28,12 +28,17 @@ const remarkHeading = (component, boundProps = {}) => {
 };
 
 const RemarkLink = props => {
-	if (props.href && props.href.startsWith('#') && typeof window.location !== 'undefined') {
-		return (<Link to={{pathname: window.location.pathname, hash: props.href}} {...props}>{props.children}</Link>);
-	} else if (props.href) {
-		return (<Link to={props.href} {...props}>{props.children}</Link>);
+	const {href, children} = props;
+
+	if (href && href.startsWith('#') && typeof window.location !== 'undefined') {
+		return (<Link to={{pathname: window.location.pathname, hash: href}} {...props}>{children}</Link>);
+	} else if (href && href.startsWith('/')) {
+		return (<Link to={href} {...props}>{children}</Link>);
+	} else if (href && typeof window.location !== 'undefined' && !href.includes(window.location.hostname)) {
+		console.log('HREF', href);
+		return (<a href={href} target="_blank" rel="noopener noreferrer">{children}</a>);
 	}
-	return (<Link {...props}>{props.children}</Link>);
+	return (<Link {...props}>{children}</Link>);
 };
 
 RemarkLink.propTypes = {
