@@ -20,14 +20,14 @@ const fields = {
 	email: {
 		component: InputEmail,
 		label: 'Email:',
-		placeholder: 'Your church or parachurch organisation',
+		placeholder: 'Your email',
 		required: true,
 		width: 'half'
 	},
 	organisation: {
 		component: InputText,
 		label: 'Organisation:',
-		placeholder: 'Organisation',
+		placeholder: 'Your church or parachurch organisation',
 		required: true
 	},
 	message: {

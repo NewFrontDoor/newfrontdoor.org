@@ -25,8 +25,8 @@ class SearchBar extends React.Component {
 		this.searchInput = c;
 	}
 
-	componentDidUpdate() {
-		if (this.props.isOpen && window.matchMedia('(min-width: 992px)').matches) {
+	componentDidUpdate(prevProps) {
+		if (this.props.isOpen && !prevProps.isOpen && window.matchMedia('(min-width: 992px)').matches) {
 			this.searchInput.focus();
 		}
 	}
@@ -63,7 +63,7 @@ class SearchBar extends React.Component {
 
 	handleSearchSubmit(event) {
 		event.preventDefault();
-
+		this.searchInput.blur();
 		const self = this;
 
 		this.searchIndex.then(({index, data}) => {

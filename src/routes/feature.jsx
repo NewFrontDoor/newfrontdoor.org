@@ -116,7 +116,7 @@ class Feature extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			isModalOpen: true
+			isModalOpen: false
 		};
 		this.handleOpen = this.handleOpen.bind(this);
 		this.handleClose = this.handleClose.bind(this);

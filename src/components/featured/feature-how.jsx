@@ -27,10 +27,10 @@ class FeaturedHow extends React.Component {
 				</h2>
 
 				<p className="lead">
-					We want you to put your best foot forward, so we’re here to give you the tools, techniques and direction you need. Vision 100 IT exists to help churches - <em>particularly church IT volunteers and ministry staff</em> - to use IT better. Maybe you can relate to one of these people:
+					We want you to put your best foot forward, so we’re here to give you the tools, techniques and direction you need. Vision 100 IT exists to help churches - <em>particularly church IT volunteers and ministry staff</em> - to use IT better. <span className={styles.hiddenXs}>Maybe you can relate to one of these people:</span>
 				</p>
 
-				<div className={styles.examples}>
+				<div className={`${styles.examples} ${styles.hiddenXs}`}>
 					<div className={styles.example}>
 						<a href="#" onClick={this.handleCollapse('overwhelmed')}>
 							<h3>Overwhelmed pastor.</h3>
@@ -64,8 +64,8 @@ class FeaturedHow extends React.Component {
 							You understand websites and servers and have managed to get something off the ground for church, but it’s starting to cost you a bit too much and you’re struggling to persuade the eldership that it’s worth investing in a more rigorous approach to church IT. Wouldn’t it be great if all you had to worry about was keeping things up to date, rather than keeping it online as well?
 						</p>
 					</Collapse>
+					<br/>
 				</div>
-				<br/>
 				<p>Vision 100 IT offers a suite of tools, services and training to allow you to utilise IT as an effective tool for ministry. We work collaboratively with your staff or designated church member to develop a tailored website and package of tools to keep your newcomers informed and your ministry teams connected. We provide assistance and training in best practices for tools you already use, and are open to exploring ways to combine your current approach and applications into our ecosystem.</p>
 			</Featured>
 		);

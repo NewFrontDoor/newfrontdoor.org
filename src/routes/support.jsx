@@ -26,7 +26,7 @@ const fields = {
 	url: {
 		component: InputText,
 		label: 'URL for affected page: (if applicable)',
-		placeholder: 'Please copy paste the url from your web browser'
+		placeholder: 'Please copy paste the url from the browser'
 	},
 	requestType: {
 		component: InputRadio,
@@ -146,7 +146,7 @@ class Support extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			isModalOpen: true
+			isModalOpen: false
 		};
 		this.handleOpen = this.handleOpen.bind(this);
 		this.handleClose = this.handleClose.bind(this);

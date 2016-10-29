@@ -21,7 +21,7 @@ class Header extends React.Component {
 			return window.pageYOffset > window.innerHeight - 80 ? 1 : 0;
 		}
 		if (this.props.size === 'mini') {
-			return window.pageYOffset > (window.innerHeight / 2) - 80 ? 1 : 0;
+			return window.pageYOffset > (window.innerHeight / 4) - 80 ? 1 : 0;
 		}
 		return 1;
 	}
