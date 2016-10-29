@@ -4,6 +4,9 @@
 	lost-center: 100%;
 	position: relative;
 	color: $footer-text;
+	background-image: url("../../images/video-background.png");
+	background-repeat: no-repeat;
+	background-size: cover;
 
 	@media (min-width: $screen-md-min) {
 		text-shadow: 1px 1px 2px black;
