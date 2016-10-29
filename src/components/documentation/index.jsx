@@ -123,7 +123,7 @@ class Documentation extends React.Component {
 						<div className="list-wrapper">
 							<div className="type-1">
 								<h3>
-									<i className="fa fa-book fa-fw"/> Getting started with Vision 100 IT</h3>
+									<i className="fa fa-book fa-fw doc-icons"/> Getting started with Vision 100 IT</h3>
 								<ul>
 									<li>
 										<Link to="/documentation/suite">Suite of Tools</Link>
@@ -139,7 +139,7 @@ class Documentation extends React.Component {
 							</div>
 							<div className="type-2">
 								<h3>
-									<i className="fa fa-cogs fa-fw"/> Our Tools</h3>
+									<i className="fa fa-cogs fa-fw doc-icons"/> Our Tools</h3>
 								<ul>
 									<li>
 										<Link to="/documentation/mailinglists">Mailing lists</Link>
@@ -166,7 +166,7 @@ class Documentation extends React.Component {
 						<div className="list-wrapper">
 							<div className="type-3">
 								<h3>
-									<i className="fa fa-lock fa-fw"/> Keeping your systems up to date</h3>
+									<i className="fa fa-lock fa-fw doc-icons"/> Keeping your systems up to date</h3>
 								<ul>
 									<li>
 										Website refresh recommendations - <i>coming soon</i>
@@ -181,7 +181,7 @@ class Documentation extends React.Component {
 							</div>
 							<div className="type-4">
 								<h3>
-									<i className="fa fa-lightbulb-o fa-fw"/> Articles + training night materials</h3>
+									<i className="fa fa-lightbulb-o fa-fw doc-icons"/> Articles + training night materials</h3>
 								<ul>
 									- <i>coming soon</i>
 								</ul>
@@ -191,7 +191,7 @@ class Documentation extends React.Component {
 						<div className="list-wrapper">
 							<div className="type-5">
 								<h3>
-									<i className="fa fa-link fa-fw"/> Recommended external links</h3>
+									<i className="fa fa-link fa-fw doc-icons"/> Recommended external links</h3>
 								<ul>
 									<li>
 										<a href="https://www.elvanto.com/">Elvanto</a>
@@ -209,7 +209,7 @@ class Documentation extends React.Component {
 							</div>
 							<div className="type-6">
 								<h3>
-									<i className="fa fa-video-camera fa-fw"/> Recommended Videos</h3>
+									<i className="fa fa-video-camera fa-fw doc-icons"/> Recommended Videos</h3>
 								<li>
 									<a href="https://www.youtube.com/watch?v=5FVw2A0TylA">Elvanto overview</a>
 								</li>
