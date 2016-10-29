@@ -118,17 +118,34 @@ class Feature extends React.Component {
 		this.state = {
 			isModalOpen: false
 		};
+		this.setFormRef = this.setFormRef.bind(this);
 		this.handleOpen = this.handleOpen.bind(this);
 		this.handleClose = this.handleClose.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
+
+	set formRef(ref) {
+		this._formRef = ref;
+	}
+
+	get formRef() {
+		return this._formRef;
+	}
+
+	setFormRef(ref) {
+		this.formRef = ref;
+	}
+
 	handleOpen() {
 		this.setState({isModalOpen: true});
 	}
+
 	handleClose() {
 		this.setState({isModalOpen: false});
+		this.formRef.resetModel();
 	}
+
 	handleSubmit(model) {
 		return fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/feature-request', {
 			method: 'post',
@@ -167,7 +184,7 @@ class Feature extends React.Component {
 								<li>Give an option to close your feature request by email.</li>
 							</ul>
 						</div>
-						<FeatureFromContainer onSubmit={this.handleSubmit}/>
+						<FeatureFromContainer onSubmit={this.handleSubmit} getFormRef={this.setFormRef}/>
 					</div>
 				</div>
 				{isModalOpen && <Popover onClose={this.handleClose}>

@@ -72,17 +72,36 @@ const JoinFormContainer = compose(reformed(), validateSchema(fields), util.submi
 class FeaturedJoin extends React.Component {
 	constructor() {
 		super();
-		this.state = {isModalOpen: false};
+		this.state = {
+			isModalOpen: false
+		};
+		this.setFormRef = this.setFormRef.bind(this);
 		this.handleOpen = this.handleOpen.bind(this);
 		this.handleClose = this.handleClose.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
+
+	set formRef(ref) {
+		this._formRef = ref;
+	}
+
+	get formRef() {
+		return this._formRef;
+	}
+
+	setFormRef(ref) {
+		this.formRef = ref;
+	}
+
 	handleOpen() {
 		this.setState({isModalOpen: true});
 	}
+
 	handleClose() {
 		this.setState({isModalOpen: false});
+		this.formRef.resetModel();
 	}
+
 	handleSubmit(model) {
 		return fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/contact-us', {
 			method: 'post',
@@ -122,7 +141,7 @@ class FeaturedJoin extends React.Component {
 						<p className="text-center">
 							Interested in coming on board? Get in touch below or via our Social Media channels.
 						</p>
-						<JoinFormContainer onSubmit={this.handleSubmit}/>
+						<JoinFormContainer onSubmit={this.handleSubmit} getFormRef={this.setFormRef}/>
 						<div className={styles.social}>
 							<div>
 								<a href="http://facebook.com/vision100it">

@@ -7,31 +7,46 @@ const submitted = WrappedComponent => {
 			this.state = {
 				submitted: false
 			};
+			this.resetModel = this.resetModel.bind(this);
+			this.handleSubmit = this.handleSubmit.bind(this);
+		}
+
+		resetModel() {
+			this.setState({submitted: false});
+			this.props.setModel({});
+		}
+
+		handleSubmit(model) {
+			this.setState({submitted: true});
+			if (this.props.schema.isValid) {
+				return this.props.onSubmit(model);
+			}
 		}
 
 		render() {
-			const {onSubmit, model, schema, bindInput} = this.props;
+			const {schema, getFormRef, ...props} = this.props;
 
 			if (schema) {
 				schema.isSubmitted = this.state.submitted;
 			}
 
-			const handleSubmit = model => {
-				this.setState({submitted: true});
-				if (schema.isValid) {
-					return onSubmit(model);
-				}
-			};
+			if (typeof getFormRef === 'function') {
+				getFormRef(this);
+			}
 
-			return React.createElement(WrappedComponent, {onSubmit: handleSubmit, model, schema, bindInput});
+			return React.createElement(WrappedComponent, {
+				onSubmit: this.handleSubmit,
+				schema,
+				...props
+			});
 		}
 	}
 
 	Submitted.propTypes = {
-		bindInput: PropTypes.func,
-		model: PropTypes.object,
 		onSubmit: PropTypes.func,
-		schema: PropTypes.object
+		setModel: PropTypes.func,
+		schema: PropTypes.object,
+		getFormRef: PropTypes.func
 	};
 
 	return Submitted;

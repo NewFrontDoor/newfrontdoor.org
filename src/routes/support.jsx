@@ -143,22 +143,40 @@ SupportForm.propTypes = {
 const SupportFormContainer = compose(reformed(), validateSchema(fields), util.submitted)(SupportForm);
 
 class Support extends React.Component {
+
 	constructor(props) {
 		super(props);
 		this.state = {
 			isModalOpen: false
 		};
+		this.setFormRef = this.setFormRef.bind(this);
 		this.handleOpen = this.handleOpen.bind(this);
 		this.handleClose = this.handleClose.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
+
+	set formRef(ref) {
+		this._formRef = ref;
+	}
+
+	get formRef() {
+		return this._formRef;
+	}
+
+	setFormRef(ref) {
+		this.formRef = ref;
+	}
+
 	handleOpen() {
 		this.setState({isModalOpen: true});
 	}
+
 	handleClose() {
 		this.setState({isModalOpen: false});
+		this.formRef.resetModel();
 	}
+
 	handleSubmit(model) {
 		return fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/support-request', {
 			method: 'post',
@@ -197,7 +215,7 @@ class Support extends React.Component {
 								<li>Give an option to close your support request by email.</li>
 							</ul>
 						</div>
-						<SupportFormContainer onSubmit={this.handleSubmit} initialModel={{severity: '4'}}/>
+						<SupportFormContainer getFormRef={this.setFormRef} onSubmit={this.handleSubmit} initialModel={{severity: '4'}}/>
 					</div>
 				</div>
 				{isModalOpen && <Popover onClose={this.handleClose}>
