@@ -27,7 +27,7 @@
   "license": "MIT",
   "dependencies": {
     "fetch": "1.1.0",
-    "lodash": "4.16.5",
+    "lodash": "4.16.6",
     "lunr": "0.7.2",
     "moment": "2.15.2",
     "node-sass": "3.10.1",
