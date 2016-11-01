@@ -121,6 +121,7 @@ class Template extends React.Component {
 			method: 'post',
 			mode: 'cors',
 			body: JSON.stringify({
+				url: window.location.toString(),
 				email: model.email,
 				message: model.message
 			}),
