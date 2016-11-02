@@ -9,17 +9,7 @@ Vision 100 IT recognizes that your privacy is very important to you and that you
 ***
 ## Privacy Policy
 ### Extent of policy
-This policy covers Vision 100 IT websites and services, including but not limited to the following sites and any of their sub-domains.
-* vision100.org
-* crckingston.org
-* crossroadshobart.org
-* cornerstonehobart.org
-* montrosepc.org.au
-* onewaymargate.org
-* twbcsouth.org
-* soulchurch.org.au
-* summerleaschurch.org
-* ufcutas.org
+This policy covers Vision 100 IT websites and services.
 
 *Contact Vision 100 IT for an up to date list of sites that this privacy policy covers.*
 
@@ -37,7 +27,7 @@ IP addresses, URLs visited, and related information is recorded for all site vis
 Any 3rd-party services that Vision 100 IT websites use (like iTunes for podcasts, http://reftagger.com/ etc.) will have their own privacy policies.  This includes sites that are linked to from Vision 100 IT websites.
 
 ### Changes to this policy
-Vision 100 IT reserves the right, at its sole discretion, to change, modify, add or remove portions of this Privacy Policy, at any time. It is your responsibility to check this Privacy Policy periodically for changes. View the most up-to-date privacy policy at any time at http://vision100.org/privacy.
+Vision 100 IT reserves the right, at its sole discretion, to change, modify, add or remove portions of this Privacy Policy, at any time. It is your responsibility to check this Privacy Policy periodically for changes.
 
 ### Enquiries
 If you have any questions or feel we are violating this policy, please send us an email at it@vision100.org.

@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './TeamMember.scss';
+import {Markdown} from '../markdown/index.jsx';
 
 const imageContext = require.context('../../images');
 
@@ -7,7 +8,7 @@ const TeamMember = props => (
 	<div className={styles.member}>
 		<h4 title={props.title}>{props.name} - {props.position}</h4>
 		<img src={props.image ? imageContext(props.image) : ''} className={styles.img}/>
-		<p className={styles.text}>{props.text}</p>
+		<Markdown>{props.text}</Markdown>
 	</div>
 );
 

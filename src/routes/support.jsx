@@ -54,16 +54,16 @@ const fields = {
 		component: InputSelect,
 		label: 'Severity:',
 		options: [{
-			key: '4',
+			key: '4 - minimal impact, tolerable for a period',
 			label: '4 - minimal impact, tolerable for a period'
 		}, {
-			key: '3',
+			key: '3 - affects one user, moderate impact on workflow',
 			label: '3 - affects one user, moderate impact on workflow'
 		}, {
-			key: '2',
+			key: '2 - affects multiple users, serious impact on workflow',
 			label: '2 - affects multiple users, serious impact on workflow'
 		}, {
-			key: '1',
+			key: '1 - affects multiple users and clients, system offline',
 			label: '1 - affects multiple users and clients, system offline'
 		}]
 	},
