@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import styles from './input.scss';
 
-const InputRadio = ({hasError, label, name, onChange, options, placeholder, required, value, width}) => {
+const InputRadio = ({hasError, label, name, onChange, options, placeholder, required, width}) => {
 	return (
 		<fieldset className={classnames('form-group', {'has-error': hasError}, styles[width || 'full'])}>
 			<label htmlFor={name}>{label}</label>
@@ -30,7 +30,6 @@ InputRadio.propTypes = {
 	options: React.PropTypes.array,
 	placeholder: React.PropTypes.string,
 	required: React.PropTypes.bool,
-	value: React.PropTypes.string,
 	width: React.PropTypes.oneOf(['full', 'half'])
 };
 

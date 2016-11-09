@@ -9,7 +9,7 @@
     "publish": "cross-env NODE_ENV=production gulp publish",
     "publish:aws": "cross-env NODE_ENV=production gulp publish --aws",
     "start": "gulp",
-    "test": "lint && cross-env NODE_ENV=test ava"
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -128,7 +128,8 @@
     "extends": "xo-react",
     "rules": {
       "react/no-danger": 1,
-      "react/no-children-prop": 0
+      "react/no-children-prop": 0,
+      "import/no-unassigned-import": 1
     },
     "settings": {
        "import/resolver": {
