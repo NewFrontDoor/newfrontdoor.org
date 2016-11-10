@@ -21,5 +21,8 @@ before_install:
 before_script:
   - npm run publish
 
-after_success:
-  - npm run publish:aws
+deploy:
+  provider: script
+  script: npm run publish:aws
+  on:
+    branch: master
