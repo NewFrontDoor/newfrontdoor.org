@@ -24,5 +24,6 @@ before_script:
 deploy:
   provider: script
   script: npm run publish:aws
+  skip_cleanup: true
   on:
     branch: master
