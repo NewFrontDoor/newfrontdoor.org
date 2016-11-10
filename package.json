@@ -95,7 +95,7 @@
     "postcss-calc": "5.3.1",
     "postcss-colorblind": "BarryThePenguin/postcss-colorblind#patch-1",
     "postcss-lh": "1.1.4",
-    "postcss-loader": "1.1.0",
+    "postcss-loader": "1.1.1",
     "postcss-pxtorem": "3.3.1",
     "raw-loader": "0.5.1",
     "react-addons-test-utils": "15.3.2",
