@@ -2,14 +2,16 @@ language: node_js
 
 node_js: node
 
-before_script:
+before_install:
+  - openssl aes-256-cbc -K $encrypted_4169a45ed70d_key -iv $encrypted_4169a45ed70d_iv -in .travis/deploy_key.pem.enc -out .travis/deploy_key.pem -d
   - git config --global user.name "Jonathan Haines"
   - git config --global user.email jonno.haines@gmail.com
+  - eval "$(ssh-agent -s)"
+  - chmod 600 .travis/deploy_key.pem
+  - ssh-add .travis/deploy_key.pem
+
+before_script:
   - npm run publish
 
-after_success: npm run publish:aws
-
-env:
-  matrix:
-  - secure: HdBnlTHZDgtFs4bJgWOgLK5nU1rIr6RfanKYpYw5cl2c+gpI1UqIPyzIXbS4dCdGB9WfQz0CVzzTwoMP9E2yGr85qXZni9jMol8SlZeqariqK0utSAs3rvkiOUhFsRl+ZotxLCB4UbcdElgw/IVLSB0/VL2aon/HWDrIghCfZbUYfmOS8tWvpIVUkaL8j1D+VyF2xUtU0lEtTviQvR9gGzh/sCQDXtSBKQpqbrJyXkqSh7BA68gexrh5GtXD/RdAALAr0z5HMBgI4hNQgazlzdlWVwNpfQ9cYHFSu2P0xhnk8UsYCDNQz18ABBY9E+Y099dbLp8r9/EUlqRmm9l0ULOWD2t+/rHd5qKtqQrdERcGlIfsIcpittA/gHuufQmNX6DNdYYbypZQjuQ34uUp3gDA2UNOpV+PHDwuTCTcK6brOp5oFkLeB5VBXFHfOXffpGVpw32h0lrB3e3Agt/4LqmyqaZ+QfKA/idTMPaoPg573nLAgY/PFbN4ITUti9UMxH8WgGLSY43WJmAZCUL1rBKYtGPXxF/hT9iwYHxDvO8ScxoEBJxrmLV+VTUuMsc4dmeBnXDnIPRfhCKTSaGJor3H4XXhq0dR34BIcBRpOTH4MtOtfQgRnMdveEbr+J+ZLzrl4OTizdKLA/hekf4xMvnyCSYdXZBRVTNAHwQ5x5I=
-  - secure: GhUmdj7e2asZiP09GjR6TLv8Ihkl64nVEtcrSScvLBZKcabJEp35rIc1Ilmf0x6x2IQOGo09GVtyDsEUXYGYIfijt5gKOWAB+e7TFqPp9dvY8n9OwPK3hCAT4a8U+7IGIR52HV9Q9B8P1YkWhBbR9f5Wa2UL11M5J5Pk6VmCXztloYJCGoPXIwJmCuNd2qLhQ3WPSb8s3ratroqEYflpfmB4KNHnwkZJ/bDZFSXpTrUkicGDbolrixw0cveViGClU4oEuYiZD2JSuhI1hHa1ZrDXEls1cEu2CWo5Nc6kuNHOvqlkDCk1sZcKxzBUrTUYeOtwrHz4QQVPRCKgULKQNCEjWykANxssgSExZ9PxCobuL2MkYEAGb7tgMk/SuR7YuSjYNIerWMJJ4BwRW7XRZB3u9etvjA3aktPpTom9/EynCms7y8psACkiU04EHHD/o+r2Ch7v+d4pQ+grBB8XKi+lRQAp06RmqtyI0vtHdAXiBAh4MShJ15A8xf6Hod+ytxzKPmOvyzok1N+yHJTdRnWD18tRoOEvvQLXbeGSXPTl2TfgznNAV/+72kPJxEh2uNORWLzUsYanThmSw0p/cbB93m3G6jf4M0WTudIr4t2iNji5p1kadZ0a1cFofA9b+uSHPI/eHk8GXIHBJgexMqVpGaBlRAODJ6FpZsTU4bE=
+after_success:
+  - npm run publish:aws
