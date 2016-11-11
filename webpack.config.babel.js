@@ -16,7 +16,7 @@ import LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
 import OfflinePlugin from 'offline-plugin';
 
 import {trimExtension} from './lib';
-import packageJson from './package.json';
+import packageJson from './package';
 import paths from './config/paths';
 
 const staticPaths = [

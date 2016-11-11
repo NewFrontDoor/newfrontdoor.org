@@ -6,6 +6,7 @@ import lunr from './lunr';
 import publish from './publish';
 import watch from './watch';
 import webpack from './webpack';
+import screenshots from './screenshots';
 
 gulp.task('clean', clean);
 gulp.task('fonts', fonts);
@@ -15,6 +16,8 @@ gulp.task('webpack', ['lunr'], webpack);
 
 gulp.task('build', ['clean', 'webpack']);
 gulp.task('publish', ['build'], publish);
+
+gulp.task('screenshots', screenshots);
 
 // default task
 

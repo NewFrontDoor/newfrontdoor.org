@@ -6,10 +6,13 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production gulp build",
     "lint": "xo",
+    "nightmare": "xvfb-maybe node test/index.js",
     "publish": "cross-env NODE_ENV=production gulp publish",
     "publish:aws": "cross-env NODE_ENV=production gulp publish --aws",
     "start": "gulp",
-    "test": "npm run lint"
+    "pretest": "npm run lint",
+    "test": "npm run nightmare",
+    "posttest": "gulp screenshots"
   },
   "repository": {
     "type": "git",
@@ -46,7 +49,6 @@
   "devDependencies": {
     "autoprefixer": "6.5.3",
     "ava": "0.16.0",
-    "babel-cli": "6.18.0",
     "babel-core": "6.18.2",
     "babel-loader": "6.2.7",
     "babel-plugin-lodash": "3.2.9",
@@ -89,9 +91,17 @@
     "lost": "7.1.1",
     "mdast-util-toc": "2.0.0",
     "ngrok": "2.2.3",
+    "nightmare": "2.8.1",
     "node-libs-browser": "1.0.0",
     "normalize.css": "5.0.0",
     "offline-plugin": "3.4.2",
+    "p-filter": "1.0.0",
+    "p-log": "1.0.0",
+    "p-map": "1.0.0",
+    "p-map-series": "1.0.0",
+    "p-queue": "0.1.0",
+    "p-tap": "1.0.0",
+    "pify": "2.3.0",
     "postcss-calc": "5.3.1",
     "postcss-colorblind": "BarryThePenguin/postcss-colorblind#patch-1",
     "postcss-lh": "1.1.4",
@@ -115,7 +125,8 @@
     "webpack-dev-server": "1.16.2",
     "webpack-notifier": "1.4.1",
     "xo": "0.17.1",
-    "xo-loader": "0.7.0"
+    "xo-loader": "0.7.0",
+    "xvfb-maybe": "0.1.3"
   },
   "ava": {
     "require": [
@@ -130,13 +141,6 @@
       "react/no-danger": 1,
       "react/no-children-prop": 0,
       "import/no-unassigned-import": 1
-    },
-    "settings": {
-       "import/resolver": {
-         "webpack": {
-           "config": "webpack.config.js"
-         }
-       }
     },
     "envs": [
       "browser"
