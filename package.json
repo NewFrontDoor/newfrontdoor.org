@@ -32,7 +32,7 @@
     "moment": "2.16.0",
     "node-sass": "3.12.2",
     "react": "15.3.2",
-    "react-addons-pure-render-mixin": "15.3.2",
+    "react-addons-pure-render-mixin": "15.4.0",
     "react-dom": "15.3.2",
     "react-gateway": "2.3.0",
     "react-modal2": "3.1.0",
