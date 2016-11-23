@@ -1,5 +1,5 @@
-import boardMembers from './board-members.json';
-import teamMembers from './team-members.json';
+import boardMembers from './board-members';
+import teamMembers from './team-members';
 
 export default {
 	boardMembers,
