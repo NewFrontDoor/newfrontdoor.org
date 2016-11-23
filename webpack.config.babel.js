@@ -40,8 +40,9 @@ const staticPaths = [
 
 const documentation = fs.readdirSync(paths.documentation.dir).map(p => `/documentation/${trimExtension(p)}`);
 const blog = fs.readdirSync(paths.blog.dir).map(p => `/blog/${trimExtension(p)}`);
+const blogPages = _.range(Math.ceil(blog.length)).map((x, i) => `/client/${i}`);
 
-Reflect.apply(Array.prototype.push, staticPaths, [...blog, ...documentation]);
+Reflect.apply(Array.prototype.push, staticPaths, [...blogPages, ...blog, ...documentation]);
 
 export default getConfig();
 

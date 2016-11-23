@@ -18,7 +18,7 @@ const Post = props => (
 		</header>
 		<div className={styles.body}>
 			<div className={styles.content}>
-				<img src={imageContext(props.image.href)} className={props.image.size} alt={props.image.alt}/>
+				{props.image && <img src={imageContext(props.image.href)} className={props.image.size} alt={props.image.alt}/>}
 				{props.children}
 			</div>
 		</div>

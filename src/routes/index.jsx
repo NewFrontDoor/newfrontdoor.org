@@ -25,7 +25,7 @@ import Error from './error.jsx';
 export default(
 	<Route path="/" component={Site}>
 		<IndexRoute component={Home}/>
-		<Route path="/client" component={Client}/>
+		<Route path="/client(/:page)" component={Client}/>
 		<Route path="/blog/:blogId" component={Blog}/>
 		<Route path="/support" component={Support}/>
 		<Route path="/feature" component={Feature}/>

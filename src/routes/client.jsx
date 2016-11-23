@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
 import fm from 'front-matter';
-import moment from 'moment';
+import {withRouter} from 'react-router';
 
 import Alert from '../components/alert/index.jsx';
 import Card from '../components/card/index.jsx';
@@ -17,8 +17,7 @@ const blog = {
 		return require.context('../blog', true, /^.*\.md$/);
 	},
 	get posts() {
-		const fmt = '[./]YYYY-MM-DD[.md]';
-		return this.context.keys().sort((a, b) => moment(a, fmt).isBefore(moment(b, fmt)));
+		return this.context.keys().sort().reverse();
 	},
 	post(id) {
 		return this.context(this.posts.find(x => x === id));
@@ -41,57 +40,65 @@ const blog = {
 	}
 };
 
-const posts = blog.page({
-	trim: 500,
-	page: 0,
-	size: 5
-});
+const Client = props => {
+	const posts = blog.page({
+		trim: 500,
+		page: props.params.page || 0,
+		size: 5
+	});
 
-const pinnedPost = posts.shift();
+	const pinnedPost = posts.shift();
 
-const Client = () => (
-	<Index headerSize="mini">
-		<Hero mini/>
-		<main role="main">
-			<div className="alerts hidden">
-				{content.banners.map((banner, key) => (
-					<Alert key={key} type={banner.type}>
-						<p>{banner.text}</p>
-					</Alert>
-				))}
-			</div>
-			<div className="product-cards">
-				<Card name="Elvanto" background="#323232" image="./elvanto.png" imagePadding="10px" link="/elvanto">
-					Have you got started with Elvanto yet?
-				</Card>
-				<Card name="Registration" background="white" image="./soul.jpeg" imagePadding="10px" link="/registration">
-					Have a church event soon? Check out the V100IT registration module
-				</Card>
-				<Card name="Podcasting" background="#171717" image="./podcasting.png" imagePadding="75px" link="/podcasting">
-					Get on board with podcasting your sermons
-				</Card>
-				<Card name="Designers" background="white" image="./close-image.jpeg">
-					Thinking of a refresh? Read our recommendations - <em>coming soon...</em>
-				</Card>
-			</div>
-			<div className="client-wrapper">
-				<section className="pinned-post">
-					<Post url={pinnedPost.url} {...pinnedPost.attributes}>
-						<Markdown>
-							{pinnedPost.body}
-						</Markdown>
-					</Post>
-				</section>
-				<section className="posts">
-					{posts.map((post, key) => <Post key={key} url={post.url} {...post.attributes}>
-						<Markdown>
-							{post.body}
-						</Markdown>
-					</Post>)}
-				</section>
-			</div>
-		</main>
-	</Index>
-);
+	return (
+		<Index headerSize="mini">
+			<Hero mini/>
+			<main role="main">
+				<div className="alerts hidden">
+					{content.banners.map((banner, key) => (
+						<Alert key={key} type={banner.type}>
+							<p>{banner.text}</p>
+						</Alert>
+					))}
+				</div>
+				<div className="product-cards">
+					<Card name="Elvanto" background="#323232" image="./elvanto.png" imagePadding="10px" link="/elvanto">
+						Have you got started with Elvanto yet?
+					</Card>
+					<Card name="Registration" background="white" image="./soul.jpeg" imagePadding="10px" link="/registration">
+						Have a church event soon? Check out the V100IT registration module
+					</Card>
+					<Card name="Podcasting" background="#171717" image="./podcasting.png" imagePadding="75px" link="/podcasting">
+						Get on board with podcasting your sermons
+					</Card>
+					<Card name="Designers" background="white" image="./close-image.jpeg">
+						Thinking of a refresh? Read our recommendations - <em>coming soon...</em>
+					</Card>
+				</div>
+				<div className="client-wrapper">
+					{ pinnedPost && <section className="pinned-post">
+						<Post url={pinnedPost.url} {...pinnedPost.attributes}>
+							<Markdown>
+								{pinnedPost.body}
+							</Markdown>
+						</Post>
+					</section> }
+					<section className="posts">
+						{posts.map((post, key) => <Post key={key} url={post.url} {...post.attributes}>
+							<Markdown>
+								{post.body}
+							</Markdown>
+						</Post>)}
+					</section>
+				</div>
+			</main>
+		</Index>
+	);
+};
 
-export default Client;
+Client.propTypes = {
+	params: PropTypes.shape({
+		page: PropTypes.string
+	})
+};
+
+export default withRouter(Client);

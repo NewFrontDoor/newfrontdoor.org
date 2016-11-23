@@ -2,7 +2,7 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import fm from 'front-matter';
 import moment from 'moment';
-import {Link} from 'react-router';
+import {routerShape, withRouter} from 'react-router';
 import Index from '../index/index.jsx';
 import {Markdown} from '../markdown/index.jsx';
 import styles from './Blog.scss';
@@ -26,6 +26,7 @@ const imageContext = require.context('../../images');
 class Blog extends React.Component {
 	constructor() {
 		super();
+		this.handleGoBack = this.handleGoBack.bind(this);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
 
@@ -33,6 +34,10 @@ class Blog extends React.Component {
 
 	get blog() {
 		return blogs.document(this.props.params.blogId) || {};
+	}
+
+	handleGoBack() {
+		this.props.router.goBack();
 	}
 
 	render() {
@@ -43,11 +48,13 @@ class Blog extends React.Component {
 						<h1>{this.blog.title}</h1>
 						<h1><small>{this.blog.sub_title}</small></h1>
 						<h3>{this.blog.author.name} - <span className={styles.date}>{moment(this.blog.date).format('Do MMMM, YYYY')}</span></h3>
-						<div className={styles.imgContainer}><img src={imageContext(this.blog.image.href)} alt={this.blog.image.alt}/></div>
+						{ this.blog.image && <div className={styles.imgContainer}>
+							<img src={imageContext(this.blog.image.href)} alt={this.blog.image.alt}/>
+						</div> }
 						<Markdown>
 							{this.blog.body}
 						</Markdown>
-						<Link to="/client"> &#060; Back</Link>
+						<a onClick={this.handleGoBack}> &#060; Back</a>
 					</div>
 				</div>
 			</Index>
@@ -56,7 +63,8 @@ class Blog extends React.Component {
 }
 
 Blog.propTypes = {
-	params: React.PropTypes.shape({blogId: React.PropTypes.string}).isRequired
+	params: React.PropTypes.shape({blogId: React.PropTypes.string}).isRequired,
+	router: routerShape
 };
 
-export default Blog;
+export default withRouter(Blog);
