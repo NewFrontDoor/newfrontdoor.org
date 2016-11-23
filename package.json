@@ -85,7 +85,7 @@
     "gulp-util": "3.0.7",
     "html-loader": "0.4.4",
     "json-loader": "0.5.4",
-    "lodash-webpack-plugin": "0.10.5",
+    "lodash-webpack-plugin": "0.10.6",
     "lost": "7.1.1",
     "mdast-util-toc": "2.0.0",
     "ngrok": "2.2.3",
