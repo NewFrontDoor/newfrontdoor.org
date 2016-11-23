@@ -98,7 +98,7 @@
     "postcss-loader": "1.1.1",
     "postcss-pxtorem": "3.3.1",
     "raw-loader": "0.5.1",
-    "react-addons-test-utils": "15.3.2",
+    "react-addons-test-utils": "15.4.1",
     "remark": "6.2.0",
     "remark-react": "3.1.0",
     "remark-slug": "4.2.2",
