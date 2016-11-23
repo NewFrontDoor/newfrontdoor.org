@@ -35,7 +35,6 @@ const RemarkLink = props => {
 	} else if (href && href.startsWith('/')) {
 		return (<Link to={href} {...props}>{children}</Link>);
 	} else if (href && typeof window.location !== 'undefined' && !href.includes(window.location.hostname)) {
-		console.log('HREF', href);
 		return (<a href={href} target="_blank" rel="noopener noreferrer">{children}</a>);
 	}
 	return (<Link {...props}>{children}</Link>);
