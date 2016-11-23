@@ -12,7 +12,7 @@ A few things to bear in mind:
 - Make sure that all your events are put on the website. Not only does this build confidence that your webiste has all the information, but it also shows online that your church is active.
 - Make sure you have all the relevant details of your event: venue, time (start and end), cost, order of events, registration process (if any). For guest events, it can be helpful to help them know what to expect.
 - Make sure you edit events if details change. Probably most people will be aware of the change, but it would be awful for someone to find out about your event online and then turn up at the originally advertised venue even though "everyone" knows that the venue moved.
-- Visual images can make an event page on a website all the more striking: so if you have any branding, or even some more generic images, make sure these are added. Talk to [it@vision100.org](it@vision100.org) if you need help with graphic design and images.
+- Visual images can make an event page on a website all the more striking: so if you have any branding, or even some more generic images, make sure these are added. Talk to <mailto:it@vision100.org> if you need help with graphic design and images.
 - Publish your event on all your communication platforms: don't just have your event on your website, or just in your bulletin, or just on Facebook. Make sure that all major events are on all these platforms.
 Point people to the website event for more information.
 

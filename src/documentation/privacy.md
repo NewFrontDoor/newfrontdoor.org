@@ -30,7 +30,7 @@ Any 3rd-party services that Vision 100 IT websites use (like iTunes for podcasts
 Vision 100 IT reserves the right, at its sole discretion, to change, modify, add or remove portions of this Privacy Policy, at any time. It is your responsibility to check this Privacy Policy periodically for changes.
 
 ### Enquiries
-If you have any questions or feel we are violating this policy, please send us an email at it@vision100.org.
+If you have any questions or feel we are violating this policy, please send us an email at <mailto:it@vision100.org>.
 
 Copyright © 2014 Vision 100 IT. All rights reserved.
 Updated by Vision 100 IT on 29th of May, 2014.

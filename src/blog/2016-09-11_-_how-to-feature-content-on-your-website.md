@@ -7,7 +7,7 @@ date: 2016-09-11
 
 Your website is not just a big library of stuff. It is also a shopfront. Using a website well, means figuring out which stuff you want to jump out to people when they visit it. This is called 'featured content'.
 
-There are some simple ways to do this on your website, and if you get stuck, just email [it@vision100.org](it@vision100.org "it@vision100.org") for help!
+There are some simple ways to do this on your website, and if you get stuck, just email <mailto:it@vision100.org> for help!
 
 - Have an automatic 'current content' area: We normally set up websites to have the most recent sermon appear somewhere on the front page of your website. This ensures that there is always something new there every week!
 - Have a blog / twitter feed: this means that some more regular content can appear on the front page of your website, that keeps getting updated.
@@ -15,4 +15,4 @@ There are some simple ways to do this on your website, and if you get stuck, jus
 - Add a custom banner/footer strip or pop-up window for a special event: we don't recommend doing this too often, but for super-special events, you can get a strip running along the top or bottom of your website (or in a pop-up window) alerting people to this special event.
 
 
-How would you like to feature stuff on your website? Email [it@vision100.org](it@vision100.org) today if you would like help doing one of these things or something else entirely!
+How would you like to feature stuff on your website? Email <mailto:it@vision100.org> today if you would like help doing one of these things or something else entirely!

@@ -22,7 +22,7 @@ Managing users and lists
 ---------------
 
 ### Create a new user account
-1.  Request it@vision100.org to add you as a user.
+1.  Request <mailto:it@vision100.org> to add you as a user.
 2.  Go to http://vision100.org/wws.
 3.  Click 'First login?' on the left hand side.
 4.  Fill in your email address to get a password sent to you.
@@ -41,7 +41,7 @@ Managing users and lists
 8.  Select 'Admin' in the left hand bar.
 9.  Select 'Manage subscribers'.
 10. Follow 'Adding members to mailing lists' procedure (below).
-**Note: if migrating lists from other mailing list programs, send an email to it@vision100.org
+**Note: if migrating lists from other mailing list programs, send an email to <mailto:it@vision100.org>
 requesting that the old mailing list be deleted and an alias be set up which forwards
 messages to this new mailing list.**
 
