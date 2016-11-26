@@ -1,8 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
 import lunr from 'lunr';
-import CSSTransitionGroup from 'react-addons-css-transition-group';
-import FirstChild from '../../lib/first-child';
 import SearchResults from '../search-results/index.jsx';
 import styles from './SearchBar.scss';
 
@@ -113,8 +111,6 @@ class SearchBar extends React.Component {
 	}
 
 	render() {
-		const {searchResults} = this.state;
-
 		return (
 			<div className={styles.overlay}>
 				<div className={styles.container}>
@@ -146,21 +142,14 @@ class SearchBar extends React.Component {
 						</div>
 					</form>
 				</div>
-				<CSSTransitionGroup
-					component={FirstChild}
-					transitionName={styles}
-					transitionEnterTimeout={500}
-					transitionLeaveTimeout={500}
-					>
-					{searchResults.length &&
-						<SearchResults
-							titleClassName={styles.title}
-							onCloseResult={this.handleCloseResult}
-							onCloseModal={this.handleCloseModal}
-							searchResults={this.state.searchResults}
-							/>
-					}
-				</CSSTransitionGroup>
+				<div className={styles.results}>
+					<SearchResults
+						titleClassName={styles.title}
+						onCloseResult={this.handleCloseResult}
+						onCloseModal={this.handleCloseModal}
+						searchResults={this.state.searchResults}
+						/>
+				</div>
 				<div className={styles.container}>
 					<div className={styles.menu}>
 						<ul className="list-unstyled">

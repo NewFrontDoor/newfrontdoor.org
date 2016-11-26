@@ -3,8 +3,9 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {Link} from 'react-router';
 import lunr from 'lunr';
 import classNames from 'classnames';
-import './documentation.scss';
+import SearchResults from '../search-results/index.jsx';
 import Index from '../index/index.jsx';
+import styles from './documentation.scss';
 
 class Documentation extends React.Component {
 	constructor(props) {
@@ -80,15 +81,15 @@ class Documentation extends React.Component {
 
 		return (
 			<Index>
-				<div className="documentation-overlay">
+				<div className={styles.overlay}>
 					<div className="site-wrapper site-wrapper-padding">
 						<h1>Help + how to</h1>
-						<div className="search-wrapper">
+						<div className={styles.searchWrapper}>
 							<p>
 								Vision 100 IT are constantly updating and improving our documentation, and adding new documentation as new tools and procedures arise. If you notice anything is incomplete, or would like documentation on a particular topic, <Link to="/feature">let us know!</Link>
 							</p>
 							<form onSubmit={this.handleSearchSubmit}>
-								<div className="form-group">
+								<div className={styles.formGroup}>
 									<input
 										type="search"
 										name="search"
@@ -99,31 +100,18 @@ class Documentation extends React.Component {
 										/>
 								</div>
 							</form>
-							<div className={resultsClass}>
-								<div className="results-title">
-									<h3>
-										Results
-										<a onClick={this.handleCloseResult}>
-											<span className="fa fa-times-circle"/>
-										</a>
-									</h3>
-								</div>
-								<div className="results-content">
-									<ul className="list-unstyled">
-										{this.state.searchResults.map((item, key) => (
-											<li key={key}>
-												<h4><Link to={`/${item.id}`}>{item.title}</Link></h4>
-											</li>
-										))}
-									</ul>
-								</div>
-							</div>
+							<SearchResults
+								titleClassName={styles.title}
+								onCloseResult={this.handleCloseResult}
+								onCloseModal={this.handleCloseModal}
+								searchResults={this.state.searchResults}
+								/>
 						</div>
 						<h2>Vision 100 IT documentation</h2>
-						<div className="list-wrapper">
+						<div className={styles.listWrapper}>
 							<div className="type-1">
 								<h3>
-									<i className="fa fa-book fa-fw doc-icons"/> Getting started with Vision 100 IT</h3>
+									<i className={`fa fa-book fa-fw ${styles.docIcons}`}/> Getting started with Vision 100 IT</h3>
 								<ul>
 									<li>
 										<Link to="/documentation/suite">Suite of Tools</Link>
@@ -139,7 +127,7 @@ class Documentation extends React.Component {
 							</div>
 							<div className="type-2">
 								<h3>
-									<i className="fa fa-cogs fa-fw doc-icons"/> Our Tools</h3>
+									<i className={`fa fa-cogs fa-fw ${styles.docIcons}`}/> Our Tools</h3>
 								<ul>
 									<li>
 										<Link to="/documentation/mailinglists">Mailing lists</Link>
@@ -163,10 +151,10 @@ class Documentation extends React.Component {
 							</div>
 						</div>
 						<h2 id="maintenance">IT maintenance</h2>
-						<div className="list-wrapper">
+						<div className={styles.listWrapper}>
 							<div className="type-3">
 								<h3>
-									<i className="fa fa-lock fa-fw doc-icons"/> Keeping your systems up to date</h3>
+									<i className={`fa fa-lock fa-fw ${styles.docIcons}`}/> Keeping your systems up to date</h3>
 								<ul>
 									<li>
 										Website refresh recommendations - <i>coming soon</i>
@@ -181,7 +169,7 @@ class Documentation extends React.Component {
 							</div>
 							<div className="type-4">
 								<h3>
-									<i className="fa fa-lightbulb-o fa-fw doc-icons"/> Articles + training night materials</h3>
+									<i className={`fa fa-lightbulb-o fa-fw ${styles.docIcons}`}/> Articles + training night materials</h3>
 								<ul>
 									<li>
 										<Link to="/documentation/keepingkidssafe">Keeping Kids Safe on the Internet</Link>
@@ -190,10 +178,10 @@ class Documentation extends React.Component {
 							</div>
 						</div>
 						<h2>Additional resources</h2>
-						<div className="list-wrapper">
+						<div className={styles.listWrapper}>
 							<div className="type-5">
 								<h3>
-									<i className="fa fa-link fa-fw doc-icons"/> Recommended external links</h3>
+									<i className={`fa fa-link fa-fw ${styles.docIcons}`}/> Recommended external links</h3>
 								<ul>
 									<li>
 										<a href="https://www.elvanto.com/">Elvanto</a>
@@ -211,10 +199,13 @@ class Documentation extends React.Component {
 							</div>
 							<div className="type-6">
 								<h3>
-									<i className="fa fa-video-camera fa-fw doc-icons"/> Recommended Videos</h3>
-								<li>
-									<a href="https://www.youtube.com/watch?v=5FVw2A0TylA">Elvanto overview</a>
-								</li>
+									<i className={`fa fa-video-camera fa-fw ${styles.docIcons}`}/> Recommended Videos
+								</h3>
+								<ul>
+									<li>
+										<a href="https://www.youtube.com/watch?v=5FVw2A0TylA">Elvanto overview</a>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>

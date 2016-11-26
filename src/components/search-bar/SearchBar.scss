@@ -64,6 +64,19 @@
 	}
 }
 
+:local .results {
+	position: relative;
+	width: 100%;
+	// border-color: rgba(lighten($text-color, 90%), 0.2);
+	border-style: solid;
+	border-color: rgba(darken($text-color, 80%), 0.4);
+	background-color: rgba(darken($text-color, 90%), 0.2);
+	border-width: 2px 0 1px;
+	overflow-y: scroll;
+	max-height: 250px;
+	padding: 0.5lh;
+}
+
 :local .title {
 	lost-flex-container: row;
 
@@ -93,22 +106,4 @@
 	font-family: $font-family-sans-serif;
 	padding-top: 40px;
 	font-size: 65%;
-}
-
-:local .enter {
-	max-height: 0;
-}
-
-:local .enterActive {
-	max-height: 250px;
-	transition: max-height 0.5s;
-}
-
-:local .leave {
-	max-height: 250px;
-}
-
-:local .leaveActive {
-	max-height: 0;
-	transition: max-height 0.5s ease-in;
 }

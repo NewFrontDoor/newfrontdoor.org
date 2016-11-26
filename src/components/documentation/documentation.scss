@@ -1,7 +1,8 @@
 @import "../../css/variables";
 
-.search-wrapper {
+:local .searchWrapper {
 	width: 100%;
+
 	p {
 		height: auto;
 	}
@@ -13,7 +14,7 @@
 }
 */
 
-.list-wrapper {
+:local .listWrapper {
 	width: 100%;
 	lost-flex-container: row;
 
@@ -44,24 +45,19 @@
 	}
 }
 
-i {
-	color: $primary-highlight;
-}
-
-.doc-icons {
+:local .docIcons {
 	margin-left: -40px;
 	color: $primary-highlight;
 }
 
-.documentation-overlay {
+:local .overlay {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-image: linear-gradient(rgba(256, 256, 256, 0.6), white 50%, white), url("../../images/books.jpg");
 }
 //search stuff
-.results-title,
-.search-title {
+:local .title {
 	lost-flex-container: row;
 	h2,
 	h3 {
@@ -77,7 +73,14 @@ i {
 	}
 }
 
-.search-results {
+:local .results-content {
+	lost-flex-container: row;
+	opacity: 0;
+	transition: opacity 0.5s ease-out;
+	text-transform: none;
+}
+
+:local .search-results {
 	position: relative;
 	width: 100%;
 	max-height: 0;
@@ -89,16 +92,12 @@ i {
 	//background-color: rgba(darken($text-color, 90%), .2);
 	//border-width: 2px 0 1px 0;
 	overflow: hidden;
-	.results-content {
-		lost-flex-container: row;
-		opacity: 0;
-		transition: opacity 0.5s ease-out;
-		text-transform: none;
-	}
+
 	&.visible {
 		max-height: 100%;
 		transition: max-height 0.5s;
 	}
+
 	&.visible .results-content {
 		opacity: 1;
 		transition: opacity 0.5s ease-in;
