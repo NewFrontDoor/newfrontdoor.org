@@ -25,15 +25,15 @@ const FeaturedEvents = () => (
 				<div className={styles.training}>
 					<h3>Our next training sessions</h3>
 					<ul>
-						<li>November 16th, 2016. Keeping Kids Safe with Computers</li>
+						<li>May 10th, 2017. Nailing Events in Your Church</li>
 					</ul>
 					<div>
 						<h4>More info</h4>
 						<ul>
 							<li>When: 7:30-9:30pm</li>
 							<li>Where: The Loft, Wellspring, Sandy Bay (Tasmania)</li>
-							<li>Cost: $20 to cover event and admin (snacks included). We recommend churches subsidise their delegates.</li>
-							<li>Register: <a href="https://www.vision100.org/itnight">vision100.org/itnight</a></li>
+							<li>Cost: $45 to cover event, admin and support Vision 100 IT (dinner & snacks included). We recommend churches subsidise their delegates.</li>
+							<li>Register: Regos will open in January</li>
 						</ul>
 					</div>
 				</div>
