@@ -46,14 +46,6 @@ const FeaturedWho = () => (
 				<span className="fa fa-angle-down fa-3x"/>
 			</Link>
 		</div>
-		<div className={styles.collection}>
-			<div><img src={imageContext('./christian.jpg')}/></div>
-			<div><img src={imageContext('./jonno.jpg')}/></div>
-			<div><img src={imageContext('./emile.jpg')}/></div>
-			<div><img src={imageContext('./gibbo.jpg')}/></div>
-			<div><img src={imageContext('./alan.jpg')}/></div>
-			<div><img src={imageContext('./chris.jpg')}/></div>
-		</div>
 		<div className={styles.tiled}>
 			<div><img src={imageContext('./christian-tile.jpg')}/></div>
 			<div><img src={imageContext('./jonno-tile.jpg')}/></div>
