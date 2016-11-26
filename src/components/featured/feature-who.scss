@@ -36,7 +36,10 @@
 	}
 
 	@media (min-width: $screen-md-min) {
-		display: none;
+		//display: none;
+		div {
+			lost-column: 1/6 0 0;
+		}
 	}
 }
 
