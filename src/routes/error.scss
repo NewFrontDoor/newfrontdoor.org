@@ -1,0 +1,34 @@
+@import "../css/variables";
+
+:local .searchWrapper {
+	width: 100%;
+
+	p {
+		height: auto;
+	}
+}
+
+//search stuff
+:local .title {
+	lost-flex-container: row;
+
+	h2,
+	h3 {
+		width: 100%;
+	}
+
+	a {
+		float: right;
+		//margin-right: 60px;
+		span {
+			cursor: pointer;
+			//color: $search-overlay;
+		}
+	}
+}
+
+:local .searchResults {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}

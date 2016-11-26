@@ -54,7 +54,7 @@ class Blog extends React.Component {
 						<Markdown>
 							{this.blog.body}
 						</Markdown>
-						<a onClick={this.handleGoBack}> &#060; Back</a>
+						<a href="#" onClick={this.handleGoBack}> &#060; Back</a>
 					</div>
 				</div>
 			</Index>
