@@ -2,7 +2,6 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {Link} from 'react-router';
 import lunr from 'lunr';
-import classNames from 'classnames';
 import SearchResults from '../search-results/index.jsx';
 import Index from '../index/index.jsx';
 import styles from './documentation.scss';
@@ -74,11 +73,6 @@ class Documentation extends React.Component {
 	}
 
 	render() {
-		const resultsClass = classNames({
-			visible: this.state.searchResults.length > 0,
-			'search-results': true
-		});
-
 		return (
 			<Index>
 				<div className={styles.overlay}>
@@ -101,9 +95,9 @@ class Documentation extends React.Component {
 								</div>
 							</form>
 							<SearchResults
-								titleClassName={styles.title}
-								onCloseResult={this.handleCloseResult}
-								onCloseModal={this.handleCloseModal}
+								titleClass={styles.title}
+								containerClass={styles.searchResults}
+								onCloseResults={this.handleCloseResult}
 								searchResults={this.state.searchResults}
 								/>
 						</div>

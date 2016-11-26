@@ -6,10 +6,10 @@ import styles from './SearchResults.scss';
 import height from './heightTransition.scss';
 import opacity from './opacityTransition.scss';
 
-const SearchResults = ({onCloseResult, onCloseModal, searchResults, titleClassName}) => {
+const SearchResults = ({onCloseResults, onResultClick, searchResults, containerClass, titleClass}) => {
 	const results = searchResults.map((item, key) => (
 		<li key={key}>
-			<Link to={`/${item.id}`} onClick={onCloseModal}>{item.title}</Link>
+			<Link to={`/${item.id}`} onClick={onResultClick}>{item.title}</Link>
 		</li>
 	));
 
@@ -21,9 +21,9 @@ const SearchResults = ({onCloseResult, onCloseModal, searchResults, titleClassNa
 			transitionLeaveTimeout={500}
 			>
 			{searchResults.length &&
-				<div>
-					<div className={titleClassName}>
-						<h3> Results <a onClick={onCloseResult}> <span className="fa fa-times-circle"/> </a> </h3>
+				<div className={containerClass}>
+					<div className={titleClass}>
+						<h3> Results <a onClick={onCloseResults}> <span className="fa fa-times-circle"/> </a> </h3>
 					</div>
 					<div className={styles.content}>
 						<CSSTransitionGroup
@@ -46,11 +46,16 @@ const SearchResults = ({onCloseResult, onCloseModal, searchResults, titleClassNa
 	);
 };
 
+SearchResults.defaultProps = {
+	onResultClick: () => {}
+};
+
 SearchResults.propTypes = {
-	onCloseResult: PropTypes.func.isRequired,
-	onCloseModal: PropTypes.func.isRequired,
+	onCloseResults: PropTypes.func.isRequired,
+	onResultClick: PropTypes.func,
 	searchResults: PropTypes.array.isRequired,
-	titleClassName: PropTypes.string.isRequired
+	containerClass: PropTypes.string.isRequired,
+	titleClass: PropTypes.string.isRequired
 };
 
 export default SearchResults;

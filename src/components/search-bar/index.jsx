@@ -15,7 +15,7 @@ class SearchBar extends React.Component {
 		};
 		this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
 		this.handleSearchTerm = this.handleSearchTerm.bind(this);
-		this.handleCloseResult = this.handleCloseResult.bind(this);
+		this.handleCloseResults = this.handleCloseResults.bind(this);
 		this.handleCloseModal = this.handleCloseModal.bind(this);
 		this.mountSearchInput = this.mountSearchInput.bind(this);
 		this.handleEscKey = this.handleEscKey.bind(this);
@@ -91,7 +91,7 @@ class SearchBar extends React.Component {
 		this.setState({searchTerm: event.target.value});
 	}
 
-	handleCloseResult(event) {
+	handleCloseResults(event) {
 		event.preventDefault();
 		this.setState({searchResults: []});
 	}
@@ -142,11 +142,12 @@ class SearchBar extends React.Component {
 						</div>
 					</form>
 				</div>
-				<div className={styles.results}>
+				<div className={styles.resultsContainer}>
 					<SearchResults
-						titleClassName={styles.title}
-						onCloseResult={this.handleCloseResult}
-						onCloseModal={this.handleCloseModal}
+						containerClass={styles.results}
+						titleClass={styles.title}
+						onCloseResults={this.handleCloseResults}
+						onResultClick={this.handleCloseModal}
 						searchResults={this.state.searchResults}
 						/>
 				</div>

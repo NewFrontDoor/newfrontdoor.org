@@ -64,17 +64,20 @@
 	}
 }
 
-:local .results {
+:local .resultsContainer {
 	position: relative;
 	width: 100%;
-	// border-color: rgba(lighten($text-color, 90%), 0.2);
+	max-height: 250px;
+	overflow-y: scroll;
+}
+
+:local .results {
+	padding: 0.5lh;
 	border-style: solid;
 	border-color: rgba(darken($text-color, 80%), 0.4);
 	background-color: rgba(darken($text-color, 90%), 0.2);
 	border-width: 2px 0 1px;
-	overflow-y: scroll;
-	max-height: 250px;
-	padding: 0.5lh;
+	// max-height: 250px;
 }
 
 :local .title {

@@ -1,8 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router';
 import lunr from 'lunr';
-import classNames from 'classnames';
+import SearchResults from '../components/search-results/index.jsx';
 import Index from '../components/index/index.jsx';
+import styles from './error.scss';
 
 class Error extends React.Component {
 	constructor(props) {
@@ -68,11 +68,6 @@ class Error extends React.Component {
 	}
 
 	render() {
-		const resultsClass = classNames({
-			visible: this.state.searchResults.length > 0,
-			'search-results': true
-		});
-
 		return (
 			<Index>
 				<div className="podcasting-wrapper">
@@ -82,7 +77,7 @@ class Error extends React.Component {
 							<section>
 								<p>You’ve managed to find yourself on a page that doesn’t exist! Feel free to use the search box below, or hit the back button.</p>
 							</section>
-							<div className="search-wrapper">
+							<div className={styles.searchWrapper}>
 								<form onSubmit={this.handleSearchSubmit}>
 									<div className="form-group">
 										<input
@@ -95,25 +90,12 @@ class Error extends React.Component {
 											/>
 									</div>
 								</form>
-								<div className={resultsClass}>
-									<div className="results-title">
-										<h3>
-											Results
-											<a onClick={this.handleCloseResult}>
-												<span className="fa fa-times-circle"/>
-											</a>
-										</h3>
-									</div>
-									<div className="results-content">
-										<ul className="list-unstyled">
-											{this.state.searchResults.map((item, key) => (
-												<li key={key}>
-													<h4><Link to={`/${item.id}`}>{item.title}</Link></h4>
-												</li>
-											))}
-										</ul>
-									</div>
-								</div>
+								<SearchResults
+									titleClass={styles.title}
+									containerClass={styles.searchResults}
+									onCloseResults={this.handleCloseResult}
+									searchResults={this.state.searchResults}
+									/>
 							</div>
 						</div>
 					</div>
