@@ -9,7 +9,7 @@ Keeping Kids safe on the Internet was a Vision 100 IT Training night run in Nove
 
 Resources
 ------
-The talks were recorded and are available as below
+The talks were recorded and are available below:
 * [Talk 1: Bullying and other Social Media madness - Mike and Christine Jolly](https://vision100.org/node/531)
 * [Talk 2: Values for Internet safety - Jason Imms](https://vision100.org/node/532)
 * [Question and Answer Session - Mike, Christine, Jason and Christian de Kievit](https://vision100.org/node/533)
