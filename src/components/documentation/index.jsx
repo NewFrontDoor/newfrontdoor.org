@@ -183,7 +183,9 @@ class Documentation extends React.Component {
 								<h3>
 									<i className="fa fa-lightbulb-o fa-fw doc-icons"/> Articles + training night materials</h3>
 								<ul>
-									- <i>coming soon</i>
+									<li>
+										<Link to="/documentation/keepingkidssafe">Keeping Kids Safe on the Internet</Link>
+									</li>
 								</ul>
 							</div>
 						</div>
