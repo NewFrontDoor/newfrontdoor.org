@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from '../components/head/index.jsx';
 
-let devServer = '';
+let devServer = null;
 
 if (process.env.NODE_ENV !== 'production') {
 	devServer = <script src="http://localhost:3000/webpack-dev-server.js"/>;

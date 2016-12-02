@@ -61,7 +61,7 @@ function getCommonConfig() {
 			critical: './critical.jsx'
 		},
 		output: {
-			filename: '[name].[chunkhash].js',
+			filename: '[name].js',
 			chunkFilename: '[name].[chunkhash].chunk.js',
 			path: path.resolve(paths.bundle.dest),
 			publicPath: '/',
@@ -179,7 +179,6 @@ function getCommonPlugins() {
 			VERSION: JSON.stringify(packageJson.version)
 		}),
 		new webpack.optimize.CommonsChunkPlugin({
-			names: ['app'],
 			children: true,
 			minChunks: 2,
 			async: true
