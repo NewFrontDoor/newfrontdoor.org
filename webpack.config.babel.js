@@ -61,7 +61,8 @@ function getCommonConfig() {
 			critical: './critical.jsx'
 		},
 		output: {
-			filename: '[name].js',
+			filename: '[name].[chunkhash].js',
+			chunkFilename: '[name].[chunkhash].chunk.js',
 			path: path.resolve(paths.bundle.dest),
 			publicPath: '/',
 			libraryTarget: 'umd'
@@ -178,19 +179,28 @@ function getCommonPlugins() {
 			VERSION: JSON.stringify(packageJson.version)
 		}),
 		new webpack.optimize.CommonsChunkPlugin({
-			// names: ["app", "subPageA"]
+			names: ['app'],
 			children: true,
+			minChunks: 2,
 			async: true
-		}),
-		new OfflinePlugin({
-			ServiceWorker: {
-				events: true,
-				output: '/sw.js'
-			}
 		}),
 		new ExtractTextPlugin('[name].css', {
 			allChunks: true
 		}),
-		new StaticSiteGeneratorPlugin('main', staticPaths, {}, {window: {}})
+		new StaticSiteGeneratorPlugin('main', staticPaths, {}, {window: {}}),
+		new OfflinePlugin({
+			relativePaths: false,
+			publicPath: '/',
+			excludes: ['**/.*', '**/*.map', '**/*.mp4'],
+			ServiceWorker: {
+				events: true
+			},
+			caches: {
+				main: [':rest:'],
+				additional: ['*.chunk.js']
+			},
+			safeToUseOptionalCaches: true,
+			AppCache: false
+		})
 	]);
 }
