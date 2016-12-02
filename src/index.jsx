@@ -4,7 +4,7 @@ import ReactDOMServer from 'react-dom/server';
 import {Router, RouterContext, match, browserHistory, createMemoryHistory} from 'react-router';
 import {scroller, animateScroll} from 'react-scroll';
 import Modal from 'react-modal2';
-import {applyUpdate, install} from 'offline-plugin/runtime';
+import {install} from 'offline-plugin/runtime';
 import Root from './routes/root.jsx';
 import Routes from './routes/index.jsx';
 
@@ -30,22 +30,7 @@ function hashLinkScroll() {
 
 if (typeof document !== 'undefined') {
 	if (process.env.NODE_ENV === 'production') {
-		install({
-			onUpdating: () => {
-				console.log('SW Event:', 'onUpdating');
-			},
-			onUpdateReady: () => {
-				console.log('SW Event:', 'onUpdateReady');
-				applyUpdate();
-			},
-			onUpdated: () => {
-				console.log('SW Event:', 'onUpdated');
-				window.location.reload();
-			},
-			onUpdateFailed: () => {
-				console.log('SW Event:', 'onUpdateFailed');
-			}
-		});
+		install();
 	}
 	const content = document.getElementById('content');
 	Modal.getApplicationElement = () => document.getElementById('application');
