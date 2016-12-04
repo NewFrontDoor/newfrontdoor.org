@@ -1,6 +1,6 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import {Link} from 'react-router';
+import {Link, withRouter, locationShape} from 'react-router';
 import lunr from 'lunr';
 import SearchResults from '../search-results/index.jsx';
 import Index from '../index/index.jsx';
@@ -11,7 +11,7 @@ class Documentation extends React.Component {
 		super(props);
 		this.state = {
 			searchResults: [],
-			searchTerm: ''
+			searchTerm: props.location.query.search
 		};
 		this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
 		this.handleSearchTerm = this.handleSearchTerm.bind(this);
@@ -20,6 +20,10 @@ class Documentation extends React.Component {
 	}
 
 	shouldComponentUpdate() {}
+
+	componentDidMount() {
+		this.handleSearchSubmit();
+	}
 
 	get searchIndex() {
 		const self = this;
@@ -38,12 +42,12 @@ class Documentation extends React.Component {
 	}
 
 	handleSearchSubmit(event) {
-		event.preventDefault();
-
-		const self = this;
+		if (event) {
+			event.preventDefault();
+		}
 
 		this.searchIndex.then(({index, data}) => {
-			const res = index.search(self.state.searchTerm);
+			const res = index.search(this.state.searchTerm);
 
 			const searchResults = res.map(result => data.items.find(item => item.id === result.ref)).map(result => {
 				// HACK HACK HACK
@@ -58,7 +62,7 @@ class Documentation extends React.Component {
 				});
 			}
 
-			self.setState({searchResults});
+			this.setState({searchResults});
 		});
 	}
 
@@ -209,4 +213,8 @@ class Documentation extends React.Component {
 	}
 }
 
-export default Documentation;
+Documentation.propTypes = {
+	location: locationShape
+};
+
+export default withRouter(Documentation);

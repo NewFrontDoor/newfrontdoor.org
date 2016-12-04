@@ -73,7 +73,7 @@ class SearchBar extends React.Component {
 				// HACK HACK HACK
 				const {id, ...all} = result;
 				return {id: id.replace('content/', ''), ...all};
-			});
+			}).slice(0, 3);
 
 			if (searchResults.length === 0) {
 				searchResults.push({
@@ -149,6 +149,7 @@ class SearchBar extends React.Component {
 						onCloseResults={this.handleCloseResults}
 						onResultClick={this.handleCloseModal}
 						searchResults={this.state.searchResults}
+						query={this.state.searchTerm}
 						/>
 				</div>
 				<div className={styles.container}>

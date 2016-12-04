@@ -6,7 +6,7 @@ import styles from './SearchResults.scss';
 import height from './heightTransition.scss';
 import opacity from './opacityTransition.scss';
 
-const SearchResults = ({onCloseResults, onResultClick, searchResults, containerClass, titleClass}) => {
+const SearchResults = ({onCloseResults, onResultClick, searchResults, containerClass, titleClass, query}) => {
 	const results = searchResults.map((item, key) => (
 		<li key={key}>
 			<Link to={`/${item.id}`} onClick={onResultClick}>{item.title}</Link>
@@ -35,11 +35,9 @@ const SearchResults = ({onCloseResults, onResultClick, searchResults, containerC
 							{results}
 						</CSSTransitionGroup>
 					</div>
-					<div className={`small hidden ${styles.nav}`}>
-						<p>
-							<Link to="/documentation?search=poop">more</Link>
-						</p>
-					</div>
+					{query && <div className={`small ${styles.nav}`}>
+						<Link to={`/documentation?search=${query}`}>more</Link>
+					</div>}
 				</div>
 			}
 		</CSSTransitionGroup>
@@ -55,7 +53,8 @@ SearchResults.propTypes = {
 	onResultClick: PropTypes.func,
 	searchResults: PropTypes.array.isRequired,
 	containerClass: PropTypes.string.isRequired,
-	titleClass: PropTypes.string.isRequired
+	titleClass: PropTypes.string.isRequired,
+	query: PropTypes.string
 };
 
 export default SearchResults;

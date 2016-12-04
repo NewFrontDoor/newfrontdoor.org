@@ -41,9 +41,9 @@ const FeaturedPricing = () => (
 			</p>
 
 			<div className="expand">
-				<a href="/documentation/costs">More about costs<br/>
+				<Link to="/documentation/costs">More about costs<br/>
 					<span className="fa fa-angle-down fa-3x"/>
-				</a>
+				</Link>
 			</div>
 		</div>
 	</Featured>
