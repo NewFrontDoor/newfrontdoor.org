@@ -9,6 +9,7 @@ import Hero from '../components/hero/index.jsx';
 import Index from '../components/index/index.jsx';
 import {Markdown} from '../components/markdown/index.jsx';
 import Post from '../components/post/index.jsx';
+import Pagination from '../components/pagination/index.jsx';
 
 import content from '../content';
 
@@ -41,11 +42,32 @@ const blog = {
 };
 
 const Client = props => {
+	const page = Number(props.params.page) || 0;
+	const previousPage = page + 1;
+	const nextPage = page - 1;
+
+	const size = 5;
+
 	const posts = blog.page({
 		trim: 500,
-		page: props.params.page || 0,
-		size: 5
+		page,
+		size
 	});
+
+	let previous;
+	let next;
+
+	if (posts.length === size) {
+		previous = `/client/${previousPage}`;
+	}
+
+	if (nextPage === 0) {
+		next = '/client';
+	}
+
+	if (nextPage > 0) {
+		next = `/client/${nextPage}`;
+	}
 
 	const pinnedPost = posts.shift();
 
@@ -89,6 +111,7 @@ const Client = props => {
 							</Markdown>
 						</Post>)}
 					</section>
+					<Pagination previous={previous} next={next}/>
 				</div>
 			</main>
 		</Index>

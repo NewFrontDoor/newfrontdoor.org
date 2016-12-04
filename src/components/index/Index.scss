@@ -6,11 +6,11 @@
 
 :local .enter {
 	opacity: 0.01;
-	transition: opacity 300ms ease-in-out;
 }
 
 :local .enterActive {
 	opacity: 1;
+	transition: opacity 300ms ease-in-out;
 }
 
 :local .leave {

@@ -43,6 +43,14 @@ $fa-font-path: "~font-awesome/fonts" !default;
 	content: $fa-var-angle-down;
 }
 
+.fa-angle-left::before {
+	content: $fa-var-angle-left;
+}
+
+.fa-angle-right::before {
+	content: $fa-var-angle-right;
+}
+
 .fa-search::before {
 	content: $fa-var-search;
 }
