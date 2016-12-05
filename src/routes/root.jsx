@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import Head from '../components/head/index.jsx';
 
 let devServer = null;
@@ -22,7 +22,7 @@ const Root = ({children}) => (
 );
 
 Root.propTypes = {
-	children: React.PropTypes.node.isRequired
+	children: PropTypes.node.isRequired
 };
 
 export default Root;

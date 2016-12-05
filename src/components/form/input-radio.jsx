@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import classnames from 'classnames';
 import styles from './input.scss';
 
@@ -22,15 +22,15 @@ const InputRadio = ({hasError, label, name, onChange, options, placeholder, requ
 };
 
 InputRadio.propTypes = {
-	hasError: React.PropTypes.bool,
-	// id: React.PropTypes.string,
-	label: React.PropTypes.string,
-	name: React.PropTypes.string,
-	onChange: React.PropTypes.func,
-	options: React.PropTypes.array,
-	placeholder: React.PropTypes.string,
-	required: React.PropTypes.bool,
-	width: React.PropTypes.oneOf(['full', 'half'])
+	hasError: PropTypes.bool,
+	// id: PropTypes.string,
+	label: PropTypes.string,
+	name: PropTypes.string,
+	onChange: PropTypes.func,
+	options: PropTypes.array,
+	placeholder: PropTypes.string,
+	required: PropTypes.bool,
+	width: PropTypes.oneOf(['full', 'half'])
 };
 
 export default InputRadio;

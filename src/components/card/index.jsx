@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 import styles from './Card.scss';
 
@@ -23,12 +23,12 @@ const Card = ({background, imagePadding, link, image, name, children}) => {
 };
 
 Card.propTypes = {
-	background: React.PropTypes.string,
-	image: React.PropTypes.string,
-	imagePadding: React.PropTypes.string,
-	name: React.PropTypes.string,
-	link: React.PropTypes.string,
-	children: React.PropTypes.node
+	background: PropTypes.string,
+	image: PropTypes.string,
+	imagePadding: PropTypes.string,
+	name: PropTypes.string,
+	link: PropTypes.string,
+	children: PropTypes.node
 };
 
 export default Card;

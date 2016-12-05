@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import classnames from 'classnames';
 import styles from './input.scss';
 
@@ -18,16 +18,16 @@ const InputSelect = ({hasError, label, name, onChange, options, required, value,
 };
 
 InputSelect.propTypes = {
-	// errors: React.PropTypes.array,
-	hasError: React.PropTypes.bool,
-	// id: React.PropTypes.string,
-	label: React.PropTypes.string,
-	name: React.PropTypes.string,
-	onChange: React.PropTypes.func,
-	options: React.PropTypes.array,
-	required: React.PropTypes.bool,
-	value: React.PropTypes.string,
-	width: React.PropTypes.oneOf(['full', 'half'])
+	// errors: PropTypes.array,
+	hasError: PropTypes.bool,
+	// id: PropTypes.string,
+	label: PropTypes.string,
+	name: PropTypes.string,
+	onChange: PropTypes.func,
+	options: PropTypes.array,
+	required: PropTypes.bool,
+	value: PropTypes.string,
+	width: PropTypes.oneOf(['full', 'half'])
 };
 
 export default InputSelect;

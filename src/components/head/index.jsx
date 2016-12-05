@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
 const Head = ({title}) => (
 	<head>
@@ -12,7 +12,7 @@ const Head = ({title}) => (
 );
 
 Head.propTypes = {
-	title: React.PropTypes.string.isRequired
+	title: PropTypes.string.isRequired
 };
 
 export default Head;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 import moment from 'moment';
 import styles from './Post.scss';
@@ -26,13 +26,13 @@ const Post = props => (
 );
 
 Post.propTypes = {
-	url: React.PropTypes.string,
-	children: React.PropTypes.node.isRequired,
-	title: React.PropTypes.string.isRequired,
-	author: React.PropTypes.shape({name: React.PropTypes.string.isRequired}),
-	date: React.PropTypes.object.isRequired,
-	// tags: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
-	image: React.PropTypes.shape({href: React.PropTypes.string.isRequired, size: React.PropTypes.string.isRequired, alt: React.PropTypes.string.isRequired})
+	url: PropTypes.string,
+	children: PropTypes.node.isRequired,
+	title: PropTypes.string.isRequired,
+	author: PropTypes.shape({name: PropTypes.string.isRequired}),
+	date: PropTypes.object.isRequired,
+	// tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+	image: PropTypes.shape({href: PropTypes.string.isRequired, size: PropTypes.string.isRequired, alt: PropTypes.string.isRequired})
 };
 
 export default Post;

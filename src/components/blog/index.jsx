@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import fm from 'front-matter';
 import moment from 'moment';
@@ -63,7 +63,7 @@ class Blog extends React.Component {
 }
 
 Blog.propTypes = {
-	params: React.PropTypes.shape({blogId: React.PropTypes.string}).isRequired,
+	params: PropTypes.shape({blogId: PropTypes.string}).isRequired,
 	router: routerShape
 };
 

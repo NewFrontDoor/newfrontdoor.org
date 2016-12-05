@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {Link, withRouter, locationShape} from 'react-router';
-import lunr from 'lunr';
+import withSearchIndex from '../search-index/index.jsx';
 import SearchResults from '../search-results/index.jsx';
+import SearchResultList from '../search-result-list/index.jsx';
 import Index from '../index/index.jsx';
+import Search from '../search/index.jsx';
 import styles from './documentation.scss';
 
 class Documentation extends React.Component {
@@ -14,7 +16,6 @@ class Documentation extends React.Component {
 			searchTerm: props.location.query.search
 		};
 		this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
-		this.handleSearchTerm = this.handleSearchTerm.bind(this);
 		this.handleCloseResult = this.handleCloseResult.bind(this);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
@@ -22,53 +23,12 @@ class Documentation extends React.Component {
 	shouldComponentUpdate() {}
 
 	componentDidMount() {
-		this.handleSearchSubmit();
+		this.handleSearchSubmit(this.state.searchTerm);
 	}
 
-	get searchIndex() {
-		const self = this;
-		return new Promise(resolve => {
-			if (self.__searchIndex) {
-				resolve({index: self.__searchIndex, data: self.__searchData});
-			} else {
-				require.ensure([], () => {
-					self.__searchData = require('../../search/search-data.json');
-					self.__searchIndex = lunr.Index.load(require('../../search/search-index.json'));
-
-					resolve({index: self.__searchIndex, data: self.__searchData});
-				});
-			}
-		});
-	}
-
-	handleSearchSubmit(event) {
-		if (event) {
-			event.preventDefault();
-		}
-
-		this.searchIndex.then(({index, data}) => {
-			const res = index.search(this.state.searchTerm);
-
-			const searchResults = res.map(result => data.items.find(item => item.id === result.ref)).map(result => {
-				// HACK HACK HACK
-				const {id, ...all} = result;
-				return {id: id.replace('content/', ''), ...all};
-			});
-
-			if (searchResults.length === 0) {
-				searchResults.push({
-					id: '#',
-					title: 'No results found'
-				});
-			}
-
-			this.setState({searchResults});
-		});
-	}
-
-	handleSearchTerm(event) {
-		event.preventDefault();
-		this.setState({searchTerm: event.target.value});
+	handleSearchSubmit(searchTerm) {
+		this.props.searchIndex(searchTerm)
+		.then(searchResults => this.setState({searchTerm, searchResults}));
 	}
 
 	handleCloseResult(event) {
@@ -77,6 +37,18 @@ class Documentation extends React.Component {
 	}
 
 	render() {
+		let searchResultList;
+		const {searchResults} = this.state;
+
+		if (searchResults.length > 0) {
+			searchResultList = (
+				<SearchResultList
+					onResultClick={this.handleCloseModal}
+					searchResults={searchResults}
+					/>
+			);
+		}
+
 		return (
 			<Index>
 				<div className={styles.overlay}>
@@ -86,24 +58,20 @@ class Documentation extends React.Component {
 							<p>
 								Vision 100 IT are constantly updating and improving our documentation, and adding new documentation as new tools and procedures arise. If you notice anything is incomplete, or would like documentation on a particular topic, <Link to="/feature">let us know!</Link>
 							</p>
-							<form onSubmit={this.handleSearchSubmit}>
-								<div className={styles.formGroup}>
-									<input
-										type="search"
-										name="search"
-										className="form-control search input-lg"
-										value={this.state.searchTerm}
-										onChange={this.handleSearchTerm}
-										placeholder="Search all documents on V100IT..."
-										/>
-								</div>
-							</form>
+							<Search
+								size="large"
+								buttonClass="btn-primary"
+								placeholder="Search all documents on V100IT..."
+								onSearchSubmit={this.handleSearchSubmit}
+								/>
 							<SearchResults
 								titleClass={styles.title}
 								containerClass={styles.searchResults}
 								onCloseResults={this.handleCloseResult}
 								searchResults={this.state.searchResults}
-								/>
+								>
+								{searchResultList}
+							</SearchResults>
 						</div>
 						<h2>Vision 100 IT documentation</h2>
 						<div className={styles.listWrapper}>
@@ -214,7 +182,8 @@ class Documentation extends React.Component {
 }
 
 Documentation.propTypes = {
-	location: locationShape
+	location: locationShape,
+	searchIndex: PropTypes.func.isRequired
 };
 
-export default withRouter(Documentation);
+export default withRouter(withSearchIndex(Documentation));

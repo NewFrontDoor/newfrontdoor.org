@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import '../../css/main.scss';
 import './Alert.scss';
 
@@ -9,8 +9,8 @@ const Alert = props => (
 );
 
 Alert.propTypes = {
-	type: React.PropTypes.string,
-	children: React.PropTypes.node
+	type: PropTypes.string,
+	children: PropTypes.node
 };
 
 export default Alert;

@@ -1,12 +1,8 @@
 @import "../../css/variables";
 
-:local .content {
-	lost-flex-container: row;
-	text-transform: none;
-
-	ul {
-		margin-left: 20px;
-	}
+:local .container {
+	overflow-y: hidden;
+	transition: height 0.5s ease-in;
 }
 
 :local .nav {

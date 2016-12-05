@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {Markdown} from '../markdown/index.jsx';
 import styles from './TeamMember.scss';
 
@@ -13,11 +13,11 @@ const TeamMember = props => (
 );
 
 TeamMember.propTypes = {
-	name: React.PropTypes.string.isRequired,
-	position: React.PropTypes.string.isRequired,
-	image: React.PropTypes.string.isRequired,
-	text: React.PropTypes.string.isRequired,
-	title: React.PropTypes.string
+	name: PropTypes.string.isRequired,
+	position: PropTypes.string.isRequired,
+	image: PropTypes.string.isRequired,
+	text: PropTypes.string.isRequired,
+	title: PropTypes.string
 };
 
 export default TeamMember;

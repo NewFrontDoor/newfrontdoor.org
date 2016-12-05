@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
 const Form = ({bindInput, children, className, fields, schema, onSubmit}) => {
 	const fieldArray = Object.keys(fields).map(key => {
@@ -28,12 +28,12 @@ const Form = ({bindInput, children, className, fields, schema, onSubmit}) => {
 };
 
 Form.propTypes = {
-	bindInput: React.PropTypes.func,
-	children: React.PropTypes.node,
-	className: React.PropTypes.string,
-	fields: React.PropTypes.object,
-	onSubmit: React.PropTypes.func,
-	schema: React.PropTypes.object
+	bindInput: PropTypes.func,
+	children: PropTypes.node,
+	className: PropTypes.string,
+	fields: PropTypes.object,
+	onSubmit: PropTypes.func,
+	schema: PropTypes.object
 };
 
 export default Form;

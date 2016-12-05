@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
 import Header from '../header/index.jsx';
@@ -54,7 +54,7 @@ class Index extends React.Component {
 
 Index.propTypes = {
 	headerSize: Header.propTypes.size,
-	children: React.PropTypes.node,
+	children: PropTypes.node,
 	menuItems: MainMenu.propTypes.menuItems
 };
 

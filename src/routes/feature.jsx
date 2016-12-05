@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {Link} from 'react-router';
 import reformed from 'react-reformed';
@@ -104,10 +104,10 @@ const FeatureForm = ({
 };
 
 FeatureForm.propTypes = {
-	bindInput: React.PropTypes.func,
-	model: React.PropTypes.object,
-	onSubmit: React.PropTypes.func,
-	schema: React.PropTypes.object
+	bindInput: PropTypes.func,
+	model: PropTypes.object,
+	onSubmit: PropTypes.func,
+	schema: PropTypes.object
 };
 
 const FeatureFromContainer = compose(reformed(), validateSchema(fields), util.submitted)(FeatureForm);

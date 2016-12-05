@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import styles from './Collapse.scss';
 
 const Collapse = props => (
@@ -8,8 +8,8 @@ const Collapse = props => (
 );
 
 Collapse.propTypes = {
-	children: React.PropTypes.node,
-	isOpened: React.PropTypes.bool
+	children: PropTypes.node,
+	isOpened: PropTypes.bool
 };
 
 export default Collapse;

@@ -1,6 +1,7 @@
 @import "../../css/variables";
 
 :local .overlay {
+	font-family: $font-family-sans-serif;
 	text-transform: uppercase;
 	display: block;
 	position: fixed;
@@ -28,56 +29,37 @@
 		width: 100%;
 		color: black;
 	}
-
-	ul {
-		margin-top: 10px;
-		lost-column: 1/1;
-		font-family: $font-family-sans-serif;
-	}
 }
 
 :local .container {
 	padding: 0 0.5lh;
+	border-style: solid;
+	border-color: rgba(darken($text-color, 80%), 0.4);
+	border-width: 0;
 }
 
-:local .search {
-	background: rgba(lighten($text-color, 70%), 0.1);
-	border: none;
-	color: white;
+:local .container:first-child {
+	border-bottom-width: 2px;
 }
 
-:local .transparent {
-	width: 100%;
-	color: white;
-	line-height: 0.5;
-	text-align: center;
-	background-color: transparent;
+:local .container:last-child {
+	border-top-width: 1px;
 }
 
 :local .menu {
-	lost-flex-container: row;
+	flex: 1 0 auto;
 	color: $search-overlay;
 	font-size: $font-size-h3;
+	margin: 1lh 0 2lh;
 
 	a {
 		color: $search-overlay;
 	}
 }
 
-:local .resultsContainer {
-	position: relative;
-	width: 100%;
-	max-height: 250px;
-	overflow-y: scroll;
-}
-
 :local .results {
 	padding: 0.5lh;
-	border-style: solid;
-	border-color: rgba(darken($text-color, 80%), 0.4);
 	background-color: rgba(darken($text-color, 90%), 0.2);
-	border-width: 2px 0 1px;
-	// max-height: 250px;
 }
 
 :local .title {
@@ -105,8 +87,24 @@
 	}
 }
 
+:local .searchInput {
+	background: rgba(lighten($text-color, 70%), 0.1);
+	border: none;
+	color: white;
+}
+
+:local .searchButton {
+	width: 100%;
+	border: none;
+	color: white;
+	background-color: transparent;
+}
+
 :local .postscript {
-	font-family: $font-family-sans-serif;
-	padding-top: 40px;
 	font-size: 65%;
+
+	p {
+		margin: 0;
+		line-height: 1.5;
+	}
 }

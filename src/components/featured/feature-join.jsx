@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {Element} from 'react-scroll';
 import reformed from 'react-reformed';
 import compose from 'react-reformed/lib/compose';
@@ -61,10 +61,10 @@ const JoinForm = ({
 };
 
 JoinForm.propTypes = {
-	bindInput: React.PropTypes.func,
-	model: React.PropTypes.object,
-	onSubmit: React.PropTypes.func,
-	schema: React.PropTypes.object
+	bindInput: PropTypes.func,
+	model: PropTypes.object,
+	onSubmit: PropTypes.func,
+	schema: PropTypes.object
 };
 
 const JoinFormContainer = compose(reformed(), validateSchema(fields), util.submitted)(JoinForm);

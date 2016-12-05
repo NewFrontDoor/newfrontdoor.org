@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 import content from '../../content';
 import styles from './Footer.scss';
@@ -15,10 +15,10 @@ const FooterItem = props => {
 };
 
 FooterItem.propTypes = {
-	className: React.PropTypes.string,
-	target: React.PropTypes.string,
-	text: React.PropTypes.string,
-	to: React.PropTypes.string
+	className: PropTypes.string,
+	target: PropTypes.string,
+	text: PropTypes.string,
+	to: PropTypes.string
 };
 
 const Footer = () => (

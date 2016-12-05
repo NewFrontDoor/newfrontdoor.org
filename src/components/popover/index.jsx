@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {Gateway} from 'react-gateway';
 import Modal from 'react-modal2';
 import styles from './popover.scss';
@@ -25,10 +25,10 @@ class Popover extends React.Component {
 }
 
 Popover.propTypes = {
-	onClose: React.PropTypes.func.isRequired,
-	closeOnEsc: React.PropTypes.bool,
-	closeOnBackdropClick: React.PropTypes.bool,
-	children: React.PropTypes.element
+	onClose: PropTypes.func.isRequired,
+	closeOnEsc: PropTypes.bool,
+	closeOnBackdropClick: PropTypes.bool,
+	children: PropTypes.element
 };
 
 Popover.defaultProps = {

@@ -1,46 +1,19 @@
 import React, {PropTypes} from 'react';
-import CSSTransitionGroup from 'react-addons-css-transition-group';
 import {Link} from 'react-router';
-import FirstChild from '../../lib/first-child';
+import ReactHeight from 'react-height';
 import styles from './SearchResults.scss';
-import height from './heightTransition.scss';
-import opacity from './opacityTransition.scss';
 
-const SearchResults = ({onCloseResults, onResultClick, searchResults, containerClass, titleClass, query}) => {
-	const results = searchResults.map((item, key) => (
-		<li key={key}>
-			<Link to={`/${item.id}`} onClick={onResultClick}>{item.title}</Link>
-		</li>
-	));
-
+const SearchResults = ({onCloseResults, containerClass, children, titleClass, query}) => {
 	return (
-		<CSSTransitionGroup
-			component={FirstChild}
-			transitionName={height}
-			transitionEnterTimeout={500}
-			transitionLeaveTimeout={500}
-			>
-			{searchResults.length &&
-				<div className={containerClass}>
-					<div className={titleClass}>
-						<h3> Results <a onClick={onCloseResults}> <span className="fa fa-times-circle"/> </a> </h3>
-					</div>
-					<div className={styles.content}>
-						<CSSTransitionGroup
-							component="ul"
-							transitionName={opacity}
-							transitionEnterTimeout={300}
-							transitionLeaveTimeout={300}
-							>
-							{results}
-						</CSSTransitionGroup>
-					</div>
-					{query && <div className={`small ${styles.nav}`}>
-						<Link to={`/documentation?search=${query}`}>more</Link>
-					</div>}
-				</div>
-			}
-		</CSSTransitionGroup>
+		<div className={containerClass}>
+			<div className={titleClass}>
+				<h3> Results <a onClick={onCloseResults}> <span className="fa fa-times-circle"/> </a> </h3>
+			</div>
+			{children}
+			{query && <div className={`small ${styles.nav}`}>
+				<Link to={`/documentation?search=${query}`}>more</Link>
+			</div>}
+		</div>
 	);
 };
 
@@ -50,11 +23,50 @@ SearchResults.defaultProps = {
 
 SearchResults.propTypes = {
 	onCloseResults: PropTypes.func.isRequired,
-	onResultClick: PropTypes.func,
-	searchResults: PropTypes.array.isRequired,
-	containerClass: PropTypes.string.isRequired,
+	containerClass: PropTypes.string,
+	children: PropTypes.node,
 	titleClass: PropTypes.string.isRequired,
 	query: PropTypes.string
 };
 
-export default SearchResults;
+const withHeight = WrappedComponent => {
+	class HeightContainer extends React.Component {
+		constructor() {
+			super();
+
+			this.state = {
+				height: 0
+			};
+
+			this.handleHeight = this.handleHeight.bind(this);
+		}
+
+		handleHeight(height) {
+			this.setState({height});
+		}
+
+		render() {
+			let {height} = this.state;
+
+			if (typeof this.props.children === 'undefined') {
+				height = 0;
+			}
+
+			return (
+				<div className={styles.container} style={{height}}>
+					<ReactHeight onHeightReady={this.handleHeight}>
+						<WrappedComponent {...this.props}/>
+					</ReactHeight>
+				</div>
+			);
+		}
+	}
+
+	HeightContainer.propTypes = {
+		children: PropTypes.node
+	};
+
+	return HeightContainer;
+};
+
+export default withHeight(SearchResults);

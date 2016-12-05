@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 
 import styles from './MobileMenu.scss';
@@ -11,7 +11,7 @@ const MobileMenu = props => (
 );
 
 MobileMenu.propTypes = {
-	onOpenSearch: React.PropTypes.func.isRequired
+	onOpenSearch: PropTypes.func.isRequired
 };
 
 export default MobileMenu;

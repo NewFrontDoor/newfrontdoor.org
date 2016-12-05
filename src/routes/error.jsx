@@ -1,6 +1,8 @@
-import React from 'react';
-import lunr from 'lunr';
+import React, {PropTypes} from 'react';
+import Search from '../components/search/index.jsx';
+import withSearchIndex from '../components/search-index/index.jsx';
 import SearchResults from '../components/search-results/index.jsx';
+import SearchResultList from '../components/search-result-list/index.jsx';
 import Index from '../components/index/index.jsx';
 import styles from './error.scss';
 
@@ -12,54 +14,12 @@ class Error extends React.Component {
 			searchTerm: ''
 		};
 		this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
-		this.handleSearchTerm = this.handleSearchTerm.bind(this);
 		this.handleCloseResult = this.handleCloseResult.bind(this);
 	}
 
-	get searchIndex() {
-		const self = this;
-		return new Promise(resolve => {
-			if (self.__searchIndex) {
-				resolve({index: self.__searchIndex, data: self.__searchData});
-			} else {
-				require.ensure([], () => {
-					self.__searchData = require('../search/search-data.json');
-					self.__searchIndex = lunr.Index.load(require('../search/search-index.json'));
-
-					resolve({index: self.__searchIndex, data: self.__searchData});
-				});
-			}
-		});
-	}
-
-	handleSearchSubmit(event) {
-		event.preventDefault();
-
-		const self = this;
-
-		this.searchIndex.then(({index, data}) => {
-			const res = index.search(self.state.searchTerm);
-
-			const searchResults = res.map(result => data.items.find(item => item.id === result.ref)).map(result => {
-				// HACK HACK HACK
-				const {id, ...all} = result;
-				return {id: id.replace('content/', ''), ...all};
-			});
-
-			if (searchResults.length === 0) {
-				searchResults.push({
-					id: '#',
-					title: 'No results found'
-				});
-			}
-
-			self.setState({searchResults});
-		});
-	}
-
-	handleSearchTerm(event) {
-		event.preventDefault();
-		this.setState({searchTerm: event.target.value});
+	handleSearchSubmit(searchTerm) {
+		this.props.searchIndex(searchTerm)
+		.then(searchResults => this.setState({searchTerm, searchResults}));
 	}
 
 	handleCloseResult(event) {
@@ -68,6 +28,18 @@ class Error extends React.Component {
 	}
 
 	render() {
+		let searchResultList;
+		const {searchResults} = this.state;
+
+		if (searchResults.length > 0) {
+			searchResultList = (
+				<SearchResultList
+					onResultClick={this.handleCloseModal}
+					searchResults={searchResults}
+					/>
+			);
+		}
+
 		return (
 			<Index>
 				<div className="podcasting-wrapper">
@@ -78,24 +50,20 @@ class Error extends React.Component {
 								<p>You’ve managed to find yourself on a page that doesn’t exist! Feel free to use the search box below, or hit the back button.</p>
 							</section>
 							<div className={styles.searchWrapper}>
-								<form onSubmit={this.handleSearchSubmit}>
-									<div className="form-group">
-										<input
-											type="search"
-											name="search"
-											className="form-control search input-lg"
-											value={this.state.searchTerm}
-											onChange={this.handleSearchTerm}
-											placeholder="Search V100IT..."
-											/>
-									</div>
-								</form>
+								<Search
+									size="large"
+									buttonClass="btn-primary"
+									placeholder="Search V100IT..."
+									onSearchSubmit={this.handleSearchSubmit}
+									/>
 								<SearchResults
 									titleClass={styles.title}
 									containerClass={styles.searchResults}
 									onCloseResults={this.handleCloseResult}
 									searchResults={this.state.searchResults}
-									/>
+									>
+									{searchResultList}
+								</SearchResults>
 							</div>
 						</div>
 					</div>
@@ -105,4 +73,8 @@ class Error extends React.Component {
 	}
 }
 
-export default Error;
+Error.propTypes = {
+	searchIndex: PropTypes.func.isRequired
+};
+
+export default withSearchIndex(Error);

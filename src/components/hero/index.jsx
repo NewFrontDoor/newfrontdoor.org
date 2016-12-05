@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import throttle from 'lodash/throttle';
 import styles from './Hero.scss';
@@ -47,8 +47,8 @@ class Hero extends React.Component {
 }
 
 Hero.propTypes = {
-	mini: React.PropTypes.bool,
-	children: React.PropTypes.node
+	mini: PropTypes.bool,
+	children: PropTypes.node
 };
 
 export default Hero;

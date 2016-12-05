@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import fm from 'front-matter';
 import classNames from 'classnames';
@@ -67,11 +67,11 @@ const DocumentationFeedbackFrom = ({
 };
 
 DocumentationFeedbackFrom.propTypes = {
-	bindInput: React.PropTypes.func,
-	model: React.PropTypes.object,
-	onSubmit: React.PropTypes.func,
-	schema: React.PropTypes.object,
-	onToggleFeedback: React.PropTypes.func
+	bindInput: PropTypes.func,
+	model: PropTypes.object,
+	onSubmit: PropTypes.func,
+	schema: PropTypes.object,
+	onToggleFeedback: PropTypes.func
 };
 
 const DocumentationFeedbackFromContainer = compose(reformed(), validateSchema(fields), util.submitted)(DocumentationFeedbackFrom);
@@ -196,7 +196,7 @@ class Template extends React.Component {
 }
 
 Template.propTypes = {
-	params: React.PropTypes.shape({documentId: React.PropTypes.string}).isRequired
+	params: PropTypes.shape({documentId: PropTypes.string}).isRequired
 };
 
 export default Template;

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
-import lunr from 'lunr';
+import withSearchIndex from '../search-index/index.jsx';
+import Search from '../search/index.jsx';
 import SearchResults from '../search-results/index.jsx';
+import SearchResultList from '../search-result-list/index.jsx';
 import styles from './SearchBar.scss';
 
 const ESCAPE = 27;
@@ -14,86 +16,32 @@ class SearchBar extends React.Component {
 			searchTerm: ''
 		};
 		this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
-		this.handleSearchTerm = this.handleSearchTerm.bind(this);
 		this.handleCloseResults = this.handleCloseResults.bind(this);
 		this.handleCloseModal = this.handleCloseModal.bind(this);
-		this.mountSearchInput = this.mountSearchInput.bind(this);
 		this.handleEscKey = this.handleEscKey.bind(this);
 	}
 
-	mountSearchInput(c) {
-		this.searchInput = c;
-	}
-
-	componentDidUpdate() {
-
-	}
+	componentDidUpdate() {}
 
 	componentDidMount() {
 		window.addEventListener('keydown', this.handleEscKey, false);
-		if (window.matchMedia('(min-width: 992px)').matches) {
-			this.searchInput.focus();
-		}
 	}
 
 	componentWillUnmount() {
 		window.removeEventListener('keydown', this.handleEscKey, false);
 	}
 
-	get searchIndex() {
-		const self = this;
-		return new Promise(resolve => {
-			if (self.__searchIndex) {
-				resolve({
-					index: self.__searchIndex,
-					data: self.__searchData
-				});
-			} else {
-				require.ensure([], () => {
-					self.__searchIndex = lunr.Index.load(require('../../search/search-index.json'));
-					self.__searchData = require('../../search/search-data.json');
-
-					resolve({
-						index: self.__searchIndex,
-						data: self.__searchData
-					});
-				});
-			}
-		});
-	}
-
-	handleSearchSubmit(event) {
-		event.preventDefault();
-		this.searchInput.blur();
-
-		this.searchIndex.then(({index, data}) => {
-			const res = index.search(this.state.searchTerm);
-
-			const searchResults = res.map(result => data.items.find(item => item.id === result.ref)).map(result => {
-				// HACK HACK HACK
-				const {id, ...all} = result;
-				return {id: id.replace('content/', ''), ...all};
-			}).slice(0, 3);
-
-			if (searchResults.length === 0) {
-				searchResults.push({
-					id: '#',
-					title: 'No results found'
-				});
-			}
-
-			this.setState({searchResults});
-		});
-	}
-
-	handleSearchTerm(event) {
-		event.preventDefault();
-		this.setState({searchTerm: event.target.value});
+	handleSearchSubmit(searchTerm) {
+		this.props.searchIndex(searchTerm, 3)
+		.then(searchResults => this.setState({searchTerm, searchResults}));
 	}
 
 	handleCloseResults(event) {
 		event.preventDefault();
-		this.setState({searchResults: []});
+		this.setState({
+			searchResults: [],
+			searchTerm: ''
+		});
 	}
 
 	handleCloseModal(event) {
@@ -111,6 +59,18 @@ class SearchBar extends React.Component {
 	}
 
 	render() {
+		let searchResultList;
+		const {searchResults, searchTerm} = this.state;
+
+		if (searchResults.length > 0) {
+			searchResultList = (
+				<SearchResultList
+					onResultClick={this.handleCloseModal}
+					searchResults={searchResults}
+					/>
+			);
+		}
+
 		return (
 			<div className={styles.overlay}>
 				<div className={styles.container}>
@@ -122,36 +82,20 @@ class SearchBar extends React.Component {
 							</a>
 						</h2>
 					</div>
-					<form onSubmit={this.handleSearchSubmit}>
-						<div className="input-group">
-							<label className="sr-only" htmlFor="search">Search</label>
-							<input
-								type="search"
-								name="search"
-								ref={this.mountSearchInput}
-								className={`form-control ${styles.search}`}
-								value={this.state.searchTerm}
-								onChange={this.handleSearchTerm}
-								placeholder="Search..."
-								/>
-							<span className={`input-group-btn ${styles.search}`}>
-								<button className={`btn ${styles.transparent}`} type="submit">
-									<span className="fa fa-search fa-lg"/>
-								</button>
-							</span>
-						</div>
-					</form>
-				</div>
-				<div className={styles.resultsContainer}>
-					<SearchResults
-						containerClass={styles.results}
-						titleClass={styles.title}
-						onCloseResults={this.handleCloseResults}
-						onResultClick={this.handleCloseModal}
-						searchResults={this.state.searchResults}
-						query={this.state.searchTerm}
+					<Search
+						inputClass={styles.searchInput}
+						buttonClass={styles.searchButton}
+						onSearchSubmit={this.handleSearchSubmit}
 						/>
 				</div>
+				<SearchResults
+					containerClass={styles.results}
+					titleClass={styles.title}
+					onCloseResults={this.handleCloseResults}
+					query={searchTerm}
+					>
+					{searchResultList}
+				</SearchResults>
 				<div className={styles.container}>
 					<div className={styles.menu}>
 						<ul className="list-unstyled">
@@ -173,10 +117,10 @@ class SearchBar extends React.Component {
 						</ul>
 					</div>
 					<div className={styles.postscript}>
-						© Vision 100 Resources 2016.<br/>
-						Design by <a href="http://twitter.com/readeral">readeral</a> and <a href="http://twitter.com/barrythepenguin">barrythepenguin</a>.<br/>
-						<a href="mailto:info@vision100.org">info@vision100.org</a>.<br/>
-						ABN: 50 782 030 539.
+						<p>© Vision 100 Resources 2016.</p>
+						<p>Design by <a href="http://twitter.com/readeral">readeral</a> and <a href="http://twitter.com/barrythepenguin">barrythepenguin</a>.</p>
+						<p><a href="mailto:info@vision100.org">info@vision100.org</a>.</p>
+						<p>ABN: 50 782 030 539.</p>
 					</div>
 				</div>
 			</div>
@@ -185,7 +129,8 @@ class SearchBar extends React.Component {
 }
 
 SearchBar.propTypes = {
-	onClose: React.PropTypes.func.isRequired
+	searchIndex: PropTypes.func.isRequired,
+	onClose: PropTypes.func.isRequired
 };
 
-export default SearchBar;
+export default withSearchIndex(SearchBar);

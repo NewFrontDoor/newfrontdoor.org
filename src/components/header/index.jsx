@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import throttle from 'lodash/throttle';
@@ -82,8 +82,8 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-	size: React.PropTypes.oneOf(['mini', 'full']),
-	children: React.PropTypes.node
+	size: PropTypes.oneOf(['mini', 'full']),
+	children: PropTypes.node
 };
 
 export default Header;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import classnames from 'classnames';
 import styles from './input.scss';
 
@@ -16,15 +16,15 @@ InputText.defaultProps = {
 };
 
 InputText.propTypes = {
-	hasError: React.PropTypes.bool,
-	// id: React.PropTypes.string,
-	label: React.PropTypes.string,
-	name: React.PropTypes.string,
-	onChange: React.PropTypes.func,
-	placeholder: React.PropTypes.string,
-	required: React.PropTypes.bool,
-	value: React.PropTypes.string,
-	width: React.PropTypes.oneOf(['full', 'half'])
+	hasError: PropTypes.bool,
+	// id: PropTypes.string,
+	label: PropTypes.string,
+	name: PropTypes.string,
+	onChange: PropTypes.func,
+	placeholder: PropTypes.string,
+	required: PropTypes.bool,
+	value: PropTypes.string,
+	width: PropTypes.oneOf(['full', 'half'])
 };
 
 export default InputText;

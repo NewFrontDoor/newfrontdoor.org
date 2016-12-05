@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {GatewayDest, GatewayProvider} from 'react-gateway';
 import '../css/main.scss';
 import Footer from '../components/footer/index.jsx';
@@ -14,7 +14,7 @@ const Site = props => (
 );
 
 Site.propTypes = {
-	children: React.PropTypes.element.isRequired
+	children: PropTypes.element.isRequired
 };
 
 export default Site;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import remark from 'remark';
 import {isUndefined} from 'lodash';
 import slug from 'remark-slug';
@@ -12,8 +12,8 @@ const remarkHeading = (component, boundProps = {}) => {
 	return React.createClass({
 		propTypes() {
 			return {
-				id: React.PropTypes.string,
-				children: React.PropTypes.element
+				id: PropTypes.string,
+				children: PropTypes.element
 			};
 		},
 		render() {
@@ -41,8 +41,8 @@ const RemarkLink = props => {
 };
 
 RemarkLink.propTypes = {
-	href: React.PropTypes.string,
-	children: React.PropTypes.node
+	href: PropTypes.string,
+	children: PropTypes.node
 };
 
 export const remarkConfigDefault = {
@@ -78,10 +78,10 @@ export const Markdown = ({style, source, children, remarkConfig}) => {
 };
 
 Markdown.propTypes = {
-	style: React.PropTypes.object,
-	children: React.PropTypes.node,
-	source: React.PropTypes.string,
-	remarkConfig: React.PropTypes.object
+	style: PropTypes.object,
+	children: PropTypes.node,
+	source: PropTypes.string,
+	remarkConfig: PropTypes.object
 };
 
 Markdown.defaultProps = {
@@ -104,9 +104,9 @@ export const Toc = ({source, children, remarkConfig}) => {
 };
 
 Toc.propTypes = {
-	children: React.PropTypes.node,
-	source: React.PropTypes.string,
-	remarkConfig: React.PropTypes.object
+	children: PropTypes.node,
+	source: PropTypes.string,
+	remarkConfig: PropTypes.object
 };
 
 Toc.defaultProps = {
