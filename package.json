@@ -91,7 +91,7 @@
     "mdast-util-toc": "^2.0.0",
     "ngrok": "^2.2.3",
     "node-libs-browser": "^2.0.0",
-    "node-sass": "^3.13.0",
+    "node-sass": "^4.1.1",
     "normalize.css": "^5.0.0",
     "offline-plugin": "^4.5.2",
     "postcss-calc": "^5.3.1",
