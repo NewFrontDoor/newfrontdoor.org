@@ -23,7 +23,9 @@ class Documentation extends React.Component {
 	shouldComponentUpdate() {}
 
 	componentDidMount() {
-		this.handleSearchSubmit(this.state.searchTerm);
+		if (this.state.searchTerm) {
+			this.handleSearchSubmit(this.state.searchTerm);
+		}
 	}
 
 	handleSearchSubmit(searchTerm) {

@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import styles from './Search.scss';
+import classnames from 'classnames';
 
 class Search extends React.Component {
 	constructor() {
@@ -30,12 +30,16 @@ class Search extends React.Component {
 	}
 
 	render() {
-		let inputGroup = 'input-group';
-		const {inputClass, buttonClass, size, placeholder} = this.props;
+		const {inputButton, size, placeholder} = this.props;
 
-		if (size === 'large') {
-			inputGroup += ' input-group-lg';
-		}
+		const inputGroup = classnames({
+			'input-group': inputButton,
+			'input-group-lg': inputButton && size === 'large'
+		});
+
+		const inputClass = classnames(this.props.inputClass, {
+			'input-lg': !inputButton && size === 'large'
+		});
 
 		return (
 			<form onSubmit={this.handleSubmit}>
@@ -48,11 +52,7 @@ class Search extends React.Component {
 						className={`form-control ${inputClass}`}
 						placeholder={placeholder}
 						/>
-					<span className={`input-group-btn ${inputClass}`}>
-						<button className={`btn ${styles.button} ${buttonClass}`} type="submit">
-							<span className="fa fa-search fa-lg"/>
-						</button>
-					</span>
+					{inputButton}
 				</div>
 			</form>
 		);
@@ -61,8 +61,8 @@ class Search extends React.Component {
 
 Search.propTypes = {
 	size: PropTypes.oneOf(['large', 'small']),
+	inputButton: PropTypes.element,
 	inputClass: PropTypes.string,
-	buttonClass: PropTypes.string,
 	onSearchSubmit: PropTypes.func.isRequired,
 	placeholder: PropTypes.string
 };

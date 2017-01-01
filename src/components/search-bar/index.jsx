@@ -71,6 +71,14 @@ class SearchBar extends React.Component {
 			);
 		}
 
+		const inputButton = (
+			<span className={`input-group-btn ${styles.searchInput}`}>
+				<button className={`btn ${styles.searchButton}`} type="submit">
+					<span className="fa fa-search fa-lg"/>
+				</button>
+			</span>
+		);
+
 		return (
 			<div className={styles.overlay}>
 				<div className={styles.container}>
@@ -84,7 +92,7 @@ class SearchBar extends React.Component {
 					</div>
 					<Search
 						inputClass={styles.searchInput}
-						buttonClass={styles.searchButton}
+						inputButton={inputButton}
 						onSearchSubmit={this.handleSearchSubmit}
 						/>
 				</div>
