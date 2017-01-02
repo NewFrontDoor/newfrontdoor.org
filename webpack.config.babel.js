@@ -1,11 +1,12 @@
 /* eslint-env node */
 import fs from 'fs';
 import path from 'path';
-import _ from 'lodash';
-import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
+import {filter, merge, range, union} from 'lodash';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import StaticSiteGeneratorPlugin from 'static-site-generator-webpack-plugin';
 import webpack from 'webpack';
+// import HtmlWebpackPlugin from 'html-webpack-plugin';
+import Visualizer from 'webpack-visualizer-plugin';
 import WebpackNotifierPlugin from 'webpack-notifier';
 import LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
 import OfflinePlugin from 'offline-plugin';
@@ -14,30 +15,12 @@ import {trimExtension} from './lib';
 import packageJson from './package';
 import paths from './config/paths';
 
-const staticPaths = [
-	'/',
-	'/about',
-	'/client/',
-	'/consultation',
-	'/contact',
-	'/control/',
-	'/documentation/',
-	'/elvanto',
-	'/error',
-	'/feature/',
-	'/podcasting',
-	'/registration',
-	'/sparkleshare',
-	'/status/',
-	'/support/',
-	'/training'
-];
-
+const pages = fs.readdirSync(paths.pages.dir).map(page => page === 'index.jsx' ? '/' : `/${page}`);
 const documentation = fs.readdirSync(paths.documentation.dir).map(p => `/documentation/${trimExtension(p)}`);
 const blog = fs.readdirSync(paths.blog.dir).map(p => `/blog/${trimExtension(p)}`);
-const blogPages = _.range(1, Math.ceil(blog.length / 5)).map(i => `/client/${i}`);
+const blogPages = range(1, Math.ceil(blog.length / 5)).map(i => `/client/${i}`);
 
-Reflect.apply(Array.prototype.push, staticPaths, [...blogPages, ...blog, ...documentation]);
+Reflect.apply(Array.prototype.push, pages, [...blogPages, ...blog, ...documentation]);
 
 export default getConfig();
 
@@ -45,24 +28,48 @@ function getConfig() {
 	let config = getCommonConfig();
 
 	if (process.env.NODE_ENV === 'production') {
-		config = _.merge(config, getProdConfig());
+		config = merge(config, getProdConfig());
 	} else {
-		config = _.merge(config, getDevConfig());
+		config = merge(config, getDevConfig());
 	}
 
 	return config;
 }
 
 function getCommonConfig() {
+	// const entry = fromPairs(pages.map(p => [p, [
+	// 	'react-hot-loader/patch',
+	// 	'webpack/hot/only-dev-server',
+	// 	'webpack-dev-server/client?http://0.0.0.0:3100',
+	// 	'./index.jsx',
+	// 	`./pages/${p}/index.jsx`
+	// ]]));
+	//
+	// entry.index = [
+	// 	'react-hot-loader/patch',
+	// 	'webpack/hot/only-dev-server',
+	// 	'webpack-dev-server/client?http://0.0.0.0:3100',
+	// 	'./index.jsx',
+	// 	`./pages/index.jsx`
+	// ];
+	//
+	// entry.critical = './critical.jsx';
+
 	return {
 		context: path.resolve(paths.bundle.src),
 		entry: {
+			commons: [
+				'react-hot-loader/patch',
+				'webpack/hot/only-dev-server',
+				'webpack-dev-server/client?http://localhost:3000'
+			],
 			main: './index.jsx',
 			critical: './critical.jsx'
 		},
+		// entry: omit(entry, 'index.jsx'),
 		output: {
 			filename: '[name].js',
-			chunkFilename: '[name].[chunkhash].chunk.js',
+			chunkFilename: '[name].chunk.js',
 			path: path.resolve(paths.bundle.dest),
 			publicPath: '/',
 			libraryTarget: 'umd'
@@ -71,19 +78,15 @@ function getCommonConfig() {
 			colors: true,
 			reasons: true
 		},
-		resolve: {
-			extensions: ['', '.js', '.json', '.jsx', '.scss']
-		},
 		module: {
-			loaders: [
+			rules: [
 				getJavaScriptLoader(),
 				getReactIconLoader(),
 				getStyleLoader(),
 				getHtmlLoader(),
 				getAssetLoader(),
 				getMarkdownLoader(),
-				getFileLoader(),
-				getJsonLoader()
+				getFileLoader()
 			]
 		}
 	};
@@ -91,29 +94,27 @@ function getCommonConfig() {
 
 function getDevConfig() {
 	return {
-		debug: true,
-		devtool: 'source-map',
-		plugins: _.union(getCommonPlugins(), [
-			new BrowserSyncPlugin({
-				host: 'localhost',
-				port: '3000',
-				proxy: 'http://localhost:3100/'
-			}, {
-				reload: false
-			}),
-			new WebpackNotifierPlugin()
+		devtool: 'cheap-module-eval-source-map',
+		plugins: union(getCommonPlugins(), [
+			new webpack.HotModuleReplacementPlugin(),
+			new webpack.NamedModulesPlugin(),
+			new WebpackNotifierPlugin(),
+			new Visualizer()
 		])
 	};
 }
 
 function getProdConfig() {
 	return {
-		plugins: _.union(getCommonPlugins(), [
+		plugins: union(getCommonPlugins(), [
 			new webpack.optimize.DedupePlugin(),
 			new webpack.optimize.UglifyJsPlugin(),
-			new webpack.optimize.OccurenceOrderPlugin(),
 			new webpack.optimize.AggressiveMergingPlugin(),
-			new LodashModuleReplacementPlugin()
+			new LodashModuleReplacementPlugin(),
+			new webpack.NormalModuleReplacementPlugin(
+				/^\.\.\/\.\.\/routes\/index$/,
+				'../../routes/async'
+			)
 		])
 	};
 }
@@ -121,7 +122,7 @@ function getProdConfig() {
 function getJavaScriptLoader() {
 	return {
 		test: /\.jsx?$/,
-		loaders: ['babel'], // , 'xo'],
+		use: ['babel-loader'], // , 'xo'],
 		exclude: /node_modules/
 	};
 }
@@ -129,24 +130,19 @@ function getJavaScriptLoader() {
 function getReactIconLoader() {
 	return {
 		test: /react-icons\/(.)*(.js)$/,
-		loader: 'babel-loader',
-		query: {
-			presets: ['es2015', 'react']
-		}
-	};
-}
-
-function getJsonLoader() {
-	return {
-		test: /\.json$/,
-		loaders: ['json']
+		use: [{
+			loader: 'babel-loader',
+			options: {
+				presets: ['es2015', 'react']
+			}
+		}]
 	};
 }
 
 function getHtmlLoader() {
 	return {
 		test: /\.html$/,
-		loaders: ['html'],
+		use: ['html-loader'],
 		exclude: /node_modules/
 	};
 }
@@ -154,7 +150,7 @@ function getHtmlLoader() {
 function getMarkdownLoader() {
 	return {
 		test: /\.md$/,
-		loaders: ['raw'],
+		use: ['raw-loader'],
 		exclude: /node_modules/
 	};
 }
@@ -162,7 +158,17 @@ function getMarkdownLoader() {
 function getStyleLoader() {
 	return {
 		test: /\.scss$/,
-		loader: ExtractTextPlugin.extract('style', ['css?localIdentName=[name]__[local]___[hash:base64:5]', 'postcss', 'sass'].join('!')),
+		loader: ExtractTextPlugin.extract({
+			fallbackLoader: 'style-loader',
+			loader: [{
+				loader: 'css-loader',
+				options: 'localIdentName=[name]__[local]___[hash:base64:5]'
+			}, {
+				loader: 'postcss-loader'
+			}, {
+				loader: 'sass-loader'
+			}]
+		}),
 		exclude: /node_modules/
 	};
 }
@@ -171,7 +177,12 @@ function getAssetLoader() {
 	return {
 		test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
 		exclude: /favicon\.png$/,
-		loader: 'url?limit=10000'
+		use: [{
+			loader: 'url-loader',
+			options: {
+				limit: 10000
+			}
+		}]
 	};
 }
 
@@ -179,25 +190,45 @@ function getFileLoader() {
 	return {
 		test: /\.(mpeg|mp4|webm|ogv)(\?.+)?$/,
 		exclude: /node_modules/,
-		loader: 'file'
+		use: ['file-loader']
 	};
 }
 
 function getCommonPlugins() {
-	return _.filter([
+	// const plugins = pages.map(page => {
+	// 	if (page === 'index.jsx') {
+	// 		return new HtmlWebpackPlugin({
+	// 			inject: true,
+	// 			chunks: ['index'],
+	// 			filename: `index.html`,
+	// 			templateContent: templateContent()
+	// 		});
+	// 	}
+	//
+	// 	return new HtmlWebpackPlugin({
+	// 		inject: true,
+	// 		chunks: [page],
+	// 		filename: `${page}/index.html`,
+	// 		templateContent: templateContent()
+	// 	});
+	// });
+
+	return filter([
 		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+			'process.env.NODE_ENV': process.env.NODE_ENV ? JSON.stringify(process.env.NODE_ENV) : JSON.stringify('development'),
 			VERSION: JSON.stringify(packageJson.version)
 		}),
+		// ...plugins,
 		new webpack.optimize.CommonsChunkPlugin({
 			children: true,
 			minChunks: 2,
 			async: true
 		}),
-		new ExtractTextPlugin('[name].css', {
+		new ExtractTextPlugin({
+			filename: '[name].css',
 			allChunks: true
 		}),
-		new StaticSiteGeneratorPlugin('main', staticPaths, {}, {window: {}}),
+		new StaticSiteGeneratorPlugin('main', pages, {}, {window: {}}),
 		new OfflinePlugin({
 			relativePaths: false,
 			publicPath: '/',
@@ -214,3 +245,8 @@ function getCommonPlugins() {
 		})
 	]);
 }
+
+// function templateContent() {
+// 	const html = fs.readFileSync(paths.template.src).toString();
+// 	return html;
+// }

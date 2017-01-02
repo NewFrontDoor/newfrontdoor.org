@@ -1,53 +1,36 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
-
-import Alert from '../../components/alert/index.jsx';
-import Blog from '../../components/blog/index.jsx';
-import Documentation from '../../components/documentation/index.jsx';
-import Template from '../../components/documentation/template.jsx';
-import About from '../../routes/about.jsx';
-import Client from '../../routes/client.jsx';
-import Consultation from '../../routes/consultation.jsx';
-import Contact from '../../routes/contact.jsx';
-import Control from '../../routes/control.jsx';
-import Feature from '../../routes/feature.jsx';
-import Home from '../../routes/home.jsx';
-import Site from '../../routes/site.jsx';
-import Status from '../../routes/status.jsx';
-import Support from '../../routes/support.jsx';
-import Training from '../../routes/training.jsx';
-import Registration from '../../routes/registration.jsx';
-import Podcasting from '../../routes/podcasting.jsx';
-import Elvanto from '../../routes/elvanto.jsx';
-import Sparkleshare from '../../routes/sparkleshare.jsx';
-import Error from '../../routes/error.jsx';
+import {GatewayDest, GatewayProvider} from 'react-gateway';
+import Footer from '../../components/footer/index.jsx';
+import * as Routes from '../../routes/index';
 
 const Layout = () => (
-	<div id="application" className="container">
-		<Site>
+	<GatewayProvider>
+		<div id="application" className="container">
 			<Switch>
-				<Route exact path="/" component={Home}/>
-				<Route exact path="/client/:page?" component={Client}/>
-				<Route exact path="/blog/:blogId" component={Blog}/>
-				<Route exact path="/support" component={Support}/>
-				<Route exact path="/feature" component={Feature}/>
-				<Route exact path="/documentation" component={Documentation}/>
-				<Route exact path="/documentation/:documentId" component={Template}/>
-				<Route exact path="/status" component={Status}/>
-				<Route exact path="/control" component={Control}/>
-				<Route exact path="/about" component={About}/>
-				<Route exact path="/contact" component={Contact}/>
-				<Route exact path="/training" component={Training}/>
-				<Route exact path="/consultation" component={Consultation}/>
-				<Route exact path="/registration" component={Registration}/>
-				<Route exact path="/podcasting" component={Podcasting}/>
-				<Route exact path="/alert" component={Alert}/>
-				<Route exact path="/elvanto" component={Elvanto}/>
-				<Route exact path="/sparkleshare" component={Sparkleshare}/>
-				<Route component={Error}/>
+				<Route exact path="/" component={Routes.Home}/>
+				<Route exact path="/about" component={Routes.About}/>
+				<Route exact path="/blog/:blogId" component={Routes.Blog}/>
+				<Route exact path="/client/:page?" component={Routes.Client}/>
+				<Route exact path="/consultation" component={Routes.Consultation}/>
+				<Route exact path="/contact" component={Routes.Contact}/>
+				<Route exact path="/control" component={Routes.Control}/>
+				<Route exact path="/documentation/:documentId" component={Routes.DocumentationTemplate}/>
+				<Route exact path="/documentation" component={Routes.Documentation}/>
+				<Route exact path="/elvanto" component={Routes.Elvanto}/>
+				<Route exact path="/feature" component={Routes.Feature}/>
+				<Route exact path="/podcasting" component={Routes.Podcasting}/>
+				<Route exact path="/registration" component={Routes.Registration}/>
+				<Route exact path="/sparkleshare" component={Routes.Sparkleshare}/>
+				<Route exact path="/status" component={Routes.Status}/>
+				<Route exact path="/support" component={Routes.Support}/>
+				<Route exact path="/training" component={Routes.Training}/>
+				<Route component={Routes.Error}/>
 			</Switch>
-		</Site>
-	</div>
+			<Footer/>
+			<GatewayDest name="modal"/>
+		</div>
+	</GatewayProvider>
 );
 
 export default Layout;

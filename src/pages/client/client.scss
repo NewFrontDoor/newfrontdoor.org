@@ -1,0 +1,10 @@
+@import '../../css/variables';
+
+:local .cards {
+	display: none;
+	margin: 20px;
+
+	@media (min-width: $screen-sm-min) {
+		lost-center: 95%;
+	}
+}

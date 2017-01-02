@@ -8,6 +8,7 @@ const Head = ({title}) => (
 		<title>{title}</title>
 		<link rel="stylesheet" type="text/css" href="/main.css"/>
 		<link rel="shortcut icon" href="http://vision100.org/sites/vision100.org/files/v100it-logo-favicon.png"/>
+		<script src="/critical.js"/>
 	</head>
 );
 

@@ -1,29 +1,33 @@
 import webpack from 'webpack';
-import WebpackDevServer from 'webpack-dev-server';
-import gulpLoadPlugins from 'gulp-load-plugins';
+import browserSync from 'browser-sync';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
 
 import config from '../webpack.config.babel';
 import {compileLogger} from '../lib';
-
-const $ = gulpLoadPlugins();
 
 const result = done => (err, stats) => {
 	compileLogger(err, stats);
 	done();
 };
 
-const listen = err => {
-	if (err) {
-		throw new $.util.PluginError('webpack-dev-server', err);
-	}
-
-	$.util.log('[webpack-dev-server]', 'http://localhost:3000');
-};
-
 export default done => {
 	if (process.env.NODE_ENV === 'production') {
 		webpack(config, result(done));
 	} else {
-		new WebpackDevServer(webpack(config), {}).listen(3100, 'localhost', listen);
+		const bundler = webpack(config);
+		browserSync({
+			server: {
+				baseDir: 'app',
+
+				middleware: [
+					webpackDevMiddleware(bundler, {
+						publicPath: config.output.publicPath,
+						stats: {colors: true}
+					}),
+					webpackHotMiddleware(bundler)
+				]
+			}
+		});
 	}
 };

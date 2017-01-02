@@ -1,9 +1,14 @@
 {
 	"plugins": [
-		"lodash"
+		"syntax-dynamic-import"
 	],
 	"presets": [
-		"es2015",
+		[
+			"es2015",
+			{
+				"modules": false
+			}
+		],
 		"react",
 		"stage-2"
 	],
@@ -13,6 +18,11 @@
 				"transform-react-constant-elements",
 				"transform-react-inline-elements",
 				"transform-react-remove-prop-types"
+			]
+		},
+		"development": {
+			"plugins": [
+				"react-hot-loader/babel"
 			]
 		}
 	}
