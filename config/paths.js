@@ -21,6 +21,9 @@ export default {
 		dir: src('content'),
 		src: src('content/**/*.md')
 	},
+	pages: {
+		dir: src('pages')
+	},
 	documentation: {
 		dir: src('documentation'),
 		src: src('documentation/**/*')
@@ -28,6 +31,9 @@ export default {
 	blog: {
 		dir: src('blog'),
 		src: src('blog/**/*')
+	},
+	template: {
+		src: src('index.html')
 	},
 	style: {
 		src: src('css/main.scss'),

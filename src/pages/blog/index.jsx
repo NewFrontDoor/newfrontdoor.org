@@ -3,8 +3,8 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import fm from 'front-matter';
 import moment from 'moment';
 import {withRouter} from 'react-router-dom';
-import Index from '../index/index.jsx';
-import {Markdown} from '../markdown/index.jsx';
+import Index from '../../components/index/index.jsx';
+import {Markdown} from '../../components/markdown/index.jsx';
 import styles from './Blog.scss';
 
 const blogs = {
@@ -71,4 +71,4 @@ Blog.propTypes = {
 	})
 };
 
-export default withRouter(Blog);
+export default Blog;

@@ -1,8 +1,8 @@
 import React from 'react';
 import fm from 'front-matter';
-import Index from '../components/index/index.jsx';
-import {Markdown} from '../components/markdown/index.jsx';
-import content from '../content/elvanto.md';
+import Index from '../../components/index/index.jsx';
+import {Markdown} from '../../components/markdown/index.jsx';
+import content from '../../content/elvanto.md';
 
 const {body, attributes} = fm(content);
 

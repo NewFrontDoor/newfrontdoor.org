@@ -1,9 +1,9 @@
 import React, {PropTypes} from 'react';
-import Search from '../components/search/index.jsx';
-import withSearchIndex from '../components/search-index/index.jsx';
-import SearchResults from '../components/search-results/index.jsx';
-import SearchResultList from '../components/search-result-list/index.jsx';
-import Index from '../components/index/index.jsx';
+import Search from '../../components/search/index.jsx';
+import withSearchIndex from '../../components/search-index/index.jsx';
+import SearchResults from '../../components/search-results/index.jsx';
+import SearchResultList from '../../components/search-result-list/index.jsx';
+import Index from '../../components/index/index.jsx';
 import styles from './error.scss';
 
 class Error extends React.Component {

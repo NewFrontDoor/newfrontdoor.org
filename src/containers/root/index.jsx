@@ -4,7 +4,7 @@ import Head from '../../components/head/index.jsx';
 let devServer = null;
 
 if (process.env.NODE_ENV !== 'production') {
-	devServer = <script src="http://localhost:3000/webpack-dev-server.js"/>;
+	devServer = <script src="http://localhost:3000/commons.js"/>;
 }
 
 const Root = ({children}) => (
@@ -14,7 +14,6 @@ const Root = ({children}) => (
 			<div id="content">
 				{children}
 			</div>
-			<script src="/critical.js"/>
 			{devServer}
 			<script src="/main.js"/>
 		</body>

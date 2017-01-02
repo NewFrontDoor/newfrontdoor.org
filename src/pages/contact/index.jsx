@@ -3,10 +3,10 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import reformed from 'react-reformed';
 import compose from 'react-reformed/lib/compose';
 import validateSchema from 'react-reformed/lib/validateSchema';
-import Popover from '../components/popover/index.jsx';
-import Collapse from '../components/collapse/index.jsx';
-import Index from '../components/index/index.jsx';
-import {Form, util, InputText, InputEmail} from '../components/form/index.jsx';
+import Popover from '../../components/popover/index.jsx';
+import Collapse from '../../components/collapse/index.jsx';
+import Index from '../../components/index/index.jsx';
+import {Form, util, InputText, InputEmail} from '../../components/form/index.jsx';
 import styles from './contact.scss';
 
 const fields = {

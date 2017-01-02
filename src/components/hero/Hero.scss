@@ -45,7 +45,7 @@
 :local .content {
 	width: 75vw;
 	margin-top: 20vh;
-	transition: opacity 0.5 linear;
+	transition: opacity 5ms linear;
 	border-image: url('../../images/outline1.png') 7% 30 15 stretch;
 	border-style: solid;
 	border-color: $primary-highlight;
@@ -62,6 +62,14 @@
 		@media (min-width: $screen-md-min) {
 			font-size: 200%;
 			line-height: 1.5lh;
+		}
+
+		&:first-child {
+			margin-bottom: 0;
+		}
+
+		&:last-child {
+			margin-top: 0;
 		}
 	}
 

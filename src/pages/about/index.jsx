@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {Element} from 'react-scroll';
-import TeamMember from '../components/team-member/index.jsx';
-import Index from '../components/index/index.jsx';
-import content from '../content';
+import TeamMember from '../../components/team-member/index.jsx';
+import Index from '../../components/index/index.jsx';
+import content from '../../content';
 
 const About = () => (
 	<Index>

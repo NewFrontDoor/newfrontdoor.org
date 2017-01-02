@@ -8,7 +8,7 @@ export default {
 	boardMembers,
 	teamMembers,
 	hero: {
-		tagline: '<h1>Can a church really do IT <em>effectively?</em><br/>Come on, we’ll show you.</h1>'
+		tagline: '# Can a church really do IT _effectively?_\n# Come on, we’ll show you'
 	},
 	banners: [{
 		display: 'visible',

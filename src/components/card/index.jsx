@@ -14,7 +14,7 @@ const Card = ({background, imagePadding, link, image, name, children}) => {
 
 	return (
 		<div className={styles.card} style={style}>
-			<Link to={link}>
+			<Link to={link || ''}>
 				<h2 hidden>{name}</h2>
 				<img src={imageContext(image)} style={imageStyle}/>
 				<p>{children}</p>
