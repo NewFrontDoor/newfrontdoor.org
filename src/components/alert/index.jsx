@@ -1,5 +1,4 @@
 import React, {PropTypes} from 'react';
-import '../../css/main.scss';
 import styles from './Alert.scss';
 
 const Alert = props => (

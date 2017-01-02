@@ -1,21 +1,20 @@
 import React, {PropTypes} from 'react';
-
 import fm from 'front-matter';
 import {withRouter} from 'react-router-dom';
+import Alert from '../../components/alert/index.jsx';
+import Card from '../../components/card/index.jsx';
+import Hero from '../../components/hero/index.jsx';
+import Index from '../../components/index/index.jsx';
+import {Markdown} from '../../components/markdown/index.jsx';
+import Post from '../../components/post/index.jsx';
+import Pagination from '../../components/pagination/index.jsx';
 
-import Alert from '../components/alert/index.jsx';
-import Card from '../components/card/index.jsx';
-import Hero from '../components/hero/index.jsx';
-import Index from '../components/index/index.jsx';
-import {Markdown} from '../components/markdown/index.jsx';
-import Post from '../components/post/index.jsx';
-import Pagination from '../components/pagination/index.jsx';
-import content from '../content';
+import content from '../../content';
 import styles from './client.scss';
 
 const blog = {
 	get context() {
-		return require.context('../blog', true, /^.*\.md$/);
+		return require.context('../../blog', true, /^.*\.md$/);
 	},
 	get posts() {
 		return this.context.keys().sort().reverse();
@@ -126,4 +125,4 @@ Client.propTypes = {
 	})
 };
 
-export default withRouter(Client);
+export default Client;

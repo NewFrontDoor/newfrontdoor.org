@@ -7,15 +7,15 @@ import reformed from 'react-reformed';
 import compose from 'react-reformed/lib/compose';
 import validateSchema from 'react-reformed/lib/validateSchema';
 import FaAngleDown from 'react-icons/fa/angle-down';
-import Popover from '../popover/index.jsx';
-import Index from '../index/index.jsx';
-import {Markdown, Toc} from '../markdown/index.jsx';
-import {Form, util, InputEmail, InputTextArea} from '../form/index.jsx';
-import styles from './Template.scss';
+import Popover from '../../../components/popover/index.jsx';
+import Index from '../../../components/index/index.jsx';
+import {Markdown, Toc} from '../../../components/markdown/index.jsx';
+import {Form, util, InputEmail, InputTextArea} from '../../../components/form/index.jsx';
+import styles from './template.scss';
 
 const documentation = {
 	get context() {
-		return require.context('../../documentation', true, /^.*\.md$/);
+		return require.context('../../../documentation', true, /^.*\.md$/);
 	},
 	get documents() {
 		return this.context.keys();

@@ -8,11 +8,11 @@ import FaLock from 'react-icons/fa/lock';
 import FaChain from 'react-icons/fa/chain';
 import FaVideoCamera from 'react-icons/fa/video-camera';
 import FaLightbulbO from 'react-icons/fa/lightbulb-o';
-import withSearchIndex from '../search-index/index.jsx';
-import SearchResults from '../search-results/index.jsx';
-import SearchResultList from '../search-result-list/index.jsx';
-import Index from '../index/index.jsx';
-import Search from '../search/index.jsx';
+import withSearchIndex from '../../components/search-index/index.jsx';
+import SearchResults from '../../components/search-results/index.jsx';
+import SearchResultList from '../../components/search-result-list/index.jsx';
+import Index from '../../components/index/index.jsx';
+import Search from '../../components/search/index.jsx';
 import styles from './documentation.scss';
 
 class Documentation extends React.Component {
@@ -203,4 +203,4 @@ Documentation.propTypes = {
 	searchIndex: PropTypes.func.isRequired
 };
 
-export default withRouter(withSearchIndex(Documentation));
+export default withSearchIndex(Documentation);
