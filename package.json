@@ -111,7 +111,7 @@
     "static-site-generator-webpack-plugin": "^3.1.0",
     "style-loader": "^0.13.1",
     "stylelint": "^7.6.0",
-    "stylelint-config-standard": "^15.0.0",
+    "stylelint-config-standard": "^16.0.0",
     "through2": "^2.0.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.3",
