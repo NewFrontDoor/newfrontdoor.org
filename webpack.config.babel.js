@@ -77,6 +77,7 @@ function getCommonConfig() {
 		module: {
 			loaders: [
 				getJavaScriptLoader(),
+				getReactIconLoader(),
 				getStyleLoader(),
 				getHtmlLoader(),
 				getAssetLoader(),
@@ -122,6 +123,16 @@ function getJavaScriptLoader() {
 		test: /\.jsx?$/,
 		loaders: ['babel'], // , 'xo'],
 		exclude: /node_modules/
+	};
+}
+
+function getReactIconLoader() {
+	return {
+		test: /react-icons\/(.)*(.js)$/,
+		loader: 'babel-loader',
+		query: {
+			presets: ['es2015', 'react']
+		}
 	};
 }
 
