@@ -1,5 +1,8 @@
 import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
+import FaSearch from 'react-icons/fa/search';
+import FaTimesCircle from 'react-icons/fa/times-circle';
+import Button from '../button/index.jsx';
 import withSearchIndex from '../search-index/index.jsx';
 import Search from '../search/index.jsx';
 import SearchResults from '../search-results/index.jsx';
@@ -74,7 +77,7 @@ class SearchBar extends React.Component {
 		const inputButton = (
 			<span className={`input-group-btn ${styles.searchInput}`}>
 				<button className={`btn ${styles.searchButton}`} type="submit">
-					<span className="fa fa-search fa-lg"/>
+					<FaSearch heigh="1.5em" width="1.5em"/>
 				</button>
 			</span>
 		);
@@ -85,9 +88,9 @@ class SearchBar extends React.Component {
 					<div className={styles.title}>
 						<h2>
 							Search menu
-							<a onClick={this.handleCloseModal}>
-								<span className="fa fa-times-circle"/>
-							</a>
+							<Button appearance="blank" additionalClasses={styles.close} onClick={this.handleCloseModal}>
+								<FaTimesCircle/>
+							</Button>
 						</h2>
 					</div>
 					<Search

@@ -1,13 +1,22 @@
 import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 import ReactHeight from 'react-height';
+import FaTimesCircle from 'react-icons/fa/times-circle';
+import Button from '../button/index.jsx';
 import styles from './SearchResults.scss';
 
 const SearchResults = ({onCloseResults, containerClass, children, titleClass, query}) => {
 	return (
 		<div className={containerClass}>
 			<div className={titleClass}>
-				<h3> Results <a onClick={onCloseResults}> <span className="fa fa-times-circle"/> </a> </h3>
+				<h3>
+					Results
+					<span style={{float: 'right'}}>
+						<Button appearance="blank" onClick={onCloseResults}>
+							<FaTimesCircle/>
+						</Button>
+					</span>
+				</h3>
 			</div>
 			{children}
 			{query && <div className={`small ${styles.nav}`}>

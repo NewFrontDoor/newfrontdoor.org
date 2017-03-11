@@ -1,4 +1,4 @@
-@import "../../css/variables";
+@import '../../css/variables';
 
 :local .content {
 	flex: 1 0 auto;
@@ -9,8 +9,8 @@
 }
 
 :local .enterActive {
-	opacity: 1;
 	transition: opacity 300ms ease-in-out;
+	opacity: 1;
 }
 
 :local .leave {
@@ -18,6 +18,6 @@
 }
 
 :local .leaveActive {
-	opacity: 0.01;
 	transition: opacity 300ms ease-in-out;
+	opacity: 0.01;
 }

@@ -1,4 +1,4 @@
-@import "../../css/variables";
+@import '../../css/variables';
 
 :local .product {
 	lost-flex-container: row;
@@ -21,6 +21,7 @@
 
 :local .image {
 	lost-column: 1/1;
+
 	img {
 		width: 40%;
 	}
@@ -28,6 +29,7 @@
 	@media (min-width: $screen-md-min) {
 		lost-align: center;
 		lost-column: 1/2;
+
 		img {
 			width: auto;
 		}

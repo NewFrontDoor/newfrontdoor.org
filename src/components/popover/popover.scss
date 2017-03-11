@@ -1,22 +1,22 @@
-@import "../../css/variables";
+@import '../../css/variables';
 
 :local .modal {
 	position: absolute;
 	top: 20%;
-	left: 30px;
 	right: 30px;
 	bottom: auto;
+	left: 30px;
+	padding: 20px;
 	border: 1px solid #ccc;
+	border-radius: 4px;
+	outline: none;
 	background: #fff;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
-	border-radius: 4px;
-	outline: none;
-	padding: 20px;
 
 	@media (min-width: $screen-md-min) {
-		left: 25%;
 		right: 25%;
+		left: 25%;
 	}
 }
 
@@ -38,9 +38,25 @@
 :local .backdrop {
 	position: fixed;
 	top: 0;
-	left: 0;
 	right: 0;
 	bottom: 0;
+	left: 0;
 	background-color: rgba(255, 255, 255, 0.75);
 	z-index: 15;
+}
+
+:local .stack {
+	display: inline-block;
+	position: relative;
+	width: 2em;
+	height: 2em;
+	line-height: 2em;
+	vertical-align: middle;
+
+	> * {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		text-align: center;
+	}
 }

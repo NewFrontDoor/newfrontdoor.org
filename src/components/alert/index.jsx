@@ -1,15 +1,15 @@
 import React, {PropTypes} from 'react';
 import '../../css/main.scss';
-import './Alert.scss';
+import styles from './Alert.scss';
 
 const Alert = props => (
-	<div className={props.type}>
+	<div className={styles[props.type]}>
 		{props.children}
 	</div>
 );
 
 Alert.propTypes = {
-	type: PropTypes.string,
+	type: PropTypes.oneOf(['warning', 'announcement']),
 	children: PropTypes.node
 };
 

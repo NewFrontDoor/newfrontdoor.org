@@ -1,8 +1,6 @@
-@import "../../css/variables";
+@import '../../css/variables';
 
 :local .overlay {
-	font-family: $font-family-sans-serif;
-	text-transform: uppercase;
 	display: block;
 	position: fixed;
 	top: 0;
@@ -11,8 +9,10 @@
 	height: 100vh;
 	padding-top: 1lh;
 	background-color: rgba($text-color, 0.8);
-	z-index: 10;
 	color: $search-overlay;
+	font-family: $font-family-sans-serif;
+	text-transform: uppercase;
+	z-index: 10;
 	// backdrop-filter: blur(5px);
 
 	@media (min-width: $screen-md-min) {
@@ -21,21 +21,23 @@
 		border-right: 3px solid rgba(darken($text-color, 80%), 0.4);
 	}
 
-	a {
-		color: white;
-	}
-
 	form {
 		width: 100%;
-		color: black;
+		color: #000;
 	}
+}
+
+:local .close {
+	margin-right: 20px;
+	float: right;
+	color: $search-overlay;
 }
 
 :local .container {
 	padding: 0 0.5lh;
+	border-width: 0;
 	border-style: solid;
 	border-color: rgba(darken($text-color, 80%), 0.4);
-	border-width: 0;
 }
 
 :local .container:first-child {
@@ -48,9 +50,9 @@
 
 :local .menu {
 	flex: 1 0 auto;
+	margin: 1lh 0 2lh;
 	color: $search-overlay;
 	font-size: $font-size-h3;
-	margin: 1lh 0 2lh;
 
 	a {
 		color: $search-overlay;
@@ -71,29 +73,19 @@
 		margin-bottom: 0.5lh;
 		color: $search-overlay;
 	}
-
-	a {
-		float: right;
-		margin-right: 20px;
-
-		span {
-			cursor: pointer;
-			color: $search-overlay;
-		}
-	}
 }
 
 :local .searchInput {
+	border: 0;
 	background: rgba(lighten($text-color, 70%), 0.1);
-	border: none;
-	color: white;
+	color: #fff;
 }
 
 :local .searchButton {
 	width: 100%;
-	border: none;
-	color: white;
+	border: 0;
 	background-color: transparent;
+	color: #fff;
 	line-height: 0.5;
 	text-align: center;
 }

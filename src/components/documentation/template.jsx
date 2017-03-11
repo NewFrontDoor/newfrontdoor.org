@@ -6,6 +6,7 @@ import {StickyContainer, Sticky} from 'react-sticky';
 import reformed from 'react-reformed';
 import compose from 'react-reformed/lib/compose';
 import validateSchema from 'react-reformed/lib/validateSchema';
+import FaAngleDown from 'react-icons/fa/angle-down';
 import Popover from '../popover/index.jsx';
 import Index from '../index/index.jsx';
 import {Markdown, Toc} from '../markdown/index.jsx';
@@ -142,19 +143,19 @@ class Template extends React.Component {
 
 	render() {
 		const {isModalOpen} = this.state;
-		const docTOC = classNames('toc-sidebar', {
-			visible: !this.state.openFeedback
+		const docTOC = classNames(styles.toc, {
+			[styles.tocVisible]: !this.state.openFeedback
 		});
 
-		const docFeedback = classNames('feedback-sidebar', {
-			visible: this.state.openFeedback
+		const docFeedback = classNames(styles.feedback, {
+			[styles.feedbackVisible]: this.state.openFeedback
 		});
 
 		return (
 			<Index>
 				<StickyContainer>
-					<div className="documentation-wrapper">
-						<div className="documentation-content">
+					<div className={styles.wrapper}>
+						<div className={styles.content}>
 							<h1>{this.document.title}</h1>
 							<h1>
 								<small>{this.document.sub_title}</small>
@@ -163,7 +164,7 @@ class Template extends React.Component {
 								{this.document.body}
 							</Markdown>
 						</div>
-						<div className="documentation-sidebar mob-hidden">
+						<div className={styles.sidebar}>
 							<Sticky stickyStyle={{marginTop: 144}} topOffset={-144} bottomOffset={168}>
 								<div className={docTOC}>
 									<h3>Contents</h3>
@@ -172,12 +173,17 @@ class Template extends React.Component {
 									</Toc>
 								</div>
 								<div className={docFeedback}>
-									<h3>Give feedback</h3>
-									<a href="#" onClick={this.handleToggleFeedback}>
-										<span>Suggest a revision to this document.</span>
-										<span className="fa fa-angle-down fa-3x"/>
-									</a>
-									<DocumentationFeedbackFromContainer getFormRef={this.setFormRef} onSubmit={this.handleSubmit} onToggleFeedback={this.handleToggleFeedback}/>
+									{this.state.openFeedback ? (
+										<DocumentationFeedbackFromContainer getFormRef={this.setFormRef} onSubmit={this.handleSubmit} onToggleFeedback={this.handleToggleFeedback}/>
+									) : (
+										<span>
+											<h3>Give feedback</h3>
+											<a href="#" onClick={this.handleToggleFeedback}>
+												<span>Suggest a revision to this document.</span>
+												<FaAngleDown height="1.5em" width="1.5em"/>
+											</a>
+										</span>
+									)}
 								</div>
 							</Sticky>
 						</div>

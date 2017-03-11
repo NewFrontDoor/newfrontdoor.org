@@ -1,25 +1,25 @@
-@import "../../css/variables";
+@import '../../css/variables';
 
 :local .feature {
 	lost-center: 100%;
 	position: relative;
-	color: $footer-text;
 	background-color: $text-color;
+	color: $footer-text;
 
 	@media (min-width: $screen-md-min) {
-		text-shadow: 1px 1px 2px black;
-		background-image: url("../../images/video-background.png");
+		background-image: url('../../images/video-background.png');
 		background-repeat: no-repeat;
 		background-size: cover;
+		text-shadow: 1px 1px 2px #000;
 	}
 }
 
 :local .video {
 	display: none;
 	position: absolute;
-	overflow: hidden;
 	min-width: 100%;
 	min-height: 100%;
+	overflow: hidden;
 
 	video {
 		position: absolute;
@@ -36,8 +36,8 @@
 }
 
 :local .social {
-	text-shadow: none;
 	margin-bottom: 15px;
+	text-shadow: none;
 	lost-flex-container: row;
 
 	div {
@@ -46,7 +46,7 @@
 	}
 
 	a {
-		color: white;
+		color: #fff;
 	}
 }
 
@@ -86,9 +86,9 @@
 		height: 1px;
 		margin: -1px;
 		padding: 0;
-		overflow: hidden;
 		clip: rect(0, 0, 0, 0);
 		border: 0;
+		overflow: hidden;
 	}
 }
 
@@ -96,7 +96,7 @@
 	lost-column: 1/1;
 
 	@media (min-width: $screen-md-min) {
-		border: none;
+		border: 0;
 	}
 }
 
@@ -107,8 +107,8 @@
 :local .button {
 	margin-top: 20px;
 	padding: 5px 15px;
+	border-style: 0;
 	border-radius: 0;
-	border-style: none;
-	color: white;
-	background-color: black;
+	background-color: #000;
+	color: #fff;
 }

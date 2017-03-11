@@ -1,11 +1,18 @@
 import React, {PropTypes} from 'react';
+import classnames from 'classnames';
 import styles from './Collapse.scss';
 
-const Collapse = props => (
-	<div className={props.isOpened	? `${styles.toggle}  ${styles.visible}`	: styles.toggle}>
-		{props.children}
-	</div>
-);
+const Collapse = props => {
+	const collapseClass = classnames(styles.toggle, {
+		[styles.visible]: props.isOpened
+	});
+
+	return (
+		<div className={collapseClass}>
+			{props.children}
+		</div>
+	);
+};
 
 Collapse.propTypes = {
 	children: PropTypes.node,

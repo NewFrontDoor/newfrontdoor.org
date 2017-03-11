@@ -1,6 +1,12 @@
 import React, {PropTypes} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {Link, withRouter, locationShape} from 'react-router';
+import FaBook from 'react-icons/fa/book';
+import FaCogs from 'react-icons/fa/cogs';
+import FaLock from 'react-icons/fa/lock';
+import FaChain from 'react-icons/fa/chain';
+import FaVideoCamera from 'react-icons/fa/video-camera';
+import FaLightbulbO from 'react-icons/fa/lightbulb-o';
 import withSearchIndex from '../search-index/index.jsx';
 import SearchResults from '../search-results/index.jsx';
 import SearchResultList from '../search-result-list/index.jsx';
@@ -77,9 +83,10 @@ class Documentation extends React.Component {
 						</div>
 						<h2>Vision 100 IT documentation</h2>
 						<div className={styles.listWrapper}>
-							<div className="type-1">
+							<div className={styles.listPanel}>
 								<h3>
-									<i className={`fa fa-book fa-fw ${styles.docIcons}`}/> Getting started with Vision 100 IT</h3>
+									<FaBook className={`${styles.docIcons}`}/> Getting started with Vision 100 IT
+								</h3>
 								<ul>
 									<li>
 										<Link to="/documentation/suite">Suite of Tools</Link>
@@ -93,9 +100,10 @@ class Documentation extends React.Component {
 									</li>
 								</ul>
 							</div>
-							<div className="type-2">
+							<div className={styles.listPanel}>
 								<h3>
-									<i className={`fa fa-cogs fa-fw ${styles.docIcons}`}/> Our Tools</h3>
+									<FaCogs className={`${styles.docIcons}`}/> Our Tools
+								</h3>
 								<ul>
 									<li>
 										<Link to="/documentation/mailinglists">Mailing lists</Link>
@@ -120,9 +128,10 @@ class Documentation extends React.Component {
 						</div>
 						<h2 id="maintenance">IT maintenance</h2>
 						<div className={styles.listWrapper}>
-							<div className="type-3">
+							<div className={styles.listPanel}>
 								<h3>
-									<i className={`fa fa-lock fa-fw ${styles.docIcons}`}/> Keeping your systems up to date</h3>
+									<FaLock className={`${styles.docIcons}`}/> Keeping your systems up to date
+								</h3>
 								<ul>
 									<li>
 										Website refresh recommendations - <i>coming soon</i>
@@ -135,9 +144,10 @@ class Documentation extends React.Component {
 									</li>
 								</ul>
 							</div>
-							<div className="type-4">
+							<div className={styles.listPanel}>
 								<h3>
-									<i className={`fa fa-lightbulb-o fa-fw ${styles.docIcons}`}/> Articles + training night materials</h3>
+									<FaLightbulbO className={`${styles.docIcons}`}/> Articles + training night materials
+								</h3>
 								<ul>
 									<li>
 										<Link to="/documentation/keepingkidssafe">Keeping Kids Safe on the Internet</Link>
@@ -147,9 +157,10 @@ class Documentation extends React.Component {
 						</div>
 						<h2>Additional resources</h2>
 						<div className={styles.listWrapper}>
-							<div className="type-5">
+							<div className={styles.listPanel}>
 								<h3>
-									<i className={`fa fa-link fa-fw ${styles.docIcons}`}/> Recommended external links</h3>
+									<FaChain className={`${styles.docIcons}`}/> Recommended external links
+								</h3>
 								<ul>
 									<li>
 										<a href="https://www.elvanto.com/">Elvanto</a>
@@ -165,9 +176,9 @@ class Documentation extends React.Component {
 									</li>
 								</ul>
 							</div>
-							<div className="type-6">
+							<div className={styles.listPanel}>
 								<h3>
-									<i className={`fa fa-video-camera fa-fw ${styles.docIcons}`}/> Recommended Videos
+									<FaVideoCamera className={`${styles.docIcons}`}/> Recommended Videos
 								</h3>
 								<ul>
 									<li>

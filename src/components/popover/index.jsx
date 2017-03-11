@@ -1,6 +1,9 @@
 import React, {PropTypes} from 'react';
 import {Gateway} from 'react-gateway';
 import Modal from 'react-modal2';
+import FaCircle from 'react-icons/fa/circle';
+import FaTimesCircle from 'react-icons/fa/times-circle';
+import Button from '../button/index.jsx';
 import styles from './popover.scss';
 
 class Popover extends React.Component {
@@ -9,12 +12,12 @@ class Popover extends React.Component {
 		return (
 			<Gateway into="modal">
 				<div>
-					<a onClick={onClose} className={styles.close}>
-						<span className="fa-stack fa-lg">
-							<span className={`${styles.white} fa fa-circle fa-stack-2x`}/>
-							<span className="fa fa-times-circle fa-stack-2x"/>
+					<Button appearance="blank" onClick={onClose} additionalClasses={styles.close}>
+						<span className={styles.stack}>
+							<FaCircle className={styles.white} height="2em" width="2em"/>
+							<FaTimesCircle height="2em" width="2em"/>
 						</span>
-					</a>
+					</Button>
 					<Modal onClose={onClose} closeOnEsc={closeOnEsc} closeOnBackdropClick={closeOnBackdropClick} backdropClassName={styles.backdrop} modalClassName={styles.modal}>
 						{children}
 					</Modal>

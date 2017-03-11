@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
+import FaAngleDown from 'react-icons/fa/angle-down';
 import Featured from './index.jsx';
 
 const FeaturedPricing = () => (
@@ -42,7 +43,7 @@ const FeaturedPricing = () => (
 
 			<div className="expand">
 				<Link to="/documentation/costs">More about costs<br/>
-					<span className="fa fa-angle-down fa-3x"/>
+					<FaAngleDown height="1.5em" width="1.5em"/>
 				</Link>
 			</div>
 		</div>

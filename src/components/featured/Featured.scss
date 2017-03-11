@@ -1,9 +1,9 @@
-@import "../../css/variables";
+@import '../../css/variables';
 
 :local .wrapper {
-	overflow: hidden;
 	padding: 15px;
 	padding-top: 50px;
+	overflow: hidden;
 	lost-center: 500px;
 
 	@media (min-width: $screen-md-min) {
@@ -13,27 +13,27 @@
 }
 
 :local .white {
-	background-color: white;
-	color: $text-color;
 	min-height: 100vh;
+	background-color: #fff;
+	color: $text-color;
 }
 
 :local .black {
+	min-height: 100vh;
 	background-color: $footer-bg;
 	color: $primary-highlight;
-	min-height: 100vh;
 
 	em {
-		color: white;
+		color: #fff;
 	}
 }
 
 :local .transparent {
+	min-height: 100vh;
 	background-color: rgba(0, 0, 0, 0.5);
 	color: $primary-highlight;
-	min-height: 100vh;
 
 	em {
-		color: white;
+		color: #fff;
 	}
 }

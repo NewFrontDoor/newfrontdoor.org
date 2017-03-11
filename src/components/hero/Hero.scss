@@ -1,21 +1,21 @@
-@import "../../css/variables";
+@import '../../css/variables';
 
 :local .container {
-	height: 100vh;
 	width: 100%;
+	height: 100vh;
 	lost-center: 100%;
 	lost-align: top-center;
 }
 
 :local .background {
-	height: 100%;
 	width: 100%;
-	background-image: url("../../images/splash-image.jpeg");
+	height: 100%;
 	background-attachment: local;
+	background-image: url('../../images/splash-image.jpeg');
 	filter: grayscale(1) brightness(0.8);
 	background-repeat: no-repeat;
-	background-size: cover;
 	background-position: center;
+	background-size: cover;
 }
 
 :local .mini.container {
@@ -27,37 +27,37 @@
 }
 
 :local .mini .background {
-	background-size: cover;
+	background-image: url('../../images/buildings.jpeg');
 	background-position: center 75%;
-	background-image: url("../../images/buildings.jpeg");
+	background-size: cover;
 
 	&::before {
-		content: '';
 		position: absolute;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
 		background-image: linear-gradient(to top left, rgba(256, 256, 256, 0), rgba(256, 256, 256, 0) 60%, rgba(0, 0, 0, 0.4));
+		content: '';
 	}
 }
 
 :local .content {
-	text-align: center;
 	width: 75vw;
 	margin-top: 20vh;
-	border-color: $primary-highlight;
-	border-style: solid;
-	border-image: url('../../images/outline1.png') 7% 30 15 stretch;
-	//box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 	transition: opacity 0.5 linear;
+	border-image: url('../../images/outline1.png') 7% 30 15 stretch;
+	border-style: solid;
+	border-color: $primary-highlight;
+	text-align: center;
+	//box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 
 	h1 {
+		margin: 5%;
+		color: $text-color;
+		font-family: $font-family-serif;
 		font-size: 100%;
 		line-height: 1lh;
-		font-family: $font-family-serif;
-		color: $text-color;
-		margin: 5%;
 
 		@media (min-width: $screen-md-min) {
 			font-size: 200%;

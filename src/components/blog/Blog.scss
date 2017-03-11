@@ -1,9 +1,9 @@
-@import "../../css/variables";
+@import '../../css/variables';
 
-.blog-wrapper {
-	overflow: hidden;
+:local .wrapper {
 	margin-top: 107px;
 	padding: 15px;
+	overflow: hidden;
 	lost-center: 500px;
 
 	@media (min-width: $screen-md-min) {
@@ -11,10 +11,8 @@
 	}
 }
 
-.blog-content {
-	img {
-		max-width: 100%;
-		float: left;
-		padding-right: 20px;
-	}
+:local .image {
+	max-width: 100%;
+	padding-right: 20px;
+	float: left;
 }

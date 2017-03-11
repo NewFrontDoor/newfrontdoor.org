@@ -1,3 +1,6 @@
+import React from 'react';
+import FaFacebookSquare from 'react-icons/fa/twitter-square';
+import FaTwitterSquare from 'react-icons/fa/facebook-square';
 import boardMembers from './board-members';
 import teamMembers from './team-members';
 
@@ -9,11 +12,11 @@ export default {
 	},
 	banners: [{
 		display: 'visible',
-		type: 'announcement-banner',
+		type: 'announcement',
 		text: 'Testing the announcement banner'
 	}, {
 		display: 'visible',
-		type: 'warning-banner',
+		type: 'warning',
 		text: 'Testing the warning banner'
 	}],
 	productcards: [{
@@ -169,10 +172,10 @@ export default {
 			text: 'Blog',
 			to: '/client'
 		}, {
-			className: 'fa fa-facebook-square',
+			children: (<FaFacebookSquare/>),
 			target: 'http://facebook.com/vision100it'
 		}, {
-			className: 'fa fa-twitter-square',
+			children: (<FaTwitterSquare/>),
 			target: 'http://twitter.com/vision100it'
 		}]
 	}, {
