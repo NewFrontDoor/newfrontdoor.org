@@ -1,0 +1,19 @@
+{
+	"plugins": [
+		"lodash"
+	],
+	"presets": [
+		"es2015",
+		"react",
+		"stage-2"
+	],
+	"env": {
+		"production": {
+			"plugins": [
+				"transform-react-constant-elements",
+				"transform-react-inline-elements",
+				"transform-react-remove-prop-types"
+			]
+		}
+	}
+}
