@@ -1,6 +1,7 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {Element, scroller} from 'react-scroll';
+import FaAngleDown from 'react-icons/fa/angle-down';
 import Collapse from '../collapse/index.jsx';
 import styles from './feature-tools.scss';
 import Featured from './index.jsx';
@@ -65,7 +66,7 @@ class FeaturedTools extends React.Component {
 					<Element name="tools-expand">
 						<div className="expand">
 							<a href="#" onClick={this.handleCollapse}>Supported tools and products<br/>
-								<span className="fa fa-angle-down fa-3x"/>
+								<FaAngleDown height="1.5em" width="1.5em"/>
 							</a>
 						</div>
 					</Element>

@@ -1,4 +1,4 @@
-@import "../../css/variables";
+@import '../../css/variables';
 
 :local .searchWrapper {
 	width: 100%;
@@ -17,31 +17,31 @@
 :local .listWrapper {
 	width: 100%;
 	lost-flex-container: row;
+}
 
-	div {
-		box-shadow: 0 10px 16px 0 rgba($primary-highlight, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-		background-color: white;
-		margin-bottom: 40px; //transform to -120px; to stack
-		padding: 0 10px 10px;
-		lost-column: 1/1;
+:local .listPanel {
+	margin-bottom: 40px; //transform to -120px; to stack
+	padding: 0 10px 10px;
+	background-color: #fff;
+	box-shadow: 0 10px 16px 0 rgba($primary-highlight, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	lost-column: 1/1;
 
-		@media (min-width: $screen-md-min) {
-			lost-column: 1/2 2 40px;
-		}
+	@media (min-width: $screen-md-min) {
+		lost-column: 1/2 2 40px;
+	}
 
-		a {
-			color: $text-color;
-		}
+	a {
+		color: $text-color;
+	}
 
-		h1,
-		h2,
-		h3 {
-			color: $search-overlay;
-		}
+	h1,
+	h2,
+	h3 {
+		color: $search-overlay;
+	}
 
-		h3 {
-			padding-left: 40px;
-		}
+	h3 {
+		padding-left: 40px;
 	}
 }
 
@@ -51,10 +51,10 @@
 }
 
 :local .overlay {
-	background-size: cover;
-	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-image: linear-gradient(rgba(256, 256, 256, 0.6), white 50%, white), url("../../images/books.jpg");
+	background-image: linear-gradient(rgba(256, 256, 256, 0.6), #fff 50%, #fff), url('../../images/books.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 //search stuff
 :local .title {
@@ -63,15 +63,6 @@
 	h2,
 	h3 {
 		width: 100%;
-	}
-
-	a {
-		float: right;
-		//margin-right: 60px;
-		span {
-			cursor: pointer;
-			//color: $search-overlay;
-		}
 	}
 }
 

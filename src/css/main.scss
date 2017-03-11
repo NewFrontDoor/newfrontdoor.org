@@ -42,8 +42,8 @@
 	}
 
 	blockquote {
-		padding: 0.5lh 1lh;
 		margin: 0 0 1lh;
+		padding: 0.5lh 1lh;
 		border-left: 5px solid $blockquote-border-color;
 	}
 }
@@ -67,8 +67,8 @@
 @lost flexbox flex;
 
 html {
-	min-height: 100%;
 	position: relative;
+	min-height: 100%;
 	// lost-utility: edit;
 }
 
@@ -93,8 +93,8 @@ html {
 }
 
 .site-wrapper {
-	overflow: hidden;
 	padding: 3lh 1lh 1lh;
+	overflow: hidden;
 	lost-center: 500px;
 
 	@media (min-width: $screen-md-min) {
@@ -114,33 +114,21 @@ article {
 	}
 }
 
-.mob-hidden {
-	display: none;
-
-	@media (min-width: $screen-md-min) {
-		display: block;
-	}
-}
-
 .hidden {
 	display: none;
 }
 
 em {
-	font-style: italic;
+	padding-right: 5px;
 	color: $primary-highlight;
 	font-family: $font-family-serif;
 	font-size: 110%;
-	padding-right: 5px;
+	font-style: italic;
 }
 
 q,
 blockquote {
-	quotes: "\201C" "\201D" "\2018" "\2019";
-}
-
-.fa-angle-down {
-	line-height: 30px !important;
+	quotes: '\201C' '\201D' '\2018' '\2019';
 }
 
 //block styles
@@ -162,8 +150,8 @@ blockquote {
 
 	img {
 		display: block;
-		margin: 0 auto;
 		max-width: 100%;
+		margin: 0 auto;
 	}
 
 	@media (min-width: $screen-md-min) {
@@ -174,22 +162,22 @@ blockquote {
 }
 
 .text-slab {
-	font-size: $font-size-h3;
-	text-align: center;
 	padding-bottom: 15px;
-	font-style: normal;
 	color: $primary-highlight;
 	font-family: $font-family-serif;
+	font-size: $font-size-h3;
+	font-style: normal;
+	text-align: center;
 
 	@media (min-width: $screen-md-min) {
-		font-size: $font-size-h1;
 		padding-bottom: 50px;
+		font-size: $font-size-h1;
 	}
 }
 
 .expand {
-	height: auto;
 	max-width: 400px;
+	height: auto;
 	margin: auto;
 	font-size: 120%;
 	text-align: center;
@@ -197,13 +185,13 @@ blockquote {
 
 .input-default,
 .btn-default {
-	background: rgba((white), 0.8);
-	border: 1px solid grey;
+	border: 1px solid #808080;
 	border-radius: 0;
-	color: black;
+	background: rgba(#fff, 0.8);
+	color: #000;
 
 	@media (min-width: $screen-md-min) {
-		border: none;
+		border: 0;
 	}
 }
 
@@ -212,67 +200,67 @@ blockquote {
 }
 
 .consultation-wrapper {
-	background-image: url("../images/skilift.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
 	background-attachment: fixed;
+	background-image: url('../images/skilift.jpg');
+	background-repeat: no-repeat;
 	background-position: 0 -200px;
+	background-size: cover;
 }
 
 .consultation-overlay {
-	background-image: linear-gradient(rgba(256, 256, 256, 0.6), white);
+	background-image: linear-gradient(rgba(256, 256, 256, 0.6), #fff);
 }
 
 .about-wrapper {
-	background-image: linear-gradient(white, white 60%, rgba(256, 256, 256, 0)), url("../images/desk.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
 	background-attachment: fixed;
+	background-image: linear-gradient(#fff, #fff 60%, rgba(256, 256, 256, 0)), url('../images/desk.jpg');
+	background-repeat: no-repeat;
 	background-position: 0 -200px;
+	background-size: cover;
 }
 
 .about-overlay {
-	background-image: linear-gradient(rgba(256, 256, 256, 0.3), white);
+	background-image: linear-gradient(rgba(256, 256, 256, 0.3), #fff);
 }
 
 .registration-wrapper {
-	background-image: linear-gradient(white, white 70%, rgba(256, 256, 256, 0)), url("../images/queue.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
 	background-attachment: fixed;
+	background-image: linear-gradient(#fff, #fff 70%, rgba(256, 256, 256, 0)), url('../images/queue.jpg');
+	background-repeat: no-repeat;
 	background-position: 0 -200px;
+	background-size: cover;
 }
 
 .registration-overlay {
-	background-image: linear-gradient(rgba(256, 256, 256, 0.3), white);
+	background-image: linear-gradient(rgba(256, 256, 256, 0.3), #fff);
 }
 
 .podcasting-wrapper {
-	background-image: linear-gradient(white, white 20%, rgba(256, 256, 256, 0)), url("../images/podcast.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
 	background-attachment: fixed;
+	background-image: linear-gradient(#fff, #fff 20%, rgba(256, 256, 256, 0)), url('../images/podcast.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .podcasting-overlay {
-	background-image: linear-gradient(rgba(256, 256, 256, 0.1), white);
+	background-image: linear-gradient(rgba(256, 256, 256, 0.1), #fff);
 }
 
 .elvanto-wrapper {
-	background-image: url("../images/elvanto-icon.png");
-	background-color: #323232;
-	background-size: auto;
-	background-repeat: no-repeat;
 	background-attachment: fixed;
+	background-color: #323232;
+	background-image: url('../images/elvanto-icon.png');
+	background-repeat: no-repeat;
 	background-position: -25% 20%;
+	background-size: auto;
 }
 
 .elvanto-overlay {
-	// background-image: linear-gradient(rgba(white,0) 15%, rgba(white,1));
+	// background-image: linear-gradient(rgba(#fff,0) 15%, rgba(#fff,1));
 	h1,
 	h2,
 	h3 {
-		color: white;
+		color: #fff;
 	}
 
 	p {
@@ -289,16 +277,16 @@ blockquote {
 }
 
 .status-overlay {
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-image: linear-gradient(rgba(256, 256, 256, 0.6), white 50%, white), url("../images/matrix.jpg");
 	min-height: 500px;
+	background-attachment: fixed;
+	background-image: linear-gradient(rgba(256, 256, 256, 0.6), #fff 50%, #fff), url('../images/matrix.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .contact-overlay {
-	background-size: cover;
-	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-image: linear-gradient(rgba(256, 256, 256, 0.3), white), url("../images/pen.jpg");
+	background-image: linear-gradient(rgba(256, 256, 256, 0.3), #fff), url('../images/pen.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 }

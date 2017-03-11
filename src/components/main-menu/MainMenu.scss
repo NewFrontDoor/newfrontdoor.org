@@ -1,13 +1,13 @@
-@import "../../css/variables";
+@import '../../css/variables';
 
 :local .main {
-	text-transform: uppercase;
 	display: none;
-	font-size: 1rem;
 	margin-top: 12px;
-	line-height: 1.1;
-	font-family: $headings-font-family;
 	color: $headings-color;
+	font-family: $headings-font-family;
+	font-size: 1rem;
+	line-height: 1.1;
+	text-transform: uppercase;
 
 	@media (min-width: $screen-md-min) {
 		display: block;
@@ -24,6 +24,7 @@
 	display: flex;
 	justify-content: space-around;
 	margin: 0;
+
 	li {
 		display: flex;
 		align-items: center;
@@ -39,6 +40,7 @@
 :local .search {
 	span {
 		color: $headings-color;
+
 		a:visited {
 			color: $headings-color;
 		}

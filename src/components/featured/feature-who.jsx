@@ -1,5 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router';
+import FaBank from 'react-icons/fa/bank';
+import FaUsers from 'react-icons/fa/group';
+import FaServer from 'react-icons/fa/server';
+import FaGraduationCap from 'react-icons/fa/graduation-cap';
+import FaAngleDown from 'react-icons/fa/angle-down';
 import styles from './feature-who.scss';
 import Featured from './index.jsx';
 
@@ -12,19 +17,20 @@ const FeaturedWho = () => (
 		</div>
 		<div className={`${styles.snapshots}`}>
 			<div>
-				<span className="fa fa-university fa-5x"/>
+				<FaBank height="4em" width="4em"/>
+				<span className="fa-university fa-5x"/>
 				<p>14+ years of V100IT history</p>
 			</div>
 			<div>
-				<span className="fa fa-graduation-cap fa-5x"/>
+				<FaGraduationCap height="4em" width="4em"/>
 				<p>30+ years of collective experience</p>
 			</div>
 			<div>
-				<span className="fa fa-users fa-5x"/>
+				<FaUsers height="4em" width="4em"/>
 				<p>10+ clients on board</p>
 			</div>
 			<div>
-				<span className="fa fa-server fa-5x"/>
+				<FaServer height="4em" width="4em"/>
 				<p>20+ websites served</p>
 			</div>
 		</div>
@@ -43,7 +49,7 @@ const FeaturedWho = () => (
 		<div className="expand">
 			<Link to="/about#team">
 				<p>Meet the team</p>
-				<span className="fa fa-angle-down fa-3x"/>
+				<FaAngleDown height="1.5em" width="1.5em"/>
 			</Link>
 		</div>
 		<div className={styles.tiled}>

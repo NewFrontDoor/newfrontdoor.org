@@ -1,18 +1,9 @@
-@import "../../css/variables";
-
-.product-cards {
-	margin: 20px;
-	display: none;
-
-	@media (min-width: $screen-sm-min) {
-		lost-center: 95%;
-	}
-}
+@import '../../css/variables';
 
 :local .card {
-	box-shadow: 0 10px 16px 0 rgba($primary-highlight, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	position: relative;
 	height: 200px;
+	box-shadow: 0 10px 16px 0 rgba($primary-highlight, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	overflow: hidden;
 
 	@media (min-width: $screen-sm-min) {
@@ -25,25 +16,25 @@
 	}
 
 	img {
-		max-width: 100%;
 		position: absolute;
 		top: 0;
+		right: 0;
 		bottom: 0;
 		left: 0;
-		right: 0;
+		max-width: 100%;
 		margin: auto;
 	}
 
 	p {
-		font-family: $font-family-sans-serif;
-		padding: 5px;
-		background-color: rgba(white, 0.9);
-		height: auto;
-		width: 100%;
 		position: absolute;
-		left: 0;
 		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: auto;
 		margin: 0;
+		padding: 5px;
+		background-color: rgba(255, 255, 255, 0.9);
 		color: $text-color;
+		font-family: $font-family-sans-serif;
 	}
 }

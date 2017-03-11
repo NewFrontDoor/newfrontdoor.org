@@ -1,11 +1,5 @@
 :local .pagination {
+	display: flex;
+	justify-content: space-between;
 	width: 100%;
-
-	& a:first-child {
-		float: left;
-	}
-
-	& a:last-child {
-		float: right;
-	}
 }

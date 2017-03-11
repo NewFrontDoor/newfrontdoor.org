@@ -3,6 +3,8 @@ import {Element} from 'react-scroll';
 import reformed from 'react-reformed';
 import compose from 'react-reformed/lib/compose';
 import validateSchema from 'react-reformed/lib/validateSchema';
+import FaFacebook from 'react-icons/fa/facebook';
+import FaTwitter from 'react-icons/fa/twitter';
 import Popover from '../popover/index.jsx';
 import {Form, util, InputEmail, InputTextArea, InputText} from '../form/index.jsx';
 import styles from './feature-join.scss';
@@ -145,12 +147,12 @@ class FeaturedJoin extends React.Component {
 						<div className={styles.social}>
 							<div>
 								<a href="http://facebook.com/vision100it">
-									<span className="fa fa-facebook fa-3x"/>
+									<FaFacebook height="2em" width="2em"/>
 								</a>
 							</div>
 							<div>
 								<a href="http://twitter.com/vision100it">
-									<span className="fa fa-twitter fa-3x"/>
+									<FaTwitter height="2em" width="2em"/>
 								</a>
 							</div>
 						</div>

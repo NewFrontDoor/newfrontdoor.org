@@ -29,11 +29,11 @@ $footer-bg: $text-color;
 $footer-height: 240px;
 
 // Typography
-$font-family-sans-serif: "Quicksand", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-//$font-family-sans-serif-special: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-//$font-family-serif-special: "Lora", Georgia, "Times New Roman", Times, serif !default;
-$font-family-serif: 'EB Garamond', Georgia, "Times New Roman", Times, serif !default;
-$font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-sans-serif: 'Quicksand', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+//$font-family-sans-serif-special: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+//$font-family-serif-special: 'Lora', Georgia, 'Times New Roman', Times, serif !default;
+$font-family-serif: 'EB Garamond', Georgia, 'Times New Roman', Times, serif !default;
+$font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace !default;
 $font-family-base: $font-family-serif !default;
 $font-size-base: 16px !default;
 $scale-up: 1.333 !default;

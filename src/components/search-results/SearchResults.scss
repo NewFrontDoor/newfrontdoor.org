@@ -1,8 +1,8 @@
-@import "../../css/variables";
+@import '../../css/variables';
 
 :local .container {
-	overflow-y: hidden;
 	transition: height 0.5s ease-in;
+	overflow-y: hidden;
 }
 
 :local .nav {

@@ -3,9 +3,9 @@
 	transition: height 0.5s, opacity 0.5s ease-out;
 	overflow: hidden;
 	//opacity: 0;
+}
 
-	&.visible {
-		height: auto;
-		//opacity: 1;
-	}
+:local .visible {
+	height: auto;
+	//opacity: 1;
 }

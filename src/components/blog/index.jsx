@@ -43,19 +43,17 @@ class Blog extends React.Component {
 	render() {
 		return (
 			<Index>
-				<div className="blog-wrapper">
-					<div className="blog-content">
-						<h1>{this.blog.title}</h1>
-						<h1><small>{this.blog.sub_title}</small></h1>
-						<h3>{this.blog.author.name} - <span className={styles.date}>{moment(this.blog.date).format('Do MMMM, YYYY')}</span></h3>
-						{ this.blog.image && <div className={styles.imgContainer}>
-							<img src={imageContext(this.blog.image.href)} alt={this.blog.image.alt}/>
-						</div> }
-						<Markdown>
-							{this.blog.body}
-						</Markdown>
-						<a href="#" onClick={this.handleGoBack}> &#060; Back</a>
-					</div>
+				<div className={styles.wrapper}>
+					<h1>{this.blog.title}</h1>
+					<h1><small>{this.blog.sub_title}</small></h1>
+					<h3>{this.blog.author.name} - <span className={styles.date}>{moment(this.blog.date).format('Do MMMM, YYYY')}</span></h3>
+					{ this.blog.image && <div className={styles.imgContainer}>
+						<img className={styles.image} src={imageContext(this.blog.image.href)} alt={this.blog.image.alt}/>
+					</div> }
+					<Markdown>
+						{this.blog.body}
+					</Markdown>
+					<a href="#" onClick={this.handleGoBack}> &#060; Back</a>
 				</div>
 			</Index>
 		);

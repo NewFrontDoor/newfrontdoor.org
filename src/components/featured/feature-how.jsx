@@ -1,4 +1,5 @@
 import React from 'react';
+import FaPlusCircle from 'react-icons/fa/plus-circle';
 import Collapse from '../collapse/index.jsx';
 import styles from './feature-how.scss';
 import Featured from './index.jsx';
@@ -34,19 +35,19 @@ class FeaturedHow extends React.Component {
 					<div className={styles.example}>
 						<a href="#" onClick={this.handleCollapse('overwhelmed')}>
 							<h3>Overwhelmed pastor.</h3>
-							<span className="fa fa-plus-circle fa-2x"/>
+							<FaPlusCircle height="2em" width="2em"/>
 						</a>
 					</div>
 					<div className={styles.example}>
 						<a href="#" onClick={this.handleCollapse('voluntold')}>
 							<h3>“Voluntold” victim.</h3>
-							<span className="fa fa-plus-circle fa-2x"/>
+							<FaPlusCircle height="2em" width="2em"/>
 						</a>
 					</div>
 					<div className={styles.example}>
 						<a href="#" onClick={this.handleCollapse('capable')}>
 							<h3>Capable. Over it.</h3>
-							<span className="fa fa-plus-circle fa-2x"/>
+							<FaPlusCircle height="2em" width="2em"/>
 						</a>
 					</div>
 					<Collapse isOpened={this.state.isOpen === 'overwhelmed'}>

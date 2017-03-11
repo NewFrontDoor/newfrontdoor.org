@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
+import FaAngleDown from 'react-icons/fa/angle-down';
 import styles from './feature-events.scss';
 import Featured from './index.jsx';
 
@@ -39,7 +40,7 @@ const FeaturedEvents = () => (
 				</div>
 				<div className="expand">
 					<Link to="/documentation#maintenance">Check out some of our previous training content<br/>
-						<span className="fa fa-angle-down fa-3x"/>
+						<FaAngleDown height="1.5em" width="1.5em"/>
 					</Link>
 				</div>
 			</section>

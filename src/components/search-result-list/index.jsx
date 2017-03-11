@@ -1,5 +1,3 @@
-/* eslint-disable react/forbid-component-props */
-
 import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 import styles from './SearchResultList.scss';

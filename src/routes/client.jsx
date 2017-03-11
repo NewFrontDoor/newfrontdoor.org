@@ -10,8 +10,8 @@ import Index from '../components/index/index.jsx';
 import {Markdown} from '../components/markdown/index.jsx';
 import Post from '../components/post/index.jsx';
 import Pagination from '../components/pagination/index.jsx';
-
 import content from '../content';
+import styles from './client.scss';
 
 const blog = {
 	get context() {
@@ -82,7 +82,7 @@ const Client = props => {
 						</Alert>
 					))}
 				</div>
-				<div className="product-cards">
+				<div className={styles.cards}>
 					<Card name="Elvanto" background="#323232" image="./elvanto.png" imagePadding="10px" link="/elvanto">
 						Have you got started with Elvanto yet?
 					</Card>
