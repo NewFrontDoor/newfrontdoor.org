@@ -69,7 +69,7 @@ export const remarkConfigDefault = {
 
 export const Markdown = ({style, source, children, remarkConfig}) => {
 	const content = (isUndefined(source) || source === '') ? children : source;
-	const output = remark().use(slug).use(remarkReact, remarkConfig).process(content).contents;
+	const output = remark().use(slug).use(remarkReact, remarkConfig).processSync(content).contents;
 	return (
 		<div style={style}>
 			{output}
@@ -94,7 +94,7 @@ export const Toc = ({source, children, remarkConfig}) => {
 	const content = (isUndefined(source) || source === '') ? children : source;
 	const tocOut = remark().use(() => node => {
 		node.children = [toc(node, {tight: true}).map];
-	}).process(content).contents;
+	}).processSync(content).contents;
 
 	return (
 		<Markdown remarkConfig={remarkConfig}>
