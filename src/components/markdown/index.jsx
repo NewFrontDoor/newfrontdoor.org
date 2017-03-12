@@ -5,7 +5,7 @@ import slug from 'remark-slug';
 import ghSlugs from 'github-slugger';
 import remarkReact from 'remark-react';
 import {Element} from 'react-scroll';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import toc from 'mdast-util-toc';
 
 const remarkHeading = (component, boundProps = {}) => {
@@ -36,7 +36,10 @@ const RemarkLink = props => {
 		return (<Link to={href} {...props}>{children}</Link>);
 	} else if (href && typeof window.location !== 'undefined' && !href.includes(window.location.hostname)) {
 		return (<a href={href} target="_blank" rel="noopener noreferrer">{children}</a>);
+	} else if (href) {
+		return (<a href={href} target="_blank" rel="noopener noreferrer">{children}</a>);
 	}
+
 	return (<Link {...props}>{children}</Link>);
 };
 
@@ -67,17 +70,14 @@ export const remarkConfigDefault = {
 	}
 };
 
-export const Markdown = ({style, source, children, remarkConfig}) => {
+export const Markdown = ({component, style, source, children, remarkConfig}) => {
 	const content = (isUndefined(source) || source === '') ? children : source;
 	const output = remark().use(slug).use(remarkReact, remarkConfig).processSync(content).contents;
-	return (
-		<div style={style}>
-			{output}
-		</div>
-	);
+	return React.createElement(component, {style}, output);
 };
 
 Markdown.propTypes = {
+	component: React.PropTypes.any,
 	style: PropTypes.object,
 	children: PropTypes.node,
 	source: PropTypes.string,
@@ -85,6 +85,7 @@ Markdown.propTypes = {
 };
 
 Markdown.defaultProps = {
+	component: 'div',
 	style: {},
 	source: '',
 	remarkConfig: remarkConfigDefault

@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import Head from '../components/head/index.jsx';
+import Head from '../../components/head/index.jsx';
 
 let devServer = null;
 

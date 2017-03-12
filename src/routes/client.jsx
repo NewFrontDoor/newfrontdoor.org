@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 
 import fm from 'front-matter';
-import {withRouter} from 'react-router';
+import {withRouter} from 'react-router-dom';
 
 import Alert from '../components/alert/index.jsx';
 import Card from '../components/card/index.jsx';
@@ -42,7 +42,7 @@ const blog = {
 };
 
 const Client = props => {
-	const page = Number(props.params.page) || 0;
+	const page = Number(props.match.params.page) || 0;
 	const previousPage = page + 1;
 	const nextPage = page - 1;
 
@@ -119,8 +119,10 @@ const Client = props => {
 };
 
 Client.propTypes = {
-	params: PropTypes.shape({
-		page: PropTypes.string
+	match: PropTypes.shape({
+		params: PropTypes.shape({
+			page: PropTypes.string
+		})
 	})
 };
 

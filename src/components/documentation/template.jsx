@@ -93,7 +93,7 @@ class Template extends React.Component {
 	}
 
 	get document() {
-		return documentation.document(this.props.params.documentId) || {};
+		return documentation.document(this.props.match.params.documentId) || {};
 	}
 
 	set formRef(ref) {
@@ -202,7 +202,11 @@ class Template extends React.Component {
 }
 
 Template.propTypes = {
-	params: PropTypes.shape({documentId: PropTypes.string}).isRequired
+	match: PropTypes.shape({
+		params: PropTypes.shape({
+			documentId: PropTypes.string.isRequired
+		})
+	})
 };
 
 export default Template;
