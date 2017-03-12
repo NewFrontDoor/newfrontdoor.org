@@ -1,6 +1,5 @@
 import React, {PropTypes} from 'react';
 import fm from 'front-matter';
-import {withRouter} from 'react-router-dom';
 import Alert from '../../components/alert/index.jsx';
 import Card from '../../components/card/index.jsx';
 import Hero from '../../components/hero/index.jsx';
