@@ -31,5 +31,5 @@ export default (locals, callback) => {
 		</Root>
 	);
 
-	return callback(null, `<!doctype html>${html}`);
+	callback(null, `<!doctype html>${html}`);
 };

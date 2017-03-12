@@ -88,7 +88,6 @@ function getDevConfig() {
 function getProdConfig() {
 	return {
 		plugins: union(getCommonPlugins(), [
-			new webpack.optimize.DedupePlugin(),
 			new webpack.optimize.UglifyJsPlugin(),
 			new webpack.optimize.AggressiveMergingPlugin(),
 			new LodashModuleReplacementPlugin(),
@@ -191,6 +190,7 @@ function getCommonPlugins() {
 			allChunks: true
 		}),
 		new StaticSiteGeneratorPlugin({
+			entry: 'main',
 			paths: pages,
 			globals: {
 				window: {}
