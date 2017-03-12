@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import ReactHeight from 'react-height';
 import FaTimesCircle from 'react-icons/fa/times-circle';
 import Button from '../button/index.jsx';

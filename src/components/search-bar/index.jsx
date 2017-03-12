@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import FaSearch from 'react-icons/fa/search';
 import FaTimesCircle from 'react-icons/fa/times-circle';
 import Button from '../button/index.jsx';
@@ -77,7 +77,7 @@ class SearchBar extends React.Component {
 		const inputButton = (
 			<span className={`input-group-btn ${styles.searchInput}`}>
 				<button className={`btn ${styles.searchButton}`} type="submit">
-					<FaSearch heigh="1.5em" width="1.5em"/>
+					<FaSearch height="1.5em" width="1.5em"/>
 				</button>
 			</span>
 		);

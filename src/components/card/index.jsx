@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import styles from './Card.scss';
 
 const imageContext = require.context('../../images');
@@ -11,6 +11,7 @@ const Card = ({background, imagePadding, link, image, name, children}) => {
 	const imageStyle = {
 		padding: imagePadding
 	};
+
 	return (
 		<div className={styles.card} style={style}>
 			<Link to={link}>
@@ -20,6 +21,10 @@ const Card = ({background, imagePadding, link, image, name, children}) => {
 			</Link>
 		</div>
 	);
+};
+
+Card.defaultProps = {
+	link: ''
 };
 
 Card.propTypes = {

@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import {Link, withRouter, locationShape} from 'react-router';
+import {Link, withRouter} from 'react-router-dom';
+import {parse} from 'qs';
 import FaBook from 'react-icons/fa/book';
 import FaCogs from 'react-icons/fa/cogs';
 import FaLock from 'react-icons/fa/lock';
@@ -17,9 +18,10 @@ import styles from './documentation.scss';
 class Documentation extends React.Component {
 	constructor(props) {
 		super(props);
+		const {search} = parse(props.location.search.substr(1));
 		this.state = {
 			searchResults: [],
-			searchTerm: props.location.query.search
+			searchTerm: search
 		};
 		this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
 		this.handleCloseResult = this.handleCloseResult.bind(this);
@@ -195,7 +197,9 @@ class Documentation extends React.Component {
 }
 
 Documentation.propTypes = {
-	location: locationShape,
+	location: PropTypes.shape({
+		search: PropTypes.string
+	}),
 	searchIndex: PropTypes.func.isRequired
 };
 

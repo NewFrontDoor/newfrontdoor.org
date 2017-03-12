@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import {Element} from 'react-scroll';
 import TeamMember from '../components/team-member/index.jsx';
 import Index from '../components/index/index.jsx';

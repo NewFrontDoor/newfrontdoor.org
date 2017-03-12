@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import fm from 'front-matter';
 import moment from 'moment';
-import {routerShape, withRouter} from 'react-router';
+import {withRouter} from 'react-router-dom';
 import Index from '../index/index.jsx';
 import {Markdown} from '../markdown/index.jsx';
 import styles from './Blog.scss';
@@ -33,11 +33,11 @@ class Blog extends React.Component {
 	shouldComponentUpdate() {}
 
 	get blog() {
-		return blogs.document(this.props.params.blogId) || {};
+		return blogs.document(this.props.match.params.blogId) || {};
 	}
 
 	handleGoBack() {
-		this.props.router.goBack();
+		this.props.history.goBack();
 	}
 
 	render() {
@@ -61,8 +61,14 @@ class Blog extends React.Component {
 }
 
 Blog.propTypes = {
-	params: PropTypes.shape({blogId: PropTypes.string}).isRequired,
-	router: routerShape
+	match: PropTypes.shape({
+		params: PropTypes.shape({
+			blogId: PropTypes.string.isRequired
+		})
+	}),
+	history: PropTypes.shape({
+		goBack: PropTypes.func.isRequired
+	})
 };
 
 export default withRouter(Blog);

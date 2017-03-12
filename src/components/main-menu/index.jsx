@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import FaSearch from 'react-icons/fa/search';
 import content from '../../content';
 import Button from '../button/index.jsx';

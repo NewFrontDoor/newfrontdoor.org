@@ -1,55 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactDOMServer from 'react-dom/server';
-import {Router, RouterContext, match, browserHistory, createMemoryHistory} from 'react-router';
-import {scroller, animateScroll} from 'react-scroll';
-import Modal from 'react-modal2';
+import {renderToStaticMarkup} from 'react-dom/server';
+import {StaticRouter} from 'react-router-dom';
 import {install} from 'offline-plugin/runtime';
-import Root from './routes/root.jsx';
-import Routes from './routes/index.jsx';
-
-function hashLinkScroll() {
-	const {hash} = window.location;
-	const scrollOptions = {
-		spy: true,
-		smooth: true,
-		offset: -64,
-		duration: 500
-	};
-
-	if (hash === '') {
-		animateScroll.scrollToTop(scrollOptions);
-	} else {
-		// Push onto callback queue so it runs after the DOM is updated
-		setTimeout(() => {
-			const id = hash.replace('#', '');
-			scroller.scrollTo(id, scrollOptions);
-		}, 0);
-	}
-}
+import App from './containers/app/index.jsx';
+import Layout from './containers/layout/index.jsx';
+import Root from './containers/root/index.jsx';
 
 if (typeof document !== 'undefined') {
+	const render = Component => {
+		ReactDOM.render(<Component/>, document.getElementById('application'));
+	};
+
+	render(App);
+
 	if (process.env.NODE_ENV === 'production') {
 		install();
 	}
-	const content = document.getElementById('content');
-	Modal.getApplicationElement = () => document.getElementById('application');
-	ReactDOM.render(<Router history={browserHistory} onUpdate={hashLinkScroll}>{Routes}</Router>, content);
 }
 
 export default (locals, callback) => {
-	const history = createMemoryHistory();
-	const location = history.createLocation(locals.path);
+	const html = renderToStaticMarkup(
+		<Root>
+			<StaticRouter location={locals.path} context={{}}>
+				<Layout/>
+			</StaticRouter>
+		</Root>
+	);
 
-	return match({
-		location,
-		routes: Routes
-	}, (error, redirectLocation, renderProps) => {
-		const html = ReactDOMServer.renderToStaticMarkup(
-			<Root location={location}>
-				<RouterContext {...renderProps}/>
-			</Root>
-		);
-		return callback(null, `<!doctype html>${html}`);
-	});
+	return callback(null, `<!doctype html>${html}`);
 };

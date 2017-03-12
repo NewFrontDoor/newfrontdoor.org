@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import FaBank from 'react-icons/fa/bank';
 import FaUsers from 'react-icons/fa/group';
 import FaServer from 'react-icons/fa/server';
