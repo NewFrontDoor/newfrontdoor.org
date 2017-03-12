@@ -2,7 +2,6 @@ import React, {PropTypes} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import fm from 'front-matter';
 import moment from 'moment';
-import {withRouter} from 'react-router-dom';
 import Index from '../../components/index/index.jsx';
 import {Markdown} from '../../components/markdown/index.jsx';
 import styles from './Blog.scss';
