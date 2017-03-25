@@ -16,9 +16,7 @@ InputEmail.defaultProps = {
 };
 
 InputEmail.propTypes = {
-	// errors: PropTypes.array,
 	hasError: PropTypes.bool,
-	// id: PropTypes.string,
 	label: PropTypes.string,
 	name: PropTypes.string,
 	onChange: PropTypes.func,

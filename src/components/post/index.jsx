@@ -31,7 +31,7 @@ Post.propTypes = {
 	title: PropTypes.string.isRequired,
 	author: PropTypes.shape({name: PropTypes.string.isRequired}),
 	date: PropTypes.object.isRequired,
-	// tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+	// Disable tags: PropTypes.arrayOf(PropTypes.string).isRequired,
 	image: PropTypes.shape({href: PropTypes.string.isRequired, size: PropTypes.string.isRequired, alt: PropTypes.string.isRequired})
 };
 

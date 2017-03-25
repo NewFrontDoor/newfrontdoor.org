@@ -23,7 +23,6 @@ const InputRadio = ({hasError, label, name, onChange, options, placeholder, requ
 
 InputRadio.propTypes = {
 	hasError: PropTypes.bool,
-	// id: PropTypes.string,
 	label: PropTypes.string,
 	name: PropTypes.string,
 	onChange: PropTypes.func,

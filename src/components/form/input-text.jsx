@@ -17,7 +17,6 @@ InputText.defaultProps = {
 
 InputText.propTypes = {
 	hasError: PropTypes.bool,
-	// id: PropTypes.string,
 	label: PropTypes.string,
 	name: PropTypes.string,
 	onChange: PropTypes.func,
