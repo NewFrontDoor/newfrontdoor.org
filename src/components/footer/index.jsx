@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+import hash from 'string-hash';
 import {Link} from 'react-router-dom';
 import content from '../../content';
 import styles from './Footer.scss';
@@ -10,9 +11,17 @@ const FooterItem = props => {
 			{props.children}
 		</a>);
 	}
-	return (<Link to={props.to}>{props.text}
+	return (<Link to={props.to}>
+		{props.text}
 		{props.children}
 	</Link>);
+};
+
+FooterItem.defaultProps = {
+	children: null,
+	target: null,
+	text: null,
+	to: null
 };
 
 FooterItem.propTypes = {
@@ -25,16 +34,20 @@ FooterItem.propTypes = {
 const Footer = () => (
 	<footer>
 		<div className={styles.wrap}>
-			{content.footerLinks.map((list, key) => <div key={key} className={styles.item}>
-				<header>
-					{list.heading && <h3>{list.heading}</h3>}
-				</header>
-				<ul className="list-unstyled">
-					{list.links.map((item, key) => <li key={key}>
-						<FooterItem {...item}/>
-					</li>)}
-				</ul>
-			</div>)}
+			{content.footerLinks.map(list => (
+				<div key={hash(list.heading || 'logo')} className={styles.item}>
+					<header>
+						{list.heading && <h3>{list.heading}</h3>}
+					</header>
+					<ul className="list-unstyled">
+						{list.links.map(link => (
+							<li key={hash(link.text || link.target || link.to)}>
+								<FooterItem {...link}/>
+							</li>
+						))}
+					</ul>
+				</div>
+			))}
 		</div>
 	</footer>
 );

@@ -26,13 +26,8 @@ const submitted = WrappedComponent => {
 		render() {
 			const {schema, getFormRef, ...props} = this.props;
 
-			if (schema) {
-				schema.isSubmitted = this.state.submitted;
-			}
-
-			if (typeof getFormRef === 'function') {
-				getFormRef(this);
-			}
+			schema.isSubmitted = this.state.submitted;
+			getFormRef(this);
 
 			return React.createElement(WrappedComponent, {
 				onSubmit: this.handleSubmit,
@@ -42,9 +37,14 @@ const submitted = WrappedComponent => {
 		}
 	}
 
+	Submitted.defaultProps = {
+		getFormRef: () => {},
+		schema: {}
+	};
+
 	Submitted.propTypes = {
-		onSubmit: PropTypes.func,
-		setModel: PropTypes.func,
+		onSubmit: PropTypes.func.isRequired,
+		setModel: PropTypes.func.isRequired,
 		schema: PropTypes.object,
 		getFormRef: PropTypes.func
 	};

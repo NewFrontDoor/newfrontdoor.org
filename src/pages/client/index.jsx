@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import fm from 'front-matter';
+import hash from 'string-hash';
 import Alert from '../../components/alert/index.jsx';
 import Card from '../../components/card/index.jsx';
 import Hero from '../../components/hero/index.jsx';
@@ -74,8 +75,8 @@ const Client = props => {
 			<Hero mini/>
 			<main role="main">
 				<div className="alerts hidden">
-					{content.banners.map((banner, key) => (
-						<Alert key={key} type={banner.type}>
+					{content.banners.map(banner => (
+						<Alert key={hash(banner.text)} type={banner.type}>
 							<p>{banner.text}</p>
 						</Alert>
 					))}
@@ -103,11 +104,13 @@ const Client = props => {
 						</Post>
 					</section> }
 					<section className="posts">
-						{posts.map((post, key) => <Post key={key} url={post.url} {...post.attributes}>
-							<Markdown>
-								{post.body}
-							</Markdown>
-						</Post>)}
+						{posts.map(post => (
+							<Post key={hash(post.url)} url={post.url} {...post.attributes}>
+								<Markdown>
+									{post.body}
+								</Markdown>
+							</Post>
+						))}
 					</section>
 					<Pagination previous={previous} next={next}/>
 				</div>
@@ -120,8 +123,8 @@ Client.propTypes = {
 	match: PropTypes.shape({
 		params: PropTypes.shape({
 			page: PropTypes.string
-		})
-	})
+		}).isRequired
+	}).isRequired
 };
 
 export default Client;

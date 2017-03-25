@@ -19,7 +19,7 @@ const SearchResultList = ({onResultClick, searchResults}) => {
 };
 
 SearchResultList.propTypes = {
-	onResultClick: PropTypes.func,
+	onResultClick: PropTypes.func.isRequired,
 	searchResults: PropTypes.arrayOf(PropTypes.shape({
 		id: PropTypes.string.isRequired,
 		title: PropTypes.string.isRequired

@@ -12,6 +12,10 @@ const TeamMember = props => (
 	</div>
 );
 
+TeamMember.defaultProps = {
+	title: ''
+};
+
 TeamMember.propTypes = {
 	name: PropTypes.string.isRequired,
 	position: PropTypes.string.isRequired,

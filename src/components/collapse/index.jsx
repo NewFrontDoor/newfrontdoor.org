@@ -14,9 +14,13 @@ const Collapse = props => {
 	);
 };
 
+Collapse.defaultProps = {
+	children: null
+};
+
 Collapse.propTypes = {
 	children: PropTypes.node,
-	isOpened: PropTypes.bool
+	isOpened: PropTypes.bool.isRequired
 };
 
 export default Collapse;

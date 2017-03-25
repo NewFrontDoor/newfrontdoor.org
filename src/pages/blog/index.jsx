@@ -64,10 +64,10 @@ Blog.propTypes = {
 		params: PropTypes.shape({
 			blogId: PropTypes.string.isRequired
 		})
-	}),
+	}).isRequired,
 	history: PropTypes.shape({
 		goBack: PropTypes.func.isRequired
-	})
+	}).isRequired
 };
 
 export default Blog;

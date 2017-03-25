@@ -53,8 +53,8 @@ class Documentation extends React.Component {
 		if (searchResults.length > 0) {
 			searchResultList = (
 				<SearchResultList
-					onResultClick={this.handleCloseModal}
 					searchResults={searchResults}
+					onResultClick={this.handleCloseModal}
 					/>
 			);
 		}
@@ -77,8 +77,8 @@ class Documentation extends React.Component {
 							<SearchResults
 								titleClass={styles.title}
 								containerClass={styles.searchResults}
-								onCloseResults={this.handleCloseResult}
 								searchResults={this.state.searchResults}
+								onCloseResults={this.handleCloseResult}
 								>
 								{searchResultList}
 							</SearchResults>
@@ -198,8 +198,8 @@ class Documentation extends React.Component {
 
 Documentation.propTypes = {
 	location: PropTypes.shape({
-		search: PropTypes.string
-	}),
+		search: PropTypes.string.isRequired
+	}).isRequired,
 	searchIndex: PropTypes.func.isRequired
 };
 

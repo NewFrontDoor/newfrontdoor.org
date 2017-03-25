@@ -124,7 +124,7 @@ const SupportForm = ({
 
 	return (
 		<div className="support-form">
-			<Form onSubmit={handleSubmit} schema={schema} fields={fields} bindInput={bindInput}>
+			<Form schema={schema} fields={fields} bindInput={bindInput} onSubmit={handleSubmit}>
 				<div className="form-group">
 					<button type="submit" className="btn btn-primary pull-right">Submit</button>
 				</div>
@@ -134,10 +134,10 @@ const SupportForm = ({
 };
 
 SupportForm.propTypes = {
-	bindInput: PropTypes.func,
-	model: PropTypes.object,
-	onSubmit: PropTypes.func,
-	schema: PropTypes.object
+	bindInput: PropTypes.func.isRequired,
+	model: PropTypes.object.isRequired,
+	onSubmit: PropTypes.func.isRequired,
+	schema: PropTypes.object.isRequired
 };
 
 const SupportFormContainer = compose(reformed(), validateSchema(fields), util.submitted)(SupportForm);
@@ -215,7 +215,7 @@ class Support extends React.Component {
 								<li>Give an option to close your support request by email.</li>
 							</ul>
 						</div>
-						<SupportFormContainer getFormRef={this.setFormRef} onSubmit={this.handleSubmit} initialModel={{severity: '4'}}/>
+						<SupportFormContainer getFormRef={this.setFormRef} initialModel={{severity: '4'}} onSubmit={this.handleSubmit}/>
 					</div>
 				</div>
 				{isModalOpen && <Popover onClose={this.handleClose}>

@@ -27,7 +27,10 @@ const SearchResults = ({onCloseResults, containerClass, children, titleClass, qu
 };
 
 SearchResults.defaultProps = {
-	onResultClick: () => {}
+	onResultClick: () => {},
+	containerClass: '',
+	children: null,
+	query: null
 };
 
 SearchResults.propTypes = {
@@ -57,7 +60,7 @@ const withHeight = WrappedComponent => {
 		render() {
 			let {height} = this.state;
 
-			if (typeof this.props.children === 'undefined') {
+			if (!this.props.children) {
 				height = 0;
 			}
 
@@ -70,6 +73,10 @@ const withHeight = WrappedComponent => {
 			);
 		}
 	}
+
+	HeightContainer.defaultProps = {
+		children: null
+	};
 
 	HeightContainer.propTypes = {
 		children: PropTypes.node

@@ -25,14 +25,24 @@ const Post = props => (
 	</section>
 );
 
+Post.defaultProps = {
+	image: null
+};
+
 Post.propTypes = {
-	url: PropTypes.string,
+	url: PropTypes.string.isRequired,
 	children: PropTypes.node.isRequired,
 	title: PropTypes.string.isRequired,
-	author: PropTypes.shape({name: PropTypes.string.isRequired}),
+	author: PropTypes.shape({
+		name: PropTypes.string.isRequired
+	}).isRequired,
 	date: PropTypes.object.isRequired,
 	// Disable tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-	image: PropTypes.shape({href: PropTypes.string.isRequired, size: PropTypes.string.isRequired, alt: PropTypes.string.isRequired})
+	image: PropTypes.shape({
+		href: PropTypes.string.isRequired,
+		size: PropTypes.string.isRequired,
+		alt: PropTypes.string.isRequired
+	})
 };
 
 export default Post;

@@ -6,20 +6,24 @@ const InputText = ({hasError, label, name, onChange, placeholder, required, valu
 	return (
 		<fieldset className={classnames('form-group', {'has-error': hasError}, styles[width || 'full'])}>
 			<label htmlFor={name}>{label}</label>
-			<input id={name} type="text" className="form-control" name={name} placeholder={placeholder} onChange={onChange} value={value} required={required}/>
+			<input id={name} type="text" className="form-control" name={name} placeholder={placeholder} value={value} required={required} onChange={onChange}/>
 		</fieldset>
 	);
 };
 
 InputText.defaultProps = {
+	hasError: false,
+	placeholder: '',
+	required: false,
+	width: 'full',
 	value: ''
 };
 
 InputText.propTypes = {
 	hasError: PropTypes.bool,
-	label: PropTypes.string,
-	name: PropTypes.string,
-	onChange: PropTypes.func,
+	label: PropTypes.string.isRequired,
+	name: PropTypes.string.isRequired,
+	onChange: PropTypes.func.isRequired,
 	placeholder: PropTypes.string,
 	required: PropTypes.bool,
 	value: PropTypes.string,

@@ -11,6 +11,11 @@ const Pagination = ({previous, next}) => (
 	</nav>
 );
 
+Pagination.defaultProps = {
+	previous: '',
+	next: ''
+};
+
 Pagination.propTypes = {
 	previous: PropTypes.string,
 	next: PropTypes.string

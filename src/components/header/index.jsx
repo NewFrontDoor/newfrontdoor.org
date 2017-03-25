@@ -82,8 +82,8 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-	size: PropTypes.oneOf(['mini', 'full']),
-	children: PropTypes.node
+	size: PropTypes.oneOf(['mini', 'full']).isRequired,
+	children: PropTypes.node.isRequired
 };
 
 export default Header;

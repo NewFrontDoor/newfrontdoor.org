@@ -12,13 +12,13 @@ class Popover extends React.Component {
 		return (
 			<Gateway into="modal">
 				<div>
-					<Button appearance="blank" onClick={onClose} additionalClasses={styles.close}>
+					<Button appearance="blank" additionalClasses={styles.close} onClick={onClose}>
 						<span className={styles.stack}>
 							<FaCircle className={styles.white} height="2em" width="2em"/>
 							<FaTimesCircle height="2em" width="2em"/>
 						</span>
 					</Button>
-					<Modal onClose={onClose} closeOnEsc={closeOnEsc} closeOnBackdropClick={closeOnBackdropClick} backdropClassName={styles.backdrop} modalClassName={styles.modal}>
+					<Modal closeOnEsc={closeOnEsc} closeOnBackdropClick={closeOnBackdropClick} backdropClassName={styles.backdrop} modalClassName={styles.modal} onClose={onClose}>
 						{children}
 					</Modal>
 				</div>
@@ -31,7 +31,7 @@ Popover.propTypes = {
 	onClose: PropTypes.func.isRequired,
 	closeOnEsc: PropTypes.bool,
 	closeOnBackdropClick: PropTypes.bool,
-	children: PropTypes.element
+	children: PropTypes.element.isRequired
 };
 
 Popover.defaultProps = {

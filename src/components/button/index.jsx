@@ -11,9 +11,14 @@ const Button = ({additionalClasses, appearance, children, ...buttonProps}) => {
 	);
 };
 
+Button.defaultProps = {
+	additionalClasses: '',
+	children: null
+};
+
 Button.propTypes = {
 	additionalClasses: PropTypes.string,
-	appearance: PropTypes.oneOf(['blank']),
+	appearance: PropTypes.oneOf(['blank']).isRequired,
 	children: PropTypes.node
 };
 

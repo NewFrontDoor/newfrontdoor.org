@@ -53,7 +53,7 @@ const JoinForm = ({
 
 	return (
 		<div className={styles.form}>
-			<Form onSubmit={handleSubmit} schema={schema} fields={fields} bindInput={bindInput}>
+			<Form schema={schema} fields={fields} bindInput={bindInput} onSubmit={handleSubmit}>
 				<div className={`form-group ${styles.submit}`}>
 					<button type="submit" className="btn btn-default form-control">Submit</button>
 				</div>
@@ -63,10 +63,10 @@ const JoinForm = ({
 };
 
 JoinForm.propTypes = {
-	bindInput: PropTypes.func,
-	model: PropTypes.object,
-	onSubmit: PropTypes.func,
-	schema: PropTypes.object
+	bindInput: PropTypes.func.isRequired,
+	model: PropTypes.object.isRequired,
+	onSubmit: PropTypes.func.isRequired,
+	schema: PropTypes.object.isRequired
 };
 
 const JoinFormContainer = compose(reformed(), validateSchema(fields), util.submitted)(JoinForm);
@@ -143,7 +143,7 @@ class FeaturedJoin extends React.Component {
 						<p className={styles.message}>
 							Interested in coming on board? Get in touch below or via our Social Media channels.
 						</p>
-						<JoinFormContainer onSubmit={this.handleSubmit} getFormRef={this.setFormRef}/>
+						<JoinFormContainer getFormRef={this.setFormRef} onSubmit={this.handleSubmit}/>
 						<div className={styles.social}>
 							<div>
 								<a href="http://facebook.com/vision100it">

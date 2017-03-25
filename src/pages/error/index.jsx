@@ -34,8 +34,8 @@ class Error extends React.Component {
 		if (searchResults.length > 0) {
 			searchResultList = (
 				<SearchResultList
-					onResultClick={this.handleCloseModal}
 					searchResults={searchResults}
+					onResultClick={this.handleCloseModal}
 					/>
 			);
 		}
@@ -59,8 +59,8 @@ class Error extends React.Component {
 								<SearchResults
 									titleClass={styles.title}
 									containerClass={styles.searchResults}
-									onCloseResults={this.handleCloseResult}
 									searchResults={this.state.searchResults}
+									onCloseResults={this.handleCloseResult}
 									>
 									{searchResultList}
 								</SearchResults>
