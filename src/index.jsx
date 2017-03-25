@@ -10,7 +10,8 @@ import Root from './containers/root/index.jsx';
 
 if (typeof document !== 'undefined') {
 	const render = Component => {
-		ReactDOM.render(<Component/>, document.getElementById('application'));
+		Modal.getApplicationElement = () => document.getElementById('application');
+		ReactDOM.render(<Component/>, document.getElementById('content'));
 	};
 
 	render(App);
@@ -18,8 +19,6 @@ if (typeof document !== 'undefined') {
 	if (process.env.NODE_ENV === 'production') {
 		install();
 	}
-
-	Modal.getApplicationElement = () => document.getElementById('application');
 }
 
 export default (locals, callback) => {
