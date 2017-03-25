@@ -36,7 +36,7 @@ const ContactForm = ({
 	};
 
 	return (
-		<Form onSubmit={handleSubmit} schema={schema} fields={fields} bindInput={bindInput}>
+		<Form schema={schema} fields={fields} bindInput={bindInput} onSubmit={handleSubmit}>
 			<div className="form-group">
 				<button type="submit" className="btn btn-primary">Submit</button>
 			</div>
@@ -45,10 +45,10 @@ const ContactForm = ({
 };
 
 ContactForm.propTypes = {
-	bindInput: PropTypes.func,
-	model: PropTypes.object,
-	onSubmit: PropTypes.func,
-	schema: PropTypes.object
+	bindInput: PropTypes.func.isRequired,
+	model: PropTypes.object.isRequired,
+	onSubmit: PropTypes.func.isRequired,
+	schema: PropTypes.object.isRequired
 };
 
 const ContactFormContainer = compose(reformed(), validateSchema(fields), util.submitted)(ContactForm);
@@ -130,7 +130,7 @@ class Contact extends React.Component {
 							<h3>
 								Join our mailing list
 							</h3>
-							<ContactFormContainer onSubmit={this.handleSubmit} getFormRef={this.setFormRef}/>
+							<ContactFormContainer getFormRef={this.setFormRef} onSubmit={this.handleSubmit}/>
 							{isModalOpen && <Popover onClose={this.handleClose}>
 								<div className={styles.modal}>
 									<h2>Thanks for joining the mailing list.</h2>

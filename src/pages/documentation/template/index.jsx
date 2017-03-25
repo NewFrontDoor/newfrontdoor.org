@@ -57,7 +57,7 @@ const DocumentationFeedbackFrom = ({
 
 	return (
 		<div className={styles.form}>
-			<Form onSubmit={handleSubmit} schema={schema} fields={fields} bindInput={bindInput}>
+			<Form schema={schema} fields={fields} bindInput={bindInput} onSubmit={handleSubmit}>
 				<div className="form-group">
 					<button type="submit" className="btn btn-default">Submit</button>
 					<button type="cancel" className="btn btn-default" onClick={onToggleFeedback}>Cancel</button>
@@ -68,11 +68,11 @@ const DocumentationFeedbackFrom = ({
 };
 
 DocumentationFeedbackFrom.propTypes = {
-	bindInput: PropTypes.func,
-	model: PropTypes.object,
-	onSubmit: PropTypes.func,
-	schema: PropTypes.object,
-	onToggleFeedback: PropTypes.func
+	bindInput: PropTypes.func.isRequired,
+	model: PropTypes.object.isRequired,
+	onSubmit: PropTypes.func.isRequired,
+	schema: PropTypes.object.isRequired,
+	onToggleFeedback: PropTypes.func.isRequired
 };
 
 const DocumentationFeedbackFromContainer = compose(reformed(), validateSchema(fields), util.submitted)(DocumentationFeedbackFrom);
@@ -205,8 +205,8 @@ Template.propTypes = {
 	match: PropTypes.shape({
 		params: PropTypes.shape({
 			documentId: PropTypes.string.isRequired
-		})
-	})
+		}).isRequired
+	}).isRequired
 };
 
 export default Template;

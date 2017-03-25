@@ -15,25 +15,29 @@ const Form = ({bindInput, children, className, fields, schema, onSubmit}) => {
 
 	return (
 		<form className={className} onSubmit={onSubmit}>
-			{fieldArray.map(({component, children, ...props}, key) => {
+			{fieldArray.map(({component, children, ...rest}) => {
 				if (typeof component === 'string') {
-					return React.createElement(component, {key}, children);
+					return React.createElement(component, {key: rest.name}, children);
 				}
 
-				return React.createElement(component, {key, ...props}, children);
+				return React.createElement(component, {key: rest.name, ...rest}, children);
 			})}
 			{children}
 		</form>
 	);
 };
 
+Form.defaultProps = {
+	className: ''
+};
+
 Form.propTypes = {
-	bindInput: PropTypes.func,
-	children: PropTypes.node,
+	bindInput: PropTypes.func.isRequired,
+	children: PropTypes.node.isRequired,
 	className: PropTypes.string,
-	fields: PropTypes.object,
-	onSubmit: PropTypes.func,
-	schema: PropTypes.object
+	fields: PropTypes.object.isRequired,
+	onSubmit: PropTypes.func.isRequired,
+	schema: PropTypes.object.isRequired
 };
 
 export default Form;

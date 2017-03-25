@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+import hash from 'string-hash';
 import {Link} from 'react-router-dom';
 import FaSearch from 'react-icons/fa/search';
 import content from '../../content';
@@ -13,7 +14,7 @@ const MainMenu = props => (
 					Search <FaSearch height="1.25em" width="1.25em"/>
 				</Button>
 			</li>
-			{props.menuItems.map((item, key) => <li key={key} className="main-menu-item">
+			{props.menuItems.map(item => <li key={hash(item.to)} className="main-menu-item">
 				<Link to={item.to} dangerouslySetInnerHTML={{__html: item.text}}/>
 			</li>)}
 		</ul>

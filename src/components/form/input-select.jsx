@@ -4,9 +4,9 @@ import styles from './input.scss';
 
 const InputSelect = ({hasError, label, name, onChange, options, required, value, width}) => {
 	return (
-		<fieldset className={classnames('form-group', {'has-error': hasError}, styles[width || 'full'])}>
+		<fieldset className={classnames('form-group', {'has-error': hasError}, styles[width])}>
 			<label htmlFor={name}>{label}</label>
-			<select id={name} className="form-control" name={name} onChange={onChange} value={value} required={required}>
+			<select id={name} className="form-control" name={name} value={value} required={required} onChange={onChange} >
 				{options.map(({key, label}) => {
 					return (
 						<option key={key} value={key}>{label}</option>
@@ -17,12 +17,19 @@ const InputSelect = ({hasError, label, name, onChange, options, required, value,
 	);
 };
 
+InputSelect.defaultProps = {
+	hasError: false,
+	required: false,
+	width: 'full',
+	value: ''
+};
+
 InputSelect.propTypes = {
 	hasError: PropTypes.bool,
-	label: PropTypes.string,
-	name: PropTypes.string,
-	onChange: PropTypes.func,
-	options: PropTypes.array,
+	label: PropTypes.string.isRequired,
+	name: PropTypes.string.isRequired,
+	onChange: PropTypes.func.isRequired,
+	options: PropTypes.array.isRequired,
 	required: PropTypes.bool,
 	value: PropTypes.string,
 	width: PropTypes.oneOf(['full', 'half'])

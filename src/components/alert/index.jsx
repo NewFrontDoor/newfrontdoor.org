@@ -7,8 +7,12 @@ const Alert = props => (
 	</div>
 );
 
+Alert.defaultProps = {
+	children: null
+};
+
 Alert.propTypes = {
-	type: PropTypes.oneOf(['warning', 'announcement']),
+	type: PropTypes.oneOf(['warning', 'announcement']).isRequired,
 	children: PropTypes.node
 };
 

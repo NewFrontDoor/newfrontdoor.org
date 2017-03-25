@@ -60,7 +60,7 @@ class Search extends React.Component {
 }
 
 Search.propTypes = {
-	size: PropTypes.oneOf(['large', 'small']),
+	size: PropTypes.oneOf(['large', 'small']).isRequired,
 	inputButton: PropTypes.element,
 	inputClass: PropTypes.string,
 	onSearchSubmit: PropTypes.func.isRequired,
@@ -68,6 +68,8 @@ Search.propTypes = {
 };
 
 Search.defaultProps = {
+	inputButton: null,
+	inputClass: '',
 	placeholder: 'Search...'
 };
 

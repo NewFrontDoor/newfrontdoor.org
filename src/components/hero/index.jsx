@@ -46,6 +46,11 @@ class Hero extends React.Component {
 	}
 }
 
+Hero.defaultProps = {
+	mini: false,
+	children: null
+};
+
 Hero.propTypes = {
 	mini: PropTypes.bool,
 	children: PropTypes.node

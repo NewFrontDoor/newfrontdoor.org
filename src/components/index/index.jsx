@@ -52,9 +52,14 @@ class Index extends React.Component {
 	}
 }
 
+Index.defaultProps = {
+	headerSize: 'full',
+	menuItems: []
+};
+
 Index.propTypes = {
 	headerSize: Header.propTypes.size,
-	children: PropTypes.node,
+	children: PropTypes.node.isRequired,
 	menuItems: MainMenu.propTypes.menuItems
 };
 

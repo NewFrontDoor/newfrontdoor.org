@@ -14,7 +14,7 @@ const Card = ({background, imagePadding, link, image, name, children}) => {
 
 	return (
 		<div className={styles.card} style={style}>
-			<Link to={link || ''}>
+			<Link to={link}>
 				<h2 hidden>{name}</h2>
 				<img src={imageContext(image)} style={imageStyle}/>
 				<p>{children}</p>
@@ -24,14 +24,16 @@ const Card = ({background, imagePadding, link, image, name, children}) => {
 };
 
 Card.defaultProps = {
-	link: ''
+	link: '',
+	imagePadding: '',
+	children: null
 };
 
 Card.propTypes = {
-	background: PropTypes.string,
-	image: PropTypes.string,
+	background: PropTypes.string.isRequired,
+	image: PropTypes.string.isRequired,
 	imagePadding: PropTypes.string,
-	name: PropTypes.string,
+	name: PropTypes.string.isRequired,
 	link: PropTypes.string,
 	children: PropTypes.node
 };

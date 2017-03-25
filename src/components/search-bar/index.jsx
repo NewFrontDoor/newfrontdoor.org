@@ -68,8 +68,8 @@ class SearchBar extends React.Component {
 		if (searchResults.length > 0) {
 			searchResultList = (
 				<SearchResultList
-					onResultClick={this.handleCloseModal}
 					searchResults={searchResults}
+					onResultClick={this.handleCloseModal}
 					/>
 			);
 		}
@@ -102,8 +102,8 @@ class SearchBar extends React.Component {
 				<SearchResults
 					containerClass={styles.results}
 					titleClass={styles.title}
-					onCloseResults={this.handleCloseResults}
 					query={searchTerm}
+					onCloseResults={this.handleCloseResults}
 					>
 					{searchResultList}
 				</SearchResults>

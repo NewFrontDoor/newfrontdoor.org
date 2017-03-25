@@ -1,4 +1,5 @@
 import React from 'react';
+import hash from 'string-hash';
 import {Link} from 'react-router-dom';
 import {Element} from 'react-scroll';
 import TeamMember from '../../components/team-member/index.jsx';
@@ -25,10 +26,10 @@ const About = () => (
 					<Element name="team">
 						<div className="team-wrap">
 							<h2>Vision 100 IT Board</h2>
-							{content.boardMembers.map((member, key) => <TeamMember key={key} {...member}/>)}
+							{content.boardMembers.map(member => <TeamMember key={hash(member.name)} {...member}/>)}
 							<hr/>
 							<h2>Vision 100 IT Team Members</h2>
-							{content.teamMembers.map((member, key) => <TeamMember key={key} {...member}/>)}
+							{content.teamMembers.map(member => <TeamMember key={hash(member.name)} {...member}/>)}
 							<hr/>
 						</div>
 					</Element>

@@ -6,20 +6,25 @@ const InputTextArea = ({hasError, label, name, onChange, placeholder, required, 
 	return (
 		<fieldset className={classnames('form-group', {'has-error': hasError}, styles[width || 'full'])}>
 			<label htmlFor={name}>{label}</label>
-			<textarea id={name} rows={rows} className="form-control" name={name} placeholder={placeholder} onChange={onChange} value={value} required={required}/>
+			<textarea id={name} rows={rows} className="form-control" name={name} placeholder={placeholder} value={value} required={required} onChange={onChange}/>
 		</fieldset>
 	);
 };
 
 InputTextArea.defaultProps = {
-	value: ''
+	hasError: false,
+	required: false,
+	placeholder: '',
+	width: 'full',
+	value: '',
+	rows: '2'
 };
 
 InputTextArea.propTypes = {
 	hasError: PropTypes.bool,
-	label: PropTypes.string,
-	name: PropTypes.string,
-	onChange: PropTypes.func,
+	label: PropTypes.string.isRequired,
+	name: PropTypes.string.isRequired,
+	onChange: PropTypes.func.isRequired,
 	placeholder: PropTypes.string,
 	required: PropTypes.bool,
 	rows: PropTypes.string,

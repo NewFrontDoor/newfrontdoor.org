@@ -15,9 +15,9 @@ const Featured = ({children, name, background}) => (
 );
 
 Featured.propTypes = {
-	children: PropTypes.node,
-	background: PropTypes.string,
-	name: Element.propTypes.name
+	children: PropTypes.node.isRequired,
+	background: PropTypes.string.isRequired,
+	name: Element.propTypes.name.isRequired
 };
 
 export default Featured;
