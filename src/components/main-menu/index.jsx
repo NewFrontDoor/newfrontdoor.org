@@ -2,7 +2,6 @@ import React, {PropTypes} from 'react';
 import hash from 'string-hash';
 import {Link} from 'react-router-dom';
 import FaSearch from 'react-icons/fa/search';
-import content from '../../content';
 import Button from '../button/index.jsx';
 import styles from './MainMenu.scss';
 
@@ -22,7 +21,7 @@ const MainMenu = props => (
 );
 
 MainMenu.defaultProps = {
-	menuItems: content.clientmenu.links
+	menuItems: []
 };
 
 const menuItemShape = PropTypes.shape({

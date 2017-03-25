@@ -6,6 +6,7 @@ import SearchBar from '../search-bar/index.jsx';
 import MainMenu from '../main-menu/index.jsx';
 import MobileMenu from '../mobile-menu/index.jsx';
 import FirstChild from '../../lib/first-child';
+import content from '../../content';
 
 import styles from './Index.scss';
 
@@ -54,7 +55,7 @@ class Index extends React.Component {
 
 Index.defaultProps = {
 	headerSize: 'full',
-	menuItems: []
+	menuItems: content.clientmenu.links
 };
 
 Index.propTypes = {
