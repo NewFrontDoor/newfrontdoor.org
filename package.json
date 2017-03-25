@@ -136,7 +136,6 @@
   },
   "xo": {
     "parser": "babel-eslint",
-    "esnext": true,
     "extends": "xo-react",
     "rules": {
       "react/forbid-component-props": 1,

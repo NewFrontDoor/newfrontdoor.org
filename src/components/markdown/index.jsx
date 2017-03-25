@@ -51,22 +51,12 @@ RemarkLink.propTypes = {
 export const remarkConfigDefault = {
 	remarkReactComponents: {
 		a: RemarkLink,
-		// blockquote: CombinedBlockQuote,
-		// code: CodePane,
-		// del: spectacleComponent(S, {type: 'strikethrough'}),
-		// em: spectacleComponent(S, {type: 'italic'}),
 		h1: remarkHeading('H1'),
 		h2: remarkHeading('H2'),
 		h3: remarkHeading('H3'),
 		h4: remarkHeading('H4'),
 		h5: remarkHeading('H5'),
 		h6: remarkHeading('H6')
-		// img: Image,
-		// inlineCode: Code,
-		// li: ListItem,
-		// p: Text,
-		// strong: spectacleComponent(S, {type: 'bold'}),
-		// ul: List
 	}
 };
 

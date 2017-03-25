@@ -16,8 +16,6 @@ gulp.task('webpack', ['lunr'], webpack);
 gulp.task('build', ['clean', 'webpack']);
 gulp.task('publish', ['build'], publish);
 
-// default task
-
 const develop = () => {
 	gulp.start('develop');
 };

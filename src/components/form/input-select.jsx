@@ -18,9 +18,7 @@ const InputSelect = ({hasError, label, name, onChange, options, required, value,
 };
 
 InputSelect.propTypes = {
-	// errors: PropTypes.array,
 	hasError: PropTypes.bool,
-	// id: PropTypes.string,
 	label: PropTypes.string,
 	name: PropTypes.string,
 	onChange: PropTypes.func,
