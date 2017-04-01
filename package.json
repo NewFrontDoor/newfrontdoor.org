@@ -77,7 +77,7 @@
     "eslint-plugin-react": "^6.7.1",
     "eval": "^0.1.1",
     "extract-text-webpack-plugin": "^2.1.0",
-    "file-loader": "^0.10.1",
+    "file-loader": "^0.11.1",
     "front-matter": "^2.1.1",
     "github-slugger": "^1.1.1",
     "gulp": "^3.9.1",
