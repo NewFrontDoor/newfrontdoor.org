@@ -36,7 +36,7 @@
     "react-addons-pure-render-mixin": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-gateway": "^2.3.0",
-    "react-height": "^2.1.1",
+    "react-height": "^3.0.0",
     "react-icons": "^2.2.3",
     "react-modal2": "^4.0.0",
     "react-reformed": "^1.0.0",
