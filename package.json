@@ -188,7 +188,7 @@
           ]
         }
       ],
-      "order/declaration-block-properties-alphabetical-order": null,
+      "order/properties-alphabetical-order": null,
       "max-nesting-depth": null,
       "selector-max-compound-selectors": null
     }
