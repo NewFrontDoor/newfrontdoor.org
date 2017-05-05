@@ -42,7 +42,7 @@
     "react-reformed": "^1.0.0",
     "react-router-dom": "^4.0.0",
     "react-scroll": "^1.4.4",
-    "react-sticky": "^5.0.5",
+    "react-sticky": "^6.0.1",
     "react-waypoint": "^6.0.0",
     "string-hash": "^1.1.3",
     "webfontloader": "^1.6.26"
