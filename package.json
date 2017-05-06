@@ -74,7 +74,7 @@
     "eslint": "^3.11.0",
     "eslint-config-xo-react": "^0.11.1",
     "eslint-import-resolver-webpack": "^0.8.0",
-    "eslint-plugin-react": "^6.7.1",
+    "eslint-plugin-react": "^7.0.0",
     "eval": "^0.1.1",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
