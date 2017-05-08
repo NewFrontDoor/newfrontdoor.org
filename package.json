@@ -103,7 +103,7 @@
     "postcss-calc": "^5.3.1",
     "postcss-colorblind": "BarryThePenguin/postcss-colorblind#patch-1",
     "postcss-lh": "^1.1.4",
-    "postcss-loader": "^1.1.1",
+    "postcss-loader": "^2.0.0",
     "postcss-pxtorem": "^4.0.0",
     "postcss-typography": "2.0.0-0",
     "raw-loader": "^0.5.1",
