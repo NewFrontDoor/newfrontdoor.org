@@ -90,7 +90,7 @@ class Contact extends React.Component {
 	}
 
 	handleSubmit(model) {
-		fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/mailing-list', {
+		fetch('https://api.vision100it.org/mailing-list', {
 			method: 'post',
 			mode: 'cors',
 			body: JSON.stringify({

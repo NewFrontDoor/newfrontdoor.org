@@ -105,7 +105,7 @@ class FeaturedJoin extends React.Component {
 	}
 
 	handleSubmit(model) {
-		return fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/contact-us', {
+		return fetch('https://api.vision100it.org/contact-us', {
 			method: 'post',
 			mode: 'cors',
 			body: JSON.stringify({

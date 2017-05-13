@@ -178,7 +178,7 @@ class Support extends React.Component {
 	}
 
 	handleSubmit(model) {
-		return fetch('https://qvikae2ufi.execute-api.us-west-2.amazonaws.com/prod/support-request', {
+		return fetch('https://api.vision100it.org/support-request', {
 			method: 'post',
 			mode: 'cors',
 			body: JSON.stringify(model),
