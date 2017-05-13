@@ -165,26 +165,32 @@ class Template extends React.Component {
 							</Markdown>
 						</div>
 						<div className={styles.sidebar}>
-							<Sticky stickyStyle={{marginTop: 144}} topOffset={-144} bottomOffset={168}>
-								<div className={docTOC}>
-									<h3>Contents</h3>
-									<Toc>
-										{this.document.body}
-									</Toc>
-								</div>
-								<div className={docFeedback}>
-									{this.state.openFeedback ? (
-										<DocumentationFeedbackFromContainer getFormRef={this.setFormRef} onSubmit={this.handleSubmit} onToggleFeedback={this.handleToggleFeedback}/>
-									) : (
-										<span>
-											<h3>Give feedback</h3>
-											<a href="#" onClick={this.handleToggleFeedback}>
-												<span>Suggest a revision to this document.</span>
-												<FaAngleDown height="1.5em" width="1.5em"/>
-											</a>
-										</span>
-									)}
-								</div>
+							<Sticky topOffset={-144} bottomOffset={168}>
+								{
+									({style}) => (
+										<div style={{marginTop: 144, ...style}}>
+											<div className={docTOC}>
+												<h3>Contents</h3>
+												<Toc>
+													{this.document.body}
+												</Toc>
+											</div>
+											<div className={docFeedback}>
+												{this.state.openFeedback ? (
+													<DocumentationFeedbackFromContainer getFormRef={this.setFormRef} onSubmit={this.handleSubmit} onToggleFeedback={this.handleToggleFeedback}/>
+												) : (
+													<span>
+														<h3>Give feedback</h3>
+														<a href="#" onClick={this.handleToggleFeedback}>
+															<span>Suggest a revision to this document.</span>
+															<FaAngleDown height="1.5em" width="1.5em"/>
+														</a>
+													</span>
+												)}
+											</div>
+										</div>
+									)
+								}
 							</Sticky>
 						</div>
 					</div>
