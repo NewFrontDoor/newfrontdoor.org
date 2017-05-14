@@ -105,7 +105,7 @@
     "postcss-lh": "^1.1.4",
     "postcss-loader": "^2.0.5",
     "postcss-pxtorem": "^4.0.0",
-    "postcss-typography": "2.0.0-0",
+    "postcss-typography": "beta",
     "raw-loader": "^0.5.1",
     "react-addons-test-utils": "^15.4.1",
     "remark": "^7.0.0",
