@@ -43,4 +43,4 @@ currently don’t have a V100IT hosted website, but are interested in
 implementing a similar system on your own page, we’d be happy to let you
 know what you need to consider in order to set it up for yourself.
 
-  [here.]: http://www.crckingston.org.au/camprego
+  [here.]: https://www.crckingston.org.au/camprego

@@ -173,10 +173,10 @@ export default {
 			to: '/client'
 		}, {
 			children: (<FaFacebookSquare/>),
-			target: 'http://facebook.com/vision100it'
+			target: 'https://facebook.com/vision100it'
 		}, {
 			children: (<FaTwitterSquare/>),
-			target: 'http://twitter.com/vision100it'
+			target: 'https://twitter.com/vision100it'
 		}]
 	}, {
 		links: []
