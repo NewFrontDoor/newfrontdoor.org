@@ -1,6 +1,6 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
 import throttle from 'lodash/throttle';
 import logo from '../../images/vision100-it-logo.svg';
 import styles from './Header.scss';
@@ -11,10 +11,7 @@ class Header extends React.Component {
 		this.handleScroll = throttle(this.handleScroll.bind(this), 250);
 		this.backgroundHeight = this.backgroundHeight.bind(this);
 		this.state = this.nextState();
-		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
-
-	shouldComponentUpdate() {}
 
 	backgroundHeight() {
 		if (this.props.size === 'full') {

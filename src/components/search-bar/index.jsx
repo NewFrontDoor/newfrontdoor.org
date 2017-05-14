@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import FaSearch from 'react-icons/fa/search';
 import FaTimesCircle from 'react-icons/fa/times-circle';

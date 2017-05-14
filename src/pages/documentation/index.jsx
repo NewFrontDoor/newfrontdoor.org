@@ -1,5 +1,5 @@
-import React, {PropTypes} from 'react';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
+import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import {parse} from 'qs';
 import FaBook from 'react-icons/fa/book';
@@ -25,10 +25,7 @@ class Documentation extends React.Component {
 		};
 		this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
 		this.handleCloseResult = this.handleCloseResult.bind(this);
-		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
-
-	shouldComponentUpdate() {}
 
 	componentDidMount() {
 		if (this.state.searchTerm) {

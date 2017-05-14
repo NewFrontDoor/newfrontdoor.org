@@ -1,5 +1,5 @@
-import React, {PropTypes} from 'react';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
+import React from 'react';
+import PropTypes from 'prop-types';
 import throttle from 'lodash/throttle';
 import styles from './Hero.scss';
 
@@ -8,10 +8,7 @@ class Hero extends React.Component {
 		super();
 		this.state = {};
 		this.handleScroll = throttle(this.handleScroll.bind(this), 50);
-		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
-
-	shouldComponentUpdate() {}
 
 	get length() {
 		return window.innerHeight - 100;

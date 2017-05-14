@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import {Gateway} from 'react-gateway';
 import Modal from 'react-modal2';
 import FaCircle from 'react-icons/fa/circle';

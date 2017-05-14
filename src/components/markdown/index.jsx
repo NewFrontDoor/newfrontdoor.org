@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import remark from 'remark';
 import {isUndefined} from 'lodash';
 import slug from 'remark-slug';
@@ -9,13 +10,7 @@ import {Link} from 'react-router-dom';
 import toc from 'mdast-util-toc';
 
 const remarkHeading = (component, boundProps = {}) => {
-	return React.createClass({
-		propTypes() {
-			return {
-				id: PropTypes.string,
-				children: PropTypes.element
-			};
-		},
+	class Heading extends React.Component {
 		render() {
 			const slugs = ghSlugs();
 			const props = {...this.props, ...boundProps};
@@ -24,7 +19,13 @@ const remarkHeading = (component, boundProps = {}) => {
 				{React.createElement(component, {...props}, this.props.children)}
 			</Element>);
 		}
-	});
+	}
+
+	Heading.propTypes = {
+		children: PropTypes.element.isRequired
+	};
+
+	return Heading;
 };
 
 const RemarkLink = props => {
@@ -45,7 +46,11 @@ const RemarkLink = props => {
 
 RemarkLink.propTypes = {
 	href: PropTypes.string,
-	children: PropTypes.node
+	children: PropTypes.node.isRequired
+};
+
+RemarkLink.defaultProps = {
+	href: undefined
 };
 
 export const remarkConfigDefault = {
@@ -67,7 +72,7 @@ export const Markdown = ({component, style, source, children, remarkConfig}) => 
 };
 
 Markdown.propTypes = {
-	component: React.PropTypes.any,
+	component: PropTypes.any,
 	style: PropTypes.object,
 	children: PropTypes.node,
 	source: PropTypes.string,
@@ -77,6 +82,7 @@ Markdown.propTypes = {
 Markdown.defaultProps = {
 	component: 'div',
 	style: {},
+	children: undefined,
 	source: '',
 	remarkConfig: remarkConfigDefault
 };
@@ -101,7 +107,7 @@ Toc.propTypes = {
 };
 
 Toc.defaultProps = {
-	style: {},
+	children: undefined,
 	source: '',
 	remarkConfig: remarkConfigDefault
 };

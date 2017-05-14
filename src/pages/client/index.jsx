@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import fm from 'front-matter';
 import hash from 'string-hash';
 import Alert from '../../components/alert/index.jsx';

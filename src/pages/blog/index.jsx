@@ -1,5 +1,5 @@
-import React, {PropTypes} from 'react';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
+import React from 'react';
+import PropTypes from 'prop-types';
 import fm from 'front-matter';
 import moment from 'moment';
 import Index from '../../components/index/index.jsx';
@@ -26,10 +26,7 @@ class Blog extends React.Component {
 	constructor() {
 		super();
 		this.handleGoBack = this.handleGoBack.bind(this);
-		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
-
-	shouldComponentUpdate() {}
 
 	get blog() {
 		return blogs.document(this.props.match.params.blogId) || {};

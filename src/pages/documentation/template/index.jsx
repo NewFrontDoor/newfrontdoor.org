@@ -1,5 +1,5 @@
-import React, {PropTypes} from 'react';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
+import React from 'react';
+import PropTypes from 'prop-types';
 import fm from 'front-matter';
 import classNames from 'classnames';
 import {StickyContainer, Sticky} from 'react-sticky';
@@ -89,7 +89,6 @@ class Template extends React.Component {
 		this.handleClose = this.handleClose.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleToggleFeedback = this.handleToggleFeedback.bind(this);
-		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
 
 	get document() {
@@ -131,8 +130,6 @@ class Template extends React.Component {
 			})
 		}).catch(this.handleOpen).then(this.handleOpen);
 	}
-
-	shouldComponentUpdate() {}
 
 	handleToggleFeedback(event) {
 		event.preventDefault();

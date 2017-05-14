@@ -1,5 +1,5 @@
-import React, {PropTypes} from 'react';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
+import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import reformed from 'react-reformed';
 import compose from 'react-reformed/lib/compose';
@@ -122,7 +122,6 @@ class Feature extends React.Component {
 		this.handleOpen = this.handleOpen.bind(this);
 		this.handleClose = this.handleClose.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
-		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
 
 	set formRef(ref) {
@@ -154,7 +153,6 @@ class Feature extends React.Component {
 			headers: new Headers({'Content-Type': 'application/json'})
 		}).catch(this.handleOpen).then(this.handleOpen);
 	}
-	shouldComponentUpdate() {}
 
 	render() {
 		const {isModalOpen} = this.state;

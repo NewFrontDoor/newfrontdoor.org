@@ -1,5 +1,4 @@
 import React from 'react';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {Element, scroller} from 'react-scroll';
 import FaAngleDown from 'react-icons/fa/angle-down';
 import Collapse from '../collapse/index.jsx';
@@ -15,10 +14,7 @@ class FeaturedTools extends React.Component {
 			isOpen: false
 		};
 		this.handleCollapse = this.handleCollapse.bind(this);
-		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
-
-	shouldComponentUpdate() {}
 
 	handleCollapse(event) {
 		event.preventDefault();

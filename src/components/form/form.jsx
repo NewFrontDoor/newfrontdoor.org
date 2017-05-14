@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Form = ({bindInput, children, className, fields, schema, onSubmit}) => {
 	const fieldArray = Object.keys(fields).map(key => {

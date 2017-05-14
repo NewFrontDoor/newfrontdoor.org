@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 class Search extends React.Component {
@@ -46,9 +47,9 @@ class Search extends React.Component {
 				<div className={inputGroup}>
 					<label className="sr-only" htmlFor="search">Search</label>
 					<input
+						ref={this.setSearchInputRef}
 						type="search"
 						name="search"
-						ref={this.setSearchInputRef}
 						className={`form-control ${inputClass}`}
 						placeholder={placeholder}
 						/>

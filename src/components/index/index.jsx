@@ -1,6 +1,6 @@
-import React, {PropTypes} from 'react';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
-import CSSTransitionGroup from 'react-addons-css-transition-group';
+import React from 'react';
+import PropTypes from 'prop-types';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import Header from '../header/index.jsx';
 import SearchBar from '../search-bar/index.jsx';
 import MainMenu from '../main-menu/index.jsx';
@@ -18,10 +18,7 @@ class Index extends React.Component {
 		};
 		this.handleOpenSearch = this.handleOpenSearch.bind(this);
 		this.handleCloseSearch = this.handleCloseSearch.bind(this);
-		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
-
-	shouldComponentUpdate() {}
 
 	handleOpenSearch(event) {
 		event.preventDefault();

@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './input.scss';
 
@@ -8,7 +9,7 @@ const InputRadio = ({hasError, label, name, onChange, options, placeholder, requ
 			<label htmlFor={name}>{label}</label>
 			{options.map(({key, label, help}) => {
 				return (
-					<div className="radio" key={key}>
+					<div key={key} className="radio">
 						<label>
 							<input type="radio" name={name} placeholder={placeholder} value={key} required={required} onChange={onChange}/>
 							{label}

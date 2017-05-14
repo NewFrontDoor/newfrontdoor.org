@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Search from '../../components/search/index.jsx';
 import withSearchIndex from '../../components/search-index/index.jsx';
 import SearchResults from '../../components/search-results/index.jsx';
