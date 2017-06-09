@@ -69,7 +69,7 @@
     "classnames": "^2.2.5",
     "cross-env": "^5.0.0",
     "css-loader": "^0.28.0",
-    "del": "^2.2.2",
+    "del": "^3.0.0",
     "enzyme": "^2.6.0",
     "eslint": "^3.11.0",
     "eslint-config-xo-react": "^0.12.0",
