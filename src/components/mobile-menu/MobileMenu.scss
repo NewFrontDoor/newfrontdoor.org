@@ -5,8 +5,7 @@
 	position: absolute;
 	top: 0;
 	right: 0;
-	flex-direction: row;
-	flex-wrap: wrap;
+	flex-flow: row wrap;
 	align-content: stretch;
 	align-items: flex-start;
 	justify-content: space-between;
