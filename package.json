@@ -95,7 +95,7 @@
     "lodash-webpack-plugin": "^0.11.0",
     "lost": "^8.0.0",
     "mdast-util-toc": "^2.0.0",
-    "ngrok": "^2.2.3",
+    "ngrok": "^2.2.15",
     "node-libs-browser": "^2.0.0",
     "node-sass": "^4.1.1",
     "normalize.css": "^7.0.0",
