@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+import TransitionGroup from 'react-transition-group/TransitionGroup';
+import CSSTransition from 'react-transition-group/CSSTransition';
 import Header from '../header/index';
 import SearchBar from '../search-bar/index';
 import MainMenu from '../main-menu/index';
 import MobileMenu from '../mobile-menu/index';
-import FirstChild from '../../lib/first-child';
 import content from '../../content';
 
 import styles from './Index.scss';
@@ -37,14 +37,13 @@ class Index extends React.Component {
 					<MainMenu menuItems={this.props.menuItems} onOpenSearch={this.handleOpenSearch}/>
 				</Header>
 				{this.props.children}
-				<CSSTransitionGroup
-					component={FirstChild}
-					transitionName={styles}
-					transitionEnterTimeout={300}
-					transitionLeaveTimeout={300}
-				>
-					{this.state.showSearch && <SearchBar onClose={this.handleCloseSearch}/>}
-				</CSSTransitionGroup>
+				<TransitionGroup>
+					{this.state.showSearch && (
+						<CSSTransition timeout={300} classNames={styles}>
+							<SearchBar onClose={this.handleCloseSearch}/>
+						</CSSTransition>
+					)}
+				</TransitionGroup>
 			</div>
 		);
 	}

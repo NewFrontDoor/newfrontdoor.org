@@ -43,7 +43,7 @@
     "react-router-dom": "^4.0.0",
     "react-scroll": "^1.4.4",
     "react-sticky": "^6.0.1",
-    "react-transition-group": "^1.1.3",
+    "react-transition-group": "^2.2.0",
     "react-waypoint": "^7.0.3",
     "remark-frontmatter": "^1.0.0",
     "string-hash": "^1.1.3",
