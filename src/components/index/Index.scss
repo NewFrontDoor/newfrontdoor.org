@@ -13,11 +13,11 @@
 	opacity: 1;
 }
 
-:local .leave {
+:local .exit {
 	opacity: 1;
 }
 
-:local .leaveActive {
+:local .exitActive {
 	transition: opacity 300ms ease-in-out;
 	opacity: 0.01;
 }

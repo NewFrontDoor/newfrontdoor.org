@@ -95,6 +95,7 @@ class SearchBar extends React.Component {
 						</h2>
 					</div>
 					<Search
+						size="small"
 						inputClass={styles.searchInput}
 						inputButton={inputButton}
 						onSearchSubmit={this.handleSearchSubmit}

@@ -11,19 +11,19 @@ const searchIndex = WrappedComponent => {
 
 		get index() {
 			return new Promise(resolve => {
-				if (self.__searchIndex) {
+				if (this.__searchIndex) {
 					resolve({
-						index: self.__searchIndex,
-						data: self.__searchData
+						index: this.__searchIndex,
+						data: this.__searchData
 					});
 				} else {
 					require.ensure([], () => {
-						self.__searchIndex = lunr.Index.load(require('../../search/search-index.json'));
-						self.__searchData = require('../../search/search-data.json');
+						this.__searchIndex = lunr.Index.load(require('../../search/search-index.json'));
+						this.__searchData = require('../../search/search-data.json');
 
 						resolve({
-							index: self.__searchIndex,
-							data: self.__searchData
+							index: this.__searchIndex,
+							data: this.__searchData
 						});
 					});
 				}
