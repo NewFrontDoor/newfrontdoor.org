@@ -216,13 +216,15 @@ class Support extends React.Component {
 						<SupportFormContainer getFormRef={this.setFormRef} initialModel={{severity: '4'}} onSubmit={this.handleSubmit}/>
 					</div>
 				</div>
-				{isModalOpen && <Popover onClose={this.handleClose}>
-					<div className={styles.modal}>
-						<h2>Hearing you loud and clear!</h2>
-						<p>We’ve received your submission and will get back to you about your issue as soon as possible. If you have other things to report, please feel free to complete the form a second time.</p>
-						<p><button className={styles.button} onClick={this.handleClose}>No worries</button></p>
-					</div>
-				</Popover>}
+				{isModalOpen && (
+					<Popover onClose={this.handleClose}>
+						<div className={styles.modal}>
+							<h2>Hearing you loud and clear!</h2>
+							<p>We’ve received your submission and will get back to you about your issue as soon as possible. If you have other things to report, please feel free to complete the form a second time.</p>
+							<p><button className={styles.button} onClick={this.handleClose}>No worries</button></p>
+						</div>
+					</Popover>
+				)}
 			</Index>
 		);
 	}

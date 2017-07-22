@@ -128,12 +128,14 @@ class Contact extends React.Component {
 								Join our mailing list
 							</h3>
 							<ContactFormContainer getFormRef={this.setFormRef} onSubmit={this.handleSubmit}/>
-							{isModalOpen && <Popover onClose={this.handleClose}>
-								<div className={styles.modal}>
-									<h2>Thanks for joining the mailing list.</h2>
-									<p><button className={styles.button} onClick={this.handleClose}>Great</button></p>
-								</div>
-							</Popover>}
+							{isModalOpen && (
+								<Popover onClose={this.handleClose}>
+									<div className={styles.modal}>
+										<h2>Thanks for joining the mailing list.</h2>
+										<p><button className={styles.button} onClick={this.handleClose}>Great</button></p>
+									</div>
+								</Popover>
+							)}
 							<p><a href="#" onClick={this.handleCollapse}>About our mailing lists</a></p>
 							<Collapse isOpened={this.state.isOpen}>
 								<p>Vision 100 sends out a bunch of stuff via email regularly including:</p>

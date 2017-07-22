@@ -97,13 +97,15 @@ const Client = props => {
 					</Card>
 				</div>
 				<div className="client-wrapper">
-					{ pinnedPost && <section className="pinned-post">
-						<Post url={pinnedPost.url} {...pinnedPost.attributes}>
-							<Markdown>
-								{pinnedPost.body}
-							</Markdown>
-						</Post>
-					</section> }
+					{pinnedPost && (
+						<section className="pinned-post">
+							<Post url={pinnedPost.url} {...pinnedPost.attributes}>
+								<Markdown>
+									{pinnedPost.body}
+								</Markdown>
+							</Post>
+						</section>
+					)}
 					<section className="posts">
 						{posts.map(post => (
 							<Post key={hash(post.url)} url={post.url} {...post.attributes}>

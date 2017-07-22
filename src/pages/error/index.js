@@ -37,7 +37,7 @@ class Error extends React.Component {
 				<SearchResultList
 					searchResults={searchResults}
 					onResultClick={this.handleCloseModal}
-					/>
+				/>
 			);
 		}
 
@@ -56,13 +56,13 @@ class Error extends React.Component {
 									buttonClass="btn-primary"
 									placeholder="Search V100IT..."
 									onSearchSubmit={this.handleSearchSubmit}
-									/>
+								/>
 								<SearchResults
 									titleClass={styles.title}
 									containerClass={styles.searchResults}
 									searchResults={this.state.searchResults}
 									onCloseResults={this.handleCloseResult}
-									>
+								>
 									{searchResultList}
 								</SearchResults>
 							</div>

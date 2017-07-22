@@ -20,15 +20,16 @@ const SearchResults = ({onCloseResults, containerClass, children, titleClass, qu
 				</h3>
 			</div>
 			{children}
-			{query && <div className={`small ${styles.nav}`}>
-				<Link to={`/documentation?search=${query}`}>more</Link>
-			</div>}
+			{query && (
+				<div className={`small ${styles.nav}`}>
+					<Link to={`/documentation?search=${query}`}>more</Link>
+				</div>
+			)}
 		</div>
 	);
 };
 
 SearchResults.defaultProps = {
-	onResultClick: () => {},
 	containerClass: '',
 	children: null,
 	query: null

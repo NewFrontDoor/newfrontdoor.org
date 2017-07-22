@@ -16,9 +16,11 @@ const remarkHeading = (component, boundProps = {}) => {
 			const slugs = ghSlugs();
 			const props = {...this.props, ...boundProps};
 			const [slug] = props.children;
-			return (<Element name={`${slugs.slug(slug)}`}>
-				{React.createElement(component, {...props}, this.props.children)}
-			</Element>);
+			return (
+				<Element name={`${slugs.slug(slug)}`}>
+					{React.createElement(component, {...props}, this.props.children)}
+				</Element>
+			);
 		}
 	}
 

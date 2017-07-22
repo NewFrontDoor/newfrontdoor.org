@@ -159,13 +159,15 @@ class FeaturedJoin extends React.Component {
 						</div>
 					</Element>
 				</section>
-				{isModalOpen && <Popover onClose={this.handleClose}>
-					<div className={styles.modal}>
-						<h2>Thanks for contacting us!</h2>
-						<p>We’ll be in touch soon to let you know the next steps.</p>
-						<p><button className={styles.button} onClick={this.handleClose}>Awesome</button></p>
-					</div>
-				</Popover>}
+				{isModalOpen && (
+					<Popover onClose={this.handleClose}>
+						<div className={styles.modal}>
+							<h2>Thanks for contacting us!</h2>
+							<p>We’ll be in touch soon to let you know the next steps.</p>
+							<p><button className={styles.button} onClick={this.handleClose}>Awesome</button></p>
+						</div>
+					</Popover>
+				)}
 			</div>
 		);
 	}
