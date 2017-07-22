@@ -101,7 +101,7 @@
     "normalize.css": "^7.0.0",
     "offline-plugin": "^4.5.2",
     "postcss-calc": "^6.0.0",
-    "postcss-colorblind": "BarryThePenguin/postcss-colorblind#patch-1",
+    "postcss-colorblind": "github:BarryThePenguin/postcss-colorblind#patch-1",
     "postcss-lh": "^1.1.4",
     "postcss-loader": "^2.0.5",
     "postcss-pxtorem": "^4.0.0",
