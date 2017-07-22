@@ -44,6 +44,7 @@
     "react-sticky": "^6.0.1",
     "react-transition-group": "^1.1.3",
     "react-waypoint": "^7.0.3",
+    "remark-frontmatter": "^1.0.0",
     "string-hash": "^1.1.3",
     "webfontloader": "^1.6.26"
   },
@@ -91,7 +92,6 @@
     "gulp-plumber": "^1.1.0",
     "gulp-util": "^3.0.7",
     "html-loader": "^0.4.4",
-    "json-loader": "^0.5.4",
     "lodash-webpack-plugin": "^0.11.0",
     "lost": "^8.0.0",
     "mdast-util-toc": "^2.0.0",
@@ -195,8 +195,27 @@
     }
   },
   "babel": {
+    "plugins": [
+      "syntax-dynamic-import"
+    ],
     "presets": [
-      "es2015"
-    ]
+      [
+        "es2015",
+        {
+          "modules": false
+        }
+      ],
+      "react",
+      "stage-2"
+    ],
+    "env": {
+      "production": {
+        "plugins": [
+          "transform-react-constant-elements",
+          "transform-react-inline-elements",
+          "transform-react-remove-prop-types"
+        ]
+      }
+    }
   }
 }
