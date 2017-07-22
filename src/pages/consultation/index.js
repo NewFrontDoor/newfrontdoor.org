@@ -1,7 +1,7 @@
 import React from 'react';
 import fm from 'front-matter';
-import Index from '../../components/index/index.js';
-import {Markdown} from '../../components/markdown/index.js';
+import Index from '../../components/index/index';
+import {Markdown} from '../../components/markdown/index';
 import content from '../../content/consultation.md';
 
 const {body, attributes} = fm(content);

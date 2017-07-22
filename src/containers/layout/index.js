@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import {GatewayDest, GatewayProvider} from 'react-gateway';
-import Footer from '../../components/footer/index.js';
+import Footer from '../../components/footer/index';
 import * as Routes from '../../routes/index';
 import '../../css/main.scss';
 

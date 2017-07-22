@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import FaSearch from 'react-icons/fa/search';
 import FaTimesCircle from 'react-icons/fa/times-circle';
-import Button from '../button/index.js';
-import withSearchIndex from '../search-index/index.js';
-import Search from '../search/index.js';
-import SearchResults from '../search-results/index.js';
-import SearchResultList from '../search-result-list/index.js';
+import Button from '../button/index';
+import withSearchIndex from '../search-index/index';
+import Search from '../search/index';
+import SearchResults from '../search-results/index';
+import SearchResultList from '../search-result-list/index';
 import styles from './SearchBar.scss';
 
 const ESCAPE = 27;

@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import fm from 'front-matter';
 import moment from 'moment';
-import Index from '../../components/index/index.js';
-import {Markdown} from '../../components/markdown/index.js';
+import Index from '../../components/index/index';
+import {Markdown} from '../../components/markdown/index';
 import styles from './Blog.scss';
 
 const blogs = {

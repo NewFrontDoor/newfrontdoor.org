@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Index from '../../components/index/index.js';
+import Index from '../../components/index/index';
 
 const Status = () => (
 	<Index>

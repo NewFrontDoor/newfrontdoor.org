@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import FaAngleDown from 'react-icons/fa/angle-down';
-import Featured from './index.js';
+import Featured from './index';
 
 const FeaturedPricing = () => (
 	<Featured name="pricing" background="white">

@@ -8,11 +8,11 @@ import FaLock from 'react-icons/fa/lock';
 import FaChain from 'react-icons/fa/chain';
 import FaVideoCamera from 'react-icons/fa/video-camera';
 import FaLightbulbO from 'react-icons/fa/lightbulb-o';
-import withSearchIndex from '../../components/search-index/index.js';
-import SearchResults from '../../components/search-results/index.js';
-import SearchResultList from '../../components/search-result-list/index.js';
-import Index from '../../components/index/index.js';
-import Search from '../../components/search/index.js';
+import withSearchIndex from '../../components/search-index/index';
+import SearchResults from '../../components/search-results/index';
+import SearchResultList from '../../components/search-result-list/index';
+import Index from '../../components/index/index';
+import Search from '../../components/search/index';
 import styles from './documentation.scss';
 
 class Documentation extends React.Component {

@@ -4,9 +4,9 @@ import {renderToStaticMarkup} from 'react-dom/server';
 import {StaticRouter} from 'react-router-dom';
 import Modal from 'react-modal2';
 import {install} from 'offline-plugin/runtime';
-import App from './containers/app/index.js';
-import Layout from './containers/layout/index.js';
-import Root from './containers/root/index.js';
+import App from './containers/app/index';
+import Layout from './containers/layout/index';
+import Root from './containers/root/index';
 
 if (typeof document !== 'undefined') {
 	const render = Component => {

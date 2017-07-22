@@ -6,8 +6,8 @@ import compose from 'react-reformed/lib/compose';
 import validateSchema from 'react-reformed/lib/validateSchema';
 import FaFacebook from 'react-icons/fa/facebook';
 import FaTwitter from 'react-icons/fa/twitter';
-import Popover from '../popover/index.js';
-import {Form, util, InputEmail, InputTextArea, InputText} from '../form/index.js';
+import Popover from '../popover/index';
+import {Form, util, InputEmail, InputTextArea, InputText} from '../form/index';
 import styles from './feature-join.scss';
 
 const imageContext = require.context('../../images');

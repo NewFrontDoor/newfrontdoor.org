@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import hash from 'string-hash';
 import {Link} from 'react-router-dom';
 import FaSearch from 'react-icons/fa/search';
-import Button from '../button/index.js';
+import Button from '../button/index';
 import styles from './MainMenu.scss';
 
 const MainMenu = props => (

@@ -4,9 +4,9 @@ import {Link} from 'react-router-dom';
 import reformed from 'react-reformed';
 import compose from 'react-reformed/lib/compose';
 import validateSchema from 'react-reformed/lib/validateSchema';
-import Popover from '../../components/popover/index.js';
-import Index from '../../components/index/index.js';
-import {Form, util, InputEmail, InputRadio, InputTextArea, InputText} from '../../components/form/index.js';
+import Popover from '../../components/popover/index';
+import Index from '../../components/index/index';
+import {Form, util, InputEmail, InputRadio, InputTextArea, InputText} from '../../components/form/index';
 import styles from '../../css/feature.scss';
 
 const fields = {

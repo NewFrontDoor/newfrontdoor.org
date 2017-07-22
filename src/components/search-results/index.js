@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import ReactHeight from 'react-height';
 import FaTimesCircle from 'react-icons/fa/times-circle';
-import Button from '../button/index.js';
+import Button from '../button/index';
 import styles from './SearchResults.scss';
 
 const SearchResults = ({onCloseResults, containerClass, children, titleClass, query}) => {

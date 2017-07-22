@@ -7,10 +7,10 @@ import reformed from 'react-reformed';
 import compose from 'react-reformed/lib/compose';
 import validateSchema from 'react-reformed/lib/validateSchema';
 import FaAngleDown from 'react-icons/fa/angle-down';
-import Popover from '../../../components/popover/index.js';
-import Index from '../../../components/index/index.js';
-import {Markdown, Toc} from '../../../components/markdown/index.js';
-import {Form, util, InputEmail, InputTextArea} from '../../../components/form/index.js';
+import Popover from '../../../components/popover/index';
+import Index from '../../../components/index/index';
+import {Markdown, Toc} from '../../../components/markdown/index';
+import {Form, util, InputEmail, InputTextArea} from '../../../components/form/index';
 import styles from './template.scss';
 
 const documentation = {

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Markdown} from '../markdown/index.js';
+import {Markdown} from '../markdown/index';
 import styles from './TeamMember.scss';
 
 const imageContext = require.context('../../images');

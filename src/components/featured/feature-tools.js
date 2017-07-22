@@ -1,9 +1,9 @@
 import React from 'react';
 import {Element, scroller} from 'react-scroll';
 import FaAngleDown from 'react-icons/fa/angle-down';
-import Collapse from '../collapse/index.js';
+import Collapse from '../collapse/index';
 import styles from './feature-tools.scss';
-import Featured from './index.js';
+import Featured from './index';
 
 const imageContext = require.context('../../images');
 

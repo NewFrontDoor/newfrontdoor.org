@@ -1,16 +1,16 @@
 import React from 'react';
 
-import Hero from '../components/hero/index.js';
-import Index from '../components/index/index.js';
+import Hero from '../components/hero/index';
+import Index from '../components/index/index';
 import content from '../content';
-import {Markdown} from '../components/markdown/index.js';
+import {Markdown} from '../components/markdown/index';
 
-import FeaturedHow from '../components/featured/feature-how.js';
-import FeaturedWho from '../components/featured/feature-who.js';
-import FeaturedTools from '../components/featured/feature-tools.js';
-import FeaturedEvents from '../components/featured/feature-events.js';
-import FeaturedPricing from '../components/featured/feature-pricing.js';
-import FeaturedJoin from '../components/featured/feature-join.js';
+import FeaturedHow from '../components/featured/feature-how';
+import FeaturedWho from '../components/featured/feature-who';
+import FeaturedTools from '../components/featured/feature-tools';
+import FeaturedEvents from '../components/featured/feature-events';
+import FeaturedPricing from '../components/featured/feature-pricing';
+import FeaturedJoin from '../components/featured/feature-join';
 
 const remarkConfig = {
 	remarkReactComponents: {

@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import reformed from 'react-reformed';
 import compose from 'react-reformed/lib/compose';
 import validateSchema from 'react-reformed/lib/validateSchema';
-import Popover from '../../components/popover/index.js';
-import Collapse from '../../components/collapse/index.js';
-import Index from '../../components/index/index.js';
-import {Form, util, InputText, InputEmail} from '../../components/form/index.js';
+import Popover from '../../components/popover/index';
+import Collapse from '../../components/collapse/index';
+import Index from '../../components/index/index';
+import {Form, util, InputText, InputEmail} from '../../components/form/index';
 import styles from './contact.scss';
 
 const fields = {

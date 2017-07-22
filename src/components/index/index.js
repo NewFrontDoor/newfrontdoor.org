@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
-import Header from '../header/index.js';
-import SearchBar from '../search-bar/index.js';
-import MainMenu from '../main-menu/index.js';
-import MobileMenu from '../mobile-menu/index.js';
+import Header from '../header/index';
+import SearchBar from '../search-bar/index';
+import MainMenu from '../main-menu/index';
+import MobileMenu from '../mobile-menu/index';
 import FirstChild from '../../lib/first-child';
 import content from '../../content';
 
