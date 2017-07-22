@@ -1,4 +1,4 @@
-import path from 'path';
+const path = require('path');
 
 const dirPath = (...paths) => {
 	const params = ['./'];
@@ -10,7 +10,7 @@ const src = p => dirPath('/src/', p || '');
 
 const dest = p => dirPath('/dest/', p || '');
 
-export default {
+module.exports = {
 	src,
 	dest,
 	bundle: {
