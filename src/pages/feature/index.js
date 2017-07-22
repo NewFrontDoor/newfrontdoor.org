@@ -185,13 +185,15 @@ class Feature extends React.Component {
 						<FeatureFromContainer getFormRef={this.setFormRef} onSubmit={this.handleSubmit}/>
 					</div>
 				</div>
-				{isModalOpen && <Popover onClose={this.handleClose}>
-					<div className={styles.modal}>
-						<h2>New features! Always exciting..</h2>
-						<p>We’ll review your submission and get back to you about your request as soon as possible.</p>
-						<p><button className={styles.button} onClick={this.handleClose}>Woo Hoo!</button></p>
-					</div>
-				</Popover>}
+				{isModalOpen && (
+					<Popover onClose={this.handleClose}>
+						<div className={styles.modal}>
+							<h2>New features! Always exciting..</h2>
+							<p>We’ll review your submission and get back to you about your request as soon as possible.</p>
+							<p><button className={styles.button} onClick={this.handleClose}>Woo Hoo!</button></p>
+						</div>
+					</Popover>
+				)}
 			</Index>
 		);
 	}

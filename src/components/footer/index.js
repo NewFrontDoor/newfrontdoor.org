@@ -7,15 +7,20 @@ import styles from './Footer.scss';
 
 const FooterItem = props => {
 	if (props.target) {
-		return (<a href={props.target}>
+		return (
+			<a href={props.target}>
+				{props.text}
+				{props.children}
+			</a>
+		);
+	}
+
+	return (
+		<Link to={props.to}>
 			{props.text}
 			{props.children}
-		</a>);
-	}
-	return (<Link to={props.to}>
-		{props.text}
-		{props.children}
-	</Link>);
+		</Link>
+	);
 };
 
 FooterItem.defaultProps = {

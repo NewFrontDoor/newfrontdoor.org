@@ -52,7 +52,7 @@ class Search extends React.Component {
 						name="search"
 						className={`form-control ${inputClass}`}
 						placeholder={placeholder}
-						/>
+					/>
 					{inputButton}
 				</div>
 			</form>

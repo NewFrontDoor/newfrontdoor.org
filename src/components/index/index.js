@@ -42,7 +42,7 @@ class Index extends React.Component {
 					transitionName={styles}
 					transitionEnterTimeout={300}
 					transitionLeaveTimeout={300}
-					>
+				>
 					{this.state.showSearch && <SearchBar onClose={this.handleCloseSearch}/>}
 				</CSSTransitionGroup>
 			</div>

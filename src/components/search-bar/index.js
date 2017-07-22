@@ -71,7 +71,7 @@ class SearchBar extends React.Component {
 				<SearchResultList
 					searchResults={searchResults}
 					onResultClick={this.handleCloseModal}
-					/>
+				/>
 			);
 		}
 
@@ -98,14 +98,14 @@ class SearchBar extends React.Component {
 						inputClass={styles.searchInput}
 						inputButton={inputButton}
 						onSearchSubmit={this.handleSearchSubmit}
-						/>
+					/>
 				</div>
 				<SearchResults
 					containerClass={styles.results}
 					titleClass={styles.title}
 					query={searchTerm}
 					onCloseResults={this.handleCloseResults}
-					>
+				>
 					{searchResultList}
 				</SearchResults>
 				<div className={styles.container}>

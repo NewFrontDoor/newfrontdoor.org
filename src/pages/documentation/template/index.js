@@ -192,13 +192,15 @@ class Template extends React.Component {
 						</div>
 					</div>
 				</StickyContainer>
-				{isModalOpen && <Popover onClose={this.handleClose}>
-					<div className={styles.modal}>
-						<h2>Thanks for your feedback.</h2>
-						<p>We’ll review what you’ve submitted and make edits as required. We’ll let you know via email when we’ve processed the revision of this document.</p>
-						<p><button className={styles.button} onClick={this.handleClose}>Great</button></p>
-					</div>
-				</Popover>}
+				{isModalOpen && (
+					<Popover onClose={this.handleClose}>
+						<div className={styles.modal}>
+							<h2>Thanks for your feedback.</h2>
+							<p>We’ll review what you’ve submitted and make edits as required. We’ll let you know via email when we’ve processed the revision of this document.</p>
+							<p><button className={styles.button} onClick={this.handleClose}>Great</button></p>
+						</div>
+					</Popover>
+				)}
 			</Index>
 		);
 	}
