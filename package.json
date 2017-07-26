@@ -90,7 +90,7 @@
     "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.1.0",
     "gulp-util": "^3.0.7",
-    "html-loader": "^0.4.4",
+    "html-loader": "^0.5.0",
     "lodash-webpack-plugin": "^0.11.0",
     "lost": "^8.0.0",
     "mdast-util-toc": "^2.0.0",
