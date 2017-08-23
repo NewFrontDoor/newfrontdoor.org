@@ -26,9 +26,9 @@ const FeaturedEvents = () => (
 				<div className={styles.training}>
 					<h3>Our next training sessions</h3>
 					<ul>
-						<li>May 10th, 2017. Nailing Events in Your Church</li>
+						<li>TBA, 15 November, Launceston</li>
 					</ul>
-					<div>
+					{/* <div>
 						<h4>More info</h4>
 						<ul>
 							<li>When: 7:30-9:30pm</li>
@@ -36,7 +36,7 @@ const FeaturedEvents = () => (
 							<li>Cost: $45 to cover event, admin and support Vision 100 IT (dinner & snacks included). We recommend churches subsidise their delegates.</li>
 							<li>Register: Regos will open in January</li>
 						</ul>
-					</div>
+					</div> */}
 				</div>
 				<div className="expand">
 					<Link to="/documentation#maintenance">Check out some of our previous training content<br/>
