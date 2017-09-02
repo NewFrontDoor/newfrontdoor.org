@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import FaAngleDown from "react-icons/fa/angle-down";
-import Featured from "./index";
+import React from 'react';
+import {Link} from 'react-router-dom';
+import FaAngleDown from 'react-icons/fa/angle-down';
+import Featured from './index';
 
 const FeaturedPricing = () => (
 	<Featured name="pricing" background="white">
@@ -26,11 +26,11 @@ const FeaturedPricing = () => (
 
 			<blockquote className="lead">
 				We want to focus on providing you
-				{" "}
+				{' '}
 				<em>services and methodology</em>
-				{" "}
+				{' '}
 				that will keep you
-				{" "}
+				{' '}
 				<em>engaged with your IT</em>
 				, rather than a product that is merely set and forget. So we will stay engaged and available all year round.
 			</blockquote>
@@ -68,14 +68,14 @@ const FeaturedPricing = () => (
 
 			<p>
 				In addition to our normal customer services, we can provide full blown consultation services to help you smoothly transition your church into electronic administration. For more details about our consultation services,
-				{" "}
+				{' '}
 				<Link to="/consultation">click here.</Link>
 			</p>
 
 			<div className="expand">
 				<Link to="/documentation/costs">
-					More about costs<br />
-					<FaAngleDown height="1.5em" width="1.5em" />
+					More about costs<br/>
+					<FaAngleDown height="1.5em" width="1.5em"/>
 				</Link>
 			</div>
 		</div>
