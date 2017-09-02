@@ -36,20 +36,18 @@ Fees on request
 
 ### Contributing to the ongoing work of Vision 100 IT
 
-Vision 100 IT wants to be able to extend its services to more churches, and so we recommend churches contribute an annual amount to keep us running. This isn't a fee, but an opportunity to invest in the common platform of Vision 100 IT.
+Vision 100 IT wants to be able to extend its services to more churches, and so we charge a small subscription annually to keep us running. This subscription is based on your organisation size, as set out below.
 
-These are our recommendations, but this is something that we'd discuss with you as you come on board with us, so don't panic!
+### Church Annual Subscription
+*as of September 2017*
 
-### Church Annual Contributions
-*as of March 2016*
+1. Small Church - $400
+2. Medium Church - $900
+3. Large Church - $900
 
-1. Small Church - $300
-2. Medium Church - $600
-3. Large Church - $1,200
+### Parachurch Ministry Annual Subscription
+*as of September 2017*
 
-### Parachurch Ministry Annual Contributions
-*as of March 2016*
-
-1. Small Ministry - $150
-2. Medium Ministry - $300
-3. Large Ministry - $600
+1. Small Ministry - $200
+2. Medium Ministry - $450
+3. Large Ministry - $450
