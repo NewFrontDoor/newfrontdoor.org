@@ -122,6 +122,9 @@ class Documentation extends React.Component {
 									<li>
 										<Link to="/registration">Event Registration tool</Link>
 									</li>
+									<li>
+										<Link to="/documentation/websiteediting">Website Editing</Link>
+									</li>
 								</ul>
 							</div>
 						</div>
