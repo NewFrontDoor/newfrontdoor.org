@@ -8,15 +8,11 @@ import Featured from './index';
 const imageContext = require.context('../../images');
 
 class FeaturedTools extends React.Component {
-	constructor() {
-		super();
-		this.state = {
-			isOpen: false
-		};
-		this.handleCollapse = this.handleCollapse.bind(this);
-	}
+	state = {
+		isOpen: false
+	};
 
-	handleCollapse(event) {
+	handleCollapse = event => {
 		event.preventDefault();
 
 		if (!this.state.isOpen) {
@@ -32,6 +28,7 @@ class FeaturedTools extends React.Component {
 			isOpen: !this.state.isOpen
 		});
 	}
+
 	render() {
 		return (
 			<Featured name="tools" background="white">

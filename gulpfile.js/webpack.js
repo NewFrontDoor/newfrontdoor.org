@@ -24,6 +24,15 @@ module.exports = done => {
 	if (process.env.NODE_ENV === 'production') {
 		webpack(config, result(done));
 	} else {
-		new WebpackDevServer(webpack(config), {}).listen(3100, 'localhost', listen);
+		new WebpackDevServer(webpack(config), {
+			stats: {
+				colors: true,
+				reasons: true
+			},
+			contentBase: './public',
+			hot: true,
+			host: 'localhost',
+			historyApiFallback: true
+		}).listen(3100, 'localhost', listen);
 	}
 };

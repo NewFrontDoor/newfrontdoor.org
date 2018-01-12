@@ -73,15 +73,8 @@ JoinForm.propTypes = {
 const JoinFormContainer = compose(reformed(), validateSchema(fields), util.submitted)(JoinForm);
 
 class FeaturedJoin extends React.Component {
-	constructor() {
-		super();
-		this.state = {
-			isModalOpen: false
-		};
-		this.setFormRef = this.setFormRef.bind(this);
-		this.handleOpen = this.handleOpen.bind(this);
-		this.handleClose = this.handleClose.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
+	state = {
+		isModalOpen: false
 	}
 
 	set formRef(ref) {
@@ -96,16 +89,16 @@ class FeaturedJoin extends React.Component {
 		this.formRef = ref;
 	}
 
-	handleOpen() {
+	handleOpen = () => {
 		this.setState({isModalOpen: true});
 	}
 
-	handleClose() {
+	handleClose = () => {
 		this.setState({isModalOpen: false});
-		this.formRef.resetModel();
+		
 	}
 
-	handleSubmit(model) {
+	handleSubmit = model => {
 		return fetch('https://api.vision100it.org/contact-us', {
 			method: 'post',
 			mode: 'cors',

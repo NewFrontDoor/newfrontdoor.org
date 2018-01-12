@@ -13,6 +13,7 @@ const dest = p => dirPath('/dest/', p || '');
 module.exports = {
 	src,
 	dest,
+	public: dirPath('public'),
 	bundle: {
 		src: src(),
 		dest: dest()

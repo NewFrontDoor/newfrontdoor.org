@@ -54,18 +54,10 @@ ContactForm.propTypes = {
 const ContactFormContainer = compose(reformed(), validateSchema(fields), util.submitted)(ContactForm);
 
 class Contact extends React.Component {
-	constructor() {
-		super();
-		this.state = {
-			isOpen: false,
-			isModalOpen: false
-		};
-		this.setFormRef = this.setFormRef.bind(this);
-		this.handleOpen = this.handleOpen.bind(this);
-		this.handleClose = this.handleClose.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
-		this.handleCollapse = this.handleCollapse.bind(this);
-	}
+	state = {
+		isOpen: false,
+		isModalOpen: false
+	};
 
 	set formRef(ref) {
 		this._formRef = ref;
@@ -75,20 +67,19 @@ class Contact extends React.Component {
 		return this._formRef;
 	}
 
-	setFormRef(ref) {
+	setFormRef = ref => {
 		this.formRef = ref;
 	}
 
-	handleOpen() {
+	handleOpen = () => {
 		this.setState({isModalOpen: true});
 	}
 
-	handleClose() {
+	handleClose = () => {
 		this.setState({isModalOpen: false});
-		this.formRef.resetModel();
 	}
 
-	handleSubmit(model) {
+	handleSubmit = model => {
 		fetch('https://api.vision100it.org/mailing-list', {
 			method: 'post',
 			mode: 'cors',
@@ -102,7 +93,7 @@ class Contact extends React.Component {
 		}).catch(this.handleOpen).then(this.handleOpen);
 	}
 
-	handleCollapse(event) {
+	handleCollapse = event => {
 		event.preventDefault();
 		this.setState({isOpen: !this.state.isOpen});
 	}

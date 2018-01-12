@@ -78,18 +78,10 @@ DocumentationFeedbackFrom.propTypes = {
 const DocumentationFeedbackFromContainer = compose(reformed(), validateSchema(fields), util.submitted)(DocumentationFeedbackFrom);
 
 class Template extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			openFeedback: false,
-			isModalOpen: false
-		};
-		this.setFormRef = this.setFormRef.bind(this);
-		this.handleOpen = this.handleOpen.bind(this);
-		this.handleClose = this.handleClose.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
-		this.handleToggleFeedback = this.handleToggleFeedback.bind(this);
-	}
+	state = {
+		openFeedback: false,
+		isModalOpen: false
+	};
 
 	get document() {
 		return documentation.document(this.props.match.params.documentId) || {};
@@ -103,20 +95,20 @@ class Template extends React.Component {
 		return this._formRef;
 	}
 
-	setFormRef(ref) {
+	setFormRef = ref => {
 		this.formRef = ref;
 	}
 
-	handleOpen() {
+	handleOpen = () => {
 		this.setState({isModalOpen: true});
 	}
 
-	handleClose() {
+	handleClose = () => {
 		this.setState({isModalOpen: false});
-		this.formRef.resetModel();
+		
 	}
 
-	handleSubmit(model) {
+	handleSubmit = model => {
 		return fetch('https://api.vision100it.org/give-feedback', {
 			method: 'post',
 			mode: 'cors',
@@ -131,7 +123,7 @@ class Template extends React.Component {
 		}).catch(this.handleOpen).then(this.handleOpen);
 	}
 
-	handleToggleFeedback(event) {
+	handleToggleFeedback = event => {
 		event.preventDefault();
 		this.setState({
 			openFeedback: !this.state.openFeedback

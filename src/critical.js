@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import webfontloader from 'webfontloader';
 
 if (typeof document !== 'undefined') {

@@ -13,19 +13,10 @@ import styles from './SearchBar.scss';
 const ESCAPE = 27;
 
 class SearchBar extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			searchResults: [],
-			searchTerm: ''
-		};
-		this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
-		this.handleCloseResults = this.handleCloseResults.bind(this);
-		this.handleCloseModal = this.handleCloseModal.bind(this);
-		this.handleEscKey = this.handleEscKey.bind(this);
-	}
-
-	componentDidUpdate() {}
+	state = {
+		searchResults: [],
+		searchTerm: ''
+	};
 
 	componentDidMount() {
 		window.addEventListener('keydown', this.handleEscKey, false);
@@ -35,12 +26,12 @@ class SearchBar extends React.Component {
 		window.removeEventListener('keydown', this.handleEscKey, false);
 	}
 
-	handleSearchSubmit(searchTerm) {
+	handleSearchSubmit = searchTerm => {
 		this.props.searchIndex(searchTerm, 3)
 		.then(searchResults => this.setState({searchTerm, searchResults}));
 	}
 
-	handleCloseResults(event) {
+	handleCloseResults = event => {
 		event.preventDefault();
 		this.setState({
 			searchResults: [],
@@ -48,7 +39,7 @@ class SearchBar extends React.Component {
 		});
 	}
 
-	handleCloseModal(event) {
+	handleCloseModal = event => {
 		this.setState({
 			searchResults: [],
 			searchTerm: ''
@@ -56,7 +47,7 @@ class SearchBar extends React.Component {
 		this.props.onClose(event);
 	}
 
-	handleEscKey(event) {
+	handleEscKey = event => {
 		if (event.keyCode === ESCAPE) {
 			this.handleCloseModal(event);
 		}

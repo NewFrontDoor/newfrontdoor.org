@@ -16,16 +16,10 @@ import Search from '../../components/search/index';
 import styles from './documentation.scss';
 
 class Documentation extends React.Component {
-	constructor(props) {
-		super(props);
-		const {search} = parse(props.location.search.substr(1));
-		this.state = {
-			searchResults: [],
-			searchTerm: search
-		};
-		this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
-		this.handleCloseResult = this.handleCloseResult.bind(this);
-	}
+	state = {
+		searchResults: [],
+		searchTerm: parse(this.props.location.search.substr(1)).search
+	};
 
 	componentDidMount() {
 		if (this.state.searchTerm) {
@@ -33,12 +27,12 @@ class Documentation extends React.Component {
 		}
 	}
 
-	handleSearchSubmit(searchTerm) {
+	handleSearchSubmit = searchTerm => {
 		this.props.searchIndex(searchTerm)
 		.then(searchResults => this.setState({searchTerm, searchResults}));
 	}
 
-	handleCloseResult(event) {
+	handleCloseResult = event => {
 		event.preventDefault();
 		this.setState({searchResults: []});
 	}

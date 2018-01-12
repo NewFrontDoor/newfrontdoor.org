@@ -11,21 +11,16 @@ import content from '../../content';
 import styles from './Index.scss';
 
 class Index extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			showSearch: false
-		};
-		this.handleOpenSearch = this.handleOpenSearch.bind(this);
-		this.handleCloseSearch = this.handleCloseSearch.bind(this);
-	}
+	state = {
+		showSearch: false
+	};
 
-	handleOpenSearch(event) {
+	handleOpenSearch = event => {
 		event.preventDefault();
 		this.setState({showSearch: true});
 	}
 
-	handleCloseSearch() {
+	handleCloseSearch = () => {
 		this.setState({showSearch: false});
 	}
 

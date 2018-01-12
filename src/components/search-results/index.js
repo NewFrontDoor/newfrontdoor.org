@@ -45,17 +45,11 @@ SearchResults.propTypes = {
 
 const withHeight = WrappedComponent => {
 	class HeightContainer extends React.Component {
-		constructor() {
-			super();
+		state = {
+			height: 0
+		};
 
-			this.state = {
-				height: 0
-			};
-
-			this.handleHeight = this.handleHeight.bind(this);
-		}
-
-		handleHeight(height) {
+		handleHeight = height => {
 			this.setState({height});
 		}
 

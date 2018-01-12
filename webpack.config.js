@@ -4,7 +4,6 @@ const path = require('path');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const {filter, merge, range, union} = require('lodash');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 const webpack = require('webpack');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
@@ -38,21 +37,18 @@ function getConfig() {
 function getCommonConfig() {
 	return {
 		context: path.resolve(paths.bundle.src),
-		entry: {
-			commons: 'webpack-dev-server/client?http://localhost:3000',
-			main: './index.js',
-			critical: './critical.js'
-		},
+		entry: [
+			'babel-polyfill',
+			'react-hot-loader/patch',
+			'webpack-dev-server/client?http://localhost:3000',
+			'webpack/hot/only-dev-server',
+			'./critical.js',
+			'./index.js'
+		],
 		output: {
 			filename: '[name].js',
 			chunkFilename: '[name].chunk.js',
-			path: path.resolve(paths.bundle.dest),
-			publicPath: '/',
-			libraryTarget: 'umd'
-		},
-		stats: {
-			colors: true,
-			reasons: true
+			path: path.resolve(paths.public)
 		},
 		module: {
 			rules: [
@@ -70,7 +66,7 @@ function getCommonConfig() {
 
 function getDevConfig() {
 	return {
-		devtool: 'cheap-module-source-map',
+		devtool: 'inline-source-map',
 		plugins: union(getCommonPlugins(), [
 			new BrowserSyncPlugin({
 				host: 'localhost',
@@ -80,6 +76,7 @@ function getDevConfig() {
 				reload: false
 			}),
 			new webpack.NamedModulesPlugin(),
+			new webpack.HotModuleReplacementPlugin(),
 			new WebpackNotifierPlugin()
 		])
 	};
@@ -113,7 +110,7 @@ function getReactIconLoader() {
 		use: [{
 			loader: 'babel-loader',
 			options: {
-				presets: ['es2015', 'react']
+				presets: ['env', 'react']
 			}
 		}]
 	};
@@ -188,13 +185,6 @@ function getCommonPlugins() {
 		new ExtractTextPlugin({
 			filename: '[name].css',
 			allChunks: true
-		}),
-		new StaticSiteGeneratorPlugin({
-			entry: 'main',
-			paths: pages,
-			globals: {
-				window: {}
-			}
 		}),
 		new OfflinePlugin({
 			relativePaths: false,

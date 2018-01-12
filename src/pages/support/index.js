@@ -143,17 +143,9 @@ SupportForm.propTypes = {
 const SupportFormContainer = compose(reformed(), validateSchema(fields), util.submitted)(SupportForm);
 
 class Support extends React.Component {
-
-	constructor(props) {
-		super(props);
-		this.state = {
-			isModalOpen: false
-		};
-		this.setFormRef = this.setFormRef.bind(this);
-		this.handleOpen = this.handleOpen.bind(this);
-		this.handleClose = this.handleClose.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
-	}
+	state = {
+		isModalOpen: false
+	};
 
 	set formRef(ref) {
 		this._formRef = ref;
@@ -163,20 +155,20 @@ class Support extends React.Component {
 		return this._formRef;
 	}
 
-	setFormRef(ref) {
+	setFormRef = ref => {
 		this.formRef = ref;
 	}
 
-	handleOpen() {
+	handleOpen = () => {
 		this.setState({isModalOpen: true});
 	}
 
-	handleClose() {
+	handleClose= () => {
 		this.setState({isModalOpen: false});
-		this.formRef.resetModel();
+		
 	}
 
-	handleSubmit(model) {
+	handleSubmit = model => {
 		return fetch('https://api.vision100it.org/support-request', {
 			method: 'post',
 			mode: 'cors',

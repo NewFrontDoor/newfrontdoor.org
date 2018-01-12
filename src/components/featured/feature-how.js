@@ -5,14 +5,11 @@ import styles from './feature-how.scss';
 import Featured from './index';
 
 class FeaturedHow extends React.Component {
-	constructor() {
-		super();
-		this.state = {
-			isOpen: ''
-		};
-		this.handleCollapse = this.handleCollapse.bind(this);
+	state = {
+		isOpen: ''
 	}
-	handleCollapse(prop) {
+
+	handleCollapse = prop => {
 		return event => {
 			event.preventDefault();
 			this.setState({
@@ -20,6 +17,7 @@ class FeaturedHow extends React.Component {
 			});
 		};
 	}
+
 	render() {
 		return (
 			<Featured name="how" background="white">

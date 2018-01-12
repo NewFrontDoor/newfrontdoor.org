@@ -3,18 +3,11 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 class Search extends React.Component {
-	constructor() {
-		super();
-
-		this.setSearchInputRef = this.setSearchInputRef.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
-	}
-
 	get searchInputRef() {
 		return this._searchInputRef;
 	}
 
-	setSearchInputRef(ref) {
+	setSearchInputRef = ref => {
 		this._searchInputRef = ref;
 	}
 
@@ -24,7 +17,7 @@ class Search extends React.Component {
 		}
 	}
 
-	handleSubmit(event) {
+	handleSubmit = event => {
 		event.preventDefault();
 		this.searchInputRef.blur();
 		this.props.onSearchSubmit(this.searchInputRef.value);

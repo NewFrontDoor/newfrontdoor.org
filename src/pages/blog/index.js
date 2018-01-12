@@ -23,16 +23,11 @@ const blogs = {
 const imageContext = require.context('../../images');
 
 class Blog extends React.Component {
-	constructor() {
-		super();
-		this.handleGoBack = this.handleGoBack.bind(this);
-	}
-
 	get blog() {
 		return blogs.document(this.props.match.params.blogId) || {};
 	}
 
-	handleGoBack() {
+	handleGoBack = () => {
 		this.props.history.goBack();
 	}
 

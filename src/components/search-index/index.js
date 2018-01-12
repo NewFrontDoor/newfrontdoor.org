@@ -3,12 +3,6 @@ import lunr from 'lunr';
 
 const searchIndex = WrappedComponent => {
 	class SearchIndexWrapper extends React.Component {
-		constructor() {
-			super();
-
-			this.searchIndex = this.searchIndex.bind(this);
-		}
-
 		get index() {
 			return new Promise(resolve => {
 				if (this.__searchIndex) {
@@ -30,7 +24,7 @@ const searchIndex = WrappedComponent => {
 			});
 		}
 
-		searchIndex(searchTerm, slice) {
+		searchIndex = (searchTerm, slice) => {
 			return this.index.then(({index, data}) => {
 				const res = index.search(searchTerm);
 

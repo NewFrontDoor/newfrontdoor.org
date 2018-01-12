@@ -1,16 +1,24 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Button.scss';
+import {css} from 'emotion';
+import styled from 'react-emotion';
 
-const Button = ({additionalClasses, appearance, children, ...buttonProps}) => {
-	const buttonClasses = `${styles[appearance]} ${additionalClasses}`;
+const blank = css`
+	padding: 0;
+	border: 0;
+	background: none;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	text-align: inherit;
+	text-transform: inherit;
+	cursor: pointer;
+`;
 
-	return (
-		<button className={buttonClasses} {...buttonProps}>
-			{children}
-		</button>
-	);
-};
+const styles = {blank};
+
+const Button = styled.button`
+	${props => styles[props.appearance]};
+`;
 
 Button.defaultProps = {
 	additionalClasses: '',

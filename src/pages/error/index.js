@@ -8,22 +8,17 @@ import Index from '../../components/index/index';
 import styles from './error.scss';
 
 class Error extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			searchResults: [],
-			searchTerm: ''
-		};
-		this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
-		this.handleCloseResult = this.handleCloseResult.bind(this);
-	}
+	state = {
+		searchResults: [],
+		searchTerm: ''
+	};
 
-	handleSearchSubmit(searchTerm) {
+	handleSearchSubmit = searchTerm => {
 		this.props.searchIndex(searchTerm)
 		.then(searchResults => this.setState({searchTerm, searchResults}));
 	}
 
-	handleCloseResult(event) {
+	handleCloseResult = event => {
 		event.preventDefault();
 		this.setState({searchResults: []});
 	}
