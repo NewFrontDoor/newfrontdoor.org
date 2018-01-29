@@ -23,7 +23,6 @@ Current tools
 9. RSS feed
 10. Social media integration
 
-
 Grandfathered tools
 ---------------
 
