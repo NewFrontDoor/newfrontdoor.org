@@ -26,17 +26,17 @@ const FeaturedEvents = () => (
 				<div className={styles.training}>
 					<h3>Our next training sessions</h3>
 					<ul>
-						<li>TBA, 15 November, Launceston</li>
+						<li>Riverbank Christian Church, April 18, 2018, Launceston</li>
 					</ul>
-					{/* <div>
+					<div>
 						<h4>More info</h4>
 						<ul>
 							<li>When: 7:30-9:30pm</li>
-							<li>Where: The Loft, Wellspring, Sandy Bay (Tasmania)</li>
-							<li>Cost: $45 to cover event, admin and support Vision 100 IT (dinner & snacks included). We recommend churches subsidise their delegates.</li>
-							<li>Register: Regos will open in January</li>
+							<li>Where: Riverbank Christian Church (Launceston)</li>
+							<li>Cost: $30 to cover event, admin and support Vision 100 IT (snacks included). We recommend churches subsidise their delegates.</li>
+							<li>Register: Register at <a href="https://vision100.org/itnightregistration">vision100.org</a></li>
 						</ul>
-					</div> */}
+					</div>
 				</div>
 				<div className="expand">
 					<Link to="/documentation#maintenance">Check out some of our previous training content<br/>
