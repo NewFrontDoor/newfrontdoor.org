@@ -107,7 +107,7 @@ class FeaturedTools extends React.Component {
 					</div>
 					<div className={styles.product}>
 						<div className={styles.image}>
-							<img className="img-responsive center-block" src={imageContext('./sparkleshare.png')}/>
+							<img className="img-responsive center-block" src={imageContext('./office365.png')}/>
 						</div>
 						<div className={styles.detail}>
 							<header>
@@ -115,8 +115,8 @@ class FeaturedTools extends React.Component {
 							</header>
 							<section>
 								<ul>
-									<li>Privately hosted document management platform</li>
-									<li>Securely stored, not in the control of Dropbox or Google</li>
+									<li>Hosted document management platform</li>
+									<li>Securely stored, managed by your organisation, not under user accounts</li>
 									<li>Conflicts easily managed so nothing gets lost</li>
 									<li>Folder and file level user permissions</li>
 									<li>Integrated into your website</li>
