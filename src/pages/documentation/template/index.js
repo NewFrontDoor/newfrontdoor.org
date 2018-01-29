@@ -6,7 +6,7 @@ import {StickyContainer, Sticky} from 'react-sticky';
 import reformed from 'react-reformed';
 import compose from 'react-reformed/lib/compose';
 import validateSchema from 'react-reformed/lib/validateSchema';
-import FaAngleDown from 'react-icons/fa/angle-down';
+import FaAngleDown from 'react-icons/lib/fa/angle-down';
 import Popover from '../../../components/popover/index';
 import Index from '../../../components/index/index';
 import {Markdown, Toc} from '../../../components/markdown/index';

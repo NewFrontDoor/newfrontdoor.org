@@ -1,6 +1,6 @@
 import React from 'react';
 import {Element, scroller} from 'react-scroll';
-import FaAngleDown from 'react-icons/fa/angle-down';
+import FaAngleDown from 'react-icons/lib/fa/angle-down';
 import Collapse from '../collapse/index';
 import styles from './feature-tools.scss';
 import Featured from './index';

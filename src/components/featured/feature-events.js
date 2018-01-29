@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import FaAngleDown from 'react-icons/fa/angle-down';
+import FaAngleDown from 'react-icons/lib/fa/angle-down';
 import styles from './feature-events.scss';
 import Featured from './index';
 
