@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Gateway} from 'react-gateway';
 import Modal from 'react-modal2';
-import FaCircle from 'react-icons/fa/circle';
-import FaTimesCircle from 'react-icons/fa/times-circle';
+import FaCircle from 'react-icons/lib/fa/circle';
+import FaTimesCircle from 'react-icons/lib/fa/times-circle';
 import Button from '../button/index';
 import styles from './popover.scss';
 

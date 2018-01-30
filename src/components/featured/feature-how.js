@@ -1,5 +1,5 @@
 import React from 'react';
-import FaPlusCircle from 'react-icons/fa/plus-circle';
+import FaPlusCircle from 'react-icons/lib/fa/plus-circle';
 import Collapse from '../collapse/index';
 import styles from './feature-how.scss';
 import Featured from './index';

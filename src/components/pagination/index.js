@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
-import FaAngleLeft from 'react-icons/fa/angle-left';
-import FaAngleRight from 'react-icons/fa/angle-right';
+import FaAngleLeft from 'react-icons/lib/fa/angle-left';
+import FaAngleRight from 'react-icons/lib/fa/angle-right';
 import styles from './Pagination.scss';
 
 const Pagination = ({previous, next}) => (

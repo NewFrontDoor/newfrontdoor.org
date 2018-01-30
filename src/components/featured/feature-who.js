@@ -1,10 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import FaBank from 'react-icons/fa/bank';
-import FaUsers from 'react-icons/fa/group';
-import FaServer from 'react-icons/fa/server';
-import FaGraduationCap from 'react-icons/fa/graduation-cap';
-import FaAngleDown from 'react-icons/fa/angle-down';
+import FaBank from 'react-icons/lib/fa/bank';
+import FaUsers from 'react-icons/lib/fa/group';
+import FaServer from 'react-icons/lib/fa/server';
+import FaGraduationCap from 'react-icons/lib/fa/graduation-cap';
+import FaAngleDown from 'react-icons/lib/fa/angle-down';
 import styles from './feature-who.scss';
 import Featured from './index';
 
