@@ -82,7 +82,7 @@
     "github-slugger": "^1.1.1",
     "gulp": "^3.9.1",
     "gulp-awspublish": "^3.3.0",
-    "gulp-cloudfront-invalidate-aws-publish": "^0.2.1",
+    "gulp-cloudfront-invalidate-aws-publish": "^1.0.0",
     "gulp-filter": "^5.0.1",
     "gulp-front-matter": "^1.3.0",
     "gulp-gh-pages": "^0.5.4",
