@@ -127,7 +127,7 @@
     "webpack": "^3.5.5",
     "webpack-dev-server": "^2.7.1",
     "webpack-notifier": "^1.4.1",
-    "xo": "^0.19.0",
+    "xo": "^0.20.0",
     "xo-loader": "^0.8.0"
   },
   "ava": {
