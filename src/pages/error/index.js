@@ -54,7 +54,7 @@ class Error extends React.Component {
 								<Search
 									size="large"
 									buttonClass="btn-primary"
-									placeholder="Search V100IT..."
+									placeholder="Search NFD..."
 									onSearchSubmit={this.handleSearchSubmit}
 								/>
 								<SearchResults

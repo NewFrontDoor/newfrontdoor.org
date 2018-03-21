@@ -87,7 +87,7 @@ const Client = props => {
 						Have you got started with Elvanto yet?
 					</Card>
 					<Card name="Registration" background="white" image="./soul.jpeg" imagePadding="10px" link="/registration">
-						Have a church event soon? Check out the V100IT registration module
+						Have a church event soon? Check out the New Front Door registration module
 					</Card>
 					<Card name="Podcasting" background="#171717" image="./podcasting.png" imagePadding="75px" link="/podcasting">
 						Get on board with podcasting your sermons

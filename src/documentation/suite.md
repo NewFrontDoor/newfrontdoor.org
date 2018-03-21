@@ -1,11 +1,11 @@
 ---
-title: Vision 100 IT Tool suite
-sub_title: A summary of all current (and grandfathered) tools utilised by Vision 100 IT
+title: New Front Door Tool suite
+sub_title: A summary of all current (and grandfathered) tools utilised by New Front Door
 ---
 
 Summary
 -------
-The following is a list of tools used by Vision 100 IT in order to serve our client churches and ministry organisations.
+The following is a list of tools used by New Front Door in order to serve our client churches and ministry organisations.
 
 ***
 

@@ -28,7 +28,7 @@ class FeaturedHow extends React.Component {
 				</h2>
 
 				<p className="lead">
-					We want you to put your best foot forward, so we’re here to give you the tools, techniques and direction you need. Vision 100 IT exists to help churches - <em>particularly church IT volunteers and ministry staff</em> - to use IT better. <span className={styles.hiddenXs}>Maybe you can relate to one of these people:</span>
+					We want you to put your best foot forward, so we’re here to give you the tools, techniques and direction you need. New Front Door exists to help churches - <em>particularly church IT volunteers and ministry staff</em> - to use IT better. <span className={styles.hiddenXs}>Maybe you can relate to one of these people:</span>
 				</p>
 
 				<div className={`${styles.examples} ${styles.hiddenXs}`}>
@@ -67,7 +67,7 @@ class FeaturedHow extends React.Component {
 					</Collapse>
 					<br/>
 				</div>
-				<p>Vision 100 IT offers a suite of tools, services and training to allow you to utilise IT as an effective tool for ministry. We work collaboratively with your staff or designated church member to develop a tailored website and package of tools to keep your newcomers informed and your ministry teams connected. We provide assistance and training in best practices for tools you already use, and are open to exploring ways to combine your current approach and applications into our ecosystem.</p>
+				<p>New Front Door offers a suite of tools, services and training to allow you to utilise IT as an effective tool for ministry. We work collaboratively with your staff or designated church member to develop a tailored website and package of tools to keep your newcomers informed and your ministry teams connected. We provide assistance and training in best practices for tools you already use, and are open to exploring ways to combine your current approach and applications into our ecosystem.</p>
 			</Featured>
 		);
 	}

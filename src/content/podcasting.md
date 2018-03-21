@@ -19,7 +19,7 @@ be added to their library, and synced before it can be listened to!
 Needless to say - the effort of uploading sermons has a limited impact
 when church members find it difficult to listen to them.
 
-This is why Vision 100 IT offers podcasting as a core feature of our
+This is why New Front Door offers podcasting as a core feature of our
 websites. Once set up, it’s as simple as uploading the file to your
 website and the rest is handled automatically.
 
@@ -29,6 +29,6 @@ discoverable on iTunes.
 
 If you’re interested in having podcasting added to your website, let us
 know through the feature request form. If you currently don’t have a
-Vision 100 IT hosted website, but are interested in podcasting on your
+New Front Door hosted website, but are interested in podcasting on your
 own page, we’d be happy to let you know what you need to consider in
 order to set it up for yourself.

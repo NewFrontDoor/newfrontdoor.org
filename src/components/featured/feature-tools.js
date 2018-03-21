@@ -43,7 +43,7 @@ class FeaturedTools extends React.Component {
 						It’s not about the destination, it’s about the journey
 					</div>
 					<p className="lead">
-						The core product of Vision 100 IT isn’t <em>just your website</em> - it’s our <em>philosophy.</em>
+						The core product of New Front Door isn’t <em>just your website</em> - it’s our <em>philosophy.</em>
 					</p>
 					<p>
 						There are plenty of products and approaches that will get your church on the web - our main aim is to help you to do this as best as possible. As a result, we’ve collated a suite of supported tools that will best help us to help you do IT well.

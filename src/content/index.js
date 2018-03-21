@@ -49,7 +49,7 @@ export default {
 			text: 'How we<br />can help you',
 			to: '#how'
 		}, {
-			text: 'Who are<br />Vision 100 IT?',
+			text: 'Who are<br />New Front Door?',
 			to: '#who'
 		}, {
 			text: 'Philosophy<br />+ Tools',
@@ -107,7 +107,7 @@ export default {
 		}]
 	},
 	footerLinks: [{
-		heading: 'V100IT',
+		heading: 'Our',
 		links: [{
 			text: 'Philosophy',
 			to: '/#tools'

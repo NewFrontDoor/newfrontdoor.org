@@ -14,7 +14,7 @@ Hosting
 Sparkleshare is an open-source software package, meaning that the core
 functionality of the application carries no cost. Although there are
 free tiers on other cloud based storage solutions, Sparkleshare is
-hosted and maintained by Vision 100 IT on our servers - which puts you
+hosted and maintained by New Front Door on our servers - which puts you
 the user in greater control of your storage and brings a number of
 benefits:
 
@@ -22,7 +22,7 @@ benefits:
 
 The first is space. With commercial solutions, eventually you’ll need
 more space, and more space carries a cost. With Sparkleshare, the limit
-of storage is the limit of space that Vision 100 IT has on it’s servers
+of storage is the limit of space that New Front Door has on it’s servers
 - which are expandable as space is needed. The short of it is that extra
 space requirements don’t cost you anything.
 

@@ -19,7 +19,7 @@ const FeaturedWho = () => (
 			<div>
 				<FaBank height="4em" width="4em"/>
 				<span className="fa-university fa-5x"/>
-				<p>14+ years of V100IT history</p>
+				<p>14+ years of history</p>
 			</div>
 			<div>
 				<FaGraduationCap height="4em" width="4em"/>
@@ -36,10 +36,10 @@ const FeaturedWho = () => (
 		</div>
 
 		<p>
-			Vision 100 IT are a national team of passionate IT and web development engineers, ministry leaders and management professionals who voluntarily build and maintain IT systems, training and educating our clients on the foundation of years of collective knowledge gleaned from within the IT industry.
+			New Front Door are a national team of passionate IT and web development engineers, ministry leaders and management professionals who voluntarily build and maintain IT systems, training and educating our clients on the foundation of years of collective knowledge gleaned from within the IT industry.
 		</p>
 		<p>
-			Vision 100 IT has now existed for over a decade, and has gradually built up a knowledge base of best practices and approaches for doing church IT <em>sustainably</em>. We are all about getting <em>and keeping</em>	our clients on the web, in order to more effectively reach the lost and minister to the people in their congregations.
+			New Front Door, previously Vision 100 IT, has now existed for over a decade, and has gradually built up a knowledge base of best practices and approaches for doing church IT <em>sustainably</em>. We are all about getting <em>and keeping</em>	our clients on the web, in order to more effectively reach the lost and minister to the people in their congregations.
 		</p>
 
 		<p>

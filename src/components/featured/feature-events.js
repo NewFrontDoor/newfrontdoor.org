@@ -17,7 +17,7 @@ const FeaturedEvents = () => (
 						Keeping you up to speed
 					</div>
 					<p className="lead">
-						The internet changes. Your church changes. Your staff capacity and even staff size changes. That’s why <em>events and training</em> are at the <em>heart of the Vision 100 IT philosophy.</em>
+						The internet changes. Your church changes. Your staff capacity and even staff size changes. That’s why <em>events and training</em> are at the <em>heart of the New Front Door philosophy.</em>
 					</p>
 				</div>
 				<div>
@@ -33,7 +33,7 @@ const FeaturedEvents = () => (
 						<ul>
 							<li>When: 7:30-9:30pm</li>
 							<li>Where: Riverbank Christian Church (Launceston)</li>
-							<li>Cost: $30 to cover event, admin and support Vision 100 IT (snacks included). We recommend churches subsidise their delegates.</li>
+							<li>Cost: $30 to cover event, admin and support New Front Door (snacks included). We recommend churches subsidise their delegates.</li>
 							<li>Register: Register at <a href="https://vision100.org/itnightregistration">vision100.org</a></li>
 						</ul>
 					</div>
