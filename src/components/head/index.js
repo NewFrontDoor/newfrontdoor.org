@@ -8,7 +8,7 @@ const Head = ({title}) => (
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<title>{title}</title>
 		<link rel="stylesheet" type="text/css" href="/main.css"/>
-		<link rel="shortcut icon" href="https://vision100.org/sites/vision100.org/files/v100it-logo-favicon.png"/>
+		<link rel="shortcut icon" href="https://vision100.org/sites/vision100.org/files/nfd-logo-favicon.ico"/>
 		<script src="/critical.js"/>
 	</head>
 );
