@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import throttle from 'lodash/throttle';
-import logo from '../../images/secondary-horizontal-logo-nws.svg';
+import logo from '../../images/nfd-main-logo-no-tag.svg';
 import styles from './Header.scss';
 
 class Header extends React.Component {
@@ -25,12 +25,12 @@ class Header extends React.Component {
 
 	get paddingHeight() {
 		if (this.props.size === 'full') {
-			return window.pageYOffset > window.innerHeight / 2 ? '5%' : '10px';
+			return window.pageYOffset > window.innerHeight / 2 ? '8%' : '10px';
 		}
 		if (this.props.size === 'mini') {
-			return window.pageYOffset > window.innerHeight / 4 ? '5%' : '10px';
+			return window.pageYOffset > window.innerHeight / 4 ? '8%' : '10px';
 		}
-		return '5%';
+		return '8%';
 	}
 
 	componentDidMount() {
