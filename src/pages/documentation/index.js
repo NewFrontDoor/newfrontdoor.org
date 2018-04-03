@@ -63,12 +63,12 @@ class Documentation extends React.Component {
 						<h1>Help + how to</h1>
 						<div className={styles.searchWrapper}>
 							<p>
-								Vision 100 IT are constantly updating and improving our documentation, and adding new documentation as new tools and procedures arise. If you notice anything is incomplete, or would like documentation on a particular topic, <Link to="/feature">let us know!</Link>
+								New Front Door are constantly updating and improving our documentation, and adding new documentation as new tools and procedures arise. If you notice anything is incomplete, or would like documentation on a particular topic, <Link to="/feature">let us know!</Link>
 							</p>
 							<Search
 								size="large"
 								buttonClass="btn-primary"
-								placeholder="Search all documents on V100IT..."
+								placeholder="Search all documents on NFD..."
 								onSearchSubmit={this.handleSearchSubmit}
 							/>
 							<SearchResults
@@ -80,11 +80,11 @@ class Documentation extends React.Component {
 								{searchResultList}
 							</SearchResults>
 						</div>
-						<h2>Vision 100 IT documentation</h2>
+						<h2>New Front Door documentation</h2>
 						<div className={styles.listWrapper}>
 							<div className={styles.listPanel}>
 								<h3>
-									<FaBook className={`${styles.docIcons}`}/> Getting started with Vision 100 IT
+									<FaBook className={`${styles.docIcons}`}/> Getting started with New Front Door
 								</h3>
 								<ul>
 									<li>

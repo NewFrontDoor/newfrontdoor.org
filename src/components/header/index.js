@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import throttle from 'lodash/throttle';
-import logo from '../../images/vision100-it-logo.svg';
+import logo from '../../images/nfd-main-logo-no-tag.svg';
 import styles from './Header.scss';
 
 class Header extends React.Component {
@@ -25,12 +25,12 @@ class Header extends React.Component {
 
 	get paddingHeight() {
 		if (this.props.size === 'full') {
-			return window.pageYOffset > window.innerHeight / 2 ? '5%' : '10px';
+			return window.pageYOffset > window.innerHeight / 2 ? '6%' : '10px';
 		}
 		if (this.props.size === 'mini') {
-			return window.pageYOffset > window.innerHeight / 4 ? '5%' : '10px';
+			return window.pageYOffset > window.innerHeight / 4 ? '6%' : '10px';
 		}
-		return '5%';
+		return '6%';
 	}
 
 	componentDidMount() {
@@ -68,7 +68,7 @@ class Header extends React.Component {
 			<header className={styles.nav} style={scrollStyle}>
 				<div className={styles.logo} style={logoStyle}>
 					<Link to="/">
-						<h1 className="sr-only">Vision 100 IT</h1>
+						<h1 className="sr-only">New Front Door</h1>
 						<img className="img-responsive" src={logo}/>
 					</Link>
 				</div>

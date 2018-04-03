@@ -39,8 +39,8 @@ You can see an example of this registration form [here.]
 
 If you’re interested in having an Events registration module added to
 your website, let us know through the feature request form. If you
-currently don’t have a V100IT hosted website, but are interested in
+currently don’t have a NFD hosted website, but are interested in
 implementing a similar system on your own page, we’d be happy to let you
 know what you need to consider in order to set it up for yourself.
 
-  [here.]: https://www.crckingston.org.au/camprego
+  [here.]: https://api.crckingston.org.au/camprego

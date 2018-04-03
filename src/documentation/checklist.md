@@ -12,7 +12,7 @@ This document outlines the various steps you may need to initiate when onboardin
 Onboarding
 ---------------
 
-### Vision 100 IT systems
+### New Front Door systems
 
 1. Staff email address
 2.  Website account
@@ -37,7 +37,7 @@ Onboarding
 Offboarding
 ---------------
 
-### Vision 100 IT systems
+### New Front Door systems
 
 1. Staff email address
 2.  Website account

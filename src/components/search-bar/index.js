@@ -130,9 +130,9 @@ class SearchBar extends React.Component {
 						</ul>
 					</div>
 					<div className={styles.postscript}>
-						<p>© Vision 100 Resources 2016.</p>
+						<p>© New Front Door 2018.</p>
 						<p>Design by <a href="https://twitter.com/readeral">readeral</a> and <a href="https://twitter.com/barrythepenguin">barrythepenguin</a>.</p>
-						<p><a href="mailto:info@vision100.org">info@vision100.org</a>.</p>
+						<p><a href="mailto:contactus@newfrontdoor.org">contactus@newfrontdoor.org</a>.</p>
 						<p>ABN: 50 782 030 539.</p>
 					</div>
 				</div>

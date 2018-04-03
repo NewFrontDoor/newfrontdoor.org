@@ -122,7 +122,7 @@ class Contact extends React.Component {
 								<h3>
 									Email contact
 								</h3>
-								<a href="mailto:it@vision100.org">it@vision100.org</a>
+								<a href="mailto:contactus@newfrontdoor.org">contactus@newfrontdoor.org</a>
 							</div>
 							<h3>
 								Join our mailing list

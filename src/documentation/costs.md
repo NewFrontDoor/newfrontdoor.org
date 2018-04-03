@@ -1,11 +1,11 @@
 ---
-title: Vision 100 IT costs
+title: New Front Door costs
 sub_title: Schedule of fees and charges
 ---
 
 Summary
 ------
-This documents all the standard fees and charges applicable for Vision 100 IT services. Services that carry no charge are not listed here.
+This documents all the standard fees and charges applicable for New Front Door services. Services that carry no charge are not listed here.
 ***
 ### Event Registration module
 *as of March 2016*
@@ -26,7 +26,7 @@ This documents all the standard fees and charges applicable for Vision 100 IT se
 	- Service Type/Services setup
 	- Child Protection setup
 
-### Vision 100 IT Training Nights
+### New Front Door Training Nights
 *as of March 2016*
 
 1. Registration - $45
@@ -34,9 +34,9 @@ This documents all the standard fees and charges applicable for Vision 100 IT se
 ### Consultation charges
 Fees on request
 
-### Contributing to the ongoing work of Vision 100 IT
+### Contributing to the ongoing work of New Front Door
 
-Vision 100 IT wants to be able to extend its services to more churches, and so we charge a small subscription annually to keep us running. This subscription is based on your organisation size, as set out below.
+New Front Door wants to be able to extend its services to more churches, and so we charge a small subscription annually to keep us running. This subscription is based on your organisation size, as set out below.
 
 ### Church Annual Subscription
 *as of September 2017*

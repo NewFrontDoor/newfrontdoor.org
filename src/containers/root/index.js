@@ -10,7 +10,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 const Root = ({children}) => (
 	<html lang="en">
-		<Head title="Vision 100 IT"/>
+		<Head title="New Front Door - The Church IT Guild"/>
 		<body>
 			<div id="content">
 				{children}
