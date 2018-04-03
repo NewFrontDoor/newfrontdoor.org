@@ -25,12 +25,12 @@ class Header extends React.Component {
 
 	get paddingHeight() {
 		if (this.props.size === 'full') {
-			return window.pageYOffset > window.innerHeight / 2 ? '8%' : '10px';
+			return window.pageYOffset > window.innerHeight / 2 ? '5%' : '10px';
 		}
 		if (this.props.size === 'mini') {
-			return window.pageYOffset > window.innerHeight / 4 ? '8%' : '10px';
+			return window.pageYOffset > window.innerHeight / 4 ? '5%' : '10px';
 		}
-		return '8%';
+		return '5%';
 	}
 
 	componentDidMount() {
