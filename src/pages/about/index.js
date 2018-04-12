@@ -38,23 +38,7 @@ const About = () => (
 						<p>
 							New Front Door is made up of a team of volunteers who firmly believe in the value of IT to furthering the cause of the gospel. The team meets together regularly for ‘sprints’ where a lot of the heavy lifting work gets done, while we hang out, eat pizza and enjoy taking on some challenges together. In between times, we pick up support tasks as they arise from our client churches. Involvement can be as much as building a web app from scratch for interfacing our document management system, or taking on a task here and there across the year. If you’re interested in being part of the team, be in touch <Link to="/contact">here.</Link>
 						</p>
-						<p>New Front Door does not have any employed positions at this time.</p>
 						<hr/>
-					</Element>
-					<Element name="service">
-						<h2>Service Levels (Client Charter)</h2>
-						<p>The New Front Door Client Charter is to be advised.</p>
-						<p>Please speak to us directly with any concerns prior to the charter being published.</p>
-						<div className="hidden">
-							<p>Vision 100 commits to:</p>
-							<ul>
-								<li>Respond to all initial queries within 24 hours</li>
-								<li>Solve simple problems within 3 days</li>
-								<li>Promise 3</li>
-								<li>Promise 4</li>
-								<li>Promise 5</li>
-							</ul>
-						</div>
 					</Element>
 				</div>
 			</div>

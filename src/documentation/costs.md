@@ -41,13 +41,17 @@ New Front Door wants to be able to extend its services to more churches, and so 
 ### Church Annual Subscription
 *as of September 2017*
 
-1. Small Church - $400
-2. Medium Church - $900
-3. Large Church - $900
+Church Type | Average Adult Attendance	| Annual Subscription Cost
+----------- | ------------------------- | -----------------------
+Small       | 150 or less               | $400
+Medium      | 151-300                   | $900
+Large       | 301+                      | $2000 (includes all premium features)
 
 ### Parachurch Ministry Annual Subscription
 *as of September 2017*
 
-1. Small Ministry - $200
-2. Medium Ministry - $450
-3. Large Ministry - $450
+Ministry Type   | Average Adult Attendance	| Annual Subscription Cost
+--------------- | ------------------------- | ------------------------
+Small           | 150 or less               | $200
+Medium          | 151-300                   | $450
+Large           | 301+                      | $900 (includes all premium features)

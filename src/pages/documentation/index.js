@@ -90,7 +90,6 @@ class Documentation extends React.Component {
 									<li>
 										<Link to="/documentation/suite">Suite of Tools</Link>
 									</li>
-									<li>Client Charter Agreement - <i>coming soon</i></li>
 									<li>
 										<Link to="/documentation/privacy">Privacy Policy</Link>
 									</li>

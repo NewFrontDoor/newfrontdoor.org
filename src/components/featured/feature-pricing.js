@@ -62,6 +62,10 @@ const FeaturedPricing = () => (
 				</tr>
 			</table>
 
+			<p>
+				We have lower annual fees for parachurch ministries, click on 'More about costs' below for more information.
+			</p>
+
 			<p className="lead">
 				<em>Consultation services</em>
 			</p>
