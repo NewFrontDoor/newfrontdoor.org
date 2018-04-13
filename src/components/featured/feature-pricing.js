@@ -62,6 +62,8 @@ const FeaturedPricing = () => (
 				</tr>
 			</table>
 
+			<p>We have lower annual fees for parachurch ministries, click on &#39;More about costs&#39; below for more information.</p>
+
 			<p className="lead">
 				<em>Consultation services</em>
 			</p>
