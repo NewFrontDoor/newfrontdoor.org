@@ -133,7 +133,7 @@ class SearchBar extends React.Component {
 						<p>© New Front Door 2018.</p>
 						<p>Design by <a href="https://twitter.com/readeral">readeral</a> and <a href="https://twitter.com/barrythepenguin">barrythepenguin</a>.</p>
 						<p><a href="mailto:contactus@newfrontdoor.org">contactus@newfrontdoor.org</a>.</p>
-						<p>ABN: 50 782 030 539.</p>
+						<p>ABN: 61 475 638 368.</p>
 					</div>
 				</div>
 			</div>
