@@ -147,12 +147,12 @@ class FeaturedJoin extends React.Component {
 						<JoinFormContainer getFormRef={this.setFormRef} onSubmit={this.handleSubmit}/>
 						<div className={styles.social}>
 							<div>
-								<a href="http://facebook.com/vision100it">
+								<a href="https://www.facebook.com/NewFrontDoorIT/">
 									<FaFacebook height="2em" width="2em"/>
 								</a>
 							</div>
 							<div>
-								<a href="http://twitter.com/vision100it">
+								<a href="http://twitter.com/NewFrontDoorIT">
 									<FaTwitter height="2em" width="2em"/>
 								</a>
 							</div>
