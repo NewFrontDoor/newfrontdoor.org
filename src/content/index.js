@@ -1,6 +1,6 @@
 import React from 'react';
-import FaFacebookSquare from 'react-icons/lib/fa/twitter-square';
-import FaTwitterSquare from 'react-icons/lib/fa/facebook-square';
+import FaFacebookSquare from 'react-icons/lib/fa/facebook-square';
+import FaTwitterSquare from 'react-icons/lib/fa/twitter-square';
 import boardMembers from './board-members';
 import teamMembers from './team-members';
 
