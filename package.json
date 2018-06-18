@@ -48,7 +48,7 @@
     "webfontloader": "^1.6.26"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.3",
+    "autoprefixer": "^8.6.3",
     "ava": "^0.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
