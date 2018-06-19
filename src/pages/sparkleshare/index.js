@@ -1,7 +1,7 @@
 import React from 'react';
 import fm from 'front-matter';
-import Index from '../../components/index/index';
-import {Markdown} from '../../components/markdown/index';
+import Index from '../../components';
+import {Markdown} from '../../components/markdown';
 import content from '../../content/sparkleshare.md';
 
 const {body, attributes} = fm(content);

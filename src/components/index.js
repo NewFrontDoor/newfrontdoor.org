@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 import CSSTransition from 'react-transition-group/CSSTransition';
-import Header from '../header/index';
-import SearchBar from '../search-bar/index';
-import MainMenu from '../main-menu/index';
-import MobileMenu from '../mobile-menu/index';
-import content from '../../content';
+import content from '../content';
+import Header from './header';
+import SearchBar from './search-bar';
+import MainMenu from './main-menu';
+import MobileMenu from './mobile-menu';
 
 import styles from './Index.scss';
 

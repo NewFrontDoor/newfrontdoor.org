@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Hero from '../components/hero/index';
-import Index from '../components/index/index';
+import Hero from '../components/hero';
+import Index from '../components';
 import content from '../content';
-import {Markdown} from '../components/markdown/index';
+import {Markdown} from '../components/markdown';
 
 import FeaturedHow from '../components/featured/feature-how';
 import FeaturedWho from '../components/featured/feature-who';

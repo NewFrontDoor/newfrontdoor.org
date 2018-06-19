@@ -6,8 +6,8 @@ import compose from 'react-reformed/lib/compose';
 import validateSchema from 'react-reformed/lib/validateSchema';
 import FaFacebook from 'react-icons/lib/fa/facebook';
 import FaTwitter from 'react-icons/lib/fa/twitter';
-import Popover from '../popover/index';
-import {Form, util, InputEmail, InputTextArea, InputText} from '../form/index';
+import Popover from '../popover';
+import {Form, util, InputEmail, InputTextArea, InputText} from '../form';
 import styles from './feature-join.scss';
 
 const imageContext = require.context('../../images');
@@ -41,27 +41,29 @@ const fields = {
 	}
 };
 
-const JoinForm = ({
-	bindInput,
-	model,
-	onSubmit,
-	schema
-}) => {
-	const handleSubmit = event => {
+class JoinForm extends React.Component {
+	handleSubmit = event => {
 		event.preventDefault();
-		onSubmit(model);
+		this.props.onSubmit(this.props.model);
 	};
 
-	return (
-		<div className={styles.form}>
-			<Form schema={schema} fields={fields} bindInput={bindInput} onSubmit={handleSubmit}>
-				<div className={`form-group ${styles.submit}`}>
-					<button type="submit" className="btn btn-default form-control">Submit</button>
-				</div>
-			</Form>
-		</div>
-	);
-};
+	render() {
+		const {
+			bindInput,
+			schema
+		} = this.props;
+
+		return (
+			<div className={styles.form}>
+				<Form schema={schema} fields={fields} bindInput={bindInput} onSubmit={this.handleSubmit}>
+					<div className={`form-group ${styles.submit}`}>
+						<button type="submit" className="btn btn-default form-control">Submit</button>
+					</div>
+				</Form>
+			</div>
+		);
+	}
+}
 
 JoinForm.propTypes = {
 	bindInput: PropTypes.func.isRequired,
@@ -120,6 +122,7 @@ class FeaturedJoin extends React.Component {
 			})
 		}).catch(this.handleOpen).then(this.handleOpen);
 	}
+
 	render() {
 		const {isModalOpen} = this.state;
 

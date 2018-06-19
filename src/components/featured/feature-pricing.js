@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import FaAngleDown from 'react-icons/lib/fa/angle-down';
-import Featured from './index';
+import Featured from '.';
 
 const FeaturedPricing = () => (
 	<Featured name="pricing" background="white">
@@ -40,26 +40,28 @@ const FeaturedPricing = () => (
 			</p>
 
 			<table>
-				<tr>
-					<th>Average Adult Attendance</th>
-					<th>Set-up Fee</th>
-					<th>Annual Subscription</th>
-				</tr>
-				<tr>
-					<td>150 or less</td>
-					<td>$300</td>
-					<td>$400</td>
-				</tr>
-				<tr>
-					<td>151-300</td>
-					<td>$300</td>
-					<td>$900</td>
-				</tr>
-				<tr>
-					<td>301+</td>
-					<td>$750</td>
-					<td>$2000 (includes all premium features)</td>
-				</tr>
+				<tbody>
+					<tr>
+						<th>Average Adult Attendance</th>
+						<th>Set-up Fee</th>
+						<th>Annual Subscription</th>
+					</tr>
+					<tr>
+						<td>150 or less</td>
+						<td>$300</td>
+						<td>$400</td>
+					</tr>
+					<tr>
+						<td>151-300</td>
+						<td>$300</td>
+						<td>$900</td>
+					</tr>
+					<tr>
+						<td>301+</td>
+						<td>$750</td>
+						<td>$2000 (includes all premium features)</td>
+					</tr>
+				</tbody>
 			</table>
 
 			<p>We have lower annual fees for parachurch ministries, click on &#39;More about costs&#39; below for more information.</p>

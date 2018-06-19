@@ -2,8 +2,8 @@ import React from 'react';
 import hash from 'string-hash';
 import {Link} from 'react-router-dom';
 import {Element} from 'react-scroll';
-import TeamMember from '../../components/team-member/index';
-import Index from '../../components/index/index';
+import TeamMember from '../../components/team-member';
+import Index from '../../components';
 import content from '../../content';
 
 const About = () => (

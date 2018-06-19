@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Search from '../../components/search/index';
-import withSearchIndex from '../../components/search-index/index';
-import SearchResults from '../../components/search-results/index';
-import SearchResultList from '../../components/search-result-list/index';
-import Index from '../../components/index/index';
+import Search from '../../components/search';
+import withSearchIndex from '../../components/search-index';
+import SearchResults from '../../components/search-results';
+import SearchResultList from '../../components/search-result-list';
+import Index from '../../components';
 import styles from './error.scss';
 
 class Error extends React.Component {
@@ -20,7 +20,7 @@ class Error extends React.Component {
 
 	handleSearchSubmit(searchTerm) {
 		this.props.searchIndex(searchTerm)
-		.then(searchResults => this.setState({searchTerm, searchResults}));
+			.then(searchResults => this.setState({searchTerm, searchResults}));
 	}
 
 	handleCloseResult(event) {

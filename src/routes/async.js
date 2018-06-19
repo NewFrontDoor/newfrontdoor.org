@@ -3,13 +3,15 @@ import React from 'react';
 function asyncRoute(getComponent) {
 	return class AsyncComponent extends React.Component {
 		static Component = null;
+
 		mounted = false;
 
 		state = {
 			Component: AsyncComponent.Component
 		};
 
-		componentWillMount() {
+		// eslint-disable-next-line camelcase
+		UNSAFE_componentWillMount() {
 			if (typeof document !== 'undefined' && this.state.Component === null) {
 				getComponent().then(m => m.default).then(Component => {
 					AsyncComponent.Component = Component;
@@ -37,7 +39,7 @@ function asyncRoute(getComponent) {
 
 			return null;
 		}
-  };
+	};
 }
 
 export const Blog = asyncRoute(() => import('../pages/blog/index.js'));

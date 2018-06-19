@@ -1,9 +1,9 @@
 import React from 'react';
 import {Element, scroller} from 'react-scroll';
 import FaAngleDown from 'react-icons/lib/fa/angle-down';
-import Collapse from '../collapse/index';
+import Collapse from '../collapse';
 import styles from './feature-tools.scss';
-import Featured from './index';
+import Featured from '.';
 
 const imageContext = require.context('../../images');
 
@@ -32,6 +32,7 @@ class FeaturedTools extends React.Component {
 			isOpen: !this.state.isOpen
 		});
 	}
+
 	render() {
 		return (
 			<Featured name="tools" background="white">

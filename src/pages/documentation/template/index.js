@@ -7,10 +7,10 @@ import reformed from 'react-reformed';
 import compose from 'react-reformed/lib/compose';
 import validateSchema from 'react-reformed/lib/validateSchema';
 import FaAngleDown from 'react-icons/lib/fa/angle-down';
-import Popover from '../../../components/popover/index';
-import Index from '../../../components/index/index';
-import {Markdown, Toc} from '../../../components/markdown/index';
-import {Form, util, InputEmail, InputTextArea} from '../../../components/form/index';
+import Popover from '../../../components/popover';
+import Index from '../../../components';
+import {Markdown, Toc} from '../../../components/markdown';
+import {Form, util, InputEmail, InputTextArea} from '../../../components/form';
 import styles from './template.scss';
 
 const documentation = {
@@ -43,29 +43,31 @@ const fields = {
 	}
 };
 
-const DocumentationFeedbackFrom = ({
-	bindInput,
-	model,
-	onSubmit,
-	schema,
-	onToggleFeedback
-}) => {
-	const handleSubmit = event => {
+class DocumentationFeedbackFrom extends React.Component {
+	handleSubmit = event => {
 		event.preventDefault();
-		onSubmit(model);
+		this.props.onSubmit(this.props.model);
 	};
 
-	return (
-		<div className={styles.form}>
-			<Form schema={schema} fields={fields} bindInput={bindInput} onSubmit={handleSubmit}>
-				<div className="form-group">
-					<button type="submit" className="btn btn-default">Submit</button>
-					<button type="cancel" className="btn btn-default" onClick={onToggleFeedback}>Cancel</button>
-				</div>
-			</Form>
-		</div>
-	);
-};
+	render() {
+		const {
+			bindInput,
+			schema,
+			onToggleFeedback
+		} = this.props;
+
+		return (
+			<div className={styles.form}>
+				<Form schema={schema} fields={fields} bindInput={bindInput} onSubmit={this.handleSubmit}>
+					<div className="form-group">
+						<button type="submit" className="btn btn-default">Submit</button>
+						<button type="cancel" className="btn btn-default" onClick={onToggleFeedback}>Cancel</button>
+					</div>
+				</Form>
+			</div>
+		);
+	}
+}
 
 DocumentationFeedbackFrom.propTypes = {
 	bindInput: PropTypes.func.isRequired,
