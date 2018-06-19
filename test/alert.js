@@ -3,7 +3,7 @@ import test from 'ava';
 import React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 
-import Alert from '../src/components/alert/index';
+import Alert from '../src/components/alert';
 
 test('', t => {
 	const result = renderStatic();

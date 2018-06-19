@@ -4,9 +4,9 @@ import {Link} from 'react-router-dom';
 import reformed from 'react-reformed';
 import compose from 'react-reformed/lib/compose';
 import validateSchema from 'react-reformed/lib/validateSchema';
-import Popover from '../../components/popover/index';
-import Index from '../../components/index/index';
-import {Form, util, InputEmail, InputRadio, InputSelect, InputTextArea, InputText} from '../../components/form/index';
+import Popover from '../../components/popover';
+import Index from '../../components';
+import {Form, util, InputEmail, InputRadio, InputSelect, InputTextArea, InputText} from '../../components/form';
 import styles from '../../css/support.scss';
 
 const fields = {
@@ -111,27 +111,29 @@ const fields = {
 // 	<p className="help-block">Only jpg, jpeg or png and under 2mb are accepted.</p>
 // </div>
 
-const SupportForm = ({
-	bindInput,
-	model,
-	onSubmit,
-	schema
-}) => {
-	const handleSubmit = event => {
+class SupportForm extends React.Component {
+	handleSubmit = event => {
 		event.preventDefault();
-		onSubmit(model);
+		this.props.onSubmit(this.props.model);
 	};
 
-	return (
-		<div className="support-form">
-			<Form schema={schema} fields={fields} bindInput={bindInput} onSubmit={handleSubmit}>
-				<div className="form-group">
-					<button type="submit" className="btn btn-primary pull-right">Submit</button>
-				</div>
-			</Form>
-		</div>
-	);
-};
+	render() {
+		const {
+			bindInput,
+			schema
+		} = this.props;
+
+		return (
+			<div className="support-form">
+				<Form schema={schema} fields={fields} bindInput={bindInput} onSubmit={this.handleSubmit}>
+					<div className="form-group">
+						<button type="submit" className="btn btn-primary pull-right">Submit</button>
+					</div>
+				</Form>
+			</div>
+		);
+	}
+}
 
 SupportForm.propTypes = {
 	bindInput: PropTypes.func.isRequired,
@@ -143,7 +145,6 @@ SupportForm.propTypes = {
 const SupportFormContainer = compose(reformed(), validateSchema(fields), util.submitted)(SupportForm);
 
 class Support extends React.Component {
-
 	constructor(props) {
 		super(props);
 		this.state = {

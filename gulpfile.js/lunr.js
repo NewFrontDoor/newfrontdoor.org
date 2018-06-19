@@ -24,12 +24,11 @@ function lunrConfig(items) {
 	};
 }
 
-const mapFrontMatter = map.obj(file => {
-	const frontMatter = file.frontMatter;
-	const id = trimExtension(file.relative);
-	const title = frontMatter.title;
-	const body = removeMarkdown(file.contents.toString('utf8'));
-	const author = frontMatter.author || {};
+const mapFrontMatter = map.obj(({frontMatter, contents, relative}) => {
+	const {title} = frontMatter;
+	const id = trimExtension(relative);
+	const body = removeMarkdown(contents.toString('utf8'));
+	const {author = {}} = frontMatter;
 
 	return {
 		id,
@@ -44,13 +43,13 @@ module.exports = () => {
 	return gulp.src([paths.blog.src, paths.documentation.src, paths.content.src], {
 		base: paths.src()
 	})
-	.pipe($.plumber(handleError))
-	.pipe($.frontMatter({
-		remove: true
-	}))
-	.pipe(mapFrontMatter)
-	.pipe(lunrGulp(lunrConfig))
-	.pipe(gulp.dest(paths.lunr.dest));
+		.pipe($.plumber(handleError))
+		.pipe($.frontMatter({
+			remove: true
+		}))
+		.pipe(mapFrontMatter)
+		.pipe(lunrGulp(lunrConfig))
+		.pipe(gulp.dest(paths.lunr.dest));
 };
 
 function lunrGulp(config) {

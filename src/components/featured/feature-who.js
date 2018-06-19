@@ -6,7 +6,7 @@ import FaServer from 'react-icons/lib/fa/server';
 import FaGraduationCap from 'react-icons/lib/fa/graduation-cap';
 import FaAngleDown from 'react-icons/lib/fa/angle-down';
 import styles from './feature-who.scss';
-import Featured from './index';
+import Featured from '.';
 
 const imageContext = require.context('../../images');
 

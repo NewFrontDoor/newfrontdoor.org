@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import reformed from 'react-reformed';
 import compose from 'react-reformed/lib/compose';
 import validateSchema from 'react-reformed/lib/validateSchema';
-import Popover from '../../components/popover/index';
-import Collapse from '../../components/collapse/index';
-import Index from '../../components/index/index';
-import {Form, util, InputText, InputEmail} from '../../components/form/index';
+import Popover from '../../components/popover';
+import Collapse from '../../components/collapse';
+import Index from '../../components';
+import {Form, util, InputText, InputEmail} from '../../components/form';
 import styles from './contact.scss';
 
 const fields = {
@@ -24,25 +24,27 @@ const fields = {
 	}
 };
 
-const ContactForm = ({
-	bindInput,
-	model,
-	onSubmit,
-	schema
-}) => {
-	const handleSubmit = event => {
+class ContactForm extends React.Component {
+	handleSubmit = event => {
 		event.preventDefault();
-		onSubmit(model);
+		this.props.onSubmit(this.props.model);
 	};
 
-	return (
-		<Form schema={schema} fields={fields} bindInput={bindInput} onSubmit={handleSubmit}>
-			<div className="form-group">
-				<button type="submit" className="btn btn-primary">Submit</button>
-			</div>
-		</Form>
-	);
-};
+	render() {
+		const {
+			bindInput,
+			schema
+		} = this.props;
+
+		return (
+			<Form schema={schema} fields={fields} bindInput={bindInput} onSubmit={this.handleSubmit}>
+				<div className="form-group">
+					<button type="submit" className="btn btn-primary">Submit</button>
+				</div>
+			</Form>
+		);
+	}
+}
 
 ContactForm.propTypes = {
 	bindInput: PropTypes.func.isRequired,

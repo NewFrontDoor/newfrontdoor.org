@@ -4,7 +4,7 @@ import {Gateway} from 'react-gateway';
 import Modal from 'react-modal2';
 import FaCircle from 'react-icons/lib/fa/circle';
 import FaTimesCircle from 'react-icons/lib/fa/times-circle';
-import Button from '../button/index';
+import Button from '../button';
 import styles from './popover.scss';
 
 class Popover extends React.Component {

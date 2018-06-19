@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import FaSearch from 'react-icons/lib/fa/search';
 import FaTimesCircle from 'react-icons/lib/fa/times-circle';
-import Button from '../button/index';
-import withSearchIndex from '../search-index/index';
-import Search from '../search/index';
-import SearchResults from '../search-results/index';
-import SearchResultList from '../search-result-list/index';
+import Button from '../button';
+import withSearchIndex from '../search-index';
+import Search from '../search';
+import SearchResults from '../search-results';
+import SearchResultList from '../search-result-list';
 import styles from './SearchBar.scss';
 
 const ESCAPE = 27;
@@ -37,7 +37,7 @@ class SearchBar extends React.Component {
 
 	handleSearchSubmit(searchTerm) {
 		this.props.searchIndex(searchTerm, 3)
-		.then(searchResults => this.setState({searchTerm, searchResults}));
+			.then(searchResults => this.setState({searchTerm, searchResults}));
 	}
 
 	handleCloseResults(event) {

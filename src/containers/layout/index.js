@@ -1,8 +1,8 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import {GatewayDest, GatewayProvider} from 'react-gateway';
-import Footer from '../../components/footer/index';
-import * as Routes from '../../routes/index';
+import Footer from '../../components/footer';
+import * as Routes from '../../routes';
 import '../../css/main.scss';
 
 const Layout = () => (

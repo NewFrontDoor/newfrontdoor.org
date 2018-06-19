@@ -1,8 +1,8 @@
 import React from 'react';
 import FaPlusCircle from 'react-icons/lib/fa/plus-circle';
-import Collapse from '../collapse/index';
+import Collapse from '../collapse';
 import styles from './feature-how.scss';
-import Featured from './index';
+import Featured from '.';
 
 class FeaturedHow extends React.Component {
 	constructor() {
@@ -12,6 +12,7 @@ class FeaturedHow extends React.Component {
 		};
 		this.handleCollapse = this.handleCollapse.bind(this);
 	}
+
 	handleCollapse(prop) {
 		return event => {
 			event.preventDefault();
@@ -20,6 +21,7 @@ class FeaturedHow extends React.Component {
 			});
 		};
 	}
+
 	render() {
 		return (
 			<Featured name="how" background="white">

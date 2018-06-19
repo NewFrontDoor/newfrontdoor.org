@@ -8,11 +8,11 @@ import FaLock from 'react-icons/lib/fa/lock';
 import FaChain from 'react-icons/lib/fa/chain';
 import FaVideoCamera from 'react-icons/lib/fa/video-camera';
 import FaLightbulbO from 'react-icons/lib/fa/lightbulb-o';
-import withSearchIndex from '../../components/search-index/index';
-import SearchResults from '../../components/search-results/index';
-import SearchResultList from '../../components/search-result-list/index';
-import Index from '../../components/index/index';
-import Search from '../../components/search/index';
+import withSearchIndex from '../../components/search-index';
+import SearchResults from '../../components/search-results';
+import SearchResultList from '../../components/search-result-list';
+import Index from '../../components';
+import Search from '../../components/search';
 import styles from './documentation.scss';
 
 class Documentation extends React.Component {
@@ -35,7 +35,7 @@ class Documentation extends React.Component {
 
 	handleSearchSubmit(searchTerm) {
 		this.props.searchIndex(searchTerm)
-		.then(searchResults => this.setState({searchTerm, searchResults}));
+			.then(searchResults => this.setState({searchTerm, searchResults}));
 	}
 
 	handleCloseResult(event) {
