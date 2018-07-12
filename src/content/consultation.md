@@ -2,17 +2,15 @@
 title: Consultation
 ---
 
-The purpose of Vision 100 IT Training and Consultancy is to provide
+The purpose of New Front Door Training and Consultancy is to provide
 tailored help to ministry leaders and/or ministry admins using IT in the
 service of the mission of their ministry. We long to help ministries
 become efficient and effective by doing things in the clearest, easiest
 and fastest way possible.
 
-### Who is Vision 100 IT for?
+### Who is New Front Door for?
 
--   Vision 100 IT is part of The Vision 100 Network, a Reformed
-    evangelical church planting network in Tasmania.
--   We serve churches from a range of networks: Presbyterian, Christian
+-   New Front Door serves churches from a range of networks: Presbyterian, Christian
     Reformed Church, Baptist, FIEC, Anglican.
 -   We require agreement to our simple doctrinal basis from our clients:
     ‘http://vision100.org/beliefs’
@@ -28,7 +26,7 @@ someone on the ground with you as you transition through IT changes.
 Meeting with your key staff, stakeholders and your local IT overseer
 (from within your church) can make sure that you hit the ground running.
 
-Vision 100 IT offers on-site consultancy anywhere in the country, with
+New Front Door offers on-site consultancy anywhere in the country, with
 the following time commitments:
 
 -   Initial meeting to clarify needs and expectations (1 hour)
@@ -37,10 +35,10 @@ the following time commitments:
 -   3 post-visit coaching meetings (1 hour each)
 
 For some churches, onsite is not possible, or is cost prohibitive - but
-you’d still like your staff to meet virtually with Vision 100 IT to
+you’d still like your staff to meet virtually with New Front Door to
 ensure that the new tools and expectations are clearly understood.
 
-Vision 100 IT can offer virtual consultancy anywhere in the country,
+New Front Door can offer virtual consultancy anywhere in the country,
 with the following time commitments:
 
 -   Initial meeting to clarify needs and expectations (1 hour)
