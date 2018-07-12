@@ -47,8 +47,8 @@ const FeaturedWho = () => (
 		</p>
 
 		<div className="expand">
-			<Link to="/about#team">
-				<p>Meet the team</p>
+			<Link to="/about">
+				<p>Meet the team and read our story</p>
 				<FaAngleDown height="1.5em" width="1.5em"/>
 			</Link>
 		</div>

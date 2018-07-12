@@ -85,7 +85,7 @@ export default {
 	},
 	mobilemenu: {
 		primary: [{
-			text: 'Client',
+			text: 'News',
 			to: '/client'
 		}, {
 			text: 'Visitor',
@@ -109,11 +109,11 @@ export default {
 	footerLinks: [{
 		heading: 'Our',
 		links: [{
-			text: 'Philosophy',
+			text: 'Philosophy + Tools',
 			to: '/#tools'
 		}, {
-			text: 'Tools',
-			to: '/#tools'
+			text: 'Pitch',
+			to: '/#how'
 		}, {
 			text: 'Events',
 			to: '/#events'
@@ -169,7 +169,7 @@ export default {
 			text: 'Mailing List',
 			to: '/contact'
 		}, {
-			text: 'Blog',
+			text: 'News',
 			to: '/client'
 		}, {
 			children: (<FaFacebookSquare/>),
