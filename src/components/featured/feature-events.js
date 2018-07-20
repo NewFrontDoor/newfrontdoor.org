@@ -26,15 +26,18 @@ const FeaturedEvents = () => (
 				<div className={styles.training}>
 					<h3>Our next training sessions</h3>
 					<ul>
-						<li>Wellspring Anglican Church, June 27, 2018, Hobart</li>
+						{/* <li>Wellspring Anglican Church, June 27, 2018, Hobart</li> */}
+						<li>TBA</li>
 					</ul>
 					<div>
-						<h4>More info</h4>
+						{/* <h4>More info</h4> */}
+						<h4>Typical event information</h4>
 						<ul>
 							<li>When: 7:30-9:30pm</li>
-							<li>Where: Wellspring Anglican Church (Hobart)</li>
+							<li>Where: A Church in Hobart or Launceston</li>
 							<li>Cost: $30 to cover event, admin and support New Front Door (snacks included). We recommend churches subsidise their delegates.</li>
-							<li>Register: Register at <a href="https://vision100.org/itnightregistration">vision100.org</a></li>
+							{/* <li>Register: Register at <a href="https://vision100.org/itnightregistration">vision100.org</a></li> */}
+							<li>Register: Registrations will open closer to the event</li>
 						</ul>
 					</div>
 				</div>

@@ -20,7 +20,12 @@
 	"text": "Alan is a theological student at Moore Theological College, Sydney, and attends [St Alban's Anglican Church in Five Dock.](https://www.stalbanschurch.com.au/) He has worked in ministry for 3 years with AFES and currently serves on the AFES Board of Management. Alan joined the Vision 100 IT team in 2010, and his experience ranges from hobby HTML and PHP sites through to a broad understanding of various CMS systems, and the design of the Vision 100 IT website. Alan’s strengths are in areas of analysis, project development and consultation, and is passionate about UX-driven design."
 }, {
 	"name": "Chris Haines",
-	"position": "Team member (Hobart)",
+	"position": "Team member (London)",
 	"image": "./chris.jpg",
-	"text": "Chris attends [Crossroads Presbyterian Church](https://crossroadshobart.org/), and works as the Office Manager for the Network of Christian Reformed Churches of Southern Tasmania, developing policies and procedures for the network of six Reformed Churches in Kingborough. While he lacks official IT qualifications (he has a Bachelor of Business, majoring in HR), he is passionate about assisting churches practically, and enjoys thinking through the best practices of how churches operate behind the scenes. If you can't get a hold of him on a Monday night, he will most likely be playing Ultimate Frisbee, or cooking up a Gordon Ramsay inspired storm."
+	"text": "Chris is a recent UK expat. He attends [St Helen's Bishopsgate](http://www.st-helens.org.uk/) in London, and works as the Events Administrator, managing a conference which seeks to equip Evangelical Anglicans for the salvation of England. While lacking official IT qualifications (he has a Bachelor of Business, majoring in HR), he is passionate about assisting churches practically, and enjoys thinking through the best practices of how churches operate behind the scenes. He has recently started a side-project [Church Admin Forum](https://www.churchadminforum.com/), a website for collecting resources on church administration. In his spare time he enjoys playing Ultimate frisbee and cooking."
+}, {
+	"name": "Sam Morse",
+	"position": "Team Member (Hobart)",
+	"image": "./sam.jpg",
+	"text": "Sam is a member of the [Christian Reformed Church of Kingston](https://crckingston.org/), and works as New Front Door's Technical Officer and Software Engineer. Sam joined the team in 2017 and has experience from hobby and work projects in a variety of areas from server administration to building websites from scratch. He also enjoys gaming of all kinds and is an avid reader of theology and fantasy books."
 }]

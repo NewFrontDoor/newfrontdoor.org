@@ -58,7 +58,7 @@ const FeaturedPricing = () => (
 					</tr>
 					<tr>
 						<td>301+</td>
-						<td>$750</td>
+						<td><em>no fee</em></td>
 						<td>$2000 (includes all premium features)</td>
 					</tr>
 				</tbody>

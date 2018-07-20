@@ -113,16 +113,40 @@ class SearchBar extends React.Component {
 					<div className={styles.menu}>
 						<ul className="list-unstyled">
 							<li>
+								<Link to="/#how">How We Can Help You</Link>
+							</li>
+							<li>
+								<Link to="/#who">Who we are</Link>
+							</li>
+							<li>
+								<Link to="/#tools">Philosophy + Tools</Link>
+							</li>
+							<li>
+								<Link to="/#events">Events + Training</Link>
+							</li>
+							<li>
+								<Link to="/#pricing">Pricing</Link>
+							</li>
+							<li>
+								<Link to="/#join">Come on Board</Link>
+							</li>
+						</ul>
+						<hr/>
+						<ul className="list-unstyled">
+							<li>
 								<Link to="/client">News</Link>
 							</li>
 							<li>
 								<Link to="/support">Support</Link>
 							</li>
 							<li>
+								<Link to="/feature">Feature Request</Link>
+							</li>
+							<li>
 								<Link to="/status">Status</Link>
 							</li>
 							<li>
-								<Link to="/documentation">Documentation</Link>
+								<Link to="/documentation">Help + How-to</Link>
 							</li>
 							<li>
 								<Link to="/contact">Contact</Link>
