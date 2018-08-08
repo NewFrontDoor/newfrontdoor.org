@@ -100,7 +100,7 @@
     "offline-plugin": "^4.9.1",
     "postcss-calc": "^6.0.1",
     "postcss-lh": "^1.1.4",
-    "postcss-loader": "^2.1.5",
+    "postcss-loader": "^3.0.0",
     "postcss-pxtorem": "^4.0.0",
     "postcss-typography": "beta",
     "raw-loader": "^0.5.1",
