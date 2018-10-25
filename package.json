@@ -98,7 +98,7 @@
     "node-sass": "^4.9.0",
     "normalize.css": "^7.0.0",
     "offline-plugin": "^4.9.1",
-    "postcss-calc": "^6.0.1",
+    "postcss-calc": "^7.0.1",
     "postcss-lh": "^1.1.4",
     "postcss-loader": "^2.1.5",
     "postcss-pxtorem": "^4.0.0",
