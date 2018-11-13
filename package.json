@@ -33,7 +33,7 @@
     "prop-types": "^15.6.2",
     "qs": "^6.5.2",
     "react": "^16.6.3",
-    "react-dom": "^15.6.2",
+    "react-dom": "^16.6.3",
     "react-gateway": "^2.8.0",
     "react-height": "^3.0.0",
     "react-icons": "^2.2.7",
