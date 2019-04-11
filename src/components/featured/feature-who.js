@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import FaBank from 'react-icons/lib/fa/bank';
 import FaUsers from 'react-icons/lib/fa/group';
 import FaServer from 'react-icons/lib/fa/server';
@@ -17,21 +17,21 @@ const FeaturedWho = () => (
 		</div>
 		<div className={`${styles.snapshots}`}>
 			<div>
-				<FaBank height="4em" width="4em"/>
-				<span className="fa-university fa-5x"/>
+				<FaBank height="4em" width="4em" />
+				<span className="fa-university fa-5x" />
 				<p>14+ years of history</p>
 			</div>
 			<div>
-				<FaGraduationCap height="4em" width="4em"/>
+				<FaGraduationCap height="4em" width="4em" />
 				<p>30+ years of collective experience</p>
 			</div>
 			<div>
-				<FaUsers height="4em" width="4em"/>
-				<p>10+ clients on board</p>
+				<FaUsers height="4em" width="4em" />
+				<p>20+ clients on board</p>
 			</div>
 			<div>
-				<FaServer height="4em" width="4em"/>
-				<p>20+ websites served</p>
+				<FaServer height="4em" width="4em" />
+				<p>30+ websites served</p>
 			</div>
 		</div>
 
@@ -49,16 +49,16 @@ const FeaturedWho = () => (
 		<div className="expand">
 			<Link to="/about">
 				<p>Meet the team and read our story</p>
-				<FaAngleDown height="1.5em" width="1.5em"/>
+				<FaAngleDown height="1.5em" width="1.5em" />
 			</Link>
 		</div>
 		<div className={styles.tiled}>
-			<div><img src={imageContext('./christian-tile.jpg')}/></div>
-			<div><img src={imageContext('./jonno-tile.jpg')}/></div>
-			<div><img src={imageContext('./emile-tile.jpg')}/></div>
-			<div><img src={imageContext('./gibbo-tile.jpg')}/></div>
-			<div><img src={imageContext('./alan-tile.jpg')}/></div>
-			<div><img src={imageContext('./chris-tile.jpg')}/></div>
+			<div><img src={imageContext('./christian-tile.jpg')} /></div>
+			<div><img src={imageContext('./jonno-tile.jpg')} /></div>
+			<div><img src={imageContext('./emile-tile.jpg')} /></div>
+			<div><img src={imageContext('./gibbo-tile.jpg')} /></div>
+			<div><img src={imageContext('./alan-tile.jpg')} /></div>
+			<div><img src={imageContext('./chris-tile.jpg')} /></div>
 		</div>
 	</Featured>
 );
