@@ -27,11 +27,11 @@ const FeaturedWho = () => (
 			</div>
 			<div>
 				<FaUsers height="4em" width="4em"/>
-				<p>10+ clients on board</p>
+				<p>20+ clients on board</p>
 			</div>
 			<div>
 				<FaServer height="4em" width="4em"/>
-				<p>20+ websites served</p>
+				<p>30+ websites served</p>
 			</div>
 		</div>
 
