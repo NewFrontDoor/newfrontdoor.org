@@ -117,7 +117,7 @@
     "stylelint": "^8.4.0",
     "stylelint-config-lost": "^0.0.3",
     "stylelint-config-property-sort-order-smacss": "^1.1.1",
-    "stylelint-config-sass-guidelines": "^3.1.0",
+    "stylelint-config-sass-guidelines": "^6.0.0",
     "stylelint-config-standard": "^17.0.0",
     "through2": "^2.0.1",
     "through2-map": "^3.0.0",
