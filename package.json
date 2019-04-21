@@ -80,7 +80,7 @@
     "file-loader": "^0.11.2",
     "front-matter": "^2.3.0",
     "github-slugger": "^1.2.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.1",
     "gulp-awspublish": "^3.3.3",
     "gulp-cloudfront-invalidate-aws-publish": "^0.2.3",
     "gulp-filter": "^5.1.0",
