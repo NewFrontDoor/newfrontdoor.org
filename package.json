@@ -93,7 +93,7 @@
     "html-loader": "^0.5.5",
     "lodash-webpack-plugin": "^0.11.5",
     "lost": "^8.3.0",
-    "mdast-util-toc": "^2.0.0",
+    "mdast-util-toc": "^4.0.0",
     "node-libs-browser": "^2.1.0",
     "node-sass": "^4.9.0",
     "normalize.css": "^7.0.0",
