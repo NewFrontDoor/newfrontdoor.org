@@ -105,7 +105,7 @@
     "postcss-typography": "beta",
     "raw-loader": "^0.5.1",
     "react-addons-test-utils": "^15.6.2",
-    "remark": "^8.0.0",
+    "remark": "^11.0.0",
     "remark-frontmatter": "^1.2.0",
     "remark-react": "^4.0.3",
     "remark-slug": "^4.2.2",
