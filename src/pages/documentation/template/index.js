@@ -119,7 +119,7 @@ class Template extends React.Component {
 	}
 
 	handleSubmit(model) {
-		return fetch('https://api.vision100it.org/give-feedback', {
+		return fetch('https://serverless.newfrontdoor.org/give-feedback', {
 			method: 'post',
 			mode: 'cors',
 			body: JSON.stringify({
