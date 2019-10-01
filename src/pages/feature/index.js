@@ -148,7 +148,7 @@ class Feature extends React.Component {
 	}
 
 	handleSubmit(model) {
-		return fetch('https://api.vision100it.org/feature-request', {
+		return fetch('https://serverless.newfrontdoor.org/feature-request', {
 			method: 'post',
 			mode: 'cors',
 			body: JSON.stringify(model),
