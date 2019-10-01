@@ -91,7 +91,7 @@ class Contact extends React.Component {
 	}
 
 	handleSubmit(model) {
-		fetch('https://api.vision100it.org/mailing-list', {
+		fetch('https://serverless.newfrontdoor.org/mailing-list', {
 			method: 'post',
 			mode: 'cors',
 			body: JSON.stringify({
