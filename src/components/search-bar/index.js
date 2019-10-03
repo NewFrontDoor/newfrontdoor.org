@@ -134,19 +134,10 @@ class SearchBar extends React.Component {
 						<hr/>
 						<ul className="list-unstyled">
 							<li>
-								<Link to="/client">News</Link>
-							</li>
-							<li>
 								<Link to="/support">Support</Link>
 							</li>
 							<li>
 								<Link to="/feature">Feature Request</Link>
-							</li>
-							<li>
-								<Link to="/status">Status</Link>
-							</li>
-							<li>
-								<Link to="/documentation">Help + How-to</Link>
 							</li>
 							<li>
 								<Link to="/contact">Contact</Link>
@@ -154,7 +145,7 @@ class SearchBar extends React.Component {
 						</ul>
 					</div>
 					<div className={styles.postscript}>
-						<p>© New Front Door 2018.</p>
+						<p>© New Front Door 2019.</p>
 						<p>Design by <a href="https://twitter.com/readeral">readeral</a> and <a href="https://twitter.com/barrythepenguin">barrythepenguin</a>.</p>
 						<p><a href="mailto:contactus@newfrontdoor.org">contactus@newfrontdoor.org</a>.</p>
 						<p>ABN: 61 475 638 368.</p>

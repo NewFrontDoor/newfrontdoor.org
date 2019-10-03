@@ -67,12 +67,6 @@ export default {
 	},
 	clientmenu: {
 		links: [{
-			text: 'News',
-			to: '/client'
-		}, {
-			text: 'Help +<br />How-to',
-			to: '/documentation'
-		}, {
 			text: 'Feature<br />Request',
 			to: '/feature'
 		}, {
@@ -138,9 +132,6 @@ export default {
 		}, {
 			text: 'Privacy Policy',
 			to: '/documentation/privacy'
-		}, {
-			text: 'Service Levels',
-			to: '/about#service'
 		}]
 	}, {
 		heading: 'Support',
@@ -153,24 +144,15 @@ export default {
 		}, {
 			text: 'Contact Us',
 			to: '/contact'
-		}, {
-			text: 'Help + How-to',
-			to: '/documentation'
-		}, {
-			text: 'System Status',
-			to: '/status'
 		}]
 	}, {
 		heading: 'Connect',
 		links: [{
-			text: 'Podcast - coming!',
-			to: ''
+			text: 'Podcast',
+			target: 'https://podcasts.apple.com/au/podcast/new-front-door-the-church-it-guild/id1477414931'
 		}, {
 			text: 'Mailing List',
 			to: '/contact'
-		}, {
-			text: 'News',
-			to: '/client'
 		}, {
 			children: (<FaFacebookSquare/>),
 			target: 'https://www.facebook.com/NewFrontDoorIT/'

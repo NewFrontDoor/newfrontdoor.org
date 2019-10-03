@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import throttle from 'lodash/throttle';
-import logo from '../../images/nfd-main-logo-no-tag.svg';
+import logo from '../../images/nfd-main-logo-horizontal.svg';
 import styles from './Header.scss';
 
 class Header extends React.Component {
@@ -45,7 +45,7 @@ class Header extends React.Component {
 		return {
 			backgroundColor: `rgba(255,255,255, ${this.backgroundHeight()})`,
 			boxShadow: `0 2px 5px rgba(0,0,0, ${this.backgroundHeight() * 0.26})`,
-			padding: `${this.paddingHeight}`
+			padding: `12px`
 		};
 	}
 

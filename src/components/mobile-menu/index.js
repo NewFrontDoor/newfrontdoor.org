@@ -10,7 +10,6 @@ const MobileMenu = props => (
 		<Button appearance="blank" additionalClasses={styles.menuItem} onClick={props.onOpenSearch}>
 			Menu
 		</Button>
-		<Link className={styles.menuItem} to="/client">Client</Link>
 	</div>
 );
 
