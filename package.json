@@ -76,7 +76,7 @@
     "enzyme": "^2.6.0",
     "eslint": "^3.19.0",
     "eslint-config-xo-react": "^0.13.0",
-    "eslint-import-resolver-webpack": "^0.8.4",
+    "eslint-import-resolver-webpack": "^0.12.1",
     "eslint-plugin-react": "^7.9.1",
     "eval": "^0.1.1",
     "extract-text-webpack-plugin": "^3.0.2",
