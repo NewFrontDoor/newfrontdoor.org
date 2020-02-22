@@ -40,7 +40,7 @@ module.exports = () => {
 	return gulp.src(paths.dest('**/*'))
 		.pipe($.ghPages({
 			branch: 'master',
-			remoteUrl: 'git@github.com:Vision100IT/Vision100IT.github.io.git'
+			remoteUrl: 'git@github.com:NewFrontDoor/Vision100IT.github.io.git'
 		}));
 };
 
