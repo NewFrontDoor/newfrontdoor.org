@@ -48,13 +48,13 @@ const FeaturedPricing = () => (
 					</tr>
 					<tr>
 						<td>150 or less</td>
-						<td>$300</td>
-						<td>$400</td>
+						<td>$350</td>
+						<td>$450</td>
 					</tr>
 					<tr>
 						<td>151-300</td>
-						<td>$300</td>
-						<td>$900</td>
+						<td>$350</td>
+						<td>$950</td>
 					</tr>
 					<tr>
 						<td>301+</td>
