@@ -110,7 +110,7 @@
     "react-addons-test-utils": "^15.6.2",
     "remark": "^8.0.0",
     "remark-frontmatter": "^1.2.0",
-    "remark-react": "^4.0.3",
+    "remark-react": "^7.0.0",
     "remark-slug": "^4.2.2",
     "remove-markdown": "^0.2.2",
     "sass-loader": "^7.0.3",
