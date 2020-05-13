@@ -81,7 +81,7 @@
     "eval": "^0.1.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^0.11.2",
-    "front-matter": "^2.3.0",
+    "front-matter": "^3.2.1",
     "github-slugger": "^1.2.0",
     "gulp": "^3.9.1",
     "gulp-awspublish": "^3.3.3",
