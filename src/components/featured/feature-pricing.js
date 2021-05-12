@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import FaAngleDown from 'react-icons/lib/fa/angle-down';
 import Featured from '.';
 
@@ -49,17 +49,17 @@ const FeaturedPricing = () => (
 					<tr>
 						<td>150 or less</td>
 						<td>$400</td>
-						<td>$450</td>
+						<td>$550</td>
 					</tr>
 					<tr>
 						<td>151-300</td>
 						<td>$400</td>
-						<td>$950</td>
+						<td>$1100</td>
 					</tr>
 					<tr>
 						<td>301+</td>
 						<td><em>no fee</em></td>
-						<td>$2000 (includes all premium features)</td>
+						<td>$2200 (includes all premium features)</td>
 					</tr>
 				</tbody>
 			</table>
@@ -78,8 +78,8 @@ const FeaturedPricing = () => (
 
 			<div className="expand">
 				<Link to="/documentation/costs">
-					More about costs<br/>
-					<FaAngleDown height="1.5em" width="1.5em"/>
+					More about costs<br />
+					<FaAngleDown height="1.5em" width="1.5em" />
 				</Link>
 			</div>
 		</div>

@@ -60,7 +60,7 @@ Training events and webinars have a ticket price to not only cover event costs, 
 New Front Door wants to be able to extend its services to more churches, and so we charge a small subscription annually to keep us running. This subscription is based on your organisation size, as set out below.
 
 ### Church Annual Subscription
-*as of January 2020*
+*as of May 2021*
 
 Subscription features:
 - Website
@@ -74,15 +74,15 @@ Subscription features:
 
 Church Type | Average Adult Attendance	| Annual Subscription Cost
 ----------- | ------------------------- | -----------------------
-Small       | 150 or less               | $450
-Medium      | 151-300                   | $950
-Large       | 301+                      | $2000 (includes all premium features)
+Small       | 150 or less               | $550
+Medium      | 151-300                   | $1100
+Large       | 301+                      | $2200 (includes all premium features)
 
 ### Parachurch Ministry Annual Subscription
-*as of January 2020*
+*as of May 2021*
 
 Ministry Type   | Average Adult Attendance	| Annual Subscription Cost
 --------------- | ------------------------- | ------------------------
 Small           | 150 or less               | $250
-Medium          | 151-300                   | $500
-Large           | 301+                      | $900 (includes all premium features)
+Medium          | 151-300                   | $600
+Large           | 301+                      | $1100 (includes all premium features)
