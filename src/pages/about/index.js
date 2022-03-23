@@ -5,6 +5,7 @@ import {Element} from 'react-scroll';
 import TeamMember from '../../components/team-member';
 import Index from '../../components';
 import content from '../../content';
+import styles from './People.scss'
 
 const About = () => (
 	<Index>
@@ -26,10 +27,14 @@ const About = () => (
 					<Element name="team">
 						<div className="team-wrap">
 							<h2>New Front Door Board</h2>
-							{content.boardMembers.map(member => <TeamMember key={hash(member.name)} {...member}/>)}
+							<div className={styles.container}>
+								{content.boardMembers.map(member => <TeamMember key={hash(member.name)} {...member}/>)}
+							</div>
 							<hr/>
 							<h2>New Front Door Team Members</h2>
-							{content.teamMembers.map(member => <TeamMember key={hash(member.name)} {...member}/>)}
+							<div className={styles.container}>
+								{content.teamMembers.map(member => <TeamMember key={hash(member.name)} {...member}/>)}
+							</div>
 							<hr/>
 						</div>
 					</Element>
