@@ -5,7 +5,7 @@ import {Element} from 'react-scroll';
 import TeamMember from '../../components/team-member';
 import Index from '../../components';
 import content from '../../content';
-import styles from './People.scss'
+import styles from './People.scss';
 
 const About = () => (
 	<Index>
