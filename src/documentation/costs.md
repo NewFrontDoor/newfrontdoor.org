@@ -79,10 +79,10 @@ Medium      | 151-300                   | $1100
 Large       | 301+                      | $2200 (includes all premium features)
 
 ### Parachurch Ministry Annual Subscription
-*as of May 2021*
+*as of May 2022*
 
 Ministry Type   | Average Adult Attendance	| Annual Subscription Cost
 --------------- | ------------------------- | ------------------------
-Small           | 150 or less               | $250
+Small           | 150 or less               | $350
 Medium          | 151-300                   | $600
 Large           | 301+                      | $1100 (includes all premium features)
