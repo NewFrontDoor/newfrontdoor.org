@@ -96,7 +96,7 @@ another.
 Pricing
 -------
 
-Our on-site consultancy carries a cost of $2500. This is all-inclusive
+Our on-site consultancy carries a cost of $3500. This is all-inclusive
 cost, covering all travel, accommodation and food for the duration of
 the agreed consultation period.
 
@@ -104,7 +104,7 @@ Extra travel surplus would be required for Darwin, Perth, north of
 Brisbane, regional areas and outside Australia. This will be priced on
 enquiry.
 
-Our virtual consultancy carries a cost of $750 for the duration of the
+Our virtual consultancy carries a cost of $850 for the duration of the
 agreed consultancy.
 
 For smaller churches, smaller parachurch ministries (under 50 adults

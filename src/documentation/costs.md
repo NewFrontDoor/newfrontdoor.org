@@ -34,7 +34,7 @@ We will do all the leg work in engaging with and communicating with Christian ac
 1. Benchmark fee: $2000 per year for either
 
 ### Consultation charges
-*as of January 2020*
+*as of Nov 2022*
 
 - Negotiated on request, with any travel and accommodation expenses taken into account.
 - For best practices for the overall ministry: information flow alignment, integration, training and management processes, feature maximisation, communications plan, updating and assessing.
@@ -42,8 +42,8 @@ We will do all the leg work in engaging with and communicating with Christian ac
 
 Conultation Type  		  | Benchmark Fee
 ------------------------- | ----------------
-Simple Skype consultation | $750
-Comprehensive site visit  | $2500
+Simple Skype consultation | $850
+Comprehensive site visit  | $3500
 
 ### New Front Door Training Events
 *as of January 2020*
@@ -60,7 +60,7 @@ Training events and webinars have a ticket price to not only cover event costs, 
 New Front Door wants to be able to extend its services to more churches, and so we charge a small subscription annually to keep us running. This subscription is based on your organisation size, as set out below.
 
 ### Church Annual Subscription
-*as of May 2021*
+*as of Nov 2022*
 
 Subscription features:
 - Website
@@ -74,15 +74,15 @@ Subscription features:
 
 Church Type | Average Adult Attendance	| Annual Subscription Cost
 ----------- | ------------------------- | -----------------------
-Small       | 150 or less               | $550
-Medium      | 151-300                   | $1100
-Large       | 301+                      | $2200 (includes all premium features)
+Small       | 150 or less               | $600
+Medium      | 151-300                   | $1200
+Large       | 301+                      | $2500 (includes all premium features)
 
 ### Parachurch Ministry Annual Subscription
-*as of May 2022*
+*as of Nov 2022*
 
 Ministry Type   | Average Adult Attendance	| Annual Subscription Cost
 --------------- | ------------------------- | ------------------------
-Small           | 150 or less               | $350
-Medium          | 151-300                   | $600
-Large           | 301+                      | $1100 (includes all premium features)
+Small           | 150 or less               | $400
+Medium          | 151-300                   | $700
+Large           | 301+                      | $1500 (includes all premium features)
